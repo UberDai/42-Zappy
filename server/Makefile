@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/15 01:04:50 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/16 22:50:43 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ BIN_NAME	=	$(BIN_DIR)$(NAME)
 SRC_FILES	=	main.c \
 				util.c \
 				options.c \
-				map/map0.c
+				client.c \
+				map.c
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
