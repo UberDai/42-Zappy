@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/17 02:21:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/18 03:23:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		usage(void)
 		"jeu va vite)");
 }
 
-static void	run_sleeping(void)
+static void	run_sleep(void)
 {
 	static short	alert;
 	static double	old_time;
@@ -57,7 +57,7 @@ static void	run(void)
 	while (1)
 	{
 		printf("[ Cycle %u ]\n", g_zappy.time.cycle_count);
-		run_sleeping();
+		run_sleep();
 		g_zappy.time.cycle_count++;
 	}
 }
@@ -68,8 +68,9 @@ int		main(int ac, char **av)
 	options_parse(ac, av);
 	g_zappy.time.clock = 1.0 / (float)g_zappy.time.cycle_duration;
 	map_init();
-	client_create(tile_at(1, 1));
+	network_bind();
+	network_listen();
 	(void)run;
-	run();
+	// run();
 	return (0);
 }

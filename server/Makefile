@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/16 22:50:43 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/18 00:02:17 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC_FILES	=	main.c \
 				util.c \
 				options.c \
 				client.c \
+				network.c \
 				map.c
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))

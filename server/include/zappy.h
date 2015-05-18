@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/17 01:49:26 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/18 03:19:26 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ZAPPY_H
 
 # include <stdio.h>
+# include <sys/select.h>
 
 # define FOOD_DURATION	126
 # define MAX_LEVEL		8
@@ -26,6 +27,8 @@
 # define ITEM_MENDIANE	4
 # define ITEM_PHIRAS	5
 # define ITEM_THYSTAME	6
+
+# define MAX_CLIENTS	10
 
 typedef unsigned int	t_uint;
 typedef unsigned short	t_ushort;
@@ -45,6 +48,7 @@ typedef struct			s_tile
 struct					s_client
 {
 	t_uint				id;
+	int					fd;
 	t_ushort			level;
 	t_tile				*position;
 	t_uint				items[ITEM_COUNT];
@@ -59,9 +63,16 @@ typedef struct			s_time
 	t_uint				cycle_count;
 }						t_time;
 
-typedef struct			s_zappy
+typedef struct			s_network
 {
 	t_uint				port;
+	int					fd;
+	fd_set				fd_set;
+}						t_network;
+
+typedef struct			s_zappy
+{
+	t_network			network;
 	t_time				time;
 	t_uint				client_count;
 	t_uint				width;
@@ -87,7 +98,11 @@ double					get_time(void);
 
 short					client_eat(t_client *client);
 t_client				*client_create(t_tile *position);
+void					client_delete(t_client *client_to_delete);
 short					client_promote(t_client *client);
 short					client_move(t_client *client, t_tile *tile);
+
+void					network_bind();
+void					network_listen();
 
 #endif

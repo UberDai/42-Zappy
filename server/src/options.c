@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/16 23:46:38 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/17 23:08:28 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	option_port(t_uint ac, char **av, t_uint i)
 	input = ft_atoi(av[i]);
 	if (input < 0)
 		die("-p must be a positive number.");
-	g_zappy.port = input;
+	g_zappy.network.port = input;
 	return (i + 1);
 }
 

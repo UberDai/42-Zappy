@@ -6,12 +6,13 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/17 01:55:45 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/18 03:29:08 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 #include <stdio.h>
+#include <libft.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -38,6 +39,28 @@ t_client	*client_create(t_tile *position)
 		clients->next = client;
 	}
 	return (client);
+}
+
+void	client_delete(t_client *client_to_delete)
+{
+	t_client	*client;
+
+	client = g_zappy.clients;
+	if (client == client_to_delete)
+		g_zappy.clients = client->next;
+	else
+	{
+		while (client && client->next == client_to_delete)
+			client = client->next;
+
+		if (client == NULL)
+			return ;
+
+		client->next = client_to_delete->next;
+	}
+
+	client_to_delete->position->client_count--;
+	free(client_to_delete);
 }
 
 short	client_move(t_client *client, t_tile *tile)
