@@ -6,10 +6,11 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/16 00:07:38 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/21 02:40:42 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "zappy.h"
 #include <libft.h>
 #include <stdlib.h>
 #include <sys/time.h>
@@ -36,4 +37,23 @@ int		die(const char *message)
 	ft_putendl(message);
 	exit(0);
 	return (0);
+}
+
+void	print_client(t_client *client)
+{
+	printf("#%u [%i;%i]\n", client->id, client->position->x, client->position->y);
+}
+
+void	print_client_queue(t_client *client)
+{
+	t_uint	i;
+
+	printf("Queue #%u:\n", client->id);
+	i = 0;
+	while (client->queue[i].set)
+	{
+		printf("  [%u] %s (%u)\n", i, client->queue[i].command[0], client->queue[i].delay);
+		i++;
+	}
+	printf("\n");
 }

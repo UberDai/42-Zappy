@@ -6,9 +6,10 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/18 00:02:17 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/21 01:54:57 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRC_DIR		=	src/
 OBJ_DIR		=	build/
@@ -20,9 +21,15 @@ BIN_NAME	=	$(BIN_DIR)$(NAME)
 SRC_FILES	=	main.c \
 				util.c \
 				options.c \
-				client.c \
 				network.c \
-				map.c
+				map.c \
+				client/client.c \
+				client/actions.c \
+				client/promote.c \
+				client/move.c \
+				client/queue.c \
+				command/parse.c \
+				command/commands.c
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))

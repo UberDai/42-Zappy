@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/18 03:32:11 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/21 02:29:24 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 #include <netdb.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <sys/select.h>
 
-#define NETWORK_BUFFER_SIZE	200
+#define NETWORK_BUFFER_SIZE	500
 
 void		network_bind()
 {
@@ -36,6 +37,12 @@ void		network_bind()
 
 	if (bind(g_zappy.network.fd, (struct sockaddr *) &server, sizeof(server)) < 0)
 		die("Could not bind the server to the network.");
+
+	if (listen(g_zappy.network.fd, 10))
+		die("Error: listen()");
+
+	FD_ZERO(&(g_zappy.network.read_fds));
+	FD_SET(g_zappy.network.fd, &(g_zappy.network.read_fds));
 
 	printf("Listening on port %u\n", g_zappy.network.port);
 }
@@ -54,14 +61,15 @@ static void	network_client_connect(void)
 	if (client->fd == -1)
 		die("Client connection error.");
 
-	FD_SET(client->fd, &(g_zappy.network.fd_set));
+	FD_SET(client->fd, &(g_zappy.network.read_fds));
 	ft_putendl("Client created.");
 }
 
 static void	network_client_data(t_client *client)
 {
-	char	buffer[NETWORK_BUFFER_SIZE] = { 0 };
-	int		ret;
+	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
+	char		*input;
+	int			ret;
 
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
 
@@ -69,42 +77,57 @@ static void	network_client_data(t_client *client)
 		die("Could not read the client.");
 	else if (ret == 0)
 	{
+		printf("Client #%u disconnected.\n", client->id);
 		close(client->fd);
-		FD_CLR(client->fd, &(g_zappy.network.fd_set));
+		FD_CLR(client->fd, &(g_zappy.network.read_fds));
 		client_delete(client);
 	}
 	else
 	{
-		ft_putendl(buffer);
+		input = ft_strsub(buffer, 0, ft_strlen(buffer) - 1);
+		command_parse(client, input);
+		free(input);
 	}
 }
 
-void		network_listen(void)
+static void	network_bind_fds(void)
 {
 	t_client	*client;
 
-	if (listen(g_zappy.network.fd, 10))
-		die("Error: listen()");
+	FD_ZERO(&(g_zappy.network.read_fds));
+	FD_SET(g_zappy.network.fd, &(g_zappy.network.read_fds));
 
-	FD_ZERO(&(g_zappy.network.fd_set));
-	FD_SET(g_zappy.network.fd, &(g_zappy.network.fd_set));
-
-	while (1)
+	client = g_zappy.clients;
+	while (client)
 	{
-		if (select(FD_SETSIZE, &(g_zappy.network.fd_set), NULL, NULL, NULL) < 0)
-			die("Error: select()");
+		FD_SET(client->fd, &(g_zappy.network.read_fds));
+		client = client->next;
+	}
+}
 
-		if (FD_ISSET(g_zappy.network.fd, &(g_zappy.network.fd_set)))
-			network_client_connect();
-		else
+void		network_select(void)
+{
+	t_client				*client;
+	static struct timeval	timeout;
+
+	network_bind_fds();
+
+	timeout.tv_sec = 0;
+	timeout.tv_usec = SELECT_TIMEOUT;
+
+	if (select(FD_SETSIZE, &(g_zappy.network.read_fds), NULL, NULL, &timeout) < 0)
+		die("Error: select()");
+
+	if (FD_ISSET(g_zappy.network.fd, &(g_zappy.network.read_fds)))
+		network_client_connect();
+	else
+	{
+		client = g_zappy.clients;
+		while (client)
 		{
-			client = g_zappy.clients;
-			while (client)
-			{
-				if (FD_ISSET(client->fd, &(g_zappy.network.fd_set)))
-					network_client_data(client);
-				client = client->next;
-			}
+			if (FD_ISSET(client->fd, &(g_zappy.network.read_fds)))
+				network_client_data(client);
+			client = client->next;
 		}
 	}
 }

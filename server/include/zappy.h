@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/18 03:19:26 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/21 03:14:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,93 +16,135 @@
 # include <stdio.h>
 # include <sys/select.h>
 
-# define FOOD_DURATION	126
-# define MAX_LEVEL		8
-# define ITEM_COUNT		7
+# define FOOD_DURATION		126
+# define CLIENT_BASE_LIFE	10
+# define MAX_LEVEL			8
+# define ITEM_COUNT			7
+# define CLIENT_QUEUE_MAX	5
 
-# define ITEM_FOOD		0
-# define ITEM_LINEMATE	1
-# define ITEM_DERAUMERE	2
-# define ITEM_SIBUR		3
-# define ITEM_MENDIANE	4
-# define ITEM_PHIRAS	5
-# define ITEM_THYSTAME	6
+# define ITEM_FOOD			0
+# define ITEM_LINEMATE		1
+# define ITEM_DERAUMERE		2
+# define ITEM_SIBUR			3
+# define ITEM_MENDIANE		4
+# define ITEM_PHIRAS		5
+# define ITEM_THYSTAME		6
 
-# define MAX_CLIENTS	10
+# define MAX_CLIENTS		10
+# define SELECT_TIMEOUT		0
 
-typedef unsigned int	t_uint;
-typedef unsigned short	t_ushort;
+# define TURN_LEFT			-1
+# define TURN_RIGHT			1
 
-typedef struct s_client	t_client;
+typedef unsigned int		t_uint;
+typedef unsigned short		t_ushort;
 
-typedef struct			s_tile
+typedef enum 				e_orient
 {
-	int					x;
-	int					y;
-	t_uint				client_count;
-	t_client			**clients;
-	short				refresh_client_list;
-	t_uint				items[ITEM_COUNT];
-}						t_tile;
+	ORIENT_NORTH,
+	ORIENT_EAT,
+	ORIENT_SOUTH,
+	ORIENT_WEST
+}							t_orient;
 
-struct					s_client
+typedef struct s_client		t_client;
+
+typedef struct				s_queue
 {
-	t_uint				id;
-	int					fd;
-	t_ushort			level;
-	t_tile				*position;
-	t_uint				items[ITEM_COUNT];
-	t_uint				hunger;
-	struct s_client		*next;
+	short					set;
+	char					**command;
+	t_uint					delay;
+}							t_queue;
+
+typedef struct				s_tile
+{
+	int						x;
+	int						y;
+	t_uint					client_count;
+	t_client				**clients;
+	short					refresh_client_list;
+	t_uint					items[ITEM_COUNT];
+	t_queue					queue[CLIENT_QUEUE_MAX];
+}							t_tile;
+
+struct						s_client
+{
+	t_uint					id;
+	int						fd;
+	t_ushort				level;
+	t_uint					life;
+	t_tile					*position;
+	t_orient				orientation;
+	t_uint					items[ITEM_COUNT];
+	t_uint					hunger;
+	t_queue					queue[CLIENT_QUEUE_MAX];
+	struct s_client			*next;
 };
 
-typedef struct			s_time
+typedef struct				s_time
 {
-	double				clock;
-	t_uint				cycle_duration;
-	t_uint				cycle_count;
-}						t_time;
+	double					clock;
+	t_uint					cycle_duration;
+	t_uint					cycle_count;
+}							t_time;
 
-typedef struct			s_network
+typedef struct				s_command
 {
-	t_uint				port;
-	int					fd;
-	fd_set				fd_set;
-}						t_network;
+	char					*name;
+	t_uint					delay;
+	short					(*func)(t_client *, t_uint, char **);
+}							t_command;
 
-typedef struct			s_zappy
+typedef struct				s_network
 {
-	t_network			network;
-	t_time				time;
-	t_uint				client_count;
-	t_uint				width;
-	t_uint				height;
-	t_tile				***map;
-	t_uint				team_count;
-	char				**teams;
-	t_client			*clients;
-}						t_zappy;
+	t_uint					port;
+	int						fd;
+	fd_set					read_fds;
+}							t_network;
 
-t_zappy					g_zappy;
+typedef struct				s_zappy
+{
+	t_network				network;
+	t_time					time;
+	t_uint					client_count;
+	t_uint					width;
+	t_uint					height;
+	t_tile					***map;
+	t_uint					team_count;
+	char					**teams;
+	t_client				*clients;
+}							t_zappy;
 
-void					map_init(void);
-void					tile_update_client_list(t_tile *tile);
-t_tile					*tile_at(int x, int y);
+t_zappy						g_zappy;
 
-void					options_parse(t_uint ac, char **av);
-void					options_valid(void);
+void						map_init(void);
+void						tile_update_client_list(t_tile *tile);
+t_tile						*tile_at(int x, int y);
 
-int						die(const char *message);
-void					usage(void);
-double					get_time(void);
+void						options_parse(t_uint ac, char **av);
+void						options_valid(void);
 
-short					client_eat(t_client *client);
-t_client				*client_create(t_tile *position);
-void					client_delete(t_client *client_to_delete);
-short					client_promote(t_client *client);
-short					client_move(t_client *client, t_tile *tile);
+int							die(const char *message);
+void						usage(void);
+void						print_client(t_client *client);
+void						print_client_queue(t_client *client);
+double						get_time(void);
 
-void					network_bind();
-void					network_listen();
+short						client_eat(t_client *client);
+t_client					*client_create(t_tile *position);
+void						client_delete(t_client *client_to_delete);
+short						client_promote(t_client *client);
+short						client_move_to(t_client *client, t_tile *tile);
+short						client_queue_push(t_client *client, char **command, t_uint delay);
+void						client_queue_shift(t_client *client);
+void						client_queue_free(t_client *client);
+
+void						network_bind();
+void						network_select(void);
+
+void						command_parse(t_client *client, char *input);
+short						command_right(t_client *client, t_uint argc, char **argv);
+short						command_left(t_client *client, t_uint argc, char **argv);
+short						command_move(t_client *client, t_uint argc, char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/18 03:23:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/19 23:24:41 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,10 @@ static void	run_sleep(void)
 	double			current_time;
 	double			sleeping_duration;
 
-	current_time = get_time();
 	if (old_time == 0)
-		sleeping_duration = g_zappy.time.clock;
-	else
-		sleeping_duration = g_zappy.time.clock - (current_time - old_time);
+		old_time = get_time();
+	current_time = get_time();
+	sleeping_duration = g_zappy.time.clock - (current_time - old_time);
 	if (sleeping_duration > 0)
 		usleep(sleeping_duration * 1000000);
 	else if (!alert)
@@ -54,9 +53,11 @@ static void	run_sleep(void)
 
 static void	run(void)
 {
+	network_bind();
 	while (1)
 	{
 		printf("[ Cycle %u ]\n", g_zappy.time.cycle_count);
+		network_select();
 		run_sleep();
 		g_zappy.time.cycle_count++;
 	}
@@ -68,9 +69,6 @@ int		main(int ac, char **av)
 	options_parse(ac, av);
 	g_zappy.time.clock = 1.0 / (float)g_zappy.time.cycle_duration;
 	map_init();
-	network_bind();
-	network_listen();
-	(void)run;
-	// run();
+	run();
 	return (0);
 }
