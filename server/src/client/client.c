@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/21 02:50:55 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/22 02:21:48 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_client	*client_create(t_tile *position)
 	client->hunger = FOOD_DURATION;
 	client->id = id++;
 	client->life = CLIENT_BASE_LIFE;
+	client->authenticated = 0;
 	client_move_to(client, position);
 	clients = g_zappy.clients;
 	if (clients == NULL)
@@ -37,6 +38,7 @@ t_client	*client_create(t_tile *position)
 			clients = clients->next;
 		clients->next = client;
 	}
+	g_zappy.client_count++;
 	return (client);
 }
 
@@ -60,4 +62,15 @@ void	client_delete(t_client *client_to_delete)
 	client_to_delete->position->client_count--;
 	client_queue_free(client);
 	free(client_to_delete);
+	g_zappy.client_count--;
+}
+
+void	client_set_team(t_client *client, const char *team_name)
+{
+	t_team	*team;
+
+	team = team_get(team_name);
+	if (team == NULL)
+		team = team_create(team_name);
+	client->team = team;
 }

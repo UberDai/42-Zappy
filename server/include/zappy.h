@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/21 03:14:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/22 02:23:28 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ typedef enum 				e_orient
 
 typedef struct s_client		t_client;
 
+typedef struct				s_team
+{
+	char					*name;
+	struct s_team			*next;
+}							t_team;
+
 typedef struct				s_queue
 {
 	short					set;
@@ -73,11 +79,13 @@ struct						s_client
 	int						fd;
 	t_ushort				level;
 	t_uint					life;
+	t_team					*team;
 	t_tile					*position;
 	t_orient				orientation;
 	t_uint					items[ITEM_COUNT];
 	t_uint					hunger;
 	t_queue					queue[CLIENT_QUEUE_MAX];
+	short					authenticated;
 	struct s_client			*next;
 };
 
@@ -86,6 +94,7 @@ typedef struct				s_time
 	double					clock;
 	t_uint					cycle_duration;
 	t_uint					cycle_count;
+	double					next_cycle;
 }							t_time;
 
 typedef struct				s_command
@@ -106,12 +115,12 @@ typedef struct				s_zappy
 {
 	t_network				network;
 	t_time					time;
-	t_uint					client_count;
 	t_uint					width;
 	t_uint					height;
 	t_tile					***map;
 	t_uint					team_count;
-	char					**teams;
+	t_team					*teams;
+	t_uint					client_count;
 	t_client				*clients;
 }							t_zappy;
 
@@ -138,9 +147,14 @@ short						client_move_to(t_client *client, t_tile *tile);
 short						client_queue_push(t_client *client, char **command, t_uint delay);
 void						client_queue_shift(t_client *client);
 void						client_queue_free(t_client *client);
+void						client_set_team(t_client *client, const char *team_name);
+
+t_team						*team_get(const char *name);
+t_team						*team_create(const char *team_name);
 
 void						network_bind();
-void						network_select(void);
+void						network_receive(void);
+void						network_send(t_client *client, char *str);
 
 void						command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);

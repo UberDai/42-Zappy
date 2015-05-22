@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/21 03:16:09 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/22 02:24:00 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ void	command_parse(t_client *client, char *input)
 	char	**splits;
 	t_uint	split_count;
 	t_uint	i;
+
+	if (!client->authenticated)
+	{
+		client_set_team(client, input);
+		network_send(client, "Salut");
+		network_send(client, "Sava");
+		return ;
+	}
 
 	splits = ft_strsplit(input, ' ');
 	split_count = ft_splits_count(splits);

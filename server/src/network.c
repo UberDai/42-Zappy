@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/21 02:29:24 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/22 02:02:51 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static void	network_client_connect(void)
 
 	FD_SET(client->fd, &(g_zappy.network.read_fds));
 	ft_putendl("Client created.");
+
+	network_send(client, "BIENVENUE");
 }
 
 static void	network_client_data(t_client *client)
@@ -90,44 +92,56 @@ static void	network_client_data(t_client *client)
 	}
 }
 
-static void	network_bind_fds(void)
-{
-	t_client	*client;
-
-	FD_ZERO(&(g_zappy.network.read_fds));
-	FD_SET(g_zappy.network.fd, &(g_zappy.network.read_fds));
-
-	client = g_zappy.clients;
-	while (client)
-	{
-		FD_SET(client->fd, &(g_zappy.network.read_fds));
-		client = client->next;
-	}
-}
-
-void		network_select(void)
+static void	network_select(double remaining_time)
 {
 	t_client				*client;
 	static struct timeval	timeout;
+	fd_set					read_fds;
 
-	network_bind_fds();
+	read_fds = g_zappy.network.read_fds;
 
 	timeout.tv_sec = 0;
-	timeout.tv_usec = SELECT_TIMEOUT;
+	timeout.tv_usec = remaining_time * 1000000;
 
-	if (select(FD_SETSIZE, &(g_zappy.network.read_fds), NULL, NULL, &timeout) < 0)
+	if (select(FD_SETSIZE, &read_fds, NULL, NULL, &timeout) < 0)
 		die("Error: select()");
 
-	if (FD_ISSET(g_zappy.network.fd, &(g_zappy.network.read_fds)))
+	if (FD_ISSET(g_zappy.network.fd, &read_fds))
 		network_client_connect();
 	else
 	{
 		client = g_zappy.clients;
 		while (client)
 		{
-			if (FD_ISSET(client->fd, &(g_zappy.network.read_fds)))
+			if (FD_ISSET(client->fd, &read_fds))
 				network_client_data(client);
 			client = client->next;
 		}
 	}
+}
+
+void		network_receive(void)
+{
+	double	timeout;
+
+	while (1)
+	{
+		timeout = g_zappy.time.next_cycle - get_time();
+
+		if (timeout <= 0)
+			break ;
+
+		network_select(timeout);
+	}
+}
+
+void		network_send(t_client *client, char *str)
+{
+	char	*output;
+
+	output = ft_strnew(ft_strlen(str) + 1);
+	ft_strcat(output, str);
+	ft_strcat(output, "\n");
+	send(client->fd, output, ft_strlen(output), 0);
+	free(output);
 }

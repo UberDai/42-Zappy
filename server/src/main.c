@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/19 23:24:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/22 00:26:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,16 @@ void		usage(void)
 		"jeu va vite)");
 }
 
-static void	run_sleep(void)
-{
-	static short	alert;
-	static double	old_time;
-	double			current_time;
-	double			sleeping_duration;
-
-	if (old_time == 0)
-		old_time = get_time();
-	current_time = get_time();
-	sleeping_duration = g_zappy.time.clock - (current_time - old_time);
-	if (sleeping_duration > 0)
-		usleep(sleeping_duration * 1000000);
-	else if (!alert)
-	{
-		alert = 1;
-		ft_putendl("Warning: the clock is too fast ; the game may lag.");
-	}
-	old_time = get_time();
-}
-
 static void	run(void)
 {
 	network_bind();
+	g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 	while (1)
 	{
 		printf("[ Cycle %u ]\n", g_zappy.time.cycle_count);
-		network_select();
-		run_sleep();
+		network_receive();
+		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
+		// Code
 		g_zappy.time.cycle_count++;
 	}
 }

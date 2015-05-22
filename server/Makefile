@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/21 01:54:57 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/22 02:14:00 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC_FILES	=	main.c \
 				client/actions.c \
 				client/promote.c \
 				client/move.c \
+				client/team.c \
 				client/queue.c \
 				command/parse.c \
 				command/commands.c
@@ -38,7 +39,7 @@ CC			=	clang
 CC_FLAGS	=	-Wall -Werror -Wextra -g3
 CC_LIBS		=	-lft -Llibft
 
-all: libft  $(BIN_NAME)
+all: libft $(BIN_NAME)
 	@echo "\033[32m•\033[0m $(NAME) is ready."
 
 $(BIN_NAME): $(OBJ)
@@ -51,7 +52,6 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 clean:
 	make -C libft clean
-	# make -C glfw clean
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
