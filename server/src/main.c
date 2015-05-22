@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/22 00:26:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/22 03:14:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static void	run(void)
 		g_zappy.time.cycle_count++;
 	}
 }
+
+#include "dlist.h"
 
 int		main(int ac, char **av)
 {
