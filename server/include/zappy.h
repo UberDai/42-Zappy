@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 03:01:31 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 06:25:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 # define ITEM_PHIRAS		5
 # define ITEM_THYSTAME		6
 
-# define MAX_CLIENTS		10
 # define SELECT_TIMEOUT		0
 
 # define TURN_LEFT			-1
@@ -59,7 +58,8 @@ typedef struct				s_team
 typedef struct				s_queue
 {
 	short					set;
-	char					**command;
+	char					**av;
+	short					(*func)(t_client *, t_uint, char **);
 	t_uint					delay;
 }							t_queue;
 
@@ -122,6 +122,7 @@ typedef struct				s_zappy
 	t_uint					team_count;
 	t_team					*teams;
 	t_uint					client_count;
+	t_uint					client_max;
 	t_client				*clients;
 }							t_zappy;
 
@@ -145,7 +146,7 @@ t_client					*client_create(t_tile *position);
 void						client_delete(t_client *client_to_delete);
 short						client_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);
-short						client_queue_push(t_client *client, char **command, t_uint delay);
+short						client_queue_push(t_client *client, t_command *command, char **av);
 void						client_queue_shift(t_client *client);
 void						client_queue_free(t_client *client);
 void						client_set_team(t_client *client, const char *team_name);

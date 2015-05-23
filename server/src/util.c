@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/21 02:40:42 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 06:26:07 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,10 @@ double	get_time(void)
 	double			ret;
 
 	gettimeofday(&tod, NULL);
-
 	if (beginning == 0)
 		beginning = tod.tv_sec;
-
 	ret = (double)(tod.tv_sec - beginning);
 	ret += (double)tod.tv_usec / 1000000;
-
 	return (ret);
 }
 
@@ -50,9 +47,9 @@ void	print_client_queue(t_client *client)
 
 	printf("Queue #%u:\n", client->id);
 	i = 0;
-	while (client->queue[i].set)
+	while (i < CLIENT_QUEUE_MAX && client->queue[i].set)
 	{
-		printf("  [%u] %s (%u)\n", i, client->queue[i].command[0], client->queue[i].delay);
+		printf("  [%u] %s (%u)\n", i, client->queue[i].av[0], client->queue[i].delay);
 		i++;
 	}
 	printf("\n");

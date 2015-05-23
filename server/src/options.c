@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 02:52:58 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 04:52:25 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ static int	option_height(t_uint ac, char **av, t_uint i)
 static int	option_teams(t_uint ac, char **av, t_uint i)
 {
 	int		input;
-	t_uint	j;
 
 	i++;
 	if (i >= ac)
@@ -91,13 +90,11 @@ static int	option_teams(t_uint ac, char **av, t_uint i)
 		die("Bad team naming");
 
 	i++;
-	j = 0;
-
-	while (i < ac && j < g_zappy.team_count)
+	while (i < ac && input > 0)
 	{
 		team_create(av[i]);
 		i++;
-		j++;
+		input--;
 	}
 
 	return (i);
@@ -113,7 +110,7 @@ static int	option_clients(t_uint ac, char **av, t_uint i)
 	input = ft_atoi(av[i]);
 	if (input < 0)
 		die("-c must be a positive number.");
-	g_zappy.client_count = input;
+	g_zappy.client_max = input;
 	return (i + 1);
 }
 
@@ -131,16 +128,6 @@ static int	option_time(t_uint ac, char **av, t_uint i)
 	return (i + 1);
 }
 
-t_option_fun	g_options[OPTION_COUNT] = {
-	{ "-h", option_help },
-	{ "-p", option_port },
-	{ "-x", option_width },
-	{ "-y", option_height },
-	{ "-n", option_teams },
-	{ "-c", option_clients },
-	{ "-t", option_time }
-};
-
 void	options_valid(void)
 {
 	if (g_zappy.time.cycle_duration == 0)
@@ -149,7 +136,20 @@ void	options_valid(void)
 		die("-x must me equal or greater to 1.");
 	else if (g_zappy.height == 0)
 		die("-y must me equal or greater to 1.");
+	else if (g_zappy.client_max == 0)
+		die("-c must me equal or greater to 1.");
 }
+
+t_option_fun	g_options[] = {
+	{ "-h", option_help },
+	{ "-p", option_port },
+	{ "-x", option_width },
+	{ "-y", option_height },
+	{ "-n", option_teams },
+	{ "-c", option_clients },
+	{ "-t", option_time },
+	{ NULL, NULL }
+};
 
 void	options_parse(t_uint ac, char **av)
 {
@@ -162,7 +162,7 @@ void	options_parse(t_uint ac, char **av)
 	{
 		j = 0;
 		option_exists = 0;
-		while (j < OPTION_COUNT)
+		while (g_options[j].name)
 		{
 			if (!ft_strcmp(g_options[j].name, av[i]))
 			{
