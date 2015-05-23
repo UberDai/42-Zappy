@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/22 02:34:19 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 02:52:58 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,6 @@ static int	option_teams(t_uint ac, char **av, t_uint i)
 	int		input;
 	t_uint	j;
 
-	return 1;
-	// TODO
-
 	i++;
 	if (i >= ac)
 		die("-n option need a value.");
@@ -93,13 +90,12 @@ static int	option_teams(t_uint ac, char **av, t_uint i)
 	if (i + g_zappy.team_count >= ac)
 		die("Bad team naming");
 
-	g_zappy.teams = malloc(sizeof(char *) * g_zappy.team_count);
 	i++;
 	j = 0;
 
 	while (i < ac && j < g_zappy.team_count)
 	{
-		// g_zappy.teams[j] = ft_strdup(av[i]);
+		team_create(av[i]);
 		i++;
 		j++;
 	}

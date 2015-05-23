@@ -6,11 +6,12 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 02:14:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 03:01:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include "dlist.h"
 #include <libft.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -43,8 +44,6 @@ static void	run(void)
 		g_zappy.time.cycle_count++;
 	}
 }
-
-#include "dlist.h"
 
 int		main(int ac, char **av)
 {

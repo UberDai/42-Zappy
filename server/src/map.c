@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/19 22:16:07 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 03:05:17 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	tile_update_client_list(t_tile *tile)
 				tile->clients[i] = client;
 				i++;
 			}
-			client = client->next;
+			DLIST_FORWARD(t_client*, client);
 		}
 	}
 }

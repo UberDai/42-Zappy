@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/22 02:23:28 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 03:01:31 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include <sys/select.h>
+# include "dlist.h"
 
 # define FOOD_DURATION		126
 # define CLIENT_BASE_LIFE	10
@@ -51,8 +52,8 @@ typedef struct s_client		t_client;
 
 typedef struct				s_team
 {
+	t_dlist					dlist;
 	char					*name;
-	struct s_team			*next;
 }							t_team;
 
 typedef struct				s_queue
@@ -75,6 +76,7 @@ typedef struct				s_tile
 
 struct						s_client
 {
+	t_dlist					dlist;
 	t_uint					id;
 	int						fd;
 	t_ushort				level;
@@ -86,7 +88,6 @@ struct						s_client
 	t_uint					hunger;
 	t_queue					queue[CLIENT_QUEUE_MAX];
 	short					authenticated;
-	struct s_client			*next;
 };
 
 typedef struct				s_time

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/22 02:02:51 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 03:05:24 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ static void	network_select(double remaining_time)
 		{
 			if (FD_ISSET(client->fd, &read_fds))
 				network_client_data(client);
-			client = client->next;
+			DLIST_FORWARD(t_client*, client);
 		}
 	}
 }
