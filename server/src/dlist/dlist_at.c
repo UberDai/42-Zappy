@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dlist_end.c                                        :+:      :+:    :+:   */
+/*   dlist_at.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/22 02:44:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/22 02:46:29 by amaurer          ###   ########.fr       */
+/*   Created: 2015/05/23 00:29:56 by amaurer           #+#    #+#             */
+/*   Updated: 2015/05/23 00:32:44 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dlist.h"
 
-t_dlist	*dlist_end(t_dlist *node)
+t_dlist	*dlist_at(t_dlist *node, size_t index)
 {
-	while (node->next)
+	node = dlist_first(node);
+	while (node && index-- > 0)
 		node = node->next;
-	return (node);
+	if (index == 0)
+		return (node);
+	return (NULL);
 }

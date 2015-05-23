@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/22 03:10:24 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/22 03:14:51 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/23 00:33:44 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_dlist	*dlist_remove(t_dlist *node)
 		prev->next = next;
 
 	if (next)
-		return (dlist_start(next));
+		return (dlist_first(next));
 	else if (prev)
-		return (dlist_start(prev));
+		return (dlist_first(prev));
 	return (NULL);
 }

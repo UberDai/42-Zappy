@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/22 03:01:39 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/23 00:34:57 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,14 +32,19 @@ SRC_FILES	=	main.c \
 				command/parse.c \
 				command/commands.c \
 \
-				dlist/dlist_end.c \
-				dlist/dlist_start.c \
+				dlist/dlist_last.c \
+				dlist/dlist_first.c \
 				dlist/dlist_pop.c \
 				dlist/dlist_shift.c \
 				dlist/dlist_remove.c \
 				dlist/dlist_create.c \
 				dlist/dlist_append.c \
 				dlist/dlist_prepend.c \
+				dlist/dlist_at.c \
+				dlist/dlist_move_right.c \
+				dlist/dlist_move_left.c \
+				dlist/dlist_swap.c \
+				dlist/dlist_replace.c \
 				dlist/dlist_length.c \
 				dlist/dlist_index.c
 

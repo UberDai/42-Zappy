@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dlist_index.c                                      :+:      :+:    :+:   */
+/*   dlist_first.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/22 02:48:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 00:33:32 by amaurer          ###   ########.fr       */
+/*   Created: 2015/05/22 02:44:58 by amaurer           #+#    #+#             */
+/*   Updated: 2015/05/23 00:33:21 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dlist.h"
 
-size_t	dlist_index(t_dlist *node)
+t_dlist	*dlist_first(t_dlist *node)
 {
-	size_t	i;
-	t_dlist	*iter;
-
-	i = 0;
-	iter = dlist_first(node);
-	while (iter)
-	{
-		if (iter == node)
-			return (i);
-		iter = iter->next;
-		i++;
-	}
-	return (DLIST_NOINDEX);
+	while (node->prev)
+		node = node->prev;
+	return (node);
 }
