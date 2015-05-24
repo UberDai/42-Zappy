@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 03:05:24 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/25 01:56:22 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,21 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <sys/select.h>
+#include <sys/socket.h>
 
 #define NETWORK_BUFFER_SIZE	500
 
 void		network_bind()
 {
 	struct sockaddr_in	server;
+	int					yes;
 
 	if ((g_zappy.network.fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
 		die("Could not create the network socket.");
+
+	yes = 1;
+	if (setsockopt(g_zappy.network.fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) == -1)
+		die("The port is still in use.");
 
 	memset(&server, 0, sizeof(server));
 	server.sin_family = AF_INET;
@@ -62,12 +68,25 @@ static void	network_client_connect(void)
 		die("Client connection error.");
 
 	FD_SET(client->fd, &(g_zappy.network.read_fds));
-	ft_putendl("Client created.");
+	printf("Client #%u created.\n", client->id);
 
 	network_send(client, "BIENVENUE");
 }
 
-static void	network_client_data(t_client *client)
+t_client *	network_client_disconnect(t_client *client)
+{
+	t_client	*prev_client;
+
+	prev_client = (t_client*)DLIST_NEXT(client);
+	network_send(client, "GTFO");
+	printf("Client #%u disconnected.\n", client->id);
+	close(client->fd);
+	FD_CLR(client->fd, &(g_zappy.network.read_fds));
+	client_delete(client);
+	return (prev_client);
+}
+
+static t_client *	network_client_data(t_client *client)
 {
 	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
 	char		*input;
@@ -78,18 +97,14 @@ static void	network_client_data(t_client *client)
 	if (ret == -1)
 		die("Could not read the client.");
 	else if (ret == 0)
-	{
-		printf("Client #%u disconnected.\n", client->id);
-		close(client->fd);
-		FD_CLR(client->fd, &(g_zappy.network.read_fds));
-		client_delete(client);
-	}
+		return network_client_disconnect(client);
 	else
 	{
-		input = ft_strsub(buffer, 0, ft_strlen(buffer) - 1);
-		command_parse(client, input);
+		input = ft_strsub(buffer, 0, strlen(buffer) - 1);
+		client = command_parse(client, input);
 		free(input);
 	}
+	return (client);
 }
 
 static void	network_select(double remaining_time)
@@ -114,8 +129,9 @@ static void	network_select(double remaining_time)
 		while (client)
 		{
 			if (FD_ISSET(client->fd, &read_fds))
-				network_client_data(client);
-			DLIST_FORWARD(t_client*, client);
+				client = network_client_data(client);
+			if (client != NULL)
+				DLIST_FORWARD(t_client*, client);
 		}
 	}
 }
@@ -139,9 +155,26 @@ void		network_send(t_client *client, char *str)
 {
 	char	*output;
 
-	output = ft_strnew(ft_strlen(str) + 1);
-	ft_strcat(output, str);
-	ft_strcat(output, "\n");
-	send(client->fd, output, ft_strlen(output), 0);
+	output = ft_strnew(strlen(str) + 1);
+	strcat(output, str);
+	strcat(output, "\n");
+	send(client->fd, output, strlen(output), 0);
 	free(output);
+}
+
+void	network_disconnect(void)
+{
+	t_client	*client;
+
+	printf("\n");
+	client = g_zappy.clients;
+	while (client)
+	{
+		client = network_client_disconnect(client);
+		if (client != NULL)
+			DLIST_FORWARD(t_client*, client);
+	}
+	FD_ZERO(&(g_zappy.network.read_fds));
+	close(g_zappy.network.fd);
+	printf("Server disconnected.\n");
 }

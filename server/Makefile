@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/23 00:34:57 by amaurer          ###   ########.fr        #
+#    Updated: 2015/05/25 01:41:17 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC_FILES	=	main.c \
 				util.c \
 				options.c \
 				network.c \
+				signal.c \
 				map.c \
 				client/client.c \
 				client/actions.c \

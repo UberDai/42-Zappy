@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 04:52:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/25 00:59:47 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ static int	option_clients(t_uint ac, char **av, t_uint i)
 	input = ft_atoi(av[i]);
 	if (input < 0)
 		die("-c must be a positive number.");
-	g_zappy.client_max = input;
+	g_zappy.max_clients = input;
 	return (i + 1);
 }
 
@@ -136,8 +136,21 @@ void	options_valid(void)
 		die("-x must me equal or greater to 1.");
 	else if (g_zappy.height == 0)
 		die("-y must me equal or greater to 1.");
-	else if (g_zappy.client_max == 0)
+	else if (g_zappy.max_clients == 0)
 		die("-c must me equal or greater to 1.");
+	g_zappy.max_clients = 0;
+}
+
+static void	set_team_max_clients(void)
+{
+	t_team	*team;
+
+	team = g_zappy.teams;
+	while (team)
+	{
+		team->max_clients = g_zappy.max_clients;
+		DLIST_FORWARD(t_team*, team);
+	}
 }
 
 t_option_fun	g_options[] = {
@@ -176,4 +189,5 @@ void	options_parse(t_uint ac, char **av)
 			die("Unknown option");
 	}
 	options_valid();
+	set_team_max_clients();
 }

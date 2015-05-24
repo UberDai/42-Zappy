@@ -6,11 +6,12 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 03:13:07 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/25 00:58:16 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include "dlist.h"
 #include <libft.h>
 #include <stdlib.h>
 
@@ -42,6 +43,7 @@ void	client_delete(t_client *client_to_delete)
 {
 	g_zappy.clients = DLIST(remove, t_client*, client_to_delete);
 	client_to_delete->position->client_count--;
+	DLIST(remove, void, client_to_delete);
 	client_queue_free(client_to_delete);
 	free(client_to_delete);
 	g_zappy.client_count--;

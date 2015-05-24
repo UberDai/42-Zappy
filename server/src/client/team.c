@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/22 02:05:55 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 03:13:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/25 00:53:17 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,20 @@ t_team	*team_create(const char *team_name)
 	g_zappy.team_count++;
 
 	return (team);
+}
+
+size_t	team_clients_count(t_team *team)
+{
+	t_client	*client;
+	size_t		i;
+
+	i = 0;
+	client = g_zappy.clients;
+	while (client)
+	{
+		if (client->team == team)
+			i++;
+		DLIST_FORWARD(t_client*, client);
+	}
+	return (i);
 }

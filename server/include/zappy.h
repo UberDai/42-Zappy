@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 06:25:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/25 01:46:46 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct				s_team
 {
 	t_dlist					dlist;
 	char					*name;
+	t_uint					max_clients;
 }							t_team;
 
 typedef struct				s_queue
@@ -122,7 +123,7 @@ typedef struct				s_zappy
 	t_uint					team_count;
 	t_team					*teams;
 	t_uint					client_count;
-	t_uint					client_max;
+	t_uint					max_clients;
 	t_client				*clients;
 }							t_zappy;
 
@@ -153,14 +154,19 @@ void						client_set_team(t_client *client, const char *team_name);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);
+size_t						team_clients_count(t_team *team);
 
 void						network_bind();
 void						network_receive(void);
 void						network_send(t_client *client, char *str);
+t_client 					*network_client_disconnect(t_client *client);
+void						network_disconnect(void);
 
-void						command_parse(t_client *client, char *input);
+t_client					*command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);
+
+void						signal_bind(void);
 
 #endif
