@@ -6,15 +6,13 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/25 00:59:47 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/27 00:23:53 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 #include <libft.h>
 #include <stdlib.h>
-
-#define OPTION_COUNT	7
 
 typedef struct	s_option_fun
 {
@@ -138,7 +136,6 @@ void	options_valid(void)
 		die("-y must me equal or greater to 1.");
 	else if (g_zappy.max_clients == 0)
 		die("-c must me equal or greater to 1.");
-	g_zappy.max_clients = 0;
 }
 
 static void	set_team_max_clients(void)

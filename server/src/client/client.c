@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/25 00:58:16 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/27 00:59:34 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-t_client	*client_create(t_tile *position)
+t_client	*client_create()
 {
 	static t_uint	id;
 	t_client		*client;
@@ -29,12 +29,12 @@ t_client	*client_create(t_tile *position)
 	client->id = id++;
 	client->life = CLIENT_BASE_LIFE;
 	client->authenticated = 0;
-	client_move_to(client, position);
+	client_move_to(client, g_zappy.map[0][0]);
 	clients = g_zappy.clients;
 	if (clients == NULL)
 		g_zappy.clients = client;
 	else
-		DLIST(append, void, g_zappy.clients, (t_dlist*)clients);
+		DLIST(append, void, g_zappy.clients, (t_dlist*)client);
 	g_zappy.client_count++;
 	return (client);
 }

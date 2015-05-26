@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/25 01:46:46 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/27 00:46:03 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ void						print_client_queue(t_client *client);
 double						get_time(void);
 
 short						client_eat(t_client *client);
-t_client					*client_create(t_tile *position);
+t_client					*client_create(void);
 void						client_delete(t_client *client_to_delete);
 short						client_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);

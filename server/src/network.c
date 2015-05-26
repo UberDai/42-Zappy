@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/25 01:56:22 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/27 01:05:25 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	network_client_connect(void)
 
 	sin_size = sizeof(struct sockaddr_in);
 	bzero(&sin, sin_size);
-	client = client_create(g_zappy.map[1][1]);
+	client = client_create();
 	client->fd = accept(g_zappy.network.fd, (struct sockaddr *)&sin, &sin_size);
 
 	if (client->fd == -1)
