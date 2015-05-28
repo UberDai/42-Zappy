@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/27 00:46:03 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/28 23:49:18 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ struct						s_client
 	t_dlist					dlist;
 	t_uint					id;
 	int						fd;
+	short					gfx;
 	t_ushort				level;
 	t_uint					life;
 	t_team					*team;
@@ -125,6 +126,7 @@ typedef struct				s_zappy
 	t_uint					client_count;
 	t_uint					max_clients;
 	t_client				*clients;
+	t_client				*gfx_clients;
 }							t_zappy;
 
 t_zappy						g_zappy;

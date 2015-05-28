@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/25 01:41:28 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/28 23:27:09 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static void	run(void)
 		printf("[ Cycle %u ]\n", g_zappy.time.cycle_count);
 		network_receive();
 		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
+		printf("%lu %lu\n", dlist_length((t_dlist*)g_zappy.clients), dlist_length((t_dlist*)g_zappy.gfx_clients));
 		// Code
 		g_zappy.time.cycle_count++;
 	}

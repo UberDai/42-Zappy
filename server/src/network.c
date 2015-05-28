@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/27 01:05:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 00:16:06 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ static t_client *	network_client_data(t_client *client)
 	char		*input;
 	int			ret;
 
+	printf("checking #%u\n", client->id);
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
 
 	if (ret == -1)
@@ -107,9 +108,19 @@ static t_client *	network_client_data(t_client *client)
 	return (client);
 }
 
+static void	network_check_clients(fd_set *read_fds, t_client *clients)
+{
+	while (clients)
+	{
+		if (FD_ISSET(clients->fd, read_fds))
+			clients = network_client_data(clients);
+		if (clients != NULL)
+			DLIST_FORWARD(t_client*, clients);
+	}
+}
+
 static void	network_select(double remaining_time)
 {
-	t_client				*client;
 	static struct timeval	timeout;
 	fd_set					read_fds;
 
@@ -125,14 +136,8 @@ static void	network_select(double remaining_time)
 		network_client_connect();
 	else
 	{
-		client = g_zappy.clients;
-		while (client)
-		{
-			if (FD_ISSET(client->fd, &read_fds))
-				client = network_client_data(client);
-			if (client != NULL)
-				DLIST_FORWARD(t_client*, client);
-		}
+		network_check_clients(&read_fds, g_zappy.gfx_clients);
+		network_check_clients(&read_fds, g_zappy.clients);
 	}
 }
 

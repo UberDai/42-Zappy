@@ -6,13 +6,13 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/27 00:24:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 00:07:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include "dlist.h"
 #include <libft.h>
-#include <stdio.h>
 
 t_command	g_commands[] = {
 	{ "move", 7, command_move },
@@ -21,12 +21,35 @@ t_command	g_commands[] = {
 	{ NULL, 0, NULL }
 };
 
+t_client		*authenticate_gfx_client(t_client *client)
+{
+	t_client		*client2;
+
+	client2 = (t_client*)DLIST_PREV(client);
+	if (client2 == NULL)
+		g_zappy.clients = NULL;
+
+	DLIST(remove, void, client);
+
+	if (g_zappy.gfx_clients == NULL)
+		g_zappy.gfx_clients = client;
+	else
+		DLIST(append, void, g_zappy.gfx_clients, (t_dlist*)client);
+
+	client->authenticated = 1;
+	client->gfx = 1;
+
+	return (client2);
+}
+
 static t_client	*authenticate(t_client *client, char *input)
 {
 	t_team	*team;
 	char	str[20];
 	size_t	client_count;
 
+	if (strcmp(input, "g") == 0)
+		return authenticate_gfx_client(client);
 	team = team_get(input);
 	if (team == NULL)
 	{
