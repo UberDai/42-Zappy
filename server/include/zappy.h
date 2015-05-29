@@ -133,7 +133,7 @@ typedef struct				s_zappy
 	t_uint					max_clients;
 	t_client				*clients;
 	t_client				*gfx_clients;
-	t_client				*unauthenticated
+	t_client				*anonymous_clients;
 	short					paused;
 }							t_zappy;
 

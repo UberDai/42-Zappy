@@ -86,13 +86,14 @@ t_client *	network_client_disconnect(t_client *client)
 	return (prev_client);
 }
 
-static t_client *	network_client_data(t_client *client)
+static t_client *	network_client_data(t_client *client, fd_set *fds)
 {
 	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
 	char		*input;
 	int			ret;
 
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
+	FD_CLR(client->fd, fds);
 
 	if (ret == -1)
 		die("Could not read the client.");
@@ -107,12 +108,12 @@ static t_client *	network_client_data(t_client *client)
 	return (client);
 }
 
-static void	network_check_clients(fd_set *read_fds, t_client *clients)
+static void	network_check_clients(fd_set *read_fds, t_client *clients, fd_set *fds)
 {
 	while (clients)
 	{
 		if (FD_ISSET(clients->fd, read_fds))
-			clients = network_client_data(clients);
+			clients = network_client_data(clients, fds);
 		if (clients != NULL)
 			DLIST_FORWARD(t_client*, clients);
 	}
@@ -135,8 +136,9 @@ static void	network_select(double remaining_time)
 		network_client_connect();
 	else
 	{
-		network_check_clients(&read_fds, g_zappy.gfx_clients);
-		network_check_clients(&read_fds, g_zappy.clients);
+		network_check_clients(&read_fds, g_zappy.anonymous_clients, &read_fds);
+		network_check_clients(&read_fds, g_zappy.gfx_clients, &read_fds);
+		network_check_clients(&read_fds, g_zappy.clients, &read_fds);
 	}
 }
 

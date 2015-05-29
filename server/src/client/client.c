@@ -31,11 +31,11 @@ t_client	*client_create()
 	client->authenticated = 0;
 	client->orientation = ORIENT_NORTH;
 	client_move_to(client, g_zappy.map[0][0]);
-	clients = g_zappy.clients;
+	clients = g_zappy.anonymous_clients;
 	if (clients == NULL)
-		g_zappy.clients = client;
+		g_zappy.anonymous_clients = client;
 	else
-		DLIST(append, void, g_zappy.clients, (t_dlist*)client);
+		DLIST(append, void, g_zappy.anonymous_clients, (t_dlist*)client);
 	g_zappy.client_count++;
 	return (client);
 }

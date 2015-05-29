@@ -70,5 +70,10 @@ void	zappy_run(void)
 			clients_play();
 			g_zappy.time.cycle_count++;
 		}
+		printf("Clients A: %lu  C: %lu  G: %lu\n",
+			dlist_length((t_dlist*)g_zappy.anonymous_clients),
+			dlist_length((t_dlist*)g_zappy.clients),
+			dlist_length((t_dlist*)g_zappy.gfx_clients)
+		);
 	}
 }

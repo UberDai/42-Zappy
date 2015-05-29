@@ -23,7 +23,17 @@ t_command	g_commands[] = {
 	{ NULL, 0, NULL }
 };
 
-t_client		*authenticate_gfx_client(t_client *client)
+static void			move_client_to_list(t_client *client, t_client **list)
+{
+	g_zappy.anonymous_clients = DLIST(remove, t_client *, client);
+
+	if (*list == NULL)
+		*list = client;
+	else
+		DLIST(append, void, (*list), (t_dlist*)client);
+}
+
+static t_client		*authenticate_gfx_client(t_client *client)
 {
 	t_client	*client2;
 	char		str[20];
@@ -32,12 +42,7 @@ t_client		*authenticate_gfx_client(t_client *client)
 	if (client2 == NULL)
 		g_zappy.clients = NULL;
 
-	DLIST(remove, void, client);
-
-	if (g_zappy.gfx_clients == NULL)
-		g_zappy.gfx_clients = client;
-	else
-		DLIST(append, void, g_zappy.gfx_clients, (t_dlist*)client);
+	move_client_to_list(client, &(g_zappy.gfx_clients));
 
 	client->authenticated = 1;
 	client->gfx = 1;
@@ -59,6 +64,7 @@ static t_client	*authenticate(t_client *client, char *input)
 
 	if (strcmp(input, "g") == 0)
 		return authenticate_gfx_client(client);
+
 	team = team_get(input);
 	if (team == NULL)
 	{
@@ -71,8 +77,12 @@ static t_client	*authenticate(t_client *client, char *input)
 		network_send(client, "clubs full buddy, gtfo", 0);
 		return network_client_disconnect(client);
 	}
+
 	client->team = team;
 	client->authenticated = 1;
+
+	move_client_to_list(client, &(g_zappy.clients));
+
 	client_set_team(client, input);
 	snprintf(str, 20, "%lu", team->max_clients - client_count);
 	network_send(client, str, 0);
