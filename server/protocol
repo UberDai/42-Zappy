@@ -1,0 +1,21 @@
+x y
+t
+
+// item
++ x y R
+- x y R
+
+// move
+> ID
+
+// turn
+o ID
+
+// create
+* ID N x y O
+
+// pickup
+^ ID R
+
+// drop
+v  ID r

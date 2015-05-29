@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:44:26 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/24 21:24:22 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 19:26:37 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ short	client_queue_push(t_client *client, t_command *command, char **av)
 		return (0);
 	memcpy(client->queue + i, command, sizeof(t_command));
 	client->queue[i].set = 1;
+	client->queue[i].ac = ft_splits_count(av);
 	client->queue[i].av = av;
 	return (1);
 }

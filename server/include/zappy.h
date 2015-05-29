@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 17:36:36 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 20:43:47 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef unsigned short		t_ushort;
 
 typedef enum 				e_orient
 {
-	ORIENT_NORTH,
+	ORIENT_NORTH = 1,
 	ORIENT_EAT,
 	ORIENT_SOUTH,
 	ORIENT_WEST
@@ -63,6 +63,7 @@ typedef struct				s_team
 typedef struct				s_queue
 {
 	short					set;
+	size_t					ac;
 	char					**av;
 	short					(*func)(t_client *, t_uint, char **);
 	t_uint					delay;
@@ -132,6 +133,7 @@ typedef struct				s_zappy
 	t_uint					max_clients;
 	t_client				*clients;
 	t_client				*gfx_clients;
+	t_client				*unauthenticated
 	short					paused;
 }							t_zappy;
 
@@ -182,5 +184,9 @@ void						signal_bind(void);
 void						zappy_run(void);
 void						zappy_pause(t_client *client);
 void						zappy_resume(t_client *client);
+
+void						gfx_client_connect(t_client *client);
+void						gfx_tile_add(t_tile *tile, int item);
+void						gfx_tile_remove(t_tile *tile, int item);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 17:31:06 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 19:10:21 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ static t_client	*authenticate(t_client *client, char *input)
 	network_send(client, str, 0);
 	snprintf(str, 20, "%u %u", g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
+
+	gfx_client_connect(client);
+
 	return (client);
 }
 
