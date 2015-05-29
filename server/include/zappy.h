@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 16:57:54 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:36:36 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@
 
 # define TURN_LEFT			-1
 # define TURN_RIGHT			1
+
+# define NET_SEND_ALL		1
+# define NET_SEND_CLIENT	2
+# define NET_SEND_GFX		4
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
@@ -162,7 +166,7 @@ size_t						team_clients_count(t_team *team);
 
 void						network_bind();
 void						network_receive(void);
-void						network_send(t_client *client, char *str);
+void						network_send(t_client *client, char *str, int options);
 t_client 					*network_client_disconnect(t_client *client);
 void						network_disconnect(void);
 
@@ -176,7 +180,7 @@ short						command_resume(t_client *client, t_uint argc, char **argv);
 void						signal_bind(void);
 
 void						zappy_run(void);
-void						zappy_pause(void);
-void						zappy_resume(void);
+void						zappy_pause(t_client *client);
+void						zappy_resume(t_client *client);
 
 #endif

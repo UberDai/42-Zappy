@@ -6,22 +6,22 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 17:10:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:43:25 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 
-void	zappy_pause(void)
+void	zappy_pause(t_client *client)
 {
 	g_zappy.paused = 1;
-	network_send(NULL, "pause");
+	network_send(client, "pause", NET_SEND_ALL);
 }
 
-void	zappy_resume(void)
+void	zappy_resume(t_client *client)
 {
 	g_zappy.paused = 0;
-	network_send(NULL, "resume");
+	network_send(client, "resume", NET_SEND_ALL);
 }
 
 void	zappy_run(void)

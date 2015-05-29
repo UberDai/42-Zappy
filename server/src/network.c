@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 17:16:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:46:04 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	network_client_connect(void)
 	FD_SET(client->fd, &(g_zappy.network.read_fds));
 	printf("Client #%u created.\n", client->id);
 
-	network_send(client, "BIENVENUE");
+	network_send(client, "BIENVENUE", 0);
 }
 
 t_client *	network_client_disconnect(t_client *client)
@@ -78,7 +78,7 @@ t_client *	network_client_disconnect(t_client *client)
 	t_client	*prev_client;
 
 	prev_client = (t_client*)DLIST_NEXT(client);
-	network_send(client, "GTFO");
+	network_send(client, "GTFO", 0);
 	printf("Client #%u disconnected.\n", client->id);
 	close(client->fd);
 	FD_CLR(client->fd, &(g_zappy.network.read_fds));
@@ -155,24 +155,32 @@ void		network_receive(void)
 	}
 }
 
-void		network_send(t_client *client, char *str)
+static void	network_send_to_client(t_client *emitter, t_client *clients, char *str)
 {
-	char	*output;
+	while (clients)
+	{
+		if (emitter == NULL || clients != emitter)
+			send(clients->fd, str, strlen(str), 0);
+		clients = clients->next;
+	}
+}
+
+void		network_send(t_client *client, char *str, int options)
+{
+	char		*output;
 
 	output = ft_strnew(strlen(str) + 1);
 	strcat(output, str);
 	strcat(output, "\n");
-	if (client != NULL)
-		send(client->fd, output, strlen(output), 0);
-	else
+	if (options != 0)
 	{
-		client = g_zappy.clients;
-		while (client)
-		{
-			send(client->fd, output, strlen(output), 0);
-			client = client->next;
-		}
+		if (options & (NET_SEND_CLIENT | NET_SEND_ALL))
+			network_send_to_client(client, g_zappy.clients, output);
+		if (options & (NET_SEND_GFX | NET_SEND_ALL))
+			network_send_to_client(client, g_zappy.gfx_clients, output);
 	}
+	else
+		send(client->fd, output, strlen(output), 0);
 	free(output);
 }
 
@@ -182,6 +190,13 @@ void	network_disconnect(void)
 
 	printf("\n");
 	client = g_zappy.clients;
+	while (client)
+	{
+		client = network_client_disconnect(client);
+		if (client != NULL)
+			DLIST_FORWARD(t_client*, client);
+	}
+	client = g_zappy.gfx_clients;
 	while (client)
 	{
 		client = network_client_disconnect(client);
