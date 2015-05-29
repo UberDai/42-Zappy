@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-05-29 20:33:40
+-- :ddddddddddhyyddddddddddd: Modified: 2015-05-29 22:50:51
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -15,6 +15,7 @@
 
 socket = require 'socket'
 inspect = require 'inspect'
+Quadlist = require 'Quadlist'
 
 function love.readMap()
 	local t = {}
@@ -78,8 +79,42 @@ function love.newMap(img, size)
 	return Map
 end
 
+function love.newPlayer(team)
+	local player = {}
+	player.listQuads = Quadlist:new({
+		image = 'assets/test1.png',
+		imagewidth = 80,
+		imageheight = 104
+	})
+	player.delay = 0
+	player.maxdelay = 0.3
+	player.quad = 1
+	player.quadmax = 4
+	player.update = function (self, dt)
+		-- print(dt, inspect(self))
+		self.delay = self.delay - dt
+		if self.delay <= 0 then
+			self.quad = self.quad + 1
+			self.delay = self.maxdelay
+			if self.quad >= self.quadmax then
+				self.quad = 1
+				if love.math.random(0, 3) ~= 3 then
+					self.quadmax = 4
+				else
+					self.quadmax = 8
+				end
+			end
+		end
+	end
+	player.draw = function (self, offx, offy)
+		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], offx * scale, offy * scale, 0, scale, scale)
+	end
+	return player
+end
+
 function love.load()
-	size = 50
+	love.math.setRandomSeed(love.timer.getTime())
+	size = 100
 	fontsize = 15
 	tcp = socket.connect('localhost', 4242)
 	msg = tcp:receive('*l')
@@ -100,6 +135,9 @@ function love.load()
 	margin = 0
 	offx, offy = love.graphics.getWidth() / 2 - size / 2, 0
 	scale = 1
+
+	Players = {}
+	table.insert(Players, love.newPlayer('team 1'))
 end
 
 function love.keypressed(key)
@@ -107,6 +145,9 @@ function love.keypressed(key)
 end
 
 function love.update(dt)
+	for i,v in ipairs(Players) do
+		v:update(dt)
+	end
 	if love.keyboard.isDown('rshift') and love.keyboard.isDown('[') then
 		margin = margin + dt
 	end
@@ -138,5 +179,8 @@ function love.draw()
 		local x = offx + -size / (2 + margin) * v.x + v.y * size / (2 + margin)
 		local y = offy + size / (4 + margin) * (v.x + v.y)
 		love.graphics.draw(v.mesh, x * scale, y * scale, 0, scale, scale)
+	end
+	for i,v in ipairs(Players) do
+		v:draw(offx, offy)
 	end
 end
