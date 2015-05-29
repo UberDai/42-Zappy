@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/28 23:49:18 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 16:57:54 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ typedef struct				s_tile
 
 struct						s_client
 {
-	t_dlist					dlist;
+	struct s_client			*next;
+	struct s_client			*prev;
 	t_uint					id;
 	int						fd;
 	short					gfx;
@@ -127,6 +128,7 @@ typedef struct				s_zappy
 	t_uint					max_clients;
 	t_client				*clients;
 	t_client				*gfx_clients;
+	short					paused;
 }							t_zappy;
 
 t_zappy						g_zappy;
@@ -168,7 +170,13 @@ t_client					*command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);
+short						command_pause(t_client *client, t_uint argc, char **argv);
+short						command_resume(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
+
+void						zappy_run(void);
+void						zappy_pause(void);
+void						zappy_resume(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/27 00:59:34 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:08:54 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,13 @@ t_client	*client_create()
 
 void	client_delete(t_client *client_to_delete)
 {
-	g_zappy.clients = DLIST(remove, t_client*, client_to_delete);
-	client_to_delete->position->client_count--;
-	DLIST(remove, void, client_to_delete);
+	if (client_to_delete->gfx)
+		g_zappy.gfx_clients = DLIST(remove, t_client*, client_to_delete);
+	else
+	{
+		g_zappy.clients = DLIST(remove, t_client*, client_to_delete);
+		client_to_delete->position->client_count--;
+	}
 	client_queue_free(client_to_delete);
 	free(client_to_delete);
 	g_zappy.client_count--;

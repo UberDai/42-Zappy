@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 00:16:06 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:16:40 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ static t_client *	network_client_data(t_client *client)
 	char		*input;
 	int			ret;
 
-	printf("checking #%u\n", client->id);
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
 
 	if (ret == -1)
@@ -163,7 +162,17 @@ void		network_send(t_client *client, char *str)
 	output = ft_strnew(strlen(str) + 1);
 	strcat(output, str);
 	strcat(output, "\n");
-	send(client->fd, output, strlen(output), 0);
+	if (client != NULL)
+		send(client->fd, output, strlen(output), 0);
+	else
+	{
+		client = g_zappy.clients;
+		while (client)
+		{
+			send(client->fd, output, strlen(output), 0);
+			client = client->next;
+		}
+	}
 	free(output);
 }
 

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 06:26:07 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:06:27 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int		die(const char *message)
 
 void	print_client(t_client *client)
 {
-	printf("#%u [%i;%i]\n", client->id, client->position->x, client->position->y);
+	if (client->gfx)
+		printf("#%u gfx\n", client->id);
+	else
+		printf("#%u [%i;%i]\n", client->id, client->position->x, client->position->y);
 }
 
 void	print_client_queue(t_client *client)

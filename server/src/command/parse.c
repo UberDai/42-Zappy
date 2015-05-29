@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 00:07:35 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/29 17:16:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@ t_command	g_commands[] = {
 	{ "move", 7, command_move },
 	{ "left", 7, command_left },
 	{ "right", 7, command_right },
+	{ "pause", 0, command_pause },
+	{ "resume", 0, command_resume },
 	{ NULL, 0, NULL }
 };
 
 t_client		*authenticate_gfx_client(t_client *client)
 {
-	t_client		*client2;
+	t_client	*client2;
+	char		str[20];
 
 	client2 = (t_client*)DLIST_PREV(client);
 	if (client2 == NULL)
@@ -38,6 +41,12 @@ t_client		*authenticate_gfx_client(t_client *client)
 
 	client->authenticated = 1;
 	client->gfx = 1;
+	client->position = NULL;
+
+	snprintf(str, 20, "%u %u", g_zappy.width, g_zappy.height);
+	network_send(client, str);
+	snprintf(str, 20, "%u", g_zappy.time.cycle_duration);
+	network_send(client, str);
 
 	return (client2);
 }
@@ -89,7 +98,9 @@ t_client	*command_parse(t_client *client, char *input)
 	{
 		if (ft_strcmp(g_commands[i].name, splits[0]) == 0)
 		{
-			if (!client_queue_push(client, &(g_commands[i]), splits))
+			if (client->gfx)
+				g_commands[i].func(client, split_count, splits);
+			else if (!client_queue_push(client, &(g_commands[i]), splits))
 				network_send(client, "shits too fast");
 			print_client_queue(client);
 			return (client);
