@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 20:40:22 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/30 20:54:27 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ static void	client_play(t_client *client)
 	if (!queue->set)
 		return ;
 
-	queue->delay--;
-
 	if (queue->delay == 0)
 	{
-		queue->func(client, queue->ac, queue->av);
+		queue->command->func(client, queue->ac, queue->av);
 		client_queue_shift(client);
 	}
+
+	queue->delay--;
 }
 
 static void	clients_play(void)
@@ -62,7 +62,7 @@ void	zappy_run(void)
 	g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 	while (1)
 	{
-		printf("[ Cycle %u ]\n", g_zappy.time.cycle_count);
+		printf("\n[ Cycle %u ]\n", g_zappy.time.cycle_count);
 		network_receive();
 		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 		if (!g_zappy.paused)
@@ -75,5 +75,7 @@ void	zappy_run(void)
 			dlist_length((t_dlist*)g_zappy.clients),
 			dlist_length((t_dlist*)g_zappy.gfx_clients)
 		);
+		if (g_zappy.clients != NULL)
+			print_client(g_zappy.clients);
 	}
 }

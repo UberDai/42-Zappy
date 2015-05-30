@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 19:10:21 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/30 21:19:58 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <libft.h>
 
 t_command	g_commands[] = {
-	{ "move", 7, command_move },
-	{ "left", 7, command_left },
-	{ "right", 7, command_right },
+	{ "move", 0, command_move },
+	{ "left", 0, command_left },
+	{ "right", 0, command_right },
 	{ "pause", 0, command_pause },
 	{ "resume", 0, command_resume },
 	{ NULL, 0, NULL }
@@ -115,7 +115,6 @@ t_client	*command_parse(t_client *client, char *input)
 				g_commands[i].func(client, split_count, splits);
 			else if (!client_queue_push(client, &(g_commands[i]), splits))
 				network_send(client, "shits too fast", 0);
-			print_client_queue(client);
 			return (client);
 		}
 		i++;

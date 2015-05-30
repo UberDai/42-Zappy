@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 03:05:17 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/30 21:17:06 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,17 @@ void	tile_update_client_list(t_tile *tile)
 t_tile		*tile_at(int x, int y)
 {
 	t_tile	*tile;
+	printf("%i %i\n", x, y);
 
-	x %= g_zappy.width;
-	y %= g_zappy.height;
+	while (x < 0)
+		x += g_zappy.width;
+	while (y < 0)
+		y += g_zappy.height;
 
-	tile = g_zappy.map[x][y];
+	x %= (int)g_zappy.width;
+	y %= (int)g_zappy.height;
+
+	tile = g_zappy.map[y][x];
 	if (tile->refresh_client_list)
 		tile_update_client_list(tile);
 	return (tile);

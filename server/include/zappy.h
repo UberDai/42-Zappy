@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 20:43:47 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/30 20:53:38 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef unsigned short		t_ushort;
 typedef enum 				e_orient
 {
 	ORIENT_NORTH = 1,
-	ORIENT_EAT,
+	ORIENT_EAST,
 	ORIENT_SOUTH,
 	ORIENT_WEST
 }							t_orient;
@@ -60,12 +60,19 @@ typedef struct				s_team
 	t_uint					max_clients;
 }							t_team;
 
+typedef struct				s_command
+{
+	char					*name;
+	t_uint					delay;
+	short					(*func)(t_client *, t_uint, char **);
+}							t_command;
+
 typedef struct				s_queue
 {
 	short					set;
 	size_t					ac;
 	char					**av;
-	short					(*func)(t_client *, t_uint, char **);
+	t_command				*command;
 	t_uint					delay;
 }							t_queue;
 
@@ -105,13 +112,6 @@ typedef struct				s_time
 	t_uint					cycle_count;
 	double					next_cycle;
 }							t_time;
-
-typedef struct				s_command
-{
-	char					*name;
-	t_uint					delay;
-	short					(*func)(t_client *, t_uint, char **);
-}							t_command;
 
 typedef struct				s_network
 {
