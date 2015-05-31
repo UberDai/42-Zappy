@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:44:26 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/24 21:24:22 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/30 19:50:48 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ short	client_queue_push(t_client *client, t_command *command, char **av)
 		i++;
 	if (i == CLIENT_QUEUE_MAX)
 		return (0);
-	memcpy(client->queue + i, command, sizeof(t_command));
+
 	client->queue[i].set = 1;
+	client->queue[i].ac = ft_splits_count(av);
 	client->queue[i].av = av;
+	client->queue[i].command = command;
+	client->queue[i].delay = command->delay;
 	return (1);
 }
 
@@ -70,7 +73,7 @@ void	client_queue_execute(t_client *client)
 	queue->delay--;
 
 	if (queue->delay == 0)
-		queue->func(client, 0, queue->av);
+		queue->command->func(client, 0, queue->av);
 }
 
 void	client_queue_free(t_client *client)

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 17:06:27 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 18:39:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,20 @@ void	print_client(t_client *client)
 	if (client->gfx)
 		printf("#%u gfx\n", client->id);
 	else
-		printf("#%u [%i;%i]\n", client->id, client->position->x, client->position->y);
+	{
+		printf("#%u [%i;%i", client->id, client->position->x, client->position->y);
+		if (client->orientation == ORIENT_NORTH)
+			printf(";N]\n");
+		else if (client->orientation == ORIENT_SOUTH)
+			printf(";S]\n");
+		else if (client->orientation == ORIENT_EAST)
+			printf(";E]\n");
+		else if (client->orientation == ORIENT_WEST)
+			printf(";W]\n");
+		else
+			printf("]\n");
+	}
+
 }
 
 void	print_client_queue(t_client *client)
@@ -56,4 +69,24 @@ void	print_client_queue(t_client *client)
 		i++;
 	}
 	printf("\n");
+}
+
+void	print_tile(t_tile *tile)
+{
+	printf("Tile [%i;%i]   F: %u, L: %u, D: %u, S: %u, M: %u, P: %u, T: %u\n",
+		tile->x,
+		tile->y,
+		tile->items[0],
+		tile->items[1],
+		tile->items[2],
+		tile->items[3],
+		tile->items[4],
+		tile->items[5],
+		tile->items[6]
+	);
+}
+
+int		rand_range(int min, int max)
+{
+	return ((rand() % max) + min);
 }

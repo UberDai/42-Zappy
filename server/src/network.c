@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 17:16:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 17:26:05 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	network_client_connect(void)
 	FD_SET(client->fd, &(g_zappy.network.read_fds));
 	printf("Client #%u created.\n", client->id);
 
-	network_send(client, "BIENVENUE");
+	network_send(client, "BIENVENUE", 0);
 }
 
 t_client *	network_client_disconnect(t_client *client)
@@ -78,7 +78,7 @@ t_client *	network_client_disconnect(t_client *client)
 	t_client	*prev_client;
 
 	prev_client = (t_client*)DLIST_NEXT(client);
-	network_send(client, "GTFO");
+	network_send(client, "GTFO", 0);
 	printf("Client #%u disconnected.\n", client->id);
 	close(client->fd);
 	FD_CLR(client->fd, &(g_zappy.network.read_fds));
@@ -86,13 +86,14 @@ t_client *	network_client_disconnect(t_client *client)
 	return (prev_client);
 }
 
-static t_client *	network_client_data(t_client *client)
+static t_client *	network_client_data(t_client *client, fd_set *fds)
 {
 	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
 	char		*input;
 	int			ret;
 
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
+	FD_CLR(client->fd, fds);
 
 	if (ret == -1)
 		die("Could not read the client.");
@@ -107,12 +108,12 @@ static t_client *	network_client_data(t_client *client)
 	return (client);
 }
 
-static void	network_check_clients(fd_set *read_fds, t_client *clients)
+static void	network_check_clients(fd_set *read_fds, t_client *clients, fd_set *fds)
 {
 	while (clients)
 	{
 		if (FD_ISSET(clients->fd, read_fds))
-			clients = network_client_data(clients);
+			clients = network_client_data(clients, fds);
 		if (clients != NULL)
 			DLIST_FORWARD(t_client*, clients);
 	}
@@ -135,8 +136,9 @@ static void	network_select(double remaining_time)
 		network_client_connect();
 	else
 	{
-		network_check_clients(&read_fds, g_zappy.gfx_clients);
-		network_check_clients(&read_fds, g_zappy.clients);
+		network_check_clients(&read_fds, g_zappy.anonymous_clients, &read_fds);
+		network_check_clients(&read_fds, g_zappy.gfx_clients, &read_fds);
+		network_check_clients(&read_fds, g_zappy.clients, &read_fds);
 	}
 }
 
@@ -155,24 +157,32 @@ void		network_receive(void)
 	}
 }
 
-void		network_send(t_client *client, char *str)
+static void	network_send_to_client(t_client *emitter, t_client *clients, char *str)
 {
-	char	*output;
+	while (clients)
+	{
+		if (emitter == NULL || clients != emitter)
+			send(clients->fd, str, strlen(str), 0);
+		clients = clients->next;
+	}
+}
+
+void		network_send(t_client *client, char *str, int options)
+{
+	char		*output;
 
 	output = ft_strnew(strlen(str) + 1);
 	strcat(output, str);
 	strcat(output, "\n");
-	if (client != NULL)
-		send(client->fd, output, strlen(output), 0);
-	else
+	if (options != 0)
 	{
-		client = g_zappy.clients;
-		while (client)
-		{
-			send(client->fd, output, strlen(output), 0);
-			client = client->next;
-		}
+		if (options & (NET_SEND_CLIENT | NET_SEND_ALL))
+			network_send_to_client(client, g_zappy.clients, output);
+		if (options & (NET_SEND_GFX | NET_SEND_ALL))
+			network_send_to_client(client, g_zappy.gfx_clients, output);
 	}
+	else
+		send(client->fd, output, strlen(output), 0);
 	free(output);
 }
 
@@ -182,6 +192,13 @@ void	network_disconnect(void)
 
 	printf("\n");
 	client = g_zappy.clients;
+	while (client)
+	{
+		client = network_client_disconnect(client);
+		if (client != NULL)
+			DLIST_FORWARD(t_client*, client);
+	}
+	client = g_zappy.gfx_clients;
 	while (client)
 	{
 		client = network_client_disconnect(client);

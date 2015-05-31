@@ -6,13 +6,14 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/23 03:05:17 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 18:50:04 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 #include <stdlib.h>
 #include <strings.h>
+#include <limits.h>
 
 static void	*tile_create(t_uint x, t_uint y)
 {
@@ -81,11 +82,66 @@ t_tile		*tile_at(int x, int y)
 {
 	t_tile	*tile;
 
-	x %= g_zappy.width;
-	y %= g_zappy.height;
+	while (x < 0)
+		x += g_zappy.width;
+	while (y < 0)
+		y += g_zappy.height;
 
-	tile = g_zappy.map[x][y];
+	x %= (int)g_zappy.width;
+	y %= (int)g_zappy.height;
+
+	tile = g_zappy.map[y][x];
 	if (tile->refresh_client_list)
 		tile_update_client_list(tile);
 	return (tile);
+}
+
+short		tile_add_item(t_tile *tile, int item)
+{
+	if (item < 0 || item >= ITEM_COUNT)
+		return (0);
+	if (tile->items[item] == UINT_MAX)
+		return (0);
+	tile->items[item]++;
+	return (1);
+}
+
+short		tile_remove_item(t_tile *tile, int item)
+{
+	if (item < 0 || item >= ITEM_COUNT)
+		return (0);
+	if (tile->items[item] == 0)
+		return (0);
+	tile->items[item]--;
+	return (1);
+}
+
+void		map_regenerate(void)
+{
+	t_uint	x;
+	t_uint	y;
+
+	y = 0;
+	while (y < g_zappy.height)
+	{
+		x = 0;
+		while (x < g_zappy.width)
+		{
+			tile_regenerate(g_zappy.map[y][x]);
+			x++;
+		}
+		y++;
+	}
+}
+
+void		tile_regenerate(t_tile *tile)
+{
+	t_uint	i;
+
+	i = 0;
+	while (i < ITEM_COUNT)
+	{
+		tile->items[i] += rand_range(0, REGEN_MAX);
+		i++;
+	}
 }
