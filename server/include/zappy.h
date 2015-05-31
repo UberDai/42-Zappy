@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 19:27:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:12:41 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@
 
 # define NET_SUCCESS		"yay"
 # define NET_FAILURE		"nope"
+
+# define STATUS_UNKNOWN		0
+# define STATUS_PLAYER		1
+# define STATUS_EGG			2
+# define STATUS_GFX			3
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
@@ -99,7 +104,7 @@ struct						s_client
 	struct s_client			*prev;
 	t_uint					id;
 	int						fd;
-	short					gfx;
+	short					status;
 	t_ushort				level;
 	t_uint					life;
 	t_team					*team;
@@ -108,7 +113,6 @@ struct						s_client
 	t_uint					items[ITEM_COUNT];
 	t_uint					hunger;
 	t_queue					queue[CLIENT_QUEUE_MAX];
-	short					authenticated;
 };
 
 typedef struct				s_time
@@ -206,6 +210,8 @@ void						zappy_pause(t_client *client);
 void						zappy_resume(t_client *client);
 
 void						gfx_client_connect(t_client *client);
+void						gfx_client_disconnect(t_client *client);
+void						gfx_client_death(t_client *client);
 void						gfx_tile_add(t_client *client, t_tile *tile, int item);
 void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
 

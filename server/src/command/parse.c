@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 20:08:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:42:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,11 @@ static t_client		*authenticate_gfx_client(t_client *client)
 
 	client2 = (t_client*)DLIST_PREV(client);
 	if (client2 == NULL)
-		g_zappy.clients = NULL;
+		g_zappy.anonymous_clients = NULL;
 
 	move_client_to_list(client, &(g_zappy.gfx_clients));
 
-	client->authenticated = 1;
-	client->gfx = 1;
+	client->status = STATUS_GFX;
 	client->position = NULL;
 
 	snprintf(str, 20, "%u %u", g_zappy.width, g_zappy.height);
@@ -113,7 +112,7 @@ static t_client	*authenticate(t_client *client, char *input)
 	}
 
 	client->team = team;
-	client->authenticated = 1;
+	client->status = STATUS_PLAYER;
 
 	move_client_to_list(client, &(g_zappy.clients));
 
@@ -134,18 +133,18 @@ t_client	*command_parse(t_client *client, char *input)
 	t_uint	split_count;
 	t_uint	i;
 
-	if (!client->authenticated)
+	if (client->status == STATUS_UNKNOWN)
 		return authenticate(client, input);
 
 	splits = ft_strsplit(input, ' ');
 	split_count = ft_splits_count(splits);
 
 	i = 0;
-	while (g_commands[i].name != NULL)
+	while (split_count > 0 && g_commands[i].name != NULL)
 	{
-		if (ft_strcmp(g_commands[i].name, splits[0]) == 0)
+		if (strcmp(g_commands[i].name, splits[0]) == 0)
 		{
-			if (client->gfx)
+			if (client->status == STATUS_GFX)
 				g_commands[i].func(client, split_count, splits);
 			else if (!client_queue_push(client, &(g_commands[i]), splits))
 				network_send(client, "shits too fast", 0);

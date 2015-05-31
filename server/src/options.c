@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/27 00:23:53 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 20:17:38 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,7 @@ void	options_parse(t_uint ac, char **av)
 		option_exists = 0;
 		while (g_options[j].name)
 		{
-			if (!ft_strcmp(g_options[j].name, av[i]))
+			if (!strcmp(g_options[j].name, av[i]))
 			{
 				option_exists = 1;
 				i = g_options[j].function(ac, av, i);

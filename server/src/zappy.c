@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 19:29:47 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:44:44 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ void	zappy_run(void)
 	while (1)
 	{
 		printf("\n---[ Cycle %02u ]-----------------------------------\n", g_zappy.time.cycle_count);
-		if (g_zappy.time.cycle_count % REGEN_RATE == 0)
-			map_regenerate();
 		network_receive();
 		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 		if (!g_zappy.paused)
 		{
+			if (g_zappy.time.cycle_count % REGEN_RATE == 0)
+				map_regenerate();
 			clients_play();
 			g_zappy.time.cycle_count++;
 		}

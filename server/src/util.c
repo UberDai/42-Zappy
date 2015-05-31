@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 18:39:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:06:52 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		die(const char *message)
 
 void	print_client(t_client *client)
 {
-	if (client->gfx)
+	if (client->status == STATUS_GFX)
 		printf("#%u gfx\n", client->id);
 	else
 	{

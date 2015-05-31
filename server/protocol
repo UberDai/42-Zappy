@@ -11,11 +11,17 @@ t
 // turn
 o ID
 
-// create
+// connect
 * ID N x y O
 
+// disconnect
+_ ID
+
+// death
+x ID
+
 // pickup
-^ ID R
+^ ID r
 
 // drop
 v  ID r

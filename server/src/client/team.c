@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/22 02:05:55 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/26 23:30:08 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 20:18:39 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_team	*team_get(const char *name)
 	team = g_zappy.teams;
 	while (team)
 	{
-		if (ft_strcmp(team->name, name) == 0)
+		if (strcmp(team->name, name) == 0)
 			return (team);
 		DLIST_FORWARD(t_team*, team);
 	}

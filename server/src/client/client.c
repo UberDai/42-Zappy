@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/29 19:11:07 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:04:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_client	*client_create()
 	client->hunger = FOOD_DURATION;
 	client->id = id++;
 	client->life = CLIENT_BASE_LIFE;
-	client->authenticated = 0;
 	client->orientation = ORIENT_NORTH;
 	client_move_to(client, g_zappy.map[0][0]);
 	clients = g_zappy.anonymous_clients;
@@ -42,8 +41,10 @@ t_client	*client_create()
 
 void	client_delete(t_client *client_to_delete)
 {
-	if (client_to_delete->gfx)
+	if (client_to_delete->status == STATUS_GFX)
 		g_zappy.gfx_clients = DLIST(remove, t_client*, client_to_delete);
+	else if (client_to_delete->status == STATUS_UNKNOWN)
+		g_zappy.anonymous_clients = DLIST(remove, t_client*, client_to_delete);
 	else
 	{
 		g_zappy.clients = DLIST(remove, t_client*, client_to_delete);

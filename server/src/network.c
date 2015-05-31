@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 17:26:05 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:06:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ t_client *	network_client_disconnect(t_client *client)
 	printf("Client #%u disconnected.\n", client->id);
 	close(client->fd);
 	FD_CLR(client->fd, &(g_zappy.network.read_fds));
+	if (client->status == STATUS_PLAYER)
+		gfx_client_disconnect(client);
 	client_delete(client);
 	return (prev_client);
 }
