@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/30 20:53:38 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 19:27:25 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # define FOOD_DURATION		126
 # define CLIENT_BASE_LIFE	10
 # define MAX_LEVEL			8
-# define ITEM_COUNT			7
 # define CLIENT_QUEUE_MAX	5
 
+# define ITEM_COUNT			7
 # define ITEM_FOOD			0
 # define ITEM_LINEMATE		1
 # define ITEM_DERAUMERE		2
@@ -39,6 +39,12 @@
 # define NET_SEND_ALL		1
 # define NET_SEND_CLIENT	2
 # define NET_SEND_GFX		4
+
+# define REGEN_RATE			10
+# define REGEN_MAX			3
+
+# define NET_SUCCESS		"yay"
+# define NET_FAILURE		"nope"
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
@@ -142,6 +148,10 @@ t_zappy						g_zappy;
 void						map_init(void);
 void						tile_update_client_list(t_tile *tile);
 t_tile						*tile_at(int x, int y);
+short						tile_add_item(t_tile *tile, int item);
+short						tile_remove_item(t_tile *tile, int item);
+void						tile_regenerate(t_tile *tile);
+void						map_regenerate(void);
 
 void						options_parse(t_uint ac, char **av);
 void						options_valid(void);
@@ -150,9 +160,13 @@ int							die(const char *message);
 void						usage(void);
 void						print_client(t_client *client);
 void						print_client_queue(t_client *client);
+void						print_tile(t_tile *tile);
 double						get_time(void);
+int							rand_range(int min, int max);
 
 short						client_eat(t_client *client);
+short						client_move(t_client *client);
+short						client_rotate(t_client *client, short angle);
 t_client					*client_create(void);
 void						client_delete(t_client *client_to_delete);
 short						client_promote(t_client *client);
@@ -161,6 +175,10 @@ short						client_queue_push(t_client *client, t_command *command, char **av);
 void						client_queue_shift(t_client *client);
 void						client_queue_free(t_client *client);
 void						client_set_team(t_client *client, const char *team_name);
+short						client_add_item(t_client *client, int item);
+short						client_remove_item(t_client *client, int item);
+short						client_pick(t_client *client, int item);
+short						client_drop(t_client *client, int item);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);
@@ -176,6 +194,8 @@ t_client					*command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);
+short						command_pick(t_client *client, t_uint argc, char **argv);
+short						command_drop(t_client *client, t_uint argc, char **argv);
 short						command_pause(t_client *client, t_uint argc, char **argv);
 short						command_resume(t_client *client, t_uint argc, char **argv);
 
@@ -186,7 +206,7 @@ void						zappy_pause(t_client *client);
 void						zappy_resume(t_client *client);
 
 void						gfx_client_connect(t_client *client);
-void						gfx_tile_add(t_tile *tile, int item);
-void						gfx_tile_remove(t_tile *tile, int item);
+void						gfx_tile_add(t_client *client, t_tile *tile, int item);
+void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
 
 #endif

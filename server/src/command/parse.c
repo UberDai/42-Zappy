@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/30 21:19:58 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 19:32:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 #include <libft.h>
 
 t_command	g_commands[] = {
-	{ "move", 0, command_move },
-	{ "left", 0, command_left },
-	{ "right", 0, command_right },
+	{ "move", 7, command_move },
+	{ "left", 7, command_left },
+	{ "right", 7, command_right },
+	{ "pick", 7, command_pick },
+	{ "drop", 7, command_drop },
 	{ "pause", 0, command_pause },
 	{ "resume", 0, command_resume },
 	{ NULL, 0, NULL }
@@ -31,6 +33,36 @@ static void			move_client_to_list(t_client *client, t_client **list)
 		*list = client;
 	else
 		DLIST(append, void, (*list), (t_dlist*)client);
+}
+
+static void	gfx_send_map(t_client *client)
+{
+	t_uint	x;
+	t_uint	y;
+	t_uint	i;
+	t_uint	j;
+
+	y = 0;
+	while (y < g_zappy.height)
+	{
+		x = 0;
+		while (x < g_zappy.width)
+		{
+			i = 0;
+			while (i < ITEM_COUNT)
+			{
+				j = 0;
+				while (j < g_zappy.map[y][x]->items[i])
+				{
+					gfx_tile_add(client, g_zappy.map[y][x], j);
+					j++;
+				}
+				i++;
+			}
+			x++;
+		}
+		y++;
+	}
 }
 
 static t_client		*authenticate_gfx_client(t_client *client)
@@ -52,6 +84,8 @@ static t_client		*authenticate_gfx_client(t_client *client)
 	network_send(client, str, 0);
 	snprintf(str, 20, "%u", g_zappy.time.cycle_duration);
 	network_send(client, str, 0);
+
+	gfx_send_map(client);
 
 	return (client2);
 }

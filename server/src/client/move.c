@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:02:12 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/30 20:00:04 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 17:40:38 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,26 @@ short	client_move_to(t_client *client, t_tile *tile)
 	tile->client_count++;
 	tile->refresh_client_list = 1;
 	client->position = tile;
+	return (1);
+}
+
+short	client_move(t_client *client)
+{
+	int		x;
+	int		y;
+
+	x = client->position->x;
+	y = client->position->y;
+
+	if (client->orientation == ORIENT_NORTH)
+		y--;
+	else if (client->orientation == ORIENT_SOUTH)
+		y++;
+	else if (client->orientation == ORIENT_WEST)
+		x--;
+	else if (client->orientation == ORIENT_EAST)
+		x++;
+	client_move_to(client, tile_at(x, y));
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/30 20:58:15 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 18:39:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,24 @@ void	print_client_queue(t_client *client)
 		i++;
 	}
 	printf("\n");
+}
+
+void	print_tile(t_tile *tile)
+{
+	printf("Tile [%i;%i]   F: %u, L: %u, D: %u, S: %u, M: %u, P: %u, T: %u\n",
+		tile->x,
+		tile->y,
+		tile->items[0],
+		tile->items[1],
+		tile->items[2],
+		tile->items[3],
+		tile->items[4],
+		tile->items[5],
+		tile->items[6]
+	);
+}
+
+int		rand_range(int min, int max)
+{
+	return ((rand() % max) + min);
 }
