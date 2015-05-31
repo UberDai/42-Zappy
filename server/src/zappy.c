@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:44:44 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 23:39:49 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,24 @@ void	zappy_resume(t_client *client)
 	network_send(client, "resume", NET_SEND_ALL);
 }
 
+static short	client_hunger(t_client *client)
+{
+	if (client->hunger == 0)
+	{
+		if (client->items[ITEM_FOOD] > 0)
+		{
+			client->items[ITEM_FOOD]--;
+			client->hunger = FOOD_DURATION;
+		}
+		else
+		{
+			network_send(client, "mort", 0);
+			gfx_client_death(client);
+		}
+	}
+	return (1);
+}
+
 static void	client_play(t_client *client)
 {
 	t_queue	*queue;
@@ -34,6 +52,8 @@ static void	client_play(t_client *client)
 	queue = &(client->queue[0]);
 
 	if (!queue->set)
+		return ;
+	if (client_hunger(client) == 0)
 		return ;
 
 	if (queue->delay == 0)
@@ -47,6 +67,7 @@ static void	client_play(t_client *client)
 	}
 
 	queue->delay--;
+	client->hunger--;
 }
 
 static void	clients_play(void)

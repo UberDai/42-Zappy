@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:12:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 23:08:45 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "dlist.h"
 
 # define FOOD_DURATION		126
-# define CLIENT_BASE_LIFE	10
+# define CLIENT_BASE_FOOD	10
 # define MAX_LEVEL			8
 # define CLIENT_QUEUE_MAX	5
 
@@ -106,7 +106,6 @@ struct						s_client
 	int						fd;
 	short					status;
 	t_ushort				level;
-	t_uint					life;
 	t_team					*team;
 	t_tile					*position;
 	t_orient				orientation;
