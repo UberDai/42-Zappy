@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-05-30 20:52:10
+-- :ddddddddddhyyddddddddddd: Modified: 2015-05-31 22:27:09
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -123,11 +123,11 @@ function love.newPlayer(team)
 	return player
 end
 
-function love.newStone(id)
+function love.newStone(x, y, id)
 	local stone = {}
-	stone.x = love.math.random(0, 9)
-	stone.y = love.math.random(0, 9)
-	stone.image = stones_img[id]
+	stone.x = tonumber(x)
+	stone.y = tonumber(y)
+	stone.image = stones_img[tonumber(id)]
 	stone.draw = function (self, offx, offy)
 		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale, scale, -25, 0)
 	end
@@ -136,6 +136,7 @@ end
 
 function love.loadStones()
 	stones_img = {}
+	stones_img[0] = love.graphics.newImage("assets/O.png")
 	stones_img[1] = love.graphics.newImage("assets/01.png")
 	stones_img[2] = love.graphics.newImage("assets/02.png")
 	stones_img[3] = love.graphics.newImage("assets/03.png")
@@ -145,12 +146,16 @@ function love.loadStones()
 end
 
 function love.load()
+	width = love.window.getWidth()
+	height = love.window.getHeight()
 	time = 0
 	love.loadStones()
 	love.math.setRandomSeed(love.timer.getTime())
 	size = 100
 	fontsize = 15
+	msgStack = {}
 	tcp = socket.connect('localhost', 4242)
+	tcp:settimeout(0.01)
 	msg = tcp:receive('*l')
 	if msg ~= 'BIENVENUE' then love.event.quit() end
 	tcp:send('g\n')
@@ -173,7 +178,6 @@ function love.load()
 	table.insert(Players, love.newPlayer('team 1'))
 
 	Stones = {}
-	table.insert(Stones, love.newStone(2))
 end
 
 function love.keypressed(key)
@@ -206,14 +210,36 @@ function love.keypressed(key)
 			Players[1].y = Players[1].y + 1
 		end
 	end
+end
 
+function love.getmsgStack()
+	local t = {}
+	local str = ""
+	while str ~= nil do
+		str = tcp:receive('*l')
+		if str ~= nil then print(str) end
+		table.insert(t, str)
+	end
+	return t
+end
+
+function love.makemsgStack(tab)
+	for i,v in ipairs(tab) do
+		if v:find("%+%s*%d+%s*%d+%s*%d+") then
+			table.insert(Stones, love.newStone(v:match("(%d+)%s*(%d+)%s*(%d+)")))
+		end
+	end
 end
 
 function love.update(dt)
 	time = time + dt * 100
+
+	love.makemsgStack(love.getmsgStack())
+
 	for i,v in ipairs(Players) do
 		v:update(dt)
 	end
+
 	if love.keyboard.isDown('rshift') and love.keyboard.isDown('[') then
 		margin = margin + dt
 	end
@@ -238,9 +264,6 @@ function love.update(dt)
 	if love.keyboard.isDown('right') then
 		offx = offx + dt * 500
 	end
-	if math.floor(time) % 20 == 0 then
-		table.insert(Stones, love.newStone(love.math.random(1, 6)))
-	end
 end
 
 function love.normalize(x, y)
@@ -259,5 +282,8 @@ function love.draw()
 	for i,v in ipairs(Players) do
 		local x, y = love.normalize(v.x, v.y)
 		v:draw(x, y)
+	end
+	for i,v in ipairs(msgStack) do
+		love.graphics.print(v, 0, (i - 1) * fontsize)
 	end
 end
