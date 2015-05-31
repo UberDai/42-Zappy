@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 19:32:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 20:08:40 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	gfx_send_map(t_client *client)
 				j = 0;
 				while (j < g_zappy.map[y][x]->items[i])
 				{
-					gfx_tile_add(client, g_zappy.map[y][x], j);
+					gfx_tile_add(client, g_zappy.map[y][x], i);
 					j++;
 				}
 				i++;
