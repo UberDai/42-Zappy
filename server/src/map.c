@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 18:50:04 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/05/31 22:47:20 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,11 +137,20 @@ void		map_regenerate(void)
 void		tile_regenerate(t_tile *tile)
 {
 	t_uint	i;
+	t_uint	j;
+	t_uint	amount;
 
 	i = 0;
 	while (i < ITEM_COUNT)
 	{
-		tile->items[i] += rand_range(0, REGEN_MAX);
+		amount = rand_range(0, REGEN_MAX);
+		tile->items[i] += amount;
+		j = 0;
+		while (j < amount)
+		{
+			gfx_tile_add(NULL, tile, i);
+			j++;
+		}
 		i++;
 	}
 }
