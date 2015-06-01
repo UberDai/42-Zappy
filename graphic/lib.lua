@@ -6,52 +6,13 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 18:38:23
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 20:38:13
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 23:57:32
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-function love.newCell(image, size)
-	local vertices = {
-		{
-			size / 2, 0,
-			0, 0,
-			255, 255, 255,
-		},
-		{
-			size, size / 4,
-			1, 0,
-			255, 255, 255
-		},
-		{
-			size / 2, size / 2,
-			1, 1,
-			255, 255, 255
-		},
-		{
-			0, size / 4,
-			0, 1,
-			255, 255, 255
-		},
-	}
-	return love.graphics.newMesh(vertices, image, "fan")
-end
-
-function love.newMap(img, size)
-	Map = {}
-	local x,y = 0,0
-	for i = 1,widthMap * heightMap do
-		table.insert(Map, {mesh = love.newCell(img, size), x = x, y = y})
-		x = x + 1
-		if x % widthMap == 0 then
-			x = 0
-			y = y + 1
-		end
-	end
-	return Map
-end
 
 function love.newPlayer(team)
 	local player = {}
@@ -83,15 +44,15 @@ function love.newPlayer(team)
 			end
 		end
 	end
-	player.draw = function (self, offx, offy)
+	player.draw = function (self, x, y)
 		if self.orientation == 'north' then
-			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], offx * scale, offy * scale, 0, scale, scale, 0, self.listQuads[0]:getHeight() / 3.25)
+			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, 0, self.listQuads[0]:getHeight() / 3.25)
 		elseif self.orientation == 'east' then
-			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], offx * scale, offy * scale, 0, scale * -1, scale, 80, self.listQuads[0]:getHeight() / 3.25)
+			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, self.listQuads[0]:getHeight() / 3.25)
 		elseif self.orientation == 'south' then
-			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], offx * scale, offy * scale, 0, scale, scale, 0, self.listQuads[0]:getHeight() / 3.25)
+			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, 0, self.listQuads[0]:getHeight() / 3.25)
 		elseif self.orientation == 'west' then
-			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], offx * scale, offy * scale, 0, scale * -1, scale, 80, self.listQuads[0]:getHeight() / 3.25)
+			love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, self.listQuads[0]:getHeight() / 3.25)
 		end
 	end
 	return player

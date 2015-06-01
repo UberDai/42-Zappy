@@ -6,28 +6,28 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 19:02:59
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 22:33:39
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 23:57:11
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-function drawStone(self, offx, offy)
+function drawStone(self, x, y)
 	if self.id == 0 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -50, -50)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -50, -50)
 	elseif self.id == 1 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -55, -30)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -55, -30)
 	elseif self.id == 2 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -75, -35)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -75, -35)
 	elseif self.id == 3 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -95, -40)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -95, -40)
 	elseif self.id == 4 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -75, -10)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -75, -10)
 	elseif self.id == 5 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -95, -15)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -95, -15)
 	elseif self.id == 6 then
-		love.graphics.draw(self.image, offx * scale, offy * scale, 0, scale * 0.5, scale * 0.5, -115, -20)
+		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -115, -20)
 	end
 end
 
