@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-05-29 17:58:09
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 19:01:55
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -20,10 +20,10 @@ function love.conf(t)
 
 	t.window.title = "Zappy"        -- The window title (string)
 	t.window.icon = nil                -- Filepath to an image to use as the window's icon (string)
-	t.window.width = 800               -- The window width (number)
-	t.window.height = 600              -- The window height (number)
+	t.window.width = 1600               -- The window width (number)
+	t.window.height = 1200              -- The window height (number)
 	t.window.borderless = false        -- Remove all border visuals from the window (boolean)
-	t.window.resizable = false         -- Let the window be user-resizable (boolean)
+	t.window.resizable = true         -- Let the window be user-resizable (boolean)
 	t.window.minwidth = 1              -- Minimum window width if the window is resizable (number)
 	t.window.minheight = 1             -- Minimum window height if the window is resizable (number)
 	t.window.fullscreen = false        -- Enable fullscreen (boolean)
