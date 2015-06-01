@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 23:08:45 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/01 23:32:09 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define FOOD_DURATION		126
 # define CLIENT_BASE_FOOD	10
-# define MAX_LEVEL			8
+# define MAX_LEVEL			3
 # define CLIENT_QUEUE_MAX	5
 
 # define ITEM_COUNT			7
@@ -50,6 +50,10 @@
 # define STATUS_PLAYER		1
 # define STATUS_EGG			2
 # define STATUS_GFX			3
+
+# define COMMAND_NONE		-1
+# define COMMAND_FAIL		0
+# define COMMAND_SUCCESS	1
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
@@ -201,6 +205,7 @@ short						command_pick(t_client *client, t_uint argc, char **argv);
 short						command_drop(t_client *client, t_uint argc, char **argv);
 short						command_pause(t_client *client, t_uint argc, char **argv);
 short						command_resume(t_client *client, t_uint argc, char **argv);
+short						command_inventory(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
 
@@ -213,5 +218,7 @@ void						gfx_client_disconnect(t_client *client);
 void						gfx_client_death(t_client *client);
 void						gfx_tile_add(t_client *client, t_tile *tile, int item);
 void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
+void						gfx_client_pick(t_client *client, int item);
+void						gfx_client_drop(t_client *client, int item);
 
 #endif

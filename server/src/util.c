@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:06:52 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/01 22:38:47 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,27 @@ void	print_client(t_client *client)
 	{
 		printf("#%u [%i;%i", client->id, client->position->x, client->position->y);
 		if (client->orientation == ORIENT_NORTH)
-			printf(";N]\n");
+			printf(";N]");
 		else if (client->orientation == ORIENT_SOUTH)
-			printf(";S]\n");
+			printf(";S]");
 		else if (client->orientation == ORIENT_EAST)
-			printf(";E]\n");
+			printf(";E]");
 		else if (client->orientation == ORIENT_WEST)
-			printf(";W]\n");
+			printf(";W]");
 		else
-			printf("]\n");
-	}
+			printf("]");
 
+		printf(" Hunger: %u   F: %u, L: %u, D: %u, S: %u, M: %u, P: %u, T: %u\n",
+			client->hunger,
+			client->items[0],
+			client->items[1],
+			client->items[2],
+			client->items[3],
+			client->items[4],
+			client->items[5],
+			client->items[6]
+		);
+	}
 }
 
 void	print_client_queue(t_client *client)

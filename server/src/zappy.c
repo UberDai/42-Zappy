@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 23:39:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/01 22:59:57 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,27 @@ static short	client_hunger(t_client *client)
 		{
 			network_send(client, "mort", 0);
 			gfx_client_death(client);
+			network_client_disconnect(client);
+			return (0);
 		}
 	}
+	else
+		client->hunger--;
 	return (1);
 }
 
-static void	client_play(t_client *client)
+static t_client	*client_play(t_client *client)
 {
-	t_queue	*queue;
-	int		ret;
-
-	print_client_queue(client);
+	t_queue		*queue;
+	t_client	*next;
+	int			ret;
 
 	queue = &(client->queue[0]);
-
-	if (!queue->set)
-		return ;
+	next = client->next;
 	if (client_hunger(client) == 0)
-		return ;
+		return (next);
+	if (!queue->set)
+		return (client);
 
 	if (queue->delay == 0)
 	{
@@ -68,6 +71,7 @@ static void	client_play(t_client *client)
 
 	queue->delay--;
 	client->hunger--;
+	return (client);
 }
 
 static void	clients_play(void)
@@ -77,8 +81,9 @@ static void	clients_play(void)
 	client = g_zappy.clients;
 	while (client)
 	{
-		client_play(client);
-		client = client->next;
+		client = client_play(client);
+		if (client != NULL)
+			client = client->next;
 	}
 }
 

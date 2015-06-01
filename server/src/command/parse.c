@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:42:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/01 23:21:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_command	g_commands[] = {
 	{ "drop", 7, command_drop },
 	{ "pause", 0, command_pause },
 	{ "resume", 0, command_resume },
+	{ "inventory", 1, command_inventory },
 	{ NULL, 0, NULL }
 };
 
@@ -92,7 +93,7 @@ static t_client		*authenticate_gfx_client(t_client *client)
 static t_client	*authenticate(t_client *client, char *input)
 {
 	t_team	*team;
-	char	str[20];
+	char	str[100];
 	size_t	client_count;
 
 	if (strcmp(input, "g") == 0)
@@ -117,9 +118,7 @@ static t_client	*authenticate(t_client *client, char *input)
 	move_client_to_list(client, &(g_zappy.clients));
 
 	client_set_team(client, input);
-	snprintf(str, 20, "%lu", team->max_clients - client_count);
-	network_send(client, str, 0);
-	snprintf(str, 20, "%u %u", g_zappy.width, g_zappy.height);
+	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count, g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
 
 	gfx_client_connect(client);
