@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/01 23:32:09 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 20:55:58 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 # define FOOD_DURATION		126
 # define CLIENT_BASE_FOOD	10
-# define MAX_LEVEL			3
-# define CLIENT_QUEUE_MAX	5
+# define MAX_LEVEL			8
+# define CLIENT_QUEUE_MAX	10
 
 # define ITEM_COUNT			7
 # define ITEM_FOOD			0
@@ -40,7 +40,7 @@
 # define NET_SEND_CLIENT	2
 # define NET_SEND_GFX		4
 
-# define REGEN_RATE			10
+# define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			3
 
 # define NET_SUCCESS		"yay"
@@ -206,6 +206,10 @@ short						command_drop(t_client *client, t_uint argc, char **argv);
 short						command_pause(t_client *client, t_uint argc, char **argv);
 short						command_resume(t_client *client, t_uint argc, char **argv);
 short						command_inventory(t_client *client, t_uint argc, char **argv);
+short						command_connect_count(t_client *client, t_uint argc, char **argv);
+short						command_fork(t_client *client, t_uint argc, char **argv);
+short						command_promote(t_client *client, t_uint argc, char **argv);
+short						command_expulse(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
 
@@ -220,5 +224,7 @@ void						gfx_tile_add(t_client *client, t_tile *tile, int item);
 void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
 void						gfx_client_pick(t_client *client, int item);
 void						gfx_client_drop(t_client *client, int item);
+void						gfx_client_move_to(t_client *client, t_tile *tile);
+void						gfx_client_turn(t_client *client);
 
 #endif

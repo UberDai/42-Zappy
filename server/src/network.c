@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:06:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 00:07:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 void		network_bind()
 {
 	struct sockaddr_in	server;
-	int					yes;
+	int					option;
 
 	if ((g_zappy.network.fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
 		die("Could not create the network socket.");
 
-	yes = 1;
-	if (setsockopt(g_zappy.network.fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes)) == -1)
+	option = 1;
+	if (setsockopt(g_zappy.network.fd, SOL_SOCKET, SO_REUSEADDR, &option, sizeof(option)) == -1)
 		die("The port is still in use.");
 
 	memset(&server, 0, sizeof(server));
@@ -198,7 +198,7 @@ void	network_disconnect(void)
 	{
 		client = network_client_disconnect(client);
 		if (client != NULL)
-			DLIST_FORWARD(t_client*, client);
+			client = client->next;
 	}
 	client = g_zappy.gfx_clients;
 	while (client)

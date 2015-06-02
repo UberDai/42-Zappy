@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/01 23:29:46 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 00:01:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,20 @@ short	command_inventory(t_client *client, t_uint argc, char **argv)
 		client->items[5],
 		client->items[6]
 	);
+	network_send(client, str, 0);
+	(void)argv;
+	return (COMMAND_NONE);
+}
+
+short	command_connect_count(t_client *client, t_uint argc, char **argv)
+{
+	size_t	client_count;
+	char	str[4] = { 0 };
+
+	if (client->status != STATUS_PLAYER || argc != 1)
+		return (COMMAND_FAIL);
+	client_count = team_clients_count(client->team);
+	snprintf(str, 4, "%lu", client->team->max_clients - client_count);
 	network_send(client, str, 0);
 	(void)argv;
 	return (COMMAND_NONE);

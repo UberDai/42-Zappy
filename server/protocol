@@ -6,7 +6,7 @@ t
 - x y R
 
 // move
-> ID
+> ID x y
 
 // turn
 o ID

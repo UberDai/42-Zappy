@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:02:12 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 17:40:38 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 20:59:28 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ short	client_move_to(t_client *client, t_tile *tile)
 	tile->client_count++;
 	tile->refresh_client_list = 1;
 	client->position = tile;
+	gfx_client_move_to(client, client->position);
 	return (1);
 }
 
@@ -53,6 +54,11 @@ short	client_rotate(t_client *client, short angle)
 		client->orientation += 1;
 	else
 		return (0);
-	client->orientation %= 3;
+
+	if (client->orientation <= 0)
+		client->orientation = 4;
+	else if (client->orientation >= 5)
+		client->orientation = 1;
+	gfx_client_turn(client);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 19:06:29 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/01 23:15:57 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 20:55:46 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,23 @@ void	gfx_client_drop(t_client *client, int item)
 	char	str[20] = { 0 };;
 
 	snprintf(str, 20, "v %u %i", client->id, item);
+	network_send(NULL, str, NET_SEND_GFX);
+}
+
+
+void	gfx_client_move_to(t_client *client, t_tile *tile)
+{
+	char	str[20] = { 0 };;
+
+	snprintf(str, 20, "> %u %i %i", client->id, tile->x, tile->y);
+	network_send(NULL, str, NET_SEND_GFX);
+}
+
+
+void	gfx_client_turn(t_client *client)
+{
+	char	str[20] = { 0 };;
+
+	snprintf(str, 20, "o %u %i", client->id, client->orientation);
 	network_send(NULL, str, NET_SEND_GFX);
 }

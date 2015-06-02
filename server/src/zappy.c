@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/01 22:59:57 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 00:10:00 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,13 @@ static short	client_hunger(t_client *client)
 static t_client	*client_play(t_client *client)
 {
 	t_queue		*queue;
-	t_client	*next;
+	t_client	*prev;
 	int			ret;
 
 	queue = &(client->queue[0]);
-	next = client->next;
+	prev = client->prev;
 	if (client_hunger(client) == 0)
-		return (next);
+		return (prev);
 	if (!queue->set)
 		return (client);
 
