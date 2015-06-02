@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 00:11:55
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 00:15:15
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -154,9 +154,6 @@ function love.update(dt)
 	end
 	if love.keyboard.isDown('right') then
 		zappy.offx = zappy.offx + dt * 500
-	end
-	if love.keyboard.isDown('backspace') then
-		dofile('extern.lua')
 	end
 
 zappy:update(dt)
