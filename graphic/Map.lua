@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 22:44:12
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:22:10
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:29:52
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -19,10 +19,6 @@ function map.addStone(self, stone)
 	table.insert(self.hash[stone.x][stone.y].content, stone)
 end
 
-function map.addPlayer(self, player)
-	table.insert(self.players, player)
-	table.insert(self.hash[player.x][player.y].content, player)
-end
 
 function map.newCell(image, size)
 	local vertices = {

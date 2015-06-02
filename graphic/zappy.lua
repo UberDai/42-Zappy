@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 23:24:11
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:07:45
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:29:44
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -61,6 +61,11 @@ end
 --		ZAPPY ENGINE
 --
 
+function zappy.addPlayer(self, player)
+	table.insert(self.players, player)
+	-- table.insert(self.hash[player.x][player.y].content, player)
+end
+
 function zappy.normalize(self, x, y)
 	return self.offx + -self.size / (2 + self.margin) * x + y * self.size / (2 + self.margin),
 		self.offy + self.size / (4 + self.margin) * (x + y)
@@ -91,17 +96,24 @@ function zappy.init(self, host, port)
 	self.offx, self.offy = width / 2 - self.size / 2, 0
 
 	self.map = Map:init(love.graphics.newImage("assets/test6.png"), self.size)
-
+	self.players = {}
 
 	return self
 end
 
 function zappy.update(self, dt)
 	if self.tcp then self:makeMStack(self:getMStack()) end
+	for i,v in ipairs(self.players) do
+		v:update(dt)
+	end
 end
 
 function zappy.draw(self)
 	self.map:draw()
+	for i,v in ipairs(self.players) do
+		local x, y = zappy:normalize(v.x - 1, v.y - 1)
+		v:draw(x, y)
+	end
 end
 
 return zappy

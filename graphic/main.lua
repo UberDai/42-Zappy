@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:23:07
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:29:17
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -45,12 +45,12 @@ function FPS:new(delay)
 	end
 end
 
-require 'player'
-require 'stone'
-
+Quadlist = require 'Quadlist'
 socket = require 'socket'
 inspect = require 'inspect'
-Quadlist = require 'Quadlist'
+
+require 'player'
+require 'stone'
 
 Event = require 'Event'
 Map = require 'Map'
@@ -75,7 +75,11 @@ function love.load()
 
 	zappy:init("localhost", 4242)
 
-	zappy.map:addPlayer(newPlayer('team 1'))
+	zappy:addPlayer(newPlayer('sprite1'))
+	zappy:addPlayer(newPlayer('team 1'))
+	zappy:addPlayer(newPlayer('team 1'))
+	zappy:addPlayer(newPlayer('team 1'))
+	zappy:addPlayer(newPlayer('team 1'))
 
 end
 
@@ -127,5 +131,5 @@ end
 
 function love.draw()
 	FPS:draw()
-	zappy:draw(offx, offy)
+	zappy:draw()
 end

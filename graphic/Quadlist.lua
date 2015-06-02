@@ -5,8 +5,7 @@ function Quadlist:new(tileset)
 	local j = 0
 	local Quadlist = {}
 
-	Quadlist[0] = love.graphics.newImage(tileset.image)
-	Quadlist[0]:setFilter('nearest')
+	Quadlist[0] = tileset.image
 	while j < Quadlist[0]:getHeight() do
 		i = 0
 		while i < Quadlist[0]:getWidth() do

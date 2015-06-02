@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 17:38:23
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 17:56:02
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:30:01
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -16,34 +16,34 @@
 local e = {}
 
 e['w'] = function ()
-	if Players[1].orientation ~= 'north' then
-		Players[1].orientation = 'north'
+	if zappy.players[1].sprite.orientation ~= 'north' then
+		zappy.players[1].sprite.orientation = 'north'
 	else
-		Players[1].x = Players[1].x - 1
+		zappy.players[1].x = zappy.players[1].x - 1
 	end
 end
 
 e['s'] = function ()
-	if Players[1].orientation ~= 'south' then
-		Players[1].orientation = 'south'
+	if zappy.players[1].sprite.orientation ~= 'south' then
+		zappy.players[1].sprite.orientation = 'south'
 	else
-		Players[1].x = Players[1].x + 1
+		zappy.players[1].x = zappy.players[1].x + 1
 	end
 end
 
 e['a'] = function ()
-		if Players[1].orientation ~= 'east' then
-			Players[1].orientation = 'east'
+		if zappy.players[1].sprite.orientation ~= 'east' then
+			zappy.players[1].sprite.orientation = 'east'
 		else
-			Players[1].y = Players[1].y - 1
+			zappy.players[1].y = zappy.players[1].y - 1
 		end
 end
 
 e['d'] = function ()
-		if Players[1].orientation ~= 'west' then
-			Players[1].orientation = 'west'
+		if zappy.players[1].sprite.orientation ~= 'west' then
+			zappy.players[1].sprite.orientation = 'west'
 		else
-			Players[1].y = Players[1].y + 1
+			zappy.players[1].y = zappy.players[1].y + 1
 		end
 end
 
