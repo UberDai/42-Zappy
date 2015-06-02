@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 19:01:55
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:19:15
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -28,7 +28,7 @@ function love.conf(t)
 	t.window.minheight = 1             -- Minimum window height if the window is resizable (number)
 	t.window.fullscreen = false        -- Enable fullscreen (boolean)
 	t.window.fullscreentype = "normal" -- Standard fullscreen or desktop fullscreen mode (string)
-	t.window.vsync = true              -- Enable vertical sync (boolean)
+	t.window.vsync = false             -- Enable vertical sync (boolean)
 	t.window.fsaa = 0                  -- The number of samples to use with multi-sampled antialiasing (number)
 	t.window.display = 1               -- Index of the monitor to show the window in (number)
 	t.window.highdpi = false           -- Enable high-dpi mode for the window on a Retina display (boolean)

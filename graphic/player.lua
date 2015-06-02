@@ -6,15 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 18:38:23
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 23:57:32
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:23:58
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-
-function love.newPlayer(team)
+function newPlayer(team)
 	local player = {}
 	player.x = 5
 	player.y = 5

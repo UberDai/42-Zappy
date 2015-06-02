@@ -6,21 +6,54 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 23:50:43
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:23:07
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-require 'lib'
+FPS = {}
+
+function FPS:new(delay)
+	self.width = love.window.getWidth()
+	self.height = love.window.getHeight()
+	self.delay = delay
+	self.list = {}
+
+	self.update = function (self, dt)
+		self.delay = self.delay - dt
+		if self.delay < 0 then
+			table.insert(self.list, love.timer.getFPS())
+			if #self.list - 1 > self.width / 3 then
+				table.remove(self.list, 1)
+			end
+			self.delay = delay
+		end
+	end
+	self.draw = function (self)
+		love.graphics.setColor(255, 255, 255, 100)
+		for k,v in pairs(self.list) do
+			if v < 30 then love.graphics.setColor(255, 0, 0, 100) end
+			love.graphics.rectangle('fill',
+				self.width - (k * 3),
+				self.height - v,
+				3, v)
+			if v < 30 then love.graphics.setColor(255, 255, 255, 100) end
+		end
+		love.graphics.setColor(255, 255, 255, 255)
+	end
+end
+
+require 'player'
 require 'stone'
 
 socket = require 'socket'
 inspect = require 'inspect'
 Quadlist = require 'Quadlist'
 
-map = require 'Map'
+Event = require 'Event'
+Map = require 'Map'
 zappy = require 'zappy'
 
 stones_img = {}
@@ -33,6 +66,7 @@ stones_img[5] = love.graphics.newImage("assets/05.png")
 stones_img[6] = love.graphics.newImage("assets/06.png")
 
 function love.load()
+	FPS:new(1)
 	width = love.window.getWidth()
 	height = love.window.getHeight()
 	time = 0
@@ -41,62 +75,24 @@ function love.load()
 
 	zappy:init("localhost", 4242)
 
+	zappy.map:addPlayer(newPlayer('team 1'))
 
-	-- margin = -0.5
-	-- offx, offy = love.graphics.getWidth() / 2 - size / 2, 0
-	-- scale = 1.5
-
-	Players = {}
-	table.insert(Players, love.newPlayer('team 1'))
-
-	Stones = {}
 end
 
 function love.keypressed(key)
 	print("keypressed", key)
-	if key == 'w' then
-		if Players[1].orientation ~= 'north' then
-			Players[1].orientation = 'north'
-		else
-			Players[1].x = Players[1].x - 1
-		end
+	if Event[key] then
+		Event[key]()
 	end
-	if key == 's' then
-		if Players[1].orientation ~= 'south' then
-			Players[1].orientation = 'south'
-		else
-			Players[1].x = Players[1].x + 1
-		end
-	end
-	if key == 'a' then
-		if Players[1].orientation ~= 'east' then
-			Players[1].orientation = 'east'
-		else
-			Players[1].y = Players[1].y - 1
-		end
-	end
-	if key == 'd' then
-		if Players[1].orientation ~= 'west' then
-			Players[1].orientation = 'west'
-		else
-			Players[1].y = Players[1].y + 1
-		end
-	end
-	if key == '0' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 0)) end
-	if key == '1' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 1)) end
-	if key == '2' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 2)) end
-	if key == '3' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 3)) end
-	if key == '4' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 4)) end
-	if key == '5' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 5)) end
-	if key == '6' then table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 6)) end
 end
 
 function love.update(dt)
+	FPS:update(dt)
 	time = time + dt * 100
 
 	zappy:update(dt)
 
-	for i,v in ipairs(Players) do
+	for i,v in ipairs(zappy.map.players) do
 		v:update(dt)
 	end
 
@@ -129,18 +125,7 @@ function love.update(dt)
 	end
 end
 
--- function love.normalize(x, y)
--- 	return offx + -size / (2 + margin) * x + y * size / (2 + margin), offy + size / (4 + margin) * (x + y)
--- end
-
 function love.draw()
+	FPS:draw()
 	zappy:draw(offx, offy)
-	for i,v in ipairs(Stones) do
-		local x, y = zappy:normalize(v.x, v.y)
-		v:draw(x, y)
-	end
-	for i,v in ipairs(Players) do
-		local x, y = zappy:normalize(v.x, v.y)
-		v:draw(x, y)
-	end
 end

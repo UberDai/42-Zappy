@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 23:24:11
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 23:41:10
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 18:07:45
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -28,7 +28,7 @@ end
 function zappy.makeMStack(self, tab)
 	for i,v in ipairs(tab) do
 		if v:find("%+%s*%d+%s*%d+%s*%d+") then
-			table.insert(Stones, love.newStone(v:match("(%d+)%s*(%d+)%s*(%d+)")))
+			self.map:addStone(love.newStone(v:match("(%d+)%s*(%d+)%s*(%d+)")))
 		end
 	end
 end
@@ -88,16 +88,16 @@ function zappy.init(self, host, port)
 	self.size = 100
 	self.margin = -0.5
 	self.scale = 1.5
-	self.offx, self.offy = love.graphics.getWidth() / 2 - self.size / 2, 0
+	self.offx, self.offy = width / 2 - self.size / 2, 0
 
-	self.map = map:init(love.graphics.newImage("assets/test6.png"), self.size)
+	self.map = Map:init(love.graphics.newImage("assets/test6.png"), self.size)
 
 
 	return self
 end
 
 function zappy.update(self, dt)
-	if self.tcp then zappy:makeMStack(zappy:getMStack()) end
+	if self.tcp then self:makeMStack(self:getMStack()) end
 end
 
 function zappy.draw(self)
