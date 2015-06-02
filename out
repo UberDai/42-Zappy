@@ -2,2811 +2,5899 @@
 [32m•[0m serveur is ready.
 Got map
 Got time
-+ 0 0 0
-+ 0 0 1
-+ 0 0 2
-+ 0 0 2
-+ 0 0 3
-+ 0 0 4
-+ 0 0 4
-+ 0 0 5
-+ 0 0 5
-+ 1 0 1
-+ 1 0 1
-+ 1 0 2
-+ 1 0 6
-+ 2 0 2
-+ 2 0 2
-+ 2 0 3
-+ 2 0 3
-+ 2 0 5
-+ 2 0 5
-+ 2 0 6
-+ 3 0 2
-+ 3 0 2
-+ 3 0 3
-+ 3 0 3
-+ 3 0 5
-+ 3 0 6
-+ 3 0 6
-+ 4 0 0
-+ 4 0 1
-+ 4 0 1
-+ 4 0 2
-+ 4 0 5
-+ 4 0 6
-+ 4 0 6
-+ 5 0 1
-+ 5 0 1
-+ 5 0 2
-+ 5 0 3
-+ 5 0 3
-+ 5 0 6
-+ 5 0 6
-+ 6 0 1
-+ 6 0 1
-+ 6 0 3
-+ 6 0 4
-+ 6 0 4
-+ 6 0 5
-+ 6 0 5
-+ 7 0 1
-+ 7 0 2
-+ 7 0 2
-+ 7 0 3
-+ 7 0 4
-+ 7 0 4
-+ 7 0 5
-+ 7 0 5
-+ 7 0 6
-+ 8 0 0
-+ 8 0 0
-+ 8 0 2
-+ 8 0 2
-+ 8 0 3
-+ 8 0 4
-+ 9 0 0
-+ 9 0 2
-+ 9 0 3
-+ 9 0 6
-+ 9 0 6
-+ 0 1 1
-+ 0 1 5
-+ 0 1 6
-+ 1 1 0
-+ 1 1 0
-+ 1 1 1
-+ 1 1 2
-+ 1 1 2
-+ 1 1 4
-+ 1 1 4
-+ 1 1 5
-+ 1 1 6
-+ 2 1 0
-+ 2 1 3
-+ 2 1 4
-+ 2 1 5
-+ 2 1 6
-+ 3 1 1
-+ 3 1 2
-+ 3 1 3
-+ 3 1 6
-+ 4 1 0
-+ 4 1 1
-+ 4 1 1
-+ 4 1 2
-+ 4 1 3
-+ 4 1 3
-+ 4 1 4
-+ 4 1 5
-+ 4 1 5
-+ 4 1 6
-+ 5 1 1
-+ 5 1 1
-+ 5 1 2
-+ 5 1 3
-+ 5 1 4
-+ 5 1 6
-+ 5 1 6
-+ 6 1 1
-+ 6 1 1
-+ 6 1 2
-+ 6 1 3
-+ 6 1 3
-+ 6 1 4
-+ 6 1 5
-+ 6 1 5
-+ 6 1 6
-+ 7 1 0
-+ 7 1 0
-+ 7 1 2
-+ 7 1 2
-+ 7 1 3
-+ 7 1 4
-+ 7 1 4
-+ 7 1 5
-+ 7 1 6
-+ 7 1 6
-+ 8 1 0
-+ 8 1 0
-+ 8 1 1
-+ 8 1 2
-+ 8 1 2
-+ 8 1 5
-+ 8 1 5
-+ 8 1 6
-+ 8 1 6
-+ 9 1 0
-+ 9 1 0
-+ 9 1 1
-+ 9 1 1
-+ 9 1 2
-+ 9 1 3
-+ 9 1 5
-+ 0 2 0
-+ 0 2 1
-+ 0 2 5
-+ 0 2 5
-+ 1 2 0
-+ 1 2 1
-+ 1 2 2
-+ 1 2 2
-+ 1 2 3
-+ 1 2 3
-+ 1 2 4
-+ 1 2 5
-+ 1 2 6
-+ 2 2 0
-+ 2 2 0
-+ 2 2 6
-+ 3 2 1
-+ 3 2 2
-+ 3 2 2
-+ 3 2 4
-+ 3 2 6
-+ 3 2 6
-+ 4 2 0
-+ 4 2 2
-+ 4 2 3
-+ 4 2 5
-+ 4 2 6
-+ 4 2 6
-+ 5 2 0
-+ 5 2 0
-+ 5 2 3
-+ 5 2 3
-+ 5 2 5
-+ 6 2 0
-+ 6 2 0
-+ 6 2 1
-+ 6 2 2
-+ 6 2 3
-+ 6 2 3
-+ 7 2 0
-+ 7 2 1
-+ 7 2 1
-+ 7 2 2
-+ 7 2 4
-+ 7 2 6
-+ 7 2 6
-+ 8 2 1
-+ 8 2 2
-+ 8 2 2
-+ 8 2 4
-+ 8 2 5
-+ 9 2 1
-+ 9 2 2
-+ 9 2 3
-+ 9 2 4
-+ 9 2 5
-+ 9 2 5
-+ 9 2 6
-+ 0 3 2
-+ 0 3 2
-+ 0 3 4
-+ 0 3 5
-+ 0 3 6
-+ 0 3 6
-+ 1 3 0
-+ 1 3 1
-+ 1 3 1
-+ 1 3 2
-+ 1 3 3
-+ 1 3 3
-+ 1 3 5
-+ 1 3 5
-+ 1 3 6
-+ 1 3 6
-+ 2 3 0
-+ 2 3 0
-+ 2 3 1
-+ 2 3 2
-+ 2 3 2
-+ 3 3 0
-+ 3 3 3
-+ 3 3 4
-+ 3 3 5
-+ 4 3 1
-+ 4 3 2
-+ 4 3 2
-+ 4 3 3
-+ 4 3 3
-+ 4 3 5
-+ 4 3 5
-+ 4 3 6
-+ 4 3 6
-+ 5 3 0
-+ 5 3 0
-+ 5 3 1
-+ 5 3 4
-+ 5 3 4
-+ 5 3 5
-+ 5 3 5
-+ 5 3 6
-+ 6 3 0
-+ 6 3 0
-+ 6 3 3
-+ 6 3 3
-+ 6 3 5
-+ 6 3 5
-+ 7 3 0
-+ 7 3 0
-+ 7 3 1
-+ 7 3 1
-+ 7 3 2
-+ 7 3 3
-+ 7 3 3
-+ 7 3 5
-+ 8 3 1
-+ 8 3 3
-+ 8 3 3
-+ 8 3 4
-+ 8 3 4
-+ 8 3 5
-+ 8 3 5
-+ 8 3 6
-+ 8 3 6
-+ 9 3 0
-+ 9 3 2
-+ 9 3 3
-+ 9 3 3
-+ 9 3 4
-+ 9 3 4
-+ 0 4 0
-+ 0 4 0
-+ 0 4 1
-+ 0 4 2
-+ 0 4 2
-+ 0 4 3
-+ 0 4 3
-+ 0 4 6
-+ 1 4 1
-+ 1 4 1
-+ 1 4 2
-+ 1 4 3
-+ 1 4 4
-+ 1 4 4
-+ 1 4 6
-+ 2 4 1
-+ 2 4 2
-+ 2 4 4
-+ 2 4 6
-+ 3 4 1
-+ 3 4 4
-+ 3 4 4
-+ 3 4 5
-+ 4 4 1
-+ 4 4 3
-+ 4 4 3
-+ 4 4 5
-+ 4 4 5
-+ 4 4 6
-+ 4 4 6
-+ 5 4 0
-+ 5 4 0
-+ 5 4 1
-+ 5 4 1
-+ 5 4 2
-+ 5 4 3
-+ 5 4 3
-+ 5 4 5
-+ 5 4 5
-+ 6 4 0
-+ 6 4 0
-+ 6 4 1
-+ 6 4 3
-+ 6 4 4
-+ 6 4 4
-+ 6 4 6
-+ 7 4 0
-+ 7 4 1
-+ 7 4 1
-+ 7 4 2
-+ 7 4 3
-+ 7 4 5
-+ 7 4 6
-+ 8 4 0
-+ 8 4 1
-+ 8 4 1
-+ 8 4 2
-+ 8 4 2
-+ 8 4 3
-+ 8 4 5
-+ 8 4 6
-+ 8 4 6
-+ 9 4 0
-+ 9 4 0
-+ 9 4 1
-+ 9 4 1
-+ 9 4 2
-+ 9 4 5
-+ 9 4 5
-+ 9 4 6
-+ 0 5 1
-+ 0 5 2
-+ 0 5 3
-+ 0 5 4
-+ 0 5 4
-+ 0 5 5
-+ 0 5 5
-+ 1 5 0
-+ 1 5 1
-+ 1 5 1
-+ 1 5 2
-+ 1 5 2
-+ 1 5 3
-+ 1 5 3
-+ 1 5 4
-+ 1 5 4
-+ 1 5 5
-+ 1 5 5
-+ 1 5 6
-+ 2 5 1
-+ 2 5 1
-+ 2 5 2
-+ 2 5 2
-+ 2 5 3
-+ 2 5 5
-+ 2 5 6
-+ 2 5 6
-+ 3 5 1
-+ 3 5 2
-+ 3 5 3
-+ 3 5 3
-+ 3 5 4
-+ 3 5 5
-+ 3 5 6
-+ 3 5 6
-+ 4 5 0
-+ 4 5 1
-+ 4 5 1
-+ 4 5 2
-+ 4 5 3
-+ 4 5 3
-+ 4 5 5
-+ 4 5 6
-+ 5 5 1
-+ 5 5 1
-+ 5 5 3
-+ 5 5 3
-+ 5 5 4
-+ 5 5 4
-+ 5 5 5
-+ 5 5 5
-+ 5 5 6
-+ 6 5 0
-+ 6 5 0
-+ 6 5 3
-+ 6 5 3
-+ 6 5 5
-+ 6 5 5
-+ 6 5 6
-+ 6 5 6
-+ 7 5 0
-+ 7 5 1
-+ 7 5 2
-+ 7 5 2
-+ 7 5 3
-+ 7 5 3
-+ 7 5 4
-+ 7 5 6
-+ 7 5 6
-+ 8 5 0
-+ 8 5 0
-+ 8 5 3
-+ 8 5 3
-+ 8 5 5
-+ 8 5 6
-+ 8 5 6
-+ 9 5 1
-+ 9 5 1
-+ 9 5 5
-+ 9 5 5
-+ 0 6 1
-+ 0 6 2
-+ 0 6 2
-+ 0 6 5
-+ 0 6 5
-+ 0 6 6
-+ 0 6 6
-+ 1 6 1
-+ 1 6 1
-+ 1 6 4
-+ 1 6 5
-+ 1 6 5
-+ 1 6 6
-+ 1 6 6
-+ 2 6 2
-+ 2 6 3
-+ 2 6 4
-+ 2 6 5
-+ 2 6 5
-+ 2 6 6
-+ 3 6 0
-+ 3 6 1
-+ 3 6 1
-+ 3 6 2
-+ 3 6 3
-+ 3 6 3
-+ 3 6 4
-+ 3 6 5
-+ 4 6 0
-+ 4 6 1
-+ 4 6 1
-+ 4 6 2
-+ 4 6 3
-+ 4 6 3
-+ 4 6 4
-+ 4 6 4
-+ 4 6 5
-+ 4 6 6
-+ 4 6 6
-+ 5 6 1
-+ 5 6 1
-+ 5 6 2
-+ 5 6 4
-+ 5 6 5
-+ 5 6 5
-+ 5 6 6
-+ 6 6 0
-+ 6 6 2
-+ 6 6 4
-+ 6 6 5
-+ 6 6 6
-+ 6 6 6
-+ 7 6 1
-+ 7 6 3
-+ 7 6 3
-+ 7 6 4
-+ 7 6 5
-+ 7 6 5
-+ 8 6 0
-+ 8 6 0
-+ 8 6 1
-+ 8 6 2
-+ 8 6 2
-+ 8 6 3
-+ 8 6 4
-+ 8 6 4
-+ 8 6 6
-+ 9 6 0
-+ 9 6 1
-+ 9 6 2
-+ 9 6 3
-+ 9 6 3
-+ 9 6 4
-+ 9 6 5
-+ 9 6 5
-+ 9 6 6
-+ 9 6 6
-+ 0 7 0
-+ 0 7 0
-+ 0 7 1
-+ 0 7 1
-+ 0 7 3
-+ 0 7 3
-+ 0 7 4
-+ 0 7 6
-+ 1 7 0
-+ 1 7 0
-+ 1 7 2
-+ 1 7 3
-+ 1 7 3
-+ 1 7 4
-+ 1 7 5
-+ 2 7 0
-+ 2 7 1
-+ 2 7 2
-+ 2 7 3
-+ 2 7 3
-+ 2 7 5
-+ 2 7 6
-+ 2 7 6
-+ 3 7 0
-+ 3 7 1
-+ 4 7 1
-+ 4 7 1
-+ 4 7 2
-+ 4 7 3
-+ 4 7 4
-+ 4 7 4
-+ 4 7 6
-+ 5 7 1
-+ 5 7 2
-+ 5 7 3
-+ 5 7 4
-+ 5 7 5
-+ 6 7 3
-+ 6 7 4
-+ 6 7 4
-+ 6 7 5
-+ 6 7 6
-+ 6 7 6
-+ 7 7 0
-+ 7 7 1
-+ 7 7 1
-+ 7 7 2
-+ 7 7 2
-+ 7 7 4
-+ 7 7 4
-+ 8 7 0
-+ 8 7 0
-+ 8 7 1
-+ 8 7 1
-+ 8 7 2
-+ 8 7 2
-+ 8 7 3
-+ 8 7 3
-+ 8 7 4
-+ 8 7 4
-+ 8 7 5
-+ 8 7 5
-+ 9 7 1
-+ 9 7 1
-+ 9 7 3
-+ 9 7 3
-+ 9 7 4
-+ 9 7 4
-+ 0 8 0
-+ 0 8 0
-+ 0 8 1
-+ 0 8 1
-+ 0 8 2
-+ 0 8 2
-+ 0 8 3
-+ 0 8 5
-+ 0 8 5
-+ 0 8 6
-+ 1 8 0
-+ 1 8 0
-+ 1 8 4
-+ 2 8 3
-+ 2 8 3
-+ 2 8 4
-+ 2 8 5
-+ 2 8 5
-+ 2 8 6
-+ 3 8 0
-+ 3 8 2
-+ 3 8 2
-+ 3 8 3
-+ 3 8 4
-+ 3 8 6
-+ 4 8 0
-+ 4 8 0
-+ 4 8 2
-+ 4 8 4
-+ 4 8 4
-+ 4 8 6
-+ 5 8 0
-+ 5 8 0
-+ 5 8 1
-+ 5 8 1
-+ 5 8 2
-+ 5 8 2
-+ 6 8 0
-+ 6 8 2
-+ 6 8 4
-+ 6 8 5
-+ 6 8 5
-+ 6 8 6
-+ 7 8 1
-+ 7 8 1
-+ 7 8 2
-+ 7 8 2
-+ 7 8 3
-+ 7 8 3
-+ 7 8 6
-+ 8 8 1
-+ 8 8 1
-+ 8 8 3
-+ 8 8 5
-+ 9 8 0
-+ 9 8 0
-+ 9 8 1
-+ 9 8 1
-+ 9 8 2
-+ 9 8 4
-+ 9 8 4
-+ 9 8 5
-+ 9 8 5
-+ 9 8 6
-+ 9 8 6
-+ 0 9 0
-+ 0 9 0
-+ 0 9 1
-+ 0 9 4
-+ 0 9 5
-+ 0 9 5
-+ 0 9 6
-+ 0 9 6
-+ 1 9 1
-+ 1 9 1
-+ 1 9 4
-+ 1 9 6
-+ 1 9 6
-+ 2 9 0
-+ 2 9 0
-+ 2 9 1
-+ 2 9 2
-+ 2 9 2
-+ 2 9 6
-+ 2 9 6
-+ 3 9 0
-+ 3 9 0
-+ 3 9 2
-+ 3 9 2
-+ 3 9 3
-+ 3 9 3
-+ 3 9 4
-+ 3 9 4
-+ 3 9 6
-+ 3 9 6
-+ 4 9 0
-+ 4 9 1
-+ 4 9 1
-+ 4 9 3
-+ 4 9 3
-+ 4 9 6
-+ 4 9 6
-+ 5 9 2
-+ 5 9 2
-+ 6 9 0
-+ 6 9 1
-+ 6 9 1
-+ 6 9 3
-+ 7 9 2
-+ 7 9 2
-+ 7 9 3
-+ 7 9 4
-+ 7 9 6
-+ 8 9 0
-+ 8 9 0
-+ 8 9 2
-+ 8 9 5
-+ 9 9 1
-+ 9 9 3
-+ 9 9 3
-+ 9 9 4
-+ 9 9 4
-+ 9 9 5
-+ 9 9 5
-+ 9 9 6
-+ 9 9 6
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
-nil
+{
+  HC = { -- <instance of HardonCollider>
+    _active_shapes = {
+      [<1>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 1>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 2>
+            }
+          },
+          <metatable> = <2>{ -- Polygon
+            __index = <table 2>,
+            __is_a = {
+              [<table 2>] = true
+            },
+            __tostring = <function 3>,
+            bbox = <function 4>,
+            clone = <function 5>,
+            construct = <function 6>,
+            contains = <function 7>,
+            inherit = <function 8>,
+            init = <function 6>,
+            intersectionsWithRay = <function 9>,
+            intersectsRay = <function 10>,
+            isConvex = <function 11>,
+            is_a = <function 12>,
+            mergedWith = <function 13>,
+            move = <function 14>,
+            rotate = <function 15>,
+            scale = <function 16>,
+            splitConvex = <function 17>,
+            triangulate = <function 18>,
+            unpack = <function 19>,
+            <metatable> = {
+              __call = <function 20>,
+              __tostring = <function 21>
+            }
+          }
+        },
+        _removeFromHash = <function 22>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 23>,
+        move = <function 24>,
+        neighbors = <function 25>,
+        rotate = <function 26>,
+        scale = <function 27>,
+        <metatable> = <3>{ -- ConvexPolygonShape
+          __index = <table 3>,
+          __is_a = {
+            [<table 3>] = true,
+            [<4>{ -- Shape
+              __index = <table 4>,
+              __is_a = {
+                [<table 4>] = true
+              },
+              __tostring = <function 28>,
+              construct = <function 29>,
+              inherit = <function 8>,
+              init = <function 29>,
+              is_a = <function 30>,
+              moveTo = <function 31>,
+              rotate = <function 32>,
+              rotation = <function 33>,
+              setRotation = <function 34>,
+              <metatable> = {
+                __call = <function 35>,
+                __tostring = <function 36>
+              }
+            }] = true
+          },
+          __tostring = <function 37>,
+          bbox = <function 38>,
+          center = <function 39>,
+          collidesWith = <function 40>,
+          construct = <function 41>,
+          contains = <function 42>,
+          draw = <function 43>,
+          inherit = <function 8>,
+          init = <function 41>,
+          intersectionsWithRay = <function 44>,
+          intersectsRay = <function 45>,
+          is_a = <function 46>,
+          move = <function 47>,
+          moveTo = <function 31>,
+          outcircle = <function 48>,
+          rotate = <function 49>,
+          rotation = <function 33>,
+          scale = <function 50>,
+          setRotation = <function 34>,
+          support = <function 51>,
+          <metatable> = {
+            __call = <function 52>,
+            __tostring = <function 53>
+          }
+        }
+      }] = <table 1>,
+      [<5>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 54>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 55>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 56>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 57>,
+        move = <function 58>,
+        neighbors = <function 59>,
+        rotate = <function 60>,
+        scale = <function 61>,
+        <metatable> = <table 3>
+      }] = <table 5>,
+      [<6>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 62>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 63>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 64>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 65>,
+        move = <function 66>,
+        neighbors = <function 67>,
+        rotate = <function 68>,
+        scale = <function 69>,
+        <metatable> = <table 3>
+      }] = <table 6>,
+      [<7>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 70>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 71>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 72>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 73>,
+        move = <function 74>,
+        neighbors = <function 75>,
+        rotate = <function 76>,
+        scale = <function 77>,
+        <metatable> = <table 3>
+      }] = <table 7>,
+      [<8>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 78>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 79>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 80>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 81>,
+        move = <function 82>,
+        neighbors = <function 83>,
+        rotate = <function 84>,
+        scale = <function 85>,
+        <metatable> = <table 3>
+      }] = <table 8>,
+      [<9>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 86>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 87>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 88>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 89>,
+        move = <function 90>,
+        neighbors = <function 91>,
+        rotate = <function 92>,
+        scale = <function 93>,
+        <metatable> = <table 3>
+      }] = <table 9>,
+      [<10>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 94>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 95>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 96>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 97>,
+        move = <function 98>,
+        neighbors = <function 99>,
+        rotate = <function 100>,
+        scale = <function 101>,
+        <metatable> = <table 3>
+      }] = <table 10>,
+      [<11>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 102>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 103>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 104>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 105>,
+        move = <function 106>,
+        neighbors = <function 107>,
+        rotate = <function 108>,
+        scale = <function 109>,
+        <metatable> = <table 3>
+      }] = <table 11>,
+      [<12>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 110>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 111>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 112>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 113>,
+        move = <function 114>,
+        neighbors = <function 115>,
+        rotate = <function 116>,
+        scale = <function 117>,
+        <metatable> = <table 3>
+      }] = <table 12>,
+      [<13>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 118>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 119>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 120>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 121>,
+        move = <function 122>,
+        neighbors = <function 123>,
+        rotate = <function 124>,
+        scale = <function 125>,
+        <metatable> = <table 3>
+      }] = <table 13>,
+      [<14>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 126>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 127>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 128>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 129>,
+        move = <function 130>,
+        neighbors = <function 131>,
+        rotate = <function 132>,
+        scale = <function 133>,
+        <metatable> = <table 3>
+      }] = <table 14>,
+      [<15>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 134>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 135>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 136>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 137>,
+        move = <function 138>,
+        neighbors = <function 139>,
+        rotate = <function 140>,
+        scale = <function 141>,
+        <metatable> = <table 3>
+      }] = <table 15>,
+      [<16>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 142>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 143>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 144>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 145>,
+        move = <function 146>,
+        neighbors = <function 147>,
+        rotate = <function 148>,
+        scale = <function 149>,
+        <metatable> = <table 3>
+      }] = <table 16>,
+      [<17>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 150>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 151>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 152>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 153>,
+        move = <function 154>,
+        neighbors = <function 155>,
+        rotate = <function 156>,
+        scale = <function 157>,
+        <metatable> = <table 3>
+      }] = <table 17>,
+      [<18>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 158>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 159>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 160>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 161>,
+        move = <function 162>,
+        neighbors = <function 163>,
+        rotate = <function 164>,
+        scale = <function 165>,
+        <metatable> = <table 3>
+      }] = <table 18>,
+      [<19>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 166>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 167>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 168>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 169>,
+        move = <function 170>,
+        neighbors = <function 171>,
+        rotate = <function 172>,
+        scale = <function 173>,
+        <metatable> = <table 3>
+      }] = <table 19>,
+      [<20>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 174>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 175>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 176>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 177>,
+        move = <function 178>,
+        neighbors = <function 179>,
+        rotate = <function 180>,
+        scale = <function 181>,
+        <metatable> = <table 3>
+      }] = <table 20>,
+      [<21>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 182>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 183>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 184>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 185>,
+        move = <function 186>,
+        neighbors = <function 187>,
+        rotate = <function 188>,
+        scale = <function 189>,
+        <metatable> = <table 3>
+      }] = <table 21>,
+      [<22>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 190>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 191>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 192>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 193>,
+        move = <function 194>,
+        neighbors = <function 195>,
+        rotate = <function 196>,
+        scale = <function 197>,
+        <metatable> = <table 3>
+      }] = <table 22>,
+      [<23>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 198>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 199>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 200>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 201>,
+        move = <function 202>,
+        neighbors = <function 203>,
+        rotate = <function 204>,
+        scale = <function 205>,
+        <metatable> = <table 3>
+      }] = <table 23>,
+      [<24>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 206>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 207>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 208>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 209>,
+        move = <function 210>,
+        neighbors = <function 211>,
+        rotate = <function 212>,
+        scale = <function 213>,
+        <metatable> = <table 3>
+      }] = <table 24>,
+      [<25>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 214>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 215>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 216>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 217>,
+        move = <function 218>,
+        neighbors = <function 219>,
+        rotate = <function 220>,
+        scale = <function 221>,
+        <metatable> = <table 3>
+      }] = <table 25>,
+      [<26>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 222>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 223>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 224>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 225>,
+        move = <function 226>,
+        neighbors = <function 227>,
+        rotate = <function 228>,
+        scale = <function 229>,
+        <metatable> = <table 3>
+      }] = <table 26>,
+      [<27>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 230>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 231>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 232>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 233>,
+        move = <function 234>,
+        neighbors = <function 235>,
+        rotate = <function 236>,
+        scale = <function 237>,
+        <metatable> = <table 3>
+      }] = <table 27>,
+      [<28>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 238>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 239>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 240>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 241>,
+        move = <function 242>,
+        neighbors = <function 243>,
+        rotate = <function 244>,
+        scale = <function 245>,
+        <metatable> = <table 3>
+      }] = <table 28>,
+      [<29>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 246>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 247>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 248>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 249>,
+        move = <function 250>,
+        neighbors = <function 251>,
+        rotate = <function 252>,
+        scale = <function 253>,
+        <metatable> = <table 3>
+      }] = <table 29>,
+      [<30>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 254>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 255>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 256>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 257>,
+        move = <function 258>,
+        neighbors = <function 259>,
+        rotate = <function 260>,
+        scale = <function 261>,
+        <metatable> = <table 3>
+      }] = <table 30>,
+      [<31>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 262>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 263>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 264>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 265>,
+        move = <function 266>,
+        neighbors = <function 267>,
+        rotate = <function 268>,
+        scale = <function 269>,
+        <metatable> = <table 3>
+      }] = <table 31>,
+      [<32>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 270>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 271>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 272>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 273>,
+        move = <function 274>,
+        neighbors = <function 275>,
+        rotate = <function 276>,
+        scale = <function 277>,
+        <metatable> = <table 3>
+      }] = <table 32>,
+      [<33>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 278>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 279>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 280>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 281>,
+        move = <function 282>,
+        neighbors = <function 283>,
+        rotate = <function 284>,
+        scale = <function 285>,
+        <metatable> = <table 3>
+      }] = <table 33>,
+      [<34>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 286>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 287>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 288>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 289>,
+        move = <function 290>,
+        neighbors = <function 291>,
+        rotate = <function 292>,
+        scale = <function 293>,
+        <metatable> = <table 3>
+      }] = <table 34>,
+      [<35>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 294>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 295>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 296>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 297>,
+        move = <function 298>,
+        neighbors = <function 299>,
+        rotate = <function 300>,
+        scale = <function 301>,
+        <metatable> = <table 3>
+      }] = <table 35>,
+      [<36>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 302>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 303>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 304>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 305>,
+        move = <function 306>,
+        neighbors = <function 307>,
+        rotate = <function 308>,
+        scale = <function 309>,
+        <metatable> = <table 3>
+      }] = <table 36>,
+      [<37>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 310>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 311>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 312>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 313>,
+        move = <function 314>,
+        neighbors = <function 315>,
+        rotate = <function 316>,
+        scale = <function 317>,
+        <metatable> = <table 3>
+      }] = <table 37>,
+      [<38>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 318>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 319>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 320>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 321>,
+        move = <function 322>,
+        neighbors = <function 323>,
+        rotate = <function 324>,
+        scale = <function 325>,
+        <metatable> = <table 3>
+      }] = <table 38>,
+      [<39>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 326>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 327>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 328>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 329>,
+        move = <function 330>,
+        neighbors = <function 331>,
+        rotate = <function 332>,
+        scale = <function 333>,
+        <metatable> = <table 3>
+      }] = <table 39>,
+      [<40>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 334>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 335>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 336>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 337>,
+        move = <function 338>,
+        neighbors = <function 339>,
+        rotate = <function 340>,
+        scale = <function 341>,
+        <metatable> = <table 3>
+      }] = <table 40>,
+      [<41>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 342>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 343>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 344>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 345>,
+        move = <function 346>,
+        neighbors = <function 347>,
+        rotate = <function 348>,
+        scale = <function 349>,
+        <metatable> = <table 3>
+      }] = <table 41>,
+      [<42>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 350>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 351>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 352>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 353>,
+        move = <function 354>,
+        neighbors = <function 355>,
+        rotate = <function 356>,
+        scale = <function 357>,
+        <metatable> = <table 3>
+      }] = <table 42>,
+      [<43>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 358>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 359>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 360>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 361>,
+        move = <function 362>,
+        neighbors = <function 363>,
+        rotate = <function 364>,
+        scale = <function 365>,
+        <metatable> = <table 3>
+      }] = <table 43>,
+      [<44>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 366>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 367>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 368>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 369>,
+        move = <function 370>,
+        neighbors = <function 371>,
+        rotate = <function 372>,
+        scale = <function 373>,
+        <metatable> = <table 3>
+      }] = <table 44>,
+      [<45>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 374>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 375>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 376>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 377>,
+        move = <function 378>,
+        neighbors = <function 379>,
+        rotate = <function 380>,
+        scale = <function 381>,
+        <metatable> = <table 3>
+      }] = <table 45>,
+      [<46>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 382>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 383>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 384>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 385>,
+        move = <function 386>,
+        neighbors = <function 387>,
+        rotate = <function 388>,
+        scale = <function 389>,
+        <metatable> = <table 3>
+      }] = <table 46>,
+      [<47>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 390>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 391>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 392>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 393>,
+        move = <function 394>,
+        neighbors = <function 395>,
+        rotate = <function 396>,
+        scale = <function 397>,
+        <metatable> = <table 3>
+      }] = <table 47>,
+      [<48>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 398>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 399>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 400>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 401>,
+        move = <function 402>,
+        neighbors = <function 403>,
+        rotate = <function 404>,
+        scale = <function 405>,
+        <metatable> = <table 3>
+      }] = <table 48>,
+      [<49>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 406>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 407>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 408>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 409>,
+        move = <function 410>,
+        neighbors = <function 411>,
+        rotate = <function 412>,
+        scale = <function 413>,
+        <metatable> = <table 3>
+      }] = <table 49>,
+      [<50>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 414>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 415>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 416>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 417>,
+        move = <function 418>,
+        neighbors = <function 419>,
+        rotate = <function 420>,
+        scale = <function 421>,
+        <metatable> = <table 3>
+      }] = <table 50>,
+      [<51>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 422>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 423>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 424>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 425>,
+        move = <function 426>,
+        neighbors = <function 427>,
+        rotate = <function 428>,
+        scale = <function 429>,
+        <metatable> = <table 3>
+      }] = <table 51>,
+      [<52>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 430>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 431>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 432>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 433>,
+        move = <function 434>,
+        neighbors = <function 435>,
+        rotate = <function 436>,
+        scale = <function 437>,
+        <metatable> = <table 3>
+      }] = <table 52>,
+      [<53>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 438>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 439>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 440>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 441>,
+        move = <function 442>,
+        neighbors = <function 443>,
+        rotate = <function 444>,
+        scale = <function 445>,
+        <metatable> = <table 3>
+      }] = <table 53>,
+      [<54>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 446>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 447>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 448>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 449>,
+        move = <function 450>,
+        neighbors = <function 451>,
+        rotate = <function 452>,
+        scale = <function 453>,
+        <metatable> = <table 3>
+      }] = <table 54>,
+      [<55>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 454>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 455>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 456>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 457>,
+        move = <function 458>,
+        neighbors = <function 459>,
+        rotate = <function 460>,
+        scale = <function 461>,
+        <metatable> = <table 3>
+      }] = <table 55>,
+      [<56>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 462>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 463>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 464>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 465>,
+        move = <function 466>,
+        neighbors = <function 467>,
+        rotate = <function 468>,
+        scale = <function 469>,
+        <metatable> = <table 3>
+      }] = <table 56>,
+      [<57>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 470>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 471>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 472>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 473>,
+        move = <function 474>,
+        neighbors = <function 475>,
+        rotate = <function 476>,
+        scale = <function 477>,
+        <metatable> = <table 3>
+      }] = <table 57>,
+      [<58>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 478>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 479>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 480>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 481>,
+        move = <function 482>,
+        neighbors = <function 483>,
+        rotate = <function 484>,
+        scale = <function 485>,
+        <metatable> = <table 3>
+      }] = <table 58>,
+      [<59>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 486>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 487>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 488>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 489>,
+        move = <function 490>,
+        neighbors = <function 491>,
+        rotate = <function 492>,
+        scale = <function 493>,
+        <metatable> = <table 3>
+      }] = <table 59>,
+      [<60>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 494>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 495>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 496>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 497>,
+        move = <function 498>,
+        neighbors = <function 499>,
+        rotate = <function 500>,
+        scale = <function 501>,
+        <metatable> = <table 3>
+      }] = <table 60>,
+      [<61>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 502>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 503>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 504>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 505>,
+        move = <function 506>,
+        neighbors = <function 507>,
+        rotate = <function 508>,
+        scale = <function 509>,
+        <metatable> = <table 3>
+      }] = <table 61>,
+      [<62>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 510>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 511>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 512>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 513>,
+        move = <function 514>,
+        neighbors = <function 515>,
+        rotate = <function 516>,
+        scale = <function 517>,
+        <metatable> = <table 3>
+      }] = <table 62>,
+      [<63>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 518>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 519>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 520>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 521>,
+        move = <function 522>,
+        neighbors = <function 523>,
+        rotate = <function 524>,
+        scale = <function 525>,
+        <metatable> = <table 3>
+      }] = <table 63>,
+      [<64>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 526>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 527>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 528>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 529>,
+        move = <function 530>,
+        neighbors = <function 531>,
+        rotate = <function 532>,
+        scale = <function 533>,
+        <metatable> = <table 3>
+      }] = <table 64>,
+      [<65>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 534>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 535>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 536>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 537>,
+        move = <function 538>,
+        neighbors = <function 539>,
+        rotate = <function 540>,
+        scale = <function 541>,
+        <metatable> = <table 3>
+      }] = <table 65>,
+      [<66>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 542>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 543>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 544>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 545>,
+        move = <function 546>,
+        neighbors = <function 547>,
+        rotate = <function 548>,
+        scale = <function 549>,
+        <metatable> = <table 3>
+      }] = <table 66>,
+      [<67>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 550>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 551>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 552>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 553>,
+        move = <function 554>,
+        neighbors = <function 555>,
+        rotate = <function 556>,
+        scale = <function 557>,
+        <metatable> = <table 3>
+      }] = <table 67>,
+      [<68>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 558>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 559>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 560>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 561>,
+        move = <function 562>,
+        neighbors = <function 563>,
+        rotate = <function 564>,
+        scale = <function 565>,
+        <metatable> = <table 3>
+      }] = <table 68>,
+      [<69>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 566>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 567>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 568>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 569>,
+        move = <function 570>,
+        neighbors = <function 571>,
+        rotate = <function 572>,
+        scale = <function 573>,
+        <metatable> = <table 3>
+      }] = <table 69>,
+      [<70>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 574>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 575>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 576>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 577>,
+        move = <function 578>,
+        neighbors = <function 579>,
+        rotate = <function 580>,
+        scale = <function 581>,
+        <metatable> = <table 3>
+      }] = <table 70>,
+      [<71>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 582>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 583>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 584>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 585>,
+        move = <function 586>,
+        neighbors = <function 587>,
+        rotate = <function 588>,
+        scale = <function 589>,
+        <metatable> = <table 3>
+      }] = <table 71>,
+      [<72>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 590>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 591>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 592>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 593>,
+        move = <function 594>,
+        neighbors = <function 595>,
+        rotate = <function 596>,
+        scale = <function 597>,
+        <metatable> = <table 3>
+      }] = <table 72>,
+      [<73>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 598>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 599>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 600>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 601>,
+        move = <function 602>,
+        neighbors = <function 603>,
+        rotate = <function 604>,
+        scale = <function 605>,
+        <metatable> = <table 3>
+      }] = <table 73>,
+      [<74>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 606>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 607>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 608>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 609>,
+        move = <function 610>,
+        neighbors = <function 611>,
+        rotate = <function 612>,
+        scale = <function 613>,
+        <metatable> = <table 3>
+      }] = <table 74>,
+      [<75>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 614>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 615>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 616>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 617>,
+        move = <function 618>,
+        neighbors = <function 619>,
+        rotate = <function 620>,
+        scale = <function 621>,
+        <metatable> = <table 3>
+      }] = <table 75>,
+      [<76>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 622>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 623>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 624>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 625>,
+        move = <function 626>,
+        neighbors = <function 627>,
+        rotate = <function 628>,
+        scale = <function 629>,
+        <metatable> = <table 3>
+      }] = <table 76>,
+      [<77>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 630>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 631>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 632>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 633>,
+        move = <function 634>,
+        neighbors = <function 635>,
+        rotate = <function 636>,
+        scale = <function 637>,
+        <metatable> = <table 3>
+      }] = <table 77>,
+      [<78>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 638>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 639>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 640>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 641>,
+        move = <function 642>,
+        neighbors = <function 643>,
+        rotate = <function 644>,
+        scale = <function 645>,
+        <metatable> = <table 3>
+      }] = <table 78>,
+      [<79>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 646>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 647>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 648>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 649>,
+        move = <function 650>,
+        neighbors = <function 651>,
+        rotate = <function 652>,
+        scale = <function 653>,
+        <metatable> = <table 3>
+      }] = <table 79>,
+      [<80>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 654>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 655>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 656>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 657>,
+        move = <function 658>,
+        neighbors = <function 659>,
+        rotate = <function 660>,
+        scale = <function 661>,
+        <metatable> = <table 3>
+      }] = <table 80>,
+      [<81>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 662>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 663>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 664>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 665>,
+        move = <function 666>,
+        neighbors = <function 667>,
+        rotate = <function 668>,
+        scale = <function 669>,
+        <metatable> = <table 3>
+      }] = <table 81>,
+      [<82>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 670>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 671>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 672>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 673>,
+        move = <function 674>,
+        neighbors = <function 675>,
+        rotate = <function 676>,
+        scale = <function 677>,
+        <metatable> = <table 3>
+      }] = <table 82>,
+      [<83>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 678>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 679>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 680>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 681>,
+        move = <function 682>,
+        neighbors = <function 683>,
+        rotate = <function 684>,
+        scale = <function 685>,
+        <metatable> = <table 3>
+      }] = <table 83>,
+      [<84>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 686>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 687>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 688>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 689>,
+        move = <function 690>,
+        neighbors = <function 691>,
+        rotate = <function 692>,
+        scale = <function 693>,
+        <metatable> = <table 3>
+      }] = <table 84>,
+      [<85>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 694>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 695>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 696>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 697>,
+        move = <function 698>,
+        neighbors = <function 699>,
+        rotate = <function 700>,
+        scale = <function 701>,
+        <metatable> = <table 3>
+      }] = <table 85>,
+      [<86>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 702>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 703>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 704>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 705>,
+        move = <function 706>,
+        neighbors = <function 707>,
+        rotate = <function 708>,
+        scale = <function 709>,
+        <metatable> = <table 3>
+      }] = <table 86>,
+      [<87>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 710>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 711>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 712>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 713>,
+        move = <function 714>,
+        neighbors = <function 715>,
+        rotate = <function 716>,
+        scale = <function 717>,
+        <metatable> = <table 3>
+      }] = <table 87>,
+      [<88>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 718>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 719>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 720>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 721>,
+        move = <function 722>,
+        neighbors = <function 723>,
+        rotate = <function 724>,
+        scale = <function 725>,
+        <metatable> = <table 3>
+      }] = <table 88>,
+      [<89>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 726>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 727>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 728>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 729>,
+        move = <function 730>,
+        neighbors = <function 731>,
+        rotate = <function 732>,
+        scale = <function 733>,
+        <metatable> = <table 3>
+      }] = <table 89>,
+      [<90>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 734>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 735>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 736>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 737>,
+        move = <function 738>,
+        neighbors = <function 739>,
+        rotate = <function 740>,
+        scale = <function 741>,
+        <metatable> = <table 3>
+      }] = <table 90>,
+      [<91>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 742>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 743>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 744>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 745>,
+        move = <function 746>,
+        neighbors = <function 747>,
+        rotate = <function 748>,
+        scale = <function 749>,
+        <metatable> = <table 3>
+      }] = <table 91>,
+      [<92>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 750>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 751>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 752>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 753>,
+        move = <function 754>,
+        neighbors = <function 755>,
+        rotate = <function 756>,
+        scale = <function 757>,
+        <metatable> = <table 3>
+      }] = <table 92>,
+      [<93>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 758>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 759>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 760>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 761>,
+        move = <function 762>,
+        neighbors = <function 763>,
+        rotate = <function 764>,
+        scale = <function 765>,
+        <metatable> = <table 3>
+      }] = <table 93>,
+      [<94>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 766>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 767>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 768>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 769>,
+        move = <function 770>,
+        neighbors = <function 771>,
+        rotate = <function 772>,
+        scale = <function 773>,
+        <metatable> = <table 3>
+      }] = <table 94>,
+      [<95>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 774>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 775>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 776>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 777>,
+        move = <function 778>,
+        neighbors = <function 779>,
+        rotate = <function 780>,
+        scale = <function 781>,
+        <metatable> = <table 3>
+      }] = <table 95>,
+      [<96>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 782>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 783>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 784>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 785>,
+        move = <function 786>,
+        neighbors = <function 787>,
+        rotate = <function 788>,
+        scale = <function 789>,
+        <metatable> = <table 3>
+      }] = <table 96>,
+      [<97>{ -- <instance of CircleShape>
+        _center = {
+          x = 0,
+          y = 0
+        },
+        _groups = {},
+        _radius = 1,
+        _removeFromHash = <function 790>,
+        _rotation = 0,
+        _type = "circle",
+        inGroup = <function 791>,
+        move = <function 792>,
+        neighbors = <function 793>,
+        rotate = <function 794>,
+        scale = <function 795>,
+        <metatable> = <98>{ -- CircleShape
+          __index = <table 98>,
+          __is_a = {
+            [<table 98>] = true,
+            [<table 4>] = true
+          },
+          __tostring = <function 796>,
+          bbox = <function 797>,
+          center = <function 798>,
+          collidesWith = <function 799>,
+          construct = <function 800>,
+          contains = <function 801>,
+          draw = <function 802>,
+          inherit = <function 8>,
+          init = <function 800>,
+          intersectionsWithRay = <function 803>,
+          intersectsRay = <function 804>,
+          is_a = <function 805>,
+          move = <function 806>,
+          moveTo = <function 31>,
+          outcircle = <function 807>,
+          rotate = <function 808>,
+          rotation = <function 33>,
+          scale = <function 809>,
+          setRotation = <function 34>,
+          support = <function 810>,
+          <metatable> = {
+            __call = <function 811>,
+            __tostring = <function 812>
+          }
+        }
+      }] = <table 97>,
+      [<99>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 813>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 814>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 815>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 816>,
+        move = <function 817>,
+        neighbors = <function 818>,
+        rotate = <function 819>,
+        scale = <function 820>,
+        <metatable> = <table 3>
+      }] = <table 99>,
+      [<100>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 821>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 822>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 823>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 824>,
+        move = <function 825>,
+        neighbors = <function 826>,
+        rotate = <function 827>,
+        scale = <function 828>,
+        <metatable> = <table 3>
+      }] = <table 100>,
+      [<101>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 829>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 830>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 831>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 832>,
+        move = <function 833>,
+        neighbors = <function 834>,
+        rotate = <function 835>,
+        scale = <function 836>,
+        <metatable> = <table 3>
+      }] = <table 101>,
+      [<102>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 837>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 838>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 839>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 840>,
+        move = <function 841>,
+        neighbors = <function 842>,
+        rotate = <function 843>,
+        scale = <function 844>,
+        <metatable> = <table 3>
+      }] = <table 102>,
+      [<103>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 845>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 846>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 847>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 848>,
+        move = <function 849>,
+        neighbors = <function 850>,
+        rotate = <function 851>,
+        scale = <function 852>,
+        <metatable> = <table 3>
+      }] = <table 103>,
+      [<104>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 853>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 854>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 855>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 856>,
+        move = <function 857>,
+        neighbors = <function 858>,
+        rotate = <function 859>,
+        scale = <function 860>,
+        <metatable> = <table 3>
+      }] = <table 104>,
+      [<105>{ -- <instance of ConvexPolygonShape>
+        _groups = {},
+        _polygon = { -- <instance of Polygon>
+          _radius = 75,
+          area = 2500,
+          centroid = {
+            x = 50,
+            y = 25
+          },
+          isConvex = <function 861>,
+          vertices = { {
+              x = -25,
+              y = 25
+            }, {
+              x = 50,
+              y = -12.5
+            }, {
+              x = 125,
+              y = 25
+            }, {
+              x = 50,
+              y = 62.5
+            },
+            <metatable> = {
+              __newindex = <function 862>
+            }
+          },
+          <metatable> = <table 2>
+        },
+        _removeFromHash = <function 863>,
+        _rotation = 0,
+        _type = "polygon",
+        inGroup = <function 864>,
+        move = <function 865>,
+        neighbors = <function 866>,
+        rotate = <function 867>,
+        scale = <function 868>,
+        <metatable> = <table 3>
+      }] = <table 105>
+    },
+    _colliding_only_last_frame = {},
+    _ghost_shapes = {},
+    _hash = { -- <instance of Spatialhash>
+      cell_size = 100,
+      cells = { {
+          [-1] = {
+            [<table 1>] = <table 1>,
+            [<table 5>] = <table 5>,
+            [<table 6>] = <table 6>,
+            [<table 7>] = <table 7>,
+            [<table 8>] = <table 8>,
+            [<table 9>] = <table 9>,
+            [<table 10>] = <table 10>,
+            [<table 11>] = <table 11>,
+            [<table 12>] = <table 12>,
+            [<table 13>] = <table 13>,
+            [<table 14>] = <table 14>,
+            [<table 15>] = <table 15>,
+            [<table 16>] = <table 16>,
+            [<table 17>] = <table 17>,
+            [<table 18>] = <table 18>,
+            [<table 19>] = <table 19>,
+            [<table 20>] = <table 20>,
+            [<table 21>] = <table 21>,
+            [<table 22>] = <table 22>,
+            [<table 23>] = <table 23>,
+            [<table 24>] = <table 24>,
+            [<table 25>] = <table 25>,
+            [<table 26>] = <table 26>,
+            [<table 27>] = <table 27>,
+            [<table 28>] = <table 28>,
+            [<table 29>] = <table 29>,
+            [<table 30>] = <table 30>,
+            [<table 31>] = <table 31>,
+            [<table 32>] = <table 32>,
+            [<table 33>] = <table 33>,
+            [<table 34>] = <table 34>,
+            [<table 35>] = <table 35>,
+            [<table 36>] = <table 36>,
+            [<table 37>] = <table 37>,
+            [<table 38>] = <table 38>,
+            [<table 39>] = <table 39>,
+            [<table 40>] = <table 40>,
+            [<table 41>] = <table 41>,
+            [<table 42>] = <table 42>,
+            [<table 43>] = <table 43>,
+            [<table 44>] = <table 44>,
+            [<table 45>] = <table 45>,
+            [<table 46>] = <table 46>,
+            [<table 47>] = <table 47>,
+            [<table 48>] = <table 48>,
+            [<table 49>] = <table 49>,
+            [<table 50>] = <table 50>,
+            [<table 51>] = <table 51>,
+            [<table 52>] = <table 52>,
+            [<table 53>] = <table 53>,
+            [<table 54>] = <table 54>,
+            [<table 55>] = <table 55>,
+            [<table 58>] = <table 58>,
+            [<table 56>] = <table 56>,
+            [<table 59>] = <table 59>,
+            [<table 60>] = <table 60>,
+            [<table 67>] = <table 67>,
+            [<table 57>] = <table 57>,
+            [<table 63>] = <table 63>,
+            [<table 61>] = <table 61>,
+            [<table 65>] = <table 65>,
+            [<table 62>] = <table 62>,
+            [<table 64>] = <table 64>,
+            [<table 73>] = <table 73>,
+            [<table 77>] = <table 77>,
+            [<table 69>] = <table 69>,
+            [<table 71>] = <table 71>,
+            [<table 72>] = <table 72>,
+            [<table 68>] = <table 68>,
+            [<table 70>] = <table 70>,
+            [<table 76>] = <table 76>,
+            [<table 74>] = <table 74>,
+            [<table 78>] = <table 78>,
+            [<table 75>] = <table 75>,
+            [<table 79>] = <table 79>,
+            [<table 66>] = <table 66>,
+            [<table 92>] = <table 92>,
+            [<table 82>] = <table 82>,
+            [<table 83>] = <table 83>,
+            [<table 84>] = <table 84>,
+            [<table 85>] = <table 85>,
+            [<table 86>] = <table 86>,
+            [<table 87>] = <table 87>,
+            [<table 88>] = <table 88>,
+            [<table 89>] = <table 89>,
+            [<table 90>] = <table 90>,
+            [<table 91>] = <table 91>,
+            [<table 80>] = <table 80>,
+            [<table 93>] = <table 93>,
+            [<table 94>] = <table 94>,
+            [<table 95>] = <table 95>,
+            [<table 96>] = <table 96>,
+            [<table 81>] = <table 81>,
+            [<table 99>] = <table 99>,
+            [<table 100>] = <table 100>,
+            [<table 101>] = <table 101>,
+            [<table 102>] = <table 102>,
+            [<table 103>] = <table 103>,
+            [<table 104>] = <table 104>,
+            [<table 105>] = <table 105>,
+            <metatable> = {
+              __mode = "kv"
+            }
+          },
+          [0] = {
+            [<table 1>] = <table 1>,
+            [<table 5>] = <table 5>,
+            [<table 6>] = <table 6>,
+            [<table 7>] = <table 7>,
+            [<table 8>] = <table 8>,
+            [<table 9>] = <table 9>,
+            [<table 10>] = <table 10>,
+            [<table 11>] = <table 11>,
+            [<table 12>] = <table 12>,
+            [<table 13>] = <table 13>,
+            [<table 14>] = <table 14>,
+            [<table 15>] = <table 15>,
+            [<table 16>] = <table 16>,
+            [<table 17>] = <table 17>,
+            [<table 18>] = <table 18>,
+            [<table 19>] = <table 19>,
+            [<table 20>] = <table 20>,
+            [<table 21>] = <table 21>,
+            [<table 22>] = <table 22>,
+            [<table 23>] = <table 23>,
+            [<table 24>] = <table 24>,
+            [<table 25>] = <table 25>,
+            [<table 26>] = <table 26>,
+            [<table 27>] = <table 27>,
+            [<table 28>] = <table 28>,
+            [<table 29>] = <table 29>,
+            [<table 30>] = <table 30>,
+            [<table 31>] = <table 31>,
+            [<table 32>] = <table 32>,
+            [<table 33>] = <table 33>,
+            [<table 34>] = <table 34>,
+            [<table 35>] = <table 35>,
+            [<table 36>] = <table 36>,
+            [<table 37>] = <table 37>,
+            [<table 38>] = <table 38>,
+            [<table 39>] = <table 39>,
+            [<table 40>] = <table 40>,
+            [<table 41>] = <table 41>,
+            [<table 42>] = <table 42>,
+            [<table 43>] = <table 43>,
+            [<table 44>] = <table 44>,
+            [<table 45>] = <table 45>,
+            [<table 46>] = <table 46>,
+            [<table 47>] = <table 47>,
+            [<table 48>] = <table 48>,
+            [<table 49>] = <table 49>,
+            [<table 50>] = <table 50>,
+            [<table 51>] = <table 51>,
+            [<table 52>] = <table 52>,
+            [<table 53>] = <table 53>,
+            [<table 54>] = <table 54>,
+            [<table 55>] = <table 55>,
+            [<table 58>] = <table 58>,
+            [<table 56>] = <table 56>,
+            [<table 59>] = <table 59>,
+            [<table 60>] = <table 60>,
+            [<table 67>] = <table 67>,
+            [<table 57>] = <table 57>,
+            [<table 63>] = <table 63>,
+            [<table 61>] = <table 61>,
+            [<table 65>] = <table 65>,
+            [<table 62>] = <table 62>,
+            [<table 64>] = <table 64>,
+            [<table 73>] = <table 73>,
+            [<table 77>] = <table 77>,
+            [<table 69>] = <table 69>,
+            [<table 71>] = <table 71>,
+            [<table 72>] = <table 72>,
+            [<table 68>] = <table 68>,
+            [<table 70>] = <table 70>,
+            [<table 76>] = <table 76>,
+            [<table 74>] = <table 74>,
+            [<table 78>] = <table 78>,
+            [<table 75>] = <table 75>,
+            [<table 79>] = <table 79>,
+            [<table 66>] = <table 66>,
+            [<table 92>] = <table 92>,
+            [<table 82>] = <table 82>,
+            [<table 83>] = <table 83>,
+            [<table 84>] = <table 84>,
+            [<table 85>] = <table 85>,
+            [<table 86>] = <table 86>,
+            [<table 87>] = <table 87>,
+            [<table 88>] = <table 88>,
+            [<table 89>] = <table 89>,
+            [<table 90>] = <table 90>,
+            [<table 91>] = <table 91>,
+            [<table 80>] = <table 80>,
+            [<table 93>] = <table 93>,
+            [<table 94>] = <table 94>,
+            [<table 95>] = <table 95>,
+            [<table 96>] = <table 96>,
+            [<table 81>] = <table 81>,
+            [<table 99>] = <table 99>,
+            [<table 100>] = <table 100>,
+            [<table 101>] = <table 101>,
+            [<table 102>] = <table 102>,
+            [<table 103>] = <table 103>,
+            [<table 104>] = <table 104>,
+            [<table 105>] = <table 105>,
+            <metatable> = {
+              __mode = "kv"
+            }
+          }
+        },
+        [-1] = {
+          [-1] = {
+            [<table 1>] = <table 1>,
+            [<table 5>] = <table 5>,
+            [<table 6>] = <table 6>,
+            [<table 7>] = <table 7>,
+            [<table 8>] = <table 8>,
+            [<table 9>] = <table 9>,
+            [<table 10>] = <table 10>,
+            [<table 11>] = <table 11>,
+            [<table 12>] = <table 12>,
+            [<table 13>] = <table 13>,
+            [<table 14>] = <table 14>,
+            [<table 15>] = <table 15>,
+            [<table 16>] = <table 16>,
+            [<table 17>] = <table 17>,
+            [<table 18>] = <table 18>,
+            [<table 19>] = <table 19>,
+            [<table 20>] = <table 20>,
+            [<table 21>] = <table 21>,
+            [<table 22>] = <table 22>,
+            [<table 23>] = <table 23>,
+            [<table 24>] = <table 24>,
+            [<table 25>] = <table 25>,
+            [<table 26>] = <table 26>,
+            [<table 27>] = <table 27>,
+            [<table 28>] = <table 28>,
+            [<table 29>] = <table 29>,
+            [<table 30>] = <table 30>,
+            [<table 31>] = <table 31>,
+            [<table 32>] = <table 32>,
+            [<table 33>] = <table 33>,
+            [<table 34>] = <table 34>,
+            [<table 35>] = <table 35>,
+            [<table 36>] = <table 36>,
+            [<table 37>] = <table 37>,
+            [<table 38>] = <table 38>,
+            [<table 39>] = <table 39>,
+            [<table 40>] = <table 40>,
+            [<table 41>] = <table 41>,
+            [<table 42>] = <table 42>,
+            [<table 43>] = <table 43>,
+            [<table 44>] = <table 44>,
+            [<table 45>] = <table 45>,
+            [<table 46>] = <table 46>,
+            [<table 47>] = <table 47>,
+            [<table 48>] = <table 48>,
+            [<table 49>] = <table 49>,
+            [<table 50>] = <table 50>,
+            [<table 51>] = <table 51>,
+            [<table 52>] = <table 52>,
+            [<table 53>] = <table 53>,
+            [<table 54>] = <table 54>,
+            [<table 55>] = <table 55>,
+            [<table 56>] = <table 56>,
+            [<table 57>] = <table 57>,
+            [<table 58>] = <table 58>,
+            [<table 59>] = <table 59>,
+            [<table 60>] = <table 60>,
+            [<table 61>] = <table 61>,
+            [<table 62>] = <table 62>,
+            [<table 63>] = <table 63>,
+            [<table 64>] = <table 64>,
+            [<table 65>] = <table 65>,
+            [<table 66>] = <table 66>,
+            [<table 67>] = <table 67>,
+            [<table 68>] = <table 68>,
+            [<table 69>] = <table 69>,
+            [<table 70>] = <table 70>,
+            [<table 71>] = <table 71>,
+            [<table 72>] = <table 72>,
+            [<table 73>] = <table 73>,
+            [<table 74>] = <table 74>,
+            [<table 75>] = <table 75>,
+            [<table 76>] = <table 76>,
+            [<table 77>] = <table 77>,
+            [<table 78>] = <table 78>,
+            [<table 79>] = <table 79>,
+            [<table 80>] = <table 80>,
+            [<table 81>] = <table 81>,
+            [<table 82>] = <table 82>,
+            [<table 83>] = <table 83>,
+            [<table 84>] = <table 84>,
+            [<table 85>] = <table 85>,
+            [<table 86>] = <table 86>,
+            [<table 87>] = <table 87>,
+            [<table 88>] = <table 88>,
+            [<table 89>] = <table 89>,
+            [<table 90>] = <table 90>,
+            [<table 91>] = <table 91>,
+            [<table 92>] = <table 92>,
+            [<table 93>] = <table 93>,
+            [<table 94>] = <table 94>,
+            [<table 95>] = <table 95>,
+            [<table 96>] = <table 96>,
+            [<table 97>] = <table 97>,
+            [<table 99>] = <table 99>,
+            [<table 100>] = <table 100>,
+            [<table 101>] = <table 101>,
+            [<table 102>] = <table 102>,
+            [<table 103>] = <table 103>,
+            [<table 104>] = <table 104>,
+            [<table 105>] = <table 105>,
+            <metatable> = {
+              __mode = "kv"
+            }
+          },
+          [0] = {
+            [<table 1>] = <table 1>,
+            [<table 5>] = <table 5>,
+            [<table 6>] = <table 6>,
+            [<table 7>] = <table 7>,
+            [<table 8>] = <table 8>,
+            [<table 9>] = <table 9>,
+            [<table 10>] = <table 10>,
+            [<table 11>] = <table 11>,
+            [<table 12>] = <table 12>,
+            [<table 13>] = <table 13>,
+            [<table 14>] = <table 14>,
+            [<table 15>] = <table 15>,
+            [<table 16>] = <table 16>,
+            [<table 17>] = <table 17>,
+            [<table 18>] = <table 18>,
+            [<table 19>] = <table 19>,
+            [<table 20>] = <table 20>,
+            [<table 21>] = <table 21>,
+            [<table 22>] = <table 22>,
+            [<table 23>] = <table 23>,
+            [<table 24>] = <table 24>,
+            [<table 25>] = <table 25>,
+            [<table 26>] = <table 26>,
+            [<table 27>] = <table 27>,
+            [<table 28>] = <table 28>,
+            [<table 29>] = <table 29>,
+            [<table 30>] = <table 30>,
+            [<table 31>] = <table 31>,
+            [<table 32>] = <table 32>,
+            [<table 33>] = <table 33>,
+            [<table 34>] = <table 34>,
+            [<table 35>] = <table 35>,
+            [<table 36>] = <table 36>,
+            [<table 37>] = <table 37>,
+            [<table 38>] = <table 38>,
+            [<table 39>] = <table 39>,
+            [<table 40>] = <table 40>,
+            [<table 41>] = <table 41>,
+            [<table 42>] = <table 42>,
+            [<table 43>] = <table 43>,
+            [<table 44>] = <table 44>,
+            [<table 45>] = <table 45>,
+            [<table 46>] = <table 46>,
+            [<table 47>] = <table 47>,
+            [<table 48>] = <table 48>,
+            [<table 49>] = <table 49>,
+            [<table 50>] = <table 50>,
+            [<table 51>] = <table 51>,
+            [<table 52>] = <table 52>,
+            [<table 53>] = <table 53>,
+            [<table 54>] = <table 54>,
+            [<table 55>] = <table 55>,
+            [<table 56>] = <table 56>,
+            [<table 57>] = <table 57>,
+            [<table 58>] = <table 58>,
+            [<table 59>] = <table 59>,
+            [<table 60>] = <table 60>,
+            [<table 61>] = <table 61>,
+            [<table 62>] = <table 62>,
+            [<table 63>] = <table 63>,
+            [<table 64>] = <table 64>,
+            [<table 65>] = <table 65>,
+            [<table 66>] = <table 66>,
+            [<table 67>] = <table 67>,
+            [<table 68>] = <table 68>,
+            [<table 69>] = <table 69>,
+            [<table 70>] = <table 70>,
+            [<table 71>] = <table 71>,
+            [<table 72>] = <table 72>,
+            [<table 73>] = <table 73>,
+            [<table 74>] = <table 74>,
+            [<table 75>] = <table 75>,
+            [<table 76>] = <table 76>,
+            [<table 77>] = <table 77>,
+            [<table 78>] = <table 78>,
+            [<table 79>] = <table 79>,
+            [<table 80>] = <table 80>,
+            [<table 81>] = <table 81>,
+            [<table 82>] = <table 82>,
+            [<table 83>] = <table 83>,
+            [<table 84>] = <table 84>,
+            [<table 85>] = <table 85>,
+            [<table 86>] = <table 86>,
+            [<table 87>] = <table 87>,
+            [<table 88>] = <table 88>,
+            [<table 89>] = <table 89>,
+            [<table 90>] = <table 90>,
+            [<table 91>] = <table 91>,
+            [<table 92>] = <table 92>,
+            [<table 93>] = <table 93>,
+            [<table 94>] = <table 94>,
+            [<table 95>] = <table 95>,
+            [<table 96>] = <table 96>,
+            [<table 97>] = <table 97>,
+            [<table 99>] = <table 99>,
+            [<table 100>] = <table 100>,
+            [<table 101>] = <table 101>,
+            [<table 102>] = <table 102>,
+            [<table 103>] = <table 103>,
+            [<table 104>] = <table 104>,
+            [<table 105>] = <table 105>,
+            <metatable> = {
+              __mode = "kv"
+            }
+          }
+        },
+        [0] = {
+          [-1] = {
+            [<table 1>] = <table 1>,
+            [<table 5>] = <table 5>,
+            [<table 6>] = <table 6>,
+            [<table 7>] = <table 7>,
+            [<table 8>] = <table 8>,
+            [<table 9>] = <table 9>,
+            [<table 10>] = <table 10>,
+            [<table 11>] = <table 11>,
+            [<table 12>] = <table 12>,
+            [<table 13>] = <table 13>,
+            [<table 14>] = <table 14>,
+            [<table 15>] = <table 15>,
+            [<table 16>] = <table 16>,
+            [<table 17>] = <table 17>,
+            [<table 18>] = <table 18>,
+            [<table 19>] = <table 19>,
+            [<table 20>] = <table 20>,
+            [<table 21>] = <table 21>,
+            [<table 22>] = <table 22>,
+            [<table 23>] = <table 23>,
+            [<table 24>] = <table 24>,
+            [<table 25>] = <table 25>,
+            [<table 26>] = <table 26>,
+            [<table 27>] = <table 27>,
+            [<table 28>] = <table 28>,
+            [<table 29>] = <table 29>,
+            [<table 30>] = <table 30>,
+            [<table 31>] = <table 31>,
+            [<table 32>] = <table 32>,
+            [<table 33>] = <table 33>,
+            [<table 34>] = <table 34>,
+            [<table 35>] = <table 35>,
+            [<table 36>] = <table 36>,
+            [<table 37>] = <table 37>,
+            [<table 38>] = <table 38>,
+            [<table 39>] = <table 39>,
+            [<table 40>] = <table 40>,
+            [<table 41>] = <table 41>,
+            [<table 42>] = <table 42>,
+            [<table 43>] = <table 43>,
+            [<table 44>] = <table 44>,
+            [<table 45>] = <table 45>,
+            [<table 46>] = <table 46>,
+            [<table 47>] = <table 47>,
+            [<table 48>] = <table 48>,
+            [<table 49>] = <table 49>,
+            [<table 50>] = <table 50>,
+            [<table 51>] = <table 51>,
+            [<table 52>] = <table 52>,
+            [<table 53>] = <table 53>,
+            [<table 54>] = <table 54>,
+            [<table 55>] = <table 55>,
+            [<table 56>] = <table 56>,
+            [<table 57>] = <table 57>,
+            [<table 58>] = <table 58>,
+            [<table 59>] = <table 59>,
+            [<table 60>] = <table 60>,
+            [<table 61>] = <table 61>,
+            [<table 62>] = <table 62>,
+            [<table 63>] = <table 63>,
+            [<table 64>] = <table 64>,
+            [<table 65>] = <table 65>,
+            [<table 66>] = <table 66>,
+            [<table 67>] = <table 67>,
+            [<table 68>] = <table 68>,
+            [<table 69>] = <table 69>,
+            [<table 70>] = <table 70>,
+            [<table 71>] = <table 71>,
+            [<table 72>] = <table 72>,
+            [<table 73>] = <table 73>,
+            [<table 74>] = <table 74>,
+            [<table 75>] = <table 75>,
+            [<table 76>] = <table 76>,
+            [<table 77>] = <table 77>,
+            [<table 78>] = <table 78>,
+            [<table 79>] = <table 79>,
+            [<table 80>] = <table 80>,
+            [<table 81>] = <table 81>,
+            [<table 82>] = <table 82>,
+            [<table 83>] = <table 83>,
+            [<table 84>] = <table 84>,
+            [<table 85>] = <table 85>,
+            [<table 86>] = <table 86>,
+            [<table 87>] = <table 87>,
+            [<table 88>] = <table 88>,
+            [<table 89>] = <table 89>,
+            [<table 90>] = <table 90>,
+            [<table 91>] = <table 91>,
+            [<table 92>] = <table 92>,
+            [<table 93>] = <table 93>,
+            [<table 94>] = <table 94>,
+            [<table 95>] = <table 95>,
+            [<table 96>] = <table 96>,
+            [<table 97>] = <table 97>,
+            [<table 99>] = <table 99>,
+            [<table 100>] = <table 100>,
+            [<table 101>] = <table 101>,
+            [<table 102>] = <table 102>,
+            [<table 103>] = <table 103>,
+            [<table 104>] = <table 104>,
+            [<table 105>] = <table 105>,
+            <metatable> = {
+              __mode = "kv"
+            }
+          },
+          [0] = {
+            [<table 1>] = <table 1>,
+            [<table 5>] = <table 5>,
+            [<table 6>] = <table 6>,
+            [<table 7>] = <table 7>,
+            [<table 8>] = <table 8>,
+            [<table 9>] = <table 9>,
+            [<table 10>] = <table 10>,
+            [<table 11>] = <table 11>,
+            [<table 12>] = <table 12>,
+            [<table 13>] = <table 13>,
+            [<table 14>] = <table 14>,
+            [<table 15>] = <table 15>,
+            [<table 16>] = <table 16>,
+            [<table 17>] = <table 17>,
+            [<table 18>] = <table 18>,
+            [<table 19>] = <table 19>,
+            [<table 20>] = <table 20>,
+            [<table 21>] = <table 21>,
+            [<table 22>] = <table 22>,
+            [<table 23>] = <table 23>,
+            [<table 24>] = <table 24>,
+            [<table 25>] = <table 25>,
+            [<table 26>] = <table 26>,
+            [<table 27>] = <table 27>,
+            [<table 28>] = <table 28>,
+            [<table 29>] = <table 29>,
+            [<table 30>] = <table 30>,
+            [<table 31>] = <table 31>,
+            [<table 32>] = <table 32>,
+            [<table 33>] = <table 33>,
+            [<table 34>] = <table 34>,
+            [<table 35>] = <table 35>,
+            [<table 36>] = <table 36>,
+            [<table 37>] = <table 37>,
+            [<table 38>] = <table 38>,
+            [<table 39>] = <table 39>,
+            [<table 40>] = <table 40>,
+            [<table 41>] = <table 41>,
+            [<table 42>] = <table 42>,
+            [<table 43>] = <table 43>,
+            [<table 44>] = <table 44>,
+            [<table 45>] = <table 45>,
+            [<table 46>] = <table 46>,
+            [<table 47>] = <table 47>,
+            [<table 48>] = <table 48>,
+            [<table 49>] = <table 49>,
+            [<table 50>] = <table 50>,
+            [<table 51>] = <table 51>,
+            [<table 52>] = <table 52>,
+            [<table 53>] = <table 53>,
+            [<table 54>] = <table 54>,
+            [<table 55>] = <table 55>,
+            [<table 56>] = <table 56>,
+            [<table 57>] = <table 57>,
+            [<table 58>] = <table 58>,
+            [<table 59>] = <table 59>,
+            [<table 60>] = <table 60>,
+            [<table 61>] = <table 61>,
+            [<table 62>] = <table 62>,
+            [<table 63>] = <table 63>,
+            [<table 64>] = <table 64>,
+            [<table 65>] = <table 65>,
+            [<table 66>] = <table 66>,
+            [<table 67>] = <table 67>,
+            [<table 68>] = <table 68>,
+            [<table 69>] = <table 69>,
+            [<table 70>] = <table 70>,
+            [<table 71>] = <table 71>,
+            [<table 72>] = <table 72>,
+            [<table 73>] = <table 73>,
+            [<table 74>] = <table 74>,
+            [<table 75>] = <table 75>,
+            [<table 76>] = <table 76>,
+            [<table 77>] = <table 77>,
+            [<table 78>] = <table 78>,
+            [<table 79>] = <table 79>,
+            [<table 80>] = <table 80>,
+            [<table 81>] = <table 81>,
+            [<table 82>] = <table 82>,
+            [<table 83>] = <table 83>,
+            [<table 84>] = <table 84>,
+            [<table 85>] = <table 85>,
+            [<table 86>] = <table 86>,
+            [<table 87>] = <table 87>,
+            [<table 88>] = <table 88>,
+            [<table 89>] = <table 89>,
+            [<table 90>] = <table 90>,
+            [<table 91>] = <table 91>,
+            [<table 92>] = <table 92>,
+            [<table 93>] = <table 93>,
+            [<table 94>] = <table 94>,
+            [<table 95>] = <table 95>,
+            [<table 96>] = <table 96>,
+            [<table 97>] = <table 97>,
+            [<table 99>] = <table 99>,
+            [<table 100>] = <table 100>,
+            [<table 101>] = <table 101>,
+            [<table 102>] = <table 102>,
+            [<table 103>] = <table 103>,
+            [<table 104>] = <table 104>,
+            [<table 105>] = <table 105>,
+            <metatable> = {
+              __mode = "kv"
+            }
+          }
+        }
+      },
+      <metatable> = <106>{ -- Spatialhash
+        __index = <table 106>,
+        __is_a = {
+          [<table 106>] = true
+        },
+        __tostring = <function 869>,
+        cell = <function 870>,
+        cellAt = <function 871>,
+        cellCoords = <function 872>,
+        construct = <function 873>,
+        draw = <function 874>,
+        inRange = <function 875>,
+        inherit = <function 8>,
+        init = <function 873>,
+        insert = <function 876>,
+        is_a = <function 877>,
+        rangeIter = <function 878>,
+        remove = <function 879>,
+        update = <function 880>,
+        <metatable> = {
+          __call = <function 881>,
+          __tostring = <function 882>
+        }
+      }
+    },
+    _passive_shapes = {},
+    groups = {},
+    on_collide = <function 883>,
+    on_stop = <function 883>,
+    <metatable> = <107>{ -- HardonCollider
+      __index = <table 107>,
+      __is_a = {
+        [<table 107>] = true
+      },
+      __tostring = <function 884>,
+      activeShapes = <function 885>,
+      addCircle = <function 886>,
+      addPoint = <function 887>,
+      addPolygon = <function 888>,
+      addRectangle = <function 889>,
+      addShape = <function 890>,
+      addToGroup = <function 891>,
+      clear = <function 892>,
+      construct = <function 893>,
+      inherit = <function 8>,
+      init = <function 893>,
+      is_a = <function 894>,
+      remove = <function 895>,
+      removeFromGroup = <function 896>,
+      setActive = <function 897>,
+      setCallbacks = <function 898>,
+      setGhost = <function 899>,
+      setPassive = <function 900>,
+      setSolid = <function 901>,
+      shapesAt = <function 902>,
+      shapesInRange = <function 903>,
+      share_group = <function 904>,
+      update = <function 905>,
+      <metatable> = {
+        __call = <function 906>,
+        __tostring = <function 907>
+      }
+    }
+  },
+  addPlayer = <function 908>,
+  draw = <function 909>,
+  getMStack = <function 910>,
+  heightMap = 10,
+  init = <function 911>,
+  makeMStack = <function 912>,
+  map = {
+    addStone = <function 913>,
+    cells = { <108>{
+        content = {},
+        mesh = <userdata 1>,
+        x = 0,
+        y = 0
+      }, <109>{
+        content = {},
+        mesh = <userdata 2>,
+        x = 1,
+        y = 0
+      }, <110>{
+        content = {},
+        mesh = <userdata 3>,
+        x = 2,
+        y = 0
+      }, <111>{
+        content = {},
+        mesh = <userdata 4>,
+        x = 3,
+        y = 0
+      }, <112>{
+        content = {},
+        mesh = <userdata 5>,
+        x = 4,
+        y = 0
+      }, <113>{
+        content = {},
+        mesh = <userdata 6>,
+        x = 5,
+        y = 0
+      }, <114>{
+        content = {},
+        mesh = <userdata 7>,
+        x = 6,
+        y = 0
+      }, <115>{
+        content = {},
+        mesh = <userdata 8>,
+        x = 7,
+        y = 0
+      }, <116>{
+        content = {},
+        mesh = <userdata 9>,
+        x = 8,
+        y = 0
+      }, <117>{
+        content = {},
+        mesh = <userdata 10>,
+        x = 9,
+        y = 0
+      }, <118>{
+        content = {},
+        mesh = <userdata 11>,
+        x = 0,
+        y = 1
+      }, <119>{
+        content = {},
+        mesh = <userdata 12>,
+        x = 1,
+        y = 1
+      }, <120>{
+        content = {},
+        mesh = <userdata 13>,
+        x = 2,
+        y = 1
+      }, <121>{
+        content = {},
+        mesh = <userdata 14>,
+        x = 3,
+        y = 1
+      }, <122>{
+        content = {},
+        mesh = <userdata 15>,
+        x = 4,
+        y = 1
+      }, <123>{
+        content = {},
+        mesh = <userdata 16>,
+        x = 5,
+        y = 1
+      }, <124>{
+        content = {},
+        mesh = <userdata 17>,
+        x = 6,
+        y = 1
+      }, <125>{
+        content = {},
+        mesh = <userdata 18>,
+        x = 7,
+        y = 1
+      }, <126>{
+        content = {},
+        mesh = <userdata 19>,
+        x = 8,
+        y = 1
+      }, <127>{
+        content = {},
+        mesh = <userdata 20>,
+        x = 9,
+        y = 1
+      }, <128>{
+        content = {},
+        mesh = <userdata 21>,
+        x = 0,
+        y = 2
+      }, <129>{
+        content = {},
+        mesh = <userdata 22>,
+        x = 1,
+        y = 2
+      }, <130>{
+        content = {},
+        mesh = <userdata 23>,
+        x = 2,
+        y = 2
+      }, <131>{
+        content = {},
+        mesh = <userdata 24>,
+        x = 3,
+        y = 2
+      }, <132>{
+        content = {},
+        mesh = <userdata 25>,
+        x = 4,
+        y = 2
+      }, <133>{
+        content = {},
+        mesh = <userdata 26>,
+        x = 5,
+        y = 2
+      }, <134>{
+        content = {},
+        mesh = <userdata 27>,
+        x = 6,
+        y = 2
+      }, <135>{
+        content = {},
+        mesh = <userdata 28>,
+        x = 7,
+        y = 2
+      }, <136>{
+        content = {},
+        mesh = <userdata 29>,
+        x = 8,
+        y = 2
+      }, <137>{
+        content = {},
+        mesh = <userdata 30>,
+        x = 9,
+        y = 2
+      }, <138>{
+        content = {},
+        mesh = <userdata 31>,
+        x = 0,
+        y = 3
+      }, <139>{
+        content = {},
+        mesh = <userdata 32>,
+        x = 1,
+        y = 3
+      }, <140>{
+        content = {},
+        mesh = <userdata 33>,
+        x = 2,
+        y = 3
+      }, <141>{
+        content = {},
+        mesh = <userdata 34>,
+        x = 3,
+        y = 3
+      }, <142>{
+        content = {},
+        mesh = <userdata 35>,
+        x = 4,
+        y = 3
+      }, <143>{
+        content = {},
+        mesh = <userdata 36>,
+        x = 5,
+        y = 3
+      }, <144>{
+        content = {},
+        mesh = <userdata 37>,
+        x = 6,
+        y = 3
+      }, <145>{
+        content = {},
+        mesh = <userdata 38>,
+        x = 7,
+        y = 3
+      }, <146>{
+        content = {},
+        mesh = <userdata 39>,
+        x = 8,
+        y = 3
+      }, <147>{
+        content = {},
+        mesh = <userdata 40>,
+        x = 9,
+        y = 3
+      }, <148>{
+        content = {},
+        mesh = <userdata 41>,
+        x = 0,
+        y = 4
+      }, <149>{
+        content = {},
+        mesh = <userdata 42>,
+        x = 1,
+        y = 4
+      }, <150>{
+        content = {},
+        mesh = <userdata 43>,
+        x = 2,
+        y = 4
+      }, <151>{
+        content = {},
+        mesh = <userdata 44>,
+        x = 3,
+        y = 4
+      }, <152>{
+        content = {},
+        mesh = <userdata 45>,
+        x = 4,
+        y = 4
+      }, <153>{
+        content = {},
+        mesh = <userdata 46>,
+        x = 5,
+        y = 4
+      }, <154>{
+        content = {},
+        mesh = <userdata 47>,
+        x = 6,
+        y = 4
+      }, <155>{
+        content = {},
+        mesh = <userdata 48>,
+        x = 7,
+        y = 4
+      }, <156>{
+        content = {},
+        mesh = <userdata 49>,
+        x = 8,
+        y = 4
+      }, <157>{
+        content = {},
+        mesh = <userdata 50>,
+        x = 9,
+        y = 4
+      }, <158>{
+        content = {},
+        mesh = <userdata 51>,
+        x = 0,
+        y = 5
+      }, <159>{
+        content = {},
+        mesh = <userdata 52>,
+        x = 1,
+        y = 5
+      }, <160>{
+        content = {},
+        mesh = <userdata 53>,
+        x = 2,
+        y = 5
+      }, <161>{
+        content = {},
+        mesh = <userdata 54>,
+        x = 3,
+        y = 5
+      }, <162>{
+        content = {},
+        mesh = <userdata 55>,
+        x = 4,
+        y = 5
+      }, <163>{
+        content = {},
+        mesh = <userdata 56>,
+        x = 5,
+        y = 5
+      }, <164>{
+        content = {},
+        mesh = <userdata 57>,
+        x = 6,
+        y = 5
+      }, <165>{
+        content = {},
+        mesh = <userdata 58>,
+        x = 7,
+        y = 5
+      }, <166>{
+        content = {},
+        mesh = <userdata 59>,
+        x = 8,
+        y = 5
+      }, <167>{
+        content = {},
+        mesh = <userdata 60>,
+        x = 9,
+        y = 5
+      }, <168>{
+        content = {},
+        mesh = <userdata 61>,
+        x = 0,
+        y = 6
+      }, <169>{
+        content = {},
+        mesh = <userdata 62>,
+        x = 1,
+        y = 6
+      }, <170>{
+        content = {},
+        mesh = <userdata 63>,
+        x = 2,
+        y = 6
+      }, <171>{
+        content = {},
+        mesh = <userdata 64>,
+        x = 3,
+        y = 6
+      }, <172>{
+        content = {},
+        mesh = <userdata 65>,
+        x = 4,
+        y = 6
+      }, <173>{
+        content = {},
+        mesh = <userdata 66>,
+        x = 5,
+        y = 6
+      }, <174>{
+        content = {},
+        mesh = <userdata 67>,
+        x = 6,
+        y = 6
+      }, <175>{
+        content = {},
+        mesh = <userdata 68>,
+        x = 7,
+        y = 6
+      }, <176>{
+        content = {},
+        mesh = <userdata 69>,
+        x = 8,
+        y = 6
+      }, <177>{
+        content = {},
+        mesh = <userdata 70>,
+        x = 9,
+        y = 6
+      }, <178>{
+        content = {},
+        mesh = <userdata 71>,
+        x = 0,
+        y = 7
+      }, <179>{
+        content = {},
+        mesh = <userdata 72>,
+        x = 1,
+        y = 7
+      }, <180>{
+        content = {},
+        mesh = <userdata 73>,
+        x = 2,
+        y = 7
+      }, <181>{
+        content = {},
+        mesh = <userdata 74>,
+        x = 3,
+        y = 7
+      }, <182>{
+        content = {},
+        mesh = <userdata 75>,
+        x = 4,
+        y = 7
+      }, <183>{
+        content = {},
+        mesh = <userdata 76>,
+        x = 5,
+        y = 7
+      }, <184>{
+        content = {},
+        mesh = <userdata 77>,
+        x = 6,
+        y = 7
+      }, <185>{
+        content = {},
+        mesh = <userdata 78>,
+        x = 7,
+        y = 7
+      }, <186>{
+        content = {},
+        mesh = <userdata 79>,
+        x = 8,
+        y = 7
+      }, <187>{
+        content = {},
+        mesh = <userdata 80>,
+        x = 9,
+        y = 7
+      }, <188>{
+        content = {},
+        mesh = <userdata 81>,
+        x = 0,
+        y = 8
+      }, <189>{
+        content = {},
+        mesh = <userdata 82>,
+        x = 1,
+        y = 8
+      }, <190>{
+        content = {},
+        mesh = <userdata 83>,
+        x = 2,
+        y = 8
+      }, <191>{
+        content = {},
+        mesh = <userdata 84>,
+        x = 3,
+        y = 8
+      }, <192>{
+        content = {},
+        mesh = <userdata 85>,
+        x = 4,
+        y = 8
+      }, <193>{
+        content = {},
+        mesh = <userdata 86>,
+        x = 5,
+        y = 8
+      }, <194>{
+        content = {},
+        mesh = <userdata 87>,
+        x = 6,
+        y = 8
+      }, <195>{
+        content = {},
+        mesh = <userdata 88>,
+        x = 7,
+        y = 8
+      }, <196>{
+        content = {},
+        mesh = <userdata 89>,
+        x = 8,
+        y = 8
+      }, <197>{
+        content = {},
+        mesh = <userdata 90>,
+        x = 9,
+        y = 8
+      }, <198>{
+        content = {},
+        mesh = <userdata 91>,
+        x = 0,
+        y = 9
+      }, <199>{
+        content = {},
+        mesh = <userdata 92>,
+        x = 1,
+        y = 9
+      }, <200>{
+        content = {},
+        mesh = <userdata 93>,
+        x = 2,
+        y = 9
+      }, <201>{
+        content = {},
+        mesh = <userdata 94>,
+        x = 3,
+        y = 9
+      }, <202>{
+        content = {},
+        mesh = <userdata 95>,
+        x = 4,
+        y = 9
+      }, <203>{
+        content = {},
+        mesh = <userdata 96>,
+        x = 5,
+        y = 9
+      }, <204>{
+        content = {},
+        mesh = <userdata 97>,
+        x = 6,
+        y = 9
+      }, <205>{
+        content = {},
+        mesh = <userdata 98>,
+        x = 7,
+        y = 9
+      }, <206>{
+        content = {},
+        mesh = <userdata 99>,
+        x = 8,
+        y = 9
+      }, <207>{
+        content = {},
+        mesh = <userdata 100>,
+        x = 9,
+        y = 9
+      } },
+    draw = <function 914>,
+    hash = { { <table 119>, <table 129>, <table 139>, <table 149>, <table 159>, <table 169>, <table 179>, <table 189>, <table 199>,
+        [0] = <table 109>
+      }, { <table 120>, <table 130>, <table 140>, <table 150>, <table 160>, <table 170>, <table 180>, <table 190>, <table 200>,
+        [0] = <table 110>
+      }, { <table 121>, <table 131>, <table 141>, <table 151>, <table 161>, <table 171>, <table 181>, <table 191>, <table 201>,
+        [0] = <table 111>
+      }, { <table 122>, <table 132>, <table 142>, <table 152>, <table 162>, <table 172>, <table 182>, <table 192>, <table 202>,
+        [0] = <table 112>
+      }, { <table 123>, <table 133>, <table 143>, <table 153>, <table 163>, <table 173>, <table 183>, <table 193>, <table 203>,
+        [0] = <table 113>
+      }, { <table 124>, <table 134>, <table 144>, <table 154>, <table 164>, <table 174>, <table 184>, <table 194>, <table 204>,
+        [0] = <table 114>
+      }, { <table 125>, <table 135>, <table 145>, <table 155>, <table 165>, <table 175>, <table 185>, <table 195>, <table 205>,
+        [0] = <table 115>
+      }, { <table 126>, <table 136>, <table 146>, <table 156>, <table 166>, <table 176>, <table 186>, <table 196>, <table 206>,
+        [0] = <table 116>
+      }, { <table 127>, <table 137>, <table 147>, <table 157>, <table 167>, <table 177>, <table 187>, <table 197>, <table 207>,
+        [0] = <table 117>
+      },
+      [0] = { <table 118>, <table 128>, <table 138>, <table 148>, <table 158>, <table 168>, <table 178>, <table 188>, <table 198>,
+        [0] = <table 108>
+      }
+    },
+    init = <function 915>,
+    newCell = <function 916>,
+    players = {}
+  },
+  margin = -0.5,
+  mouse = <table 97>,
+  normalize = <function 917>,
+  offx = 750,
+  offy = 0,
+  players = {},
+  readMap = <function 918>,
+  readTime = <function 919>,
+  scale = 1.5,
+  shapes = { {
+      draw = <function 920>,
+      shape = <table 35>,
+      update = <function 921>,
+      x = 0,
+      y = 0
+    }, {
+      draw = <function 922>,
+      shape = <table 71>,
+      update = <function 923>,
+      x = 1,
+      y = 0
+    }, {
+      draw = <function 924>,
+      shape = <table 28>,
+      update = <function 925>,
+      x = 2,
+      y = 0
+    }, {
+      draw = <function 926>,
+      shape = <table 81>,
+      update = <function 927>,
+      x = 3,
+      y = 0
+    }, {
+      draw = <function 928>,
+      shape = <table 45>,
+      update = <function 929>,
+      x = 4,
+      y = 0
+    }, {
+      draw = <function 930>,
+      shape = <table 52>,
+      update = <function 931>,
+      x = 5,
+      y = 0
+    }, {
+      draw = <function 932>,
+      shape = <table 55>,
+      update = <function 933>,
+      x = 6,
+      y = 0
+    }, {
+      draw = <function 934>,
+      shape = <table 93>,
+      update = <function 935>,
+      x = 7,
+      y = 0
+    }, {
+      draw = <function 936>,
+      shape = <table 37>,
+      update = <function 937>,
+      x = 8,
+      y = 0
+    }, {
+      draw = <function 938>,
+      shape = <table 50>,
+      update = <function 939>,
+      x = 9,
+      y = 0
+    }, {
+      draw = <function 940>,
+      shape = <table 59>,
+      update = <function 941>,
+      x = 0,
+      y = 1
+    }, {
+      draw = <function 942>,
+      shape = <table 46>,
+      update = <function 943>,
+      x = 1,
+      y = 1
+    }, {
+      draw = <function 944>,
+      shape = <table 104>,
+      update = <function 945>,
+      x = 2,
+      y = 1
+    }, {
+      draw = <function 946>,
+      shape = <table 86>,
+      update = <function 947>,
+      x = 3,
+      y = 1
+    }, {
+      draw = <function 948>,
+      shape = <table 80>,
+      update = <function 949>,
+      x = 4,
+      y = 1
+    }, {
+      draw = <function 950>,
+      shape = <table 73>,
+      update = <function 951>,
+      x = 5,
+      y = 1
+    }, {
+      draw = <function 952>,
+      shape = <table 68>,
+      update = <function 953>,
+      x = 6,
+      y = 1
+    }, {
+      draw = <function 954>,
+      shape = <table 84>,
+      update = <function 955>,
+      x = 7,
+      y = 1
+    }, {
+      draw = <function 956>,
+      shape = <table 92>,
+      update = <function 957>,
+      x = 8,
+      y = 1
+    }, {
+      draw = <function 958>,
+      shape = <table 32>,
+      update = <function 959>,
+      x = 9,
+      y = 1
+    }, {
+      draw = <function 960>,
+      shape = <table 78>,
+      update = <function 961>,
+      x = 0,
+      y = 2
+    }, {
+      draw = <function 962>,
+      shape = <table 85>,
+      update = <function 963>,
+      x = 1,
+      y = 2
+    }, {
+      draw = <function 964>,
+      shape = <table 21>,
+      update = <function 965>,
+      x = 2,
+      y = 2
+    }, {
+      draw = <function 966>,
+      shape = <table 17>,
+      update = <function 967>,
+      x = 3,
+      y = 2
+    }, {
+      draw = <function 968>,
+      shape = <table 10>,
+      update = <function 969>,
+      x = 4,
+      y = 2
+    }, {
+      draw = <function 970>,
+      shape = <table 87>,
+      update = <function 971>,
+      x = 5,
+      y = 2
+    }, {
+      draw = <function 972>,
+      shape = <table 64>,
+      update = <function 973>,
+      x = 6,
+      y = 2
+    }, {
+      draw = <function 974>,
+      shape = <table 56>,
+      update = <function 975>,
+      x = 7,
+      y = 2
+    }, {
+      draw = <function 976>,
+      shape = <table 69>,
+      update = <function 977>,
+      x = 8,
+      y = 2
+    }, {
+      draw = <function 978>,
+      shape = <table 51>,
+      update = <function 979>,
+      x = 9,
+      y = 2
+    }, {
+      draw = <function 980>,
+      shape = <table 5>,
+      update = <function 981>,
+      x = 0,
+      y = 3
+    }, {
+      draw = <function 982>,
+      shape = <table 60>,
+      update = <function 983>,
+      x = 1,
+      y = 3
+    }, {
+      draw = <function 984>,
+      shape = <table 13>,
+      update = <function 985>,
+      x = 2,
+      y = 3
+    }, {
+      draw = <function 986>,
+      shape = <table 75>,
+      update = <function 987>,
+      x = 3,
+      y = 3
+    }, {
+      draw = <function 988>,
+      shape = <table 31>,
+      update = <function 989>,
+      x = 4,
+      y = 3
+    }, {
+      draw = <function 990>,
+      shape = <table 38>,
+      update = <function 991>,
+      x = 5,
+      y = 3
+    }, {
+      draw = <function 992>,
+      shape = <table 42>,
+      update = <function 993>,
+      x = 6,
+      y = 3
+    }, {
+      draw = <function 994>,
+      shape = <table 65>,
+      update = <function 995>,
+      x = 7,
+      y = 3
+    }, {
+      draw = <function 996>,
+      shape = <table 82>,
+      update = <function 997>,
+      x = 8,
+      y = 3
+    }, {
+      draw = <function 998>,
+      shape = <table 7>,
+      update = <function 999>,
+      x = 9,
+      y = 3
+    }, {
+      draw = <function 1000>,
+      shape = <table 27>,
+      update = <function 1001>,
+      x = 0,
+      y = 4
+    }, {
+      draw = <function 1002>,
+      shape = <table 94>,
+      update = <function 1003>,
+      x = 1,
+      y = 4
+    }, {
+      draw = <function 1004>,
+      shape = <table 62>,
+      update = <function 1005>,
+      x = 2,
+      y = 4
+    }, {
+      draw = <function 1006>,
+      shape = <table 77>,
+      update = <function 1007>,
+      x = 3,
+      y = 4
+    }, {
+      draw = <function 1008>,
+      shape = <table 40>,
+      update = <function 1009>,
+      x = 4,
+      y = 4
+    }, {
+      draw = <function 1010>,
+      shape = <table 49>,
+      update = <function 1011>,
+      x = 5,
+      y = 4
+    }, {
+      draw = <function 1012>,
+      shape = <table 18>,
+      update = <function 1013>,
+      x = 6,
+      y = 4
+    }, {
+      draw = <function 1014>,
+      shape = <table 100>,
+      update = <function 1015>,
+      x = 7,
+      y = 4
+    }, {
+      draw = <function 1016>,
+      shape = <table 58>,
+      update = <function 1017>,
+      x = 8,
+      y = 4
+    }, {
+      draw = <function 1018>,
+      shape = <table 70>,
+      update = <function 1019>,
+      x = 9,
+      y = 4
+    }, {
+      draw = <function 1020>,
+      shape = <table 39>,
+      update = <function 1021>,
+      x = 0,
+      y = 5
+    }, {
+      draw = <function 1022>,
+      shape = <table 20>,
+      update = <function 1023>,
+      x = 1,
+      y = 5
+    }, {
+      draw = <function 1024>,
+      shape = <table 48>,
+      update = <function 1025>,
+      x = 2,
+      y = 5
+    }, {
+      draw = <function 1026>,
+      shape = <table 44>,
+      update = <function 1027>,
+      x = 3,
+      y = 5
+    }, {
+      draw = <function 1028>,
+      shape = <table 90>,
+      update = <function 1029>,
+      x = 4,
+      y = 5
+    }, {
+      draw = <function 1030>,
+      shape = <table 57>,
+      update = <function 1031>,
+      x = 5,
+      y = 5
+    }, {
+      draw = <function 1032>,
+      shape = <table 36>,
+      update = <function 1033>,
+      x = 6,
+      y = 5
+    }, {
+      draw = <function 1034>,
+      shape = <table 47>,
+      update = <function 1035>,
+      x = 7,
+      y = 5
+    }, {
+      draw = <function 1036>,
+      shape = <table 1>,
+      update = <function 1037>,
+      x = 8,
+      y = 5
+    }, {
+      draw = <function 1038>,
+      shape = <table 22>,
+      update = <function 1039>,
+      x = 9,
+      y = 5
+    }, {
+      draw = <function 1040>,
+      shape = <table 53>,
+      update = <function 1041>,
+      x = 0,
+      y = 6
+    }, {
+      draw = <function 1042>,
+      shape = <table 74>,
+      update = <function 1043>,
+      x = 1,
+      y = 6
+    }, {
+      draw = <function 1044>,
+      shape = <table 67>,
+      update = <function 1045>,
+      x = 2,
+      y = 6
+    }, {
+      draw = <function 1046>,
+      shape = <table 72>,
+      update = <function 1047>,
+      x = 3,
+      y = 6
+    }, {
+      draw = <function 1048>,
+      shape = <table 79>,
+      update = <function 1049>,
+      x = 4,
+      y = 6
+    }, {
+      draw = <function 1050>,
+      shape = <table 66>,
+      update = <function 1051>,
+      x = 5,
+      y = 6
+    }, {
+      draw = <function 1052>,
+      shape = <table 41>,
+      update = <function 1053>,
+      x = 6,
+      y = 6
+    }, {
+      draw = <function 1054>,
+      shape = <table 63>,
+      update = <function 1055>,
+      x = 7,
+      y = 6
+    }, {
+      draw = <function 1056>,
+      shape = <table 83>,
+      update = <function 1057>,
+      x = 8,
+      y = 6
+    }, {
+      draw = <function 1058>,
+      shape = <table 103>,
+      update = <function 1059>,
+      x = 9,
+      y = 6
+    }, {
+      draw = <function 1060>,
+      shape = <table 15>,
+      update = <function 1061>,
+      x = 0,
+      y = 7
+    }, {
+      draw = <function 1062>,
+      shape = <table 14>,
+      update = <function 1063>,
+      x = 1,
+      y = 7
+    }, {
+      draw = <function 1064>,
+      shape = <table 30>,
+      update = <function 1065>,
+      x = 2,
+      y = 7
+    }, {
+      draw = <function 1066>,
+      shape = <table 12>,
+      update = <function 1067>,
+      x = 3,
+      y = 7
+    }, {
+      draw = <function 1068>,
+      shape = <table 6>,
+      update = <function 1069>,
+      x = 4,
+      y = 7
+    }, {
+      draw = <function 1070>,
+      shape = <table 33>,
+      update = <function 1071>,
+      x = 5,
+      y = 7
+    }, {
+      draw = <function 1072>,
+      shape = <table 9>,
+      update = <function 1073>,
+      x = 6,
+      y = 7
+    }, {
+      draw = <function 1074>,
+      shape = <table 16>,
+      update = <function 1075>,
+      x = 7,
+      y = 7
+    }, {
+      draw = <function 1076>,
+      shape = <table 26>,
+      update = <function 1077>,
+      x = 8,
+      y = 7
+    }, {
+      draw = <function 1078>,
+      shape = <table 24>,
+      update = <function 1079>,
+      x = 9,
+      y = 7
+    }, {
+      draw = <function 1080>,
+      shape = <table 25>,
+      update = <function 1081>,
+      x = 0,
+      y = 8
+    }, {
+      draw = <function 1082>,
+      shape = <table 23>,
+      update = <function 1083>,
+      x = 1,
+      y = 8
+    }, {
+      draw = <function 1084>,
+      shape = <table 19>,
+      update = <function 1085>,
+      x = 2,
+      y = 8
+    }, {
+      draw = <function 1086>,
+      shape = <table 96>,
+      update = <function 1087>,
+      x = 3,
+      y = 8
+    }, {
+      draw = <function 1088>,
+      shape = <table 102>,
+      update = <function 1089>,
+      x = 4,
+      y = 8
+    }, {
+      draw = <function 1090>,
+      shape = <table 61>,
+      update = <function 1091>,
+      x = 5,
+      y = 8
+    }, {
+      draw = <function 1092>,
+      shape = <table 76>,
+      update = <function 1093>,
+      x = 6,
+      y = 8
+    }, {
+      draw = <function 1094>,
+      shape = <table 34>,
+      update = <function 1095>,
+      x = 7,
+      y = 8
+    }, {
+      draw = <function 1096>,
+      shape = <table 8>,
+      update = <function 1097>,
+      x = 8,
+      y = 8
+    }, {
+      draw = <function 1098>,
+      shape = <table 11>,
+      update = <function 1099>,
+      x = 9,
+      y = 8
+    }, {
+      draw = <function 1100>,
+      shape = <table 54>,
+      update = <function 1101>,
+      x = 0,
+      y = 9
+    }, {
+      draw = <function 1102>,
+      shape = <table 91>,
+      update = <function 1103>,
+      x = 1,
+      y = 9
+    }, {
+      draw = <function 1104>,
+      shape = <table 88>,
+      update = <function 1105>,
+      x = 2,
+      y = 9
+    }, {
+      draw = <function 1106>,
+      shape = <table 89>,
+      update = <function 1107>,
+      x = 3,
+      y = 9
+    }, {
+      draw = <function 1108>,
+      shape = <table 43>,
+      update = <function 1109>,
+      x = 4,
+      y = 9
+    }, {
+      draw = <function 1110>,
+      shape = <table 99>,
+      update = <function 1111>,
+      x = 5,
+      y = 9
+    }, {
+      draw = <function 1112>,
+      shape = <table 29>,
+      update = <function 1113>,
+      x = 6,
+      y = 9
+    }, {
+      draw = <function 1114>,
+      shape = <table 105>,
+      update = <function 1115>,
+      x = 7,
+      y = 9
+    }, {
+      draw = <function 1116>,
+      shape = <table 101>,
+      update = <function 1117>,
+      x = 8,
+      y = 9
+    }, {
+      draw = <function 1118>,
+      shape = <table 95>,
+      update = <function 1119>,
+      x = 9,
+      y = 9
+    } },
+  size = 100,
+  tcp = <userdata 101>,
+  timer = "1",
+  update = <function 1120>,
+  widthMap = 10
+}
+keypressed	left
+keypressed	down
+keypressed	down
+keypressed	left
+keypressed	up
+keypressed	left
+keypressed	lgui
+keypressed	q

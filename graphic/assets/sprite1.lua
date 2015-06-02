@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 19:59:18
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:24:51
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 23:32:09
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -29,7 +29,7 @@ sprite1.new = function (self)
 	t.delay = 0
 	t.maxdelay = 0.3
 	t.quad = 1
-	t.quadmax = 4
+	t.quadmax = 8
 	t.orientation = 'north'
 	t.listQuads = self.listQuads
 	t.update = self.update
@@ -44,11 +44,6 @@ sprite1.update = function (self, dt)
 		self.delay = self.maxdelay
 		if self.quad >= self.quadmax then
 			self.quad = 1
-			if love.math.random(0, 3) ~= 3 then
-				self.quadmax = 4
-			else
-				self.quadmax = 8
-			end
 		end
 	end
 end

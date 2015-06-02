@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:29:17
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 00:11:55
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -45,6 +45,8 @@ function FPS:new(delay)
 	end
 end
 
+loveframes = require 'loveframes'
+Collider = require 'hardoncollider'
 Quadlist = require 'Quadlist'
 socket = require 'socket'
 inspect = require 'inspect'
@@ -55,6 +57,7 @@ require 'stone'
 Event = require 'Event'
 Map = require 'Map'
 zappy = require 'zappy'
+ui = require 'ui'
 
 stones_img = {}
 stones_img[0] = love.graphics.newImage("assets/00.png")
@@ -76,6 +79,7 @@ function love.load()
 	zappy:init("localhost", 4242)
 
 	zappy:addPlayer(newPlayer('sprite1'))
+	zappy:addPlayer(newPlayer('sprite1'))
 	zappy:addPlayer(newPlayer('team 1'))
 	zappy:addPlayer(newPlayer('team 1'))
 	zappy:addPlayer(newPlayer('team 1'))
@@ -83,18 +87,33 @@ function love.load()
 
 end
 
-function love.keypressed(key)
+function love.mousepressed(x, y, button)
+	loveframes.mousepressed(x, y, button)
+end
+
+function love.mousereleased(x, y, button)
+	loveframes.mousereleased(x, y, button)
+end
+
+function love.keypressed(key, unicode)
 	print("keypressed", key)
 	if Event[key] then
 		Event[key]()
 	end
+loveframes.keypressed(key, unicode)
+end
+
+function love.keyreleased(key)
+	loveframes.keyreleased(key)
+end
+
+function love.textinput(text)
+	loveframes.textinput(text)
 end
 
 function love.update(dt)
 	FPS:update(dt)
 	time = time + dt * 100
-
-	zappy:update(dt)
 
 	for i,v in ipairs(zappy.map.players) do
 		v:update(dt)
@@ -107,10 +126,22 @@ function love.update(dt)
 		zappy.margin = zappy.margin - dt
 	end
 	if love.keyboard.isDown('[') then
+		local tmp = 1 / zappy.scale
 		zappy.scale = zappy.scale + 0.1
+		for i,v in ipairs(zappy.shapes) do
+			v.shape:scale(tmp, tmp)
+			v.shape:scale(zappy.scale, zappy.scale)
+		end
 	end
 	if love.keyboard.isDown(']') then
+		if zappy.scale - 0.1 < 0 then return end
+
+		local tmp = 1 / zappy.scale
 		zappy.scale = zappy.scale - 0.1
+		for i,v in ipairs(zappy.shapes) do
+			v.shape:scale(tmp, tmp)
+			v.shape:scale(zappy.scale, zappy.scale)
+		end
 	end
 	if love.keyboard.isDown('up') then
 		zappy.offy = zappy.offy - dt * 500
@@ -127,9 +158,14 @@ function love.update(dt)
 	if love.keyboard.isDown('backspace') then
 		dofile('extern.lua')
 	end
+
+zappy:update(dt)
+loveframes.update(dt)
 end
 
 function love.draw()
 	FPS:draw()
 	zappy:draw()
+
+loveframes.draw()
 end

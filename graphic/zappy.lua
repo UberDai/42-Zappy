@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 23:24:11
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:29:44
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 00:12:40
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -95,25 +95,51 @@ function zappy.init(self, host, port)
 	self.scale = 1.5
 	self.offx, self.offy = width / 2 - self.size / 2, 0
 
+	self.shapes = {}
+	self.HC = Collider.new(self.size)
 	self.map = Map:init(love.graphics.newImage("assets/test6.png"), self.size)
 	self.players = {}
 
+	self.mouse = self.HC:addCircle(0, 0, 1)
+	-- print(inspect(self))
 	return self
 end
 
 function zappy.update(self, dt)
+	self.mouse:moveTo(love.mouse.getPosition())
 	if self.tcp then self:makeMStack(self:getMStack()) end
 	for i,v in ipairs(self.players) do
 		v:update(dt)
+	end
+	for i,v in ipairs(self.shapes) do
+		v:update(dt)
+	end
+	self.collision = false
+	for i,v in ipairs(self.shapes) do
+		if self.mouse:collidesWith(v.shape) then
+			self.collision = v
+		end
 	end
 end
 
 function zappy.draw(self)
 	self.map:draw()
+	self.mouse:draw()
 	for i,v in ipairs(self.players) do
 		local x, y = zappy:normalize(v.x - 1, v.y - 1)
 		v:draw(x, y)
 	end
+
+	if self.collision ~= false then
+		ui.list:Clear()
+		ui.list:SetVisible(true)
+		ui.list:AddItem(loveframes.Create("text"):SetText("Yolo"))
+		-- loveframes.Create("text"):SetText(inspect(self.map.hash[c.x][c.y]))
+	else
+		ui.list:SetVisible(false)
+	end
+
+	love.graphics.print(zappy.scale)
 end
 
 return zappy

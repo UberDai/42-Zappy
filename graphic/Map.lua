@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 22:44:12
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:29:52
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 21:23:05
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -64,6 +64,22 @@ function map.init(self, image, size)
 			content = {},
 			mesh = map.newCell(image, size)
 		})
+		table.insert(zappy.shapes, {
+			x = x,
+			y = y,
+			shape = zappy.HC:addPolygon(size / 2, 0, size, size / 4, size / 2, size / 2, 0, size / 4),
+			update = function (self, dt)
+				local x, y = zappy:normalize(self.x, self.y)
+				self.shape:moveTo(x * zappy.scale + (zappy.size * zappy.scale) / 2, y * zappy.scale + (zappy.size * zappy.scale) / 4)
+			end,
+			draw = function (self)
+				self.shape:draw()
+			end
+		})
+
+		zappy.shapes[#zappy.shapes].shape:scale(zappy.scale, zappy.scale)
+		-- zappy.shapes[#zappy.shapes].shape:moveTo(zappy:normalize(zappy.shapes[#zappy.shapes].x * zappy.scale, zappy.shapes[#zappy.shapes].y * zappy.scale))
+
 		self.hash[x][y] = self.cells[#self.cells]
 		x = x + 1
 		if x % zappy.widthMap == 0 then
