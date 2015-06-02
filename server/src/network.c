@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/02 00:07:35 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 01:05:41 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,8 @@ static void	network_client_connect(void)
 	network_send(client, "BIENVENUE", 0);
 }
 
-t_client *	network_client_disconnect(t_client *client)
+void	network_client_disconnect(t_client *client)
 {
-	t_client	*prev_client;
-
-	prev_client = (t_client*)DLIST_NEXT(client);
 	network_send(client, "GTFO", 0);
 	printf("Client #%u disconnected.\n", client->id);
 	close(client->fd);
@@ -85,10 +82,9 @@ t_client *	network_client_disconnect(t_client *client)
 	if (client->status == STATUS_PLAYER)
 		gfx_client_disconnect(client);
 	client_delete(client);
-	return (prev_client);
 }
 
-static t_client *	network_client_data(t_client *client, fd_set *fds)
+static char	network_client_data(t_client *client, fd_set *fds)
 {
 	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
 	char		*input;
@@ -100,24 +96,35 @@ static t_client *	network_client_data(t_client *client, fd_set *fds)
 	if (ret == -1)
 		die("Could not read the client.");
 	else if (ret == 0)
-		return network_client_disconnect(client);
+	{
+		network_client_disconnect(client);
+		return (1);
+	}
 	else
 	{
 		input = ft_strsub(buffer, 0, strlen(buffer) - 1);
-		client = command_parse(client, input);
+		ret = command_parse(client, input);
 		free(input);
+		return (ret);
 	}
-	return (client);
+	return (0);
 }
 
-static void	network_check_clients(fd_set *read_fds, t_client *clients, fd_set *fds)
+static void	network_check_clients(fd_set *read_fds, t_lst *clients, fd_set *fds)
 {
-	while (clients)
+	t_client	*client;
+	size_t		i;
+
+	i = 0;
+	while (i < clients->size)
 	{
-		if (FD_ISSET(clients->fd, read_fds))
-			clients = network_client_data(clients, fds);
-		if (clients != NULL)
-			DLIST_FORWARD(t_client*, clients);
+		client = lst_data_at(clients, i);
+		if (FD_ISSET(client->fd, read_fds))
+		{
+			if (network_client_data(client, fds) == 0)
+				i--;
+		}
+		i++;
 	}
 }
 
@@ -159,13 +166,17 @@ void		network_receive(void)
 	}
 }
 
-static void	network_send_to_client(t_client *emitter, t_client *clients, char *str)
+static void	network_send_to_client(t_client *emitter, t_lst *list, char *str)
 {
-	while (clients)
+	t_lstiter	iter;
+	t_client	*client;
+
+	init_iter(&iter, list, increasing);
+	while (lst_iterator_next(&iter))
 	{
-		if (emitter == NULL || clients != emitter)
-			send(clients->fd, str, strlen(str), 0);
-		clients = clients->next;
+		client = (t_client*)iter.data;
+		if (emitter == NULL || client != emitter)
+			send(client->fd, str, strlen(str), 0);
 	}
 }
 
@@ -193,20 +204,13 @@ void	network_disconnect(void)
 	t_client	*client;
 
 	printf("\n");
-	client = g_zappy.clients;
-	while (client)
-	{
-		client = network_client_disconnect(client);
-		if (client != NULL)
-			client = client->next;
-	}
-	client = g_zappy.gfx_clients;
-	while (client)
-	{
-		client = network_client_disconnect(client);
-		if (client != NULL)
-			DLIST_FORWARD(t_client*, client);
-	}
+
+	while ((client = lst_data_at(g_zappy.clients, 0)))
+		network_client_disconnect(client);
+
+	while ((client = lst_data_at(g_zappy.gfx_clients, 0)))
+		network_client_disconnect(client);
+
 	FD_ZERO(&(g_zappy.network.read_fds));
 	close(g_zappy.network.fd);
 	printf("Server disconnected.\n");

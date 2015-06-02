@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:47:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 01:08:49 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	*tile_create(t_uint x, t_uint y)
 {
 	t_tile	*tile;
 
-	tile = malloc(sizeof(t_tile));
+	tile = calloc(1, sizeof(t_tile));
 	bzero(tile, sizeof(tile));
 	tile->x = x;
 	tile->y = y;
@@ -32,11 +32,11 @@ void		map_init(void)
 	t_uint	x;
 	t_uint	y;
 
-	g_zappy.map = malloc(sizeof(t_tile **) * g_zappy.height);
+	g_zappy.map = calloc(g_zappy.height, sizeof(t_tile **));
 	y = 0;
 	while (y < g_zappy.height)
 	{
-		g_zappy.map[y] = malloc(sizeof(t_tile *) * g_zappy.width);
+		g_zappy.map[y] = calloc(g_zappy.width, sizeof(t_tile *));
 		x = 0;
 		while (x < g_zappy.width)
 		{
@@ -50,6 +50,7 @@ void		map_init(void)
 void	tile_update_client_list(t_tile *tile)
 {
 	t_client	*client;
+	t_lstiter	iter;
 	t_uint		i;
 
 	if (!tile->refresh_client_list)
@@ -63,17 +64,17 @@ void	tile_update_client_list(t_tile *tile)
 		tile->clients = NULL;
 	else
 	{
-		tile->clients = malloc(sizeof(t_client *) * tile->client_count);
-		client = g_zappy.clients;
+		tile->clients = calloc(tile->client_count, sizeof(t_client *));
+		init_iter(&iter, g_zappy.clients, increasing);
 		i = 0;
-		while (client)
+		while (lst_iterator_next(&iter))
 		{
+			client = iter.data;
 			if (client->position == tile)
 			{
 				tile->clients[i] = client;
 				i++;
 			}
-			DLIST_FORWARD(t_client*, client);
 		}
 	}
 }

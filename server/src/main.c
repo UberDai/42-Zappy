@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 18:48:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:10:06 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,19 @@ void		usage(void)
 		"jeu va vite)");
 }
 
+static void	init_zappy(void)
+{
+	bzero(&g_zappy, sizeof(t_zappy));
+	g_zappy.clients = new_lst();
+	g_zappy.anonymous_clients = new_lst();
+	g_zappy.gfx_clients = new_lst();
+	g_zappy.teams = new_lst();
+}
+
 int		main(int ac, char **av)
 {
 	srand(time(NULL));
-	bzero(&g_zappy, sizeof(t_zappy));
+	init_zappy();
 	options_parse(ac, av);
 	g_zappy.time.clock = 1.0 / (float)g_zappy.time.cycle_duration;
 	map_init();

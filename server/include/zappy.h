@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/02 20:55:58 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:52:45 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <sys/select.h>
-# include "dlist.h"
+# include "ftlst.h"
 
 # define FOOD_DURATION		126
 # define CLIENT_BASE_FOOD	10
@@ -70,7 +70,6 @@ typedef struct s_client		t_client;
 
 typedef struct				s_team
 {
-	t_dlist					dlist;
 	char					*name;
 	t_uint					max_clients;
 }							t_team;
@@ -140,13 +139,11 @@ typedef struct				s_zappy
 	t_uint					width;
 	t_uint					height;
 	t_tile					***map;
-	t_uint					team_count;
-	t_team					*teams;
-	t_uint					client_count;
+	t_lst					*teams;
 	t_uint					max_clients;
-	t_client				*clients;
-	t_client				*gfx_clients;
-	t_client				*anonymous_clients;
+	t_lst					*clients;
+	t_lst					*gfx_clients;
+	t_lst					*anonymous_clients;
 	short					paused;
 }							t_zappy;
 
@@ -194,10 +191,10 @@ size_t						team_clients_count(t_team *team);
 void						network_bind();
 void						network_receive(void);
 void						network_send(t_client *client, char *str, int options);
-t_client 					*network_client_disconnect(t_client *client);
+void						network_client_disconnect(t_client *client);
 void						network_disconnect(void);
 
-t_client					*command_parse(t_client *client, char *input);
+char						command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);

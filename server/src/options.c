@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 00:20:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 20:17:38 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/02 23:56:52 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,7 @@ static int	option_teams(t_uint ac, char **av, t_uint i)
 	if (input < 0)
 		die("-n must be a positive number followed by teams' names.");
 
-	g_zappy.team_count = input;
-	if (i + g_zappy.team_count >= ac)
+	if (i + input >= ac)
 		die("Bad team naming");
 
 	i++;
@@ -140,13 +139,14 @@ void	options_valid(void)
 
 static void	set_team_max_clients(void)
 {
-	t_team	*team;
+	t_team		*team;
+	t_lstiter	iter;
 
-	team = g_zappy.teams;
-	while (team)
+	init_iter(&iter, g_zappy.teams, increasing);
+	while (lst_iterator_next(&iter))
 	{
+		team = (t_team*)iter.data;
 		team->max_clients = g_zappy.max_clients;
-		DLIST_FORWARD(t_team*, team);
 	}
 }
 

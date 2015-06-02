@@ -1,0 +1,3 @@
+[submodule "server/ftlst"]
+	path = server/ftlst
+	url = https://github.com/nsierra-/ftlst.git
