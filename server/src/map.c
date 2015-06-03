@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 01:08:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/04 01:16:44 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,4 +154,22 @@ void		tile_regenerate(t_tile *tile)
 		}
 		i++;
 	}
+}
+
+char	*tile_inventory(t_tile *tile)
+{
+	char	*str;
+
+	str = calloc(200, sizeof(char));
+	snprintf(str, 200, "food %u, linemate %u, deraumere %u, sibur %u, "
+		"mendiane %u, phiras %u, thystame %u",
+		tile->items[0],
+		tile->items[1],
+		tile->items[2],
+		tile->items[3],
+		tile->items[4],
+		tile->items[5],
+		tile->items[6]
+	);
+	return (str);
 }
