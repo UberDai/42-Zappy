@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 22:44:12
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 21:23:05
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 00:01:54
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -16,7 +16,15 @@
 local map = {}
 
 function map.addStone(self, stone)
-	table.insert(self.hash[stone.x][stone.y].content, stone)
+	if self.hash[stone.x][stone.y].content[stone.id] == nil then self.hash[stone.x][stone.y].content[stone.id] = {stone = stone, count = 0} end
+	self.hash[stone.x][stone.y].content[stone.id].count = self.hash[stone.x][stone.y].content[stone.id].count + 1
+end
+
+function map.removeStone(self, x, y, id)
+	if self.hash[x][y].content[id] == nil or self.hash[x][y].content[id].count <= 0 then
+		return
+	end
+	self.hash[x][y].content[id].count = self.hash[x][y].content[id].count - 1
 end
 
 
@@ -103,8 +111,10 @@ function map.draw(self)
 	for i,v in ipairs(self.cells) do
 		local x, y = zappy:normalize(v.x, v.y)
 		love.graphics.draw(v.mesh, x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale)
-		for i,_v in ipairs(v.content) do
-			_v:draw(x, y)
+		for i,_v in pairs(v.content) do
+			if _v.count > 0 then
+				_v.stone:draw(x, y)
+			end
 		end
 	end
 end

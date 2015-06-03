@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-01 23:24:11
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 00:12:40
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:35:39
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -29,6 +29,8 @@ function zappy.makeMStack(self, tab)
 	for i,v in ipairs(tab) do
 		if v:find("%+%s*%d+%s*%d+%s*%d+") then
 			self.map:addStone(love.newStone(v:match("(%d+)%s*(%d+)%s*(%d+)")))
+		else
+			print("else", v)
 		end
 	end
 end
@@ -74,7 +76,6 @@ end
 function zappy.init(self, host, port)
 	self.tcp = socket.connect('localhost', 4242)
 	if self.tcp then
-		self.tcp:settimeout(0.01)
 
 		local msg = self.tcp:receive('*l')
 		if msg ~= 'BIENVENUE' then love.event.quit() end
@@ -85,6 +86,7 @@ function zappy.init(self, host, port)
 		self.heightMap = tonumber(self.heightMap)
 
 		self.timer = zappy:readTime()
+		self.tcp:settimeout(0.01)
 	else
 		self.widthMap, self.heightMap = 10, 10
 		self.timer = 1
@@ -133,8 +135,8 @@ function zappy.draw(self)
 	if self.collision ~= false then
 		ui.list:Clear()
 		ui.list:SetVisible(true)
-		ui.list:AddItem(loveframes.Create("text"):SetText("Yolo"))
-		-- loveframes.Create("text"):SetText(inspect(self.map.hash[c.x][c.y]))
+		-- ui.list:AddItem(loveframes.Create("text"):SetText("Yolo"))
+		ui.list:AddItem(loveframes.Create("text"):SetText(inspect(self.map.hash[self.collision.x][self.collision.y], {depth = 3})))
 	else
 		ui.list:SetVisible(false)
 	end

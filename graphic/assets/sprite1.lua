@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 19:59:18
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 23:32:09
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:17:36
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -34,6 +34,7 @@ sprite1.new = function (self)
 	t.listQuads = self.listQuads
 	t.update = self.update
 	t.draw = self.draw
+	t.effect = Effect:newPop(t)
 	return t
 end
 
@@ -46,6 +47,9 @@ sprite1.update = function (self, dt)
 			self.quad = 1
 		end
 	end
+	if self.effect then
+		self.effect:update(dt)
+	end
 end
 
 sprite1.draw = function (self, x, y)
@@ -57,6 +61,10 @@ sprite1.draw = function (self, x, y)
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, 0, 0)
 	elseif self.orientation == 'west' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, 0)
+	end
+
+	if self.effect then
+		self.effect:draw(x, y, 80, 0)
 	end
 end
 

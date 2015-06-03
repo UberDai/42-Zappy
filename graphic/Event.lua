@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 17:38:23
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-02 20:30:01
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 00:01:28
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -55,5 +55,7 @@ e['4'] = function () table.insert(Stones, love.newStone(love.math.random(0, 9), 
 e['5'] = function () table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 5)) end
 e['6'] = function () table.insert(Stones, love.newStone(love.math.random(0, 9), love.math.random(0, 9), 6)) end
 
+e['n'] = function () zappy:addPlayer(newPlayer('team 1')) end
+e['c'] = function () zappy.map:removeStone(0, 0, 1) end
 
 return e

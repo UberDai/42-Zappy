@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 00:15:15
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:07:45
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -54,6 +54,7 @@ inspect = require 'inspect'
 require 'player'
 require 'stone'
 
+Effect = require 'Effect'
 Event = require 'Event'
 Map = require 'Map'
 zappy = require 'zappy'
@@ -78,12 +79,8 @@ function love.load()
 
 	zappy:init("localhost", 4242)
 
+	zappy:addPlayer(newPlayer('test1'))
 	zappy:addPlayer(newPlayer('sprite1'))
-	zappy:addPlayer(newPlayer('sprite1'))
-	zappy:addPlayer(newPlayer('team 1'))
-	zappy:addPlayer(newPlayer('team 1'))
-	zappy:addPlayer(newPlayer('team 1'))
-	zappy:addPlayer(newPlayer('team 1'))
 
 end
 
@@ -96,7 +93,7 @@ function love.mousereleased(x, y, button)
 end
 
 function love.keypressed(key, unicode)
-	print("keypressed", key)
+	-- print("keypressed", key)
 	if Event[key] then
 		Event[key]()
 	end
