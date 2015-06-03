@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 22:42:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:47:21 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,21 @@
 #include <libft.h>
 
 t_command	g_commands[] = {
-	{ "move", 7, command_move },
-	{ "left", 7, command_left },
-	{ "right", 7, command_right },
-	{ "pick", 7, command_pick },
-	{ "drop", 7, command_drop },
+	{ "avance", 7, command_move },
+	{ "gauche", 7, command_left },
+	{ "droite", 7, command_right },
+	{ "prend", 7, command_pick },
+	{ "pose", 7, command_drop },
 	{ "pause", 0, command_pause },
-	{ "resume", 0, command_resume },
+	{ "continuer", 0, command_resume },
+	{ "inventaire", 1, command_inventory },
+	{ "connect_nbr", 0, command_connect_count },
 	{ NULL, 0, NULL }
 };
 
-static void			move_client_to_list(t_client *client, t_client **list)
+static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)
 {
-	g_zappy.anonymous_clients = DLIST(remove, t_client *, client);
-
-	if (*list == NULL)
-		*list = client;
-	else
-		DLIST(append, void, (*list), (t_dlist*)client);
+	lst_push_back(to, lst_remove(from, lst_index_of(from, client)));
 }
 
 static void	gfx_send_map(t_client *client)
@@ -65,7 +62,7 @@ static void	gfx_send_map(t_client *client)
 	}
 }
 
-static t_client		*authenticate_gfx_client(t_client *client)
+static void	authenticate_gfx_client(t_client *client)
 {
 	t_client	*client2;
 	char		str[20];
@@ -74,7 +71,7 @@ static t_client		*authenticate_gfx_client(t_client *client)
 	if (client2 == NULL)
 		g_zappy.anonymous_clients = NULL;
 
-	move_client_to_list(client, &(g_zappy.gfx_clients));
+	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.gfx_clients);
 
 	client->status = STATUS_GFX;
 	client->position = NULL;
@@ -85,49 +82,49 @@ static t_client		*authenticate_gfx_client(t_client *client)
 	network_send(client, str, 0);
 
 	gfx_send_map(client);
-
-	return (client2);
 }
 
-static t_client	*authenticate(t_client *client, char *input)
+static char	authenticate(t_client *client, char *input)
 {
 	t_team	*team;
-	char	str[20];
+	char	str[100];
 	size_t	client_count;
 
 	if (strcmp(input, "g") == 0)
-		return authenticate_gfx_client(client);
+	{
+		authenticate_gfx_client(client);
+		return (1);
+	}
 
 	team = team_get(input);
 	if (team == NULL)
 	{
 		network_send(client, "m8 dat team doesnt exist ya fool", 0);
-		return (client);
+		return (0);
 	}
 	client_count = team_clients_count(team);
 	if (client_count >= team->max_clients)
 	{
 		network_send(client, "clubs full buddy, gtfo", 0);
-		return network_client_disconnect(client);
+		network_client_disconnect(client);
+		return (1);
 	}
 
 	client->team = team;
 	client->status = STATUS_PLAYER;
 
-	move_client_to_list(client, &(g_zappy.clients));
+	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.clients);
 
 	client_set_team(client, input);
-	snprintf(str, 20, "%lu", team->max_clients - client_count);
-	network_send(client, str, 0);
-	snprintf(str, 20, "%u %u", g_zappy.width, g_zappy.height);
+	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count, g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
 
 	gfx_client_connect(client);
 
-	return (client);
+	return (0);
 }
 
-t_client	*command_parse(t_client *client, char *input)
+char	command_parse(t_client *client, char *input)
 {
 	char	**splits;
 	t_uint	split_count;
@@ -148,11 +145,11 @@ t_client	*command_parse(t_client *client, char *input)
 				g_commands[i].func(client, split_count, splits);
 			else if (!client_queue_push(client, &(g_commands[i]), splits))
 				network_send(client, "shits too fast", 0);
-			return (client);
+			return (0);
 		}
 		i++;
 	}
 
 	network_send(client, "dunno dat command lol", 0);
-	return (client);
+	return (0);
 }

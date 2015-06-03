@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/22 02:05:55 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 20:18:39 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:19:52 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@
 
 t_team	*team_get(const char *name)
 {
-	t_team	*team;
+	t_team		*team;
+	t_lstiter	iter;
 
-	team = g_zappy.teams;
-	while (team)
+	init_iter(&iter, g_zappy.teams, increasing);
+	while (lst_iterator_next(&iter))
 	{
+		team = (t_team*)iter.data;
 		if (strcmp(team->name, name) == 0)
 			return (team);
-		DLIST_FORWARD(t_team*, team);
 	}
 	return (NULL);
 }
@@ -33,15 +34,10 @@ t_team	*team_create(const char *team_name)
 {
 	t_team	*team;
 
-	team = (t_team*)dlist_create(sizeof(t_team));
+	team = calloc(1, sizeof(t_team*));
 	team->name = ft_strdup(team_name);
 
-	if (g_zappy.teams == NULL)
-		g_zappy.teams = team;
-	else
-		DLIST(append, void, g_zappy.teams, (t_dlist*)team);
-
-	g_zappy.team_count++;
+	lst_push_back(g_zappy.teams, team);
 
 	return (team);
 }
@@ -49,15 +45,16 @@ t_team	*team_create(const char *team_name)
 size_t	team_clients_count(t_team *team)
 {
 	t_client	*client;
+	t_lstiter	iter;
 	size_t		i;
 
 	i = 0;
-	client = g_zappy.clients;
-	while (client)
+	init_iter(&iter, g_zappy.teams, increasing);
+	while (lst_iterator_next(&iter))
 	{
+		client = (t_client*)iter.data;
 		if (client->team == team)
 			i++;
-		DLIST_FORWARD(t_client*, client);
 	}
 	return (i);
 }

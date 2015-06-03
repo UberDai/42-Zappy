@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 16:31:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 16:44:29 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:19:46 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ short	client_pick(t_client *client, int item)
 	if (client_add_item(client, item))
 	{
 		if (tile_remove_item(client->position, item))
+		{
+			gfx_client_pick(client, item);
 			return (1);
+		}
 		client_remove_item(client, item);
 	}
 	return (0);
@@ -49,7 +52,10 @@ short	client_drop(t_client *client, int item)
 	if (client_remove_item(client, item))
 	{
 		if (tile_add_item(client->position, item))
+		{
+			gfx_client_drop(client, item);
 			return (1);
+		}
 		client_add_item(client, item);
 	}
 	return (0);

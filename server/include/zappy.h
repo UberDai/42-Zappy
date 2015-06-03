@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 23:08:45 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:52:45 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 # include <stdio.h>
 # include <sys/select.h>
-# include "dlist.h"
+# include "ftlst.h"
 
 # define FOOD_DURATION		126
 # define CLIENT_BASE_FOOD	10
 # define MAX_LEVEL			8
-# define CLIENT_QUEUE_MAX	5
+# define CLIENT_QUEUE_MAX	10
 
 # define ITEM_COUNT			7
 # define ITEM_FOOD			0
@@ -40,7 +40,7 @@
 # define NET_SEND_CLIENT	2
 # define NET_SEND_GFX		4
 
-# define REGEN_RATE			10
+# define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			3
 
 # define NET_SUCCESS		"yay"
@@ -50,6 +50,10 @@
 # define STATUS_PLAYER		1
 # define STATUS_EGG			2
 # define STATUS_GFX			3
+
+# define COMMAND_NONE		-1
+# define COMMAND_FAIL		0
+# define COMMAND_SUCCESS	1
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
@@ -66,7 +70,6 @@ typedef struct s_client		t_client;
 
 typedef struct				s_team
 {
-	t_dlist					dlist;
 	char					*name;
 	t_uint					max_clients;
 }							t_team;
@@ -136,13 +139,11 @@ typedef struct				s_zappy
 	t_uint					width;
 	t_uint					height;
 	t_tile					***map;
-	t_uint					team_count;
-	t_team					*teams;
-	t_uint					client_count;
+	t_lst					*teams;
 	t_uint					max_clients;
-	t_client				*clients;
-	t_client				*gfx_clients;
-	t_client				*anonymous_clients;
+	t_lst					*clients;
+	t_lst					*gfx_clients;
+	t_lst					*anonymous_clients;
 	short					paused;
 }							t_zappy;
 
@@ -190,10 +191,10 @@ size_t						team_clients_count(t_team *team);
 void						network_bind();
 void						network_receive(void);
 void						network_send(t_client *client, char *str, int options);
-t_client 					*network_client_disconnect(t_client *client);
+void						network_client_disconnect(t_client *client);
 void						network_disconnect(void);
 
-t_client					*command_parse(t_client *client, char *input);
+char						command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);
@@ -201,6 +202,11 @@ short						command_pick(t_client *client, t_uint argc, char **argv);
 short						command_drop(t_client *client, t_uint argc, char **argv);
 short						command_pause(t_client *client, t_uint argc, char **argv);
 short						command_resume(t_client *client, t_uint argc, char **argv);
+short						command_inventory(t_client *client, t_uint argc, char **argv);
+short						command_connect_count(t_client *client, t_uint argc, char **argv);
+short						command_fork(t_client *client, t_uint argc, char **argv);
+short						command_promote(t_client *client, t_uint argc, char **argv);
+short						command_expulse(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
 
@@ -213,5 +219,9 @@ void						gfx_client_disconnect(t_client *client);
 void						gfx_client_death(t_client *client);
 void						gfx_tile_add(t_client *client, t_tile *tile, int item);
 void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
+void						gfx_client_pick(t_client *client, int item);
+void						gfx_client_drop(t_client *client, int item);
+void						gfx_client_move_to(t_client *client, t_tile *tile);
+void						gfx_client_turn(t_client *client);
 
 #endif

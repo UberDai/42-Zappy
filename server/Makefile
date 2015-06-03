@@ -6,14 +6,14 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/05/31 22:42:51 by amaurer          ###   ########.fr        #
+#    Updated: 2015/06/03 00:59:54 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC_DIR		=	src/
 OBJ_DIR		=	build/
-INC_DIR		=	include libft/includes
+INC_DIR		=	include libft ftlst
 BIN_DIR		=	bin/
 
 NAME		=	serveur
@@ -57,9 +57,9 @@ OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
 
 CC			=	clang
 CC_FLAGS	=	-Wall -Werror -Wextra -g3
-CC_LIBS		=	-lft -Llibft
+CC_LIBS		=	-lft -Llibft -lftlst -Lftlst
 
-all: libft $(BIN_NAME)
+all: ftlst libft $(BIN_NAME)
 	@echo "\033[32m•\033[0m $(NAME) is ready."
 
 $(BIN_NAME): $(OBJ)
@@ -72,10 +72,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 clean:
 	make -C libft clean
+	make -C ftlst clean
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	make -C libft fclean
+	make -C ftlst fclean
 	rm -rf $(BIN_NAME)
 
 re: fclean all
@@ -83,4 +85,10 @@ re: fclean all
 libft:
 	@make -C libft
 
-.PHONY: all re fclean clean libft
+ftlst:
+	git submodule init
+	git submodule update
+	git submodule foreach git pull origin master
+	make -C ftlst
+
+.PHONY: all re fclean clean libft ftlst

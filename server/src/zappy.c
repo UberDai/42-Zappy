@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/05/31 23:39:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 00:55:08 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,26 @@ static short	client_hunger(t_client *client)
 		{
 			network_send(client, "mort", 0);
 			gfx_client_death(client);
+			network_client_disconnect(client);
+			return (0);
 		}
 	}
+	else
+		client->hunger--;
 	return (1);
 }
 
-static void	client_play(t_client *client)
+static short	client_play(t_client *client)
 {
-	t_queue	*queue;
-	int		ret;
-
-	print_client_queue(client);
+	t_queue		*queue;
+	int			ret;
 
 	queue = &(client->queue[0]);
 
-	if (!queue->set)
-		return ;
 	if (client_hunger(client) == 0)
-		return ;
+		return (1);
+	if (!queue->set)
+		return (0);
 
 	if (queue->delay == 0)
 	{
@@ -68,17 +70,20 @@ static void	client_play(t_client *client)
 
 	queue->delay--;
 	client->hunger--;
+	return (0);
 }
 
 static void	clients_play(void)
 {
 	t_client	*client;
+	size_t		i;
 
-	client = g_zappy.clients;
-	while (client)
+	i = 0;
+	while (i < g_zappy.clients->size)
 	{
-		client_play(client);
-		client = client->next;
+		client = (t_client*)lst_data_at(g_zappy.clients, i);
+		if (client_play(client) == 0)
+			i++;
 	}
 }
 
@@ -99,12 +104,10 @@ void	zappy_run(void)
 			g_zappy.time.cycle_count++;
 		}
 		printf("Clients A: %lu  C: %lu  G: %lu\n",
-			dlist_length((t_dlist*)g_zappy.anonymous_clients),
-			dlist_length((t_dlist*)g_zappy.clients),
-			dlist_length((t_dlist*)g_zappy.gfx_clients)
+			g_zappy.anonymous_clients->size,
+			g_zappy.clients->size,
+			g_zappy.gfx_clients->size
 		);
-		if (g_zappy.clients != NULL)
-			print_client(g_zappy.clients);
 		printf("--------------------------------------------------\n");
 	}
 }
