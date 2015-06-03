@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:52:45 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 21:42:24 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,7 @@ short						command_connect_count(t_client *client, t_uint argc, char **argv);
 short						command_fork(t_client *client, t_uint argc, char **argv);
 short						command_promote(t_client *client, t_uint argc, char **argv);
 short						command_expulse(t_client *client, t_uint argc, char **argv);
+short						command_see(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
 

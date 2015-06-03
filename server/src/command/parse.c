@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 21:34:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 21:44:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_command	g_commands[] = {
 	{ "continuer", 0, command_resume },
 	{ "inventaire", 1, command_inventory },
 	{ "connect_nbr", 0, command_connect_count },
+	{ "voir", 0, command_see },
 	{ NULL, 0, NULL }
 };
 
