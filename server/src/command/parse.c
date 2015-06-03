@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:47:21 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 21:34:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ t_command	g_commands[] = {
 
 static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)
 {
-	lst_push_back(to, lst_remove(from, lst_index_of(from, client)));
+	size_t	index;
+
+	index = lst_index_of(from, client);
+	lst_push_back(to, lst_remove(from, index));
 }
 
 static void	gfx_send_map(t_client *client)
@@ -64,12 +67,7 @@ static void	gfx_send_map(t_client *client)
 
 static void	authenticate_gfx_client(t_client *client)
 {
-	t_client	*client2;
 	char		str[20];
-
-	client2 = (t_client*)DLIST_PREV(client);
-	if (client2 == NULL)
-		g_zappy.anonymous_clients = NULL;
 
 	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.gfx_clients);
 
