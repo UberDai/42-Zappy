@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 01:05:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/03 21:41:28 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,10 +205,10 @@ void	network_disconnect(void)
 
 	printf("\n");
 
-	while ((client = lst_data_at(g_zappy.clients, 0)))
+	while (g_zappy.clients->size > 0 && (client = lst_data_at(g_zappy.clients, 0)))
 		network_client_disconnect(client);
 
-	while ((client = lst_data_at(g_zappy.gfx_clients, 0)))
+	while (g_zappy.gfx_clients->size > 0 && (client = lst_data_at(g_zappy.gfx_clients, 0)))
 		network_client_disconnect(client);
 
 	FD_ZERO(&(g_zappy.network.read_fds));
