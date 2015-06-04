@@ -2,20 +2,21 @@
 --      ./shddddddddhs+.
 --    :yddddddddddddddddy:
 --  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  42-Zappy:zappy
+--  ydddh+sdddddddddy+ydddds  42-Zappy:Zappy
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-06-01 23:24:11
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:35:39
+-- sdddddddddddddddddddddddds Created: 2015-06-04 21:34:28
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:42:26
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local zappy = {}
+Object = require 'libs.classic'
 
-function zappy.getMStack(self)
+Zappy = Object:extend()
+function Zappy:getMStack()
 	local t = {}
 	local str = ""
 	while str ~= nil do
@@ -25,10 +26,14 @@ function zappy.getMStack(self)
 	return t
 end
 
-function zappy.makeMStack(self, tab)
+function Zappy:makeMStack(tab)
 	for i,v in ipairs(tab) do
 		if v:find("%+%s*%d+%s*%d+%s*%d+") then
-			self.map:addStone(love.newStone(v:match("(%d+)%s*(%d+)%s*(%d+)")))
+			self.map:addStone(Stone(v:match("(%d+)%s*(%d+)%s*(%d+)")))
+			self.itemcount = self.itemcount + 1
+		elseif v:find("%-%s*%d+%s*%d+%s*%d+") then
+			self.map:removeStone(v:match("(%d+)%s*(%d+)%s*(%d+)"))
+			self.itemcount = self.itemcount - 1
 		else
 			print("else", v)
 		end
@@ -38,7 +43,7 @@ end
 --		INIT SOCKET READ
 --
 
-function zappy.readMap(self)
+function Zappy:readMap()
 	local t = {}
 	local line = self.tcp:receive('*l')
 	if string.sub(line, line:find("%d+%s+%d+")) ~= nil then
@@ -50,7 +55,7 @@ function zappy.readMap(self)
 	return t[1], t[2]
 end
 
-function zappy.readTime(self)
+function Zappy:readTime()
 	local t = {}
 	local line = self.tcp:receive('*l')
 	if string.sub(line, line:find("%d+")) ~= nil then
@@ -63,17 +68,17 @@ end
 --		ZAPPY ENGINE
 --
 
-function zappy.addPlayer(self, player)
+function Zappy:addPlayer(player)
 	table.insert(self.players, player)
 	-- table.insert(self.hash[player.x][player.y].content, player)
 end
 
-function zappy.normalize(self, x, y)
+function Zappy:normalize(x, y)
 	return self.offx + -self.size / (2 + self.margin) * x + y * self.size / (2 + self.margin),
 		self.offy + self.size / (4 + self.margin) * (x + y)
 end
 
-function zappy.init(self, host, port)
+function Zappy:new(host, port)
 	self.tcp = socket.connect('localhost', 4242)
 	if self.tcp then
 
@@ -81,16 +86,17 @@ function zappy.init(self, host, port)
 		if msg ~= 'BIENVENUE' then love.event.quit() end
 		self.tcp:send('g\n')
 
-		self.widthMap, self.heightMap = zappy:readMap()
-		self.widthMap = tonumber(self.widthMap)
-		self.heightMap = tonumber(self.heightMap)
+		Zappy.widthMap, Zappy.heightMap = self:readMap()
+		Zappy.widthMap = tonumber(Zappy.widthMap)
+		Zappy.heightMap = tonumber(Zappy.heightMap)
 
-		self.timer = zappy:readTime()
+		Zappy.timer = self:readTime()
 		self.tcp:settimeout(0.01)
 	else
-		self.widthMap, self.heightMap = 10, 10
-		self.timer = 1
+		Zappy.widthMap, Zappy.heightMap = 10, 10
+		Zappy.timer = 1
 	end
+	self.itemcount = 0
 
 	self.size = 100
 	self.margin = -0.5
@@ -99,15 +105,11 @@ function zappy.init(self, host, port)
 
 	self.shapes = {}
 	self.HC = Collider.new(self.size)
-	self.map = Map:init(love.graphics.newImage("assets/test6.png"), self.size)
 	self.players = {}
-
 	self.mouse = self.HC:addCircle(0, 0, 1)
-	-- print(inspect(self))
-	return self
 end
 
-function zappy.update(self, dt)
+function Zappy:update(dt)
 	self.mouse:moveTo(love.mouse.getPosition())
 	if self.tcp then self:makeMStack(self:getMStack()) end
 	for i,v in ipairs(self.players) do
@@ -124,7 +126,7 @@ function zappy.update(self, dt)
 	end
 end
 
-function zappy.draw(self)
+function Zappy:draw()
 	self.map:draw()
 	self.mouse:draw()
 	for i,v in ipairs(self.players) do
@@ -141,7 +143,5 @@ function zappy.draw(self)
 		ui.list:SetVisible(false)
 	end
 
-	love.graphics.print(zappy.scale)
+	love.graphics.print(zappy.itemcount)
 end
-
-return zappy

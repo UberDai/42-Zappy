@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 03:04:24
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 22:05:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -14,33 +14,24 @@
 --          .-::::-`
 
 
-loveframes = require 'loveframes'
-Collider = require 'hardoncollider'
 socket = require 'socket'
-inspect = require 'inspect'
-
+loveframes = require 'libs.loveframes'
+Collider = require 'libs.hardoncollider'
+inspect = require 'libs.inspect'
 
 require 'objects.Quadlist'
-require 'assets.test1'
 require 'objects.FPS'
 require 'objects.Player'
+require 'objects.Map'
+require 'objects.Stone'
+require 'objects.Zappy'
 
-require 'stone'
+require 'assets.test1'
+require 'assets.pop'
+require 'assets.sprite1'
 
-Effect = require 'Effect'
 Event = require 'Event'
-Map = require 'Map'
-zappy = require 'zappy'
 ui = require 'ui'
-
-stones_img = {}
-stones_img[0] = love.graphics.newImage("assets/00.png")
-stones_img[1] = love.graphics.newImage("assets/01.png")
-stones_img[2] = love.graphics.newImage("assets/02.png")
-stones_img[3] = love.graphics.newImage("assets/03.png")
-stones_img[4] = love.graphics.newImage("assets/04.png")
-stones_img[5] = love.graphics.newImage("assets/05.png")
-stones_img[6] = love.graphics.newImage("assets/06.png")
 
 function love.load()
 	FPS = _FPS(1)
@@ -50,7 +41,9 @@ function love.load()
 
 	love.math.setRandomSeed(love.timer.getTime())
 
-	zappy:init("localhost", 4242)
+	zappy = Zappy("localhost", 4242)
+	zappy.map = Map(love.graphics.newImage("assets/tile.png"), zappy.size)
+
 
 	zappy:addPlayer(Player('test1', 5, 5, 'west'))
 	zappy:addPlayer(Player('sprite1', 5, 5, 'north'))
@@ -126,13 +119,13 @@ function love.update(dt)
 		zappy.offx = zappy.offx + dt * 500
 	end
 
-zappy:update(dt)
-loveframes.update(dt)
+	zappy:update(dt)
+	loveframes.update(dt)
 end
 
 function love.draw()
 	FPS:draw()
 	zappy:draw()
 
-loveframes.draw()
+	loveframes.draw()
 end

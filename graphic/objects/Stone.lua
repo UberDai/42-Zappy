@@ -2,18 +2,30 @@
 --      ./shddddddddhs+.
 --    :yddddddddddddddddy:
 --  `sdddddddddddddddddddds`
---  ydddh+sdddddddddy+ydddds  42-Zappy:stone
+--  ydddh+sdddddddddy+ydddds  42-Zappy:Stone
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-06-01 19:02:59
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-01 23:57:11
+-- sdddddddddddddddddddddddds Created: 2015-06-04 21:14:32
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:19:54
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-function drawStone(self, x, y)
+Object = require 'libs.classic'
+
+Stone = Object:extend()
+Stone.image = {}
+Stone.image[0] = love.graphics.newImage("assets/00.png")
+Stone.image[1] = love.graphics.newImage("assets/01.png")
+Stone.image[2] = love.graphics.newImage("assets/02.png")
+Stone.image[3] = love.graphics.newImage("assets/03.png")
+Stone.image[4] = love.graphics.newImage("assets/04.png")
+Stone.image[5] = love.graphics.newImage("assets/05.png")
+Stone.image[6] = love.graphics.newImage("assets/06.png")
+
+function Stone:draw(x, y)
 	if self.id == 0 then
 		love.graphics.draw(self.image, zappy.scale * x, zappy.scale * y, 0, zappy.scale * 0.5, zappy.scale * 0.5, -50, -50)
 	elseif self.id == 1 then
@@ -31,12 +43,10 @@ function drawStone(self, x, y)
 	end
 end
 
-function love.newStone(x, y, id)
-	local stone = {}
-	stone.id = tonumber(id)
-	stone.x = tonumber(x)
-	stone.y = tonumber(y)
-	stone.image = stones_img[tonumber(id)]
-	stone.draw = drawStone
-	return stone
+function Stone:new(x, y, id)
+	self.id = tonumber(id)
+	self.x = tonumber(x)
+	self.y = tonumber(y)
+	self.image = Stone.image[tonumber(id)]
+	self.draw = drawStone
 end

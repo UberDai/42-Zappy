@@ -6,39 +6,36 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 19:59:18
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 02:38:02
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:48:13
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local sprite1 = {}
+Object = require 'libs.classic'
 
+sprite1 = Object:extend()
 sprite1.image = love.graphics.newImage('assets/sprite1.png')
-
 sprite1.listQuads = Quadlist({
 	image = sprite1.image,
 	imagewidth = 80,
 	imageheight = 100
 })
 
-sprite1.new = function (self)
-	local t = {}
-
-	t.delay = 0
-	t.maxdelay = 0.3
-	t.quad = 1
-	t.quadmax = 8
-	t.orientation = 'north'
-	t.listQuads = self.listQuads
-	t.update = self.update
-	t.draw = self.draw
-	t.effect = Effect:newPop(t)
-	return t
+function sprite1:new()
+	self.delay = 0
+	self.maxdelay = 0.3
+	self.quad = 1
+	self.quadmax = 8
+	self.orientation = 'north'
+	self.listQuads = self.listQuads
+	self.update = self.update
+	self.draw = self.draw
+	self.effect = Pop(self)
 end
 
-sprite1.update = function (self, dt)
+function sprite1:update(dt)
 	self.delay = self.delay - dt
 	if self.delay <= 0 then
 		self.quad = self.quad + 1
@@ -52,7 +49,7 @@ sprite1.update = function (self, dt)
 	end
 end
 
-sprite1.draw = function (self, x, y)
+function sprite1:draw(x, y)
 	if self.orientation == 'north' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, 0, 0)
 	elseif self.orientation == 'east' then

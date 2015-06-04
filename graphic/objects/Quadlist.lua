@@ -6,14 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 02:39:33
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 02:43:17
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 20:36:20
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-Object = require 'classic'
+Object = require 'libs.classic'
 
 Quadlist = Object:extend()
 function Quadlist:new(tileset)

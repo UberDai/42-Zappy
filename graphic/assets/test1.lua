@@ -6,14 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 20:24:40
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 03:05:32
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:24:07
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-Object = require 'classic'
+Object = require 'libs.classic'
 
 test1 = Object:extend()
 test1.image = love.graphics.newImage('assets/test1.png')
@@ -32,7 +32,7 @@ function test1:new()
 	self.listQuads = self.listQuads
 	self.update = self.update
 	self.draw = self.draw
-	self.effect = Effect:newPop(self)
+	self.effect = Pop(self)
 end
 
 function test1:update(dt)

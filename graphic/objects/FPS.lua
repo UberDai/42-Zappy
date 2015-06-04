@@ -6,14 +6,14 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 02:46:27
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 02:47:04
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 20:36:09
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-Object = require 'classic'
+Object = require 'libs.classic'
 
 _FPS = Object:extend()
 function _FPS:new(delay)

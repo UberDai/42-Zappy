@@ -5,56 +5,18 @@
 --  ydddh+sdddddddddy+ydddds  42-Zappy:Map
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
--- sdddddddddddddddddddddddds Created: 2015-06-01 22:44:12
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 00:01:54
+-- sdddddddddddddddddddddddds Created: 2015-06-04 21:09:31
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:44:02
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-local map = {}
+Object = require 'libs.classic'
 
-function map.addStone(self, stone)
-	if self.hash[stone.x][stone.y].content[stone.id] == nil then self.hash[stone.x][stone.y].content[stone.id] = {stone = stone, count = 0} end
-	self.hash[stone.x][stone.y].content[stone.id].count = self.hash[stone.x][stone.y].content[stone.id].count + 1
-end
-
-function map.removeStone(self, x, y, id)
-	if self.hash[x][y].content[id] == nil or self.hash[x][y].content[id].count <= 0 then
-		return
-	end
-	self.hash[x][y].content[id].count = self.hash[x][y].content[id].count - 1
-end
-
-
-function map.newCell(image, size)
-	local vertices = {
-		{
-			size / 2, 0,
-			0, 0,
-			255, 255, 255,
-		},
-		{
-			size, size / 4,
-			1, 0,
-			255, 255, 255
-		},
-		{
-			size / 2, size / 2,
-			1, 1,
-			255, 255, 255
-		},
-		{
-			0, size / 4,
-			0, 1,
-			255, 255, 255
-		},
-	}
-	return love.graphics.newMesh(vertices, image, "fan")
-end
-
-function map.init(self, image, size)
+Map = Object:extend()
+function Map:new(image, size)
 	self.hash = {}
 	for i=0,zappy.widthMap - 1 do
 		self.hash[i] = {}
@@ -70,7 +32,7 @@ function map.init(self, image, size)
 			x = x,
 			y = y,
 			content = {},
-			mesh = map.newCell(image, size)
+			mesh = self:newCell(image, size)
 		})
 		table.insert(zappy.shapes, {
 			x = x,
@@ -97,17 +59,9 @@ function map.init(self, image, size)
 	end
 
 	self.players = {}
-	return self
 end
 
-function map.draw(self)
-	-- local size = 150
-	-- for i=0,zappy.widthMap - 1 do
-	-- 	for j=0,zappy.heightMap - 1 do
-	-- 		love.graphics.rectangle("line", i * (size + 1), j * (size + 1), size, size)
-	-- 		love.graphics.print(inspect(self.hash[i][j], {depth = 2}), i * (size + 1), j * (size + 1))
-	-- 	end
-	-- end
+function Map:draw()
 	for i,v in ipairs(self.cells) do
 		local x, y = zappy:normalize(v.x, v.y)
 		love.graphics.draw(v.mesh, x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale)
@@ -119,4 +73,41 @@ function map.draw(self)
 	end
 end
 
-return map
+function Map:addStone(stone)
+	if self.hash[stone.x][stone.y].content[stone.id] == nil then self.hash[stone.x][stone.y].content[stone.id] = {stone = stone, count = 0} end
+	self.hash[stone.x][stone.y].content[stone.id].count = self.hash[stone.x][stone.y].content[stone.id].count + 1
+end
+
+function Map:removeStone(x, y, id)
+	if self.hash[x][y].content[id] == nil or self.hash[x][y].content[id].count <= 0 then
+		return
+	end
+	self.hash[x][y].content[id].count = self.hash[x][y].content[id].count - 1
+end
+
+
+function Map:newCell(image, size)
+	local vertices = {
+		{
+			size / 2, 0,
+			0, 0,
+			255, 255, 255,
+		},
+		{
+			size, size / 4,
+			1, 0,
+			255, 255, 255
+		},
+		{
+			size / 2, size / 2,
+			1, 1,
+			255, 255, 255
+		},
+		{
+			0, size / 4,
+			0, 1,
+			255, 255, 255
+		},
+	}
+	return love.graphics.newMesh(vertices, image, "fan")
+end
