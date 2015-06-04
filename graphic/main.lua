@@ -6,52 +6,25 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:07:45
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 03:04:24
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
-FPS = {}
-
-function FPS:new(delay)
-	self.width = love.window.getWidth()
-	self.height = love.window.getHeight()
-	self.delay = delay
-	self.list = {}
-
-	self.update = function (self, dt)
-		self.delay = self.delay - dt
-		if self.delay < 0 then
-			table.insert(self.list, love.timer.getFPS())
-			if #self.list - 1 > self.width / 3 then
-				table.remove(self.list, 1)
-			end
-			self.delay = delay
-		end
-	end
-	self.draw = function (self)
-		love.graphics.setColor(255, 255, 255, 100)
-		for k,v in pairs(self.list) do
-			if v < 30 then love.graphics.setColor(255, 0, 0, 100) end
-			love.graphics.rectangle('fill',
-				self.width - (k * 3),
-				self.height - v,
-				3, v)
-			if v < 30 then love.graphics.setColor(255, 255, 255, 100) end
-		end
-		love.graphics.setColor(255, 255, 255, 255)
-	end
-end
 
 loveframes = require 'loveframes'
 Collider = require 'hardoncollider'
-Quadlist = require 'Quadlist'
 socket = require 'socket'
 inspect = require 'inspect'
 
-require 'player'
+
+require 'objects.Quadlist'
+require 'assets.test1'
+require 'objects.FPS'
+require 'objects.Player'
+
 require 'stone'
 
 Effect = require 'Effect'
@@ -70,7 +43,7 @@ stones_img[5] = love.graphics.newImage("assets/05.png")
 stones_img[6] = love.graphics.newImage("assets/06.png")
 
 function love.load()
-	FPS:new(1)
+	FPS = _FPS(1)
 	width = love.window.getWidth()
 	height = love.window.getHeight()
 	time = 0
@@ -79,8 +52,8 @@ function love.load()
 
 	zappy:init("localhost", 4242)
 
-	zappy:addPlayer(newPlayer('test1'))
-	zappy:addPlayer(newPlayer('sprite1'))
+	zappy:addPlayer(Player('test1', 5, 5, 'west'))
+	zappy:addPlayer(Player('sprite1', 5, 5, 'north'))
 
 end
 

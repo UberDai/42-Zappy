@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-03 22:27:46
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:19:03
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 02:37:41
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -19,7 +19,7 @@ function Effect.newPop(self, parent)
 	local e = {}
 
 	e.image = love.graphics.newImage("assets/pop.png")
-	e.listQuads = Quadlist:new({
+	e.listQuads = Quadlist({
 		image = e.image,
 		imagewidth = 80,
 		imageheight = 100

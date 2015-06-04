@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 19:59:18
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:17:36
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 02:38:02
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -17,7 +17,7 @@ local sprite1 = {}
 
 sprite1.image = love.graphics.newImage('assets/sprite1.png')
 
-sprite1.listQuads = Quadlist:new({
+sprite1.listQuads = Quadlist({
 	image = sprite1.image,
 	imagewidth = 80,
 	imageheight = 100

@@ -6,40 +6,36 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 20:24:40
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-03 23:15:48
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 03:05:32
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+Object = require 'classic'
 
-local test1 = {}
-
+test1 = Object:extend()
 test1.image = love.graphics.newImage('assets/test1.png')
-
-test1.listQuads = Quadlist:new({
+test1.listQuads = Quadlist({
 	image = test1.image,
 	imagewidth = 80,
 	imageheight = 100
 })
 
-test1.new = function (self)
-	local t = {}
-
-	t.delay = 0
-	t.maxdelay = 0.3
-	t.quad = 1
-	t.quadmax = 4
-	t.orientation = 'north'
-	t.listQuads = self.listQuads
-	t.update = self.update
-	t.draw = self.draw
-	t.effect = Effect:newPop(t)
-	return t
+function test1:new()
+	self.delay = 0
+	self.maxdelay = 0.3
+	self.quad = 1
+	self.quadmax = 4
+	self.orientation = 'north'
+	self.listQuads = self.listQuads
+	self.update = self.update
+	self.draw = self.draw
+	self.effect = Effect:newPop(self)
 end
 
-test1.update = function (self, dt)
+function test1:update(dt)
 	self.delay = self.delay - dt
 	if self.delay <= 0 then
 		self.quad = self.quad + 1
@@ -59,7 +55,7 @@ test1.update = function (self, dt)
 	end
 end
 
-test1.draw = function (self, x, y)
+function test1:draw(x, y)
 	if self.orientation == 'north' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, -5, 20)
 	elseif self.orientation == 'east' then
@@ -74,5 +70,3 @@ test1.draw = function (self, x, y)
 		self.effect:draw(x, y, 85, 30)
 	end
 end
-
-return test1
