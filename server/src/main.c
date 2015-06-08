@@ -6,12 +6,11 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:10:06 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 18:54:56 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
-#include "dlist.h"
 #include <libft.h>
 #include <unistd.h>
 #include <stdio.h>

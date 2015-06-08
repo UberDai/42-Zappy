@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/06/03 00:59:54 by amaurer          ###   ########.fr        #
+#    Updated: 2015/06/07 21:39:03 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,25 +32,10 @@ SRC_FILES	=	main.c \
 				client/team.c \
 				client/queue.c \
 				client/item.c \
+				client/vision.c \
 				command/parse.c \
 				command/commands.c \
-				command/gfx.c \
-\
-				dlist/dlist_last.c \
-				dlist/dlist_first.c \
-				dlist/dlist_pop.c \
-				dlist/dlist_shift.c \
-				dlist/dlist_remove.c \
-				dlist/dlist_create.c \
-				dlist/dlist_append.c \
-				dlist/dlist_prepend.c \
-				dlist/dlist_at.c \
-				dlist/dlist_move_right.c \
-				dlist/dlist_move_left.c \
-				dlist/dlist_swap.c \
-				dlist/dlist_replace.c \
-				dlist/dlist_length.c \
-				dlist/dlist_index.c
+				command/gfx.c
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))

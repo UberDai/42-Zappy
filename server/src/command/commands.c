@@ -6,12 +6,13 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 23:28:17 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 19:03:01 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 #include <stdlib.h>
+#include <string.h>
 
 short	command_move(t_client *client, t_uint argc, char **argv)
 {
@@ -78,20 +79,11 @@ short	command_drop(t_client *client, t_uint argc, char **argv)
 
 short	command_inventory(t_client *client, t_uint argc, char **argv)
 {
-	char	str[200] = { 0 };
+	char	*str;
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
-	snprintf(str, 200, "food %u, linemate %u, deraumere %u, sibur %u, "
-		"mendiane %u, phiras %u, thystame %u",
-		client->items[0],
-		client->items[1],
-		client->items[2],
-		client->items[3],
-		client->items[4],
-		client->items[5],
-		client->items[6]
-	);
+	str = client_inventory(client);
 	network_send(client, str, 0);
 	(void)argv;
 	return (COMMAND_NONE);
@@ -104,20 +96,38 @@ short	command_connect_count(t_client *client, t_uint argc, char **argv)
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
-	client_count = team_clients_count(client->team);
+	client_count = team_count_clients(client->team);
 	snprintf(str, 4, "%lu", client->team->max_clients - client_count);
 	network_send(client, str, 0);
 	(void)argv;
 	return (COMMAND_NONE);
 }
 
-
 short	command_see(t_client *client, t_uint argc, char **argv)
 {
-	// char	str[4] = { 0 };
+	char		*str;
+	t_lst		*vision;
+	t_lstiter	iter;
+	char		*tmp;
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
+	client->level = 3;
+	vision = get_vision(client);
+	str = calloc(vision->size * 200, sizeof(char));
+
+	init_iter(&iter, vision, increasing);
+	while (lst_iterator_next(&iter))
+	{
+		tmp = tile_inventory(iter.data);
+		if (iter.pos != 0)
+			strcat(str, ", ");
+		strcat(str, tmp);
+		free(tmp);
+	}
+
+	network_send(client, str, 0);
+	free(str);
 	(void)argv;
 	return (COMMAND_NONE);
 }

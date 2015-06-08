@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 21:42:24 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 18:57:41 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ t_tile						*tile_at(int x, int y);
 short						tile_add_item(t_tile *tile, int item);
 short						tile_remove_item(t_tile *tile, int item);
 void						tile_regenerate(t_tile *tile);
+char						*tile_inventory(t_tile *tile);
 void						map_regenerate(void);
 
 void						options_parse(t_uint ac, char **av);
@@ -183,10 +184,11 @@ short						client_add_item(t_client *client, int item);
 short						client_remove_item(t_client *client, int item);
 short						client_pick(t_client *client, int item);
 short						client_drop(t_client *client, int item);
+char						*client_inventory(t_client *client);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);
-size_t						team_clients_count(t_team *team);
+size_t						team_count_clients(t_team *team);
 
 void						network_bind();
 void						network_receive(void);
@@ -224,5 +226,7 @@ void						gfx_client_pick(t_client *client, int item);
 void						gfx_client_drop(t_client *client, int item);
 void						gfx_client_move_to(t_client *client, t_tile *tile);
 void						gfx_client_turn(t_client *client);
+
+t_lst						*get_vision(t_client *client);
 
 #endif
