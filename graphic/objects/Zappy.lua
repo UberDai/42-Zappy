@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 21:34:28
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:42:26
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-07 22:46:12
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -35,7 +35,7 @@ function Zappy:makeMStack(tab)
 			self.map:removeStone(v:match("(%d+)%s*(%d+)%s*(%d+)"))
 			self.itemcount = self.itemcount - 1
 		else
-			print("else", v)
+			print("else", i, v)
 		end
 	end
 end
@@ -79,7 +79,7 @@ function Zappy:normalize(x, y)
 end
 
 function Zappy:new(host, port)
-	self.tcp = socket.connect('localhost', 4242)
+	self.tcp = socket.connect(host, 4242)
 	if self.tcp then
 
 		local msg = self.tcp:receive('*l')

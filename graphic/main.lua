@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 22:05:57
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-07 22:41:13
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -15,8 +15,8 @@
 
 
 socket = require 'socket'
-loveframes = require 'libs.loveframes'
-Collider = require 'libs.hardoncollider'
+loveframes = require 'libs.LoveFrames'
+Collider = require 'libs.HardonCollider'
 inspect = require 'libs.inspect'
 
 require 'objects.Quadlist'
@@ -27,7 +27,7 @@ require 'objects.Stone'
 require 'objects.Zappy'
 
 require 'assets.test1'
-require 'assets.pop'
+require 'assets.Pop'
 require 'assets.sprite1'
 
 Event = require 'Event'
@@ -41,7 +41,7 @@ function love.load()
 
 	love.math.setRandomSeed(love.timer.getTime())
 
-	zappy = Zappy("localhost", 4242)
+	zappy = Zappy("10.12.11.12", 4242)
 	zappy.map = Map(love.graphics.newImage("assets/tile.png"), zappy.size)
 
 
