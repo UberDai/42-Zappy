@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 19:03:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 19:04:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ static char	authenticate(t_client *client, char *input)
 		return (0);
 	}
 	client_count = team_count_clients(team);
-	printf("%lu %u\n", client_count, team->max_clients);
 	if (client_count >= team->max_clients)
 	{
 		network_send(client, "clubs full buddy", 0);
