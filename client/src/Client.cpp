@@ -107,35 +107,6 @@ Client				&Client::operator=(Client const &rhs)
 	return *this;
 }
 
-// Action				*Client::_createAction(const std::string &action)
-// {
-// 	if (action == Action::SEE)
-// 		return new ActionSee(this);
-// 	if (action == Action::EXPULSE)
-// 		return new ActionExpulse();
-// 	if (action == Action::INCANTATION)
-// 		return new ActionIncantation(this);
-// 	if (action == Action::EGG)
-// 		return new ActionEgg();
-// 	return nullptr;
-// }
-
-// Action				*Client::_createAction(enum eDirection dir)
-// {
-// 	return new ActionMove(dir);
-// }
-
-// Action				*Client::_createAction(const std::string &action, const std::string &str)
-// {
-// 	if (action == Action::TAKE)
-// 		return new ActionTake(str, _inventory);
-// 	if (action == Action::DROP)
-// 		return new ActionDrop(str, _inventory);
-// 	if (action == Action::BROADCAST)
-// 		return new ActionBroadcast(str);
-// 	return nullptr;
-// }
-
 bool				Client::loop(void)
 {
 	std::string msg;
@@ -178,28 +149,6 @@ void				Client::recieveBroadcast(const std::string &msg)
 	//	 case
 	//	 content
 	(void)msg;
-		// switch (atoi(case))
-		// {
-		// 	case 1:
-		// 		_move(UP);
-		// 		break;
-		// 	case 2:
-		// 		break;
-		// 	case 3:
-		// 		break;
-		// 	case 4:
-		// 		break;
-		// 	case 5:
-		// 		break;
-		// 	case 6:
-		// 		break;
-		// 	case 7:
-		// 		break;
-		// 	case 8:
-		// 		break;
-		// 	default:
-		// 		break;
-		// }
 }
 
 void				Client::_ia(void)
@@ -237,15 +186,6 @@ int					Client::_search(int level)
 {
 	if (level == 1)
 		return 1;
-	// std::string dir;
-	// int 		players;
-
-	// while (players != nb_player)
-	// {
-	// 	_broadcast("incantation level " + _level + "\n");
-	// 	dir = _network->recieve();
-
-	// }
 	return 0;
 }
 
@@ -264,7 +204,7 @@ void				Client::_composFind(int level)
 			for (auto &kv : compo)
 			{
 				printDebug(kv.first);
-				if (fov[i].find(kv.first))
+				if (fov[i].find(kv.first) != std::string::npos)
 				{
 					//_pathFinding(start_case, end_case);
 					ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
@@ -275,16 +215,12 @@ void				Client::_composFind(int level)
 			i++;
 		}
 	}
-	
-	//if nourriture take nourriture
-	//take compos for all level
 }
 
 int					Client::_compos(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
 	bool							ok = false;
-	std::stringstream toto;
 
 	if (fov[0].size() > 0) // check si la case n'est pas trop vielle
 	{
@@ -293,8 +229,6 @@ int					Client::_compos(int level)
 		for (auto &kv : compo)
 		{
 			printDebug(kv.first);
-			toto << "find = " << fov[0].find(kv.first) << std::endl;
-			printDebug(toto.str());
 			if (fov[0].find(kv.first) != std::string::npos)
 			{
 				printDebug("compos find on case");
