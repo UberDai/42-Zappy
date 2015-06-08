@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-06-08 22:51:31
+//           :      _/|      :       Last Edit  : 2015-06-09 01:29:34
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -23,6 +23,7 @@
 # include "Inventory.hpp"
 # include "Action.hpp"
 # include "eDirection.hpp"
+# include "eOrientation.hpp"
 
 /*
 ** TODO NOE
@@ -39,7 +40,6 @@ class	Client
 {
 public:
 
-
 	Client(unsigned int,
 			std::string = "Default Team Name",
 			std::string = "localhost");
@@ -53,9 +53,11 @@ public:
 	Inventory				&getInventory(void);
 	unsigned int			getLevel() const;
 	void					setLevel(unsigned int);
-	void					setPlayerX(size_t &);
+	void					setPlayerX(size_t);
 	size_t					getPlayerY() const;
-	void					setPlayerY(size_t &);
+	void					setPlayerY(size_t);
+	enum eOrientation		getPlayerOrientation() const;
+	void					setPlayerOrientation(enum eOrientation);
 	Map						&getMap(void);
 	// Gestion de la map perso beta
 
@@ -82,6 +84,7 @@ private:
 	std::vector<Action *>	_actions;
 	size_t					_playerX;
 	size_t					_playerY;
+	enum eOrientation		_playerOrientation;
 
 	std::string				_sendTeamInfo(void);
 	void					_loadServerInfos(const std::string &);

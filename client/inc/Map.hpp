@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Map.hpp
 //           :               :       Creation   : 2015-06-08 00:57:04
-//           :      _/|      :       Last Edit  : 2015-06-08 22:47:14
+//           :      _/|      :       Last Edit  : 2015-06-09 01:43:04
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -19,6 +19,7 @@
 # include <stdexcept>
 # include <vector>
 # include "Inventory.hpp"
+# include "eOrientation.hpp"
 
 class Inventory;
 
@@ -33,6 +34,7 @@ public:
 	Map &	operator=(Map const &);
 
 	void			initMap(size_t, size_t);
+	void			setFrom(size_t, size_t, enum eOrientation, const std::string &);
 
 	class Proxy {
     public:
@@ -44,11 +46,13 @@ public:
     private:
         std::vector<Inventory> &_array;
     };
+	Proxy		operator[](size_t);
 
 private:
+	size_t									_totox;
+	size_t									_totoy;
 	std::vector<std::vector<Inventory> >	_data;
-
-	Proxy		operator[](size_t);
+	std::pair<int, int>					_getRealCoord(size_t, size_t, enum eOrientation, size_t);
 };
 
 std::ostream	&operator<<(std::ostream &o, Map const &i);

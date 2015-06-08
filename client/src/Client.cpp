@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-06-08 22:51:20
+//           :      _/|      :       Last Edit  : 2015-06-09 01:55:09
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -75,9 +75,12 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
-_teamName(teamName),
-_network(new Network(this, port, hostName)),
-_level(1)
+	_teamName(teamName),
+	_network(new Network(this, port, hostName)),
+	_level(1),
+	_playerX(0),
+	_playerY(0),
+	_playerOrientation(EAST)
 {
 
 	std::stringstream name;
@@ -196,7 +199,7 @@ void				Client::_composFind(int level)
 	int i = 0;
 
 	printDebug("Enter Composfind");
-	if (fov[0].size() > 0)
+	if (1)
 	{
 		while (i < (level * 4))
 		{
@@ -204,7 +207,9 @@ void				Client::_composFind(int level)
 			for (auto &kv : compo)
 			{
 				printDebug(kv.first);
-				if (fov[i].find(kv.first) != std::string::npos)
+				printDebug(_map[_playerX + 1][9].toString());
+				if (_map[_playerX][_playerY + 1].has(kv.first, 1))
+				// if (fov[i].find(kv.first) != std::string::npos)
 				{
 					//_pathFinding(start_case, end_case);
 					ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
@@ -222,14 +227,14 @@ int					Client::_compos(int level)
 	std::map<std::string, size_t>	&compo = _totems[level];
 	bool							ok = false;
 
-	if (fov[0].size() > 0) // check si la case n'est pas trop vielle
+	if (1) // check si la case n'est pas trop vielle
 	{
 		printDebug("check la case");
-		printDebug(fov[0]);
 		for (auto &kv : compo)
 		{
 			printDebug(kv.first);
-			if (fov[0].find(kv.first) != std::string::npos)
+			if (_map[_playerX][_playerY].has(kv.first, kv.second))
+			// if (fov[0].find(kv.first) != std::string::npos)
 			{
 				printDebug("compos find on case");
 				ok = true;
@@ -260,7 +265,7 @@ int					Client::_compos(int level)
 			}
 		}
 	}
-	if (!ok && fov[0].size() == 0) // add check if pas bouger // case deja connu
+	if (!ok) // add check if pas bouger // case deja connu
 	{
 		printDebug("add see");
 		_actions.push_back(Action::create(Action::SEE));
@@ -323,6 +328,12 @@ std::string    		Client::_sendTeamInfo(void)
 }
 
 void				Client::setLevel(unsigned int val) 	{ _level = val; }
+void				Client::setPlayerX(size_t val) 	{ _playerX = val; }
+void				Client::setPlayerY(size_t val) 	{ _playerY = val; }
+void				Client::setPlayerOrientation(enum eOrientation o) 	{ _playerOrientation = o; }
+enum eOrientation	Client::getPlayerOrientation() const { return _playerOrientation; }
+size_t				Client::getPlayerX() const 			{ return _playerX; }
+size_t				Client::getPlayerY() const 			{ return _playerY; }
 unsigned int		Client::getLevel() const 			{ return _level; }
 Inventory			&Client::getInventory(void) 		{ return _inventory; }
 Map					&Client::getMap(void) 				{ return _map; }

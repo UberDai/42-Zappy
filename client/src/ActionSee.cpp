@@ -39,34 +39,12 @@ int				ActionSee::execute(Network &network)
 {
 	std::string ret;
 	std::string tmp;
-	int i = 0;
+	// int i = 0;
+	Map			&m = _client->getMap();
 
 	ret = network.send(SEE);
-	try
-	{
-		std::regex re("([\\w \\s]*)[,}]");
-		std::sregex_iterator next(ret.begin(), ret.end(), re);
-		std::sregex_iterator end;
-
-		while (next != end)
-		{
-			std::smatch match = *next;
-			//Map			&m = _client->getMap();
-			tmp = match.str();
-			if (tmp[0] == ' ')
-				tmp = match.str().substr(1);
-			tmp.resize(tmp.size() - 1);
-			//add to map
-			_client->fov[i] = tmp;
-			next++;
-			i++;
-		}
-
-		return _successIndex;
-	}
-	catch (std::regex_error& e)
-	{ }
-	return _failIndex;
+	m.setFrom(_client->getPlayerX(), _client->getPlayerY(), _client->getPlayerOrientation(), ret);
+	return _successIndex;
 	/*
 	parse du retour en n string/inventaire
 	getplayerX/Y
