@@ -390,7 +390,7 @@ unsigned int		Client::getLevel() const
 	return _level;
 }
 
-std::vector<std::map<std::string, size_t> >		Client::getTotems()
+std::vector<std::map<std::string, size_t> >		&Client::getTotems()
 {
 	return _totems;
 }
