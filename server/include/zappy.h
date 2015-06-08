@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/04 01:16:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 18:57:41 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,7 +188,7 @@ char						*client_inventory(t_client *client);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);
-size_t						team_clients_count(t_team *team);
+size_t						team_count_clients(t_team *team);
 
 void						network_bind();
 void						network_receive(void);

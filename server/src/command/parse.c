@@ -6,12 +6,11 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 21:44:35 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 19:03:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
-#include "dlist.h"
 #include <libft.h>
 
 t_command	g_commands[] = {
@@ -101,10 +100,11 @@ static char	authenticate(t_client *client, char *input)
 		network_send(client, "m8 dat team doesnt exist ya fool", 0);
 		return (0);
 	}
-	client_count = team_clients_count(team);
+	client_count = team_count_clients(team);
+	printf("%lu %u\n", client_count, team->max_clients);
 	if (client_count >= team->max_clients)
 	{
-		network_send(client, "clubs full buddy, gtfo", 0);
+		network_send(client, "clubs full buddy", 0);
 		network_client_disconnect(client);
 		return (1);
 	}

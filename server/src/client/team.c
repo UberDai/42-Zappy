@@ -6,12 +6,11 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/22 02:05:55 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:19:52 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/08 18:57:57 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
-#include "dlist.h"
 #include <stdlib.h>
 #include <libft.h>
 
@@ -42,14 +41,14 @@ t_team	*team_create(const char *team_name)
 	return (team);
 }
 
-size_t	team_clients_count(t_team *team)
+size_t	team_count_clients(t_team *team)
 {
 	t_client	*client;
 	t_lstiter	iter;
 	size_t		i;
 
 	i = 0;
-	init_iter(&iter, g_zappy.teams, increasing);
+	init_iter(&iter, g_zappy.clients, increasing);
 	while (lst_iterator_next(&iter))
 	{
 		client = (t_client*)iter.data;
