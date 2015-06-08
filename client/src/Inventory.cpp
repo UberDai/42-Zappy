@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Inventory.cpp
 //           :               :       Creation   : 2015-06-02 18:59:27
-//           :      _/|      :       Last Edit  : 2015-06-08 01:14:00
+//           :      _/|      :       Last Edit  : 2015-06-08 22:48:37
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -40,7 +40,7 @@ Inventory::Inventory(Inventory const & rhs)
 Inventory&	Inventory::operator=(Inventory const & rhs)
 {
 	if (this != &rhs)
-		(void)rhs;
+		_data = rhs._data;
 	return *this;
 }
 
@@ -82,7 +82,7 @@ bool	Inventory::has(const std::string & obj, size_t qty)
 	try {
 		return _data.at(obj) == qty;
 	} catch (const std::out_of_range &oor) {
-		return false;		
+		return false;
 	}
 }
 

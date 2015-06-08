@@ -1,4 +1,5 @@
 #include "ActionSee.hpp"
+#include "Map.hpp"
 
 ActionSee::ActionSee(Client *client) :
 	_client(client)
@@ -50,6 +51,7 @@ int				ActionSee::execute(Network &network)
 		while (next != end)
 		{
 			std::smatch match = *next;
+			//Map			&m = _client->getMap();
 			tmp = match.str();
 			if (tmp[0] == ' ')
 				tmp = match.str().substr(1);

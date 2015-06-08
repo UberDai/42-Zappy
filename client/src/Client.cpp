@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-06-04 01:53:50
+//           :      _/|      :       Last Edit  : 2015-06-08 22:51:20
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -26,7 +26,7 @@
 
 const std::regex	Client::_serverInfosFormat("(\\d+)\\n(\\d+) (\\d+)\\n");
 
-std::vector<std::map<std::string, size_t> >	Client::_totems =
+Totems	Client::_totems =
 {
 	{
 		{  }
@@ -294,6 +294,8 @@ void				Client::_loadServerInfos(const std::string &infos)
 {
 	std::smatch	sm;
 	std::string	tmp;
+	size_t		mapX;
+	size_t		mapY;
 
 	std::regex_match(infos, sm, _serverInfosFormat);
 	if (sm.size() != 4)
@@ -302,8 +304,9 @@ void				Client::_loadServerInfos(const std::string &infos)
 		exit(EXIT_FAILURE);
 	}
 	tmp = sm[1],  _availableConnections = strtol(tmp.c_str(), NULL, 10);
-	tmp = sm[2],  _mapX = strtol(tmp.c_str(), NULL, 10);
-	tmp = sm[3],  _mapY = strtol(tmp.c_str(), NULL, 10);
+	tmp = sm[2],  mapX = strtol(tmp.c_str(), NULL, 10);
+	tmp = sm[3],  mapY = strtol(tmp.c_str(), NULL, 10);
+	_map.initMap(mapX, mapY);
 }
 
 std::string    		Client::_sendTeamInfo(void)
@@ -319,23 +322,8 @@ std::string    		Client::_sendTeamInfo(void)
 	}
 }
 
-unsigned int		Client::getLevel() const
-{
-	return _level;
-}
-
-std::vector<std::map<std::string, size_t> >		&Client::getTotems()
-{
-	return _totems;
-}
-
-
-void				Client::setLevel(unsigned int val)
-{
-	_level = val;
-}
-
-Inventory			&Client::getInventory(void)
-{
-	return _inventory;
-}
+void				Client::setLevel(unsigned int val) 	{ _level = val; }
+unsigned int		Client::getLevel() const 			{ return _level; }
+Inventory			&Client::getInventory(void) 		{ return _inventory; }
+Map					&Client::getMap(void) 				{ return _map; }
+Totems				&Client::getTotems() 				{ return _totems; }

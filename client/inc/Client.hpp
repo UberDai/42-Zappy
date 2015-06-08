@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-06-08 00:59:02
+//           :      _/|      :       Last Edit  : 2015-06-08 22:51:31
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -33,9 +33,13 @@
 class Network;
 class Action;
 
+using Totems = std::vector<std::map<std::string, size_t> >;
+
 class	Client
 {
 public:
+
+
 	Client(unsigned int,
 			std::string = "Default Team Name",
 			std::string = "localhost");
@@ -52,6 +56,7 @@ public:
 	void					setPlayerX(size_t &);
 	size_t					getPlayerY() const;
 	void					setPlayerY(size_t &);
+	Map						&getMap(void);
 	// Gestion de la map perso beta
 
 	size_t					getPlayerX() const;
@@ -60,20 +65,18 @@ public:
 	//vector ??
 	//std::map<size_t, std::map<size_t, std::string> > _map; //inventaire ??
 
-	std::vector<std::map<std::string, size_t> >	&getTotems();
+	Totems					&getTotems();
 	void					printDebug(const std::string &);
 
 private:
-	static const std::regex								_serverInfosFormat;
-	static std::vector<std::map<std::string, size_t> >	_totems;
+	static const std::regex	_serverInfosFormat;
+	static Totems			_totems;
 
 	const std::string		_teamName;
 	Map						_map;
 	Network					*_network;
 	unsigned int			_level;
 	unsigned int			_availableConnections;
-	unsigned int			_mapX;
-	unsigned int			_mapY;
 	std::ofstream 			_ofs;
 	Inventory				_inventory;
 	std::vector<Action *>	_actions;

@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Map.cpp
 //           :               :       Creation   : 2015-06-08 00:57:33
-//           :      _/|      :       Last Edit  : 2015-06-08 01:38:28
+//           :      _/|      :       Last Edit  : 2015-06-08 22:49:25
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -14,10 +14,9 @@
 #include <sstream>
 #include "Map.hpp"
 
-Map::Map(size_t x, size_t y)
+Map::Map()
 {
-	(void)x;
-	(void)y;
+
 }
 
 Map::~Map()
@@ -54,4 +53,18 @@ std::ostream	&operator<<(std::ostream &o, Map const &i)
 {
 	o << i.toString();
 	return o;
+}
+
+Map::Proxy		Map::operator[](size_t index)
+{
+	return Proxy(_data.at(index));
+}
+
+void			Map::initMap(size_t x, size_t y)
+{
+	_data.clear();
+	_data.resize(y);
+
+	for (auto & line : _data)
+		line.resize(x);
 }
