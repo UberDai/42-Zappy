@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Map.cpp
 //           :               :       Creation   : 2015-06-08 00:57:33
-//           :      _/|      :       Last Edit  : 2015-06-09 01:23:02
+//           :      _/|      :       Last Edit  : 2015-06-09 02:02:50
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -102,9 +102,9 @@ void			Map::setFrom(size_t posX,
 			std::smatch match2 = *next2;
 			// Action::client->printDebug(match2.str());
 			std::pair<int, int>		coord = _getRealCoord(posX, posY, o, i);
-			// std::stringstream toto;
-			// toto << "X = " << coord.first << " Y = " << coord.second << " i = " << i;
-			// Action::client->printDebug(toto.str());
+			std::stringstream toto;
+			toto << "X = " << coord.first << " Y = " << coord.second << " i = " << i;
+			Action::client->printDebug(toto.str());
 			_data[coord.first][coord.second].add(match2.str(), 1);
 			next2++;
 		}
@@ -146,9 +146,9 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 		{
 			if (count == i)
 			{
-				// std::stringstream toto;
-				// toto << "X = " << (mapping.first != 0 ? XY.first * mapping.first : XY.first) << " Y = " << (mapping.second != 0 ? XY.second * mapping.second : XY.second) << " i = " << i;
-				// Action::client->printDebug(toto.str());
+				std::stringstream toto;
+				toto << "oX = " << mapping.first << " oY = " << mapping.second << " i = " << i;
+				Action::client->printDebug(toto.str());
 				ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first);
 				ret.second = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second);
 				if (ret.first < 0)
