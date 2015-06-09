@@ -53,33 +53,33 @@ int				ActionMove::execute(Network &network)
 		switch (_dir)
 		{
 			case UP:
-			switch (client->getPlayerOrientation())
-			{
-				case NORTH:
-				client->setPlayerY(client->getPlayerY() + 1);
-				break;
-				case SOUTH:
-				client->setPlayerY(client->getPlayerY() - 1);
-				break;
-				case EAST:
-				client->setPlayerX(client->getPlayerX() + 1);
-				break;
-				case WEST:
-				client->setPlayerX(client->getPlayerX() - 1);
-				break;
-			}
-			break;
-			case TURN_LEFT:
-			if (client->getPlayerOrientation() == WEST)
-				client->setPlayerOrientation(NORTH);
-			else
-				client->setPlayerOrientation((client->getPlayerOrientation() + 1));
+				switch (client->getPlayerOrientation())
+				{
+					case NORTH:
+						client->setPlayerY(client->getPlayerY() + 1);
+					break;
+					case SOUTH:
+						client->setPlayerY(client->getPlayerY() - 1);
+					break;
+					case EAST:
+						client->setPlayerX(client->getPlayerX() + 1);
+					break;
+					case WEST:
+						client->setPlayerX(client->getPlayerX() - 1);
+					break;
+				}
 			break;
 			case TURN_RIGHT:
-			if (client->getPlayerOrientation() == NORTH)
-				client->setPlayerOrientation(WEST);
-			else
-				client->setPlayerOrientation(client->getPlayerOrientation() - 1);
+				if (client->getPlayerOrientation() == WEST)
+					client->setPlayerOrientation(NORTH);
+				else
+					client->setPlayerOrientation(static_cast<enum eOrientation>(client->getPlayerOrientation() + 1));
+			break;
+				case TURN_LEFT:
+				if (client->getPlayerOrientation() == NORTH)
+					client->setPlayerOrientation(WEST);
+				else
+					client->setPlayerOrientation(static_cast<enum eOrientation>(client->getPlayerOrientation() - 1));
 			break;
 
 		}
