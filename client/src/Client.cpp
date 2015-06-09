@@ -80,7 +80,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_level(1),
 	_playerX(0),
 	_playerY(0),
-	_playerOrientation(EAST)
+	_playerOrientation(NORTH)
 {
 
 	std::stringstream name;
