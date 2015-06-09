@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-06-09 22:36:59
+//           :      _/|      :       Last Edit  : 2015-06-10 00:02:12
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -164,7 +164,12 @@ void				Client::_ia(void)
 		if (_search(_level) != 0)
 		{
 			printDebug("add Action Incantation");
-			_actions.push_back(Action::create(Action::INCANTATION)); //maj de la carte -> remove item used
+			ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
+			ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
+
+			incantation->setFailureIndex(-1);
+			_actions.push_back(incantation); //maj de la carte -> remove item used
+			_actions.push_back(voir);
 			ok = true;
 		}
 	}
@@ -181,7 +186,7 @@ void				Client::_playMove(void)
 
 	while (i >= 0 && static_cast<size_t>(i) < max)
 	{
-		tmp = _actions[static_cast<size_t>(i)]->execute(*_network);
+		tmp = _actions.at(static_cast<size_t>(i))->execute(*_network);
 		if (tmp == -2)
 			break ;
 		i = tmp == -1 ? i + 1 : tmp;
