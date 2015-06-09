@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/04 00:03:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 00:06:19 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 01:09:28 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ t_lst	*get_vision(t_client *client)
 				x = client->position->x - line + row;
 			if (client->orientation == ORIENT_NORTH || client->orientation == ORIENT_SOUTH)
 			{
-				// printf("[%u;%u]\t", tile_at(x, y)->x, tile_at(x, y)->y);
+				printf("[%u;%u]\t", tile_at(x, y)->x, tile_at(x, y)->y);
 				lst_push_back(list, tile_at(x, y));
 			}
 			else if (client->orientation == ORIENT_EAST || client->orientation == ORIENT_WEST)
 			{
-				// printf("[%u;%u]\t", tile_at(y, x)->x, tile_at(y, x)->y);
+				printf("[%u;%u]\t", tile_at(y, x)->x, tile_at(y, x)->y);
 				lst_push_back(list, tile_at(y, x));
 			}
 			line++;

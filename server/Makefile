@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/06/07 21:39:03 by amaurer          ###   ########.fr        #
+#    Updated: 2015/06/10 01:35:00 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC_FILES	=	main.c \
 				client/client.c \
 				client/actions.c \
 				client/promote.c \
+				client/broadcast.c \
 				client/move.c \
 				client/team.c \
 				client/queue.c \

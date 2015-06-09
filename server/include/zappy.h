@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 18:57:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 01:46:29 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,7 @@ void						usage(void);
 void						print_client(t_client *client);
 void						print_client_queue(t_client *client);
 void						print_tile(t_tile *tile);
+void						print_client_positions(void);
 double						get_time(void);
 int							rand_range(int min, int max);
 
@@ -185,6 +186,7 @@ short						client_remove_item(t_client *client, int item);
 short						client_pick(t_client *client, int item);
 short						client_drop(t_client *client, int item);
 char						*client_inventory(t_client *client);
+void						client_broadcast(t_client *emitter, char *message);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);
@@ -210,6 +212,7 @@ short						command_fork(t_client *client, t_uint argc, char **argv);
 short						command_promote(t_client *client, t_uint argc, char **argv);
 short						command_expulse(t_client *client, t_uint argc, char **argv);
 short						command_see(t_client *client, t_uint argc, char **argv);
+short						command_broadcast(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
 

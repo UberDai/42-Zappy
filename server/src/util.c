@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/02 23:54:16 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 01:48:06 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,25 @@ void	print_client_queue(t_client *client)
 		i++;
 	}
 	printf("\n");
+}
+
+void	print_client_positions(void)
+{
+	t_uint	x;
+	int		y;
+
+	y = g_zappy.height;
+	while (y >= 0)
+	{
+		x = 0;
+		while (x < g_zappy.width)
+		{
+			printf(" %u ", tile_at(x, y)->client_count);
+			x++;
+		}
+		printf("\n");
+		y--;
+	}
 }
 
 void	print_tile(t_tile *tile)

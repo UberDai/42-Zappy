@@ -6,23 +6,66 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/07 21:53:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 00:14:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 01:34:21 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include <stdlib.h>
+#include <string.h>
 #include <math.h>
 
 static int	get_sound_direction(double *points)
 {
 	double	slope;
+	char	vertical;
+	double	x;
+	double	y;
 
-	(void)slope;
-	(void)points;
+	x = points[1] - points[3];
+	y = points[0] - points[2];
+
+	if (x == 0)
+		vertical = 1;
+	else
+	{
+		slope = y / x;
+		vertical = 0;
+	}
+
+	if (x < 0 && x == y)
+		return (8);
+	if (x < 0 && x == -y)
+		return (6);
+	if (x > 0 && x == y)
+		return (4);
+	if (x > 0 && x == -y)
+		return (2);
+	if (y < 0 && (x == 0 || slope < -1 || slope > 1))
+		return (1);
+	if (y > 0 && (x == 0 || slope < -1 || slope > 1))
+		return (5);
+	if (x > 0 && slope > -1 && slope < 1)
+		return (3);
+	if (x < 0 && slope > -1 && slope < 1)
+		return (7);
+
 	return (0);
 }
 
-void	client_hear(t_client *receiver, t_client *emitter)
+static void	send_broadcast(t_client *receiver, int direction, char *message)
+{
+	char	*str;
+	size_t	size;
+
+	size = strlen(message) + strlen("message ") + 5;
+	str = calloc(size + 1, sizeof(char));
+	snprintf(str, size, "message %u,%s", direction, message);
+	network_send(receiver, str, 0);
+	free(str);
+}
+
+void	client_hear(t_client *receiver, t_client *emitter, char *message)
 {
 	double	points[9][4];
 	int		x1;
@@ -37,7 +80,8 @@ void	client_hear(t_client *receiver, t_client *emitter)
 
 	if (x1 == x2 && y1 == y2)
 	{
-		// provenance case 0
+		send_broadcast(receiver, 0, message);
+		return ;
 	}
 
 	points[0][0] = x1;
@@ -104,12 +148,10 @@ void	client_hear(t_client *receiver, t_client *emitter)
 		i++;
 	}
 
-	get_sound_direction(points[index]);
-
-	// calcul coef directeur pour provenance
+	send_broadcast(receiver, get_sound_direction(points[index]), message);
 }
 
-void	client_broadcast(t_client *emitter)
+void	client_broadcast(t_client *emitter, char *message)
 {
 	t_lstiter	iter;
 	t_client	*receiver;
@@ -118,6 +160,7 @@ void	client_broadcast(t_client *emitter)
 	while (lst_iterator_next(&iter))
 	{
 		receiver = iter.data;
-		client_hear(receiver, emitter);
+		if (receiver != emitter)
+			client_hear(receiver, emitter, message);
 	}
 }

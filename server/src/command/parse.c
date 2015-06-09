@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 19:04:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 01:33:55 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <libft.h>
 
 t_command	g_commands[] = {
-	{ "avance", 7, command_move },
-	{ "gauche", 7, command_left },
-	{ "droite", 7, command_right },
+	{ "avance", 0, command_move },
+	{ "gauche", 0, command_left },
+	{ "droite", 0, command_right },
 	{ "prend", 7, command_pick },
 	{ "pose", 7, command_drop },
 	{ "pause", 0, command_pause },
@@ -24,6 +24,7 @@ t_command	g_commands[] = {
 	{ "inventaire", 1, command_inventory },
 	{ "connect_nbr", 0, command_connect_count },
 	{ "voir", 0, command_see },
+	{ "broadcast", 0, command_broadcast },
 	{ NULL, 0, NULL }
 };
 

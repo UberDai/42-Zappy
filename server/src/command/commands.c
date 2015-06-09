@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 00:08:26 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 01:34:53 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
-	client->level = 3;
+
 	vision = get_vision(client);
 	str = calloc(vision->size * 200, sizeof(char));
 
@@ -129,5 +129,14 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	network_send(client, str, 0);
 	free(str);
 	(void)argv;
+	return (COMMAND_NONE);
+}
+
+short	command_broadcast(t_client *client, t_uint argc, char **argv)
+{
+	if (client->status != STATUS_PLAYER || argc != 2)
+		return (COMMAND_FAIL);
+
+	client_broadcast(client, argv[1]);
 	return (COMMAND_NONE);
 }
