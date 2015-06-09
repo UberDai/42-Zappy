@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Map.cpp
 //           :               :       Creation   : 2015-06-08 00:57:33
-//           :      _/|      :       Last Edit  : 2015-06-09 02:02:50
+//           :      _/|      :       Last Edit  : 2015-06-09 22:10:18
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -96,11 +96,12 @@ void			Map::setFrom(size_t posX,
 		std::regex re2("(\\w+)");
 		std::sregex_iterator next2(tmp.begin(), tmp.end(), re2);
 		std::sregex_iterator end2;
-		//clear la case
+		std::pair<int, int>		coord = _getRealCoord(posX, posY, o, i);
+
+		_data[coord.first][coord.second].clear();
 		while (next2 != end2)
 		{
 			std::smatch match2 = *next2;
-			std::pair<int, int>		coord = _getRealCoord(posX, posY, o, i);
 			_data[coord.first][coord.second].add(match2.str(), 1);
 			next2++;
 		}

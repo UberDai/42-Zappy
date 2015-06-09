@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-06-09 01:55:09
+//           :      _/|      :       Last Edit  : 2015-06-09 22:36:59
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -123,6 +123,7 @@ bool				Client::loop(void)
 	while (~0)
 	{
 		_ia();
+		printDebug("Fin de boucle");
 	}
 	return true;
 }
@@ -159,13 +160,15 @@ void				Client::_ia(void)
 	bool ok = false;
 	if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
+		printDebug("Verification du nombre de joueurs");
 		if (_search(_level) != 0)
 		{
+			printDebug("add Action Incantation");
 			_actions.push_back(Action::create(Action::INCANTATION)); //maj de la carte -> remove item used
 			ok = true;
 		}
 	}
-	else if (!ok)
+	if (!ok)
 		_composFind(_level);
 	_playMove();
 }
@@ -351,9 +354,29 @@ std::string    		Client::_sendTeamInfo(void)
 	}
 }
 
+void				Client::setPlayerX(int val)
+{
+	if (val >= static_cast<int>(_map.getMapX()))
+		_playerX = val % static_cast<int>(_map.getMapX());
+	else if (val < 0)
+		_playerX = _map.getMapX() + val;
+	else
+		_playerX = val;
+	printDebug(std::to_string(_playerX));
+}
+
+void				Client::setPlayerY(int val)
+{
+	if (val >= static_cast<int>(_map.getMapY()))
+		_playerY = val % static_cast<int>(_map.getMapY());
+	else if (val < 0)
+		_playerY = _map.getMapY() + val;
+	else
+		_playerY = val;
+	printDebug(std::to_string(_playerY));
+}
+
 void				Client::setLevel(unsigned int val) 	{ _level = val; }
-void				Client::setPlayerX(size_t val) 	{ _playerX = val; }
-void				Client::setPlayerY(size_t val) 	{ _playerY = val; }
 void				Client::setPlayerOrientation(enum eOrientation o) 	{ _playerOrientation = o; }
 enum eOrientation	Client::getPlayerOrientation() const { return _playerOrientation; }
 size_t				Client::getPlayerX() const 			{ return _playerX; }

@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-06-09 01:29:34
+//           :      _/|      :       Last Edit  : 2015-06-09 22:18:54
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -53,9 +53,9 @@ public:
 	Inventory				&getInventory(void);
 	unsigned int			getLevel() const;
 	void					setLevel(unsigned int);
-	void					setPlayerX(size_t);
+	void					setPlayerX(int);
 	size_t					getPlayerY() const;
-	void					setPlayerY(size_t);
+	void					setPlayerY(int);
 	enum eOrientation		getPlayerOrientation() const;
 	void					setPlayerOrientation(enum eOrientation);
 	Map						&getMap(void);
