@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Network.cpp
 //           :               :       Creation   : 2015-05-21 01:08:12
-//           :      _/|      :       Last Edit  : 2015-06-04 01:12:09
+//           :      _/|      :       Last Edit  : 2015-06-10 00:40:19
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -23,7 +23,7 @@
 #include <string.h>
 #include <sys/socket.h>
 
-const size_t		Network::BUFF_SIZE = 2048;
+const size_t		Network::BUFF_SIZE = 8192;
 const std::string	Network::MSG_SUCCESS = "ok\n";
 const std::string	Network::MSG_FAILURE = "ko\n";
 const std::string	Network::MSG_DEATH = "mort\n";

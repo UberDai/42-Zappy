@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Map.cpp
 //           :               :       Creation   : 2015-06-08 00:57:33
-//           :      _/|      :       Last Edit  : 2015-06-09 22:10:18
+//           :      _/|      :       Last Edit  : 2015-06-10 00:39:28
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -17,8 +17,8 @@
 #include "Action.hpp"
 
 Map::Map() :
-_totox(10),
-_totoy(10)
+_totox(0),
+_totoy(0)
 {
 
 }
@@ -71,6 +71,8 @@ void			Map::initMap(size_t x, size_t y)
 
 	for (auto & line : _data)
 		line.resize(x);
+	_totox = x;
+	_totoy = y;
 }
 
 void			Map::setFrom(size_t posX,
@@ -95,6 +97,7 @@ void			Map::setFrom(size_t posX,
 		std::sregex_iterator next2(tmp.begin(), tmp.end(), re2);
 		std::sregex_iterator end2;
 		std::pair<int, int>		coord = _getRealCoord(posX, posY, o, i);
+
 		_data[coord.first][coord.second].clear();
 		while (next2 != end2)
 		{

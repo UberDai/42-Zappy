@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Inventory.cpp
 //           :               :       Creation   : 2015-06-02 18:59:27
-//           :      _/|      :       Last Edit  : 2015-06-09 22:07:18
+//           :      _/|      :       Last Edit  : 2015-06-10 00:34:31
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -104,5 +104,5 @@ void	Inventory::add(const std::string & obj, int qty)
 
 void	Inventory::clear(void)
 {
-	_data.clear();
+	if (_data.size() != 0)	_data.clear();
 }
