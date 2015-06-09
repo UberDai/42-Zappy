@@ -96,7 +96,7 @@ void			Map::setFrom(size_t posX,
 		std::regex re2("(\\w+)");
 		std::sregex_iterator next2(tmp.begin(), tmp.end(), re2);
 		std::sregex_iterator end2;
-
+		//clear la case
 		while (next2 != end2)
 		{
 			std::smatch match2 = *next2;
@@ -172,3 +172,7 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 	}
 	return ret;
 }
+
+size_t Map::getMapX() {return _totox; }
+
+size_t Map::getMapY() {return _totoy; }

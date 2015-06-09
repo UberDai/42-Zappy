@@ -156,12 +156,16 @@ void				Client::recieveBroadcast(const std::string &msg)
 
 void				Client::_ia(void)
 {
+	bool ok = false;
 	if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
 		if (_search(_level) != 0)
+		{
 			_actions.push_back(Action::create(Action::INCANTATION)); //maj de la carte -> remove item used
+			ok = true;
+		}
 	}
-	else
+	else if (!ok)
 		_composFind(_level);
 	_playMove();
 }
@@ -189,6 +193,25 @@ int					Client::_search(int level)
 {
 	if (level == 1)
 		return 1;
+	if (level == 2 || level == 3)
+	{
+		if (_map[_playerX][_playerY].has("joueur", 1))
+		{
+			printDebug("nb de joueur ok");
+			return 1;
+		}
+	}
+	if (level == 4 || level == 5)
+	{
+		if (_map[_playerX][_playerY].has("joueur", 3))
+			return 1;
+	}
+	if (level == 6 || level == 7)
+	{
+		if (_map[_playerX][_playerY].has("joueur", 5))
+			return 1;
+	}
+	//pathfinding searchplayer()
 	return 0;
 }
 
@@ -199,7 +222,7 @@ void				Client::_composFind(int level)
 	int i = 0;
 
 	printDebug("Enter Composfind");
-	if (1)
+	if (_map[_playerX][_playerY].toString() != "[]")
 	{
 		while (i < (level * 4))
 		{
@@ -208,7 +231,7 @@ void				Client::_composFind(int level)
 			{
 				printDebug(kv.first);
 				printDebug(_map[_playerX][_playerY].toString());
-				if (_map[_playerX][_playerY].has(kv.first, 1))
+				if (_map[_playerX][(_playerY + 1) % _map.getMapY()].has(kv.first, 1))
 				// if (fov[i].find(kv.first) != std::string::npos)
 				{
 					//_pathFinding(start_case, end_case);
@@ -227,7 +250,8 @@ int					Client::_compos(int level)
 	std::map<std::string, size_t>	&compo = _totems[level];
 	bool							ok = false;
 
-	if (1) // check si la case n'est pas trop vielle
+	printDebug(_map[_playerX][_playerY].toString());
+	if (_map[_playerX][_playerY].toString() != "[]") // check si la case n'est pas trop vielle
 	{
 		printDebug("check la case");
 		for (auto &kv : compo)
@@ -236,7 +260,7 @@ int					Client::_compos(int level)
 			if (_map[_playerX][_playerY].has(kv.first, kv.second))
 			// if (fov[0].find(kv.first) != std::string::npos)
 			{
-				printDebug("compos find on case");
+				printDebug("Compos trouve sur la case");
 				ok = true;
 			}
 			else
@@ -265,7 +289,7 @@ int					Client::_compos(int level)
 			}
 		}
 	}
-	if (!ok) // add check if pas bouger // case deja connu
+	if (!ok || _map[_playerX][_playerY].toString() == "[]") // add check if pas bouger // case deja connu
 	{
 		printDebug("add see");
 		_actions.push_back(Action::create(Action::SEE));

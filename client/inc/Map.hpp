@@ -47,6 +47,8 @@ public:
         std::vector<Inventory> &_array;
     };
 	Proxy		operator[](size_t);
+	size_t	getMapX();
+	size_t	getMapY();
 
 private:
 	size_t									_totox;

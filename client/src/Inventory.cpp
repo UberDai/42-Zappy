@@ -80,7 +80,7 @@ void	Inventory::set(const std::string & obj, size_t qty)
 bool	Inventory::has(const std::string & obj, size_t qty)
 {
 	try {
-		return _data.at(obj) == qty;
+		return _data.at(obj) >= qty;
 	} catch (const std::out_of_range &oor) {
 		return false;
 	}
