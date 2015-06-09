@@ -91,13 +91,10 @@ void			Map::setFrom(size_t posX,
 		if (tmp[0] == ' ')
 			tmp = match.str().substr(1);
 		tmp.resize(tmp.size() - 1);
-		//add to map
-
 		std::regex re2("(\\w+)");
 		std::sregex_iterator next2(tmp.begin(), tmp.end(), re2);
 		std::sregex_iterator end2;
 		std::pair<int, int>		coord = _getRealCoord(posX, posY, o, i);
-
 		_data[coord.first][coord.second].clear();
 		while (next2 != end2)
 		{

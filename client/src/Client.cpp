@@ -214,6 +214,9 @@ int					Client::_search(int level)
 		if (_map[_playerX][_playerY].has("joueur", 5))
 			return 1;
 	}
+	ActionBroadcast	*a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
+	a->setMessage("TRololo");
+	_actions.push_back(a);
 	//pathfinding searchplayer()
 	return 0;
 }
@@ -235,7 +238,6 @@ void				Client::_composFind(int level)
 				printDebug(kv.first);
 				printDebug(_map[_playerX][_playerY].toString());
 				if (_map[_playerX][(_playerY + 1) % _map.getMapY()].has(kv.first, 1))
-				// if (fov[i].find(kv.first) != std::string::npos)
 				{
 					//_pathFinding(start_case, end_case);
 					ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
@@ -261,7 +263,6 @@ int					Client::_compos(int level)
 		{
 			printDebug(kv.first);
 			if (_map[_playerX][_playerY].has(kv.first, kv.second))
-			// if (fov[0].find(kv.first) != std::string::npos)
 			{
 				printDebug("Compos trouve sur la case");
 				ok = true;
