@@ -100,11 +100,7 @@ void			Map::setFrom(size_t posX,
 		while (next2 != end2)
 		{
 			std::smatch match2 = *next2;
-			// Action::client->printDebug(match2.str());
 			std::pair<int, int>		coord = _getRealCoord(posX, posY, o, i);
-			std::stringstream toto;
-			toto << "X = " << coord.first << " Y = " << coord.second << " i = " << i;
-			Action::client->printDebug(toto.str());
 			_data[coord.first][coord.second].add(match2.str(), 1);
 			next2++;
 		}
@@ -146,15 +142,27 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 		{
 			if (count == i)
 			{
-				std::stringstream toto;
-				toto << "oX = " << mapping.first << " oY = " << mapping.second << " i = " << i;
-				Action::client->printDebug(toto.str());
-				ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first);
-				ret.second = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second);
+				if (o == NORTH || o == SOUTH)
+				{
+					ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.first;
+					ret.second = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.first;
+				}
+				if (o == EAST || o == WEST)
+				{
+					ret.second  = x - (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.second ;
+					ret.first= y - (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.second ;
+				}
 				if (ret.first < 0)
 					ret.first = _totox + ret.first;
 				if (ret.second < 0)
 					ret.second = _totoy + ret.second;
+				if (ret.first >= (int)_totox)
+					ret.first = ret.first - _totox;
+				if (ret.second >= (int)_totoy)
+					ret.second = ret.second - _totoy;
+				// std::stringstream toto;
+				// toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
+				// Action::client->printDebug(toto.str());
 				return ret;
 			}
 			count++;

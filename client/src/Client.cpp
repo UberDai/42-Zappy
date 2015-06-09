@@ -207,8 +207,8 @@ void				Client::_composFind(int level)
 			for (auto &kv : compo)
 			{
 				printDebug(kv.first);
-				printDebug(_map[_playerX + 1][9].toString());
-				if (_map[_playerX][_playerY + 1].has(kv.first, 1))
+				printDebug(_map[_playerX][_playerY].toString());
+				if (_map[_playerX][_playerY].has(kv.first, 1))
 				// if (fov[i].find(kv.first) != std::string::npos)
 				{
 					//_pathFinding(start_case, end_case);
