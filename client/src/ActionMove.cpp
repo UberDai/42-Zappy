@@ -70,10 +70,16 @@ int				ActionMove::execute(Network &network)
 			}
 			break;
 			case TURN_LEFT:
-			client->setPlayerOrientation(static_cast<enum eOrientation>((client->getPlayerOrientation() + 1) % 4));
+			if (client->getPlayerOrientation() == WEST)
+				client->setPlayerOrientation(NORTH);
+			else
+				client->setPlayerOrientation(static_cast<enum eOrientation>((client->getPlayerOrientation() + 1) % 4));
 			break;
 			case TURN_RIGHT:
-			client->setPlayerOrientation(static_cast<enum eOrientation>((client->getPlayerOrientation() - 1) % 4));
+			if (client->getPlayerOrientation() == NORTH)
+				client->setPlayerOrientation(WEST);
+			else
+				client->setPlayerOrientation(static_cast<enum eOrientation>((client->getPlayerOrientation() - 1) % 4));
 			break;
 
 		}

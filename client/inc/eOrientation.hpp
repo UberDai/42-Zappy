@@ -15,9 +15,9 @@
 # define EORIENTATION_HPP
 
 enum eOrientation : int {
-	NORTH,
-	SOUTH,
+	NORTH,	
 	EAST,
+	SOUTH,
 	WEST
 };
 
