@@ -6,12 +6,21 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/07 21:53:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/07 23:40:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 00:14:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 #include <math.h>
+
+static int	get_sound_direction(double *points)
+{
+	double	slope;
+
+	(void)slope;
+	(void)points;
+	return (0);
+}
 
 void	client_hear(t_client *receiver, t_client *emitter)
 {
@@ -94,6 +103,8 @@ void	client_hear(t_client *receiver, t_client *emitter)
 		}
 		i++;
 	}
+
+	get_sound_direction(points[index]);
 
 	// calcul coef directeur pour provenance
 }

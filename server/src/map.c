@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/04 01:16:44 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/10 00:18:26 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,8 +161,8 @@ char	*tile_inventory(t_tile *tile)
 	char	*str;
 
 	str = calloc(200, sizeof(char));
-	snprintf(str, 200, "food %u, linemate %u, deraumere %u, sibur %u, "
-		"mendiane %u, phiras %u, thystame %u",
+	snprintf(str, 200, "food %u linemate %u deraumere %u sibur %u "
+		"mendiane %u phiras %u thystame %u",
 		tile->items[0],
 		tile->items[1],
 		tile->items[2],
