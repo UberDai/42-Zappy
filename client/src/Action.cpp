@@ -18,6 +18,7 @@ const std::string	Action::BROADCAST		= "broadcast ";
 const std::string	Action::DROP			= "pose ";
 const std::string	Action::EGG				= "fork";
 const std::string	Action::EXPULSE			= "expulse";
+const std::string	Action::INVENTORY		= "inventaire";
 const std::string	Action::INCANTATION		= "incantation";
 const std::string	Action::MOVE_FORWARD	= "avance";
 const std::string	Action::MOVE_LEFT		= "gauche";
@@ -45,6 +46,8 @@ Action		*Action::create(const std::string &action)
 		return new ActionSee(Action::client);
 	else if (action == Action::EXPULSE)
 		return new ActionExpulse();
+	else if (action == Action::INVENTORY)
+		return new ActionInventory();
 	else if (action == Action::INCANTATION)
 		return new ActionIncantation(Action::client);
 	else if (action == Action::EGG)

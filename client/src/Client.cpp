@@ -175,6 +175,7 @@ void				Client::_ia(void)
 	}
 	if (!ok)
 		_composFind(_level);
+	_actions.push_back(Action::create(Action::INVENTORY));
 	_playMove();
 }
 

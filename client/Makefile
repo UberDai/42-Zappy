@@ -30,6 +30,7 @@ CLASSES				=	Inventory \
 						ActionMove \
 						ActionSee \
 						ActionTake \
+						ActionInventory
 
 INTERF_SRC_SUFFIX	=	.cpp
 INTERF_INC_SUFFIX	=	.hpp
