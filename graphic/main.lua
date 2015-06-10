@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-07 22:41:13
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-09 17:24:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -41,12 +41,16 @@ function love.load()
 
 	love.math.setRandomSeed(love.timer.getTime())
 
-	zappy = Zappy("10.12.11.12", 4242)
+	zappy = Zappy("localhost", 4242)
+	if not zappy.tcp then
+		print("no tcp connection :(")
+		love.event.quit() return
+	end
 	zappy.map = Map(love.graphics.newImage("assets/tile.png"), zappy.size)
 
 
-	zappy:addPlayer(Player('test1', 5, 5, 'west'))
-	zappy:addPlayer(Player('sprite1', 5, 5, 'north'))
+	-- zappy:addPlayer(Player('test1', 5, 5, 'west'))
+	-- zappy:addPlayer(Player('sprite1', 5, 5, 'north'))
 
 end
 

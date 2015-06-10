@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 21:34:28
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-07 22:46:12
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-09 17:19:48
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -34,6 +34,8 @@ function Zappy:makeMStack(tab)
 		elseif v:find("%-%s*%d+%s*%d+%s*%d+") then
 			self.map:removeStone(v:match("(%d+)%s*(%d+)%s*(%d+)"))
 			self.itemcount = self.itemcount - 1
+		elseif v:find("%*%s*%d+%s*%w+%s*%d+%s*%d+%s*%d+") then
+			table.insert(self.players, Player(v:match("(%d+)%s*(%w+)%s*(%d+)%s*(%d+)%s*(%d+)")))
 		else
 			print("else", i, v)
 		end
@@ -79,7 +81,7 @@ function Zappy:normalize(x, y)
 end
 
 function Zappy:new(host, port)
-	self.tcp = socket.connect(host, 4242)
+	self.tcp = socket.connect(host, port)
 	if self.tcp then
 
 		local msg = self.tcp:receive('*l')
@@ -93,8 +95,7 @@ function Zappy:new(host, port)
 		Zappy.timer = self:readTime()
 		self.tcp:settimeout(0.01)
 	else
-		Zappy.widthMap, Zappy.heightMap = 10, 10
-		Zappy.timer = 1
+		return
 	end
 	self.itemcount = 0
 

@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 02:48:32
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:47:27
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-09 17:21:46
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -16,9 +16,11 @@
 Object = require 'libs.classic'
 
 Player = Object:extend()
-function Player:new(team, x, y, orientation)
-	self.x = x
-	self.y = y
+function Player:new(id, team, x, y, orientation)
+	print("New player", id, team, x, y, orientation)
+	self.id = tonumber(id)
+	self.x = tonumber(x)
+	self.y = tonumber(y)
 	if team == 'sprite1' then
 		self.sprite = sprite1()
 	else
