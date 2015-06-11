@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-02 20:24:40
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 21:24:07
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-11 21:41:46
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -56,13 +56,13 @@ function test1:update(dt)
 end
 
 function test1:draw(x, y)
-	if self.orientation == 'north' then
+	if self.orientation == 'west' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, -5, 20)
-	elseif self.orientation == 'east' then
+	elseif self.orientation == 'north' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, 20)
-	elseif self.orientation == 'south' then
+	elseif self.orientation == 'east' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, -5, 15)
-	elseif self.orientation == 'west' then
+	elseif self.orientation == 'south' then
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, 15)
 	end
 

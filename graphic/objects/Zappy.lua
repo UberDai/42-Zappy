@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 21:34:28
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-09 17:19:48
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-11 21:54:46
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -36,6 +36,23 @@ function Zappy:makeMStack(tab)
 			self.itemcount = self.itemcount - 1
 		elseif v:find("%*%s*%d+%s*%w+%s*%d+%s*%d+%s*%d+") then
 			table.insert(self.players, Player(v:match("(%d+)%s*(%w+)%s*(%d+)%s*(%d+)%s*(%d+)")))
+		elseif v:find("%>%s*%d+%s*%d+%s*%d+") then
+			-- > ID x y
+			local id, x, y = v:match("(%d+)%s*(%d+)%s*(%d+)")
+			for i,v in ipairs(self.players) do
+				if v.id == tonumber(id) then
+					v.x = tonumber(x)
+					v.y = tonumber(y)
+				end
+			end
+		elseif v:find("o%s*%d+%s*%d+") then
+			-- print(i,v)
+			local id, orientation = v:match("(%d+)%s*(%d+)")
+			for i,v in ipairs(self.players) do
+				if v.id == tonumber(id) then
+					v.sprite.orientation = noraml(orientation)
+				end
+			end
 		else
 			print("else", i, v)
 		end

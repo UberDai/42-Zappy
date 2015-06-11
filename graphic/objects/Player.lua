@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 02:48:32
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-09 17:21:46
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-11 21:56:57
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -21,11 +21,8 @@ function Player:new(id, team, x, y, orientation)
 	self.id = tonumber(id)
 	self.x = tonumber(x)
 	self.y = tonumber(y)
-	if team == 'sprite1' then
-		self.sprite = sprite1()
-	else
-		self.sprite = test1()
-	end
+	self.sprite = test1()
+	self.sprite.orientation = noraml(orientation)
 end
 
 function Player:update(dt)

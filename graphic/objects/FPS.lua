@@ -6,7 +6,7 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-06-04 02:46:27
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-04 20:36:09
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-11 21:43:29
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
@@ -25,6 +25,8 @@ function _FPS:new(delay)
 end
 
 function _FPS:update(dt)
+	self.width = love.window.getWidth()
+	self.height = love.window.getHeight()
 	self.delay = self.delay - dt
 	if self.delay < 0 then
 		table.insert(self.list, love.timer.getFPS())

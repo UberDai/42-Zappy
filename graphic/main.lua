@@ -6,13 +6,24 @@
 -- /ddddy:oddddddddds:sddddd/ By adebray - adebray
 -- sdddddddddddddddddddddddds
 -- sdddddddddddddddddddddddds Created: 2015-05-29 17:25:20
--- :ddddddddddhyyddddddddddd: Modified: 2015-06-09 17:24:57
+-- :ddddddddddhyyddddddddddd: Modified: 2015-06-11 21:41:01
 --  odddddddd/`:-`sdddddddds
 --   +ddddddh`+dh +dddddddo
 --    -sdddddh///sdddddds-
 --      .+ydddddddddhs/.
 --          .-::::-`
 
+function noraml(orientation)
+	if orientation == "1" then
+		return 'north'
+	elseif orientation == "2" then
+		return 'east'
+	elseif orientation == "3" then
+		return 'south'
+	elseif orientation == "4" then
+		return 'west'
+	end
+end
 
 socket = require 'socket'
 loveframes = require 'libs.LoveFrames'
@@ -41,7 +52,7 @@ function love.load()
 
 	love.math.setRandomSeed(love.timer.getTime())
 
-	zappy = Zappy("localhost", 4242)
+	zappy = Zappy("10.11.12.13", 4242)
 	if not zappy.tcp then
 		print("no tcp connection :(")
 		love.event.quit() return
