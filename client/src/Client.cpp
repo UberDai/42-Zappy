@@ -349,58 +349,61 @@ std::pair<size_t, size_t>	Client::getPairCase(int x, int y)
 
 /**  TEST **/
 
-int f(int k)
+int getTotalCase(int k)
 {
-  return (2 * k + 1) * (2 * k + 1);
+	return (2 * k + 1) * (2 * k + 1);
 }
 
-int Trouve_k(int n)
+int getNbcircle(int n)
 {
-  int i;
-  for (i = 0; f(i) <= n; i++);
-   return i;
+	int i;
+
+	for (i = 0; getTotalCase(i) <= n; i++)
+		;
+	return i;
 }
 
-int Trouve_h(int n)
+int getCirclePos(int n)
 {
-  int k = Trouve_k(n);
-  return ((8*k+(n-f(k))+1))%(8*k);
+	int circle = getNbcircle(n);
+	return ((8 * circle + (n - getTotalCase(circle)) + 1)) % (8 * circle);
 }
 
-void Offset(int k, int h, int O[2])
+void getOffset(int circle, int pos, int XY[2])
 {
-  int q = h / (2 * k);
-  int r = h - q * 2 * k;
-  switch (q)
-  {
-	case 0:
-		O[0] += 0;
-		O[1] += r;
+	int q = pos / (2 * circle);
+	int r = pos - q * 2 * circle;
+
+	switch (q)
+	{
+		case 0:
+		XY[0] += 0;
+		XY[1] += r;
 		break;
-   case 1:
-		O[1] += 2 * k
-		O[0] += r;
+		case 1:
+		XY[1] += 2 * circle;
+		XY[0] += r;
 		break;
-   case 2:
-		O[0] += 2 * k;
-		O[1] += 2 * k - r;
+		case 2:
+		XY[0] += 2 * circle;
+		XY[1] += 2 * circle - r;
 		break;
-   default:
-		O[1] += 0;
-		O[0] += 2 * k - r;
+		default:
+		XY[1] += 0;
+		XY[0] += 2 * circle - r;
 		break;
 	}
 }
 
-void Pos(int n, int P[2])
+void Pos(int n, int XY[2])
 {
-	int k = Trouve_k(n);
-	int h = Trouve_h(n);
-	P[0] =- k;
-	P[1] =- k;
-	Offset(k, h, P);
-}
+	int circle = getNbcircle(n);
+	int pos = getCirclePos(n);
 
+	XY[0] = -circle;
+	XY[1] = -circle;
+	getOffset(circle, pos, XY);
+}
 
 /*** TEST ***/
 
@@ -410,12 +413,12 @@ void				Client::_composFind(int level)
 
 	printDebug("Enter Composfind");
 
-	int i = 0;
-	int A[2];
+	int i = 1;
+	int A[2] = {0, 0};
 
-	while (i <(_level * 4 * 4))
+	while (i < static_cast<int>(_level * 4 * 4))
 	{
-		Pos(i,A);
+		Pos(i, A);
 		for (auto &kv : compo)
 		{
 			if ((_map[getCaseX(A[0])][getCaseY(A[1])].has(kv.first, 1)
