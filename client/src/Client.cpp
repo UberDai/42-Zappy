@@ -75,6 +75,7 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
+	_path(new Pathfinding()),
 	_teamName(teamName),
 	_network(new Network(this, port, hostName)),
 	_level(1),
@@ -232,6 +233,7 @@ int					Client::_search(int level)
 	return 0;
 }
 
+// a deplacer
 void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, size_t> end)
 {
 	std::pair<int, int>	mov;
@@ -318,6 +320,7 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 		_actions.push_back(Action::create(Action::MOVE_FORWARD));
 }
 
+// deplacer ??
 size_t Client::getCaseX(int i)
 {
 	int tmp;
@@ -347,64 +350,6 @@ std::pair<size_t, size_t>	Client::getPairCase(int x, int y)
 	return std::make_pair<size_t, size_t>(getCaseX(x), getCaseY(y));
 }
 
-/**  TEST **/
-
-int getTotalCase(int k)
-{
-	return (2 * k + 1) * (2 * k + 1);
-}
-
-int getNbcircle(int n)
-{
-	int i;
-
-	for (i = 0; getTotalCase(i) <= n; i++)
-		;
-	return i;
-}
-
-int getCirclePos(int n)
-{
-	int circle = getNbcircle(n);
-	return ((8 * circle + (n - getTotalCase(circle)) + 1)) % (8 * circle);
-}
-
-void getOffset(int circle, int pos, int XY[2])
-{
-	int q = pos / (2 * circle);
-	int r = pos - q * 2 * circle;
-
-	switch (q)
-	{
-		case 0:
-		XY[0] += 0;
-		XY[1] += r;
-		break;
-		case 1:
-		XY[1] += 2 * circle;
-		XY[0] += r;
-		break;
-		case 2:
-		XY[0] += 2 * circle;
-		XY[1] += 2 * circle - r;
-		break;
-		default:
-		XY[1] += 0;
-		XY[0] += 2 * circle - r;
-		break;
-	}
-}
-
-void Pos(int n, int XY[2])
-{
-	int circle = getNbcircle(n);
-	int pos = getCirclePos(n);
-
-	XY[0] = -circle;
-	XY[1] = -circle;
-	getOffset(circle, pos, XY);
-}
-
 void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
@@ -413,17 +358,22 @@ void				Client::_composFind(int level)
 	printDebug("Enter Composfind");
 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
-		Pos(i, XY);
-		// printDebug("X= " + std::to_string(XY[0]) + " Y= " + std::to_string(XY[1]) );
+		_path->Pos(i, XY);
+		
 		for (auto &kv : compo)
 		{
+			
 			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() &&_map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1))
 			{
+				printDebug("X= " + std::to_string(XY[0]) + " Y= " + std::to_string(XY[1]) );
+				printDebug(_map[getCaseX(XY[0])][getCaseY(XY[1])].toString());
 				printDebug(kv.first + " found on case");
 				_pathFinding(getPairCase(0, 0), getPairCase(XY[0], XY[1]));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
+				_actions.push_back(Action::create(Action::SEE));
 				_actions.push_back(a);
+
 				return ;
 			}
 			else

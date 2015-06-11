@@ -30,7 +30,8 @@ CLASSES				=	Inventory \
 						ActionMove \
 						ActionSee \
 						ActionTake \
-						ActionInventory
+						ActionInventory \
+						Pathfinding
 
 INTERF_SRC_SUFFIX	=	.cpp
 INTERF_INC_SUFFIX	=	.hpp

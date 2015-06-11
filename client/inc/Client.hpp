@@ -24,6 +24,7 @@
 # include "Action.hpp"
 # include "eDirection.hpp"
 # include "eOrientation.hpp"
+# include "Pathfinding.hpp"
 
 /*
 ** TODO NOE
@@ -33,6 +34,7 @@
 
 class Network;
 class Action;
+class Pathfinding;
 
 using Totems = std::vector<std::map<std::string, size_t> >;
 
@@ -76,7 +78,7 @@ public:
 private:
 	static const std::regex	_serverInfosFormat;
 	static Totems			_totems;
-
+	Pathfinding				*_path;
 	const std::string		_teamName;
 	Map						_map;
 	Network					*_network;
@@ -97,7 +99,7 @@ private:
 	void					_composFind(int);
 	int						_search(int);
 	void					_playMove(void);
-	void					_pathFinding(std::pair<size_t, size_t>, std::pair<size_t, size_t>);
+	void					_pathFinding(std::pair<size_t, size_t>, std::pair<size_t, size_t>); // a deplacer
 };
 
 #endif /* CLIENT_HPP */
