@@ -347,125 +347,202 @@ std::pair<size_t, size_t>	Client::getPairCase(int x, int y)
 	return std::make_pair<size_t, size_t>(getCaseX(x), getCaseY(y));
 }
 
+/**  TEST **/
+
+int f(int k)
+{
+  return (2 * k + 1) * (2 * k + 1);
+}
+
+int Trouve_k(int n)
+{
+  int i;
+  for (i = 0; f(i) <= n; i++);
+   return i;
+}
+
+int Trouve_h(int n)
+{
+  int k = Trouve_k(n);
+  return ((8*k+(n-f(k))+1))%(8*k);
+}
+
+void Offset(int k, int h, int O[2])
+{
+  int q = h / (2 * k);
+  int r = h - q * 2 * k;
+  switch (q)
+  {
+	case 0:
+		O[0] += 0;
+		O[1] += r;
+		break;
+   case 1:
+		O[1] += 2 * k
+		O[0] += r;
+		break;
+   case 2:
+		O[0] += 2 * k;
+		O[1] += 2 * k - r;
+		break;
+   default:
+		O[1] += 0;
+		O[0] += 2 * k - r;
+		break;
+	}
+}
+
+void Pos(int n, int P[2])
+{
+	int k = Trouve_k(n);
+	int h = Trouve_h(n);
+	P[0] =- k;
+	P[1] =- k;
+	Offset(k, h, P);
+}
+
+
+/*** TEST ***/
+
 void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
 
 	printDebug("Enter Composfind");
 
-	/* TEST */
-	if (!_map[_playerX][_playerY + 1].isEmpty())
+	int i = 0;
+	int A[2];
+
+	while (i <(_level * 4 * 4))
 	{
+		Pos(i,A);
 		for (auto &kv : compo)
 		{
-			if (_map[_playerX][_playerY + 1].has(kv.first, 1))
+			if ((_map[getCaseX(A[0])][getCaseY(A[1])].has(kv.first, 1)
 			{
-				_pathFinding(getPairCase(0, 0), getPairCase(0, 1));
+				_pathFinding(getPairCase(0, 0), getPairCase(A[0], A[1]));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
 				return ;
 			}
 		}
+		i++;
 	}
-	if (!_map[_playerX + 1][_playerY + 1].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX + 1][_playerY + 1].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(1, 1));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
-	if (!_map[_playerX + 1][_playerY].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX + 1][_playerY].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(1, 0));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
-	if (!_map[_playerX + 1][_playerY - 1].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX + 1][_playerY - 1].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(1, -1));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
-	if (!_map[_playerX][_playerY - 1].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX][_playerY - 1].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(0, -1));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
-	if (!_map[_playerX - 1][_playerY - 1].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX - 1][_playerY - 1].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(-1, -1));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
-	if (!_map[_playerX - 1][_playerY].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX - 1][_playerY].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(-1, 0));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
-	if (!_map[_playerX - 1][_playerY + 1].isEmpty())
-	{
-		for (auto &kv : compo)
-		{
-			if (_map[_playerX - 1][_playerY + 1].has(kv.first, 1))
-			{
-				_pathFinding(getPairCase(0, 0), getPairCase(-1, 1));
-				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-				a->setObject(kv.first);
-				_actions.push_back(a);
-				return ;
-			}
-		}
-	}
+
+	// /* TEST */
+	// if (!_map[_playerX][_playerY + 1].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX][_playerY + 1].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(0, 1));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX + 1][_playerY + 1].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX + 1][_playerY + 1].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(1, 1));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX + 1][_playerY].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX + 1][_playerY].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(1, 0));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX + 1][_playerY - 1].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX + 1][_playerY - 1].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(1, -1));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX][_playerY - 1].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX][_playerY - 1].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(0, -1));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX - 1][_playerY - 1].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX - 1][_playerY - 1].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(-1, -1));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX - 1][_playerY].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX - 1][_playerY].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(-1, 0));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
+	// if (!_map[_playerX - 1][_playerY + 1].isEmpty())
+	// {
+	// 	for (auto &kv : compo)
+	// 	{
+	// 		if (_map[_playerX - 1][_playerY + 1].has(kv.first, 1))
+	// 		{
+	// 			_pathFinding(getPairCase(0, 0), getPairCase(-1, 1));
+	// 			ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+	// 			a->setObject(kv.first);
+	// 			_actions.push_back(a);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
 }
 
 int					Client::_compos(int level)
