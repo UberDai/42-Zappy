@@ -59,9 +59,7 @@ std::string	Inventory::toString() const
 
 	ss << "[";
 	for (auto &kv : _data)
-	{
 		ss << kv.first << " " << kv.second << ", ";
-	}
 	ss << "]";
 	return ss.str();
 }
@@ -106,3 +104,5 @@ void	Inventory::clear(void)
 {
 	if (_data.size() != 0)	_data.clear();
 }
+
+bool	Inventory::isEmpty(void) { return _data.empty(); }

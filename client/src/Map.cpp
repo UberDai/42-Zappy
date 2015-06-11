@@ -59,8 +59,12 @@ std::ostream	&operator<<(std::ostream &o, Map const &i)
 	return o;
 }
 
-Map::Proxy		Map::operator[](size_t index)
+Map::Proxy		Map::operator[](int index)
 {
+	if (index >= static_cast<int>(_data.size()))
+		index = index % _data.size();
+	else if (index < 0)
+		index = _data.size() + index;
 	return Proxy(_data.at(index));
 }
 
@@ -150,8 +154,8 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 				}
 				if (o == EAST || o == WEST)
 				{
-					ret.second  = x - (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.second ;
-					ret.first= y - (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.second ;
+					ret.second = x - (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.second ;
+					ret.first = y - (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.second ;
 				}
 				if (ret.first < 0)
 					ret.first = _totox + ret.first;

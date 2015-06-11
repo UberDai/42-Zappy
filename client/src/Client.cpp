@@ -75,12 +75,12 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
-	_teamName(teamName),
-	_network(new Network(this, port, hostName)),
-	_level(1),
-	_playerX(0),
-	_playerY(0),
-	_playerOrientation(NORTH)
+_teamName(teamName),
+_network(new Network(this, port, hostName)),
+_level(1),
+_playerX(0),
+_playerY(0),
+_playerOrientation(NORTH)
 {
 
 	std::stringstream name;
@@ -231,29 +231,195 @@ int					Client::_search(int level)
 void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
-	int i = 0;
+	//int i = 0;
 
 	printDebug("Enter Composfind");
-	if (_map[_playerX][_playerY].toString() != "[]")
+	//Faire un vrai check du champs de vision.
+
+	/* TEST */
+	if (!_map[_playerX][_playerY + 1].isEmpty())
 	{
-		while (i < (level * 4))
+		for (auto &kv : compo)
 		{
-			printDebug("Composfind");
-			for (auto &kv : compo)
+			if (_map[_playerX][_playerY + 1].has(kv.first, 1))
 			{
-				printDebug(kv.first);
-				printDebug(_map[_playerX][_playerY].toString());
-				if (_map[_playerX][(_playerY + 1) % _map.getMapY()].has(kv.first, 1))
-				{
-					//_pathFinding(start_case, end_case);
-					ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
-					printDebug("add move foward");
-					_actions.push_back(a);
-				}
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
 			}
-			i++;
 		}
 	}
+	if (!_map[_playerX + 1][_playerY + 1].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX + 1][_playerY + 1].has(kv.first, 1))
+			{
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("add turn right");
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+	if (!_map[_playerX + 1][_playerY].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX + 1][_playerY].has(kv.first, 1))
+			{
+					//_pathFinding(start_case, end_case);
+				printDebug("add turn right");
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+	if (!_map[_playerX + 1][_playerY - 1].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX + 1][_playerY - 1].has(kv.first, 1))
+			{
+				printDebug("add turn right");
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("add turn right");
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+	if (!_map[_playerX][_playerY - 1].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX][_playerY - 1].has(kv.first, 1))
+			{
+				printDebug("add turn right");
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				printDebug("add turn right");
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+	if (!_map[_playerX - 1][_playerY - 1].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX - 1][_playerY - 1].has(kv.first, 1))
+			{
+				printDebug("add turn left");
+				_actions.push_back(Action::create(Action::MOVE_LEFT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("add turn left");
+				_actions.push_back(Action::create(Action::MOVE_LEFT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+	if (!_map[_playerX - 1][_playerY].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX - 1][_playerY].has(kv.first, 1))
+			{
+				printDebug("add turn left");
+				_actions.push_back(Action::create(Action::MOVE_LEFT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+	if (!_map[_playerX - 1][_playerY + 1].isEmpty())
+	{
+		for (auto &kv : compo)
+		{
+			if (_map[_playerX - 1][_playerY + 1].has(kv.first, 1))
+			{
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("add turn left");
+				_actions.push_back(Action::create(Action::MOVE_LEFT));
+				printDebug("add move foward");
+				_actions.push_back(Action::create(Action::MOVE_FORWARD));
+				printDebug("prendre item");
+				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
+				a->setObject(kv.first);
+				_actions.push_back(a);
+				return ;
+			}
+		}
+	}
+
+
+
+	/* TEST */
+
+	// if (!_map[_playerX][_playerY].isEmpty())
+	// {
+
+	// 	while (i < (level * 4))
+	// 	{
+	// 		printDebug("Composfind");
+	// 		for (auto &kv : compo)
+	// 		{
+	// 			printDebug(kv.first);
+	// 			printDebug(_map[_playerX][_playerY].toString());
+	// 			if (_map[_playerX][(_playerY + 1) % _map.getMapY()].has(kv.first, 1))
+	// 			{
+	// 				//_pathFinding(start_case, end_case);
+	// 				ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
+	// 				printDebug("add move foward");
+	// 				_actions.push_back(moveF);
+	// 			}
+	// 		}
+	// 		i++;
+	// 	}
+	// }
 }
 
 int					Client::_compos(int level)
@@ -262,7 +428,7 @@ int					Client::_compos(int level)
 	bool							ok = false;
 
 	printDebug(_map[_playerX][_playerY].toString());
-	if (_map[_playerX][_playerY].toString() != "[]") // check si la case n'est pas trop vielle
+	if (!_map[_playerX][_playerY].isEmpty()) // check si la case n'est pas trop vielle
 	{
 		printDebug("check la case");
 		for (auto &kv : compo)

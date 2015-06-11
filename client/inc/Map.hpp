@@ -40,15 +40,20 @@ public:
     public:
         Proxy(std::vector<Inventory> &_array) : _array(_array) { }
 
-        Inventory &operator[](int index) {
+        Inventory &operator[](int index)
+        {
+        	if (index >= static_cast<int>(_array.size()))
+				index = index % _array.size();
+			else if (index < 0)
+				index = _array.size() + index;
             return _array.at(index);
         };
     private:
         std::vector<Inventory> &_array;
     };
-	Proxy		operator[](size_t);
-	size_t	getMapX();
-	size_t	getMapY();
+	Proxy		operator[](int);
+	size_t		getMapX();
+	size_t		getMapY();
 
 private:
 	size_t									_totox;

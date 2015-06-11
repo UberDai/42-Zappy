@@ -41,6 +41,7 @@ public:
 	void	add(const std::string &, int = 1);
 	void	set(const std::string &, size_t);
 	void	clear(void);
+	bool	isEmpty(void);
 
 private:
 	std::map<std::string, size_t>	_data;
