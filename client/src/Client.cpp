@@ -484,7 +484,13 @@ void				Client::_loadServerInfos(const std::string &infos)
 	size_t		mapX;
 	size_t		mapY;
 
-	_availableConnections = std::stol(infos);
+	try {
+		_availableConnections = std::stol(infos);
+	} catch (const std::invalid_argument &ia) {
+		printDebug(E_UNUSUAL_SERVER_BEHAVIOR);
+		exit(EXIT_FAILURE);
+	}
+
 	tmp = _network->recieve();
 	std::regex_match(tmp, sm, _serverInfosFormat);
 	if (sm.size() != 3)
