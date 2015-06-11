@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/07 21:53:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 01:34:21 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/11 23:46:22 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,34 @@ static int	get_sound_direction(double *points)
 	y = points[0] - points[2];
 
 	if (x == 0)
+	{
+		slope = 0;
 		vertical = 1;
+	}
 	else
 	{
 		slope = y / x;
 		vertical = 0;
 	}
 
+	if (x < 0 && slope > -1 && slope < 1)
+		return (1);
+	if (x > 0 && slope > -1 && slope < 1)
+		return (5);
+	if ((slope < -1 || slope > 1 || x == 0) && y < 1)
+		return (7);
+	if ((slope < -1 || slope > 1 || x == 0) && y > 0)
+		return (3);
+
+
 	if (x < 0 && x == y)
 		return (8);
 	if (x < 0 && x == -y)
-		return (6);
+		return (2);
 	if (x > 0 && x == y)
 		return (4);
 	if (x > 0 && x == -y)
-		return (2);
-	if (y < 0 && (x == 0 || slope < -1 || slope > 1))
-		return (1);
-	if (y > 0 && (x == 0 || slope < -1 || slope > 1))
-		return (5);
-	if (x > 0 && slope > -1 && slope < 1)
-		return (3);
-	if (x < 0 && slope > -1 && slope < 1)
-		return (7);
+		return (6);
 
 	return (0);
 }
@@ -91,43 +96,43 @@ void	client_hear(t_client *receiver, t_client *emitter, char *message)
 
 	points[1][0] = x1;
 	points[1][1] = y1;
-	points[1][2] = x2 + 10;
+	points[1][2] = x2 + (int)g_zappy.width;
 	points[1][3] = y2;
 
 	points[2][0] = x1;
 	points[2][1] = y1;
-	points[2][2] = x2 - 10;
+	points[2][2] = x2 - (int)g_zappy.width;
 	points[2][3] = y2;
 
 	points[3][0] = x1;
 	points[3][1] = y1;
 	points[3][2] = x2;
-	points[3][3] = y2 + 10;
+	points[3][3] = y2 + (int)g_zappy.height;
 
 	points[4][0] = x1;
 	points[4][1] = y1;
 	points[4][2] = x2;
-	points[4][3] = y2 - 10;
+	points[4][3] = y2 - (int)g_zappy.height;
 
 	points[5][0] = x1;
 	points[5][1] = y1;
-	points[5][2] = x2 + 10;
-	points[5][3] = y2 + 10;
+	points[5][2] = x2 + (int)g_zappy.width;
+	points[5][3] = y2 + (int)g_zappy.height;
 
 	points[6][0] = x1;
 	points[6][1] = y1;
-	points[6][2] = x2 + 10;
-	points[6][3] = y2 - 10;
+	points[6][2] = x2 + (int)g_zappy.width;
+	points[6][3] = y2 - (int)g_zappy.height;
 
 	points[7][0] = x1;
 	points[7][1] = y1;
-	points[7][2] = x2 - 10;
-	points[7][3] = y2 + 10;
+	points[7][2] = x2 - (int)g_zappy.width;
+	points[7][3] = y2 + (int)g_zappy.height;
 
 	points[8][0] = x1;
 	points[8][1] = y1;
-	points[8][2] = x2 - 10;
-	points[8][3] = y2 - 10;
+	points[8][2] = x2 - (int)g_zappy.width;
+	points[8][3] = y2 - (int)g_zappy.height;
 
 	t_uint	i;
 	double	min;
@@ -148,7 +153,12 @@ void	client_hear(t_client *receiver, t_client *emitter, char *message)
 		i++;
 	}
 
-	send_broadcast(receiver, get_sound_direction(points[index]), message);
+	int orientation;
+
+	orientation = get_sound_direction(points[0]);
+	// orientation = (orientation + receiver->orientation) % 8 + 1;
+
+	send_broadcast(receiver, orientation, message);
 }
 
 void	client_broadcast(t_client *emitter, char *message)
