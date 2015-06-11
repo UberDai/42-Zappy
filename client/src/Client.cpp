@@ -394,32 +394,6 @@ void				Client::_composFind(int level)
 			}
 		}
 	}
-
-
-
-	/* TEST */
-
-	// if (!_map[_playerX][_playerY].isEmpty())
-	// {
-
-	// 	while (i < (level * 4))
-	// 	{
-	// 		printDebug("Composfind");
-	// 		for (auto &kv : compo)
-	// 		{
-	// 			printDebug(kv.first);
-	// 			printDebug(_map[_playerX][_playerY].toString());
-	// 			if (_map[_playerX][(_playerY + 1) % _map.getMapY()].has(kv.first, 1))
-	// 			{
-	// 				//_pathFinding(start_case, end_case);
-	// 				ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
-	// 				printDebug("add move foward");
-	// 				_actions.push_back(moveF);
-	// 			}
-	// 		}
-	// 		i++;
-	// 	}
-	// }
 }
 
 int					Client::_compos(int level)
@@ -465,7 +439,7 @@ int					Client::_compos(int level)
 			}
 		}
 	}
-	if (!ok || _map[_playerX][_playerY].toString() == "[]") // add check if pas bouger // case deja connu
+	if (!ok || _map[_playerX][_playerY].isEmpty()) // add check if pas bouger // case deja connu
 	{
 		printDebug("add see");
 		_actions.push_back(Action::create(Action::SEE));
