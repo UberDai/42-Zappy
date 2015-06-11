@@ -60,6 +60,7 @@ int				ActionInventory::execute(Network & network)
 		tmp.resize(tmp.size() - 1);
 
 		std::regex_match(tmp, sm, std::regex("(\\w+)\\s+(\\d+)"));
+		Action::client->printDebug(sm[2].str());
 		i.set(sm[1].str(), std::stol(sm[2].str()));
 		++next;
 	}

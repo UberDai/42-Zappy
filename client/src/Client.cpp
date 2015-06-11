@@ -176,6 +176,9 @@ void				Client::_ia(void)
 	if (!ok)
 		_composFind(_level);
 	_actions.push_back(Action::create(Action::INVENTORY));
+	ActionBroadcast	*a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
+	a->setMessage("TRololo");
+	_actions.push_back(a);
 	_playMove();
 }
 
@@ -228,13 +231,18 @@ int					Client::_search(int level)
 }
 
 
+void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, size_t> end)
+{
+	(void)start;
+	(void)end;
+}
+
+
 void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
-	//int i = 0;
 
 	printDebug("Enter Composfind");
-	//Faire un vrai check du champs de vision.
 
 	/* TEST */
 	if (!_map[_playerX][_playerY + 1].isEmpty())
@@ -394,32 +402,6 @@ void				Client::_composFind(int level)
 			}
 		}
 	}
-
-
-
-	/* TEST */
-
-	// if (!_map[_playerX][_playerY].isEmpty())
-	// {
-
-	// 	while (i < (level * 4))
-	// 	{
-	// 		printDebug("Composfind");
-	// 		for (auto &kv : compo)
-	// 		{
-	// 			printDebug(kv.first);
-	// 			printDebug(_map[_playerX][_playerY].toString());
-	// 			if (_map[_playerX][(_playerY + 1) % _map.getMapY()].has(kv.first, 1))
-	// 			{
-	// 				//_pathFinding(start_case, end_case);
-	// 				ActionMove	*a = static_cast<ActionMove *>(Action::create(Action::MOVE_FORWARD));
-	// 				printDebug("add move foward");
-	// 				_actions.push_back(moveF);
-	// 			}
-	// 		}
-	// 		i++;
-	// 	}
-	// }
 }
 
 int					Client::_compos(int level)
@@ -465,7 +447,7 @@ int					Client::_compos(int level)
 			}
 		}
 	}
-	if (!ok || _map[_playerX][_playerY].toString() == "[]") // add check if pas bouger // case deja connu
+	if (!ok || _map[_playerX][_playerY].isEmpty()) // add check if pas bouger // case deja connu
 	{
 		printDebug("add see");
 		_actions.push_back(Action::create(Action::SEE));
