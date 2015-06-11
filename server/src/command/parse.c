@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 01:33:55 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/11 21:28:25 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,36 +36,6 @@ static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)
 	lst_push_back(to, lst_remove(from, index));
 }
 
-static void	gfx_send_map(t_client *client)
-{
-	t_uint	x;
-	t_uint	y;
-	t_uint	i;
-	t_uint	j;
-
-	y = 0;
-	while (y < g_zappy.height)
-	{
-		x = 0;
-		while (x < g_zappy.width)
-		{
-			i = 0;
-			while (i < ITEM_COUNT)
-			{
-				j = 0;
-				while (j < g_zappy.map[y][x]->items[i])
-				{
-					gfx_tile_add(client, g_zappy.map[y][x], i);
-					j++;
-				}
-				i++;
-			}
-			x++;
-		}
-		y++;
-	}
-}
-
 static void	authenticate_gfx_client(t_client *client)
 {
 	char		str[20];
@@ -81,6 +51,7 @@ static void	authenticate_gfx_client(t_client *client)
 	network_send(client, str, 0);
 
 	gfx_send_map(client);
+	gfx_send_clients(client);
 }
 
 static char	authenticate(t_client *client, char *input)
@@ -118,7 +89,7 @@ static char	authenticate(t_client *client, char *input)
 	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count, g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
 
-	gfx_client_connect(client);
+	gfx_client_connect(client, NULL);
 
 	return (0);
 }

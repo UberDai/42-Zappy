@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 01:46:29 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/11 21:19:02 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@
 # define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			3
 
-# define NET_SUCCESS		"yay"
-# define NET_FAILURE		"nope"
+# define NET_SUCCESS		"ok"
+# define NET_FAILURE		"ko"
 
 # define STATUS_UNKNOWN		0
 # define STATUS_PLAYER		1
@@ -57,6 +57,7 @@
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
+typedef char				t_bool;
 
 typedef enum 				e_orient
 {
@@ -220,7 +221,7 @@ void						zappy_run(void);
 void						zappy_pause(t_client *client);
 void						zappy_resume(t_client *client);
 
-void						gfx_client_connect(t_client *client);
+void						gfx_client_connect(t_client *client, t_client *gfx_client);
 void						gfx_client_disconnect(t_client *client);
 void						gfx_client_death(t_client *client);
 void						gfx_tile_add(t_client *client, t_tile *tile, int item);
@@ -229,6 +230,8 @@ void						gfx_client_pick(t_client *client, int item);
 void						gfx_client_drop(t_client *client, int item);
 void						gfx_client_move_to(t_client *client, t_tile *tile);
 void						gfx_client_turn(t_client *client);
+void						gfx_send_map(t_client *client);
+void						gfx_send_clients(t_client *client);
 
 t_lst						*get_vision(t_client *client);
 

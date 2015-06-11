@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 01:46:52 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/11 21:30:14 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	zappy_run(void)
 			g_zappy.clients->size,
 			g_zappy.gfx_clients->size
 		);
-		print_client_positions();
+		// print_client_positions();
 		printf("--------------------------------------------------\n");
 	}
 }
