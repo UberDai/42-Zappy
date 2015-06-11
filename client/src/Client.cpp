@@ -413,15 +413,16 @@ void				Client::_composFind(int level)
 
 	printDebug("Enter Composfind");
 
-	int i = 1;
+	int i;
 	int A[2] = {0, 0};
 
-	while (i < static_cast<int>(_level * 4 * 4))
+	for (i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
-		Pos(i, A);
+		Pos(i,A);
+		// printDebug("A0 =" + std::to_string(A[0]) + "A1 =" + std::to_string(A[1]) );
 		for (auto &kv : compo)
 		{
-			if ((_map[getCaseX(A[0])][getCaseY(A[1])].has(kv.first, 1)
+			if (_map[getCaseX(A[0])][getCaseY(A[1])].has(kv.first, 1))
 			{
 				_pathFinding(getPairCase(0, 0), getPairCase(A[0], A[1]));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
@@ -430,7 +431,6 @@ void				Client::_composFind(int level)
 				return ;
 			}
 		}
-		i++;
 	}
 
 	// /* TEST */
