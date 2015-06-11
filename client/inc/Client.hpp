@@ -94,6 +94,7 @@ private:
 	void					_composFind(int);
 	int						_search(int);
 	void					_playMove(void);
+	void					_pathFinding(std::pair<size_t, size_t>, std::pair<size_t, size_t>);
 };
 
 #endif /* CLIENT_HPP */

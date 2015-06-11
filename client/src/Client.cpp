@@ -176,6 +176,9 @@ void				Client::_ia(void)
 	if (!ok)
 		_composFind(_level);
 	_actions.push_back(Action::create(Action::INVENTORY));
+	ActionBroadcast	*a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
+	a->setMessage("TRololo");
+	_actions.push_back(a);
 	_playMove();
 }
 
@@ -228,13 +231,18 @@ int					Client::_search(int level)
 }
 
 
+void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, size_t> end)
+{
+	(void)start;
+	(void)end;
+}
+
+
 void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
-	//int i = 0;
 
 	printDebug("Enter Composfind");
-	//Faire un vrai check du champs de vision.
 
 	/* TEST */
 	if (!_map[_playerX][_playerY + 1].isEmpty())
