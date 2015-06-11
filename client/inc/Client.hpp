@@ -59,6 +59,9 @@ public:
 	enum eOrientation		getPlayerOrientation() const;
 	void					setPlayerOrientation(enum eOrientation);
 	Map						&getMap(void);
+	size_t					getCaseX(int i);
+	size_t					getCaseY(int i);
+	std::pair<size_t, size_t>	getPairCase(int x, int y);
 	// Gestion de la map perso beta
 
 	size_t					getPlayerX() const;
@@ -68,7 +71,7 @@ public:
 	//std::map<size_t, std::map<size_t, std::string> > _map; //inventaire ??
 
 	Totems					&getTotems();
-	void					printDebug(const std::string &);
+	void					printDebug(const std::string &, int = 0);
 
 private:
 	static const std::regex	_serverInfosFormat;

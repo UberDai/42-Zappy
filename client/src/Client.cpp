@@ -75,12 +75,12 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
-_teamName(teamName),
-_network(new Network(this, port, hostName)),
-_level(1),
-_playerX(0),
-_playerY(0),
-_playerOrientation(NORTH)
+	_teamName(teamName),
+	_network(new Network(this, port, hostName)),
+	_level(1),
+	_playerX(0),
+	_playerY(0),
+	_playerOrientation(NORTH)
 {
 
 	std::stringstream name;
@@ -128,7 +128,7 @@ bool				Client::loop(void)
 	return true;
 }
 
-void				Client::printDebug(const std::string &msg)
+void				Client::printDebug(const std::string &msg, int mode)
 {
 	std::locale::global(std::locale(""));
 	std::time_t t = std::time(NULL);
@@ -136,7 +136,14 @@ void				Client::printDebug(const std::string &msg)
 	char	mbstr[100] = { '\0' };
 
 	std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
-	_ofs << "[" << mbstr << "] " << getpid() << " " << msg << std::endl;
+	_ofs << "[" << mbstr << "] " << getpid() << " ";
+	if (mode == 1)
+		_ofs << ">> ";
+	else if (mode == 2)
+		_ofs << "<< ";
+	else
+		_ofs << "   ";
+	 _ofs << msg << std::endl;
 }
 
 void				Client::hasDied(void)
@@ -163,7 +170,6 @@ void				Client::_ia(void)
 		printDebug("Verification du nombre de joueurs");
 		if (_search(_level) != 0)
 		{
-			printDebug("add Action Incantation");
 			ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
 			ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
 
@@ -176,9 +182,6 @@ void				Client::_ia(void)
 	if (!ok)
 		_composFind(_level);
 	_actions.push_back(Action::create(Action::INVENTORY));
-	ActionBroadcast	*a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
-	a->setMessage("TRololo");
-	_actions.push_back(a);
 	_playMove();
 }
 
@@ -226,17 +229,123 @@ int					Client::_search(int level)
 	ActionBroadcast	*a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
 	a->setMessage("TRololo");
 	_actions.push_back(a);
-	//pathfinding searchplayer()
 	return 0;
 }
 
-
 void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, size_t> end)
 {
-	(void)start;
-	(void)end;
+	std::pair<int, int>	mov;
+
+	mov.first = end.first - start.first < _map.getMapX() / 2 ? end.first + start.first : start.first - (_map.getMapX() - end.first);
+	mov.second = end.second - start.second < _map.getMapY() / 2 ? end.second + start.second : start.second - (_map.getMapY() - end.second);
+
+	if (mov.first < 0)
+	{
+		switch (getPlayerOrientation())
+		{
+			case NORTH:
+			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			break ;
+			case SOUTH:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			case EAST:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			default:
+			break ;
+		}
+	}
+	else if (mov.first > 0)
+	{
+		switch (getPlayerOrientation())
+		{
+			case NORTH:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			case SOUTH:
+			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			break ;
+			case WEST:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			default:
+			break ;
+		}
+	}
+	for (int i = 0; i < abs(mov.first); ++i)
+		_actions.push_back(Action::create(Action::MOVE_FORWARD));
+
+	if (mov.second < 0)
+	{
+		switch (getPlayerOrientation())
+		{
+			case NORTH:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			case WEST:
+			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			break ;
+			case EAST:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			default:
+			break ;
+		}
+	}
+	else if (mov.second > 0)
+	{
+		switch (getPlayerOrientation())
+		{
+			case SOUTH:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			case EAST:
+			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			break ;
+			case WEST:
+			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			break ;
+			default:
+			break ;
+		}
+	}
+	for (int i = 0; i < abs(mov.second); ++i)
+		_actions.push_back(Action::create(Action::MOVE_FORWARD));
 }
 
+size_t Client::getCaseX(int i)
+{
+	int tmp;
+
+	tmp = _playerX + i;
+	if (tmp < 0)
+		return _map.getMapX() - tmp;
+	else if (tmp >= (int)_map.getMapX())
+		return tmp % _map.getMapX();
+	return tmp;
+}
+
+size_t Client::getCaseY(int i)
+{
+	int tmp;
+
+	tmp = _playerY + i;
+	if (tmp < 0)
+		return _map.getMapY() - tmp;
+	else if (tmp >= (int)_map.getMapY())
+		return tmp % _map.getMapY();
+	return tmp;
+}
+
+std::pair<size_t, size_t>	Client::getPairCase(int x, int y)
+{
+	return std::make_pair<size_t, size_t>(getCaseX(x), getCaseY(y));
+}
 
 void				Client::_composFind(int level)
 {
@@ -251,9 +360,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX][_playerY + 1].has(kv.first, 1))
 			{
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(0, 1));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -267,13 +374,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX + 1][_playerY + 1].has(kv.first, 1))
 			{
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("add turn right");
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(1, 1));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -287,12 +388,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX + 1][_playerY].has(kv.first, 1))
 			{
-					//_pathFinding(start_case, end_case);
-				printDebug("add turn right");
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(1, 0));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -306,15 +402,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX + 1][_playerY - 1].has(kv.first, 1))
 			{
-				printDebug("add turn right");
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("add turn right");
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(1, -1));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -328,13 +416,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX][_playerY - 1].has(kv.first, 1))
 			{
-				printDebug("add turn right");
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				printDebug("add turn right");
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(0, -1));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -348,15 +430,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX - 1][_playerY - 1].has(kv.first, 1))
 			{
-				printDebug("add turn left");
-				_actions.push_back(Action::create(Action::MOVE_LEFT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("add turn left");
-				_actions.push_back(Action::create(Action::MOVE_LEFT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(-1, -1));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -370,11 +444,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX - 1][_playerY].has(kv.first, 1))
 			{
-				printDebug("add turn left");
-				_actions.push_back(Action::create(Action::MOVE_LEFT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(-1, 0));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -388,13 +458,7 @@ void				Client::_composFind(int level)
 		{
 			if (_map[_playerX - 1][_playerY + 1].has(kv.first, 1))
 			{
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("add turn left");
-				_actions.push_back(Action::create(Action::MOVE_LEFT));
-				printDebug("add move foward");
-				_actions.push_back(Action::create(Action::MOVE_FORWARD));
-				printDebug("prendre item");
+				_pathFinding(getPairCase(0, 0), getPairCase(-1, 1));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 				_actions.push_back(a);
@@ -412,13 +476,12 @@ int					Client::_compos(int level)
 	printDebug(_map[_playerX][_playerY].toString());
 	if (!_map[_playerX][_playerY].isEmpty()) // check si la case n'est pas trop vielle
 	{
-		printDebug("check la case");
 		for (auto &kv : compo)
 		{
-			printDebug(kv.first);
+			printDebug("Check de la case pour " + kv.first);
 			if (_map[_playerX][_playerY].has(kv.first, kv.second))
 			{
-				printDebug("Compos trouve sur la case");
+				printDebug(std::to_string(kv.second) + " " + kv.first + " trouve sur la case");
 				ok = true;
 			}
 			else
@@ -430,10 +493,9 @@ int					Client::_compos(int level)
 	}
 	if (!ok)
 	{
-		printDebug("check inventaire");
 		for (auto &kv : compo)
 		{
-			printDebug(kv.first);
+			printDebug("Check inventaire pour " + kv.first);
 			if (_inventory.has(kv.first, kv.second))
 			{
 				ActionDrop	*a = static_cast<ActionDrop *>(Action::create(Action::DROP));
@@ -449,7 +511,6 @@ int					Client::_compos(int level)
 	}
 	if (!ok || _map[_playerX][_playerY].isEmpty()) // add check if pas bouger // case deja connu
 	{
-		printDebug("add see");
 		_actions.push_back(Action::create(Action::SEE));
 		return 0;
 	}
@@ -524,7 +585,6 @@ void				Client::setPlayerX(int val)
 		_playerX = _map.getMapX() + val;
 	else
 		_playerX = val;
-	printDebug(std::to_string(_playerX));
 }
 
 void				Client::setPlayerY(int val)
@@ -535,7 +595,6 @@ void				Client::setPlayerY(int val)
 		_playerY = _map.getMapY() + val;
 	else
 		_playerY = val;
-	printDebug(std::to_string(_playerY));
 }
 
 void				Client::setLevel(unsigned int val) 	{ _level = val; }

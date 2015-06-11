@@ -43,26 +43,59 @@ int			Action::getFailureIndex(void) const	{  return _failIndex; }
 Action		*Action::create(const std::string &action)
 {
 	if (action == Action::SEE)
+	{
+		client->printDebug("add action " + action);
 		return new ActionSee(Action::client);
+	}
 	else if (action == Action::EXPULSE)
+	{
+		client->printDebug("add action " + action);
 		return new ActionExpulse();
+	}
 	else if (action == Action::INVENTORY)
+	{
+		client->printDebug("add action " + action);
 		return new ActionInventory();
+	}
 	else if (action == Action::INCANTATION)
+	{
+		client->printDebug("add action " + action);
 		return new ActionIncantation(Action::client);
+	}
 	else if (action == Action::EGG)
+	{
+		client->printDebug("add action " + action);
 		return new ActionEgg();
+	}
 	else if (action == Action::MOVE_FORWARD)
+	{
+		client->printDebug("add action " + action);
 		return new ActionMove(UP);
+	}
 	else if (action == Action::MOVE_RIGHT)
+	{
+		client->printDebug("add action " + action);
 		return new ActionMove(TURN_RIGHT);
+	}
 	else if (action == Action::MOVE_LEFT)
+	{
+		client->printDebug("add action " + action);
 		return new ActionMove(TURN_LEFT);
+	}
 	else if (action == Action::TAKE)
+	{
+		client->printDebug("add action " + action);
 		return new ActionTake(Action::client->getInventory());
+	}
 	else if (action == Action::DROP)
+	{
+		client->printDebug("add action " + action);
 		return new ActionDrop(Action::client->getInventory());
+	}
 	else if (action == Action::BROADCAST)
+	{
+		client->printDebug("add action " + action);
 		return new ActionBroadcast();
+	}
 	return nullptr;
 }

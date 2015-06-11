@@ -212,7 +212,7 @@ std::string		Network::recieve(void)
 			this->close();
 			break ;
 		default:
-			_client->printDebug(buf);
+			_client->printDebug(buf, 2);
 
 			if (!strncmp(buf, MSG_DEATH.c_str(), 5))
 				_client->hasDied();
@@ -234,7 +234,7 @@ std::string		Network::send(const std::string &message)
 		std::string		toSend = message;
 
 		toSend += "\n";
-		_client->printDebug(message);
+		_client->printDebug(message, 1);
 		if (::send(_socket_connect, toSend.c_str(), toSend.size(), 0) < 0)
 		{
 			std::cout << strerror(errno) << std::endl;
