@@ -36,6 +36,7 @@ class	Network
 		static const std::string	MSG_ELEVATION;
 		static const std::string	MSG_CURRENT_LVL;
 		static const std::string	MSG_WELCOME;
+		static const size_t			BUFF_SIZE;
 
 		bool				isConnected(void);
 		std::string			send(const std::string &);
@@ -45,7 +46,6 @@ class	Network
 		void				close(void);
 	private:
 
-		static const size_t	BUFF_SIZE;
 		Client				*_client;
 
 		std::string			_hostName;

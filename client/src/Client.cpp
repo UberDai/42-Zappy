@@ -24,7 +24,7 @@
 #include <ctime>
 #include <locale>
 
-const std::regex	Client::_serverInfosFormat("(\\d+)\\n(\\d+) (\\d+)\\n");
+const std::regex	Client::_serverInfosFormat("(\\d+) (\\d+)");
 
 Totems	Client::_totems =
 {
@@ -502,15 +502,16 @@ void				Client::_loadServerInfos(const std::string &infos)
 	size_t		mapX;
 	size_t		mapY;
 
-	std::regex_match(infos, sm, _serverInfosFormat);
-	if (sm.size() != 4)
+	_availableConnections = std::stol(infos);
+	tmp = _network->recieve();
+	std::regex_match(tmp, sm, _serverInfosFormat);
+	if (sm.size() != 3)
 	{
 		printDebug(E_UNUSUAL_SERVER_BEHAVIOR);
 		exit(EXIT_FAILURE);
 	}
-	tmp = sm[1],  _availableConnections = strtol(tmp.c_str(), NULL, 10);
-	tmp = sm[2],  mapX = strtol(tmp.c_str(), NULL, 10);
-	tmp = sm[3],  mapY = strtol(tmp.c_str(), NULL, 10);
+	mapX = strtol(sm[1].str().c_str(), NULL, 10);
+	mapY = strtol(sm[2].str().c_str(), NULL, 10);
 	_map.initMap(mapX, mapY);
 }
 
