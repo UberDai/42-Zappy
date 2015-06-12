@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/12 23:39:42 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 00:34:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static char	*append_string(char *src, char *str)
 {
 	char	*output;
 
-	output = calloc(strlen(src) + strlen(str), sizeof(char));
+	output = calloc(strlen(src) + strlen(str) + 1, sizeof(char));
 	memcpy(output, src, strlen(src));
 	strcat(output, str);
 	return (output);
@@ -130,14 +130,8 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	while (lst_iterator_next(&iter))
 	{
 		content = tile_content(iter.data);
-
-		if (str == NULL)
-			str = content;
-		else
-		{
-			str = append_string(str, content);
-			free(content);
-		}
+		str = append_string(str, content);
+		free(content);
 
 		if (iter.pos != vision->size - 1)
 			str = append_string(str, ", ");

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/12 23:37:22 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 00:32:46 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,10 +169,10 @@ char	*tile_content(t_tile *tile)
 	size = 0;
 	while (i < ITEM_COUNT)
 	{
-		size += tile->items[i] * strlen(names[i]) + 1;
+		size += tile->items[i] * strlen(names[i]) + tile->items[i];
 		i++;
 	}
-	str = calloc(size + 1, sizeof(char));
+	str = calloc(size, sizeof(char));
 	i = 0;
 	while (i < ITEM_COUNT)
 	{
