@@ -142,37 +142,78 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 	}
 	while (XY.second <= (int)Action::client->getLevel())
 	{
-		XY.first = -XY.second;
-		while (XY.first <= XY.second)
+		if (o == NORTH || o == WEST)
 		{
-			if (count == i)
+			XY.first = -XY.second;
+			while (XY.first <= XY.second)
 			{
-				if (o == NORTH || o == SOUTH)
+				if (count == i)
 				{
-					ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.first;
-					ret.second = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.first;
+				//Action::client->printDebug("i = " +std::to_string(i) + " x = " +std::to_string(x) + " y = " + std::to_string(y) + " o = " + std::to_string(y));
+					if (o == NORTH)
+					{
+						ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.first;
+						ret.second = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.first;
+					}
+					else if (o == WEST)
+					{
+						ret.second = x - (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.second ;
+						ret.first = y - (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.second ;
+					}
+					if (ret.first < 0)
+						ret.first = _totox + ret.first;
+					if (ret.second < 0)
+						ret.second = _totoy + ret.second;
+					if (ret.first >= (int)_totox)
+						ret.first = ret.first - _totox;
+					if (ret.second >= (int)_totoy)
+						ret.second = ret.second - _totoy;
+					std::stringstream toto;
+					toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
+					Action::client->printDebug(toto.str());
+					return ret;
 				}
-				if (o == EAST || o == WEST)
-				{
-					ret.second = x - (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.second ;
-					ret.first = y - (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.second ;
-				}
-				if (ret.first < 0)
-					ret.first = _totox + ret.first;
-				if (ret.second < 0)
-					ret.second = _totoy + ret.second;
-				if (ret.first >= (int)_totox)
-					ret.first = ret.first - _totox;
-				if (ret.second >= (int)_totoy)
-					ret.second = ret.second - _totoy;
-				// std::stringstream toto;
-				// toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
-				// Action::client->printDebug(toto.str());
-				return ret;
+				count++;
+				XY.first++;
 			}
-			count++;
-			XY.first++;
 		}
+		else
+		{
+			XY.first = XY.second;
+			while (XY.first >= -XY.second)
+			{
+				if (count == i)
+				{
+				//Action::client->printDebug("i = " +std::to_string(i) + " x = " +std::to_string(x) + " y = " + std::to_string(y) + " o = " + std::to_string(y));
+					if (o == SOUTH)
+					{
+						ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.first;
+						ret.second = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.first;
+					}
+					else if (o == EAST)
+					{
+						ret.second = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.second ;
+						ret.first = y + (mapping.second != 0 ? XY.second * mapping.second : XY.second) * mapping.second ;
+					}
+					
+					if (ret.first < 0)
+						ret.first = _totox + ret.first;
+					if (ret.second < 0)
+						ret.second = _totoy + ret.second;
+					if (ret.first >= (int)_totox)
+						ret.first = ret.first - _totox;
+					if (ret.second >= (int)_totoy)
+						ret.second = ret.second - _totoy;
+					std::stringstream toto;
+					toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
+					Action::client->printDebug(toto.str());
+					return ret;
+				}
+				count++;
+				XY.first--;
+			}
+		}
+		
 		XY.second++;
 	}
 	return ret;

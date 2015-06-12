@@ -75,13 +75,13 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
-	_path(new Pathfinding()),
-	_teamName(teamName),
-	_network(new Network(this, port, hostName)),
-	_level(1),
-	_playerX(0),
-	_playerY(0),
-	_playerOrientation(NORTH)
+_path(new Pathfinding()),
+_teamName(teamName),
+_network(new Network(this, port, hostName)),
+_level(1),
+_playerX(0),
+_playerY(0),
+_playerOrientation(NORTH)
 {
 
 	std::stringstream name;
@@ -144,7 +144,7 @@ void				Client::printDebug(const std::string &msg, int mode)
 		_ofs << "<< ";
 	else
 		_ofs << "   ";
-	 _ofs << msg << std::endl;
+	_ofs << msg << std::endl;
 }
 
 void				Client::hasDied(void)
@@ -244,16 +244,16 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 	printDebug(std::to_string(end.second));
 
 	mov.first = abs((int)(end.first - start.first)) < (int)_map.getMapX() / 2
-		? end.first - start.first
-		: start.first > _map.getMapX() / 2
-			? start.first - (_map.getMapX() + end.first)
-			: start.first - (_map.getMapX() - end.first);
+	? end.first - start.first
+	: start.first > _map.getMapX() / 2
+	? start.first - (_map.getMapX() + end.first)
+	: start.first - (_map.getMapX() - end.first);
 
 	mov.second = abs((int)(end.second - start.second)) < (int)_map.getMapY() / 2
-		? end.second - start.second
-		: start.second > _map.getMapY() / 2
-			? start.second - (_map.getMapY() + end.second)
-			: start.second - (_map.getMapY() - end.second);
+	? end.second - start.second
+	: start.second > _map.getMapY() / 2
+	? start.second - (_map.getMapY() + end.second)
+	: start.second - (_map.getMapY() - end.second);
 
 	printDebug("mov first " + std::to_string(mov.first) + " mov second " + std::to_string(mov.second));
 	if (mov.first < 0)
@@ -378,10 +378,10 @@ size_t Client::getCaseY(int i)
 		return _map.getMapY() + tmp;
 	}
 	else if (tmp >= (int)_map.getMapY())
-{
+	{
 	// printDebug("> = map getCaseY = " + std::to_string(tmp));
 		return tmp % (_map.getMapY() - 1);
-}
+	}
 	// printDebug("normal getCaseY = " + std::to_string(tmp));
 	return tmp;
 }
@@ -395,10 +395,8 @@ void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
 	int XY[2] = {0, 0};
-	static int rot;
+	static int rot = 0;
 
-	if (!rot)
-		rot = 0;
 	printDebug("Enter Composfind");
 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
@@ -420,25 +418,24 @@ void				Client::_composFind(int level)
 
 				return ;
 			}
-			else
-			{
-				if (rot >= 4)
-				{
-					_actions.push_back(Action::create(Action::MOVE_RIGHT));
-					_actions.push_back(Action::create(Action::SEE));
-					rot++;
-				}
-				else
-				{
-					_actions.push_back(Action::create(Action::MOVE_FORWARD));
-					_actions.push_back(Action::create(Action::SEE));
-					rot = 0;
-				}
-			
-				printDebug(kv.first + " not found on case");
-			}
+			printDebug(kv.first + " not found on case");
 		}
-	}	
+		
+	}
+	printDebug(std::to_string(rot));
+	if (rot < 4)
+	{
+		_actions.push_back(Action::create(Action::MOVE_RIGHT));
+		_actions.push_back(Action::create(Action::SEE));
+		rot++;
+	}
+	else
+	{
+		for (size_t i = 0; i <= _level; i++)
+			_actions.push_back(Action::create(Action::MOVE_FORWARD));
+		_actions.push_back(Action::create(Action::SEE));
+		rot = 0;
+	}
 }
 
 int					Client::_compos(int level)
@@ -482,7 +479,7 @@ int					Client::_compos(int level)
 			}
 		}
 	}
-	if (!ok || _map[_playerX][_playerY].isEmpty()) // add check if pas bouger // case deja connu
+	if (!ok && _map[_playerX][_playerY].isEmpty()) // add check if pas bouger // case deja connu
 	{
 		_actions.push_back(Action::create(Action::SEE));
 		return 0;
