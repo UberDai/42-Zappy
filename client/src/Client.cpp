@@ -395,7 +395,10 @@ void				Client::_composFind(int level)
 {
 	std::map<std::string, size_t>	&compo = _totems[level];
 	int XY[2] = {0, 0};
+	static int rot;
 
+	if (!rot)
+		rot = 0;
 	printDebug("Enter Composfind");
 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
@@ -419,9 +422,19 @@ void				Client::_composFind(int level)
 			}
 			else
 			{
-				//rotate + voir
-				_actions.push_back(Action::create(Action::MOVE_RIGHT));
-				_actions.push_back(Action::create(Action::SEE));
+				if (rot >= 4)
+				{
+					_actions.push_back(Action::create(Action::MOVE_RIGHT));
+					_actions.push_back(Action::create(Action::SEE));
+					rot++;
+				}
+				else
+				{
+					_actions.push_back(Action::create(Action::MOVE_FORWARD));
+					_actions.push_back(Action::create(Action::SEE));
+					rot = 0;
+				}
+			
 				printDebug(kv.first + " not found on case");
 			}
 		}
