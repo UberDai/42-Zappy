@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 00:18:26 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/12 23:37:22 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,20 +156,35 @@ void		tile_regenerate(t_tile *tile)
 	}
 }
 
-char	*tile_inventory(t_tile *tile)
+char	*tile_content(t_tile *tile)
 {
-	char	*str;
+	char		*str;
+	size_t		size;
+	t_uint		i;
+	t_uint		j;
+	static char	*names[ITEM_COUNT] = { "nourriture", "linemate", "deraumere",
+		"sibur", "mendiane", "phiras", "thystame" };
 
-	str = calloc(200, sizeof(char));
-	snprintf(str, 200, "food %u linemate %u deraumere %u sibur %u "
-		"mendiane %u phiras %u thystame %u",
-		tile->items[0],
-		tile->items[1],
-		tile->items[2],
-		tile->items[3],
-		tile->items[4],
-		tile->items[5],
-		tile->items[6]
-	);
+	i = 0;
+	size = 0;
+	while (i < ITEM_COUNT)
+	{
+		size += tile->items[i] * strlen(names[i]) + 1;
+		i++;
+	}
+	str = calloc(size + 1, sizeof(char));
+	i = 0;
+	while (i < ITEM_COUNT)
+	{
+		j = 0;
+		while (j < tile->items[i])
+		{
+			if (strlen(str) != 0)
+				strcat(str, " ");
+			strcat(str, names[i]);
+			j++;
+		}
+		i++;
+	}
 	return (str);
 }

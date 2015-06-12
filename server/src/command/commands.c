@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/11 22:05:42 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/12 23:39:42 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,29 +103,46 @@ short	command_connect_count(t_client *client, t_uint argc, char **argv)
 	return (COMMAND_NONE);
 }
 
+static char	*append_string(char *src, char *str)
+{
+	char	*output;
+
+	output = calloc(strlen(src) + strlen(str), sizeof(char));
+	memcpy(output, src, strlen(src));
+	strcat(output, str);
+	return (output);
+}
+
 short	command_see(t_client *client, t_uint argc, char **argv)
 {
 	char		*str;
 	t_lst		*vision;
 	t_lstiter	iter;
-	char		*tmp;
+	char		*content;
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
 
+	str = strdup("{");
 	vision = get_vision(client);
-	str = calloc(vision->size * 200, sizeof(char));
 
 	init_iter(&iter, vision, increasing);
 	while (lst_iterator_next(&iter))
 	{
-		tmp = tile_inventory(iter.data);
-		if (iter.pos != 0)
-			strcat(str, ", ");
-		strcat(str, tmp);
-		free(tmp);
-	}
+		content = tile_content(iter.data);
 
+		if (str == NULL)
+			str = content;
+		else
+		{
+			str = append_string(str, content);
+			free(content);
+		}
+
+		if (iter.pos != vision->size - 1)
+			str = append_string(str, ", ");
+	}
+	str = append_string(str, "}");
 	network_send(client, str, 0);
 	free(str);
 	(void)argv;

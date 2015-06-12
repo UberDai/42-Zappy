@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/11 21:19:02 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/12 23:37:19 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ t_tile						*tile_at(int x, int y);
 short						tile_add_item(t_tile *tile, int item);
 short						tile_remove_item(t_tile *tile, int item);
 void						tile_regenerate(t_tile *tile);
-char						*tile_inventory(t_tile *tile);
+char						*tile_content(t_tile *tile);
 void						map_regenerate(void);
 
 void						options_parse(t_uint ac, char **av);
