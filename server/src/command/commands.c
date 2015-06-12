@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 00:40:11 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 00:48:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	str = append_string(str, "}");
 	network_send(client, str, 0);
 	free(str);
+	lst_destroy(&vision, NULL);
 	(void)argv;
 	return (COMMAND_NONE);
 }
