@@ -398,7 +398,7 @@ void				Client::_composFind(int level)
 		for (auto &kv : compo)
 		{
 			
-			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() && _map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1))
+			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() && _map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
 			{
 				printDebug("X= " + std::to_string(getCaseX(XY[0])) + " Y= " + std::to_string(getCaseY(XY[1])) );
 				printDebug(_map[getCaseX(XY[0])][getCaseY(XY[1])].toString());
@@ -406,9 +406,14 @@ void				Client::_composFind(int level)
 				_pathFinding(getPairCase(0, 0), getPairCase(XY[0], XY[1]));
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
+				if (_map[getCaseX(XY[0])][getCaseY(XY[1])].has("nourriture", 1))
+				{
+					ActionTake *b = static_cast<ActionTake *>(Action::create(Action::TAKE));
+					b->setObject("nourriture");
+					_actions.push_back(b);
+				}
 				_actions.push_back(Action::create(Action::SEE));
 				_actions.push_back(a);
-
 				return ;
 			}
 			printDebug(kv.first + " not found on case");
