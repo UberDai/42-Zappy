@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 00:34:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 00:40:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ static char	*append_string(char *src, char *str)
 	output = calloc(strlen(src) + strlen(str) + 1, sizeof(char));
 	memcpy(output, src, strlen(src));
 	strcat(output, str);
+	free(src);
 	return (output);
 }
 
