@@ -23,6 +23,8 @@
 #include <regex>
 #include <ctime>
 #include <locale>
+#include <functional>
+#include <cctype>
 
 const std::regex	Client::_serverInfosFormat("(\\d+) (\\d+)");
 
@@ -75,13 +77,15 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
-_path(new Pathfinding()),
-_teamName(teamName),
-_network(new Network(this, port, hostName)),
-_level(1),
-_playerX(0),
-_playerY(0),
-_playerOrientation(NORTH)
+	_mode(FIND_PLAYER),
+	_path(new Pathfinding()),
+	_teamName(teamName),
+	_network(new Network(this, port, hostName)),
+	_level(1),
+	_playerX(0),
+	_playerY(0),
+	_playerOrientation(NORTH),
+	_mustMove(false)
 {
 
 	std::stringstream name;
@@ -154,19 +158,162 @@ void				Client::hasDied(void)
 	exit(EXIT_SUCCESS);
 }
 
-void				Client::recieveBroadcast(const std::string &msg)
+void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
 {
-	//regex parse msg
-	//	 message
-	//	 case
-	//	 content
-	(void)msg;
+	size_t			comaPos = b.find_first_of(',');
+
+	if (comaPos != 9 || !isdigit(b[8]) || b.size() <= 10)
+		return printDebug("Broadcast does not seem to be a broadcast");
+	msg = b.substr(10);
+	_directionTomove = b[8] - 48;
+}
+
+void				Client::recieveBroadcast(const std::string &broadcast)
+{
+	if (_mode != FIND_PLAYER)
+		return printDebug("Client is not seeking for player. Broadcast ignored.");
+	else if (_mustMove)
+		return printDebug("Client is already moving towards another player. Broadcast ignored.");
+
+	std::hash<std::string>	hash;
+	std::regex				broadcastFormat("(\\S+) (\\S+) (\\S+)");
+	std::smatch				sm;
+	std::string				msg;
+
+	_extractBroadcastInfo(broadcast, msg);
+	std::regex_match(msg, sm, broadcastFormat);
+
+	if (sm.size() != 4 || std::string(sm[1]) != std::to_string(hash(_teamName)))
+		return printDebug("Broadcast recieved is not from our team. Ignoring. size " + std::to_string(sm.size()) + " msg : \"" + msg + "\"");
+	if (_directionTomove == 0)
+	{
+		printDebug("TROUVAY");
+		_addAction(Action::INCANTATION);
+		_mode = NORMAL;
+		exit(EXIT_SUCCESS);
+	}
+	_mustMove = true;
+	return printDebug("Player should now move toward player " + std::string(sm[1]));
+}
+
+
+size_t				Client::_getPlayersToFind(void)
+{
+	switch (_level)
+	{
+		case 2: case 3:
+			return 2;
+			break ;
+
+		case 4: case 5:
+			return 4;
+			break ;
+
+		case 6: case 7:
+			return 6;
+			break ;
+
+		default:
+			return 4;
+			break;
+	}
+	return 0;
+}
+
+void				Client::_moveToUpperLeftCorner(void)
+{
+	_addAction(Action::MOVE_FORWARD);
+	_addAction(Action::MOVE_LEFT);
+	_addAction(Action::MOVE_FORWARD);
+}
+void				Client::_moveToLeft(void)
+{
+	_addAction(Action::MOVE_LEFT);
+	_addAction(Action::MOVE_FORWARD);
+}
+void				Client::_moveToLowerLeftCorner(void)
+{
+	_addAction(Action::MOVE_LEFT);
+	_addAction(Action::MOVE_FORWARD);
+	_addAction(Action::MOVE_LEFT);
+	_addAction(Action::MOVE_FORWARD);
+}
+void				Client::_moveToBehind(void)
+{
+	_addAction(Action::MOVE_LEFT);
+	_addAction(Action::MOVE_LEFT);
+	_addAction(Action::MOVE_FORWARD);
+}
+void				Client::_moveToLowerRightCorner(void)
+{
+	_addAction(Action::MOVE_RIGHT);
+	_addAction(Action::MOVE_FORWARD);
+	_addAction(Action::MOVE_RIGHT);
+	_addAction(Action::MOVE_FORWARD);
+}
+void				Client::_moveToRight(void)
+{
+	_addAction(Action::MOVE_RIGHT);
+	_addAction(Action::MOVE_FORWARD);
+}
+void				Client::_moveToUpperRightCorner(void)
+{
+	_addAction(Action::MOVE_FORWARD);
+	_addAction(Action::MOVE_RIGHT);
+	_addAction(Action::MOVE_FORWARD);
+}
+
+void				Client::_moveTo(void)
+{
+	_mustMove = false;
+	switch (_directionTomove)
+	{
+		case 1: 	return _addAction(Action::MOVE_FORWARD);
+		case 2: 	return _moveToUpperLeftCorner();
+		case 3: 	return _moveToLeft();
+		case 4: 	return _moveToLowerLeftCorner();
+		case 5: 	return _moveToBehind();
+		case 6: 	return _moveToLowerRightCorner();
+		case 7: 	return _moveToRight();
+		case 8: 	return _moveToUpperRightCorner();
+		default: 	return;
+	}
+}
+
+void				Client::_setBroadcastMsg(std::stringstream &str)
+{
+	std::hash<std::string>	hash;
+
+	str
+		<< hash(_teamName) << " "
+		<< _network->getSocketPid() << " "
+		<< _playersToFind
+	;
+}
+
+void				Client::_findPlayerMode(void)
+{
+	std::stringstream	msg;
+	ActionBroadcast		*a;
+
+	printDebug("MAXIKEK");
+	if (_mustMove)
+		return _moveTo();
+	_playersToFind = _getPlayersToFind();
+	_setBroadcastMsg(msg);
+	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
+	a->setMessage(msg.str());
+	_actions.push_back(a);
+	_playMove();
 }
 
 void				Client::_ia(void)
 {
 	bool ok = false;
-	if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
+
+	if (_mode == FIND_PLAYER)
+		return _findPlayerMode();
+	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
 		printDebug("Verification du nombre de joueurs");
 		if (_search(_level) != 0)
@@ -394,10 +541,10 @@ void				Client::_composFind(int level)
 	printDebug("Enter Composfind");
 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
-		_path->Pos(i, XY);		
+		_path->Pos(i, XY);
 		for (auto &kv : compo)
 		{
-			
+
 			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() && _map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
 			{
 				printDebug("X= " + std::to_string(getCaseX(XY[0])) + " Y= " + std::to_string(getCaseY(XY[1])) );
@@ -418,7 +565,7 @@ void				Client::_composFind(int level)
 			}
 			printDebug(kv.first + " not found on case");
 		}
-		
+
 	}
 	printDebug(std::to_string(rot));
 	if (rot < 4)
@@ -563,6 +710,11 @@ void				Client::setPlayerY(int val)
 		_playerY = _map.getMapY() + val;
 	else
 		_playerY = val;
+}
+
+void				Client::_addAction(const std::string &a)
+{
+	_actions.push_back(Action::create(a));
 }
 
 void				Client::setLevel(unsigned int val) 	{ _level = val; }
