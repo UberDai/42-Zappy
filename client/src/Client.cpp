@@ -238,10 +238,10 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 {
 	std::pair<int, int>	mov;
 	eOrientation dir = getPlayerOrientation();
-	printDebug(std::to_string(start.first));
-	printDebug(std::to_string(start.second));
-	printDebug(std::to_string(end.first));
-	printDebug(std::to_string(end.second));
+	// printDebug(std::to_string(start.first));
+	// printDebug(std::to_string(start.second));
+	// printDebug(std::to_string(end.first));
+	// printDebug(std::to_string(end.second));
 
 	mov.first = abs((int)(end.first - start.first)) < (int)_map.getMapX() / 2
 	? end.first - start.first
@@ -262,16 +262,16 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 		{
 			case NORTH:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
-			dir = NORTH;
+			dir = WEST;
 			break ;
 			case SOUTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = SOUTH;
+			dir = WEST;
 			break ;
 			case EAST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = EAST;
+			dir = WEST;
 			break ;
 			default:
 			break ;
@@ -283,16 +283,16 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 		{
 			case NORTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = NORTH;
+			dir = EAST;
 			break ;
 			case SOUTH:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
-			dir = SOUTH;
+			dir = EAST;
 			break ;
 			case WEST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = WEST;
+			dir = EAST;
 			break ;
 			default:
 			break ;
@@ -308,15 +308,12 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 			case NORTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = NORTH;
 			break ;
 			case WEST:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
-			dir = WEST;
 			break ;
 			case EAST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = EAST;
 			break ;
 			default:
 			break ;
@@ -329,15 +326,12 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 			case SOUTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = SOUTH;
 			break ;
 			case EAST:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
-			dir = EAST;
 			break ;
 			case WEST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
-			dir = WEST;
 			break ;
 			default:
 			break ;
@@ -400,14 +394,13 @@ void				Client::_composFind(int level)
 	printDebug("Enter Composfind");
 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
-		_path->Pos(i, XY);
-		
+		_path->Pos(i, XY);		
 		for (auto &kv : compo)
 		{
 			
 			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() && _map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1))
 			{
-				printDebug("X= " + std::to_string(XY[0]) + " Y= " + std::to_string(XY[1]) );
+				printDebug("X= " + std::to_string(getCaseX(XY[0])) + " Y= " + std::to_string(getCaseY(XY[1])) );
 				printDebug(_map[getCaseX(XY[0])][getCaseY(XY[1])].toString());
 				printDebug(kv.first + " found on case");
 				_pathFinding(getPairCase(0, 0), getPairCase(XY[0], XY[1]));

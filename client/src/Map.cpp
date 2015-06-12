@@ -168,9 +168,9 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 						ret.first = ret.first - _totox;
 					if (ret.second >= (int)_totoy)
 						ret.second = ret.second - _totoy;
-					std::stringstream toto;
-					toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
-					Action::client->printDebug(toto.str());
+					// std::stringstream toto;
+					// toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
+					// Action::client->printDebug(toto.str());
 					return ret;
 				}
 				count++;
@@ -204,9 +204,9 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 						ret.first = ret.first - _totox;
 					if (ret.second >= (int)_totoy)
 						ret.second = ret.second - _totoy;
-					std::stringstream toto;
-					toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
-					Action::client->printDebug(toto.str());
+					// std::stringstream toto;
+					// toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
+					// Action::client->printDebug(toto.str());
 					return ret;
 				}
 				count++;
