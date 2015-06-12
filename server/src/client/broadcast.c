@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/07 21:53:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/11 23:52:07 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/12 20:13:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,9 @@ void	client_hear(t_client *receiver, t_client *emitter, char *message)
 	int orientation;
 
 	orientation = get_sound_direction(points[index]);
-	// orientation = (orientation + receiver->orientation) % 8 + 1;
+	orientation = orientation - (receiver->orientation - 1) * 2;
+	if (orientation < 0)
+		orientation += 8;
 
 	send_broadcast(receiver, orientation, message);
 }
