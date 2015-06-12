@@ -237,23 +237,41 @@ int					Client::_search(int level)
 void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, size_t> end)
 {
 	std::pair<int, int>	mov;
+	eOrientation dir = getPlayerOrientation();
+	printDebug(std::to_string(start.first));
+	printDebug(std::to_string(start.second));
+	printDebug(std::to_string(end.first));
+	printDebug(std::to_string(end.second));
 
-	mov.first = end.first - start.first < _map.getMapX() / 2 ? end.first + start.first : start.first - (_map.getMapX() - end.first);
-	mov.second = end.second - start.second < _map.getMapY() / 2 ? end.second + start.second : start.second - (_map.getMapY() - end.second);
+	mov.first = abs((int)(end.first - start.first)) < (int)_map.getMapX() / 2
+		? end.first - start.first
+		: start.first > _map.getMapX() / 2
+			? start.first - (_map.getMapX() + end.first)
+			: start.first - (_map.getMapX() - end.first);
 
+	mov.second = abs((int)(end.second - start.second)) < (int)_map.getMapY() / 2
+		? end.second - start.second
+		: start.second > _map.getMapY() / 2
+			? start.second - (_map.getMapY() + end.second)
+			: start.second - (_map.getMapY() - end.second);
+
+	printDebug("mov first " + std::to_string(mov.first) + " mov second " + std::to_string(mov.second));
 	if (mov.first < 0)
 	{
-		switch (getPlayerOrientation())
+		switch (dir)
 		{
 			case NORTH:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			dir = NORTH;
 			break ;
 			case SOUTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = SOUTH;
 			break ;
 			case EAST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = EAST;
 			break ;
 			default:
 			break ;
@@ -261,17 +279,20 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 	}
 	else if (mov.first > 0)
 	{
-		switch (getPlayerOrientation())
+		switch (dir)
 		{
 			case NORTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = NORTH;
 			break ;
 			case SOUTH:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			dir = SOUTH;
 			break ;
 			case WEST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = WEST;
 			break ;
 			default:
 			break ;
@@ -282,17 +303,20 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 
 	if (mov.second < 0)
 	{
-		switch (getPlayerOrientation())
+		switch (dir)
 		{
 			case NORTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = NORTH;
 			break ;
 			case WEST:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			dir = WEST;
 			break ;
 			case EAST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = EAST;
 			break ;
 			default:
 			break ;
@@ -300,17 +324,20 @@ void	Client::_pathFinding(std::pair<size_t, size_t> start, std::pair<size_t, siz
 	}
 	else if (mov.second > 0)
 	{
-		switch (getPlayerOrientation())
+		switch (dir)
 		{
 			case SOUTH:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = SOUTH;
 			break ;
 			case EAST:
 			_actions.push_back(Action::create(Action::MOVE_LEFT));
+			dir = EAST;
 			break ;
 			case WEST:
 			_actions.push_back(Action::create(Action::MOVE_RIGHT));
+			dir = WEST;
 			break ;
 			default:
 			break ;
@@ -327,9 +354,16 @@ size_t Client::getCaseX(int i)
 
 	tmp = _playerX + i;
 	if (tmp < 0)
-		return _map.getMapX() - tmp;
+	{
+		// printDebug(" < 0 getCaseX = " + std::to_string(tmp));
+		return _map.getMapX() + tmp;
+	}
 	else if (tmp >= (int)_map.getMapX())
-		return tmp % _map.getMapX();
+	{
+		// printDebug(" >= map getCaseX = " + std::to_string(tmp));
+		return tmp % (_map.getMapX() -1);
+	}
+	// printDebug("normal getCaseX = " + std::to_string(tmp));
 	return tmp;
 }
 
@@ -339,9 +373,16 @@ size_t Client::getCaseY(int i)
 
 	tmp = _playerY + i;
 	if (tmp < 0)
-		return _map.getMapY() - tmp;
+	{
+		// printDebug(" < 0 getCaseY = " + std::to_string(tmp));
+		return _map.getMapY() + tmp;
+	}
 	else if (tmp >= (int)_map.getMapY())
-		return tmp % _map.getMapY();
+{
+	// printDebug("> = map getCaseY = " + std::to_string(tmp));
+		return tmp % (_map.getMapY() - 1);
+}
+	// printDebug("normal getCaseY = " + std::to_string(tmp));
 	return tmp;
 }
 
@@ -363,7 +404,7 @@ void				Client::_composFind(int level)
 		for (auto &kv : compo)
 		{
 			
-			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() &&_map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1))
+			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() && _map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1))
 			{
 				printDebug("X= " + std::to_string(XY[0]) + " Y= " + std::to_string(XY[1]) );
 				printDebug(_map[getCaseX(XY[0])][getCaseY(XY[1])].toString());
@@ -377,7 +418,12 @@ void				Client::_composFind(int level)
 				return ;
 			}
 			else
+			{
+				//rotate + voir
+				_actions.push_back(Action::create(Action::MOVE_RIGHT));
+				_actions.push_back(Action::create(Action::SEE));
 				printDebug(kv.first + " not found on case");
+			}
 		}
 	}	
 }
