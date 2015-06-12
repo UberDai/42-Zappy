@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/12 23:37:19 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 01:01:18 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@
 # define NET_SEND_GFX		4
 
 # define REGEN_RATE			FOOD_DURATION
-# define REGEN_MAX			3
+# define REGEN_MAX			2
+# define REGEN_PROBABILITY	10
 
 # define NET_SUCCESS		"ok"
 # define NET_FAILURE		"ko"
@@ -149,6 +150,7 @@ typedef struct				s_zappy
 }							t_zappy;
 
 t_zappy						g_zappy;
+char						*g_item_names[ITEM_COUNT];
 
 void						map_init(void);
 void						tile_update_client_list(t_tile *tile);

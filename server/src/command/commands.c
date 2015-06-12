@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 00:48:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 01:07:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,46 @@ short	command_resume(t_client *client, t_uint argc, char **argv)
 
 short	command_pick(t_client *client, t_uint argc, char **argv)
 {
+	int		item;
+	t_uint	i;
+
 	if (client->status != STATUS_PLAYER || argc != 2)
 		return (COMMAND_FAIL);
-	if (client_pick(client, atoi(argv[1])))
+	i = 0;
+	item = -1;
+	while (i < ITEM_COUNT)
+	{
+		if (strcmp(argv[1], g_item_names[i]) == 0)
+		{
+			item = i;
+			break ;
+		}
+		i++;
+	}
+	if (item != -1 && client_pick(client, item))
 		return (COMMAND_SUCCESS);
 	return (COMMAND_FAIL);
 }
 
 short	command_drop(t_client *client, t_uint argc, char **argv)
 {
+	int		item;
+	t_uint	i;
+
 	if (client->status != STATUS_PLAYER || argc != 2)
 		return (COMMAND_FAIL);
-	if (client_drop(client, atoi(argv[1])))
+	i = 0;
+	item = -1;
+	while (i < ITEM_COUNT)
+	{
+		if (strcmp(argv[1], g_item_names[i]) == 0)
+		{
+			item = i;
+			break ;
+		}
+		i++;
+	}
+	if (item != -1 && client_drop(client, item))
 		return (COMMAND_SUCCESS);
 	return (COMMAND_FAIL);
 }

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 00:32:46 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/13 01:02:08 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,13 +144,16 @@ void		tile_regenerate(t_tile *tile)
 	i = 0;
 	while (i < ITEM_COUNT)
 	{
-		amount = rand_range(0, REGEN_MAX);
-		tile->items[i] += amount;
-		j = 0;
-		while (j < amount)
+		if (rand() % REGEN_PROBABILITY == 0)
 		{
-			gfx_tile_add(NULL, tile, i);
-			j++;
+			amount = rand_range(0, REGEN_MAX);
+			tile->items[i] += amount;
+			j = 0;
+			while (j < amount)
+			{
+				gfx_tile_add(NULL, tile, i);
+				j++;
+			}
 		}
 		i++;
 	}
@@ -162,14 +165,12 @@ char	*tile_content(t_tile *tile)
 	size_t		size;
 	t_uint		i;
 	t_uint		j;
-	static char	*names[ITEM_COUNT] = { "nourriture", "linemate", "deraumere",
-		"sibur", "mendiane", "phiras", "thystame" };
 
 	i = 0;
 	size = 0;
 	while (i < ITEM_COUNT)
 	{
-		size += tile->items[i] * strlen(names[i]) + tile->items[i];
+		size += tile->items[i] * strlen(g_item_names[i]) + tile->items[i];
 		i++;
 	}
 	str = calloc(size, sizeof(char));
@@ -181,7 +182,7 @@ char	*tile_content(t_tile *tile)
 		{
 			if (strlen(str) != 0)
 				strcat(str, " ");
-			strcat(str, names[i]);
+			strcat(str, g_item_names[i]);
 			j++;
 		}
 		i++;
