@@ -42,6 +42,12 @@ class	Client
 {
 public:
 
+
+	enum eMode{
+		NORMAL,
+		FIND_PLAYER
+	};
+
 	Client(unsigned int,
 			std::string = "Default Team Name",
 			std::string = "localhost");
@@ -78,6 +84,7 @@ public:
 private:
 	static const std::regex	_serverInfosFormat;
 	static Totems			_totems;
+	enum eMode				_mode;
 	Pathfinding				*_path;
 	const std::string		_teamName;
 	Map						_map;
@@ -91,6 +98,24 @@ private:
 	size_t					_playerY;
 	enum eOrientation		_playerOrientation;
 
+	// Broadcasting
+	bool					_mustMove;
+	size_t					_directionTomove;
+	size_t					_playersToFind;
+	size_t					_getPlayersToFind(void);
+	void					_setBroadcastMsg(std::stringstream &);
+	void					_extractBroadcastInfo(const std::string &, std::string &);
+	void					_moveTo(void);
+	void					_moveToUpperLeftCorner(void);
+	void					_moveToLeft(void);
+	void					_moveToLowerLeftCorner(void);
+	void					_moveToBehind(void);
+	void					_moveToLowerRightCorner(void);
+	void					_moveToRight(void);
+	void					_moveToUpperRightCorner(void);
+
+	void					_addAction(const std::string &);
+
 	std::string				_sendTeamInfo(void);
 	void					_loadServerInfos(const std::string &);
 	void					_forkstem(void);
@@ -100,6 +125,7 @@ private:
 	int						_search(int);
 	void					_playMove(void);
 	void					_pathFinding(std::pair<size_t, size_t>, std::pair<size_t, size_t>); // a deplacer
+	void					_findPlayerMode(void);
 };
 
 #endif /* CLIENT_HPP */
