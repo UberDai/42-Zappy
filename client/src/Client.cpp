@@ -394,10 +394,9 @@ void				Client::_composFind(int level)
 	printDebug("Enter Composfind");
 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
 	{
-		_path->Pos(i, XY);		
+		_path->Pos(i, XY);
 		for (auto &kv : compo)
 		{
-			
 			if (!_map[getCaseX(XY[0])][getCaseY(XY[1])].isEmpty() && _map[getCaseX(XY[0])][getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
 			{
 				printDebug("X= " + std::to_string(getCaseX(XY[0])) + " Y= " + std::to_string(getCaseY(XY[1])) );
@@ -418,7 +417,6 @@ void				Client::_composFind(int level)
 			}
 			printDebug(kv.first + " not found on case");
 		}
-		
 	}
 	printDebug(std::to_string(rot));
 	if (rot < 4)
