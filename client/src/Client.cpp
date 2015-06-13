@@ -77,7 +77,7 @@ Totems	Client::_totems =
 
 
 Client::Client(unsigned int port, std::string teamName, std::string hostName) :
-	_mode(FIND_PLAYER),
+	_mode(NORMAL),
 	_path(new Pathfinding()),
 	_teamName(teamName),
 	_network(new Network(this, port, hostName)),
@@ -190,10 +190,9 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 		printDebug("TROUVAY");
 		_addAction(Action::INCANTATION);
 		_mode = NORMAL;
-		exit(EXIT_SUCCESS);
+		return ;
 	}
 	_mustMove = true;
-	return printDebug("Player should now move toward player " + std::string(sm[1]));
 }
 
 
@@ -304,15 +303,14 @@ void				Client::_findPlayerMode(void)
 	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
 	a->setMessage(msg.str());
 	_actions.push_back(a);
-	_playMove();
 }
 
 void				Client::_ia(void)
 {
 	bool ok = false;
 
-	if (_mode == FIND_PLAYER)
-		return _findPlayerMode();
+	if (_mode == FIND_PLAYER && (ok = true))
+		_findPlayerMode();
 	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
 		printDebug("Verification du nombre de joueurs");
@@ -327,9 +325,11 @@ void				Client::_ia(void)
 			ok = true;
 		}
 	}
-	if (!ok)
+	if (!ok && _mode == NORMAL)
+	{
 		_composFind(_level);
-	_actions.push_back(Action::create(Action::INVENTORY));
+		_actions.push_back(Action::create(Action::INVENTORY));
+	}
 	_playMove();
 }
 
@@ -374,9 +374,8 @@ int					Client::_search(int level)
 		if (_map[_playerX][_playerY].has("joueur", 5))
 			return 1;
 	}
-	ActionBroadcast	*a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
-	a->setMessage("TRololo");
-	_actions.push_back(a);
+	printDebug("MODE FIND_PLAYER ON");
+	_mode = FIND_PLAYER;
 	return 0;
 }
 
