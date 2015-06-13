@@ -43,6 +43,7 @@ class	Network
 		std::string			recieve(void);
 		std::string			getHostName();
 		unsigned int		getPort();
+		int					getSocketPid(void) const;
 		void				close(void);
 	private:
 

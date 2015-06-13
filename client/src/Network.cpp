@@ -253,3 +253,4 @@ std::string		Network::send(const std::string &message)
 bool			Network::isConnected(void) { return _connected; }
 std::string		Network::getHostName(void) { return _hostName; }
 unsigned int	Network::getPort(void) { return _port; }
+int				Network::getSocketPid(void) const { return _socket_connect; }
