@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 01:01:18 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/14 03:23:53 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,7 @@ typedef struct				s_tile
 {
 	int						x;
 	int						y;
-	t_uint					client_count;
-	t_client				**clients;
-	short					refresh_client_list;
+	t_lst					clients;
 	t_uint					items[ITEM_COUNT];
 	t_queue					queue[CLIENT_QUEUE_MAX];
 }							t_tile;
@@ -153,13 +151,13 @@ t_zappy						g_zappy;
 char						*g_item_names[ITEM_COUNT];
 
 void						map_init(void);
-void						tile_update_client_list(t_tile *tile);
 t_tile						*tile_at(int x, int y);
 short						tile_add_item(t_tile *tile, int item);
 short						tile_remove_item(t_tile *tile, int item);
 void						tile_regenerate(t_tile *tile);
-char						*tile_content(t_tile *tile);
+char						*tile_content(t_tile *tile, t_client *client);
 void						map_regenerate(void);
+char						*append_string(char *src, const char *str);
 
 void						options_parse(t_uint ac, char **av);
 void						options_valid(void);

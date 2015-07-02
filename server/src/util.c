@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/10 01:48:06 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/14 03:09:32 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	print_client_positions(void)
 		x = 0;
 		while (x < g_zappy.width)
 		{
-			printf(" %u ", tile_at(x, y)->client_count);
+			printf(" %lu ", tile_at(x, y)->clients.size);
 			x++;
 		}
 		printf("\n");
@@ -118,4 +118,15 @@ void	print_tile(t_tile *tile)
 int		rand_range(int min, int max)
 {
 	return ((rand() % max) + min);
+}
+
+char	*append_string(char *src, const char *str)
+{
+	char	*output;
+
+	output = calloc(strlen(src) + strlen(str) + 1, sizeof(char));
+	memcpy(output, src, strlen(src));
+	strcat(output, str);
+	free(src);
+	return (output);
 }

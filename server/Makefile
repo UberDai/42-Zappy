@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/06/10 01:35:00 by amaurer          ###   ########.fr        #
+#    Updated: 2015/06/14 02:47:19 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
 
 CC			=	clang
-CC_FLAGS	=	-Wall -Werror -Wextra -g3
+# CC_FLAGS	=	-Wall -Werror -Wextra -Wsign-conversion -g3
+CC_FLAGS	=	-Wall -Werror -Wextra -pedantic -g3
 CC_LIBS		=	-lft -Llibft -lftlst -Lftlst
 
 all: ftlst libft $(BIN_NAME)
@@ -54,7 +55,7 @@ $(BIN_NAME): $(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(@D)
-	$(CC) $(CC_FLAGS) $(subst $() $(), -I, $(INC_DIR)) -o $@ -c $<
+	$(CC) $(CC_FLAGS)$(subst $() $(), -I, $(INC_DIR)) -o $@ -c $<
 
 clean:
 	make -C libft clean

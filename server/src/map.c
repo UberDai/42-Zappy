@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 01:02:08 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/14 03:27:55 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static void	*tile_create(t_uint x, t_uint y)
 	bzero(tile, sizeof(tile));
 	tile->x = x;
 	tile->y = y;
-	tile->refresh_client_list = 1;
 	return (tile);
 }
 
@@ -47,38 +46,6 @@ void		map_init(void)
 	}
 }
 
-void	tile_update_client_list(t_tile *tile)
-{
-	t_client	*client;
-	t_lstiter	iter;
-	t_uint		i;
-
-	if (!tile->refresh_client_list)
-		return ;
-	tile->refresh_client_list = 0;
-
-	if (tile->clients != NULL)
-		free(tile->clients);
-
-	if (tile->client_count == 0)
-		tile->clients = NULL;
-	else
-	{
-		tile->clients = calloc(tile->client_count, sizeof(t_client *));
-		init_iter(&iter, g_zappy.clients, increasing);
-		i = 0;
-		while (lst_iterator_next(&iter))
-		{
-			client = iter.data;
-			if (client->position == tile)
-			{
-				tile->clients[i] = client;
-				i++;
-			}
-		}
-	}
-}
-
 t_tile		*tile_at(int x, int y)
 {
 	t_tile	*tile;
@@ -92,8 +59,6 @@ t_tile		*tile_at(int x, int y)
 	y %= (int)g_zappy.height;
 
 	tile = g_zappy.map[y][x];
-	if (tile->refresh_client_list)
-		tile_update_client_list(tile);
 	return (tile);
 }
 
@@ -159,7 +124,14 @@ void		tile_regenerate(t_tile *tile)
 	}
 }
 
-char	*tile_content(t_tile *tile)
+static void	tile_content_append(char *str, const char *append)
+{
+	if (strlen(str) != 0)
+		strcat(str, " ");
+	strcat(str, append);
+}
+
+char	*tile_content(t_tile *tile, t_client *client)
 {
 	char		*str;
 	size_t		size;
@@ -167,10 +139,10 @@ char	*tile_content(t_tile *tile)
 	t_uint		j;
 
 	i = 0;
-	size = 0;
+	size = tile->clients.size * strlen("joueur ");
 	while (i < ITEM_COUNT)
 	{
-		size += tile->items[i] * strlen(g_item_names[i]) + tile->items[i];
+		size += tile->items[i] * (strlen(g_item_names[i]) + 1);
 		i++;
 	}
 	str = calloc(size, sizeof(char));
@@ -180,11 +152,16 @@ char	*tile_content(t_tile *tile)
 		j = 0;
 		while (j < tile->items[i])
 		{
-			if (strlen(str) != 0)
-				strcat(str, " ");
-			strcat(str, g_item_names[i]);
+			tile_content_append(str, g_item_names[i]);
 			j++;
 		}
+		i++;
+	}
+	i = 0;
+	while (i < tile->clients.size)
+	{
+		if (lst_data_at(&(tile->clients), i) != client)
+			tile_content_append(str, "joueur");
 		i++;
 	}
 	return (str);

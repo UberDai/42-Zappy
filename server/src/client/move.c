@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:02:12 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:19:47 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/14 02:12:15 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 short	client_move_to(t_client *client, t_tile *tile)
 {
 	if (client->position != NULL)
-	{
-		client->position->client_count--;
-		client->position->refresh_client_list = 1;
-	}
-	tile->client_count++;
-	tile->refresh_client_list = 1;
+		lst_remove(&(tile->clients), lst_index_of(&(tile->clients), client));
+	lst_push_back(&(tile->clients), client);
 	client->position = tile;
 	gfx_client_move_to(client, client->position);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/13 01:07:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/14 03:24:07 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,17 +131,6 @@ short	command_connect_count(t_client *client, t_uint argc, char **argv)
 	return (COMMAND_NONE);
 }
 
-static char	*append_string(char *src, char *str)
-{
-	char	*output;
-
-	output = calloc(strlen(src) + strlen(str) + 1, sizeof(char));
-	memcpy(output, src, strlen(src));
-	strcat(output, str);
-	free(src);
-	return (output);
-}
-
 short	command_see(t_client *client, t_uint argc, char **argv)
 {
 	char		*str;
@@ -158,7 +147,7 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	init_iter(&iter, vision, increasing);
 	while (lst_iterator_next(&iter))
 	{
-		content = tile_content(iter.data);
+		content = tile_content(iter.data, client);
 		str = append_string(str, content);
 		free(content);
 
