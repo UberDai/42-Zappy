@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/04 00:03:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/04 16:34:04 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/07 19:39:54 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,39 +45,41 @@ static void	rotate_270(int *x, int *y)
 	*y = y2;
 }
 
+static void	rotate_coords(t_client *client, int *x, int *y)
+{
+	if (client->orientation == ORIENT_EAST)
+		rotate_90(x, y);
+	else if (client->orientation == ORIENT_NORTH)
+		rotate_180(x, y);
+	else if (client->orientation == ORIENT_WEST)
+		rotate_270(x, y);
+}
+
 t_lst	*get_vision(t_client *client)
 {
-	(void)rotate_90;
-	(void)rotate_180;
-	(void)rotate_270;
-
 	t_lst	*list;
 	int		row;
 	int		col;
 	int		x;
 	int		y;
 
-	client->level = 1;
-
 	list = new_lst();
 	row = 0;
 	while (row <= LEVEL)
 	{
 		col = -row;
-
 		while (col <= row)
 		{
 			x = col;
 			y = row;
-			rotate_90(&x, &y);
-			printf("%i %i\t", x, y);
+
+			x += client->position->x;
+			y += client->position->y;
+			rotate_coords(client, &x, &y);
+			lst_push_back(list, tile_at(x, y));
 			col++;
 		}
-		printf("\n");
 		row++;
 	}
-
-	printf("\n");
-
 	return (list);
 }
