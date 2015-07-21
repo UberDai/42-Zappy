@@ -173,7 +173,7 @@ void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-	if (_mode != FIND_PLAYER)
+	if (_mode != FIND_PLAYER || _mode != CHECK_PLAYER)
 		return printDebug("Client is not seeking for player. Broadcast ignored.");
 	else if (_mustMove)
 		return printDebug("Client is already moving towards another player. Broadcast ignored.");
@@ -257,7 +257,7 @@ void				Client::_ia(void)
 	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
 		printDebug("Verification du nombre de joueurs");
-		if (_search(_level) != 0)
+		if (_search(_level) != 0) //if receive broadcast all_good
 		{
 			ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
 			ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
@@ -266,6 +266,7 @@ void				Client::_ia(void)
 			actions.push_back(incantation); //maj de la carte -> remove item used
 			actions.push_back(voir);
 			ok = true;
+			_mode = CHECK_PLAYER;
 		}
 		else
 		{
@@ -385,10 +386,7 @@ int					Client::_search(int level)
 	if (level == 2 || level == 3)
 	{
 		if (map[_playerX][_playerY].has("joueur", 1))
-		{
-			printDebug("nb de joueur ok");
 			return 1;
-		}
 	}
 	if (level == 4 || level == 5)
 	{

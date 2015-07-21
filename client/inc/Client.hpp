@@ -46,7 +46,8 @@ public:
 	enum eMode {
 		NORMAL,
 		FIND_PLAYER,
-		WAIT_PLAYER
+		WAIT_PLAYER,
+		CHECK_PLAYER
 	};
 
 	enum eBroadcastType {
