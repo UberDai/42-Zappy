@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-07-21 23:13:04
+//           :      _/|      :       Last Edit  : 2015-07-22 00:58:30
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -43,9 +43,16 @@ class	Client
 public:
 
 
-	enum eMode{
+	enum eMode {
 		NORMAL,
-		FIND_PLAYER
+		FIND_PLAYER,
+		WAIT_PLAYER
+	};
+
+	enum eBroadcastType {
+		SEEK,
+		FOUND,
+		ALL_GOOD
 	};
 
 	Client(unsigned int,
@@ -92,10 +99,12 @@ private:
 
 	// Broadcasting
 	bool					_mustMove;
+	std::string				_broadcastTarget;
 	size_t					_directionTomove;
 	size_t					_playersToFind;
 	size_t					_getPlayersToFind(void);
 	void					_setBroadcastMsg(std::stringstream &);
+	void					_sendBroadcast(enum eBroadcastType type);
 	void					_extractBroadcastInfo(const std::string &, std::string &);
 	void					_moveTo(void);
 	void					_moveToUpperLeftCorner(void);

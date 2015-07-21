@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-21 23:13:15
+//           :      _/|      :       Last Edit  : 2015-07-22 00:59:16
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -169,6 +169,8 @@ void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
 	_directionTomove = b[8] - 48;
 }
 
+
+
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
 	if (_mode != FIND_PLAYER)
@@ -186,16 +188,98 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 
 	if (sm.size() != 4 || std::string(sm[1]) != std::to_string(hash(_teamName)))
 		return printDebug("Broadcast recieved is not from our team. Ignoring. size " + std::to_string(sm.size()) + " msg : \"" + msg + "\"");
+
+	// Si tout est ok, poser au sol et envoyer incantation à tout le monde
+
+	if (_broadcastTarget == "")
+		_broadcastTarget = std::string(sm[2]);
+
 	if (_directionTomove == 0)
 	{
 		printDebug("TROUVAY");
-		_addAction(Action::INCANTATION);
-		_mode = NORMAL;
+		_sendBroadcast(FOUND);
+		_mode = WAIT_PLAYER;
 		return ;
 	}
 	_mustMove = true;
 }
 
+void						Client::_sendBroadcast(enum eBroadcastType type)
+{
+	std::stringstream		msg;
+	std::hash<std::string>	hash;
+	ActionBroadcast			*a;
+
+	msg
+		<< hash(_teamName) << " "
+		<< getpid() << " "
+	;
+
+	if (type == SEEK)
+		msg	<< _playersToFind;
+	else if (type == FOUND)
+		msg << " found " << _broadcastTarget;
+	else if (type == ALL_GOOD)
+		msg << "incant";
+
+	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
+	a->setMessage(msg.str());
+	actions.push_back(a);
+}
+
+void				Client::_setBroadcastMsg(std::stringstream &str)
+{
+	std::hash<std::string>	hash;
+
+	str
+		<< hash(_teamName) << " "
+		<< getpid() << " "
+		<< _playersToFind
+	;
+}
+
+void				Client::_findPlayerMode(void)
+{
+	std::stringstream	msg;
+
+	if (_mustMove)
+		return _moveTo();
+	_playersToFind = _getPlayersToFind();
+	_sendBroadcast(SEEK);
+}
+
+void				Client::_ia(void)
+{
+	bool ok = false;
+
+	if (_mode == FIND_PLAYER && (ok = true))
+		_findPlayerMode();
+	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
+	{
+		printDebug("Verification du nombre de joueurs");
+		if (_search(_level) != 0)
+		{
+			ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
+			ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
+
+			incantation->setFailureIndex(-1);
+			actions.push_back(incantation); //maj de la carte -> remove item used
+			actions.push_back(voir);
+			ok = true;
+		}
+		else
+		{
+			printDebug("MODE FIND_PLAYER ON");
+			_mode = FIND_PLAYER;
+		}
+	}
+	if (!ok && _mode == NORMAL)
+	{
+		_composFind(_level);
+		actions.push_back(Action::create(Action::INVENTORY));
+	}
+	_playMove();
+}
 
 size_t				Client::_getPlayersToFind(void)
 {
@@ -275,60 +359,6 @@ void				Client::_moveTo(void)
 	}
 }
 
-void				Client::_setBroadcastMsg(std::stringstream &str)
-{
-	std::hash<std::string>	hash;
-
-	str
-		<< hash(_teamName) << " "
-		<< _network->getSocketPid() << " "
-		<< _playersToFind
-	;
-}
-
-void				Client::_findPlayerMode(void)
-{
-	std::stringstream	msg;
-	ActionBroadcast		*a;
-
-	printDebug("MAXIKEK");
-	if (_mustMove)
-		return _moveTo();
-	_playersToFind = _getPlayersToFind();
-	_setBroadcastMsg(msg);
-	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
-	a->setMessage(msg.str());
-	actions.push_back(a);
-}
-
-void				Client::_ia(void)
-{
-	bool ok = false;
-
-	if (_mode == FIND_PLAYER && (ok = true))
-		_findPlayerMode();
-	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
-	{
-		printDebug("Verification du nombre de joueurs");
-		if (_search(_level) != 0)
-		{
-			ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
-			ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
-
-			incantation->setFailureIndex(-1);
-			actions.push_back(incantation); //maj de la carte -> remove item used
-			actions.push_back(voir);
-			ok = true;
-		}
-	}
-	if (!ok && _mode == NORMAL)
-	{
-		_composFind(_level);
-		actions.push_back(Action::create(Action::INVENTORY));
-	}
-	_playMove();
-}
-
 void				Client::_playMove(void)
 {
 	int			tmp;
@@ -370,13 +400,8 @@ int					Client::_search(int level)
 		if (map[_playerX][_playerY].has("joueur", 5))
 			return 1;
 	}
-	printDebug("MODE FIND_PLAYER ON");
-	_mode = FIND_PLAYER;
 	return 0;
 }
-
-// a deplacer
-
 
 void				Client::_composFind(int level)
 {
