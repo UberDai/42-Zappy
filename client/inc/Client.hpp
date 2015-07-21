@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-06-09 22:18:54
+//           :      _/|      :       Last Edit  : 2015-07-21 23:13:04
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -67,19 +67,13 @@ public:
 	enum eOrientation		getPlayerOrientation() const;
 	void					setPlayerOrientation(enum eOrientation);
 	Map						&getMap(void);
-	size_t					getCaseX(int i);
-	size_t					getCaseY(int i);
-	std::pair<size_t, size_t>	getPairCase(int x, int y);
-	// Gestion de la map perso beta
-
 	size_t					getPlayerX() const;
-
-	std::map<size_t, std::string>  fov;
-	//vector ??
-	//std::map<size_t, std::map<size_t, std::string> > _map; //inventaire ??
-
 	Totems					&getTotems();
 	void					printDebug(const std::string &, int = 0);
+
+	std::map<size_t, std::string>  fov;
+	Map						map;
+	std::vector<Action *>	actions;
 
 private:
 	static const std::regex	_serverInfosFormat;
@@ -87,13 +81,11 @@ private:
 	enum eMode				_mode;
 	Pathfinding				*_path;
 	const std::string		_teamName;
-	Map						_map;
 	Network					*_network;
 	unsigned int			_level;
 	unsigned int			_availableConnections;
 	std::ofstream 			_ofs;
 	Inventory				_inventory;
-	std::vector<Action *>	_actions;
 	size_t					_playerX;
 	size_t					_playerY;
 	enum eOrientation		_playerOrientation;
@@ -124,7 +116,6 @@ private:
 	void					_composFind(int);
 	int						_search(int);
 	void					_playMove(void);
-	void					_pathFinding(std::pair<size_t, size_t>, std::pair<size_t, size_t>); // a deplacer
 	void					_findPlayerMode(void);
 };
 
