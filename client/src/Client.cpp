@@ -173,7 +173,7 @@ void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-	if (_mode != FIND_PLAYER || _mode != CHECK_PLAYER || _mode != NORMAL_FIND)
+	if (_mode != FIND_PLAYER && _mode != CHECK_PLAYER && _mode != NORMAL_FIND)
 		return printDebug("Client is not seeking for player. Broadcast ignored.");
 	else if (_mustMove)
 		return printDebug("Client is already moving towards another player. Broadcast ignored.");
@@ -272,7 +272,7 @@ void				Client::_ia(void)
 {
 	bool ok = false;
 
-	if ((_mode == FIND_PLAYER || _mode == NORMAL_FIND )&& (ok = true))
+	if ((_mode == FIND_PLAYER || _mode == NORMAL_FIND ) && (ok = true))
 		_findPlayerMode();
 	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
@@ -288,16 +288,18 @@ void				Client::_ia(void)
 				actions.push_back(incantation); //maj de la carte -> remove item used
 				actions.push_back(voir);
 				ok = true;
+				printDebug("MODE Normal find ON");
+				_mode = NORMAL_FIND;
 			}
-			// else
-			// {
-			// 	printDebug("MODE CHeCK_PLAYER ON");
-			// 	///////// BUG ////////////
-			// 	///////// BUG ////////////
-			// 	_mode = CHECK_PLAYER;
-			// 	///////// BUG ////////////
-			// 	///////// BUG ////////////
-			// }
+			else
+			{
+				printDebug("MODE CHeCK_PLAYER ON");
+				///////// BUG ////////////
+				///////// BUG ////////////
+				_mode = CHECK_PLAYER;
+				///////// BUG ////////////
+				///////// BUG ////////////
+			}
 
 		}
 		else
