@@ -188,17 +188,29 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 	std::regex_match(msg, sm, broadcastFormat);
 	if (_mode == FIND_PLAYER)
 	{
-		//si FOUND # = #
+		if (sm[3] == "follow" &&  std::stol(sm[4].str()) == getpid())
+		{
+			printDebug("on me suis");
+		}
+		// boradcast pid ok pidfollower
+		//# + 1
+		//endif
+		//if (broadcast = =found)
+		//FOUND +1
+		//endif
+		//if (FOUND = #)
 		//broadcast incantation
 		//incante
 		//mode check
 		//return
+		//endif
 	}
 	if (_mode == WAIT_PLAYER)
 	{
 		//si ALl_GOOD
 		//incante
 		//moe check
+		//reset broqdcast target
 		//retun
 	}
 if (_mode == FIND_PLAYER || _mode == NORMAL_FIND)
@@ -210,7 +222,11 @@ if (_mode == FIND_PLAYER || _mode == NORMAL_FIND)
 	// Si tout est ok, poser au sol et envoyer incantation à tout le monde
 
 	if (_broadcastTarget == "")
+	{
+		printDebug("follow");
+		_sendBroadcast(FOLLOW);
 		_broadcastTarget = std::string(sm[2]);
+	}
 
 	if (_directionTomove == 0)
 	{
@@ -241,7 +257,8 @@ void						Client::_sendBroadcast(enum eBroadcastType type)
 		msg << " found " << _broadcastTarget;
 	else if (type == ALL_GOOD)
 		msg << "incant";
-
+	else if (type == FOLLOW)
+		msg << " follow " << _broadcastTarget;
 	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
 	a->setMessage(msg.str());
 	actions.push_back(a);
@@ -392,6 +409,7 @@ void				Client::_moveTo(void)
 		case 8: 	return _moveToUpperRightCorner();
 		default: 	return;
 	}
+	//add voir + recup food
 }
 
 void				Client::_playMove(void)

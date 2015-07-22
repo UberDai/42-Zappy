@@ -54,7 +54,8 @@ public:
 	enum eBroadcastType {
 		SEEK,
 		FOUND,
-		ALL_GOOD
+		ALL_GOOD,
+		FOLLOW
 	};
 
 	Client(unsigned int,
