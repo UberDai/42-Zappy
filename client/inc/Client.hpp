@@ -45,6 +45,7 @@ public:
 
 	enum eMode {
 		NORMAL,
+		NORMAL_FIND,
 		FIND_PLAYER,
 		WAIT_PLAYER,
 		CHECK_PLAYER

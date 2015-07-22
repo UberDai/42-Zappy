@@ -173,13 +173,14 @@ void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-	if (_mode != FIND_PLAYER || _mode != CHECK_PLAYER)
+	if (_mode != FIND_PLAYER || _mode != CHECK_PLAYER || _mode != NORMAL_FIND)
 		return printDebug("Client is not seeking for player. Broadcast ignored.");
 	else if (_mustMove)
 		return printDebug("Client is already moving towards another player. Broadcast ignored.");
 
 	std::hash<std::string>	hash;
 	std::regex				broadcastFormat("(\\S+) (\\S+) (\\S+)");
+	std::regex				broadcastFormat2("(\\S+) (\\S+) (\\S+)");
 	std::smatch				sm;
 	std::string				msg;
 
@@ -200,10 +201,12 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 		//moe check
 		//retun
 	}
-
+if (_mode == FIND_PLAYER || _mode == NORMAL_FIND)
+{
 	if (sm.size() != 4 || std::string(sm[1]) != std::to_string(hash(_teamName)))
 		return printDebug("Broadcast recieved is not from our team. Ignoring. size " + std::to_string(sm.size()) + " msg : \"" + msg + "\"");
-
+	if (_mode == NORMAL_FIND)
+		_mode = FIND_PLAYER;
 	// Si tout est ok, poser au sol et envoyer incantation à tout le monde
 
 	if (_broadcastTarget == "")
@@ -216,6 +219,8 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 		_mode = WAIT_PLAYER;
 		return ;
 	}
+}
+
 	_mustMove = true;
 }
 
@@ -267,29 +272,41 @@ void				Client::_ia(void)
 {
 	bool ok = false;
 
-	if (_mode == FIND_PLAYER && (ok = true))
+	if ((_mode == FIND_PLAYER || _mode == NORMAL_FIND )&& (ok = true))
 		_findPlayerMode();
 	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
 	{
 		printDebug("Verification du nombre de joueurs");
 		if (_search(_level) != 0) //if receive broadcast all_good
 		{
-			ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
-			ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
+			if (_level == 1)
+			{
+				ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
+				ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
 
-			incantation->setFailureIndex(-1);
-			actions.push_back(incantation); //maj de la carte -> remove item used
-			actions.push_back(voir);
-			ok = true;
-			_mode = CHECK_PLAYER;
+				incantation->setFailureIndex(-1);
+				actions.push_back(incantation); //maj de la carte -> remove item used
+				actions.push_back(voir);
+				ok = true;
+			}
+			// else
+			// {
+			// 	printDebug("MODE CHeCK_PLAYER ON");
+			// 	///////// BUG ////////////
+			// 	///////// BUG ////////////
+			// 	_mode = CHECK_PLAYER;
+			// 	///////// BUG ////////////
+			// 	///////// BUG ////////////
+			// }
+
 		}
 		else
 		{
 			printDebug("MODE FIND_PLAYER ON");
-			_mode = FIND_PLAYER;
+			_mode = NORMAL_FIND;
 		}
 	}
-	if (!ok && _mode == NORMAL)
+	if (!ok && (_mode == NORMAL || _mode == NORMAL_FIND))
 	{
 		_composFind(_level);
 		actions.push_back(Action::create(Action::INVENTORY));
