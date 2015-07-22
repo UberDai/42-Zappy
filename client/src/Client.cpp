@@ -185,6 +185,21 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 
 	_extractBroadcastInfo(broadcast, msg);
 	std::regex_match(msg, sm, broadcastFormat);
+	if (_mode == FIND_PLAYER)
+	{
+		//si FOUND # = #
+		//broadcast incantation
+		//incante
+		//mode check
+		//return
+	}
+	if (_mode == WAIT_PLAYER)
+	{
+		//si ALl_GOOD
+		//incante
+		//moe check
+		//retun
+	}
 
 	if (sm.size() != 4 || std::string(sm[1]) != std::to_string(hash(_teamName)))
 		return printDebug("Broadcast recieved is not from our team. Ignoring. size " + std::to_string(sm.size()) + " msg : \"" + msg + "\"");
