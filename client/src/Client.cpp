@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-26 03:10:29
+//           :      _/|      :       Last Edit  : 2015-07-27 01:51:25
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -101,6 +101,12 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_modeFun[TOWARDS_MATE] = &Client::_towardsMateMode;
 	_modeFun[REUNION] = &Client::_reunionMode;
 	_modeFun[FOOD_EMERGENCY] = &Client::_foodEmergencyMode;
+
+	_broadcastHandler[NORMAL] = &Client::_normalBroadcastHandler;
+	_broadcastHandler[WAIT_MATES] = &Client::_waitMatesBroadcastHandler;
+	_broadcastHandler[TOWARDS_MATE] = &Client::_towardsMateBroadcastHandler;
+	_broadcastHandler[REUNION] = &Client::_reunionBroadcastHandler;
+	_broadcastHandler[FOOD_EMERGENCY] = &Client::_foodEmergencyBroadcastHandler;
 }
 
 Client::Client(Client const &src) :
@@ -123,6 +129,31 @@ Client				&Client::operator=(Client const &rhs)
 	return *this;
 }
 
+void					Client::_normalBroadcastHandler(const std::string & broadcast)
+{
+	(void)broadcast;
+}
+
+void					Client::_waitMatesBroadcastHandler(const std::string & broadcast)
+{
+	(void)broadcast;
+}
+
+void					Client::_towardsMateBroadcastHandler(const std::string & broadcast)
+{
+	(void)broadcast;
+}
+
+void					Client::_reunionBroadcastHandler(const std::string & broadcast)
+{
+	(void)broadcast;
+}
+
+void					Client::_foodEmergencyBroadcastHandler(const std::string & broadcast)
+{
+	(void)broadcast;
+}
+
 void				Client::_executeActionList(void)
 {
 	int			tmp;
@@ -140,6 +171,31 @@ void				Client::_executeActionList(void)
 	for (auto &a : actions)
 		delete a;
 	actions.clear();
+
+	if (tmp == -2)
+	{
+		_addAction(Action::SEE);
+		_executeActionList();
+	}
+}
+
+void				Client::_dropCompo(void)
+{
+	std::map<std::string, size_t> & compo = _totems[_level];
+
+	for (auto & kv : compo)
+	{
+		int toDrop = static_cast<int>(kv.second - map[_playerX][_playerY][kv.first]);
+
+		toDrop = toDrop < 0 ? 0 : toDrop;
+
+		for (int i = 0; i < toDrop; i++)
+		{
+			ActionDrop	*a = static_cast<ActionDrop *>(Action::create(Action::DROP));
+			a->setObject(kv.first);
+			actions.push_back(a);
+		}
+	}
 }
 
 void				Client::_changeToMode(enum eMode m)
@@ -156,7 +212,6 @@ bool				Client::_composOk(void)
 		if (_inventory[kv.first] < kv.second) // Checker aussi si inventaire + case courante = compo
 			return false;
 	}
-	//drop compos ????
 	return true;
 }
 
@@ -227,12 +282,13 @@ void				Client::_moveTowardsWaitingPlayer(void)
 	}
 }
 
-void				Client::_lookForCompos(void)
+void				Client::_lookFor(int mode)
 {
-	std::map<std::string, size_t> &	compo = _totems[_level];
+	std::map<std::string, size_t> food = { {Inventory::FOOD, 1} };
+	std::map<std::string, size_t> &	compo = mode == 0 ? _totems[_level] : food;
 	int XY[2] = {0, 0};
 
-	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
+	for (unsigned i = 1; i < (_level * 4 * 4); i++)
 	{
 		_path->Pos(i, XY);
 		for (auto &kv : compo)
@@ -247,9 +303,9 @@ void				Client::_lookForCompos(void)
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 
+				printDebug("Heading towards closest " + kv.first);
 				actions.push_back(Action::create(Action::SEE));
 				actions.push_back(a);
-				printDebug("Heading towards closest " + kv.first);
 				return ;
 			}
 		}
@@ -278,6 +334,13 @@ void				Client::_explore(void)
 	}
 }
 
+void				Client::_sendBroadcast(enum eBroadcastType t)
+{
+	printDebug("IA - Send Broadcast");
+
+	(void)t;
+}
+
 void				Client::_normalMode(void)
 {
 	printDebug("IA - Normal Mode");
@@ -290,27 +353,15 @@ void				Client::_normalMode(void)
 		if (_level == 1)
 		{
 			printDebug("First level, compos OK, drop compos, incantation.");
-			//drop compos if not on case
+			_dropCompo();
 			//modifier action if echec add see.
 			return _addAction(Action::INCANTATION);
 		}
 		printDebug("Compos ok, level 2+, passage en mode reunion");
 		return _changeToMode(REUNION);
 	}
-	_lookForCompos();
+	_lookFor();
 }
-
-void				Client::_findFood(void)
-{
-}
-
-void				Client::_sendBroadcast(enum eBroadcastType t)
-{
-	printDebug("IA - Send Broadcast");
-
-	(void)t;
-}
-
 
 void				Client::_waitMatesMode(void)
 {
@@ -318,18 +369,21 @@ void				Client::_waitMatesMode(void)
 
 	if (!_hasEnoughFood())
 	{
+		printDebug("Change to mode food emergency");
 		_sendBroadcast(STOP_WAITING);
 		return _changeToMode(FOOD_EMERGENCY);
 	}
 
 	if (_enoughMatesToIncant())
 	{
+		printDebug("Enough mates to incant");
+		// Drop les compos
 		_addAction(Action::INCANTATION);
 		_sendBroadcast(INCANTATION);
 		_sendBroadcast(STOP_WAITING);
 		return _changeToMode(NORMAL);
 	}
-
+	printDebug("Nothing special.");
 	return _sendBroadcast(WAIT);
 }
 
@@ -360,7 +414,7 @@ void				Client::_foodEmergencyMode(void)
 
 	if (_hasEnoughFood())
 		return _changeToMode(NORMAL);
-	_findFood();
+	_lookFor(1);
 }
 
 void				Client::_ia(void)
@@ -414,7 +468,7 @@ void				Client::hasDied(void)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-	(void)broadcast;
+		(this->*_broadcastHandler[_mode])(broadcast);
 }
 
 void				Client::_moveToUpperLeftCorner(void)

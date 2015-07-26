@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Network.cpp
 //           :               :       Creation   : 2015-05-21 01:08:12
-//           :      _/|      :       Last Edit  : 2015-06-10 00:42:01
+//           :      _/|      :       Last Edit  : 2015-07-27 00:17:09
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -202,9 +202,7 @@ std::string		Network::recieve(void)
 	int			ret;
 	char		*buf;
 
-
 	ret = get_next_line(_socket_connect, &buf);
-	//ret = recv(_socket_connect, buf, BUFF_SIZE - 1, 0);
 	switch (ret)
 	{
 		case -1:

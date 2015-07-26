@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-07-26 03:10:51
+//           :      _/|      :       Last Edit  : 2015-07-27 00:54:38
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -72,8 +72,9 @@ public:
 	};
 
 	typedef void (Client::* ClientFunction)();
+	typedef void (Client::* BroadcastHandler)(const std::string &);
 	using ModesMap = std::map<enum eMode, ClientFunction>;
-	using BroadcastHandlingMap = std::map<enum eMode, ClientFunction>;
+	using BroadcastHandlerMap = std::map<enum eMode, BroadcastHandler>;
 
 	Client(unsigned int,
 			std::string = "Default Team Name",
@@ -106,7 +107,7 @@ private:
 	static const std::regex	_serverInfosFormat;
 	static Totems			_totems;
 	ModesMap				_modeFun;
-	BroadcastHandlingMap	_broadcastHandle;
+	BroadcastHandlerMap		_broadcastHandler;
 	enum eMode				_mode;
 	Pathfinding				*_path;
 	const std::string		_teamName;
@@ -138,11 +139,11 @@ private:
 	void					_changeToMode(enum eMode);
 
 	// Broadcast Handlers
-	void					_normalBroadcastHandler(void);
-	void					_waitMatesBroadcastHandler(void);
-	void					_towardsMateBroadcastHandler(void);
-	void					_reunionBroadcastHandler(void);
-	void					_foodEmergencyBroadcastHandler(void);
+	void					_normalBroadcastHandler(const std::string &);
+	void					_waitMatesBroadcastHandler(const std::string &);
+	void					_towardsMateBroadcastHandler(const std::string &);
+	void					_reunionBroadcastHandler(const std::string &);
+	void					_foodEmergencyBroadcastHandler(const std::string &);
 
 	// IA
 	void					_ia(void);
@@ -153,8 +154,7 @@ private:
 	bool					_someoneIsWaiting(void);
 	size_t					_getPlayersToFind(void);
 	void					_moveTowardsWaitingPlayer(void);
-	void					_lookForCompos(void);
-	void					_findFood(void);
+	void					_lookFor(int = 0);
 	void					_sendBroadcast(enum eBroadcastType);
 	void					_executeActionList(void);
 	void					_explore(void);
