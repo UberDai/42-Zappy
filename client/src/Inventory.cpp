@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Inventory.cpp
 //           :               :       Creation   : 2015-06-02 18:59:27
-//           :      _/|      :       Last Edit  : 2015-06-10 00:34:31
+//           :      _/|      :       Last Edit  : 2015-07-26 02:46:09
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -96,7 +96,7 @@ void	Inventory::add(const std::string & obj, int qty)
 
 	_data[obj] = prevQty + qty;
 
-	if (_data.at(obj) == 0)
+	if (_data.at(obj) <= 0)
 		_data.erase(obj);
 }
 

@@ -65,21 +65,21 @@ void Pathfinding::getOffset(int circle, int pos, int XY[2])
 	switch (q)
 	{
 		case 0:
-		XY[0] += 0;
-		XY[1] += r;
-		break;
+			XY[0] += 0;
+			XY[1] += r;
+			break;
 		case 1:
-		XY[1] += 2 * circle;
-		XY[0] += r;
-		break;
+			XY[1] += 2 * circle;
+			XY[0] += r;
+			break;
 		case 2:
-		XY[0] += 2 * circle;
-		XY[1] += 2 * circle - r;
-		break;
+			XY[0] += 2 * circle;
+			XY[1] += 2 * circle - r;
+			break;
 		default:
-		XY[1] += 0;
-		XY[0] += 2 * circle - r;
-		break;
+			XY[1] += 0;
+			XY[0] += 2 * circle - r;
+			break;
 	}
 }
 
@@ -201,6 +201,7 @@ size_t Pathfinding::getCaseX(int i)
 	int tmp;
 
 	tmp = _client.getPlayerX() + i;
+
 	if (tmp < 0)
 		return _client.map.getMapX() + tmp;
 	else if (tmp >= (int)_client.map.getMapX())
@@ -213,6 +214,7 @@ size_t Pathfinding::getCaseY(int i)
 	int tmp;
 
 	tmp = _client.getPlayerY() + i;
+
 	if (tmp < 0)
 		return _client.map.getMapY() + tmp;
 	else if (tmp >= (int)_client.map.getMapY())

@@ -50,10 +50,10 @@ int	ActionTake::execute(Network &network)
 	if (data == Network::MSG_SUCCESS)
 	{
 		_inventory.add(_obj, 1);
+		client->map[client->getPlayerX()][client->getPlayerY()].add(_obj, -1);
 		return _successIndex;
 	}
 	return _failIndex;
 }
 
 void	ActionTake::setObject(const std::string &obj) { _obj = obj; }
-
