@@ -156,6 +156,7 @@ bool				Client::_composOk(void)
 		if (_inventory[kv.first] < kv.second) // Checker aussi si inventaire + case courante = compo
 			return false;
 	}
+	//drop compos ????
 	return true;
 }
 
@@ -289,6 +290,7 @@ void				Client::_normalMode(void)
 		if (_level == 1)
 		{
 			printDebug("First level, compos OK, drop compos, incantation.");
+			//drop compos if not on case
 			//modifier action if echec add see.
 			return _addAction(Action::INCANTATION);
 		}
