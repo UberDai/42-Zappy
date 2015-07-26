@@ -289,6 +289,7 @@ void				Client::_normalMode(void)
 		if (_level == 1)
 		{
 			printDebug("First level, compos OK, drop compos, incantation.");
+			//modifier action if echec add see.
 			return _addAction(Action::INCANTATION);
 		}
 		printDebug("Compos ok, level 2+, passage en mode reunion");
