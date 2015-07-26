@@ -55,6 +55,8 @@ static char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	total_size;
 	char	*str_new;
 
+	if (!s1 || !s2)
+		return NULL;
 	total_size = strlen(s1) + strlen(s2) + 1;
 	str_new = static_cast<char *>(malloc(sizeof(char *) * total_size));
 	if (str_new && s1 && s2)
@@ -119,7 +121,7 @@ static int				get_next_line(int const fd, char **line)
 		return (1);
 	else if ((read_status = recv(fd, buf, Network::BUFF_SIZE - 1, 0)) <= 0)
 	{
-		if (strlen(remaining) > 0)
+		if (remaining && strlen(remaining) > 0)
 			load_line(line, &remaining, NULL);
 		return (read_status);
 	}
