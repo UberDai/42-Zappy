@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-07-27 00:54:38
+//           :      _/|      :       Last Edit  : 2015-07-27 02:34:40
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -65,9 +65,10 @@ public:
 		FOOD_EMERGENCY
 	};
 
-	enum eBroadcastType {
+	enum eBroadcastType : int {
 		WAIT,
 		STOP_WAITING,
+		ON_SAME_CASE,
 		INCANTATION
 	};
 
@@ -139,6 +140,7 @@ private:
 	void					_changeToMode(enum eMode);
 
 	// Broadcast Handlers
+	enum eBroadcastType		_identifyBroadcast(const std::string &);
 	void					_normalBroadcastHandler(const std::string &);
 	void					_waitMatesBroadcastHandler(const std::string &);
 	void					_towardsMateBroadcastHandler(const std::string &);

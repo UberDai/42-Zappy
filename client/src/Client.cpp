@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-27 02:23:45
+//           :      _/|      :       Last Edit  : 2015-07-27 02:56:39
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -127,6 +127,12 @@ Client				&Client::operator=(Client const &rhs)
 	if (this != &rhs)
 		_network = new Network(*(rhs._network));
 	return *this;
+}
+
+enum Client::eBroadcastType	Client::_identifyBroadcast(const std::string & broadcast)
+{
+	(void)broadcast;
+	return WAIT;
 }
 
 void					Client::_normalBroadcastHandler(const std::string & broadcast)
@@ -290,7 +296,7 @@ void				Client::_moveTowardsWaitingPlayer(void)
 
 void				Client::_lookFor(int mode)
 {
-	std::map<std::string, size_t> food = { {Inventory::FOOD, 1} };
+	std::map<std::string, size_t> food = { {Inventory::FOOD, 10} };
 	std::map<std::string, size_t> &	compo = mode == 0 ? _totems[_level] : food;
 	int XY[2] = {0, 0};
 
@@ -299,6 +305,7 @@ void				Client::_lookFor(int mode)
 		_path->Pos(i, XY);
 		for (auto &kv : compo)
 		{
+			printDebug("Looking for " + std::to_string(kv.second) + " " + kv.first);
 			//check de chaque compos
 			if (map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
 			{
@@ -342,9 +349,23 @@ void				Client::_explore(void)
 
 void				Client::_sendBroadcast(enum eBroadcastType t)
 {
+	std::stringstream		msg;
+	std::hash<std::string>	hash;
+	ActionBroadcast *		a;
+
 	printDebug("IA - Send Broadcast");
 
-	(void)t;
+	msg
+		<< hash(_teamName) << " "
+		<< getpid() << " " << std::to_string(static_cast<int>(t))
+	;
+
+	if (t == ON_SAME_CASE)
+		msg << " " << _broadcastTarget;
+
+	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
+	a->setMessage(msg.str());
+	actions.push_back(a);
 }
 
 void				Client::_normalMode(void)
