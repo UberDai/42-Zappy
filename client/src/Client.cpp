@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-27 01:51:25
+//           :      _/|      :       Last Edit  : 2015-07-27 02:23:45
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -84,7 +84,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerX(0),
 	_playerY(0),
 	_playerOrientation(NORTH),
-	_foodThreshold(3),
+	_foodThreshold(7),
 	_mustMove(false),
 	_mateWaiting(false)
 {
@@ -217,8 +217,14 @@ bool				Client::_composOk(void)
 
 bool				Client::_takeFoodIfAny(void)
 {
-	size_t			qty = map[_playerX][_playerY][Inventory::FOOD];
+	printDebug("Take food if any");
 
+	size_t			qty = map[_playerX][_playerY][Inventory::FOOD];
+	int				qty2 = map[_playerX][_playerY][Inventory::FOOD];
+
+	printDebug( map[_playerX][_playerY].toString());
+	printDebug(std::to_string(_playerX) + "   -   " + std::to_string(_playerY));
+	printDebug(std::to_string(qty) + " of food found on case vs " + std::to_string(qty2));
 	if (qty == 0)
 		return false;
 
@@ -345,7 +351,7 @@ void				Client::_normalMode(void)
 {
 	printDebug("IA - Normal Mode");
 
-	if (_takeFoodIfAny())
+	if (!_hasEnoughFood() && _takeFoodIfAny())
 		return ;
 
 	if (_composOk())
@@ -420,6 +426,7 @@ void				Client::_foodEmergencyMode(void)
 void				Client::_ia(void)
 {
 	(this->*_modeFun[_mode])();
+	_addAction(Action::INVENTORY);
 	_executeActionList();
 }
 
