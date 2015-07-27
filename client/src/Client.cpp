@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-27 02:56:39
+//           :      _/|      :       Last Edit  : 2015-07-27 03:00:54
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -223,14 +223,9 @@ bool				Client::_composOk(void)
 
 bool				Client::_takeFoodIfAny(void)
 {
-	printDebug("Take food if any");
-
 	size_t			qty = map[_playerX][_playerY][Inventory::FOOD];
 	int				qty2 = map[_playerX][_playerY][Inventory::FOOD];
 
-	printDebug( map[_playerX][_playerY].toString());
-	printDebug(std::to_string(_playerX) + "   -   " + std::to_string(_playerY));
-	printDebug(std::to_string(qty) + " of food found on case vs " + std::to_string(qty2));
 	if (qty == 0)
 		return false;
 
@@ -296,7 +291,7 @@ void				Client::_moveTowardsWaitingPlayer(void)
 
 void				Client::_lookFor(int mode)
 {
-	std::map<std::string, size_t> food = { {Inventory::FOOD, 10} };
+	std::map<std::string, size_t> food = { { Inventory::FOOD, _foodThreshold } };
 	std::map<std::string, size_t> &	compo = mode == 0 ? _totems[_level] : food;
 	int XY[2] = {0, 0};
 
@@ -305,7 +300,6 @@ void				Client::_lookFor(int mode)
 		_path->Pos(i, XY);
 		for (auto &kv : compo)
 		{
-			printDebug("Looking for " + std::to_string(kv.second) + " " + kv.first);
 			//check de chaque compos
 			if (map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
 			{
@@ -440,7 +434,10 @@ void				Client::_foodEmergencyMode(void)
 	printDebug("IA - Food Emergency Mode");
 
 	if (_hasEnoughFood())
+	{
+		printDebug("Enough food, back to normal mode");
 		return _changeToMode(NORMAL);
+	}
 	_lookFor(1);
 }
 
