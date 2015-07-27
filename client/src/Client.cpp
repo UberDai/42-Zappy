@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-27 03:00:54
+//           :      _/|      :       Last Edit  : 2015-07-27 03:01:34
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -224,7 +224,6 @@ bool				Client::_composOk(void)
 bool				Client::_takeFoodIfAny(void)
 {
 	size_t			qty = map[_playerX][_playerY][Inventory::FOOD];
-	int				qty2 = map[_playerX][_playerY][Inventory::FOOD];
 
 	if (qty == 0)
 		return false;
