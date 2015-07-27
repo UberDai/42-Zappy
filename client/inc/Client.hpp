@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-07-27 02:34:40
+//           :      _/|      :       Last Edit  : 2015-07-27 03:47:50
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -73,7 +73,8 @@ public:
 	};
 
 	typedef void (Client::* ClientFunction)();
-	typedef void (Client::* BroadcastHandler)(const std::string &);
+	typedef void (Client::* BroadcastHandler)(enum eBroadcastType, const std::string &);
+
 	using ModesMap = std::map<enum eMode, ClientFunction>;
 	using BroadcastHandlerMap = std::map<enum eMode, BroadcastHandler>;
 
@@ -140,12 +141,13 @@ private:
 	void					_changeToMode(enum eMode);
 
 	// Broadcast Handlers
-	enum eBroadcastType		_identifyBroadcast(const std::string &);
-	void					_normalBroadcastHandler(const std::string &);
-	void					_waitMatesBroadcastHandler(const std::string &);
-	void					_towardsMateBroadcastHandler(const std::string &);
-	void					_reunionBroadcastHandler(const std::string &);
-	void					_foodEmergencyBroadcastHandler(const std::string &);
+	void					_extractBroadcastInfo(const std::string &, std::string &);
+	int						_identifyBroadcast(const std::string &, std::string &);
+	void					_normalBroadcastHandler(enum eBroadcastType, const std::string &);
+	void					_waitMatesBroadcastHandler(enum eBroadcastType, const std::string &);
+	void					_towardsMateBroadcastHandler(enum eBroadcastType, const std::string &);
+	void					_reunionBroadcastHandler(enum eBroadcastType, const std::string &);
+	void					_foodEmergencyBroadcastHandler(enum eBroadcastType, const std::string &);
 
 	// IA
 	void					_ia(void);
@@ -162,7 +164,6 @@ private:
 	void					_explore(void);
 	void					_dropCompo(void);
 
-	void					_extractBroadcastInfo(const std::string &, std::string &);
 	void					_moveTo(void);
 	void					_moveToUpperLeftCorner(void);
 	void					_moveToLeft(void);

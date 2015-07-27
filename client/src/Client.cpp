@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-27 03:01:34
+//           :      _/|      :       Last Edit  : 2015-07-27 03:49:13
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -129,35 +129,58 @@ Client				&Client::operator=(Client const &rhs)
 	return *this;
 }
 
-enum Client::eBroadcastType	Client::_identifyBroadcast(const std::string & broadcast)
+void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
 {
-	(void)broadcast;
-	return WAIT;
+	size_t			comaPos = b.find_first_of(',');
+
+	if (comaPos != 9 || !isdigit(b[8]) || b.size() <= 10)
+		return printDebug("Broadcast does not seem to be a broadcast");
+	msg = b.substr(10);
 }
 
-void					Client::_normalBroadcastHandler(const std::string & broadcast)
+int							Client::_identifyBroadcast(const std::string & broadcast, std::string & msg)
 {
-	(void)broadcast;
+	std::hash<std::string>	hash;
+	std::regex				broadcastFormat("(\\S+) (\\S+) (\\S+) ?(\\S+)");
+	std::smatch				sm;
+
+	_extractBroadcastInfo(broadcast, msg);
+	std::regex_match(msg, sm, broadcastFormat);
+
+	if (!(sm.size() > 3 && sm.size() < 6) || std::string(sm[1]) != std::to_string(hash(_teamName)))
+		return -1;
+	return std::stol(std::string(sm[3]));
 }
 
-void					Client::_waitMatesBroadcastHandler(const std::string & broadcast)
+void					Client::_normalBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
 {
+	(void)_playersToFind;
 	(void)broadcast;
+	(void)t;
 }
 
-void					Client::_towardsMateBroadcastHandler(const std::string & broadcast)
+void					Client::_waitMatesBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
 {
 	(void)broadcast;
+	(void)t;
 }
 
-void					Client::_reunionBroadcastHandler(const std::string & broadcast)
+void					Client::_towardsMateBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
 {
 	(void)broadcast;
+	(void)t;
 }
 
-void					Client::_foodEmergencyBroadcastHandler(const std::string & broadcast)
+void					Client::_reunionBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
 {
 	(void)broadcast;
+	(void)t;
+}
+
+void					Client::_foodEmergencyBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
+{
+	(void)broadcast;
+	(void)t;
 }
 
 void				Client::_executeActionList(void)
@@ -432,7 +455,7 @@ void				Client::_foodEmergencyMode(void)
 {
 	printDebug("IA - Food Emergency Mode");
 
-	if (_hasEnoughFood())
+	if (_inventory.has(Inventory::FOOD, _foodThreshold + 4))
 	{
 		printDebug("Enough food, back to normal mode");
 		return _changeToMode(NORMAL);
@@ -492,7 +515,15 @@ void				Client::hasDied(void)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-		(this->*_broadcastHandler[_mode])(broadcast);
+	std::string			message;
+	int					broadcastType;
+
+	broadcastType = _identifyBroadcast(broadcast, message);
+
+	if (broadcastType < 0)
+		return printDebug("Broadcast not from our team. Ignoring");
+
+	(this->*_broadcastHandler[_mode])(static_cast<enum eBroadcastType>(broadcastType), message);
 }
 
 void				Client::_moveToUpperLeftCorner(void)
