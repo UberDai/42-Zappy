@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-27 03:49:13
+//           :      _/|      :       Last Edit  : 2015-07-28 02:50:46
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -15,6 +15,7 @@
 #include "ErrorMsg.hpp"
 #include "eDirection.hpp"
 #include "Actions.hpp"
+#include "BroadcastInfos.hpp"
 #include <stdlib.h>
 #include <unistd.h>
 #include <sstream>
@@ -86,9 +87,9 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerOrientation(NORTH),
 	_foodThreshold(7),
 	_mustMove(false),
-	_mateWaiting(false)
+	_following(false)
 {
-
+	(void)_playersToFind;
 	std::stringstream name;
 	name << "debug/" << getpid();
 	_ofs.open(name.str().c_str());
@@ -129,58 +130,69 @@ Client				&Client::operator=(Client const &rhs)
 	return *this;
 }
 
-void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
+void					Client::_updateWaitingPosition(BroadcastInfos & infos)
 {
-	size_t			comaPos = b.find_first_of(',');
+	if (infos.getType() != WAIT || infos.getType() != STOP_WAITING)
+		return ;
 
-	if (comaPos != 9 || !isdigit(b[8]) || b.size() <= 10)
-		return printDebug("Broadcast does not seem to be a broadcast");
-	msg = b.substr(10);
+	switch (infos.getType())
+	{
+		case WAIT:
+			if ((!_following && std::stol(infos.getExtraArg()) == _level) || (_following && infos.getPid() == _broadcastTarget))
+			{
+				_following = true;
+				_broadcastTarget = infos.getPid();
+				_totemDirection = infos.getDirection();
+			}
+			break ;
+
+		case STOP_WAITING:
+			if (_following && infos.getPid() == _broadcastTarget)
+			{
+				_following = false;
+				_broadcastTarget = "";
+				_totemDirection = -1;
+			}
+			break ;
+	}
 }
 
-int							Client::_identifyBroadcast(const std::string & broadcast, std::string & msg)
+void					Client::_normalBroadcastHandler(BroadcastInfos & infos)
 {
-	std::hash<std::string>	hash;
-	std::regex				broadcastFormat("(\\S+) (\\S+) (\\S+) ?(\\S+)");
-	std::smatch				sm;
-
-	_extractBroadcastInfo(broadcast, msg);
-	std::regex_match(msg, sm, broadcastFormat);
-
-	if (!(sm.size() > 3 && sm.size() < 6) || std::string(sm[1]) != std::to_string(hash(_teamName)))
-		return -1;
-	return std::stol(std::string(sm[3]));
+	if (infos.getType() == WAIT && _level == std::stol(infos.getExtraArg()))
+	{
+		printDebug("Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).");
+		// _clearActionList();
+		_changeToMode(TOWARDS_MATE);
+	}
 }
 
-void					Client::_normalBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
+void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 {
-	(void)_playersToFind;
-	(void)broadcast;
-	(void)t;
+	if (infos.getType() == ON_SAME_CASE && std::stol(infos.getExtraArg()) == getpid())
+		++_matesOnCase;
 }
 
-void					Client::_waitMatesBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
+void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 {
-	(void)broadcast;
-	(void)t;
+	(void)infos;
 }
 
-void					Client::_towardsMateBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
+void					Client::_reunionBroadcastHandler(BroadcastInfos & infos)
 {
-	(void)broadcast;
-	(void)t;
+	(void)infos;
 }
 
-void					Client::_reunionBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
+void					Client::_foodEmergencyBroadcastHandler(BroadcastInfos & infos)
 {
-	(void)broadcast;
-	(void)t;
+	(void)infos;
 }
 
-void					Client::_foodEmergencyBroadcastHandler(enum eBroadcastType t, const std::string & broadcast)
+void				Client::_clearActionList(void)
 {
-	(void)broadcast;
-	(void)t;
+	for (auto &a : actions)
+		delete a;
+	actions.clear();
 }
 
 void				Client::_executeActionList(void)
@@ -196,10 +208,7 @@ void				Client::_executeActionList(void)
 			break ;
 		i = tmp == -1 ? i + 1 : tmp;
 	}
-
-	for (auto &a : actions)
-		delete a;
-	actions.clear();
+	_clearActionList();
 
 	if (tmp == -2)
 	{
@@ -274,7 +283,7 @@ bool				Client::_enoughMatesToIncant(void)
 
 bool				Client::_someoneIsWaiting(void)
 {
-	return _mateWaiting;
+	return _following;
 }
 
 size_t				Client::_getPlayersToFind(void)
@@ -307,7 +316,7 @@ void				Client::_moveTowardsWaitingPlayer(void)
 		case 6: 	return _moveToLowerRightCorner();
 		case 7: 	return _moveToRight();
 		case 8: 	return _moveToUpperRightCorner();
-		default: 	return;
+		default: 	printDebug("Wtf"); return;
 	}
 }
 
@@ -378,6 +387,10 @@ void				Client::_sendBroadcast(enum eBroadcastType t)
 
 	if (t == ON_SAME_CASE)
 		msg << " " << _broadcastTarget;
+	else if (t == WAIT)
+		msg << " " << _level;
+	else
+		msg << " .";
 
 	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
 	a->setMessage(msg.str());
@@ -515,15 +528,15 @@ void				Client::hasDied(void)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-	std::string			message;
-	int					broadcastType;
+	BroadcastInfos	infos(broadcast, _teamName);
 
-	broadcastType = _identifyBroadcast(broadcast, message);
-
-	if (broadcastType < 0)
-		return printDebug("Broadcast not from our team. Ignoring");
-
-	(this->*_broadcastHandler[_mode])(static_cast<enum eBroadcastType>(broadcastType), message);
+	if (!infos.isValid())
+	{
+		printDebug(infos.getError());
+		return ;
+	}
+	_updateWaitingPosition(infos);
+	(this->*_broadcastHandler[_mode])(infos);
 }
 
 void				Client::_moveToUpperLeftCorner(void)

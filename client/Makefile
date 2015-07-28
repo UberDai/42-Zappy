@@ -31,7 +31,8 @@ CLASSES				=	Inventory \
 						ActionSee \
 						ActionTake \
 						ActionInventory \
-						Pathfinding
+						Pathfinding \
+						BroadcastInfos
 
 INTERF_SRC_SUFFIX	=	.cpp
 INTERF_INC_SUFFIX	=	.hpp

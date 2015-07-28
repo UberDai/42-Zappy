@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-07-27 03:47:50
+//           :      _/|      :       Last Edit  : 2015-07-28 02:12:45
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -25,6 +25,7 @@
 # include "eDirection.hpp"
 # include "eOrientation.hpp"
 # include "Pathfinding.hpp"
+# include "BroadcastInfos.hpp"
 
 /*
 ** TODO NOE
@@ -73,7 +74,7 @@ public:
 	};
 
 	typedef void (Client::* ClientFunction)();
-	typedef void (Client::* BroadcastHandler)(enum eBroadcastType, const std::string &);
+	typedef void (Client::* BroadcastHandler)(BroadcastInfos &);
 
 	using ModesMap = std::map<enum eMode, ClientFunction>;
 	using BroadcastHandlerMap = std::map<enum eMode, BroadcastHandler>;
@@ -125,7 +126,7 @@ private:
 
 	// Broadcasting
 	bool					_mustMove;
-	bool					_mateWaiting;
+	bool					_following;
 	size_t					_matesOnCase;
 	int						_totemDirection;
 	std::string				_broadcastTarget;
@@ -140,14 +141,13 @@ private:
 	void					_foodEmergencyMode(void);
 	void					_changeToMode(enum eMode);
 
-	// Broadcast Handlers
-	void					_extractBroadcastInfo(const std::string &, std::string &);
-	int						_identifyBroadcast(const std::string &, std::string &);
-	void					_normalBroadcastHandler(enum eBroadcastType, const std::string &);
-	void					_waitMatesBroadcastHandler(enum eBroadcastType, const std::string &);
-	void					_towardsMateBroadcastHandler(enum eBroadcastType, const std::string &);
-	void					_reunionBroadcastHandler(enum eBroadcastType, const std::string &);
-	void					_foodEmergencyBroadcastHandler(enum eBroadcastType, const std::string &);
+	// Broadcast
+	void					_updateWaitingPosition(BroadcastInfos &);
+	void					_normalBroadcastHandler(BroadcastInfos &);
+	void					_waitMatesBroadcastHandler(BroadcastInfos &);
+	void					_towardsMateBroadcastHandler(BroadcastInfos &);
+	void					_reunionBroadcastHandler(BroadcastInfos &);
+	void					_foodEmergencyBroadcastHandler(BroadcastInfos &);
 
 	// IA
 	void					_ia(void);
@@ -160,6 +160,7 @@ private:
 	void					_moveTowardsWaitingPlayer(void);
 	void					_lookFor(int = 0);
 	void					_sendBroadcast(enum eBroadcastType);
+	void					_clearActionList(void);
 	void					_executeActionList(void);
 	void					_explore(void);
 	void					_dropCompo(void);
