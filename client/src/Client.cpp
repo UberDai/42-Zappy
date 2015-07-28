@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.cpp
 //           :               :       Creation   : 2015-05-21 00:44:59
-//           :      _/|      :       Last Edit  : 2015-07-28 02:50:46
+//           :      _/|      :       Last Edit  : 2015-07-28 04:12:32
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -85,11 +85,15 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerX(0),
 	_playerY(0),
 	_playerOrientation(NORTH),
-	_foodThreshold(7),
+	_foodThreshold(3),
 	_mustMove(false),
-	_following(false)
+	_following(false),
+	_landed(false),
+	_matesOnCase(0),
+	_totemDirection(-1),
+	_broadcastTarget(""),
+	_directionTomove(0)
 {
-	(void)_playersToFind;
 	std::stringstream name;
 	name << "debug/" << getpid();
 	_ofs.open(name.str().c_str());
@@ -132,9 +136,6 @@ Client				&Client::operator=(Client const &rhs)
 
 void					Client::_updateWaitingPosition(BroadcastInfos & infos)
 {
-	if (infos.getType() != WAIT || infos.getType() != STOP_WAITING)
-		return ;
-
 	switch (infos.getType())
 	{
 		case WAIT:
@@ -148,11 +149,7 @@ void					Client::_updateWaitingPosition(BroadcastInfos & infos)
 
 		case STOP_WAITING:
 			if (_following && infos.getPid() == _broadcastTarget)
-			{
-				_following = false;
-				_broadcastTarget = "";
-				_totemDirection = -1;
-			}
+				_resetFollowSystem();
 			break ;
 	}
 }
@@ -162,7 +159,7 @@ void					Client::_normalBroadcastHandler(BroadcastInfos & infos)
 	if (infos.getType() == WAIT && _level == std::stol(infos.getExtraArg()))
 	{
 		printDebug("Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).");
-		// _clearActionList();
+		// _clearActionList(); <-- : (
 		_changeToMode(TOWARDS_MATE);
 	}
 }
@@ -175,7 +172,20 @@ void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 
 void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 {
-	(void)infos;
+	switch (infos.getType())
+	{
+		case INCANTATION:
+			printDebug("Recieved an incantation broadcast.");
+			_resetFollowSystem();
+			_addAction(Action::INCANTATION);
+			break ;
+
+		case STOP_WAITING:
+			_resetFollowSystem();
+			break ;
+
+		default: break ;
+	}
 }
 
 void					Client::_reunionBroadcastHandler(BroadcastInfos & infos)
@@ -234,6 +244,14 @@ void				Client::_dropCompo(void)
 			actions.push_back(a);
 		}
 	}
+}
+
+void				Client::_resetFollowSystem(void)
+{
+	_landed = false;
+	_following = false;
+	_totemDirection = -1;
+	_broadcastTarget = "";
 }
 
 void				Client::_changeToMode(enum eMode m)
@@ -306,8 +324,20 @@ size_t				Client::_getPlayersToFind(void)
 
 void				Client::_moveTowardsWaitingPlayer(void)
 {
+	printDebug("Totem direction " + std::to_string(_totemDirection));
+
+	printDebug("Moving toward waiting player");
 	switch (_totemDirection)
 	{
+		case 0:
+			if (!_landed)
+			{
+				printDebug("Same case as waiting player. Sending ON_SAME_CASE.");
+				_landed = true;
+				_sendBroadcast(ON_SAME_CASE);
+			}
+			printDebug("On same case as waiting player. Doing nothing.");
+			return ;
 		case 1: 	return _addAction(Action::MOVE_FORWARD);
 		case 2: 	return _moveToUpperLeftCorner();
 		case 3: 	return _moveToLeft();
@@ -316,7 +346,7 @@ void				Client::_moveTowardsWaitingPlayer(void)
 		case 6: 	return _moveToLowerRightCorner();
 		case 7: 	return _moveToRight();
 		case 8: 	return _moveToUpperRightCorner();
-		default: 	printDebug("Wtf"); return;
+		default: 	printDebug("Wtf"); return ;
 	}
 }
 
@@ -433,7 +463,7 @@ void				Client::_waitMatesMode(void)
 	if (_enoughMatesToIncant())
 	{
 		printDebug("Enough mates to incant");
-		// Drop les compos
+		_dropCompo();
 		_addAction(Action::INCANTATION);
 		_sendBroadcast(INCANTATION);
 		_sendBroadcast(STOP_WAITING);
@@ -448,7 +478,14 @@ void				Client::_towardsMateMode(void)
 	printDebug("IA - Towards Mate Mode");
 
 	_takeFoodIfAny();
-	_moveTowardsWaitingPlayer();
+
+	if (_totemDirection == -1)
+	{
+		printDebug("No one to follow, NORMAL mode on");
+		_changeToMode(NORMAL);
+	}
+	else
+		_moveTowardsWaitingPlayer();
 }
 
 void				Client::_reunionMode(void)
@@ -468,7 +505,9 @@ void				Client::_foodEmergencyMode(void)
 {
 	printDebug("IA - Food Emergency Mode");
 
-	if (_inventory.has(Inventory::FOOD, _foodThreshold + 4))
+	_resetFollowSystem();
+
+	if (_inventory.has(Inventory::FOOD, _foodThreshold + 6))
 	{
 		printDebug("Enough food, back to normal mode");
 		return _changeToMode(NORMAL);
@@ -535,7 +574,9 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 		printDebug(infos.getError());
 		return ;
 	}
+	printDebug("kek");
 	_updateWaitingPosition(infos);
+	printDebug("maxikek");
 	(this->*_broadcastHandler[_mode])(infos);
 }
 

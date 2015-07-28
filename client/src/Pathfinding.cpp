@@ -205,7 +205,7 @@ size_t Pathfinding::getCaseX(int i)
 	if (tmp < 0)
 		return _client.map.getMapX() + tmp;
 	else if (tmp >= (int)_client.map.getMapX())
-		return tmp % (_client.map.getMapX() -1);
+		return _client.map.getMapX() -1 != 0 ? tmp % (_client.map.getMapX() -1) : tmp;
 	return tmp;
 }
 
@@ -218,7 +218,7 @@ size_t Pathfinding::getCaseY(int i)
 	if (tmp < 0)
 		return _client.map.getMapY() + tmp;
 	else if (tmp >= (int)_client.map.getMapY())
-		return tmp % (_client.map.getMapY() - 1);
+		return _client.map.getMapY() - 1 != 0 ? tmp % (_client.map.getMapY() - 1) : tmp;
 	return tmp;
 }
 

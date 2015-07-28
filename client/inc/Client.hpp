@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-07-28 02:12:45
+//           :      _/|      :       Last Edit  : 2015-07-28 03:46:25
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -30,7 +30,7 @@
 /*
 ** TODO NOE
 **
-** - classe IA
+** - classe IA <-- kek
 */
 
 class Network;
@@ -127,11 +127,11 @@ private:
 	// Broadcasting
 	bool					_mustMove;
 	bool					_following;
+	bool					_landed;
 	size_t					_matesOnCase;
 	int						_totemDirection;
 	std::string				_broadcastTarget;
 	size_t					_directionTomove;
-	size_t					_playersToFind;
 
 	// Modes
 	void					_normalMode(void);
@@ -164,6 +164,7 @@ private:
 	void					_executeActionList(void);
 	void					_explore(void);
 	void					_dropCompo(void);
+	void					_resetFollowSystem(void);
 
 	void					_moveTo(void);
 	void					_moveToUpperLeftCorner(void);
