@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/11 21:28:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 03:13:34 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 #include <libft.h>
 
 t_command	g_commands[] = {
-	{ "avance", 0, command_move },
-	{ "gauche", 0, command_left },
-	{ "droite", 0, command_right },
-	{ "prend", 7, command_pick },
-	{ "pose", 7, command_drop },
-	{ "pause", 0, command_pause },
-	{ "continuer", 0, command_resume },
-	{ "inventaire", 1, command_inventory },
-	{ "connect_nbr", 0, command_connect_count },
-	{ "voir", 0, command_see },
-	{ "broadcast", 0, command_broadcast },
-	{ NULL, 0, NULL }
+	{ "avance", 7, NULL, command_move },
+	{ "gauche", 7, NULL, command_left },
+	{ "droite", 7, NULL, command_right },
+	{ "prend", 7, NULL, command_pick },
+	{ "pose", 7, NULL, command_drop },
+	{ "pause", 0, NULL, command_pause },
+	{ "continuer", 0, NULL, command_resume },
+	{ "inventaire", 1, NULL, command_inventory },
+	{ "connect_nbr", 0, NULL, command_connect_count },
+	{ "voir", 7, NULL, command_see },
+	{ "broadcast", 1, NULL, command_broadcast },
+	{ "incantation", 3, command_pre_promote, command_promote },
+	{ NULL, 0, NULL, NULL }
 };
 
 static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)

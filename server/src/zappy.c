@@ -6,11 +6,12 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:11:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 03:15:59 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include <string.h>
 
 void	zappy_pause(t_client *client)
 {
@@ -66,6 +67,13 @@ static short	client_play(t_client *client)
 		else if (ret == 0)
 			network_send(client, NET_FAILURE, 0);
 		client_queue_shift(client);
+	}
+	else if (queue->delay == queue->command->delay && queue->command->pre_func)
+	{
+		ret = queue->command->pre_func(client, queue->ac, queue->av);
+
+		if (ret == COMMAND_FAIL)
+			queue->set = 0;
 	}
 
 	queue->delay--;

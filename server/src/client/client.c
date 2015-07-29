@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 19:09:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 02:33:59 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_client	*client_create()
 {
 	static t_uint	id;
 	t_client		*client;
+	t_tile			*tile;
 
 	if (id == 0)
 		id = 1;
@@ -27,7 +28,8 @@ t_client	*client_create()
 	client->id = id++;
 	client->orientation = ORIENT_NORTH;
 	client->items[ITEM_FOOD] = CLIENT_BASE_FOOD;
-	client->position = tile_at(rand() % g_zappy.width, rand() % g_zappy.height);
+	tile = tile_at(rand() % g_zappy.width, rand() % g_zappy.height);
+	client_move_to(client, tile);
 	lst_push_back(g_zappy.anonymous_clients, client);
 	return (client);
 }

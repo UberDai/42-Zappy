@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 03:23:53 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 03:16:32 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ typedef struct				s_command
 {
 	char					*name;
 	t_uint					delay;
+	short					(*pre_func)(t_client *, t_uint, char **);
 	short					(*func)(t_client *, t_uint, char **);
 }							t_command;
 
@@ -177,6 +178,7 @@ short						client_rotate(t_client *client, short angle);
 t_client					*client_create(void);
 void						client_delete(t_client *client_to_delete);
 short						client_promote(t_client *client);
+short						client_can_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);
 short						client_queue_push(t_client *client, t_command *command, char **av);
 void						client_queue_shift(t_client *client);
@@ -211,6 +213,7 @@ short						command_inventory(t_client *client, t_uint argc, char **argv);
 short						command_connect_count(t_client *client, t_uint argc, char **argv);
 short						command_fork(t_client *client, t_uint argc, char **argv);
 short						command_promote(t_client *client, t_uint argc, char **argv);
+short						command_pre_promote(t_client *client, t_uint argc, char **argv);
 short						command_expulse(t_client *client, t_uint argc, char **argv);
 short						command_see(t_client *client, t_uint argc, char **argv);
 short						command_broadcast(t_client *client, t_uint argc, char **argv);
