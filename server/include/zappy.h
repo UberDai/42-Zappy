@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:16:32 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 03:20:03 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 # define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			2
-# define REGEN_PROBABILITY	10
+# define REGEN_PROBABILITY	1
 
 # define NET_SUCCESS		"ok"
 # define NET_FAILURE		"ko"

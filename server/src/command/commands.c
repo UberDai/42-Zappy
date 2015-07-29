@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:15:48 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 03:24:21 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,23 +171,6 @@ short	command_broadcast(t_client *client, t_uint argc, char **argv)
 	return (COMMAND_SUCCESS);
 }
 
-short	command_promote(t_client *client, t_uint argc, char **argv)
-{
-	char	str[18] = { 0 };
-
-	if (client->status != STATUS_PLAYER || argc != 1)
-		return (COMMAND_FAIL);
-	if (client_promote(client))
-	{
-		snprintf(str, 17, "niveau actuel : %u", 5);
-		network_send(client, str, 0);
-		return (COMMAND_NONE);
-	}
-
-	(void)argv;
-	return (COMMAND_FAIL);
-}
-
 short	command_pre_promote(t_client *client, t_uint argc, char **argv)
 {
 	if (client->status != STATUS_PLAYER || argc != 1)
@@ -199,6 +182,23 @@ short	command_pre_promote(t_client *client, t_uint argc, char **argv)
 	}
 
 	network_send(client, NET_FAILURE, 0);
+
+	(void)argv;
+	return (COMMAND_FAIL);
+}
+
+short	command_promote(t_client *client, t_uint argc, char **argv)
+{
+	char	str[18] = { 0 };
+
+	if (client->status != STATUS_PLAYER || argc != 1)
+		return (COMMAND_FAIL);
+	if (client_promote(client))
+	{
+		snprintf(str, 18, "niveau actuel : %u", client->level + 1);
+		network_send(client, str, 0);
+		return (COMMAND_NONE);
+	}
 
 	(void)argv;
 	return (COMMAND_FAIL);

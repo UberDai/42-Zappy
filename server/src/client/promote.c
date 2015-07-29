@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:01:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:09:57 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/07/29 03:22:49 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ short		client_can_promote(t_client *client)
 	t_uint		i;
 	t_lstiter	iter;
 	t_tile		*tile;
+
 
 	if (client->level >= MAX_LEVEL - 1)
 		return (0);
@@ -71,7 +72,5 @@ short		client_promote(t_client *client)
 	init_iter(&iter, &tile->clients, increasing);
 	while (lst_iterator_next(&iter))
 		((t_client*)iter.data)->level++;
-
-	network_send(client, ft_itoa(client->level), 0);
 	return (1);
 }
