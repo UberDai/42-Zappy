@@ -25,7 +25,6 @@ function love.update(dt)
 				str = string.sub(str, 1, 21)
 				str = str.." ..."
 			end
-			print(str)
 			table.insert(v.table, str)
 		end
 	end
