@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:24:21 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/12 23:18:14 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,10 +164,29 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 
 short	command_broadcast(t_client *client, t_uint argc, char **argv)
 {
-	if (client->status != STATUS_PLAYER || argc != 2)
-		return (COMMAND_FAIL);
+	char		*message;
+	t_uint		i;
+	size_t		size;
 
-	client_broadcast(client, argv[1]);
+	if (client->status != STATUS_PLAYER)
+		return (COMMAND_FAIL);
+	i = 1;
+	size = 0;
+	while (i < argc)
+	{
+		size += strlen(argv[i]) + 1;
+		i++;
+	}
+	message = calloc(size, sizeof(char));
+	i = 1;
+	while (i < argc)
+	{
+		strcat(message, argv[i]);
+		strcat(message, " ");
+		i++;
+	}
+	client_broadcast(client, message);
+	free(message);
 	return (COMMAND_SUCCESS);
 }
 
