@@ -106,12 +106,12 @@ public:
 	Map								map;
 	std::vector<Action *>			actions;
 
+	enum eMode				_mode;
 private:
 	static const std::regex	_serverInfosFormat;
 	static Totems			_totems;
 	ModesMap				_modeFun;
 	BroadcastHandlerMap		_broadcastHandler;
-	enum eMode				_mode;
 	Pathfinding				*_path;
 	const std::string		_teamName;
 	Network					*_network;
@@ -176,6 +176,7 @@ private:
 	void					_moveToUpperRightCorner(void);
 
 	void					_addAction(const std::string &);
+	void					_addActionBegin(const std::string &);
 
 	std::string				_sendTeamInfo(void);
 	void					_loadServerInfos(const std::string &);

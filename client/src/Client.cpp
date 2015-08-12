@@ -159,7 +159,6 @@ void					Client::_normalBroadcastHandler(BroadcastInfos & infos)
 	if (infos.getType() == WAIT && _level == std::stol(infos.getExtraArg()))
 	{
 		printDebug("Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).");
-		// _clearActionList(); <-- : (
 		_changeToMode(TOWARDS_MATE);
 	}
 }
@@ -177,7 +176,7 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 		case INCANTATION:
 			printDebug("Recieved an incantation broadcast.");
 			_resetFollowSystem();
-			_addAction(Action::INCANTATION);
+			_addActionBegin(Action::INCANTATION);
 			break ;
 
 		case STOP_WAITING:
@@ -544,6 +543,7 @@ void				Client::printDebug(const std::string &msg, int mode)
 {
 	std::locale::global(std::locale(""));
 	std::time_t t = std::time(NULL);
+	// std::stringstream out;
 
 	char	mbstr[100] = { '\0' };
 
@@ -556,6 +556,13 @@ void				Client::printDebug(const std::string &msg, int mode)
 	else
 		_ofs << "   ";
 	_ofs << msg << std::endl;
+
+	// _ofs << out.str();
+
+
+	//debug
+
+	// ::send(_network->_Debug_socket_connect, out.str().c_str(), out.str().size(), 0);
 }
 
 void				Client::hasDied(void)
@@ -567,7 +574,7 @@ void				Client::hasDied(void)
 
 void				Client::recieveBroadcast(const std::string &broadcast)
 {
-	BroadcastInfos	infos(broadcast, _teamName);
+	BroadcastInfos	infos(this, broadcast, _teamName);
 
 	if (!infos.isValid())
 	{
@@ -721,6 +728,11 @@ void				Client::setPlayerY(int val)
 void				Client::_addAction(const std::string &a)
 {
 	actions.push_back(Action::create(a));
+}
+
+void				Client::_addActionBegin(const std::string &a)
+{
+	actions.insert(actions.begin(), Action::create(a));
 }
 
 void				Client::setLevel(unsigned int val) 	{ _level = val; }

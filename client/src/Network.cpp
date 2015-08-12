@@ -179,6 +179,19 @@ void	Network::_initConnection(void)
 	_sockaddr_connect.sin_addr.s_addr = inet_addr(_hostName.c_str());
 	bzero(&(_sockaddr_connect.sin_zero), 8);
 	_sockaddr_len = sizeof(_sockaddr_connect);
+
+
+//debug
+	// if ((_Debug_socket_connect = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+	// {
+	// 	std::cout << E_SOCKET_CREATION << std::endl;
+	// 	return ;
+	// }
+	// _Debug_sockaddr_connect.sin_family = AF_INET;
+ //    _Debug_sockaddr_connect.sin_port = htons(4244);
+	// _Debug_sockaddr_connect.sin_addr.s_addr = inet_addr("10.11.12.9     ");
+	// bzero(&(_Debug_sockaddr_connect.sin_zero), 8);
+	// _Debug_sockaddr_len = sizeof(_Debug_sockaddr_connect);
 }
 
 void	Network::_connect(void)
@@ -188,6 +201,9 @@ void	Network::_connect(void)
 		std::cout << E_SOCKET_CONNECTION << std::endl;
 	else
 		_connected = true;
+// //Debug
+// 	if (connect(_Debug_socket_connect, (struct sockaddr *)&_Debug_sockaddr_connect, _Debug_sockaddr_len) < 0)
+// 		std::cout << E_SOCKET_CONNECTION << std::endl;
 }
 
 void	Network::close(void)
@@ -220,6 +236,24 @@ std::string		Network::recieve(void)
 			{
 				_client->recieveBroadcast(buf);
 				_client->printDebug("Broadcast recieved ! Recieving again...");
+				return recieve();
+			}
+			else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
+			{
+				_client->printDebug("Ok, styley ! Recieving again...");
+
+
+
+
+
+				/// MEGA CRADE
+
+
+
+				_client->setLevel(_client->getLevel() + 1);
+
+
+
 				return recieve();
 			}
 			return buf;

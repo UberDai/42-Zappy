@@ -21,7 +21,7 @@ class Client;
 class BroadcastInfos
 {
 public:
-	BroadcastInfos(/*Client *, */const std::string &, const std::string &);
+	BroadcastInfos(Client *, const std::string &, const std::string &);
 
 	bool			isValid(void) const;
 	int				getDirection(void) const;
@@ -32,7 +32,7 @@ public:
 	std::string		getError(void) const;
 
 private:
-	/*Client			*_c;*/
+	Client			*_c;
 	int				_status;
 	std::string		_original;
 	std::string		_teamName;

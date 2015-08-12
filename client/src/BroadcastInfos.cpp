@@ -16,8 +16,8 @@
 #include "BroadcastInfos.hpp"
 #include "Client.hpp"
 
-BroadcastInfos::BroadcastInfos(/*Client *c, */const std::string & broadcast, const std::string & teamName) :
-	//_c(c),
+BroadcastInfos::BroadcastInfos(Client *c, const std::string & broadcast, const std::string & teamName) :
+	_c(c),
 	_status(1),
 	_original(broadcast),
 	_teamName(teamName),
@@ -26,6 +26,7 @@ BroadcastInfos::BroadcastInfos(/*Client *c, */const std::string & broadcast, con
 	_pid(""),
 	_extraArg("")
 {
+	(void)_c;
 	_getDirAndMessage();
 	_extractBroadcastInfo();
 }
@@ -50,6 +51,7 @@ void				BroadcastInfos::_extractBroadcastInfo(void)
 	std::smatch				sm;
 
 	std::regex_match(_message, sm, broadcastFormat);
+
 
 	if (!(sm.size() > 3 && sm.size() < 6) || std::string(sm[1]) != std::to_string(hash(_teamName)))
 	{
