@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:01:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:22:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/13 00:13:46 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ short		client_can_promote(t_client *client)
 	t_uint		i;
 	t_lstiter	iter;
 	t_tile		*tile;
-
+	t_uint		clients_count;
 
 	if (client->level >= MAX_LEVEL - 1)
 		return (0);
@@ -37,12 +37,21 @@ short		client_can_promote(t_client *client)
 
 	if (tile->clients.size < g_promotion_needs[client->level][0])
 		return (0);
+
+	clients_count = 0;
 	init_iter(&iter, &tile->clients, increasing);
 	while (lst_iterator_next(&iter))
 	{
-		if (((t_client*)iter.data)->level != client->level)
-			return (0);
+		if (((t_client*)iter.data)->level == client->level)
+			clients_count++;
 	}
+
+	if (clients_count < g_promotion_needs[client->level][0])
+	{
+		network_send(client, "kk3", 0);
+		return (0);
+	}
+
 	i = 1;
 	while (i < ITEM_COUNT)
 	{
@@ -50,6 +59,7 @@ short		client_can_promote(t_client *client)
 			return (0);
 		i++;
 	}
+
 	return (1);
 }
 
@@ -58,6 +68,7 @@ short		client_promote(t_client *client)
 	t_tile		*tile;
 	t_lstiter	iter;
 	t_uint		i;
+	t_uint		current_level;
 
 	tile = client->position;
 	if (!client_can_promote(client))
@@ -69,8 +80,14 @@ short		client_promote(t_client *client)
 		tile->items[i] -= g_promotion_needs[client->level][i];
 		i++;
 	}
+
+	current_level = client->level;
 	init_iter(&iter, &tile->clients, increasing);
 	while (lst_iterator_next(&iter))
-		((t_client*)iter.data)->level++;
+	{
+		if (client->level == current_level)
+			((t_client*)iter.data)->level++;
+	}
+
 	return (1);
 }

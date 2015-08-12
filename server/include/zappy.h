@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:20:03 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/13 00:20:57 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,7 @@ short						client_promote(t_client *client);
 short						client_can_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);
 short						client_queue_push(t_client *client, t_command *command, char **av);
+short						client_queue_push_front(t_client *client, t_command *command, char **av);
 void						client_queue_shift(t_client *client);
 void						client_queue_free(t_client *client);
 void						client_set_team(t_client *client, const char *team_name);

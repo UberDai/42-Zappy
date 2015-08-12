@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 03:13:34 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/13 00:28:26 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ char	command_parse(t_client *client, char *input)
 		{
 			if (client->status == STATUS_GFX)
 				g_commands[i].func(client, split_count, splits);
-			else if (!client_queue_push(client, &(g_commands[i]), splits))
+			else if (!client_queue_push_front(client, &(g_commands[i]), splits))
 				network_send(client, "shits too fast", 0);
 			return (0);
 		}
