@@ -25,6 +25,7 @@ SRC_FILES	=	main.c \
 				network.c \
 				signal.c \
 				map.c \
+				egg.c \
 				client/client.c \
 				client/actions.c \
 				client/promote.c \
