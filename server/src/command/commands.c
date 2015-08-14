@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 00:10:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/13 01:13:49 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ short	command_pick(t_client *client, t_uint argc, char **argv)
 
 	if (client->status != STATUS_PLAYER || argc != 2)
 		return (COMMAND_FAIL);
+
 	i = 0;
 	item = -1;
 	while (i < ITEM_COUNT)
@@ -77,6 +78,7 @@ short	command_pick(t_client *client, t_uint argc, char **argv)
 		}
 		i++;
 	}
+
 	if (item != -1 && client_pick(client, item))
 		return (COMMAND_SUCCESS);
 	return (COMMAND_FAIL);

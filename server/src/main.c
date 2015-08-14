@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:11:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/13 01:11:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ void		usage(void)
 
 static void	init_zappy(void)
 {
-	g_item_names[0] = ft_strdup("nourriture");
-	g_item_names[1] = ft_strdup("linemate");
-	g_item_names[2] = ft_strdup("deraumere");
-	g_item_names[3] = ft_strdup("sibur");
-	g_item_names[4] = ft_strdup("mendiane");
-	g_item_names[5] = ft_strdup("phiras");
-	g_item_names[6] = ft_strdup("thystame");
+	g_item_names[0] = strdup("nourriture");
+	g_item_names[1] = strdup("linemate");
+	g_item_names[2] = strdup("deraumere");
+	g_item_names[3] = strdup("sibur");
+	g_item_names[4] = strdup("mendiane");
+	g_item_names[5] = strdup("phiras");
+	g_item_names[6] = strdup("thystame");
 	bzero(&g_zappy, sizeof(t_zappy));
 	g_zappy.clients = new_lst();
 	g_zappy.anonymous_clients = new_lst();
