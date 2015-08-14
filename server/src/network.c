@@ -180,6 +180,20 @@ static void	network_send_to_client(t_client *emitter, t_lst *list, char *str)
 	}
 }
 
+void		network_send_team(const t_team *team, const char *str)
+{
+	t_lstiter	iter;
+	t_client	*client;
+
+	init_iter(&iter, &g_zappy.clients, increasing);
+	while (lst_iterator_next(&iter))
+	{
+		client = (t_client*)iter.data;
+		if (client->team == team)
+			network_send(client, str, 0);
+	}
+}
+
 void		network_send(t_client *client, char *str, int options)
 {
 	char		*output;

@@ -41,9 +41,7 @@ void	client_delete(t_client *client_to_delete)
 	else if (client_to_delete->status == STATUS_UNKNOWN)
 		lst_remove(g_zappy.anonymous_clients, lst_index_of(g_zappy.anonymous_clients, client_to_delete));
 	else
-	{
 		lst_remove(g_zappy.clients, lst_index_of(g_zappy.clients, client_to_delete));
-	}
 	client_queue_free(client_to_delete);
 	free(client_to_delete);
 }

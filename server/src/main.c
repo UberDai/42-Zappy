@@ -44,6 +44,7 @@ static void	init_zappy(void)
 	g_zappy.anonymous_clients = new_lst();
 	g_zappy.gfx_clients = new_lst();
 	g_zappy.teams = new_lst();
+	g_zappy.eggs = new_lst();
 }
 
 int		main(int ac, char **av)

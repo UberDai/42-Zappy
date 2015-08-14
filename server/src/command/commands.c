@@ -14,6 +14,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+short	command_fork(t_client *client, t_uint argc, char **argv)
+{
+	if (client->status != STATUS_PLAYER || argc != 1)
+		return (COMMAND_FAIL);
+	egg_create(client);
+	(void)argv;
+	return (COMMAND_SUCCESS);
+}
+
 short	command_move(t_client *client, t_uint argc, char **argv)
 {
 	if (client->status != STATUS_PLAYER || argc != 1)

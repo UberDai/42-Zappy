@@ -44,6 +44,8 @@
 # define REGEN_MAX			2
 # define REGEN_PROBABILITY	1
 
+# define EGG_MATURATION		600
+
 # define NET_SUCCESS		"ok"
 # define NET_FAILURE		"ko"
 
@@ -118,6 +120,12 @@ struct						s_client
 	t_queue					queue[CLIENT_QUEUE_MAX];
 };
 
+struct						s_egg
+{
+	t_team					*team;
+	t_uint					hatch_time;
+}							t_egg;
+
 typedef struct				s_time
 {
 	double					clock;
@@ -145,6 +153,7 @@ typedef struct				s_zappy
 	t_lst					*clients;
 	t_lst					*gfx_clients;
 	t_lst					*anonymous_clients;
+	t_lst					*eggs;
 	short					paused;
 }							t_zappy;
 
@@ -199,6 +208,7 @@ size_t						team_count_clients(t_team *team);
 void						network_bind();
 void						network_receive(void);
 void						network_send(t_client *client, char *str, int options);
+void						network_send_team(const t_team *team, const char *str);
 void						network_client_disconnect(t_client *client);
 void						network_disconnect(void);
 
@@ -206,6 +216,7 @@ char						command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);
+short						command_fork(t_client *client, t_uint argc, char **argv);
 short						command_pick(t_client *client, t_uint argc, char **argv);
 short						command_drop(t_client *client, t_uint argc, char **argv);
 short						command_pause(t_client *client, t_uint argc, char **argv);
@@ -238,5 +249,8 @@ void						gfx_send_map(t_client *client);
 void						gfx_send_clients(t_client *client);
 
 t_lst						*get_vision(t_client *client);
+
+t_egg						*egg_create(const t_client *client);
+void						egg_hatch(t_egg *egg);
 
 #endif
