@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/29 02:33:59 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 00:02:18 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_client	*client_create()
 {
 	static t_uint	id;
 	t_client		*client;
-	t_tile			*tile;
+	// t_tile			*tile;
 
 	if (id == 0)
 		id = 1;
@@ -28,14 +28,14 @@ t_client	*client_create()
 	client->id = id++;
 	client->items[ITEM_FOOD] = CLIENT_BASE_FOOD;
 	// tile = tile_at(rand() % g_zappy.width, rand() % g_zappy.height); // TODO: Not sure if ok to delete
-	client_move_to(client, tile);
+	// client_move_to(client, tile);
 	lst_push_back(g_zappy.anonymous_clients, client);
 	return (client);
 }
 
 void	client_set_spawn_position(t_client *client)
 {
-	t_tile	*egg;
+	t_egg	*egg;
 
 	client->orientation = rand() % 4;
 	egg = get_hatched_egg(client->team);

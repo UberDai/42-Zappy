@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/15 02:18:03 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 00:07:08 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 # define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			2
-# define REGEN_PROBABILITY	1
+# define REGEN_PROBABILITY	5
 
 # define EGG_MATURATION		600
 
@@ -187,6 +187,7 @@ short						client_eat(t_client *client);
 short						client_move(t_client *client);
 short						client_rotate(t_client *client, short angle);
 t_client					*client_create(void);
+void						client_set_spawn_position(t_client *client);
 void						client_delete(t_client *client_to_delete);
 short						client_promote(t_client *client);
 short						client_can_promote(t_client *client);
@@ -257,7 +258,7 @@ t_lst						*get_vision(t_client *client);
 t_egg						*egg_create(const t_client *client);
 void						egg_remove(t_egg *egg);
 void						egg_hatch(t_egg *egg);
-void						get_hatched_egg(const t_team *team);
+t_egg						*get_hatched_egg(const t_team *team);
 void						watch_eggs(void);
 
 #endif

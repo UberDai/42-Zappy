@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/08/15 01:30:54 by amaurer          ###   ########.fr        #
+#    Updated: 2015/08/16 00:08:09 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ libft:
 ftlst:
 	# git submodule init
 	# git submodule update
-	git submodule foreach git pull origin master
+	# git submodule foreach git pull origin master
 	make -C ftlst
 
 .PHONY: all re fclean clean libft ftlst

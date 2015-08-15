@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/15 00:20:50 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/15 02:30:19 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 00:00:23 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	egg_hatch(t_egg *egg)
 	egg->has_hatched = 1;
 }
 
-void	get_hatched_egg(const t_team *team)
+t_egg	*get_hatched_egg(const t_team *team)
 {
 	t_lstiter	iter;
 	t_egg		*egg;
