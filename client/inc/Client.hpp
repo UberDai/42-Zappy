@@ -63,7 +63,8 @@ public:
 		WAIT_MATES,
 		TOWARDS_MATE,
 		REUNION,
-		FOOD_EMERGENCY
+		FOOD_EMERGENCY,
+		EGG
 	};
 
 	enum eBroadcastType : int {
@@ -123,6 +124,7 @@ private:
 	size_t					_playerY;
 	enum eOrientation		_playerOrientation;
 	size_t					_foodThreshold;
+	size_t					_cycleCount;
 
 	// Broadcasting
 	bool					_mustMove;
@@ -182,6 +184,7 @@ private:
 	std::string				_sendTeamInfo(void);
 	void					_loadServerInfos(const std::string &);
 	void					_forkstem(void);
+	void					_checkSlot(void);
 
 	// void					_setBroadcastMsg(std::stringstream &);
 	// void					_ia(void);

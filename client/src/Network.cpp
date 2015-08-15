@@ -249,9 +249,9 @@ std::string		Network::recieve(void)
 
 				/// MEGA CRADE
 
-
-
+				//clean queue
 				_client->setLevel(_client->getLevel() + 1);
+				//mode normal
 
 
 

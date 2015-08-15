@@ -86,6 +86,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerY(0),
 	_playerOrientation(NORTH),
 	_foodThreshold(3),
+	_cycleCount(0),
 	_mustMove(false),
 	_following(false),
 	_landed(false),
@@ -106,6 +107,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_modeFun[TOWARDS_MATE] = &Client::_towardsMateMode;
 	_modeFun[REUNION] = &Client::_reunionMode;
 	_modeFun[FOOD_EMERGENCY] = &Client::_foodEmergencyMode;
+	_modeFun[EGG] = &Client::_eggMode;
 
 	_broadcastHandler[NORMAL] = &Client::_normalBroadcastHandler;
 	_broadcastHandler[WAIT_MATES] = &Client::_waitMatesBroadcastHandler;
@@ -176,7 +178,8 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 		case INCANTATION:
 			printDebug("Recieved an incantation broadcast.");
 			_resetFollowSystem();
-			_addActionBegin(Action::INCANTATION);
+			_clearActionList();
+			_addAction(Action::INCANTATION);
 			break ;
 
 		case STOP_WAITING:
@@ -212,10 +215,17 @@ void				Client::_executeActionList(void)
 
 	while (i >= 0 && static_cast<size_t>(i) < max)
 	{
-		tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
-		if (tmp == -2)
-			break ;
-		i = tmp == -1 ? i + 1 : tmp;
+		try {
+			tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
+			if (tmp == -2)
+				break ;
+			i = tmp == -1 ? i + 1 : tmp;
+		}
+		catch (const std::out_of_range & e)
+		{
+			printDebug("Crash");
+			return ;
+		}
 	}
 	_clearActionList();
 
@@ -463,9 +473,9 @@ void				Client::_waitMatesMode(void)
 	{
 		printDebug("Enough mates to incant");
 		_dropCompo();
-		_addAction(Action::INCANTATION);
 		_sendBroadcast(INCANTATION);
-		_sendBroadcast(STOP_WAITING);
+		_addAction(Action::INCANTATION);
+		// _sendBroadcast(STOP_WAITING);
 		return _changeToMode(NORMAL);
 	}
 	printDebug("Nothing special.");
@@ -528,11 +538,30 @@ void				Client::_foodEmergencyMode(void)
 	_lookFor(1);
 }
 
+
+void				Client::_checkSlot(void)
+{
+
+	// if (_cycleCount % 1 == 0)
+	// {
+		_addAction(Action::INVENTORY);
+		// while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
+		// {
+		// 	printDebug("FORKSTEM");
+		// 	_forkstem();
+		// }
+	// }
+	// if (_cycleCount % 150 == 0 && _inventory.has(Inventory::FOOD, 10))
+	// 	_changeToMode(EGG);
+	_cycleCount++;
+}
+
 void				Client::_ia(void)
 {
 	(this->*_modeFun[_mode])();
-	_addAction(Action::INVENTORY);
+	// _checkSlot();
 	_executeActionList();
+	_addAction(Action::INVENTORY);
 }
 
 bool				Client::loop(void)
