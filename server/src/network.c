@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 00:46:25 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/15 01:47:35 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ void		network_send_team(const t_team *team, const char *str)
 	t_lstiter	iter;
 	t_client	*client;
 
-	init_iter(&iter, &g_zappy.clients, increasing);
+	init_iter(&iter, g_zappy.clients, increasing);
 	while (lst_iterator_next(&iter))
 	{
 		client = (t_client*)iter.data;
@@ -194,7 +194,7 @@ void		network_send_team(const t_team *team, const char *str)
 	}
 }
 
-void		network_send(t_client *client, char *str, int options)
+void		network_send(t_client *client, const char *str, int options)
 {
 	char		*output;
 

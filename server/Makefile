@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/08/15 00:29:17 by amaurer          ###   ########.fr        #
+#    Updated: 2015/08/15 01:30:54 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC_FILES	=	main.c \
 				network.c \
 				signal.c \
 				map.c \
-				egg.c \
+				client/egg.c \
 				client/client.c \
 				client/actions.c \
 				client/promote.c \
@@ -44,9 +44,9 @@ OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
 
 CC			=	clang
 CC_FLAGS	=	-Wall -Werror -Wextra -pedantic -g3
-CC_LIBS		=	-lft -Llibft
+CC_LIBS		=	-lft -Llibft -lftlst -Lftlst
 
-all:  libft $(BIN_NAME)
+all: ftlst libft $(BIN_NAME)
 	@echo "\033[32m•\033[0m $(NAME) is ready."
 
 $(BIN_NAME): $(OBJ)
@@ -73,8 +73,8 @@ libft:
 	@make -C libft
 
 ftlst:
-	git submodule init
-	git submodule update
+	# git submodule init
+	# git submodule update
 	git submodule foreach git pull origin master
 	make -C ftlst
 

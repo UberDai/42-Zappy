@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 00:20:57 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/15 02:18:03 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,10 @@ struct						s_client
 	t_queue					queue[CLIENT_QUEUE_MAX];
 };
 
-struct						s_egg
+typedef struct				s_egg
 {
 	t_team					*team;
+	t_tile					*position;
 	t_uint					hatch_time;
 }							t_egg;
 
@@ -207,7 +208,7 @@ size_t						team_count_clients(t_team *team);
 
 void						network_bind();
 void						network_receive(void);
-void						network_send(t_client *client, char *str, int options);
+void						network_send(t_client *client, const char *str, int options);
 void						network_send_team(const t_team *team, const char *str);
 void						network_client_disconnect(t_client *client);
 void						network_disconnect(void);
@@ -241,6 +242,8 @@ void						gfx_client_disconnect(t_client *client);
 void						gfx_client_death(t_client *client);
 void						gfx_tile_add(t_client *client, t_tile *tile, int item);
 void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
+void						gfx_egg_add(const t_egg *egg);
+void						gfx_egg_remove(const t_egg *egg);
 void						gfx_client_pick(t_client *client, int item);
 void						gfx_client_drop(t_client *client, int item);
 void						gfx_client_move_to(t_client *client, t_tile *tile);
@@ -252,5 +255,6 @@ t_lst						*get_vision(t_client *client);
 
 t_egg						*egg_create(const t_client *client);
 void						egg_hatch(t_egg *egg);
+void						watch_eggs(void);
 
 #endif

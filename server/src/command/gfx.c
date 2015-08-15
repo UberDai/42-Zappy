@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 19:06:29 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/11 21:29:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/15 02:04:37 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,20 @@ void	gfx_tile_add(t_client *client, t_tile *tile, int item)
 		network_send(client, str, 0);
 }
 
-void	gfx_tile_remove(t_client *client, t_tile *tile, int item)
+void	gfx_egg_add(const t_egg *egg)
 {
-	char	str[20] = { 0 };
+	char	str[10] = { 0 };
 
-	snprintf(str, 20, "- %u %u %i", tile->x, tile->y, item);
-	if (client == NULL)
-		network_send(NULL, str, NET_SEND_GFX);
-	else
-		network_send(client, str, 0);
+	snprintf(str, 10, "0 %u %u", egg->position->x, egg->position->y);
+	network_send(NULL, str, NET_SEND_GFX);
+}
+
+void	gfx_egg_remove(const t_egg *egg)
+{
+	char	str[10] = { 0 };
+
+	snprintf(str, 10, "9 %u %u", egg->position->x, egg->position->y);
+	network_send(NULL, str, NET_SEND_GFX);
 }
 
 void	gfx_client_pick(t_client *client, int item)

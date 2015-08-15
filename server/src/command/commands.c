@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 01:13:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/15 01:37:37 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	t_lst		*vision;
 	t_lstiter	iter;
 	char		*content;
+	t_uint		i;
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
@@ -155,6 +156,7 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	str = strdup("{");
 	vision = get_vision(client);
 
+	i = 0;
 	init_iter(&iter, vision, increasing);
 	while (lst_iterator_next(&iter))
 	{
@@ -162,8 +164,9 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 		str = append_string(str, content);
 		free(content);
 
-		if (iter.pos != vision->size - 1)
+		if (i != vision->size - 1)
 			str = append_string(str, ", ");
+		i++;
 	}
 	str = append_string(str, "}");
 	network_send(client, str, 0);
