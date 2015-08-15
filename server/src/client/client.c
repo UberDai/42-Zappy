@@ -26,12 +26,23 @@ t_client	*client_create()
 	ft_bzero(client, sizeof(t_client));
 	client->hunger = FOOD_DURATION;
 	client->id = id++;
-	client->orientation = ORIENT_NORTH;
 	client->items[ITEM_FOOD] = CLIENT_BASE_FOOD;
-	tile = tile_at(rand() % g_zappy.width, rand() % g_zappy.height);
+	// tile = tile_at(rand() % g_zappy.width, rand() % g_zappy.height); // TODO: Not sure if ok to delete
 	client_move_to(client, tile);
 	lst_push_back(g_zappy.anonymous_clients, client);
 	return (client);
+}
+
+void	client_set_spawn_position(t_client *client)
+{
+	t_tile	*egg;
+
+	client->orientation = rand() % 4;
+	egg = get_hatched_egg(client->team);
+	if (egg != NULL)
+		client->position = egg->position;
+	else
+		client->position = tile_at(rand() % g_zappy.width, rand() % g_zappy.height);
 }
 
 void	client_delete(t_client *client_to_delete)

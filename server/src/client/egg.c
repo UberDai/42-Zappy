@@ -26,12 +26,32 @@ t_egg	*egg_create(const t_client *client)
 	return (egg);
 }
 
-void	egg_hatch(t_egg *egg)
+void	egg_remove(t_egg *egg)
 {
-	egg->team->max_clients++;
 	lst_remove(g_zappy.eggs, lst_index_of(g_zappy.eggs, egg));
 	gfx_egg_remove(egg);
 	free(egg);
+}
+
+void	egg_hatch(t_egg *egg)
+{
+	egg->team->max_clients++;
+	egg->has_hatched = 1;
+}
+
+void	get_hatched_egg(const t_team *team)
+{
+	t_lstiter	iter;
+	t_egg		*egg;
+
+	init_iter(&iter, g_zappy.eggs, increasing);
+	while (lst_iterator_next(&iter))
+	{
+		egg = (t_egg*)iter.data;
+		if (egg->team == team && egg->has_hatched)
+			return (egg);
+	}
+	return (NULL);
 }
 
 void	watch_eggs(void)

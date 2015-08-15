@@ -125,6 +125,7 @@ typedef struct				s_egg
 	t_team					*team;
 	t_tile					*position;
 	t_uint					hatch_time;
+	char					has_hatched;
 }							t_egg;
 
 typedef struct				s_time
@@ -254,7 +255,9 @@ void						gfx_send_clients(t_client *client);
 t_lst						*get_vision(t_client *client);
 
 t_egg						*egg_create(const t_client *client);
+void						egg_remove(t_egg *egg);
 void						egg_hatch(t_egg *egg);
+void						get_hatched_egg(const t_team *team);
 void						watch_eggs(void);
 
 #endif

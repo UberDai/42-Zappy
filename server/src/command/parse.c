@@ -88,6 +88,7 @@ static char	authenticate(t_client *client, char *input)
 	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.clients);
 
 	client_set_team(client, input);
+	client_set_spawn_position(client);
 	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count, g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
 
