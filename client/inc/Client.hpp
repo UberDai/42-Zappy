@@ -140,6 +140,7 @@ private:
 	void					_reunionMode(void);
 	void					_foodEmergencyMode(void);
 	void					_changeToMode(enum eMode);
+	void					_eggMode(void);
 
 	// Broadcast
 	void					_updateWaitingPosition(BroadcastInfos &);

@@ -35,6 +35,7 @@ class	Network
 		static const std::string	MSG_BROADCAST;
 		static const std::string	MSG_ELEVATION;
 		static const std::string	MSG_CURRENT_LVL;
+		static const std::string	MSG_EXPUSLE;
 		static const std::string	MSG_WELCOME;
 		static const size_t			BUFF_SIZE;
 

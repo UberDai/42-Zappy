@@ -30,6 +30,7 @@ const std::string	Network::MSG_DEATH = "mort";
 const std::string	Network::MSG_BROADCAST = "message ";
 const std::string	Network::MSG_ELEVATION = "elevation en cours";
 const std::string	Network::MSG_CURRENT_LVL = "niveau actuel : ";
+const std::string	Network::MSG_EXPUSLE = "deplacement";
 const std::string	Network::MSG_WELCOME = "BIENVENUE";
 
 #include <stdlib.h>
@@ -255,6 +256,20 @@ std::string		Network::recieve(void)
 
 
 				return recieve();
+			}
+			else if (!strncmp(buf, MSG_EXPUSLE.c_str(), 11))
+			{
+				_client->printDebug("Recu expulse");
+
+
+
+
+				//parse buf
+				//update player x/y
+
+
+
+
 			}
 			return buf;
 	}

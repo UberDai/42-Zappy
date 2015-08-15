@@ -500,6 +500,20 @@ void				Client::_reunionMode(void)
 	_changeToMode(WAIT_MATES);
 }
 
+
+/**
+ *	A revoir
+ *
+**/
+
+void				Client::_eggMode(void)
+{
+	printDebug("IA - egg Mode");
+	_addAction(Action::EGG);
+	_executeActionList();
+	return _changeToMode(NORMAL);
+}
+
 void				Client::_foodEmergencyMode(void)
 {
 	printDebug("IA - Food Emergency Mode");
