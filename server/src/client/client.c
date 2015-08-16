@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 01:00:31 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/17 00:17:56 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ void	client_set_spawn_position(t_client *client)
 	egg = get_hatched_egg(client->team);
 	if (egg != NULL)
 	{
-		client->position = egg->position;
+		client_move_to(client, egg->position);
 		egg_remove(egg);
 	}
 	else
-		client->position = tile_at(rand() % g_zappy.width, rand() % g_zappy.height);
+	{
+		client_move_to(client, tile_at(rand() % g_zappy.width, rand() % g_zappy.height));
+	}
 }
 
 void	client_delete(t_client *client_to_delete)

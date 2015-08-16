@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 22:51:28 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 23:14:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include <sys/select.h>
 #include <sys/socket.h>
 
-#define NETWORK_BUFFER_SIZE	500
+#define NETWORK_BUFFER_SIZE	1000
 
 void		network_bind()
 {
