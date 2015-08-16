@@ -23,7 +23,7 @@
 #include <string.h>
 #include <sys/socket.h>
 
-const size_t		Network::BUFF_SIZE = 32876;
+const size_t		Network::BUFF_SIZE = 32768;
 const std::string	Network::MSG_SUCCESS = "ok";
 const std::string	Network::MSG_FAILURE = "ko";
 const std::string	Network::MSG_DEATH = "mort";
@@ -222,6 +222,7 @@ std::string		Network::recieve(void)
 	char		*buf;
 
 	ret = get_next_line(_socket_connect, &buf);
+	_client->printDebug(std::to_string(ret));
 	switch (ret)
 	{
 		case -1:
@@ -289,6 +290,7 @@ std::string		Network::send(const std::string &message)
 		_client->printDebug(message, 1);
 		if (::send(_socket_connect, toSend.c_str(), toSend.size(), 0) < 0)
 		{
+			_client->printDebug("erreur send");
 			std::cout << strerror(errno) << std::endl;
 			return MSG_FAILURE;
 		}
