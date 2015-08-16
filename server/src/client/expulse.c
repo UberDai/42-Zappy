@@ -14,6 +14,7 @@ static void	client_get_expulsed(t_client *client, const t_tile *position)
 	sprintf(message, 14, "deplacement %i", get_direction(points));
 	network_send(client, message, 0);
 	client->position = position;
+	client_queue_free(client);
 }
 
 void	client_expulse(const t_client *client)
