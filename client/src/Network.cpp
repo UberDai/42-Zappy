@@ -151,6 +151,7 @@ Network::Network(Network const & src) :
 
 Network::~Network(void)
 {
+	_client->printDebug("Destroy");
 	this->close();
 }
 
@@ -209,6 +210,7 @@ void	Network::_connect(void)
 
 void	Network::close(void)
 {
+	_client->printDebug("Close");
 	if (_connected)
 		::close(_socket_connect);
 	_connected = false;
@@ -226,6 +228,7 @@ std::string		Network::recieve(void)
 			std::cout  << strerror(errno) << std::endl;
 			break ;
 		case 0:
+			_client->printDebug("Close de merde");
 			this->close();
 			break ;
 		default:
