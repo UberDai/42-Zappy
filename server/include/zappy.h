@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 02:13:58 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 22:51:49 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,5 +270,7 @@ void						logger_client_disconnect(const t_client *client);
 void						logger_client_connect(const t_client *client);
 void						logger_client_send(const t_client *client, const char *message);
 void						logger_client_receive(const t_client *client, const char *message);
+
+void						client_expulse(const t_client *client);
 
 #endif

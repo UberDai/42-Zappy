@@ -2,7 +2,7 @@
 #include "zappy.h"
 #include <stdio.h>
 
-static void	client_get_expulsed(t_client *client, const t_tile *position)
+static void	client_get_expulsed(t_client *client, t_tile *position)
 {
 	double	points[4];
 	char	message[14] = { 0 };
@@ -11,7 +11,7 @@ static void	client_get_expulsed(t_client *client, const t_tile *position)
 	points[1] = client->position->y;
 	points[2] = position->x;
 	points[3] = position->y;
-	sprintf(message, 14, "deplacement %i", get_direction(points));
+	snprintf(message, 14, "deplacement %i", get_direction(points));
 	network_send(client, message, 0);
 	client->position = position;
 	client_queue_free(client);
@@ -33,7 +33,7 @@ void	client_expulse(const t_client *client)
 	else if (client->orientation == ORIENT_WEST)
 		tile = tile_at(tile->x, tile->y - 1);
 
-	init_iter(&iter, client->position->clients, increasing);
+	init_iter(&iter, &client->position->clients, increasing);
 	while (lst_iterator_next(&iter))
 	{
 		target = (t_client*)iter.data;
