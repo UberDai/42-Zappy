@@ -166,3 +166,44 @@ char	*tile_content(t_tile *tile, t_client *client)
 	}
 	return (str);
 }
+
+int	get_direction(double *points)
+{
+	double	slope;
+	char	vertical;
+	double	x;
+	double	y;
+
+	x = points[1] - points[3];
+	y = points[0] - points[2];
+
+	if (x == 0)
+	{
+		slope = 0;
+		vertical = 1;
+	}
+	else
+	{
+		slope = y / x;
+		vertical = 0;
+	}
+
+	if (x < 0 && slope > -1 && slope < 1)
+		return (1);
+	if (x > 0 && slope > -1 && slope < 1)
+		return (5);
+	if ((slope < -1 || slope > 1 || x == 0) && y < 1)
+		return (7);
+	if ((slope < -1 || slope > 1 || x == 0) && y > 0)
+		return (3);
+	if (x < 0 && x == y)
+		return (8);
+	if (x < 0 && x == -y)
+		return (2);
+	if (x > 0 && x == y)
+		return (4);
+	if (x > 0 && x == -y)
+		return (6);
+
+	return (0);
+}

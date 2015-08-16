@@ -169,6 +169,7 @@ short						tile_add_item(t_tile *tile, int item);
 short						tile_remove_item(t_tile *tile, int item);
 void						tile_regenerate(t_tile *tile);
 char						*tile_content(t_tile *tile, t_client *client);
+int							get_direction(double *points);
 void						map_regenerate(void);
 char						*append_string(char *src, const char *str);
 

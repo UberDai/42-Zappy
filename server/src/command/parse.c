@@ -27,6 +27,7 @@ t_command	g_commands[] = {
 	{ "broadcast", 1, NULL, command_broadcast },
 	{ "incantation", 3, command_pre_promote, command_promote },
 	{ "fork", 42, NULL, command_fork },
+	{ "expulse", 7, NULL, command_expulse },
 	{ NULL, 0, NULL, NULL }
 };
 

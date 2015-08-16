@@ -36,6 +36,7 @@ SRC_FILES	=	main.c \
 				client/queue.c \
 				client/item.c \
 				client/vision.c \
+				client/expulse.c \
 				command/parse.c \
 				command/commands.c \
 				command/gfx.c

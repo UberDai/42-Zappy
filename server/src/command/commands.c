@@ -43,9 +43,18 @@ short	command_left(t_client *client, t_uint argc, char **argv)
 
 short	command_right(t_client *client, t_uint argc, char **argv)
 {
-	if (argc != 1)
+	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
 	client_rotate(client, TURN_RIGHT);
+	(void)argv;
+	return (COMMAND_SUCCESS);
+}
+
+short	command_expulse(t_client *client, t_uint argc, char **argv)
+{
+	if (client->status != STATUS_PLAYER || argc != 1)
+		return (COMMAND_FAIL);
+	client_expulse(client);
 	(void)argv;
 	return (COMMAND_SUCCESS);
 }
