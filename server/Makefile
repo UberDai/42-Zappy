@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/08/16 00:08:09 by amaurer          ###   ########.fr        #
+#    Updated: 2015/08/16 01:42:33 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ NAME		=	serveur
 BIN_NAME	=	$(BIN_DIR)$(NAME)
 SRC_FILES	=	main.c \
 				zappy.c \
+				logger.c \
 				util.c \
 				options.c \
 				network.c \

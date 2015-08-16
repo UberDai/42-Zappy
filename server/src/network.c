@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/15 01:47:35 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 02:58:47 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,14 @@ static void	network_client_connect(void)
 		die("Client connection error.");
 
 	FD_SET(client->fd, &(g_zappy.network.read_fds));
-	printf("Client #%u created.\n", client->id);
 
 	network_send(client, "BIENVENUE", 0);
+	logger_client_connect(client);
 }
 
 void	network_client_disconnect(t_client *client)
 {
-	network_send(client, "GTFO", 0);
-	printf("Client #%u disconnected.\n", client->id);
+	logger_client_disconnect(client);
 	close(client->fd);
 	FD_CLR(client->fd, &(g_zappy.network.read_fds));
 	if (client->status == STATUS_PLAYER)
@@ -103,6 +102,7 @@ static char	network_client_data(t_client *client, fd_set *fds)
 	else
 	{
 		input = ft_strsub(buffer, 0, strlen(buffer) - 1);
+		logger_client_receive(client, input);
 		ret = command_parse(client, input);
 		free(input);
 		return (ret);
@@ -176,7 +176,10 @@ static void	network_send_to_client(t_client *emitter, t_lst *list, char *str)
 	{
 		client = (t_client*)iter.data;
 		if (emitter == NULL || client != emitter)
+		{
+			logger_client_send(client, str);
 			send(client->fd, str, strlen(str), 0);
+		}
 	}
 }
 
@@ -209,7 +212,10 @@ void		network_send(t_client *client, const char *str, int options)
 			network_send_to_client(client, g_zappy.gfx_clients, output);
 	}
 	else
+	{
+		logger_client_send(client, output);
 		send(client->fd, output, strlen(output), 0);
+	}
 	free(output);
 }
 

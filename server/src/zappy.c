@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/15 02:15:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 02:39:32 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	zappy_run(void)
 			clients_play();
 			g_zappy.time.cycle_count++;
 		}
-		printf("Clients A: %lu  C: %lu  G: %lu\n",
+		printf("Clients ?: %lu  P: %lu  G: %lu\n",
 			g_zappy.anonymous_clients->size,
 			g_zappy.clients->size,
 			g_zappy.gfx_clients->size

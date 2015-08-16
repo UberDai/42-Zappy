@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:44:26 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 00:35:27 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 00:52:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,7 @@ void	client_queue_shift(t_client *client)
 		if (i == CLIENT_QUEUE_MAX - 1)
 			bzero(client->queue + i, sizeof(t_queue));
 		else
-			memcpy(client->queue + i, client->queue + i + 1,
-				sizeof(t_queue));
+			memcpy(client->queue + i, client->queue + i + 1, sizeof(t_queue));
 		i++;
 	}
 }

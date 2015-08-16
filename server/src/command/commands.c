@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/15 01:37:37 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 00:30:56 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,21 +207,12 @@ short	command_broadcast(t_client *client, t_uint argc, char **argv)
 
 short	command_pre_promote(t_client *client, t_uint argc, char **argv)
 {
-	t_uint	current_level;
-	t_lstiter	iter;
-
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
 
 	if (client_can_promote(client))
 	{
-		current_level = client->level;
-		init_iter(&iter, &client->position->clients, increasing);
-		while (lst_iterator_next(&iter))
-		{
-			if (client->level == current_level)
-				network_send((t_client*)iter.data, "elevation en cours", 0);
-		}
+		network_send(client, "elevation en cours", 0);
 		return (COMMAND_SUCCESS);
 	}
 
@@ -234,8 +225,6 @@ short	command_pre_promote(t_client *client, t_uint argc, char **argv)
 short	command_promote(t_client *client, t_uint argc, char **argv)
 {
 	char	str[18] = { 0 };
-	t_uint	current_level;
-	t_lstiter	iter;
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
@@ -243,14 +232,7 @@ short	command_promote(t_client *client, t_uint argc, char **argv)
 	if (client_promote(client))
 	{
 		snprintf(str, 18, "niveau actuel : %u", client->level + 1);
-
-		current_level = client->level;
-		init_iter(&iter, &client->position->clients, increasing);
-		while (lst_iterator_next(&iter))
-		{
-			if (client->level == current_level)
-				network_send(client, str, 0);
-		}
+		network_send(client, str, 0);
 		return (COMMAND_NONE);
 	}
 

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 01:11:35 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 02:00:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,12 @@ int		main(int ac, char **av)
 {
 	srand(time(NULL));
 	init_zappy();
+	logger_init("log.txt");
 	options_parse(ac, av);
 	g_zappy.time.clock = 1.0 / (float)g_zappy.time.cycle_duration;
 	map_init();
 	signal_bind();
 	zappy_run();
+	logger_close();
 	return (0);
 }

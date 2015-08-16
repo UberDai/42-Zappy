@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 00:07:08 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 02:13:58 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 # define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			2
-# define REGEN_PROBABILITY	5
+# define REGEN_PROBABILITY	1
 
 # define EGG_MATURATION		600
 
@@ -156,6 +156,7 @@ typedef struct				s_zappy
 	t_lst					*gfx_clients;
 	t_lst					*anonymous_clients;
 	t_lst					*eggs;
+	int						logger_fd;
 	short					paused;
 }							t_zappy;
 
@@ -260,5 +261,13 @@ void						egg_remove(t_egg *egg);
 void						egg_hatch(t_egg *egg);
 t_egg						*get_hatched_egg(const t_team *team);
 void						watch_eggs(void);
+
+void						logger_init(const char *filename);
+void						logger_log(const char *message);
+void						logger_close(void);
+void						logger_client_disconnect(const t_client *client);
+void						logger_client_connect(const t_client *client);
+void						logger_client_send(const t_client *client, const char *message);
+void						logger_client_receive(const t_client *client, const char *message);
 
 #endif
