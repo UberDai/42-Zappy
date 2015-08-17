@@ -35,17 +35,23 @@ class	Network
 		static const std::string	MSG_BROADCAST;
 		static const std::string	MSG_ELEVATION;
 		static const std::string	MSG_CURRENT_LVL;
+		static const std::string	MSG_EXPUSLE;
 		static const std::string	MSG_WELCOME;
+		static const size_t			BUFF_SIZE;
 
 		bool				isConnected(void);
 		std::string			send(const std::string &);
 		std::string			recieve(void);
 		std::string			getHostName();
 		unsigned int		getPort();
+		int					getSocketPid(void) const;
 		void				close(void);
+		// //debug
+		// int					_Debug_socket_connect;
+		// struct sockaddr_in	_Debug_sockaddr_connect;
+		// size_t				_Debug_sockaddr_len;
 	private:
 
-		static const size_t	BUFF_SIZE;
 		Client				*_client;
 
 		std::string			_hostName;
@@ -54,7 +60,6 @@ class	Network
 		int					_socket_connect;
 		struct sockaddr_in	_sockaddr_connect;
 		size_t				_sockaddr_len;
-
 		void				_connect(void);
 		void				_initConnection(void);
 };

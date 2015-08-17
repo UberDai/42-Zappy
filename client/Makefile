@@ -2,7 +2,7 @@
 #             .'         `.
 #            :             :   File       : Makefile
 #           :               :  Creation   : 2015-05-17 02:38:33
-#           :      _/|      :  Last Edit  : 2015-06-08 01:38:05
+#           :      _/|      :  Last Edit  : 2015-06-08 22:46:15
 #            :   =/_/      :   Author     : nsierra-
 #             `._/ |     .'    Mail       : nsierra-@student.42.fr
 #          (   /  ,|...-'
@@ -19,6 +19,7 @@ INC_DIR				=	inc/
 CLASS_SRC_SUFFIX	=	.cpp
 CLASS_INC_SUFFIX	=	.hpp
 CLASSES				=	Inventory \
+						Map \
 						Client \
 						Network \
 						ActionBroadcast \
@@ -29,7 +30,9 @@ CLASSES				=	Inventory \
 						ActionMove \
 						ActionSee \
 						ActionTake \
-						Map
+						ActionInventory \
+						Pathfinding \
+						BroadcastInfos
 
 INTERF_SRC_SUFFIX	=	.cpp
 INTERF_INC_SUFFIX	=	.hpp

@@ -30,7 +30,7 @@ bool		retrieveOptions(int ac,
 	opterr = 0;
 	if (strncmp(av[1], "-n", 2) != 0 || strncmp(av[3], "-p", 2) != 0)
 		return false;
-	while ((c = getopt(ac, av, ":n:p:h::")) != -1)
+	while ((c = getopt(ac, av, "n:p:h::")) != -1)
 	{
 		switch (c)
 		{

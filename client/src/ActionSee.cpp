@@ -1,4 +1,5 @@
 #include "ActionSee.hpp"
+#include "Map.hpp"
 
 ActionSee::ActionSee(Client *client) :
 	_client(client)
@@ -38,39 +39,9 @@ int				ActionSee::execute(Network &network)
 {
 	std::string ret;
 	std::string tmp;
-	int i = 0;
+	Map			&m = _client->getMap();
 
 	ret = network.send(SEE);
-	try
-	{
-		std::regex re("([\\w \\s]*)[,}]");
-		std::sregex_iterator next(ret.begin(), ret.end(), re);
-		std::sregex_iterator end;
-
-		while (next != end)
-		{
-			std::smatch match = *next;
-			tmp = match.str();
-			if (tmp[0] == ' ')
-				tmp = match.str().substr(1);
-			tmp.resize(tmp.size() - 1);
-			//add to map
-			_client->fov[i] = tmp;
-			next++;
-			i++;
-		}
-
-		return _successIndex;
-	}
-	catch (std::regex_error& e)
-	{ }
-	return _failIndex;
-	/*
-	parse du retour en n string/inventaire
-	getplayerX/Y
-	set map[X][Y] = parse[0]
-	....
-	set map[X + ?][Y + ?] = parse[?]
-	*/
-	//si nourriture case 0 add prend nourriture
+	m.setFrom(_client->getPlayerX(), _client->getPlayerY(), _client->getPlayerOrientation(), ret);
+	return _successIndex;
 }

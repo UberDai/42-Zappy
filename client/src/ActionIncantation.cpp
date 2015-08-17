@@ -48,7 +48,7 @@ int					ActionIncantation::execute(Network &network)
 			return _failIndex;
 
 		data = data.substr(Network::MSG_CURRENT_LVL.size());
-	
+
 		/*   TEST    */
 		std::map<std::string, size_t>	&compo = _client->getTotems()[_client->getLevel()];
 		for (auto &kv : compo)

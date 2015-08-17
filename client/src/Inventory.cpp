@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Inventory.cpp
 //           :               :       Creation   : 2015-06-02 18:59:27
-//           :      _/|      :       Last Edit  : 2015-06-08 01:14:00
+//           :      _/|      :       Last Edit  : 2015-07-27 02:19:26
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -40,7 +40,7 @@ Inventory::Inventory(Inventory const & rhs)
 Inventory&	Inventory::operator=(Inventory const & rhs)
 {
 	if (this != &rhs)
-		(void)rhs;
+		_data = rhs._data;
 	return *this;
 }
 
@@ -59,9 +59,7 @@ std::string	Inventory::toString() const
 
 	ss << "[";
 	for (auto &kv : _data)
-	{
 		ss << kv.first << " " << kv.second << ", ";
-	}
 	ss << "]";
 	return ss.str();
 }
@@ -80,9 +78,9 @@ void	Inventory::set(const std::string & obj, size_t qty)
 bool	Inventory::has(const std::string & obj, size_t qty)
 {
 	try {
-		return _data.at(obj) == qty;
+		return _data.at(obj) >= qty;
 	} catch (const std::out_of_range &oor) {
-		return false;		
+		return false;
 	}
 }
 
@@ -96,8 +94,18 @@ void	Inventory::add(const std::string & obj, int qty)
 		prevQty = 0;
 	}
 
-	_data[obj] = prevQty + qty;
+	if (static_cast<int>(prevQty) + static_cast<int>(qty) < 0)
+		_data[obj] = 0;
+	else
+		_data[obj] = prevQty + qty;
 
 	if (_data.at(obj) == 0)
 		_data.erase(obj);
 }
+
+void	Inventory::clear(void)
+{
+	if (_data.size() != 0)	_data.clear();
+}
+
+bool	Inventory::isEmpty(void) { return _data.empty(); }

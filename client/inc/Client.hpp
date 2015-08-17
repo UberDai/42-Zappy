@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Client.hpp
 //           :               :       Creation   : 2015-05-21 00:43:58
-//           :      _/|      :       Last Edit  : 2015-06-08 00:59:02
+//           :      _/|      :       Last Edit  : 2015-07-28 03:46:25
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -23,19 +23,63 @@
 # include "Inventory.hpp"
 # include "Action.hpp"
 # include "eDirection.hpp"
+# include "eOrientation.hpp"
+# include "Pathfinding.hpp"
+# include "BroadcastInfos.hpp"
 
 /*
 ** TODO NOE
 **
-** - classe IA
+** - classe IA <-- kek
 */
 
 class Network;
 class Action;
+class Pathfinding;
+
+using Totems = std::vector<std::map<std::string, size_t> >;
 
 class	Client
 {
 public:
+
+	// enum eMode {
+	// 	NORMAL,
+	// 	NORMAL_FIND,
+	// 	FIND_PLAYER,
+	// 	WAIT_PLAYER,
+	// 	CHECK_PLAYER
+	// };
+
+	// enum eBroadcastType {
+	// 	SEEK,
+	// 	FOUND,
+	// 	ALL_GOOD,
+	// 	FOLLOW
+	// };
+
+	enum eMode {
+		NORMAL,
+		WAIT_MATES,
+		TOWARDS_MATE,
+		REUNION,
+		FOOD_EMERGENCY,
+		EGG
+	};
+
+	enum eBroadcastType : int {
+		WAIT,
+		STOP_WAITING,
+		ON_SAME_CASE,
+		INCANTATION
+	};
+
+	typedef void (Client::* ClientFunction)();
+	typedef void (Client::* BroadcastHandler)(BroadcastInfos &);
+
+	using ModesMap = std::map<enum eMode, ClientFunction>;
+	using BroadcastHandlerMap = std::map<enum eMode, BroadcastHandler>;
+
 	Client(unsigned int,
 			std::string = "Default Team Name",
 			std::string = "localhost");
@@ -43,51 +87,115 @@ public:
 	Client(Client const &);
 	Client &operator=(Client const &);
 
+	void					recieveBroadcast(const std::string &);
 	bool					loop(void);
 	void					hasDied(void);
-	void					recieveBroadcast(const std::string &);
 	Inventory				&getInventory(void);
 	unsigned int			getLevel() const;
 	void					setLevel(unsigned int);
-	void					setPlayerX(size_t &);
-	size_t					getPlayerY() const;
-	void					setPlayerY(size_t &);
-	// Gestion de la map perso beta
-
 	size_t					getPlayerX() const;
+	void					setPlayerX(int);
+	size_t					getPlayerY() const;
+	void					setPlayerY(int);
+	enum eOrientation		getPlayerOrientation() const;
+	void					setPlayerOrientation(enum eOrientation);
+	void					printDebug(const std::string &, int = 0);
+	Map						&getMap(void);
+	Totems					&getTotems();
 
-	std::map<size_t, std::string>  fov;
-	//vector ??
-	//std::map<size_t, std::map<size_t, std::string> > _map; //inventaire ??
+	std::map<size_t, std::string>	fov;
+	Map								map;
+	std::vector<Action *>			actions;
+	void					elevationTest(void);
+	void					expluseTest(const char *);
 
-	std::vector<std::map<std::string, size_t> >	&getTotems();
-	void					printDebug(const std::string &);
-
+	enum eMode				_mode;
 private:
-	static const std::regex								_serverInfosFormat;
-	static std::vector<std::map<std::string, size_t> >	_totems;
-
+	static const std::regex	_serverInfosFormat;
+	static Totems			_totems;
+	ModesMap				_modeFun;
+	BroadcastHandlerMap		_broadcastHandler;
+	Pathfinding				*_path;
 	const std::string		_teamName;
-	Map						_map;
 	Network					*_network;
 	unsigned int			_level;
 	unsigned int			_availableConnections;
-	unsigned int			_mapX;
-	unsigned int			_mapY;
 	std::ofstream 			_ofs;
 	Inventory				_inventory;
-	std::vector<Action *>	_actions;
 	size_t					_playerX;
 	size_t					_playerY;
+	enum eOrientation		_playerOrientation;
+	size_t					_foodThreshold;
+	size_t					_cycleCount;
+
+	// Broadcasting
+	bool					_mustMove;
+	bool					_following;
+	bool					_landed;
+	size_t					_matesOnCase;
+	int						_totemDirection;
+	std::string				_broadcastTarget;
+	size_t					_directionTomove;
+
+	// Modes
+	void					_normalMode(void);
+	void					_waitMatesMode(void);
+	void					_towardsMateMode(void);
+	void					_reunionMode(void);
+	void					_foodEmergencyMode(void);
+	void					_changeToMode(enum eMode);
+	void					_eggMode(void);
+
+	// Broadcast
+	void					_updateWaitingPosition(BroadcastInfos &);
+	void					_normalBroadcastHandler(BroadcastInfos &);
+	void					_waitMatesBroadcastHandler(BroadcastInfos &);
+	void					_towardsMateBroadcastHandler(BroadcastInfos &);
+	void					_reunionBroadcastHandler(BroadcastInfos &);
+	void					_foodEmergencyBroadcastHandler(BroadcastInfos &);
+
+	// IA
+	void					_ia(void);
+	bool					_takeFoodIfAny(void);
+	bool					_composOk(void);
+	bool					_hasEnoughFood(void);
+	bool					_enoughMatesToIncant(void);
+	bool					_someoneIsWaiting(void);
+	size_t					_getPlayersToFind(void);
+	void					_moveTowardsWaitingPlayer(void);
+	void					_lookFor(int = 0);
+	void					_sendBroadcast(enum eBroadcastType);
+	void					_clearActionList(void);
+	void					_executeActionList(void);
+	void					_explore(void);
+	void					_dropCompo(void);
+	void					_resetFollowSystem(void);
+
+	void					_moveTo(void);
+	void					_moveToUpperLeftCorner(void);
+	void					_moveToLeft(void);
+	void					_moveToLowerLeftCorner(void);
+	void					_moveToBehind(void);
+	void					_moveToLowerRightCorner(void);
+	void					_moveToRight(void);
+	void					_moveToUpperRightCorner(void);
+
+	void					_addAction(const std::string &);
+	void					_addActionBegin(const std::string &);
 
 	std::string				_sendTeamInfo(void);
 	void					_loadServerInfos(const std::string &);
 	void					_forkstem(void);
-	void					_ia(void);
-	int						_compos(int);
-	void					_composFind(int);
-	int						_search(int);
-	void					_playMove(void);
+	void					_checkSlot(void);
+
+
+	// void					_setBroadcastMsg(std::stringstream &);
+	// void					_ia(void);
+	// int					_compos(int);
+	// void					_composFind(int);
+	// int					_search(int);
+	// void					_playMove(void);
+	// void					_findPlayerMode(void);
 };
 
 #endif /* CLIENT_HPP */

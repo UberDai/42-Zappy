@@ -29,6 +29,7 @@ public:
 	static const std::string	DROP;
 	static const std::string	EGG;
 	static const std::string	EXPULSE;
+	static const std::string	INVENTORY;
 	static const std::string	INCANTATION;
 	static const std::string	MOVE_FORWARD;
 	static const std::string	MOVE_LEFT;

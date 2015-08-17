@@ -18,6 +18,7 @@
 # include "ActionDrop.hpp"
 # include "ActionEgg.hpp"
 # include "ActionExpulse.hpp"
+# include "ActionInventory.hpp"
 # include "ActionIncantation.hpp"
 # include "ActionMove.hpp"
 # include "ActionSee.hpp"

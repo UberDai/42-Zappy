@@ -2,7 +2,7 @@
 //             .'         `.
 //            :             :        File       : Map.hpp
 //           :               :       Creation   : 2015-06-08 00:57:04
-//           :      _/|      :       Last Edit  : 2015-06-08 01:21:33
+//           :      _/|      :       Last Edit  : 2015-06-09 20:42:24
 //            :   =/_/      :        Author     : nsierra-
 //             `._/ |     .'         Mail       : nsierra-@student.42.fr
 //          (   /  ,|...-'
@@ -16,23 +16,50 @@
 
 # include <string>
 # include <iostream>
+# include <stdexcept>
 # include <vector>
 # include "Inventory.hpp"
+# include "eOrientation.hpp"
 
 class Inventory;
 
 class Map
 {
 public:
-	Map(size_t = 0, size_t = 0);
+	Map();
 	~Map();
 	Map(Map const &);
 
 	std::string	toString() const;
 	Map &	operator=(Map const &);
 
+	void			initMap(size_t, size_t);
+	void			setFrom(size_t, size_t, enum eOrientation, const std::string &);
+
+	class Proxy {
+    public:
+        Proxy(std::vector<Inventory> &_array) : _array(_array) { }
+
+        Inventory &operator[](int index)
+        {
+        	if (index >= static_cast<int>(_array.size()))
+				index = index % _array.size();
+			else if (index < 0)
+				index = _array.size() + index;
+            return _array.at(index);
+        };
+    private:
+        std::vector<Inventory> &_array;
+    };
+	Proxy		operator[](int);
+	size_t		getMapX();
+	size_t		getMapY();
+
 private:
+	size_t									_totox;
+	size_t									_totoy;
 	std::vector<std::vector<Inventory> >	_data;
+	std::pair<int, int>						_getRealCoord(size_t, size_t, enum eOrientation, size_t);
 };
 
 std::ostream	&operator<<(std::ostream &o, Map const &i);

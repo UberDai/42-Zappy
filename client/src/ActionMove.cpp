@@ -1,15 +1,15 @@
 #include "ActionMove.hpp"
 
 std::map<enum eDirection, std::string>	ActionMove::_directionMap =
-	{
-		{ UP,			MOVE_FORWARD },
-		{ TURN_LEFT,	MOVE_LEFT },
-		{ TURN_RIGHT,	MOVE_RIGHT }
-	}
+{
+	{ UP,			"avance" },
+	{ TURN_LEFT,	"gauche" },
+	{ TURN_RIGHT,	"droite" }
+}
 ;
 
 ActionMove::ActionMove(enum eDirection dir) :
-	_dir(dir)
+_dir(dir)
 {
 
 }
@@ -49,7 +49,42 @@ int				ActionMove::execute(Network &network)
 	ret = network.send(_directionMap[_dir]);
 
 	if (ret == Network::MSG_SUCCESS)
+	{
+		switch (_dir)
+		{
+			case UP:
+				switch (client->getPlayerOrientation())
+				{
+					case NORTH:
+						client->setPlayerY(client->getPlayerY() + 1);
+					break;
+					case SOUTH:
+						client->setPlayerY(client->getPlayerY() - 1);
+					break;
+					case EAST:
+						client->setPlayerX(client->getPlayerX() + 1);
+					break;
+					case WEST:
+						client->setPlayerX(client->getPlayerX() - 1);
+					break;
+				}
+			break;
+			case TURN_RIGHT:
+				if (client->getPlayerOrientation() == WEST)
+					client->setPlayerOrientation(NORTH);
+				else
+					client->setPlayerOrientation(static_cast<enum eOrientation>(client->getPlayerOrientation() + 1));
+			break;
+				case TURN_LEFT:
+				if (client->getPlayerOrientation() == NORTH)
+					client->setPlayerOrientation(WEST);
+				else
+					client->setPlayerOrientation(static_cast<enum eOrientation>(client->getPlayerOrientation() - 1));
+			break;
+
+		}
 		return _successIndex;
+	}
 	return _failIndex;
 }
 
