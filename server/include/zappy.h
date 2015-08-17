@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 18:57:41 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 23:04:18 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@
 # define NET_SEND_GFX		4
 
 # define REGEN_RATE			FOOD_DURATION
-# define REGEN_MAX			3
+# define REGEN_MAX			2
+# define REGEN_PROBABILITY	1
 
-# define NET_SUCCESS		"yay"
-# define NET_FAILURE		"nope"
+# define EGG_MATURATION		600
+
+# define NET_SUCCESS		"ok"
+# define NET_FAILURE		"ko"
 
 # define STATUS_UNKNOWN		0
 # define STATUS_PLAYER		1
@@ -57,6 +60,7 @@
 
 typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
+typedef char				t_bool;
 
 typedef enum 				e_orient
 {
@@ -78,6 +82,7 @@ typedef struct				s_command
 {
 	char					*name;
 	t_uint					delay;
+	short					(*pre_func)(t_client *, t_uint, char **);
 	short					(*func)(t_client *, t_uint, char **);
 }							t_command;
 
@@ -94,9 +99,7 @@ typedef struct				s_tile
 {
 	int						x;
 	int						y;
-	t_uint					client_count;
-	t_client				**clients;
-	short					refresh_client_list;
+	t_lst					clients;
 	t_uint					items[ITEM_COUNT];
 	t_queue					queue[CLIENT_QUEUE_MAX];
 }							t_tile;
@@ -116,6 +119,14 @@ struct						s_client
 	t_uint					hunger;
 	t_queue					queue[CLIENT_QUEUE_MAX];
 };
+
+typedef struct				s_egg
+{
+	t_team					*team;
+	t_tile					*position;
+	t_uint					hatch_time;
+	char					has_hatched;
+}							t_egg;
 
 typedef struct				s_time
 {
@@ -144,19 +155,23 @@ typedef struct				s_zappy
 	t_lst					*clients;
 	t_lst					*gfx_clients;
 	t_lst					*anonymous_clients;
+	t_lst					*eggs;
+	int						logger_fd;
 	short					paused;
 }							t_zappy;
 
 t_zappy						g_zappy;
+char						*g_item_names[ITEM_COUNT];
 
 void						map_init(void);
-void						tile_update_client_list(t_tile *tile);
 t_tile						*tile_at(int x, int y);
 short						tile_add_item(t_tile *tile, int item);
 short						tile_remove_item(t_tile *tile, int item);
 void						tile_regenerate(t_tile *tile);
-char						*tile_inventory(t_tile *tile);
+char						*tile_content(t_tile *tile, t_client *client);
+int							get_direction(double *points);
 void						map_regenerate(void);
+char						*append_string(char *src, const char *str);
 
 void						options_parse(t_uint ac, char **av);
 void						options_valid(void);
@@ -166,6 +181,7 @@ void						usage(void);
 void						print_client(t_client *client);
 void						print_client_queue(t_client *client);
 void						print_tile(t_tile *tile);
+void						print_client_positions(void);
 double						get_time(void);
 int							rand_range(int min, int max);
 
@@ -173,10 +189,13 @@ short						client_eat(t_client *client);
 short						client_move(t_client *client);
 short						client_rotate(t_client *client, short angle);
 t_client					*client_create(void);
+void						client_set_spawn_position(t_client *client);
 void						client_delete(t_client *client_to_delete);
 short						client_promote(t_client *client);
+short						client_can_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);
 short						client_queue_push(t_client *client, t_command *command, char **av);
+short						client_queue_push_front(t_client *client, t_command *command, char **av);
 void						client_queue_shift(t_client *client);
 void						client_queue_free(t_client *client);
 void						client_set_team(t_client *client, const char *team_name);
@@ -185,6 +204,7 @@ short						client_remove_item(t_client *client, int item);
 short						client_pick(t_client *client, int item);
 short						client_drop(t_client *client, int item);
 char						*client_inventory(t_client *client);
+void						client_broadcast(t_client *emitter, char *message);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);
@@ -192,7 +212,8 @@ size_t						team_count_clients(t_team *team);
 
 void						network_bind();
 void						network_receive(void);
-void						network_send(t_client *client, char *str, int options);
+void						network_send(t_client *client, const char *str, int options);
+void						network_send_team(const t_team *team, const char *str);
 void						network_client_disconnect(t_client *client);
 void						network_disconnect(void);
 
@@ -200,6 +221,7 @@ char						command_parse(t_client *client, char *input);
 short						command_right(t_client *client, t_uint argc, char **argv);
 short						command_left(t_client *client, t_uint argc, char **argv);
 short						command_move(t_client *client, t_uint argc, char **argv);
+short						command_fork(t_client *client, t_uint argc, char **argv);
 short						command_pick(t_client *client, t_uint argc, char **argv);
 short						command_drop(t_client *client, t_uint argc, char **argv);
 short						command_pause(t_client *client, t_uint argc, char **argv);
@@ -208,8 +230,10 @@ short						command_inventory(t_client *client, t_uint argc, char **argv);
 short						command_connect_count(t_client *client, t_uint argc, char **argv);
 short						command_fork(t_client *client, t_uint argc, char **argv);
 short						command_promote(t_client *client, t_uint argc, char **argv);
+short						command_pre_promote(t_client *client, t_uint argc, char **argv);
 short						command_expulse(t_client *client, t_uint argc, char **argv);
 short						command_see(t_client *client, t_uint argc, char **argv);
+short						command_broadcast(t_client *client, t_uint argc, char **argv);
 
 void						signal_bind(void);
 
@@ -217,16 +241,36 @@ void						zappy_run(void);
 void						zappy_pause(t_client *client);
 void						zappy_resume(t_client *client);
 
-void						gfx_client_connect(t_client *client);
+void						gfx_client_connect(t_client *client, t_client *gfx_client);
 void						gfx_client_disconnect(t_client *client);
 void						gfx_client_death(t_client *client);
 void						gfx_tile_add(t_client *client, t_tile *tile, int item);
 void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
+void						gfx_egg_add(const t_egg *egg);
+void						gfx_egg_remove(const t_egg *egg);
 void						gfx_client_pick(t_client *client, int item);
 void						gfx_client_drop(t_client *client, int item);
 void						gfx_client_move_to(t_client *client, t_tile *tile);
 void						gfx_client_turn(t_client *client);
+void						gfx_send_map(t_client *client);
+void						gfx_send_clients(t_client *client);
 
 t_lst						*get_vision(t_client *client);
+
+t_egg						*egg_create(const t_client *client);
+void						egg_remove(t_egg *egg);
+void						egg_hatch(t_egg *egg);
+t_egg						*get_hatched_egg(const t_team *team);
+void						watch_eggs(void);
+
+void						logger_init(const char *filename);
+void						logger_log(const char *message);
+void						logger_close(void);
+void						logger_client_disconnect(const t_client *client);
+void						logger_client_connect(const t_client *client);
+void						logger_client_send(const t_client *client, const char *message);
+void						logger_client_receive(const t_client *client, const char *message);
+
+void						client_expulse(const t_client *client);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:44:26 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:19:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 00:52:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,31 @@ short	client_queue_push(t_client *client, t_command *command, char **av)
 		i++;
 	if (i == CLIENT_QUEUE_MAX)
 		return (0);
-
 	client->queue[i].set = 1;
 	client->queue[i].ac = ft_splits_count(av);
 	client->queue[i].av = av;
 	client->queue[i].command = command;
 	client->queue[i].delay = command->delay;
+	return (1);
+}
+
+short	client_queue_push_front(t_client *client, t_command *command, char **av)
+{
+	int	i;
+	int	index;
+
+	index = (client->queue[0].set) ? 1 : 0;
+	i = CLIENT_QUEUE_MAX - 2;
+	while (i >= index)
+	{
+		memcpy(&(client->queue[i + 1]), &(client->queue[i]), sizeof(t_queue));
+		i--;
+	}
+	client->queue[index].set = 1;
+	client->queue[index].ac = ft_splits_count(av);
+	client->queue[index].av = av;
+	client->queue[index].command = command;
+	client->queue[index].delay = command->delay;
 	return (1);
 }
 
@@ -57,8 +76,7 @@ void	client_queue_shift(t_client *client)
 		if (i == CLIENT_QUEUE_MAX - 1)
 			bzero(client->queue + i, sizeof(t_queue));
 		else
-			memcpy(client->queue + i, client->queue + i + 1,
-				sizeof(t_queue));
+			memcpy(client->queue + i, client->queue + i + 1, sizeof(t_queue));
 		i++;
 	}
 }
@@ -71,7 +89,6 @@ void	client_queue_execute(t_client *client)
 	if (!queue->set)
 		return ;
 	queue->delay--;
-
 	if (queue->delay == 0)
 		queue->command->func(client, 0, queue->av);
 }

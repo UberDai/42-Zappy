@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 18:54:56 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 02:00:33 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,31 @@ void		usage(void)
 
 static void	init_zappy(void)
 {
+	g_item_names[0] = strdup("nourriture");
+	g_item_names[1] = strdup("linemate");
+	g_item_names[2] = strdup("deraumere");
+	g_item_names[3] = strdup("sibur");
+	g_item_names[4] = strdup("mendiane");
+	g_item_names[5] = strdup("phiras");
+	g_item_names[6] = strdup("thystame");
 	bzero(&g_zappy, sizeof(t_zappy));
 	g_zappy.clients = new_lst();
 	g_zappy.anonymous_clients = new_lst();
 	g_zappy.gfx_clients = new_lst();
 	g_zappy.teams = new_lst();
+	g_zappy.eggs = new_lst();
 }
 
 int		main(int ac, char **av)
 {
 	srand(time(NULL));
 	init_zappy();
+	logger_init("log.txt");
 	options_parse(ac, av);
 	g_zappy.time.clock = 1.0 / (float)g_zappy.time.cycle_duration;
 	map_init();
 	signal_bind();
 	zappy_run();
+	logger_close();
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 19:04:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/13 01:16:50 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 #include <libft.h>
 
 t_command	g_commands[] = {
-	{ "avance", 7, command_move },
-	{ "gauche", 7, command_left },
-	{ "droite", 7, command_right },
-	{ "prend", 7, command_pick },
-	{ "pose", 7, command_drop },
-	{ "pause", 0, command_pause },
-	{ "continuer", 0, command_resume },
-	{ "inventaire", 1, command_inventory },
-	{ "connect_nbr", 0, command_connect_count },
-	{ "voir", 0, command_see },
-	{ NULL, 0, NULL }
+	{ "avance", 7, NULL, command_move },
+	{ "gauche", 7, NULL, command_left },
+	{ "droite", 7, NULL, command_right },
+	{ "prend", 7, NULL, command_pick },
+	{ "pose", 7, NULL, command_drop },
+	{ "pause", 0, NULL, command_pause },
+	{ "continuer", 0, NULL, command_resume },
+	{ "inventaire", 1, NULL, command_inventory },
+	{ "connect_nbr", 0, NULL, command_connect_count },
+	{ "voir", 7, NULL, command_see },
+	{ "broadcast", 1, NULL, command_broadcast },
+	{ "incantation", 3, command_pre_promote, command_promote },
+	{ "fork", 42, NULL, command_fork },
+	{ "expulse", 7, NULL, command_expulse },
+	{ NULL, 0, NULL, NULL }
 };
 
 static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)
@@ -33,36 +37,6 @@ static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)
 
 	index = lst_index_of(from, client);
 	lst_push_back(to, lst_remove(from, index));
-}
-
-static void	gfx_send_map(t_client *client)
-{
-	t_uint	x;
-	t_uint	y;
-	t_uint	i;
-	t_uint	j;
-
-	y = 0;
-	while (y < g_zappy.height)
-	{
-		x = 0;
-		while (x < g_zappy.width)
-		{
-			i = 0;
-			while (i < ITEM_COUNT)
-			{
-				j = 0;
-				while (j < g_zappy.map[y][x]->items[i])
-				{
-					gfx_tile_add(client, g_zappy.map[y][x], i);
-					j++;
-				}
-				i++;
-			}
-			x++;
-		}
-		y++;
-	}
 }
 
 static void	authenticate_gfx_client(t_client *client)
@@ -80,6 +54,7 @@ static void	authenticate_gfx_client(t_client *client)
 	network_send(client, str, 0);
 
 	gfx_send_map(client);
+	gfx_send_clients(client);
 }
 
 static char	authenticate(t_client *client, char *input)
@@ -114,10 +89,11 @@ static char	authenticate(t_client *client, char *input)
 	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.clients);
 
 	client_set_team(client, input);
+	client_set_spawn_position(client);
 	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count, g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
 
-	gfx_client_connect(client);
+	gfx_client_connect(client, NULL);
 
 	return (0);
 }

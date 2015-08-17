@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   new_lstiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/19 22:00:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:12:24 by amaurer          ###   ########.fr       */
+/*   Created: 2015/04/12 09:11:27 by nsierra-          #+#    #+#             */
+/*   Updated: 2015/04/12 09:11:35 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zappy.h"
+#include "ftlst.h"
+#include <stdlib.h>
+#include <stdint.h>
 
-short	client_eat(t_client *client)
+t_lstiter		*new_lstiter(t_lst *l, t_lst_direction d)
 {
-	if (client->items[ITEM_FOOD] == 0)
-		return (0);
-	client->items[ITEM_FOOD]--;
-	client->hunger = FOOD_DURATION;
-	return (1);
+	t_lstiter	*new_it;
+
+	if (!(new_it = malloc(sizeof(t_lstiter))))
+		return (NULL);
+	init_iter(new_it, l, d);
+	return (new_it);
 }

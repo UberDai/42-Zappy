@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 23:42:00 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/04 01:16:44 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/17 00:17:15 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static void	*tile_create(t_uint x, t_uint y)
 	bzero(tile, sizeof(tile));
 	tile->x = x;
 	tile->y = y;
-	tile->refresh_client_list = 1;
 	return (tile);
 }
 
@@ -47,38 +46,6 @@ void		map_init(void)
 	}
 }
 
-void	tile_update_client_list(t_tile *tile)
-{
-	t_client	*client;
-	t_lstiter	iter;
-	t_uint		i;
-
-	if (!tile->refresh_client_list)
-		return ;
-	tile->refresh_client_list = 0;
-
-	if (tile->clients != NULL)
-		free(tile->clients);
-
-	if (tile->client_count == 0)
-		tile->clients = NULL;
-	else
-	{
-		tile->clients = calloc(tile->client_count, sizeof(t_client *));
-		init_iter(&iter, g_zappy.clients, increasing);
-		i = 0;
-		while (lst_iterator_next(&iter))
-		{
-			client = iter.data;
-			if (client->position == tile)
-			{
-				tile->clients[i] = client;
-				i++;
-			}
-		}
-	}
-}
-
 t_tile		*tile_at(int x, int y)
 {
 	t_tile	*tile;
@@ -92,8 +59,6 @@ t_tile		*tile_at(int x, int y)
 	y %= (int)g_zappy.height;
 
 	tile = g_zappy.map[y][x];
-	if (tile->refresh_client_list)
-		tile_update_client_list(tile);
 	return (tile);
 }
 
@@ -144,32 +109,101 @@ void		tile_regenerate(t_tile *tile)
 	i = 0;
 	while (i < ITEM_COUNT)
 	{
-		amount = rand_range(0, REGEN_MAX);
-		tile->items[i] += amount;
-		j = 0;
-		while (j < amount)
+		if (rand() % REGEN_PROBABILITY == 0)
 		{
-			gfx_tile_add(NULL, tile, i);
-			j++;
+			amount = rand_range(0, REGEN_MAX);
+			tile->items[i] += amount;
+			j = 0;
+			while (j < amount)
+			{
+				gfx_tile_add(NULL, tile, i);
+				j++;
+			}
 		}
 		i++;
 	}
 }
 
-char	*tile_inventory(t_tile *tile)
+static void	tile_content_append(char *str, const char *append)
 {
-	char	*str;
+	if (strlen(str) != 0)
+		strcat(str, " ");
+	strcat(str, append);
+}
 
-	str = calloc(200, sizeof(char));
-	snprintf(str, 200, "food %u, linemate %u, deraumere %u, sibur %u, "
-		"mendiane %u, phiras %u, thystame %u",
-		tile->items[0],
-		tile->items[1],
-		tile->items[2],
-		tile->items[3],
-		tile->items[4],
-		tile->items[5],
-		tile->items[6]
-	);
+char	*tile_content(t_tile *tile, t_client *client)
+{
+	char		*str;
+	size_t		size;
+	t_uint		i;
+	t_uint		j;
+
+	i = 0;
+	size = tile->clients.size * strlen("joueur ");
+	while (i < ITEM_COUNT)
+	{
+		size += tile->items[i] * (strlen(g_item_names[i]) + 1);
+		i++;
+	}
+	str = calloc(size, sizeof(char));
+	i = 0;
+	while (i < ITEM_COUNT)
+	{
+		j = 0;
+		while (j < tile->items[i])
+		{
+			tile_content_append(str, g_item_names[i]);
+			j++;
+		}
+		i++;
+	}
+	i = 0;
+	while (i < tile->clients.size)
+	{
+		if (lst_data_at(&(tile->clients), i) != client)
+			tile_content_append(str, "joueur");
+		i++;
+	}
 	return (str);
+}
+
+int	get_direction(double *points)
+{
+	double	slope;
+	char	vertical;
+	double	x;
+	double	y;
+
+	x = points[1] - points[3];
+	y = points[0] - points[2];
+
+	if (x == 0)
+	{
+		slope = 0;
+		vertical = 1;
+	}
+	else
+	{
+		slope = y / x;
+		vertical = 0;
+	}
+
+	if (x < 0 && slope > -1 && slope < 1)
+		return (1);
+	if (x > 0 && slope > -1 && slope < 1)
+		return (5);
+	if ((slope < -1 || slope > 1 || x == 0) && y < 1)
+		return (7);
+	if ((slope < -1 || slope > 1 || x == 0) && y > 0)
+		return (3);
+	if (x < 0 && x == y)
+		return (8);
+	if (x < 0 && x == -y)
+		return (2);
+	if (x > 0 && x == y)
+		return (4);
+	if (x > 0 && x == -y)
+		return (6);
+
+	return (0);
 }

@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   elem_insert_between.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/04/12 03:53:39 by nsierra-          #+#    #+#             */
+/*   Updated: 2015/04/12 03:53:47 by nsierra-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ftlst.h"
+
+void	elem_insert_between(
+			t_lstelem *to_insert,
+			t_lstelem *left,
+			t_lstelem *right)
+{
+	if (left == right)
+	{
+		right->prev = to_insert;
+		right->next = to_insert;
+		to_insert->prev = left;
+		to_insert->next = left;
+	}
+	else
+	{
+		to_insert->prev = left;
+		to_insert->next = right;
+		left->next = to_insert;
+		right->prev = to_insert;
+	}
+}

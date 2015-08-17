@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 16:31:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/04 01:15:38 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/14 02:12:17 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ char	*client_inventory(t_client *client)
 	char	*str;
 
 	str = calloc(200, sizeof(char));
-	snprintf(str, 200, "food %u, linemate %u, deraumere %u, sibur %u, "
-		"mendiane %u, phiras %u, thystame %u",
+	snprintf(str, 200, "{nourriture %u, linemate %u, deraumere %u, sibur %u, "
+		"mendiane %u, phiras %u, thystame %u}",
 		client->items[0],
 		client->items[1],
 		client->items[2],

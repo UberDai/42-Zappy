@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 21:41:28 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 23:14:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include <sys/select.h>
 #include <sys/socket.h>
 
-#define NETWORK_BUFFER_SIZE	500
+#define NETWORK_BUFFER_SIZE	1000
 
 void		network_bind()
 {
@@ -68,15 +68,14 @@ static void	network_client_connect(void)
 		die("Client connection error.");
 
 	FD_SET(client->fd, &(g_zappy.network.read_fds));
-	printf("Client #%u created.\n", client->id);
 
 	network_send(client, "BIENVENUE", 0);
+	logger_client_connect(client);
 }
 
 void	network_client_disconnect(t_client *client)
 {
-	network_send(client, "GTFO", 0);
-	printf("Client #%u disconnected.\n", client->id);
+	logger_client_disconnect(client);
 	close(client->fd);
 	FD_CLR(client->fd, &(g_zappy.network.read_fds));
 	if (client->status == STATUS_PLAYER)
@@ -103,6 +102,7 @@ static char	network_client_data(t_client *client, fd_set *fds)
 	else
 	{
 		input = ft_strsub(buffer, 0, strlen(buffer) - 1);
+		logger_client_receive(client, input);
 		ret = command_parse(client, input);
 		free(input);
 		return (ret);
@@ -176,11 +176,28 @@ static void	network_send_to_client(t_client *emitter, t_lst *list, char *str)
 	{
 		client = (t_client*)iter.data;
 		if (emitter == NULL || client != emitter)
+		{
+			logger_client_send(client, str);
 			send(client->fd, str, strlen(str), 0);
+		}
 	}
 }
 
-void		network_send(t_client *client, char *str, int options)
+void		network_send_team(const t_team *team, const char *str)
+{
+	t_lstiter	iter;
+	t_client	*client;
+
+	init_iter(&iter, g_zappy.clients, increasing);
+	while (lst_iterator_next(&iter))
+	{
+		client = (t_client*)iter.data;
+		if (client->team == team)
+			network_send(client, str, 0);
+	}
+}
+
+void		network_send(t_client *client, const char *str, int options)
 {
 	char		*output;
 
@@ -195,7 +212,10 @@ void		network_send(t_client *client, char *str, int options)
 			network_send_to_client(client, g_zappy.gfx_clients, output);
 	}
 	else
+	{
+		logger_client_send(client, output);
 		send(client->fd, output, strlen(output), 0);
+	}
 	free(output);
 }
 

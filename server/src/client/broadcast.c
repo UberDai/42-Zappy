@@ -6,14 +6,28 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/07 21:53:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/07 23:40:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/06/12 20:13:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include <stdlib.h>
+#include <string.h>
 #include <math.h>
 
-void	client_hear(t_client *receiver, t_client *emitter)
+static void	send_broadcast(t_client *receiver, int direction, char *message)
+{
+	char	*str;
+	size_t	size;
+
+	size = strlen(message) + strlen("message ") + 5;
+	str = calloc(size + 1, sizeof(char));
+	snprintf(str, size, "message %u,%s", direction, message);
+	network_send(receiver, str, 0);
+	free(str);
+}
+
+void	client_hear(t_client *receiver, t_client *emitter, char *message)
 {
 	double	points[9][4];
 	int		x1;
@@ -28,7 +42,8 @@ void	client_hear(t_client *receiver, t_client *emitter)
 
 	if (x1 == x2 && y1 == y2)
 	{
-		// provenance case 0
+		send_broadcast(receiver, 0, message);
+		return ;
 	}
 
 	points[0][0] = x1;
@@ -38,43 +53,43 @@ void	client_hear(t_client *receiver, t_client *emitter)
 
 	points[1][0] = x1;
 	points[1][1] = y1;
-	points[1][2] = x2 + 10;
+	points[1][2] = x2 + (int)g_zappy.width;
 	points[1][3] = y2;
 
 	points[2][0] = x1;
 	points[2][1] = y1;
-	points[2][2] = x2 - 10;
+	points[2][2] = x2 - (int)g_zappy.width;
 	points[2][3] = y2;
 
 	points[3][0] = x1;
 	points[3][1] = y1;
 	points[3][2] = x2;
-	points[3][3] = y2 + 10;
+	points[3][3] = y2 + (int)g_zappy.height;
 
 	points[4][0] = x1;
 	points[4][1] = y1;
 	points[4][2] = x2;
-	points[4][3] = y2 - 10;
+	points[4][3] = y2 - (int)g_zappy.height;
 
 	points[5][0] = x1;
 	points[5][1] = y1;
-	points[5][2] = x2 + 10;
-	points[5][3] = y2 + 10;
+	points[5][2] = x2 + (int)g_zappy.width;
+	points[5][3] = y2 + (int)g_zappy.height;
 
 	points[6][0] = x1;
 	points[6][1] = y1;
-	points[6][2] = x2 + 10;
-	points[6][3] = y2 - 10;
+	points[6][2] = x2 + (int)g_zappy.width;
+	points[6][3] = y2 - (int)g_zappy.height;
 
 	points[7][0] = x1;
 	points[7][1] = y1;
-	points[7][2] = x2 - 10;
-	points[7][3] = y2 + 10;
+	points[7][2] = x2 - (int)g_zappy.width;
+	points[7][3] = y2 + (int)g_zappy.height;
 
 	points[8][0] = x1;
 	points[8][1] = y1;
-	points[8][2] = x2 - 10;
-	points[8][3] = y2 - 10;
+	points[8][2] = x2 - (int)g_zappy.width;
+	points[8][3] = y2 - (int)g_zappy.height;
 
 	t_uint	i;
 	double	min;
@@ -95,10 +110,17 @@ void	client_hear(t_client *receiver, t_client *emitter)
 		i++;
 	}
 
-	// calcul coef directeur pour provenance
+	int orientation;
+
+	orientation = get_direction(points[index]);
+	orientation = orientation - (receiver->orientation - 1) * 2;
+	if (orientation < 0)
+		orientation += 8;
+
+	send_broadcast(receiver, orientation, message);
 }
 
-void	client_broadcast(t_client *emitter)
+void	client_broadcast(t_client *emitter, char *message)
 {
 	t_lstiter	iter;
 	t_client	*receiver;
@@ -107,6 +129,7 @@ void	client_broadcast(t_client *emitter)
 	while (lst_iterator_next(&iter))
 	{
 		receiver = iter.data;
-		client_hear(receiver, emitter);
+		if (receiver != emitter)
+			client_hear(receiver, emitter, message);
 	}
 }

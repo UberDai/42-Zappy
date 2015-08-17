@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   lst_change_first_by_pos.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsierra- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/19 22:00:27 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:12:24 by amaurer          ###   ########.fr       */
+/*   Created: 2015/04/21 00:41:38 by nsierra-          #+#    #+#             */
+/*   Updated: 2015/04/21 00:41:39 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zappy.h"
+#include "ftlst.h"
 
-short	client_eat(t_client *client)
+void			lst_change_first_by_pos(t_lst *lst, size_t pos)
 {
-	if (client->items[ITEM_FOOD] == 0)
-		return (0);
-	client->items[ITEM_FOOD]--;
-	client->hunger = FOOD_DURATION;
-	return (1);
+	t_lstelem	*elem;
+
+	if (!(elem = lst_elem_at(lst, pos)))
+		return ;
+	lst_change_first_by_elem(lst, elem);
 }

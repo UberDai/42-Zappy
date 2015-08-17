@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signal.c                                           :+:      :+:    :+:   */
+/*   new_lstelem.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nsierra- <nsierra-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/25 01:38:48 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:11:44 by amaurer          ###   ########.fr       */
+/*   Created: 2015/04/12 03:56:18 by nsierra-          #+#    #+#             */
+/*   Updated: 2015/04/12 03:56:28 by nsierra-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zappy.h"
+#include "ftlst.h"
 #include <stdlib.h>
-#include <signal.h>
 
-static void	signal_int(int dummy)
+t_lstelem		*new_lstelem(void *data)
 {
-	(void)dummy;
-	network_disconnect();
-	exit(0);
-}
+	t_lstelem	*new_elem;
 
-void		signal_bind(void)
-{
-	signal(SIGINT, signal_int);
+	if (!(new_elem = malloc(sizeof(t_lstelem))))
+		return (NULL);
+	new_elem->data = data;
+	new_elem->next = NULL;
+	new_elem->prev = NULL;
+	return (new_elem);
 }

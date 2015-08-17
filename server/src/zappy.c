@@ -6,11 +6,12 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/03 00:55:08 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/16 02:39:32 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#include <string.h>
 
 void	zappy_pause(t_client *client)
 {
@@ -67,6 +68,13 @@ static short	client_play(t_client *client)
 			network_send(client, NET_FAILURE, 0);
 		client_queue_shift(client);
 	}
+	else if (queue->delay == queue->command->delay && queue->command->pre_func)
+	{
+		ret = queue->command->pre_func(client, queue->ac, queue->av);
+
+		if (ret == COMMAND_FAIL)
+			queue->set = 0;
+	}
 
 	queue->delay--;
 	client->hunger--;
@@ -100,10 +108,11 @@ void	zappy_run(void)
 		{
 			if (g_zappy.time.cycle_count % REGEN_RATE == 0)
 				map_regenerate();
+			watch_eggs();
 			clients_play();
 			g_zappy.time.cycle_count++;
 		}
-		printf("Clients A: %lu  C: %lu  G: %lu\n",
+		printf("Clients ?: %lu  P: %lu  G: %lu\n",
 			g_zappy.anonymous_clients->size,
 			g_zappy.clients->size,
 			g_zappy.gfx_clients->size

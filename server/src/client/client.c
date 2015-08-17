@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/08 19:09:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/17 00:17:56 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,26 @@ t_client	*client_create()
 	ft_bzero(client, sizeof(t_client));
 	client->hunger = FOOD_DURATION;
 	client->id = id++;
-	client->orientation = ORIENT_NORTH;
 	client->items[ITEM_FOOD] = CLIENT_BASE_FOOD;
-	client->position = tile_at(rand() % g_zappy.width, rand() % g_zappy.height);
 	lst_push_back(g_zappy.anonymous_clients, client);
 	return (client);
+}
+
+void	client_set_spawn_position(t_client *client)
+{
+	t_egg	*egg;
+
+	client->orientation = rand() % 4;
+	egg = get_hatched_egg(client->team);
+	if (egg != NULL)
+	{
+		client_move_to(client, egg->position);
+		egg_remove(egg);
+	}
+	else
+	{
+		client_move_to(client, tile_at(rand() % g_zappy.width, rand() % g_zappy.height));
+	}
 }
 
 void	client_delete(t_client *client_to_delete)
@@ -39,9 +54,7 @@ void	client_delete(t_client *client_to_delete)
 	else if (client_to_delete->status == STATUS_UNKNOWN)
 		lst_remove(g_zappy.anonymous_clients, lst_index_of(g_zappy.anonymous_clients, client_to_delete));
 	else
-	{
 		lst_remove(g_zappy.clients, lst_index_of(g_zappy.clients, client_to_delete));
-	}
 	client_queue_free(client_to_delete);
 	free(client_to_delete);
 }

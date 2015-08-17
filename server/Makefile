@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/06/07 21:39:03 by amaurer          ###   ########.fr        #
+#    Updated: 2015/08/16 01:42:33 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,19 +20,23 @@ NAME		=	serveur
 BIN_NAME	=	$(BIN_DIR)$(NAME)
 SRC_FILES	=	main.c \
 				zappy.c \
+				logger.c \
 				util.c \
 				options.c \
 				network.c \
 				signal.c \
 				map.c \
+				client/egg.c \
 				client/client.c \
 				client/actions.c \
 				client/promote.c \
+				client/broadcast.c \
 				client/move.c \
 				client/team.c \
 				client/queue.c \
 				client/item.c \
 				client/vision.c \
+				client/expulse.c \
 				command/parse.c \
 				command/commands.c \
 				command/gfx.c
@@ -41,7 +45,7 @@ SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
 
 CC			=	clang
-CC_FLAGS	=	-Wall -Werror -Wextra -g3
+CC_FLAGS	=	-Wall -Werror -Wextra -pedantic -g3
 CC_LIBS		=	-lft -Llibft -lftlst -Lftlst
 
 all: ftlst libft $(BIN_NAME)
@@ -53,7 +57,7 @@ $(BIN_NAME): $(OBJ)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(@D)
-	$(CC) $(CC_FLAGS) $(subst $() $(), -I, $(INC_DIR)) -o $@ -c $<
+	$(CC) $(CC_FLAGS)$(subst $() $(), -I, $(INC_DIR)) -o $@ -c $<
 
 clean:
 	make -C libft clean
@@ -71,9 +75,9 @@ libft:
 	@make -C libft
 
 ftlst:
-	git submodule init
-	git submodule update
-	git submodule foreach git pull origin master
+	# git submodule init
+	# git submodule update
+	# git submodule foreach git pull origin master
 	make -C ftlst
 
 .PHONY: all re fclean clean libft ftlst
