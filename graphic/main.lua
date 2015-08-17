@@ -52,7 +52,10 @@ function love.load()
 
 	love.math.setRandomSeed(love.timer.getTime())
 
-	zappy = Zappy("10.11.12.13", 4242)
+	if not arg[2] then arg[2] = "localhost" end
+	if not arg[3] then arg[3] = "4242" end
+
+	zappy = Zappy(arg[2], arg[3])
 	if not zappy.tcp then
 		print("no tcp connection :(")
 		love.event.quit() return
