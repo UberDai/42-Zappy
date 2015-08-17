@@ -778,6 +778,29 @@ void				Client::_addActionBegin(const std::string &a)
 	actions.insert(actions.begin(), Action::create(a));
 }
 
+void	Client::elevationTest(void)
+{
+	_clearActionList();
+	setLevel(getLevel() + 1);
+	_changeToMode(NORMAL);
+}
+
+void	Client::expluseTest(const char *str)
+{
+	(void)str;
+	//parse str
+	//update player x/y
+	//switch
+	// case 1 North
+		// y + 1
+	// case 7 east
+		// x + 1
+	// case 5 south
+		// y - 1
+	// case 3 west
+		// x - 1
+}
+
 void				Client::setLevel(unsigned int val) 	{ _level = val; }
 void				Client::setPlayerOrientation(enum eOrientation o) 	{ _playerOrientation = o; }
 enum eOrientation	Client::getPlayerOrientation() const { return _playerOrientation; }

@@ -254,7 +254,10 @@ std::string		Network::recieve(void)
 				/// MEGA CRADE
 
 				//clean queue
-				_client->setLevel(_client->getLevel() + 1);
+				_client->elevationTest();
+				// _client->_clearActionList();
+				// _client->setLevel(_client->getLevel() + 1);
+				// _client->_changeToMode(NORMAL);
 				//mode normal
 
 
@@ -266,7 +269,7 @@ std::string		Network::recieve(void)
 				_client->printDebug("Recu expulse");
 
 
-
+				_client->expluseTest(buf);
 
 				//parse buf
 				//update player x/y
