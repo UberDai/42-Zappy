@@ -106,6 +106,8 @@ public:
 	std::map<size_t, std::string>	fov;
 	Map								map;
 	std::vector<Action *>			actions;
+	void					elevationTest(void);
+	void					expluseTest(const char *);
 
 	enum eMode				_mode;
 private:
@@ -185,8 +187,7 @@ private:
 	void					_loadServerInfos(const std::string &);
 	void					_forkstem(void);
 	void					_checkSlot(void);
-	void					elevationTest(void);
-	void					expluseTest(const char *);
+
 
 	// void					_setBroadcastMsg(std::stringstream &);
 	// void					_ia(void);
