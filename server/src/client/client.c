@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/17 00:17:56 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/18 00:02:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_client	*client_create()
 	client->hunger = FOOD_DURATION;
 	client->id = id++;
 	client->items[ITEM_FOOD] = CLIENT_BASE_FOOD;
+	client->sending_queue = new_lst();
 	lst_push_back(g_zappy.anonymous_clients, client);
 	return (client);
 }
@@ -47,16 +48,17 @@ void	client_set_spawn_position(t_client *client)
 	}
 }
 
-void	client_delete(t_client *client_to_delete)
+void	client_delete(t_client *client)
 {
-	if (client_to_delete->status == STATUS_GFX)
-		lst_remove(g_zappy.gfx_clients, lst_index_of(g_zappy.gfx_clients, client_to_delete));
-	else if (client_to_delete->status == STATUS_UNKNOWN)
-		lst_remove(g_zappy.anonymous_clients, lst_index_of(g_zappy.anonymous_clients, client_to_delete));
+	if (client->status == STATUS_GFX)
+		lst_remove(g_zappy.gfx_clients, lst_index_of(g_zappy.gfx_clients, client));
+	else if (client->status == STATUS_UNKNOWN)
+		lst_remove(g_zappy.anonymous_clients, lst_index_of(g_zappy.anonymous_clients, client));
 	else
-		lst_remove(g_zappy.clients, lst_index_of(g_zappy.clients, client_to_delete));
-	client_queue_free(client_to_delete);
-	free(client_to_delete);
+		lst_remove(g_zappy.clients, lst_index_of(g_zappy.clients, client));
+	client_queue_free(client);
+	lst_destroy(&client->sending_queue, free);
+	free(client);
 }
 
 void	client_set_team(t_client *client, const char *team_name)

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 23:04:18 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/17 23:20:29 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ struct						s_client
 	t_uint					items[ITEM_COUNT];
 	t_uint					hunger;
 	t_queue					queue[CLIENT_QUEUE_MAX];
+	t_lst					*sending_queue;
 };
 
 typedef struct				s_egg
@@ -141,6 +142,7 @@ typedef struct				s_network
 	t_uint					port;
 	int						fd;
 	fd_set					read_fds;
+	fd_set					write_fds;
 }							t_network;
 
 typedef struct				s_zappy
@@ -190,7 +192,7 @@ short						client_move(t_client *client);
 short						client_rotate(t_client *client, short angle);
 t_client					*client_create(void);
 void						client_set_spawn_position(t_client *client);
-void						client_delete(t_client *client_to_delete);
+void						client_delete(t_client *client);
 short						client_promote(t_client *client);
 short						client_can_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);
