@@ -787,18 +787,29 @@ void	Client::elevationTest(void)
 
 void	Client::expluseTest(const char *str)
 {
-	(void)str;
-	//parse str
-	//update player x/y
-	//switch
-	// case 1 North
-		// y + 1
-	// case 7 east
-		// x + 1
-	// case 5 south
-		// y - 1
-	// case 3 west
-		// x - 1
+	int c;
+
+
+	c = str[13] + 48;
+	switch (c)
+	{
+		case 1:
+			_clearActionList();
+			setPlayerY(_playerY + 1);
+			break;
+		case 7:
+			_clearActionList();
+			setPlayerX(_playerX + 1);
+			break;
+		case 5:
+			_clearActionList();
+			setPlayerY(_playerY - 1);
+			break;
+		case 3:
+			_clearActionList();
+			setPlayerX(_playerX - 1);
+			break;
+	}
 }
 
 void				Client::setLevel(unsigned int val) 	{ _level = val; }
