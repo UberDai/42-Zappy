@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/13 01:16:50 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/18 00:01:27 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static char	authenticate(t_client *client, char *input)
 	{
 		network_send(client, "clubs full buddy", 0);
 		network_client_disconnect(client);
-		return (1);
+		return (0);
 	}
 
 	client->team = team;

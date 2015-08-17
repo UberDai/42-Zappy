@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 23:14:11 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/18 00:02:11 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,16 @@ void		network_bind()
 	server.sin_addr.s_addr = htonl(INADDR_ANY);
 	server.sin_port = htons(g_zappy.network.port);
 
-	if (bind(g_zappy.network.fd, (struct sockaddr *) &server, sizeof(server)) < 0)
+	if (bind(g_zappy.network.fd, (struct sockaddr *)&server, sizeof(server)) < 0)
 		die("Could not bind the server to the network.");
 
 	if (listen(g_zappy.network.fd, 10))
 		die("Error: listen()");
 
-	FD_ZERO(&(g_zappy.network.read_fds));
-	FD_SET(g_zappy.network.fd, &(g_zappy.network.read_fds));
+	FD_ZERO(&g_zappy.network.read_fds);
+	FD_ZERO(&g_zappy.network.write_fds);
+	FD_SET(g_zappy.network.fd, &g_zappy.network.read_fds);
+	FD_SET(g_zappy.network.fd, &g_zappy.network.write_fds);
 
 	printf("Listening on port %u\n", g_zappy.network.port);
 }
@@ -67,7 +69,8 @@ static void	network_client_connect(void)
 	if (client->fd == -1)
 		die("Client connection error.");
 
-	FD_SET(client->fd, &(g_zappy.network.read_fds));
+	FD_SET(client->fd, &g_zappy.network.read_fds);
+	FD_SET(client->fd, &g_zappy.network.write_fds);
 
 	network_send(client, "BIENVENUE", 0);
 	logger_client_connect(client);
@@ -77,27 +80,28 @@ void	network_client_disconnect(t_client *client)
 {
 	logger_client_disconnect(client);
 	close(client->fd);
-	FD_CLR(client->fd, &(g_zappy.network.read_fds));
+	FD_CLR(client->fd, &g_zappy.network.read_fds);
+	FD_CLR(client->fd, &g_zappy.network.write_fds);
 	if (client->status == STATUS_PLAYER)
 		gfx_client_disconnect(client);
 	client_delete(client);
 }
 
-static char	network_client_data(t_client *client, fd_set *fds)
+static char	network_client_data(t_client *client, fd_set *read_fds)
 {
 	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
 	char		*input;
 	int			ret;
 
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
-	FD_CLR(client->fd, fds);
+	FD_CLR(client->fd, read_fds);
 
 	if (ret == -1)
 		die("Could not read the client.");
 	else if (ret == 0)
 	{
 		network_client_disconnect(client);
-		return (1);
+		return (0);
 	}
 	else
 	{
@@ -110,10 +114,11 @@ static char	network_client_data(t_client *client, fd_set *fds)
 	return (0);
 }
 
-static void	network_check_clients(fd_set *read_fds, t_lst *clients, fd_set *fds)
+static void	network_check_clients(t_lst *clients, fd_set *read_fds, fd_set *write_fds)
 {
 	t_client	*client;
 	size_t		i;
+	char		*str;
 
 	i = 0;
 	while (i < clients->size)
@@ -121,8 +126,16 @@ static void	network_check_clients(fd_set *read_fds, t_lst *clients, fd_set *fds)
 		client = lst_data_at(clients, i);
 		if (FD_ISSET(client->fd, read_fds))
 		{
-			if (network_client_data(client, fds) == 0)
-				i--;
+			if (network_client_data(client, read_fds) == 0)
+				continue;
+				// i--;
+		}
+		if (FD_ISSET(client->fd, write_fds) && client->sending_queue->size != 0)
+		{
+			str = lst_data_at(client->sending_queue, 0);
+			send(client->fd, str, strlen(str), 0);
+			lst_pop_front(client->sending_queue);
+			free(str);
 		}
 		i++;
 	}
@@ -132,22 +145,24 @@ static void	network_select(double remaining_time)
 {
 	static struct timeval	timeout;
 	fd_set					read_fds;
+	fd_set					write_fds;
 
 	read_fds = g_zappy.network.read_fds;
+	write_fds = g_zappy.network.write_fds;
 
 	timeout.tv_sec = 0;
 	timeout.tv_usec = remaining_time * 1000000;
 
-	if (select(FD_SETSIZE, &read_fds, NULL, NULL, &timeout) < 0)
+	if (select(FD_SETSIZE, &read_fds, &write_fds, NULL, &timeout) < 0)
 		die("Error: select()");
 
 	if (FD_ISSET(g_zappy.network.fd, &read_fds))
 		network_client_connect();
 	else
 	{
-		network_check_clients(&read_fds, g_zappy.anonymous_clients, &read_fds);
-		network_check_clients(&read_fds, g_zappy.gfx_clients, &read_fds);
-		network_check_clients(&read_fds, g_zappy.clients, &read_fds);
+		network_check_clients(g_zappy.anonymous_clients, &read_fds, &write_fds);
+		network_check_clients(g_zappy.gfx_clients, &read_fds, &write_fds);
+		network_check_clients(g_zappy.clients, &read_fds, &write_fds);
 	}
 }
 
@@ -166,7 +181,7 @@ void		network_receive(void)
 	}
 }
 
-static void	network_send_to_client(t_client *emitter, t_lst *list, char *str)
+static void	network_send_to_clients(t_client *emitter, t_lst *list, char *str)
 {
 	t_lstiter	iter;
 	t_client	*client;
@@ -176,10 +191,7 @@ static void	network_send_to_client(t_client *emitter, t_lst *list, char *str)
 	{
 		client = (t_client*)iter.data;
 		if (emitter == NULL || client != emitter)
-		{
-			logger_client_send(client, str);
-			send(client->fd, str, strlen(str), 0);
-		}
+			network_send(client, str, 0);
 	}
 }
 
@@ -207,16 +219,17 @@ void		network_send(t_client *client, const char *str, int options)
 	if (options != 0)
 	{
 		if (options & (NET_SEND_CLIENT | NET_SEND_ALL))
-			network_send_to_client(client, g_zappy.clients, output);
+			network_send_to_clients(client, g_zappy.clients, output);
 		if (options & (NET_SEND_GFX | NET_SEND_ALL))
-			network_send_to_client(client, g_zappy.gfx_clients, output);
+			network_send_to_clients(client, g_zappy.gfx_clients, output);
 	}
 	else
 	{
 		logger_client_send(client, output);
-		send(client->fd, output, strlen(output), 0);
+		lst_push_back(client->sending_queue, output);
+		// send(client->fd, output, strlen(output), 0);
 	}
-	free(output);
+	// free(output);
 }
 
 void	network_disconnect(void)
@@ -231,7 +244,8 @@ void	network_disconnect(void)
 	while (g_zappy.gfx_clients->size > 0 && (client = lst_data_at(g_zappy.gfx_clients, 0)))
 		network_client_disconnect(client);
 
-	FD_ZERO(&(g_zappy.network.read_fds));
+	FD_ZERO(&g_zappy.network.read_fds);
+	FD_ZERO(&g_zappy.network.write_fds);
 	close(g_zappy.network.fd);
 	printf("Server disconnected.\n");
 }

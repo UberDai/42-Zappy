@@ -27,5 +27,8 @@ x ID
 // drop
 v  ID r
 
-// egg
+// add egg
 0 x y
+
+// remove egg
+9 x y
