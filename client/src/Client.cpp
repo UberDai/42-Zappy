@@ -86,6 +86,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerY(0),
 	_playerOrientation(NORTH),
 	_foodThreshold(3),
+	_toto(0),
 	_cycleCount(0),
 	_mustMove(false),
 	_following(false),
@@ -178,8 +179,9 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 		case INCANTATION:
 			printDebug("Recieved an incantation broadcast.");
 			_resetFollowSystem();
-			_clearActionList();
-			_addAction(Action::INCANTATION);
+			_toto = 1;
+			// _clearActionList();
+			// _addAction(Action::INCANTATION);
 			break ;
 
 		case STOP_WAITING:
@@ -225,6 +227,14 @@ void				Client::_executeActionList(void)
 		{
 			printDebug("Crash");
 			return ;
+		}
+		if (_toto)
+		{
+
+			_toto = 0;
+			_clearActionList();
+			_addAction(Action::INCANTATION);
+			return;
 		}
 	}
 	_clearActionList();
@@ -479,7 +489,9 @@ void				Client::_waitMatesMode(void)
 		return _changeToMode(NORMAL);
 	}
 	printDebug("Nothing special.");
-	return _sendBroadcast(WAIT);
+	if (_cycleCount % 30 == 0)
+		return _sendBroadcast(WAIT);
+	return;
 }
 
 void				Client::_towardsMateMode(void)
@@ -559,9 +571,9 @@ void				Client::_checkSlot(void)
 void				Client::_ia(void)
 {
 	(this->*_modeFun[_mode])();
-	// _checkSlot();
 	_executeActionList();
-	_addAction(Action::INVENTORY);
+	_checkSlot();
+	// _addAction(Action::INVENTORY);
 }
 
 bool				Client::loop(void)

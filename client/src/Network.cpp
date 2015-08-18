@@ -357,13 +357,13 @@ std::string		Network::recieve(void)
 				// free(buf);
 				return recieve();
 			}
-			else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
-			{
-				_client->printDebug("Ok, styley ! Recieving again...");
-				_client->elevationTest();
-				// free(buf);
-				return recieve();
-			}
+			// else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
+			// {
+			// 	_client->printDebug("Ok, styley ! Recieving again...");
+			// 	_client->elevationTest();
+			// 	// free(buf);
+			// 	return recieve();
+			// }
 			else if (!strncmp(buf, MSG_EXPUSLE.c_str(), 11))
 			{
 				_client->printDebug("Recu expulse");
