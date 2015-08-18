@@ -19,6 +19,7 @@
 #include <errno.h>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <strings.h>
 #include <string.h>
 #include <sys/socket.h>
@@ -358,13 +359,13 @@ std::string		Network::recieve(void)
 				free(buf);
 				return recieve();
 			}
-			// else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
-			// {
-			// 	_client->printDebug("Ok, styley ! Recieving again...");
-			// 	_client->elevationTest();
-			// 	// free(buf);
-			// 	return recieve();
-			// }
+			else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
+			{
+				_client->printDebug("Ok, styley ! Recieving again...");
+				// _client->elevationTest();
+				free(buf);
+				return recieve();
+			}
 			else if (!strncmp(buf, MSG_EXPUSLE.c_str(), 11))
 			{
 				_client->printDebug("Recu expulse");
@@ -372,7 +373,7 @@ std::string		Network::recieve(void)
 				free(buf);
 			}
 			ss << buf;
-			free(buff);
+			free(buf);
 			return ss.str().c_str();
 	}
 	free(buf);
