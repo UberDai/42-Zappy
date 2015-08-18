@@ -126,6 +126,7 @@ private:
 	size_t					_playerY;
 	enum eOrientation		_playerOrientation;
 	size_t					_foodThreshold;
+	int						_resetAction;
 	size_t					_cycleCount;
 
 	// Broadcasting

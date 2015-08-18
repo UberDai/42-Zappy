@@ -330,6 +330,7 @@ std::string		Network::recieve(void)
 {
 	int			ret;
 	char		*buf;
+	std::stringstream ss;
 
 	ret = get_next_line(_socket_connect, &buf);
 	_client->printDebug(std::to_string(ret));
@@ -347,32 +348,34 @@ std::string		Network::recieve(void)
 
 			if (!strncmp(buf, MSG_DEATH.c_str(), 5))
 			{
-				// free(buf);
+				free(buf);
 				_client->hasDied();
 			}
 			else if (!strncmp(buf, MSG_BROADCAST.c_str(), 7))
 			{
 				_client->recieveBroadcast(buf);
 				_client->printDebug("Broadcast recieved ! Recieving again...");
-				// free(buf);
+				free(buf);
 				return recieve();
 			}
-			else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
-			{
-				_client->printDebug("Ok, styley ! Recieving again...");
-				_client->elevationTest();
-				// free(buf);
-				return recieve();
-			}
+			// else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
+			// {
+			// 	_client->printDebug("Ok, styley ! Recieving again...");
+			// 	_client->elevationTest();
+			// 	// free(buf);
+			// 	return recieve();
+			// }
 			else if (!strncmp(buf, MSG_EXPUSLE.c_str(), 11))
 			{
 				_client->printDebug("Recu expulse");
 				_client->expluseTest(buf);
-				// free(buf);
+				free(buf);
 			}
-			return buf;
+			ss << buf;
+			free(buff);
+			return ss.str().c_str();
 	}
-	// free(buf);
+	free(buf);
 	return MSG_FAILURE;
 }
 

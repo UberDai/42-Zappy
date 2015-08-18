@@ -86,6 +86,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerY(0),
 	_playerOrientation(NORTH),
 	_foodThreshold(3),
+	_resetAction(0),
 	_cycleCount(0),
 	_mustMove(false),
 	_following(false),
@@ -178,8 +179,7 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 		case INCANTATION:
 			printDebug("Recieved an incantation broadcast.");
 			_resetFollowSystem();
-			_clearActionList();
-			_addAction(Action::INCANTATION);
+			_resetAction = 1;
 			break ;
 
 		case STOP_WAITING:
@@ -215,17 +215,17 @@ void				Client::_executeActionList(void)
 
 	while (i >= 0 && static_cast<size_t>(i) < max)
 	{
-		try {
-			tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
-			if (tmp == -2)
-				break ;
-			i = tmp == -1 ? i + 1 : tmp;
-		}
-		catch (const std::out_of_range & e)
+		if (_resetAction)
 		{
-			printDebug("Crash");
-			return ;
+			_resetAction = 0;
+			_clearActionList();
+			_addAction(Action::INCANTATION);
+			return;
 		}
+		tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
+		if (tmp == -2)
+			break ;
+		i = tmp == -1 ? i + 1 : tmp;
 	}
 	_clearActionList();
 
@@ -479,7 +479,9 @@ void				Client::_waitMatesMode(void)
 		return _changeToMode(NORMAL);
 	}
 	printDebug("Nothing special.");
-	return _sendBroadcast(WAIT);
+	if (_cycleCount % 30 == 0)
+		return _sendBroadcast(WAIT);
+	return;
 }
 
 void				Client::_towardsMateMode(void)
@@ -541,10 +543,9 @@ void				Client::_foodEmergencyMode(void)
 
 void				Client::_checkSlot(void)
 {
-
+	_addAction(Action::INVENTORY);
 	// if (_cycleCount % 1 == 0)
 	// {
-		_addAction(Action::INVENTORY);
 		// while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
 		// {
 		// 	printDebug("FORKSTEM");
@@ -559,9 +560,8 @@ void				Client::_checkSlot(void)
 void				Client::_ia(void)
 {
 	(this->*_modeFun[_mode])();
-	// _checkSlot();
 	_executeActionList();
-	_addAction(Action::INVENTORY);
+	_checkSlot();
 }
 
 bool				Client::loop(void)
