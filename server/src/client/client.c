@@ -35,7 +35,7 @@ void	client_set_spawn_position(t_client *client)
 {
 	t_egg	*egg;
 
-	client->orientation = rand() % 4;
+	client->orientation = rand() % 4 + 1;
 	egg = get_hatched_egg(client->team);
 	if (egg != NULL)
 	{

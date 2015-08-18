@@ -47,10 +47,7 @@ short		client_can_promote(t_client *client)
 	}
 
 	if (clients_count < g_promotion_needs[client->level][0])
-	{
-		network_send(client, "kk3", 0);
 		return (0);
-	}
 
 	i = 1;
 	while (i < ITEM_COUNT)
