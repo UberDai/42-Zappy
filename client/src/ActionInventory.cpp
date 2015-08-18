@@ -62,7 +62,7 @@ int				ActionInventory::execute(Network & network)
 		std::regex_match(tmp, sm, std::regex("(\\w+)\\s+(\\d+)"));
 		if (sm[2].str() == "")
 			break;
-		i.set(sm[1].str(), std::stol(sm[2].str())); //erminating with uncaught exception of type std::invalid_argument: stol: no conversion
+		i.set(sm[1].str(), std::stol(sm[2].str()));
 		++next;
 	}
 	return _successIndex;

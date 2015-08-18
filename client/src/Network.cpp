@@ -38,101 +38,6 @@ const std::string	Network::MSG_WELCOME = "BIENVENUE";
 #include <unistd.h>
 #include <stdio.h>
 
-// static char	*ft_strnew(size_t size)
-// {
-// 	char	*str_new;
-
-// 	str_new = static_cast<char *>(malloc(sizeof(str_new) * size + 1));
-// 	if (str_new)
-// 	{
-// 		bzero(str_new, size);
-// 		return (str_new);
-// 	}
-// 	else
-// 		return (NULL);
-// }
-
-// static char	*ft_strjoin(const char *s1, const char *s2)
-// {
-// 	size_t	total_size;
-// 	char	*str_new;
-
-// 	if (!s1 || !s2)
-// 		return NULL;
-// 	total_size = strlen(s1) + strlen(s2) + 1;
-// 	str_new = static_cast<char *>(malloc(sizeof(char *) * total_size));
-// 	if (str_new && s1 && s2)
-// 	{
-// 		if (*s1 == '\0' && *s2 == '\0' && !(*str_new = '\0'))
-// 			return (str_new);
-// 		strcpy(str_new, s1);
-// 		strlcat(str_new, s2, total_size);
-// 		return (str_new);
-// 	}
-// 	else
-// 		return (NULL);
-// }
-
-// static void				push_buf(char **remaining, char *buf)
-// {
-// 	char				*tmp;
-
-// 	tmp = *remaining;
-// 	*remaining = ft_strjoin(*remaining, buf);
-// 	free(tmp);
-// }
-
-// static void				load_line(char **line, char **remaining, char *found)
-// {
-// 	char				*tmp;
-
-// 	*line = strdup(*remaining);
-// 	if (found)
-// 	{
-// 		tmp = *remaining;
-// 		*remaining = strdup(found + 1);
-// 		free(tmp);
-// 	}
-// 	else
-// 		*remaining = NULL;
-// }
-
-// static int				find_newline(char **line, char **remaining)
-// {
-// 	char				*found;
-
-// 	if (*remaining && (found = strchr(*remaining, '\n')))
-// 	{
-// 		*found = '\0';
-// 		load_line(line, remaining, found);
-// 		return (1);
-// 	}
-// 	return (0);
-// }
-
-// static int				get_next_line(int const fd, char **line)
-// {
-// 	static char			*remaining = NULL;
-// 	char				buf[Network::BUFF_SIZE + 1];
-// 	int					read_status;
-
-// 	if (fd < 1 || !line)
-// 		return (-1);
-// 	bzero(buf, Network::BUFF_SIZE + 1);
-// 	if (find_newline(line, &remaining))
-// 		return (1);
-// 	else if ((read_status = recv(fd, buf, Network::BUFF_SIZE - 1, 0)) <= 0)
-// 	{
-// 		if (remaining && strlen(remaining) > 0)
-// 			load_line(line, &remaining, NULL);
-// 		return (read_status);
-// 	}
-// 	else if (!remaining)
-// 		remaining = ft_strnew(0);
-// 	push_buf(&remaining, buf);
-// 	return (get_next_line(fd, line));
-// }
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	size;
@@ -301,7 +206,7 @@ void	Network::_initConnection(void)
 	// 	return ;
 	// }
 	// _Debug_sockaddr_connect.sin_family = AF_INET;
- //    _Debug_sockaddr_connect.sin_port = htons(4244);
+ 	// _Debug_sockaddr_connect.sin_port = htons(4244);
 	// _Debug_sockaddr_connect.sin_addr.s_addr = inet_addr("10.11.12.9     ");
 	// bzero(&(_Debug_sockaddr_connect.sin_zero), 8);
 	// _Debug_sockaddr_len = sizeof(_Debug_sockaddr_connect);
@@ -334,7 +239,6 @@ std::string		Network::recieve(void)
 	std::stringstream ss;
 
 	ret = get_next_line(_socket_connect, &buf);
-	_client->printDebug(std::to_string(ret));
 	switch (ret)
 	{
 		case -1:

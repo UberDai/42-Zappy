@@ -27,12 +27,6 @@
 # include "Pathfinding.hpp"
 # include "BroadcastInfos.hpp"
 
-/*
-** TODO NOE
-**
-** - classe IA <-- kek
-*/
-
 class Network;
 class Action;
 class Pathfinding;
@@ -42,21 +36,6 @@ using Totems = std::vector<std::map<std::string, size_t> >;
 class	Client
 {
 public:
-
-	// enum eMode {
-	// 	NORMAL,
-	// 	NORMAL_FIND,
-	// 	FIND_PLAYER,
-	// 	WAIT_PLAYER,
-	// 	CHECK_PLAYER
-	// };
-
-	// enum eBroadcastType {
-	// 	SEEK,
-	// 	FOUND,
-	// 	ALL_GOOD,
-	// 	FOLLOW
-	// };
 
 	enum eMode {
 		NORMAL,
@@ -188,15 +167,6 @@ private:
 	void					_loadServerInfos(const std::string &);
 	void					_forkstem(void);
 	void					_checkSlot(void);
-
-
-	// void					_setBroadcastMsg(std::stringstream &);
-	// void					_ia(void);
-	// int					_compos(int);
-	// void					_composFind(int);
-	// int					_search(int);
-	// void					_playMove(void);
-	// void					_findPlayerMode(void);
 };
 
 #endif /* CLIENT_HPP */
