@@ -22,22 +22,3 @@ enum eOrientation : int {
 };
 
 #endif /* EORIENTATION_HPP */
-
-// posX, posY
-
-// Y = 0
-
-// Y = mapping.second != 0 ? Y * mapping.second : Y
-// X = mapping.first != 0 ? X * mapping.first : X
-
-// while (Y <= LEVEL)
-// {
-// 	X = -Y;
-// 	while (X <= Y)
-// 	{
-// 		print(posX + X, posY + Y)
-// 		X++;
-// 	}
-// 	println
-// 	Y++;
-// }
