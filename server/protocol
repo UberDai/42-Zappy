@@ -17,10 +17,10 @@ death			x ID
 
 pickup			^ ID r
 
-drop			v  ID r
+drop			v ID r
 
-add egg			0 x y
+add egg			0 N x y
 
-remove egg		9 x y
+remove egg		9 N x y
 
 level up		! ID

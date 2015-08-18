@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/18 23:49:37 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 00:04:59 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ static void	network_client_connect(void)
 
 void	network_client_disconnect(t_client *client)
 {
-	printf("CACACAACACAA\n");
 	logger_client_disconnect(client);
 	close(client->fd);
 	FD_CLR(client->fd, &g_zappy.network.read_fds);
