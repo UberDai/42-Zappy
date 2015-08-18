@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   network.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/18 02:08:37 by adebray          ###   ########.fr       */
+/*   Updated: 2015/08/18 23:49:37 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ static void	network_send_client_queue(t_client *client, fd_set *write_fds)
 	if (client->sending_queue->size == 0)
 		return ;
 
-	size = 0;
+	size = 1;
 	init_iter(&iter, client->sending_queue, increasing);
 	while (lst_iterator_next(&iter))
 		size += strlen((char*)iter.data);

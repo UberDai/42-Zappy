@@ -1,36 +1,26 @@
-// start
-x y
-t
+start			x y
+				t
 
-// item
-+ x y R
-- x y R
+add item		+ x y R
 
-// move
-> ID x y
+remove item		- x y R
 
-// turn
-o ID
+move			> ID x y
 
-// connect
-* ID N x y O
+turn			o ID
 
-// disconnect
-_ ID
+connect			* ID N x y O
 
-// death
-x ID
+disconnect		_ ID
 
-// pickup
-^ ID r
+death			x ID
 
-// drop
-v  ID r
+pickup			^ ID r
 
-// add egg
-0 x y
+drop			v  ID r
 
-// remove egg
-9 x y
+add egg			0 x y
 
-I NEED A LEVEL UP INFO
+remove egg		9 x y
+
+level up		! ID

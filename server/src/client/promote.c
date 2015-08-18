@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:01:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 00:21:02 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/18 23:57:59 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ short		client_can_promote(t_client *client)
 short		client_promote(t_client *client)
 {
 	client->level++;
+	gfx_client_promote(client);
 	return (1);
 }
