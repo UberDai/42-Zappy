@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   network.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/18 00:02:11 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/18 01:41:07 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static void	network_client_connect(void)
 
 void	network_client_disconnect(t_client *client)
 {
+	printf("CACACAACACAA\n");
 	logger_client_disconnect(client);
 	close(client->fd);
 	FD_CLR(client->fd, &g_zappy.network.read_fds);
