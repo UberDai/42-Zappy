@@ -115,11 +115,38 @@ static char	network_client_data(t_client *client, fd_set *read_fds)
 	return (0);
 }
 
+static void	network_send_client_queue(t_client *client, fd_set *write_fds)
+{
+	t_lstiter	iter;
+	size_t		size;
+	char		*str;
+
+	if (client->sending_queue->size == 0)
+		return ;
+
+	size = 0;
+	init_iter(&iter, client->sending_queue, increasing);
+	while (lst_iterator_next(&iter))
+		size += strlen((char*)iter.data);
+
+	if (size == 0)
+		return ;
+
+	str = calloc(size, sizeof(char));
+
+	init_iter(&iter, client->sending_queue, increasing);
+	while (lst_iterator_next(&iter))
+		strcat(str, (char*)iter.data);
+	lst_destroy(client->sending_queue, free);
+	send(client->fd, str, size);
+	free(str);
+	FD_CLR(client->fd, write_fds);
+}
+
 static void	network_check_clients(t_lst *clients, fd_set *read_fds, fd_set *write_fds)
 {
 	t_client	*client;
 	size_t		i;
-	char		*str;
 
 	i = 0;
 	while (i < clients->size)
@@ -129,15 +156,9 @@ static void	network_check_clients(t_lst *clients, fd_set *read_fds, fd_set *writ
 		{
 			if (network_client_data(client, read_fds) == 0)
 				continue;
-				// i--;
 		}
 		if (FD_ISSET(client->fd, write_fds) && client->sending_queue->size != 0)
-		{
-			str = lst_data_at(client->sending_queue, 0);
-			send(client->fd, str, strlen(str), 0);
-			lst_pop_front(client->sending_queue);
-			free(str);
-		}
+			network_send_client_queue(client, write_fds);
 		i++;
 	}
 }
