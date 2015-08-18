@@ -57,13 +57,19 @@ end
 
 function test1:draw(x, y)
 	if self.orientation == 'west' then
+		-- love.graphics.rectangle("line", x * zappy.scale, y * zappy.scale, 142, 142)
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, -5, 20)
 	elseif self.orientation == 'north' then
+		-- love.graphics.rectangle("line", x * zappy.scale, y * zappy.scale, 142, 142)
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad + 8], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, 20)
 	elseif self.orientation == 'east' then
+		-- love.graphics.rectangle("line", x * zappy.scale, y * zappy.scale, 142, 142)
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale, -5, 15)
 	elseif self.orientation == 'south' then
+		-- love.graphics.rectangle("line", x * zappy.scale, y * zappy.scale, 142, 142)
 		love.graphics.draw(self.listQuads[0], self.listQuads[self.quad], x * zappy.scale, y * zappy.scale, 0, zappy.scale * -1, zappy.scale, 80, 15)
+	else
+		love.graphics.rectangle("fill", x * zappy.scale, y * zappy.scale, 142, 142)
 	end
 
 	if self.effect then

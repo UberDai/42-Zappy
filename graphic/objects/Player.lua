@@ -17,10 +17,20 @@ Object = require 'libs.classic'
 
 Player = Object:extend()
 function Player:new(id, team, x, y, orientation)
+	if not zappy.teams[team] then
+		zappy.teams[team] = {
+			nbr = 1,
+			color = {math.random(0, 255), math.random(0, 255), math.random(0, 255), 255}
+		}
+	else
+		zappy.teams[team].nbr = zappy.teams[team].nbr + 1
+	end
+
 	print("New player", id, team, x, y, orientation)
 	self.id = tonumber(id)
 	self.x = tonumber(x)
 	self.y = tonumber(y)
+	self.team = team
 	self.sprite = test1()
 	self.sprite.orientation = noraml(orientation)
 end

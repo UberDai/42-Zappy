@@ -46,7 +46,6 @@ function Zappy:makeMStack(tab)
 				end
 			end
 		elseif v:find("o%s*%d+%s*%d+") then
-			-- print(i,v)
 			local id, orientation = v:match("(%d+)%s*(%d+)")
 			for i,v in ipairs(self.players) do
 				if v.id == tonumber(id) then
@@ -54,7 +53,7 @@ function Zappy:makeMStack(tab)
 				end
 			end
 		else
-			print("else", i, v)
+			if v ~= "" then print("else", v) end
 		end
 	end
 end
@@ -118,12 +117,14 @@ function Zappy:new(host, port)
 
 	self.size = 100
 	self.margin = -0.5
-	self.scale = 1.5
-	self.offx, self.offy = width / 2 - self.size / 2, 0
+	self.scale = 1
+	-- self.offx, self.offy = width / 3 - self.size / 2, height / 8
+	self.offx, self.offy = width / 2 - self.size / 2, height / 4 - self.size / 2
 
 	self.shapes = {}
 	self.HC = Collider.new(self.size)
 	self.players = {}
+	self.teams = {}
 	self.mouse = self.HC:addCircle(0, 0, 1)
 end
 
@@ -144,12 +145,25 @@ function Zappy:update(dt)
 	end
 end
 
+test = love.graphics.newShader[[
+	vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords )
+	{
+		vec4 tmp = Texel(texture, texture_coords);
+
+		return color * tmp;
+	}
+]]
+
 function Zappy:draw()
 	self.map:draw()
 	self.mouse:draw()
 	for i,v in ipairs(self.players) do
 		local x, y = zappy:normalize(v.x - 1, v.y - 1)
+		love.graphics.setColor(self.teams[v.team].color)
+		love.graphics.setShader(test)
 		v:draw(x, y)
+		love.graphics.setShader()
+		love.graphics.setColor({255, 255, 255, 255})
 	end
 
 	if self.collision ~= false then
@@ -162,4 +176,31 @@ function Zappy:draw()
 	end
 
 	love.graphics.print(zappy.itemcount)
+
+	local count = 0
+	for k,v in pairs(self.teams) do
+		count = count + 1
+	end
+
+	local j = height - 60 - count * 12
+	for k,v in pairs(self.teams) do
+		love.graphics.setColor(v.color)
+		love.graphics.rectangle('fill', 10, j, 100, 12)
+		love.graphics.setColor({0, 0, 0, 255})
+		love.graphics.print(k, 15, j)
+		love.graphics.setColor({255, 255, 255, 255})
+		j = j + 12
+	end
+
+	local grain = math.floor(width / #self.players)
+	if grain == 0 or #self.players == 0 then return end
+
+	local y = 0
+	for i,v in ipairs(self.players) do
+		love.graphics.setColor(self.teams[v.team].color)
+		love.graphics.rectangle("fill", y + 5, height - 50, grain - 10, 50)
+		love.graphics.setColor({255, 255, 255, 255})
+		y = y + grain
+	end
+
 end

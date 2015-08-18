@@ -108,17 +108,22 @@ function love.update(dt)
 	end
 	if love.keyboard.isDown('[') then
 		local tmp = 1 / zappy.scale
-		zappy.scale = zappy.scale + 0.1
+
+		-- print(tmp)
+		-- if zappy.scale + 0.1 == 1 then return end
+
+		zappy.scale = zappy.scale + dt * 10
 		for i,v in ipairs(zappy.shapes) do
 			v.shape:scale(tmp, tmp)
 			v.shape:scale(zappy.scale, zappy.scale)
 		end
 	end
 	if love.keyboard.isDown(']') then
-		if zappy.scale - 0.1 < 0 then return end
+		if zappy.scale - dt * 10 <= 0 then return end
 
 		local tmp = 1 / zappy.scale
-		zappy.scale = zappy.scale - 0.1
+		zappy.scale = zappy.scale - dt * 10
+
 		for i,v in ipairs(zappy.shapes) do
 			v.shape:scale(tmp, tmp)
 			v.shape:scale(zappy.scale, zappy.scale)
