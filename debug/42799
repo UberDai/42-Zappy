@@ -1,0 +1,104 @@
+[02:54:14] 42799    1
+[02:54:14] 42799 << BIENVENUE
+[02:54:14] 42799 >> team1
+[02:54:14] 42799    1
+[02:54:14] 42799 << 2
+[02:54:14] 42799    1
+[02:54:14] 42799 << 10 10
+[02:54:14] 42799 >> connect_nbr
+[02:54:14] 42799    1
+[02:54:14] 42799 << 0
+[02:54:14] 42799    IA - Normal Mode
+[02:54:14] 42799    Rotation exploration
+[02:54:14] 42799    add action droite
+[02:54:14] 42799    add action voir
+[02:54:14] 42799 >> droite
+[02:54:15] 42799    1
+[02:54:15] 42799 << ok
+[02:54:15] 42799 >> voir
+[02:54:15] 42799    1
+[02:54:15] 42799 << {nourriture linemate linemate sibur sibur mendiane mendiane thystame, linemate deraumere deraumere sibur sibur mendiane mendiane thystame joueur, linemate linemate deraumere deraumere sibur mendiane thystame, nourriture nourriture linemate linemate sibur mendiane phiras thystame thystame thystame}
+[02:54:15] 42799    add action inventaire
+[02:54:15] 42799    Fin de boucle
+[02:54:15] 42799    IA - Normal Mode
+[02:54:15] 42799    mov first 1 mov second 1
+[02:54:15] 42799    add action avance
+[02:54:15] 42799    add action gauche
+[02:54:15] 42799    add action avance
+[02:54:15] 42799    add action prend 
+[02:54:15] 42799    Heading towards closest linemate
+[02:54:15] 42799    add action voir
+[02:54:15] 42799 >> inventaire
+[02:54:15] 42799    1
+[02:54:15] 42799 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42799 >> avance
+[02:54:15] 42799    1
+[02:54:15] 42799 << ok
+[02:54:15] 42799 >> gauche
+[02:54:15] 42799    1
+[02:54:15] 42799 << ok
+[02:54:15] 42799 >> avance
+[02:54:16] 42799    1
+[02:54:16] 42799 << ok
+[02:54:16] 42799 >> voir
+[02:54:16] 42799    1
+[02:54:16] 42799 << {linemate deraumere deraumere sibur sibur mendiane mendiane thystame joueur, nourriture linemate linemate deraumere deraumere sibur phiras thystame joueur, linemate linemate deraumere deraumere sibur mendiane thystame, nourriture linemate linemate sibur sibur mendiane mendiane thystame}
+[02:54:16] 42799 >> prend linemate
+[02:54:16] 42799    1
+[02:54:16] 42799 << ok
+[02:54:16] 42799    add action inventaire
+[02:54:16] 42799    Fin de boucle
+[02:54:16] 42799    IA - Normal Mode
+[02:54:16] 42799    First level, compos OK, drop compos, incantation.
+[02:54:16] 42799    add action pose 
+[02:54:16] 42799    add action incantation
+[02:54:16] 42799 >> inventaire
+[02:54:16] 42799    1
+[02:54:16] 42799 << {nourriture 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42799 >> pose linemate
+[02:54:16] 42799    1
+[02:54:16] 42799 << ok
+[02:54:16] 42799 >> incantation
+[02:54:16] 42799    1
+[02:54:16] 42799 << elevation en cours
+[02:54:16] 42799    1
+[02:54:16] 42799 << niveau actuel : 2
+[02:54:16] 42799    add action inventaire
+[02:54:16] 42799    Fin de boucle
+[02:54:16] 42799    IA - Normal Mode
+[02:54:17] 42799    mov first -1 mov second 1
+[02:54:17] 42799    add action gauche
+[02:54:17] 42799    add action avance
+[02:54:17] 42799    add action droite
+[02:54:17] 42799    add action avance
+[02:54:17] 42799    add action prend 
+[02:54:17] 42799    Heading towards closest deraumere
+[02:54:17] 42799    add action voir
+[02:54:17] 42799 >> inventaire
+[02:54:17] 42799    1
+[02:54:17] 42799 << message 7,10512759638487373799 42770 0 2
+[02:54:17] 42799    kek
+[02:54:17] 42799    maxikek
+[02:54:17] 42799    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:54:17] 42799    Broadcast recieved ! Recieving again...
+[02:54:17] 42799    1
+[02:54:17] 42799 << {nourriture 8, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42799 >> gauche
+[02:54:17] 42799    1
+[02:54:17] 42799 << ok
+[02:54:17] 42799 >> avance
+[02:54:17] 42799    1
+[02:54:17] 42799 << ok
+[02:54:17] 42799 >> droite
+[02:54:17] 42799    1
+[02:54:17] 42799 << ok
+[02:54:17] 42799 >> avance
+[02:54:18] 42799    1
+[02:54:18] 42799 << message 7,10512759638487373799 42790 2 42770
+[02:54:18] 42799    kek
+[02:54:18] 42799    maxikek
+[02:54:18] 42799    Broadcast recieved ! Recieving again...
+[02:54:18] 42799    0
+[02:54:18] 42799    Close de merde
+[02:54:18] 42799    Close
+[02:54:18] 42799    add action voir

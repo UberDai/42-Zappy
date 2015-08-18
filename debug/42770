@@ -1,0 +1,679 @@
+[02:54:14] 42770    1
+[02:54:14] 42770 << BIENVENUE
+[02:54:14] 42770 >> team1
+[02:54:14] 42770    1
+[02:54:14] 42770 << 30
+[02:54:14] 42770    1
+[02:54:14] 42770 << 10 10
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42770    1
+[02:54:14] 42770 << 29
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42772    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 28
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42773    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 28
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42774    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 27
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42775    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 26
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42776    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 26
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42778    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 25
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42770    1
+[02:54:14] 42770 << 25
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42779    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 24
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42780    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 24
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42781    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 22
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42783    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 22
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42785    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 21
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42786    Close
+[02:54:14] 42787    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 21
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42789    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 14
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42770    1
+[02:54:14] 42770 << 12
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42790    Close
+[02:54:14] 42791    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 12
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42770    1
+[02:54:14] 42770 << 11
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42792    Close
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42793    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 11
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42770    1
+[02:54:14] 42770 << 10
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42794    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 9
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42795    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 8
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42796    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 7
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42797    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 6
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42798    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 5
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42799    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 5
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42800    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 4
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42802    Close
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42770    1
+[02:54:14] 42770 << 3
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42803    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 1
+[02:54:14] 42804    Close
+[02:54:14] 42770    FORKSTEM
+[02:54:14] 42770 >> connect_nbr
+[02:54:14] 42805    Close
+[02:54:14] 42770    1
+[02:54:14] 42770 << 0
+[02:54:14] 42770    IA - Normal Mode
+[02:54:14] 42770    Rotation exploration
+[02:54:14] 42770    add action droite
+[02:54:14] 42770    add action voir
+[02:54:14] 42770 >> droite
+[02:54:14] 42770    1
+[02:54:14] 42770 << ok
+[02:54:14] 42770 >> voir
+[02:54:14] 42770    1
+[02:54:14] 42770 << {linemate linemate deraumere deraumere sibur sibur phiras thystame thystame, nourriture nourriture linemate deraumere sibur phiras thystame, nourriture linemate linemate deraumere sibur mendiane phiras, nourriture linemate deraumere sibur mendiane mendiane phiras thystame thystame}
+[02:54:14] 42770    add action inventaire
+[02:54:14] 42770    Fin de boucle
+[02:54:14] 42770    IA - Normal Mode
+[02:54:14] 42770    mov first 1 mov second 1
+[02:54:14] 42770    add action avance
+[02:54:14] 42770    add action gauche
+[02:54:14] 42770    add action avance
+[02:54:14] 42770    add action prend 
+[02:54:14] 42770    Heading towards closest linemate
+[02:54:14] 42770    add action voir
+[02:54:14] 42770 >> inventaire
+[02:54:14] 42770    1
+[02:54:14] 42770 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:14] 42770 >> avance
+[02:54:14] 42770    1
+[02:54:14] 42770 << ok
+[02:54:14] 42770 >> gauche
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770 >> avance
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770 >> voir
+[02:54:15] 42770    1
+[02:54:15] 42770 << {nourriture nourriture linemate linemate sibur sibur thystame, nourriture deraumere sibur sibur sibur mendiane mendiane mendiane phiras phiras thystame, nourriture nourriture linemate deraumere sibur sibur mendiane mendiane phiras thystame, nourriture nourriture deraumere deraumere sibur sibur mendiane phiras phiras phiras thystame thystame joueur joueur}
+[02:54:15] 42770 >> prend linemate
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770    add action inventaire
+[02:54:15] 42770    Fin de boucle
+[02:54:15] 42770    IA - Normal Mode
+[02:54:15] 42770    First level, compos OK, drop compos, incantation.
+[02:54:15] 42770    add action incantation
+[02:54:15] 42770 >> inventaire
+[02:54:15] 42770    1
+[02:54:15] 42770 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42770 >> incantation
+[02:54:15] 42770    1
+[02:54:15] 42770 << elevation en cours
+[02:54:15] 42770    1
+[02:54:15] 42770 << niveau actuel : 2
+[02:54:15] 42770    add action inventaire
+[02:54:15] 42770    Fin de boucle
+[02:54:15] 42770    IA - Normal Mode
+[02:54:15] 42770    mov first -1 mov second 1
+[02:54:15] 42770    add action gauche
+[02:54:15] 42770    add action avance
+[02:54:15] 42770    add action droite
+[02:54:15] 42770    add action avance
+[02:54:15] 42770    add action prend 
+[02:54:15] 42770    Heading towards closest deraumere
+[02:54:15] 42770    add action voir
+[02:54:15] 42770 >> inventaire
+[02:54:15] 42770    1
+[02:54:15] 42770 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42770 >> gauche
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770 >> avance
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770 >> droite
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770 >> avance
+[02:54:15] 42770    1
+[02:54:15] 42770 << ok
+[02:54:15] 42770 >> voir
+[02:54:15] 42770    1
+[02:54:15] 42770 << {nourriture linemate linemate deraumere deraumere sibur mendiane thystame joueur, nourriture linemate linemate deraumere deraumere sibur mendiane mendiane phiras thystame thystame, linemate linemate deraumere sibur mendiane phiras thystame thystame joueur, nourriture nourriture linemate linemate sibur sibur thystame joueur, nourriture nourriture linemate deraumere sibur mendiane phiras phiras thystame, nourriture nourriture nourriture linemate linemate deraumere sibur sibur mendiane mendiane phiras thystame thystame thystame, nourriture deraumere sibur sibur sibur mendiane mendiane mendiane phiras phiras thystame, nourriture nourriture linemate deraumere sibur sibur mendiane mendiane phiras thystame, nourriture nourriture deraumere deraumere sibur sibur mendiane phiras phiras phiras thystame thystame joueur joueur}
+[02:54:15] 42770 >> prend deraumere
+[02:54:16] 42770    1
+[02:54:16] 42770 << ok
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Normal Mode
+[02:54:16] 42770    mov first -1 mov second 1
+[02:54:16] 42770    add action gauche
+[02:54:16] 42770    add action avance
+[02:54:16] 42770    add action droite
+[02:54:16] 42770    add action avance
+[02:54:16] 42770    add action prend 
+[02:54:16] 42770    Heading towards closest sibur
+[02:54:16] 42770    add action voir
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770 >> gauche
+[02:54:16] 42770    1
+[02:54:16] 42770 << ok
+[02:54:16] 42770 >> avance
+[02:54:16] 42770    1
+[02:54:16] 42770 << ok
+[02:54:16] 42770 >> droite
+[02:54:16] 42770    1
+[02:54:16] 42770 << ok
+[02:54:16] 42770 >> avance
+[02:54:16] 42770    1
+[02:54:16] 42770 << ok
+[02:54:16] 42770 >> voir
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture linemate deraumere sibur mendiane mendiane thystame thystame thystame, nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane phiras phiras phiras thystame thystame joueur, nourriture nourriture linemate linemate deraumere deraumere sibur mendiane mendiane phiras phiras thystame thystame, nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane mendiane thystame joueur, nourriture nourriture linemate deraumere deraumere deraumere sibur sibur sibur phiras phiras thystame thystame thystame joueur, nourriture nourriture linemate deraumere deraumere sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur, nourriture linemate linemate linemate deraumere deraumere deraumere sibur mendiane mendiane mendiane phiras thystame thystame, nourriture linemate linemate linemate deraumere deraumere sibur mendiane mendiane phiras thystame thystame joueur, nourriture nourriture linemate linemate deraumere sibur sibur phiras thystame thystame joueur}
+[02:54:16] 42770 >> prend sibur
+[02:54:16] 42770    1
+[02:54:16] 42770 << ok
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Normal Mode
+[02:54:16] 42770    Compos ok, level 2+, passage en mode reunion
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Reunion Mode
+[02:54:16] 42770    No one is waiting, change to mode WAIT_MATES
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:16] 42770    1
+[02:54:16] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42770    add action inventaire
+[02:54:16] 42770    Fin de boucle
+[02:54:16] 42770    IA - Wait Mates Mode
+[02:54:16] 42770    Nothing special.
+[02:54:16] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770    IA - Send Broadcast
+[02:54:17] 42770    add action broadcast 
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770 >> broadcast 10512759638487373799 42770 0 2
+[02:54:17] 42770    1
+[02:54:17] 42770 << ok
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:17] 42770    1
+[02:54:17] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42770    add action inventaire
+[02:54:17] 42770    Fin de boucle
+[02:54:17] 42770    IA - Wait Mates Mode
+[02:54:17] 42770    Nothing special.
+[02:54:17] 42770 >> inventaire
+[02:54:18] 42770    1
+[02:54:18] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:18] 42770    add action inventaire
+[02:54:18] 42770    Fin de boucle
+[02:54:18] 42770    IA - Wait Mates Mode
+[02:54:18] 42770    Nothing special.
+[02:54:18] 42770 >> inventaire
+[02:54:18] 42770    1
+[02:54:18] 42770 << message 2,10512759638487373799 42790 2 42770
+[02:54:18] 42770    kek
+[02:54:18] 42770    maxikek
+[02:54:18] 42770    Broadcast recieved ! Recieving again...
+[02:54:18] 42770    1
+[02:54:18] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:18] 42770    add action inventaire
+[02:54:18] 42770    Fin de boucle
+[02:54:18] 42770    IA - Wait Mates Mode
+[02:54:18] 42770    Nothing special.
+[02:54:18] 42770 >> inventaire
+[02:54:18] 42770    1
+[02:54:18] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:18] 42770    add action inventaire
+[02:54:18] 42770    Fin de boucle
+[02:54:18] 42770    IA - Wait Mates Mode
+[02:54:18] 42770    Nothing special.
+[02:54:18] 42770    IA - Send Broadcast
+[02:54:18] 42770    add action broadcast 
+[02:54:18] 42770 >> inventaire
+[02:54:18] 42770    1
+[02:54:18] 42770 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:54:18] 42770 >> broadcast 10512759638487373799 42770 0 2
+[02:54:18] 42770    0
+[02:54:18] 42770    Close de merde
+[02:54:18] 42770    Close
+[02:54:18] 42770    add action voir

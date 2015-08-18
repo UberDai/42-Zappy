@@ -1,0 +1,124 @@
+[02:54:14] 42773    1
+[02:54:14] 42773 << BIENVENUE
+[02:54:14] 42773 >> team1
+[02:54:14] 42773    1
+[02:54:14] 42773 << 28
+[02:54:14] 42773    1
+[02:54:14] 42773 << 10 10
+[02:54:14] 42773 >> connect_nbr
+[02:54:14] 42773    1
+[02:54:14] 42773 << 25
+[02:54:14] 42773    FORKSTEM
+[02:54:14] 42773 >> connect_nbr
+[02:54:14] 42782    Close
+[02:54:14] 42773    1
+[02:54:14] 42773 << 22
+[02:54:14] 42773    FORKSTEM
+[02:54:14] 42808    Close
+[02:54:14] 42773 >> connect_nbr
+[02:54:14] 42773    1
+[02:54:14] 42773 << 0
+[02:54:14] 42773    IA - Normal Mode
+[02:54:14] 42773    Rotation exploration
+[02:54:14] 42773    add action droite
+[02:54:14] 42773    add action voir
+[02:54:14] 42773 >> droite
+[02:54:14] 42773    1
+[02:54:15] 42773 << ok
+[02:54:15] 42773 >> voir
+[02:54:15] 42773    1
+[02:54:15] 42773 << {nourriture nourriture linemate linemate deraumere sibur mendiane mendiane phiras thystame, nourriture deraumere deraumere sibur mendiane mendiane phiras phiras thystame thystame, nourriture linemate deraumere deraumere sibur mendiane thystame thystame, nourriture linemate linemate deraumere sibur sibur mendiane phiras phiras thystame}
+[02:54:15] 42773    add action inventaire
+[02:54:15] 42773    Fin de boucle
+[02:54:15] 42773    IA - Normal Mode
+[02:54:15] 42773    mov first 1 mov second 0
+[02:54:15] 42773    add action avance
+[02:54:15] 42773    add action prend 
+[02:54:15] 42773    Heading towards closest linemate
+[02:54:15] 42773    add action voir
+[02:54:15] 42773 >> inventaire
+[02:54:15] 42773    1
+[02:54:15] 42773 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42773 >> avance
+[02:54:15] 42773    1
+[02:54:15] 42773 << ok
+[02:54:15] 42773 >> voir
+[02:54:15] 42773    1
+[02:54:15] 42773 << {deraumere deraumere deraumere sibur mendiane phiras phiras thystame thystame, nourriture deraumere sibur sibur sibur mendiane mendiane mendiane phiras thystame thystame, nourriture nourriture linemate linemate deraumere sibur mendiane mendiane phiras thystame, nourriture nourriture deraumere deraumere sibur mendiane mendiane mendiane phiras phiras thystame thystame}
+[02:54:15] 42773 >> prend linemate
+[02:54:15] 42773    1
+[02:54:15] 42773 << ok
+[02:54:15] 42773    add action inventaire
+[02:54:15] 42773    Fin de boucle
+[02:54:15] 42773    IA - Normal Mode
+[02:54:15] 42773    First level, compos OK, drop compos, incantation.
+[02:54:15] 42773    add action pose 
+[02:54:15] 42773    add action incantation
+[02:54:16] 42773 >> inventaire
+[02:54:16] 42773    1
+[02:54:16] 42773 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42773 >> pose linemate
+[02:54:16] 42773    1
+[02:54:16] 42773 << ok
+[02:54:16] 42773 >> incantation
+[02:54:16] 42773    1
+[02:54:16] 42773 << elevation en cours
+[02:54:16] 42773    1
+[02:54:16] 42773 << niveau actuel : 2
+[02:54:16] 42773    add action inventaire
+[02:54:16] 42773    Fin de boucle
+[02:54:16] 42773    IA - Normal Mode
+[02:54:16] 42773    mov first -1 mov second 0
+[02:54:16] 42773    add action droite
+[02:54:16] 42773    add action droite
+[02:54:16] 42773    add action avance
+[02:54:16] 42773    add action prend 
+[02:54:16] 42773    Heading towards closest deraumere
+[02:54:16] 42773    add action voir
+[02:54:16] 42773 >> inventaire
+[02:54:16] 42773    1
+[02:54:16] 42773 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42773 >> droite
+[02:54:16] 42773    1
+[02:54:16] 42773 << ok
+[02:54:16] 42773 >> droite
+[02:54:17] 42773    1
+[02:54:17] 42773 << ok
+[02:54:17] 42773 >> avance
+[02:54:17] 42773    1
+[02:54:17] 42773 << ok
+[02:54:17] 42773 >> voir
+[02:54:17] 42773    1
+[02:54:17] 42773 << message 6,10512759638487373799 42770 0 2
+[02:54:17] 42773    kek
+[02:54:17] 42773    maxikek
+[02:54:17] 42773    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:54:17] 42773    Broadcast recieved ! Recieving again...
+[02:54:17] 42773    1
+[02:54:17] 42773 << {nourriture linemate deraumere deraumere sibur phiras phiras thystame, nourriture linemate deraumere deraumere sibur sibur mendiane mendiane mendiane phiras phiras thystame thystame thystame, nourriture nourriture linemate linemate deraumere sibur sibur mendiane mendiane phiras phiras thystame joueur, nourriture linemate linemate sibur sibur mendiane phiras thystame thystame thystame joueur joueur, nourriture nourriture linemate linemate linemate deraumere deraumere sibur mendiane mendiane phiras thystame thystame, nourriture nourriture linemate deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras thystame thystame thystame, linemate deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane thystame thystame joueur, nourriture nourriture nourriture linemate deraumere deraumere deraumere sibur mendiane phiras phiras joueur, nourriture nourriture nourriture linemate linemate deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras thystame thystame}
+[02:54:17] 42773 >> prend deraumere
+[02:54:17] 42773    1
+[02:54:17] 42773 << ok
+[02:54:17] 42773    add action inventaire
+[02:54:17] 42773    Fin de boucle
+[02:54:17] 42773    IA - Towards Mate Mode
+[02:54:17] 42773    add action prend 
+[02:54:17] 42773    Totem direction 6
+[02:54:17] 42773    Moving toward waiting player
+[02:54:17] 42773    add action droite
+[02:54:17] 42773    add action avance
+[02:54:17] 42773    add action droite
+[02:54:17] 42773    add action avance
+[02:54:17] 42773 >> inventaire
+[02:54:17] 42773    1
+[02:54:17] 42773 << {nourriture 10, linemate 0, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:18] 42773 >> prend nourriture
+[02:54:18] 42773    1
+[02:54:18] 42773 << message 4,10512759638487373799 42790 2 42770
+[02:54:18] 42773    kek
+[02:54:18] 42773    maxikek
+[02:54:18] 42773    Broadcast recieved ! Recieving again...
+[02:54:18] 42773    0
+[02:54:18] 42773    Close de merde
+[02:54:18] 42773    Close
+[02:54:18] 42773    add action voir

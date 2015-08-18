@@ -1,0 +1,766 @@
+[02:56:55] 43678    1
+[02:56:55] 43678 << BIENVENUE
+[02:56:55] 43678 >> team1
+[02:56:55] 43678    1
+[02:56:55] 43678 << 22
+[02:56:55] 43678    1
+[02:56:55] 43678 << 10 10
+[02:56:55] 43678 >> connect_nbr
+[02:56:55] 43678    1
+[02:56:55] 43678 << 11
+[02:56:55] 43678    FORKSTEM
+[02:56:55] 43712    Close
+[02:56:56] 43678 >> connect_nbr
+[02:56:56] 43678    1
+[02:56:56] 43678 << 0
+[02:56:56] 43678    IA - Normal Mode
+[02:56:56] 43678    Rotation exploration
+[02:56:56] 43678    add action droite
+[02:56:56] 43678    add action voir
+[02:56:56] 43678 >> droite
+[02:56:56] 43678    1
+[02:56:56] 43678 << ok
+[02:56:56] 43678 >> voir
+[02:56:56] 43678    1
+[02:56:56] 43678 << {nourriture nourriture linemate linemate linemate deraumere sibur sibur sibur mendiane mendiane phiras, nourriture linemate deraumere deraumere sibur sibur sibur mendiane mendiane phiras thystame, linemate linemate linemate deraumere sibur sibur mendiane phiras phiras thystame thystame, nourriture nourriture nourriture linemate linemate deraumere phiras}
+[02:56:56] 43678    add action inventaire
+[02:56:56] 43678    Fin de boucle
+[02:56:56] 43678    IA - Normal Mode
+[02:56:56] 43678    mov first 1 mov second 1
+[02:56:56] 43678    add action avance
+[02:56:56] 43678    add action gauche
+[02:56:56] 43678    add action avance
+[02:56:56] 43678    add action prend 
+[02:56:56] 43678    Heading towards closest linemate
+[02:56:56] 43678    add action voir
+[02:56:57] 43678 >> inventaire
+[02:56:57] 43678    1
+[02:56:57] 43678 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:56:57] 43678 >> avance
+[02:56:57] 43678    1
+[02:56:57] 43678 << ok
+[02:56:57] 43678 >> gauche
+[02:56:57] 43678    1
+[02:56:57] 43678 << ok
+[02:56:57] 43678 >> avance
+[02:56:57] 43678    1
+[02:56:57] 43678 << ok
+[02:56:57] 43678 >> voir
+[02:56:57] 43678    1
+[02:56:57] 43678 << {nourriture nourriture linemate linemate deraumere deraumere sibur sibur phiras phiras thystame thystame, nourriture linemate deraumere sibur sibur mendiane phiras phiras thystame thystame, nourriture nourriture linemate linemate linemate deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame, nourriture nourriture sibur mendiane mendiane mendiane phiras phiras thystame thystame joueur joueur}
+[02:56:57] 43678 >> prend linemate
+[02:56:57] 43678    1
+[02:56:57] 43678 << ok
+[02:56:57] 43678    add action inventaire
+[02:56:57] 43678    Fin de boucle
+[02:56:57] 43678    IA - Normal Mode
+[02:56:57] 43678    First level, compos OK, drop compos, incantation.
+[02:56:57] 43678    add action incantation
+[02:56:57] 43678 >> inventaire
+[02:56:57] 43678    1
+[02:56:57] 43678 << {nourriture 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:56:57] 43678 >> incantation
+[02:56:57] 43678    1
+[02:56:58] 43678 << elevation en cours
+[02:56:58] 43678    1
+[02:56:58] 43678 << niveau actuel : 2
+[02:56:58] 43678    add action inventaire
+[02:56:58] 43678    Fin de boucle
+[02:56:58] 43678    IA - Normal Mode
+[02:56:58] 43678    mov first -1 mov second 1
+[02:56:58] 43678    add action gauche
+[02:56:58] 43678    add action avance
+[02:56:58] 43678    add action droite
+[02:56:58] 43678    add action avance
+[02:56:58] 43678    add action prend 
+[02:56:58] 43678    Heading towards closest deraumere
+[02:56:58] 43678    add action voir
+[02:56:58] 43678 >> inventaire
+[02:56:58] 43678    1
+[02:56:58] 43678 << {nourriture 8, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:56:58] 43678 >> gauche
+[02:56:58] 43678    1
+[02:56:58] 43678 << ok
+[02:56:58] 43678 >> avance
+[02:56:58] 43678    1
+[02:56:58] 43678 << ok
+[02:56:58] 43678 >> droite
+[02:56:58] 43678    1
+[02:56:58] 43678 << ok
+[02:56:59] 43678 >> avance
+[02:56:59] 43678    1
+[02:56:59] 43678 << ok
+[02:56:59] 43678 >> voir
+[02:56:59] 43678    1
+[02:56:59] 43678 << {nourriture nourriture nourriture linemate linemate linemate deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame thystame thystame joueur, nourriture nourriture nourriture linemate deraumere sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture deraumere deraumere sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame joueur joueur, nourriture nourriture nourriture linemate deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras thystame joueur joueur, nourriture nourriture linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras thystame joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture linemate deraumere deraumere deraumere deraumere sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame joueur joueur joueur joueur, nourriture linemate linemate deraumere deraumere deraumere deraumere sibur sibur mendiane phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture linemate linemate linemate deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame thystame thystame thystame joueur joueur}
+[02:56:59] 43678 >> prend deraumere
+[02:56:59] 43678    1
+[02:56:59] 43678 << ok
+[02:56:59] 43678    add action inventaire
+[02:56:59] 43678    Fin de boucle
+[02:56:59] 43678    IA - Normal Mode
+[02:56:59] 43678    mov first -1 mov second 1
+[02:56:59] 43678    add action gauche
+[02:56:59] 43678    add action avance
+[02:56:59] 43678    add action droite
+[02:56:59] 43678    add action avance
+[02:56:59] 43678    add action prend 
+[02:56:59] 43678    Heading towards closest sibur
+[02:56:59] 43678    add action voir
+[02:56:59] 43678 >> inventaire
+[02:56:59] 43678    1
+[02:56:59] 43678 << {nourriture 7, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:56:59] 43678 >> gauche
+[02:56:59] 43678    1
+[02:56:59] 43678 << ok
+[02:56:59] 43678 >> avance
+[02:57:00] 43678    1
+[02:57:00] 43678 << ok
+[02:57:00] 43678 >> droite
+[02:57:00] 43678    1
+[02:57:00] 43678 << message 7,10512759638487373799 43669 0 2
+[02:57:00] 43678    kek
+[02:57:00] 43678    maxikek
+[02:57:00] 43678    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:57:00] 43678    Broadcast recieved ! Recieving again...
+[02:57:00] 43678    1
+[02:57:00] 43678 << ok
+[02:57:00] 43678 >> avance
+[02:57:00] 43678    1
+[02:57:00] 43678 << ok
+[02:57:00] 43678 >> voir
+[02:57:00] 43678    1
+[02:57:00] 43678 << {nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere sibur sibur mendiane mendiane mendiane phiras thystame thystame joueur joueur joueur, nourriture linemate linemate linemate linemate deraumere deraumere sibur sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame joueur, nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere sibur sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur joueur joueur}
+[02:57:00] 43678 >> prend sibur
+[02:57:00] 43678    1
+[02:57:00] 43678 << ok
+[02:57:00] 43678    add action inventaire
+[02:57:00] 43678    Fin de boucle
+[02:57:00] 43678    IA - Towards Mate Mode
+[02:57:00] 43678    add action prend 
+[02:57:01] 43678    add action prend 
+[02:57:01] 43678    add action prend 
+[02:57:01] 43678    add action prend 
+[02:57:01] 43678    Totem direction 7
+[02:57:01] 43678    Moving toward waiting player
+[02:57:01] 43678    add action droite
+[02:57:01] 43678    add action avance
+[02:57:01] 43678 >> inventaire
+[02:57:01] 43678    1
+[02:57:01] 43678 << message 5,10512759638487373799 43669 0 2
+[02:57:01] 43678    kek
+[02:57:01] 43678    maxikek
+[02:57:01] 43678    Broadcast recieved ! Recieving again...
+[02:57:01] 43678    1
+[02:57:01] 43678 << {nourriture 6, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:01] 43678 >> prend nourriture
+[02:57:01] 43678    1
+[02:57:01] 43678 << ok
+[02:57:01] 43678 >> prend nourriture
+[02:57:01] 43678    1
+[02:57:01] 43678 << ok
+[02:57:01] 43678 >> prend nourriture
+[02:57:01] 43678    1
+[02:57:01] 43678 << ok
+[02:57:01] 43678 >> prend nourriture
+[02:57:01] 43678    1
+[02:57:01] 43678 << message 5,10512759638487373799 43669 0 2
+[02:57:01] 43678    kek
+[02:57:01] 43678    maxikek
+[02:57:02] 43678    Broadcast recieved ! Recieving again...
+[02:57:02] 43678    1
+[02:57:02] 43678 << ok
+[02:57:02] 43678 >> droite
+[02:57:02] 43678    1
+[02:57:02] 43678 << ok
+[02:57:02] 43678 >> avance
+[02:57:02] 43678    1
+[02:57:02] 43678 << message 2,10512759638487373799 43692 2 43669
+[02:57:02] 43678    kek
+[02:57:02] 43678    maxikek
+[02:57:02] 43678    Broadcast recieved ! Recieving again...
+[02:57:02] 43678    1
+[02:57:02] 43678 << ok
+[02:57:02] 43678    add action inventaire
+[02:57:02] 43678    Fin de boucle
+[02:57:02] 43678    IA - Towards Mate Mode
+[02:57:02] 43678    add action prend 
+[02:57:02] 43678    add action prend 
+[02:57:02] 43678    add action prend 
+[02:57:02] 43678    Totem direction 5
+[02:57:02] 43678    Moving toward waiting player
+[02:57:02] 43678    add action gauche
+[02:57:02] 43678    add action gauche
+[02:57:02] 43678    add action avance
+[02:57:02] 43678 >> inventaire
+[02:57:03] 43678    1
+[02:57:03] 43678 << message 3,10512759638487373799 43669 0 2
+[02:57:03] 43678    kek
+[02:57:03] 43678    maxikek
+[02:57:03] 43678    Broadcast recieved ! Recieving again...
+[02:57:03] 43678    1
+[02:57:03] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:03] 43678 >> prend nourriture
+[02:57:03] 43678    1
+[02:57:03] 43678 << ok
+[02:57:03] 43678 >> prend nourriture
+[02:57:03] 43678    1
+[02:57:03] 43678 << message 5,10512759638487373799 43684 2 43669
+[02:57:03] 43678    kek
+[02:57:03] 43678    maxikek
+[02:57:03] 43678    Broadcast recieved ! Recieving again...
+[02:57:03] 43678    1
+[02:57:03] 43678 << ok
+[02:57:03] 43678 >> prend nourriture
+[02:57:03] 43678    1
+[02:57:03] 43678 << message 3,10512759638487373799 43669 3 .
+[02:57:03] 43678    kek
+[02:57:03] 43678    maxikek
+[02:57:03] 43678    Recieved an incantation broadcast.
+[02:57:03] 43678    Broadcast recieved ! Recieving again...
+[02:57:03] 43678    1
+[02:57:03] 43678 << ok
+[02:57:04] 43678    add action incantation
+[02:57:04] 43678    add action inventaire
+[02:57:04] 43678    Fin de boucle
+[02:57:04] 43678    IA - Towards Mate Mode
+[02:57:04] 43678    No one to follow, NORMAL mode on
+[02:57:04] 43678 >> incantation
+[02:57:04] 43678    1
+[02:57:04] 43678 << ko
+[02:57:04] 43678    add action voir
+[02:57:04] 43678 >> voir
+[02:57:04] 43678    1
+[02:57:04] 43678 << {nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur mendiane phiras phiras phiras phiras phiras thystame thystame thystame, nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame thystame, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras thystame thystame thystame thystame, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame, nourriture nourriture nourriture nourriture deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame, nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras thystame thystame thystame joueur joueur joueur joueur}
+[02:57:04] 43678    add action inventaire
+[02:57:04] 43678    Fin de boucle
+[02:57:04] 43678    IA - Normal Mode
+[02:57:04] 43678    Compos ok, level 2+, passage en mode reunion
+[02:57:04] 43678 >> inventaire
+[02:57:04] 43678    1
+[02:57:04] 43678 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:04] 43678    add action inventaire
+[02:57:04] 43678    Fin de boucle
+[02:57:04] 43678    IA - Reunion Mode
+[02:57:04] 43678    No one is waiting, change to mode WAIT_MATES
+[02:57:04] 43678 >> inventaire
+[02:57:04] 43678    1
+[02:57:05] 43678 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:05] 43678    add action inventaire
+[02:57:05] 43678    Fin de boucle
+[02:57:05] 43678    IA - Wait Mates Mode
+[02:57:05] 43678    Nothing special.
+[02:57:05] 43678 >> inventaire
+[02:57:05] 43678    1
+[02:57:05] 43678 << {nourriture 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:05] 43678    add action inventaire
+[02:57:05] 43678    Fin de boucle
+[02:57:05] 43678    IA - Wait Mates Mode
+[02:57:05] 43678    Nothing special.
+[02:57:05] 43678 >> inventaire
+[02:57:05] 43678    1
+[02:57:05] 43678 << {nourriture 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:05] 43678    add action inventaire
+[02:57:05] 43678    Fin de boucle
+[02:57:05] 43678    IA - Wait Mates Mode
+[02:57:05] 43678    Nothing special.
+[02:57:05] 43678 >> inventaire
+[02:57:05] 43678    1
+[02:57:05] 43678 << {nourriture 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:05] 43678    add action inventaire
+[02:57:05] 43678    Fin de boucle
+[02:57:05] 43678    IA - Wait Mates Mode
+[02:57:05] 43678    Nothing special.
+[02:57:05] 43678 >> inventaire
+[02:57:05] 43678    1
+[02:57:05] 43678 << {nourriture 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:05] 43678    add action inventaire
+[02:57:05] 43678    Fin de boucle
+[02:57:05] 43678    IA - Wait Mates Mode
+[02:57:05] 43678    Nothing special.
+[02:57:05] 43678 >> inventaire
+[02:57:05] 43678    1
+[02:57:05] 43678 << message 5,10512759638487373799 43669 3 .
+[02:57:06] 43678    kek
+[02:57:06] 43678    maxikek
+[02:57:06] 43678    Broadcast recieved ! Recieving again...
+[02:57:06] 43678    1
+[02:57:06] 43678 << {nourriture 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:06] 43678    add action inventaire
+[02:57:06] 43678    Fin de boucle
+[02:57:06] 43678    IA - Wait Mates Mode
+[02:57:06] 43678    Nothing special.
+[02:57:06] 43678 >> inventaire
+[02:57:06] 43678    1
+[02:57:06] 43678 << {nourriture 9, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:06] 43678    add action inventaire
+[02:57:06] 43678    Fin de boucle
+[02:57:06] 43678    IA - Wait Mates Mode
+[02:57:06] 43678    Nothing special.
+[02:57:06] 43678 >> inventaire
+[02:57:06] 43678    1
+[02:57:06] 43678 << message 2,10512759638487373799 43690 0 2
+[02:57:06] 43678    kek
+[02:57:06] 43678    maxikek
+[02:57:06] 43678    Broadcast recieved ! Recieving again...
+[02:57:06] 43678    1
+[02:57:06] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:06] 43678    add action inventaire
+[02:57:06] 43678    Fin de boucle
+[02:57:06] 43678    IA - Wait Mates Mode
+[02:57:06] 43678    Nothing special.
+[02:57:06] 43678 >> inventaire
+[02:57:06] 43678    1
+[02:57:06] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:06] 43678    add action inventaire
+[02:57:06] 43678    Fin de boucle
+[02:57:06] 43678    IA - Wait Mates Mode
+[02:57:07] 43678    Nothing special.
+[02:57:07] 43678 >> inventaire
+[02:57:07] 43678    1
+[02:57:07] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:07] 43678    kek
+[02:57:07] 43678    maxikek
+[02:57:07] 43678    Broadcast recieved ! Recieving again...
+[02:57:07] 43678    1
+[02:57:07] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:07] 43678    add action inventaire
+[02:57:07] 43678    Fin de boucle
+[02:57:07] 43678    IA - Wait Mates Mode
+[02:57:07] 43678    Nothing special.
+[02:57:07] 43678 >> inventaire
+[02:57:07] 43678    1
+[02:57:07] 43678 << message 5,10512759638487373799 43684 2 43690
+[02:57:07] 43678    kek
+[02:57:07] 43678    maxikek
+[02:57:07] 43678    Broadcast recieved ! Recieving again...
+[02:57:07] 43678    1
+[02:57:07] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:07] 43678    add action inventaire
+[02:57:07] 43678    Fin de boucle
+[02:57:07] 43678    IA - Wait Mates Mode
+[02:57:07] 43678    Nothing special.
+[02:57:07] 43678 >> inventaire
+[02:57:07] 43678    1
+[02:57:07] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:07] 43678    add action inventaire
+[02:57:07] 43678    Fin de boucle
+[02:57:07] 43678    IA - Wait Mates Mode
+[02:57:07] 43678    Nothing special.
+[02:57:07] 43678 >> inventaire
+[02:57:08] 43678    1
+[02:57:08] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:08] 43678    add action inventaire
+[02:57:08] 43678    Fin de boucle
+[02:57:08] 43678    IA - Wait Mates Mode
+[02:57:08] 43678    Nothing special.
+[02:57:08] 43678 >> inventaire
+[02:57:08] 43678    1
+[02:57:08] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:08] 43678    add action inventaire
+[02:57:08] 43678    Fin de boucle
+[02:57:08] 43678    IA - Wait Mates Mode
+[02:57:08] 43678    Nothing special.
+[02:57:08] 43678 >> inventaire
+[02:57:08] 43678    1
+[02:57:08] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:08] 43678    kek
+[02:57:08] 43678    maxikek
+[02:57:08] 43678    Broadcast recieved ! Recieving again...
+[02:57:08] 43678    1
+[02:57:08] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:08] 43678    add action inventaire
+[02:57:08] 43678    Fin de boucle
+[02:57:08] 43678    IA - Wait Mates Mode
+[02:57:08] 43678    Nothing special.
+[02:57:08] 43678 >> inventaire
+[02:57:08] 43678    1
+[02:57:08] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:08] 43678    add action inventaire
+[02:57:08] 43678    Fin de boucle
+[02:57:08] 43678    IA - Wait Mates Mode
+[02:57:08] 43678    Nothing special.
+[02:57:08] 43678 >> inventaire
+[02:57:08] 43678    1
+[02:57:08] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:08] 43678    add action inventaire
+[02:57:08] 43678    Fin de boucle
+[02:57:08] 43678    IA - Wait Mates Mode
+[02:57:09] 43678    Nothing special.
+[02:57:09] 43678 >> inventaire
+[02:57:09] 43678    1
+[02:57:09] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:09] 43678    add action inventaire
+[02:57:09] 43678    Fin de boucle
+[02:57:09] 43678    IA - Wait Mates Mode
+[02:57:09] 43678    Nothing special.
+[02:57:09] 43678 >> inventaire
+[02:57:09] 43678    1
+[02:57:09] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:09] 43678    kek
+[02:57:09] 43678    maxikek
+[02:57:09] 43678    Broadcast recieved ! Recieving again...
+[02:57:09] 43678    1
+[02:57:09] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:09] 43678    add action inventaire
+[02:57:09] 43678    Fin de boucle
+[02:57:09] 43678    IA - Wait Mates Mode
+[02:57:09] 43678    Nothing special.
+[02:57:09] 43678 >> inventaire
+[02:57:09] 43678    1
+[02:57:09] 43678 << message 5,10512759638487373799 43675 0 2
+[02:57:09] 43678    kek
+[02:57:09] 43678    maxikek
+[02:57:09] 43678    Broadcast recieved ! Recieving again...
+[02:57:09] 43678    1
+[02:57:09] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:09] 43678    add action inventaire
+[02:57:09] 43678    Fin de boucle
+[02:57:09] 43678    IA - Wait Mates Mode
+[02:57:09] 43678    Nothing special.
+[02:57:09] 43678 >> inventaire
+[02:57:10] 43678    1
+[02:57:10] 43678 << message 7,10512759638487373799 43697 0 2
+[02:57:10] 43678    kek
+[02:57:10] 43678    maxikek
+[02:57:10] 43678    Broadcast recieved ! Recieving again...
+[02:57:10] 43678    1
+[02:57:10] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:10] 43678    add action inventaire
+[02:57:10] 43678    Fin de boucle
+[02:57:10] 43678    IA - Wait Mates Mode
+[02:57:10] 43678    Nothing special.
+[02:57:10] 43678    IA - Send Broadcast
+[02:57:10] 43678    add action broadcast 
+[02:57:10] 43678 >> inventaire
+[02:57:10] 43678    1
+[02:57:10] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:10] 43678    kek
+[02:57:10] 43678    maxikek
+[02:57:10] 43678    Broadcast recieved ! Recieving again...
+[02:57:10] 43678    1
+[02:57:10] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:10] 43678 >> broadcast 10512759638487373799 43678 0 2
+[02:57:10] 43678    1
+[02:57:10] 43678 << message 5,10512759638487373799 43675 1 .
+[02:57:10] 43678    kek
+[02:57:10] 43678    maxikek
+[02:57:10] 43678    Broadcast recieved ! Recieving again...
+[02:57:11] 43678    1
+[02:57:11] 43678 << ok
+[02:57:11] 43678    add action inventaire
+[02:57:11] 43678    Fin de boucle
+[02:57:11] 43678    IA - Wait Mates Mode
+[02:57:11] 43678    Nothing special.
+[02:57:11] 43678 >> inventaire
+[02:57:11] 43678    1
+[02:57:11] 43678 << message 7,10512759638487373799 43697 1 .
+[02:57:11] 43678    kek
+[02:57:11] 43678    maxikek
+[02:57:11] 43678    Broadcast recieved ! Recieving again...
+[02:57:11] 43678    1
+[02:57:11] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:11] 43678    add action inventaire
+[02:57:11] 43678    Fin de boucle
+[02:57:11] 43678    IA - Wait Mates Mode
+[02:57:11] 43678    Nothing special.
+[02:57:11] 43678 >> inventaire
+[02:57:11] 43678    1
+[02:57:11] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:11] 43678    kek
+[02:57:11] 43678    maxikek
+[02:57:11] 43678    Broadcast recieved ! Recieving again...
+[02:57:11] 43678    1
+[02:57:11] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:11] 43678    add action inventaire
+[02:57:11] 43678    Fin de boucle
+[02:57:11] 43678    IA - Wait Mates Mode
+[02:57:11] 43678    Nothing special.
+[02:57:11] 43678 >> inventaire
+[02:57:11] 43678    1
+[02:57:11] 43678 << message 1,10512759638487373799 43679 0 2
+[02:57:11] 43678    kek
+[02:57:12] 43678    maxikek
+[02:57:12] 43678    Broadcast recieved ! Recieving again...
+[02:57:12] 43678    1
+[02:57:12] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:12] 43678    add action inventaire
+[02:57:12] 43678    Fin de boucle
+[02:57:12] 43678    IA - Wait Mates Mode
+[02:57:12] 43678    Nothing special.
+[02:57:12] 43678 >> inventaire
+[02:57:12] 43678    1
+[02:57:12] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:12] 43678    add action inventaire
+[02:57:12] 43678    Fin de boucle
+[02:57:12] 43678    IA - Wait Mates Mode
+[02:57:12] 43678    Nothing special.
+[02:57:12] 43678 >> inventaire
+[02:57:12] 43678    1
+[02:57:12] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:12] 43678    kek
+[02:57:12] 43678    maxikek
+[02:57:12] 43678    Broadcast recieved ! Recieving again...
+[02:57:12] 43678    1
+[02:57:12] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:12] 43678    add action inventaire
+[02:57:12] 43678    Fin de boucle
+[02:57:12] 43678    IA - Wait Mates Mode
+[02:57:12] 43678    Nothing special.
+[02:57:12] 43678 >> inventaire
+[02:57:12] 43678    1
+[02:57:12] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:12] 43678    add action inventaire
+[02:57:12] 43678    Fin de boucle
+[02:57:12] 43678    IA - Wait Mates Mode
+[02:57:12] 43678    Nothing special.
+[02:57:13] 43678 >> inventaire
+[02:57:13] 43678    1
+[02:57:13] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:13] 43678    add action inventaire
+[02:57:13] 43678    Fin de boucle
+[02:57:13] 43678    IA - Wait Mates Mode
+[02:57:13] 43678    Nothing special.
+[02:57:13] 43678 >> inventaire
+[02:57:13] 43678    1
+[02:57:13] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:13] 43678    add action inventaire
+[02:57:13] 43678    Fin de boucle
+[02:57:13] 43678    IA - Wait Mates Mode
+[02:57:13] 43678    Nothing special.
+[02:57:13] 43678 >> inventaire
+[02:57:13] 43678    1
+[02:57:13] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:13] 43678    kek
+[02:57:13] 43678    maxikek
+[02:57:13] 43678    Broadcast recieved ! Recieving again...
+[02:57:13] 43678    1
+[02:57:13] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:13] 43678    add action inventaire
+[02:57:13] 43678    Fin de boucle
+[02:57:13] 43678    IA - Wait Mates Mode
+[02:57:13] 43678    Nothing special.
+[02:57:14] 43678 >> inventaire
+[02:57:14] 43678    1
+[02:57:14] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:14] 43678    add action inventaire
+[02:57:14] 43678    Fin de boucle
+[02:57:14] 43678    IA - Wait Mates Mode
+[02:57:14] 43678    Nothing special.
+[02:57:14] 43678 >> inventaire
+[02:57:14] 43678    1
+[02:57:14] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:14] 43678    add action inventaire
+[02:57:14] 43678    Fin de boucle
+[02:57:14] 43678    IA - Wait Mates Mode
+[02:57:14] 43678    Nothing special.
+[02:57:14] 43678 >> inventaire
+[02:57:14] 43678    1
+[02:57:14] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:14] 43678    kek
+[02:57:14] 43678    maxikek
+[02:57:14] 43678    Broadcast recieved ! Recieving again...
+[02:57:14] 43678    1
+[02:57:14] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:14] 43678    add action inventaire
+[02:57:14] 43678    Fin de boucle
+[02:57:14] 43678    IA - Wait Mates Mode
+[02:57:15] 43678    Nothing special.
+[02:57:15] 43678 >> inventaire
+[02:57:15] 43678    1
+[02:57:15] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:15] 43678    add action inventaire
+[02:57:15] 43678    Fin de boucle
+[02:57:15] 43678    IA - Wait Mates Mode
+[02:57:15] 43678    Nothing special.
+[02:57:15] 43678 >> inventaire
+[02:57:15] 43678    1
+[02:57:15] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:15] 43678    add action inventaire
+[02:57:15] 43678    Fin de boucle
+[02:57:15] 43678    IA - Wait Mates Mode
+[02:57:15] 43678    Nothing special.
+[02:57:15] 43678 >> inventaire
+[02:57:15] 43678    1
+[02:57:15] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:15] 43678    kek
+[02:57:15] 43678    maxikek
+[02:57:15] 43678    Broadcast recieved ! Recieving again...
+[02:57:15] 43678    1
+[02:57:15] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:15] 43678    add action inventaire
+[02:57:15] 43678    Fin de boucle
+[02:57:15] 43678    IA - Wait Mates Mode
+[02:57:15] 43678    Nothing special.
+[02:57:15] 43678 >> inventaire
+[02:57:15] 43678    1
+[02:57:15] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:16] 43678    add action inventaire
+[02:57:16] 43678    Fin de boucle
+[02:57:16] 43678    IA - Wait Mates Mode
+[02:57:16] 43678    Nothing special.
+[02:57:16] 43678 >> inventaire
+[02:57:16] 43678    1
+[02:57:16] 43678 << message 7,10512759638487373799 43691 0 3
+[02:57:16] 43678    kek
+[02:57:16] 43678    maxikek
+[02:57:16] 43678    Broadcast recieved ! Recieving again...
+[02:57:16] 43678    1
+[02:57:16] 43678 << message 2,10512759638487373799 43690 0 2
+[02:57:16] 43678    kek
+[02:57:16] 43678    maxikek
+[02:57:16] 43678    Broadcast recieved ! Recieving again...
+[02:57:16] 43678    1
+[02:57:16] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:16] 43678    add action inventaire
+[02:57:16] 43678    Fin de boucle
+[02:57:16] 43678    IA - Wait Mates Mode
+[02:57:16] 43678    Nothing special.
+[02:57:16] 43678 >> inventaire
+[02:57:16] 43678    1
+[02:57:16] 43678 << message 5,10512759638487373799 43686 0 3
+[02:57:16] 43678    kek
+[02:57:16] 43678    maxikek
+[02:57:16] 43678    Broadcast recieved ! Recieving again...
+[02:57:16] 43678    1
+[02:57:16] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:16] 43678    kek
+[02:57:17] 43678    maxikek
+[02:57:17] 43678    Broadcast recieved ! Recieving again...
+[02:57:17] 43678    1
+[02:57:17] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:17] 43678    add action inventaire
+[02:57:17] 43678    Fin de boucle
+[02:57:17] 43678    IA - Wait Mates Mode
+[02:57:17] 43678    Nothing special.
+[02:57:17] 43678 >> inventaire
+[02:57:17] 43678    1
+[02:57:17] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:17] 43678    add action inventaire
+[02:57:17] 43678    Fin de boucle
+[02:57:17] 43678    IA - Wait Mates Mode
+[02:57:17] 43678    Nothing special.
+[02:57:17] 43678 >> inventaire
+[02:57:17] 43678    1
+[02:57:17] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:17] 43678    kek
+[02:57:17] 43678    maxikek
+[02:57:17] 43678    Broadcast recieved ! Recieving again...
+[02:57:17] 43678    1
+[02:57:17] 43678 << message 7,10512759638487373799 43670 0 3
+[02:57:17] 43678    kek
+[02:57:17] 43678    maxikek
+[02:57:17] 43678    Broadcast recieved ! Recieving again...
+[02:57:17] 43678    1
+[02:57:17] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:18] 43678    add action inventaire
+[02:57:18] 43678    Fin de boucle
+[02:57:18] 43678    IA - Wait Mates Mode
+[02:57:18] 43678    Nothing special.
+[02:57:18] 43678 >> inventaire
+[02:57:18] 43678    1
+[02:57:18] 43678 << message 3,10512759638487373799 43680 0 3
+[02:57:18] 43678    kek
+[02:57:18] 43678    maxikek
+[02:57:18] 43678    Broadcast recieved ! Recieving again...
+[02:57:18] 43678    1
+[02:57:18] 43678 << message 3,10512759638487373799 43694 0 3
+[02:57:18] 43678    kek
+[02:57:18] 43678    maxikek
+[02:57:18] 43678    Broadcast recieved ! Recieving again...
+[02:57:18] 43678    1
+[02:57:18] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:18] 43678    add action inventaire
+[02:57:18] 43678    Fin de boucle
+[02:57:18] 43678    IA - Wait Mates Mode
+[02:57:18] 43678    Nothing special.
+[02:57:18] 43678 >> inventaire
+[02:57:18] 43678    1
+[02:57:18] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:18] 43678    kek
+[02:57:18] 43678    maxikek
+[02:57:18] 43678    Broadcast recieved ! Recieving again...
+[02:57:18] 43678    1
+[02:57:18] 43678 << message 1,10512759638487373799 43687 0 3
+[02:57:19] 43678    kek
+[02:57:19] 43678    maxikek
+[02:57:19] 43678    Broadcast recieved ! Recieving again...
+[02:57:19] 43678    1
+[02:57:19] 43678 << message 4,10512759638487373799 43681 0 3
+[02:57:19] 43678    kek
+[02:57:19] 43678    maxikek
+[02:57:19] 43678    Broadcast recieved ! Recieving again...
+[02:57:19] 43678    1
+[02:57:19] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:19] 43678    add action inventaire
+[02:57:19] 43678    Fin de boucle
+[02:57:19] 43678    IA - Wait Mates Mode
+[02:57:19] 43678    Nothing special.
+[02:57:19] 43678 >> inventaire
+[02:57:19] 43678    1
+[02:57:19] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:19] 43678    add action inventaire
+[02:57:19] 43678    Fin de boucle
+[02:57:19] 43678    IA - Wait Mates Mode
+[02:57:19] 43678    Nothing special.
+[02:57:19] 43678 >> inventaire
+[02:57:19] 43678    1
+[02:57:19] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:19] 43678    kek
+[02:57:19] 43678    maxikek
+[02:57:20] 43678    Broadcast recieved ! Recieving again...
+[02:57:20] 43678    1
+[02:57:20] 43678 << message 5,10512759638487373799 43693 0 3
+[02:57:20] 43678    kek
+[02:57:20] 43678    maxikek
+[02:57:20] 43678    Broadcast recieved ! Recieving again...
+[02:57:20] 43678    1
+[02:57:20] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:20] 43678    add action inventaire
+[02:57:20] 43678    Fin de boucle
+[02:57:20] 43678    IA - Wait Mates Mode
+[02:57:20] 43678    Nothing special.
+[02:57:20] 43678 >> inventaire
+[02:57:20] 43678    1
+[02:57:20] 43678 << message 5,10512759638487373799 43689 0 3
+[02:57:20] 43678    kek
+[02:57:20] 43678    maxikek
+[02:57:20] 43678    Broadcast recieved ! Recieving again...
+[02:57:20] 43678    1
+[02:57:20] 43678 << message 7,10512759638487373799 43688 0 3
+[02:57:20] 43678    kek
+[02:57:20] 43678    maxikek
+[02:57:20] 43678    Broadcast recieved ! Recieving again...
+[02:57:20] 43678    1
+[02:57:20] 43678 << message 7,10512759638487373799 43683 0 3
+[02:57:20] 43678    kek
+[02:57:20] 43678    maxikek
+[02:57:20] 43678    Broadcast recieved ! Recieving again...
+[02:57:20] 43678    1
+[02:57:20] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:20] 43678    add action inventaire
+[02:57:21] 43678    Fin de boucle
+[02:57:21] 43678    IA - Wait Mates Mode
+[02:57:21] 43678    Nothing special.
+[02:57:21] 43678 >> inventaire
+[02:57:21] 43678    1
+[02:57:21] 43678 << message 7,10512759638487373799 43677 0 3
+[02:57:21] 43678    kek
+[02:57:21] 43678    maxikek
+[02:57:21] 43678    Broadcast recieved ! Recieving again...
+[02:57:21] 43678    1
+[02:57:21] 43678 << message 5,10512759638487373799 43669 0 4
+[02:57:21] 43678    kek
+[02:57:21] 43678    maxikek
+[02:57:21] 43678    Broadcast recieved ! Recieving again...
+[02:57:21] 43678    1
+[02:57:21] 43678 << {nourriture 8, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:57:21] 43678    add action inventaire
+[02:57:21] 43678    Fin de boucle
+[02:57:21] 43678    IA - Wait Mates Mode
+[02:57:21] 43678    Nothing special.
+[02:57:21] 43678 >> inventaire
+[02:57:21] 43678    0
+[02:57:21] 43678    Close de merde
+[02:57:21] 43678    Close
+[02:57:21] 43678    add action voir

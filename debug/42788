@@ -1,0 +1,106 @@
+[02:54:14] 42788    1
+[02:54:14] 42788 << BIENVENUE
+[02:54:14] 42788 >> team1
+[02:54:14] 42788    1
+[02:54:14] 42788 << 13
+[02:54:14] 42788    1
+[02:54:14] 42788 << 10 10
+[02:54:14] 42788 >> connect_nbr
+[02:54:14] 42788    1
+[02:54:14] 42788 << 0
+[02:54:14] 42788    IA - Normal Mode
+[02:54:14] 42788    Rotation exploration
+[02:54:14] 42788    add action droite
+[02:54:14] 42788    add action voir
+[02:54:14] 42788 >> droite
+[02:54:14] 42788    1
+[02:54:14] 42788 << ok
+[02:54:14] 42788 >> voir
+[02:54:15] 42788    1
+[02:54:15] 42788 << {nourriture nourriture linemate deraumere sibur phiras thystame, linemate deraumere mendiane phiras, linemate linemate deraumere phiras thystame, nourriture linemate deraumere sibur mendiane phiras phiras thystame thystame}
+[02:54:15] 42788    add action inventaire
+[02:54:15] 42788    Fin de boucle
+[02:54:15] 42788    IA - Normal Mode
+[02:54:15] 42788    mov first 1 mov second 1
+[02:54:15] 42788    add action avance
+[02:54:15] 42788    add action gauche
+[02:54:15] 42788    add action avance
+[02:54:15] 42788    add action prend 
+[02:54:15] 42788    Heading towards closest linemate
+[02:54:15] 42788    add action voir
+[02:54:15] 42788 >> inventaire
+[02:54:15] 42788    1
+[02:54:15] 42788 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42788 >> avance
+[02:54:15] 42788    1
+[02:54:15] 42788 << ok
+[02:54:15] 42788 >> gauche
+[02:54:15] 42788    1
+[02:54:15] 42788 << ok
+[02:54:15] 42788 >> avance
+[02:54:15] 42788    1
+[02:54:15] 42788 << ok
+[02:54:15] 42788 >> voir
+[02:54:16] 42788    1
+[02:54:16] 42788 << {nourriture deraumere sibur sibur sibur mendiane mendiane mendiane phiras phiras thystame, linemate linemate deraumere sibur mendiane phiras phiras, nourriture nourriture linemate linemate deraumere sibur mendiane phiras phiras thystame thystame, nourriture nourriture linemate linemate deraumere deraumere sibur sibur sibur mendiane mendiane phiras thystame thystame}
+[02:54:16] 42788 >> prend linemate
+[02:54:16] 42788    1
+[02:54:16] 42788 << ok
+[02:54:16] 42788    add action inventaire
+[02:54:16] 42788    Fin de boucle
+[02:54:16] 42788    IA - Normal Mode
+[02:54:16] 42788    First level, compos OK, drop compos, incantation.
+[02:54:16] 42788    add action pose 
+[02:54:16] 42788    add action incantation
+[02:54:16] 42788 >> inventaire
+[02:54:16] 42788    1
+[02:54:16] 42788 << {nourriture 9, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42788 >> pose linemate
+[02:54:16] 42788    1
+[02:54:16] 42788 << ok
+[02:54:16] 42788 >> incantation
+[02:54:16] 42788    1
+[02:54:16] 42788 << elevation en cours
+[02:54:16] 42788    1
+[02:54:16] 42788 << niveau actuel : 2
+[02:54:16] 42788    add action inventaire
+[02:54:16] 42788    Fin de boucle
+[02:54:16] 42788    IA - Normal Mode
+[02:54:16] 42788    mov first -1 mov second 1
+[02:54:17] 42788    add action gauche
+[02:54:17] 42788    add action avance
+[02:54:17] 42788    add action droite
+[02:54:17] 42788    add action avance
+[02:54:17] 42788    add action prend 
+[02:54:17] 42788    Heading towards closest deraumere
+[02:54:17] 42788    add action voir
+[02:54:17] 42788 >> inventaire
+[02:54:17] 42788    1
+[02:54:17] 42788 << message 1,10512759638487373799 42770 0 2
+[02:54:17] 42788    kek
+[02:54:17] 42788    maxikek
+[02:54:17] 42788    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:54:17] 42788    Broadcast recieved ! Recieving again...
+[02:54:17] 42788    1
+[02:54:17] 42788 << {nourriture 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42788 >> gauche
+[02:54:17] 42788    1
+[02:54:17] 42788 << ok
+[02:54:17] 42788 >> avance
+[02:54:17] 42788    1
+[02:54:17] 42788 << ok
+[02:54:17] 42788 >> droite
+[02:54:17] 42788    1
+[02:54:17] 42788 << ok
+[02:54:17] 42788 >> avance
+[02:54:18] 42788    1
+[02:54:18] 42788 << message 1,10512759638487373799 42790 2 42770
+[02:54:18] 42788    kek
+[02:54:18] 42788    maxikek
+[02:54:18] 42788    Broadcast recieved ! Recieving again...
+[02:54:18] 42788    1
+[02:54:18] 42788 << ok
+[02:54:18] 42788 >> voir
+[02:54:18] 42788    0
+[02:54:18] 42788    Close de merde
+[02:54:18] 42788    Close

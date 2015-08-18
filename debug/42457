@@ -1,0 +1,1550 @@
+[02:53:08] 42457    1
+[02:53:08] 42457 << BIENVENUE
+[02:53:08] 42457 >> team1
+[02:53:08] 42457    1
+[02:53:08] 42457 << 10
+[02:53:08] 42457    1
+[02:53:08] 42457 << 10 10
+[02:53:08] 42457 >> connect_nbr
+[02:53:08] 42457    1
+[02:53:08] 42457 << 0
+[02:53:09] 42457    IA - Normal Mode
+[02:53:09] 42457    Rotation exploration
+[02:53:09] 42457    add action droite
+[02:53:09] 42457    add action voir
+[02:53:09] 42457 >> droite
+[02:53:09] 42457    1
+[02:53:09] 42457 << ok
+[02:53:09] 42457 >> voir
+[02:53:09] 42457    1
+[02:53:09] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame joueur, nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame}
+[02:53:09] 42457    add action inventaire
+[02:53:09] 42457    Fin de boucle
+[02:53:09] 42457    IA - Normal Mode
+[02:53:09] 42457    mov first 1 mov second 1
+[02:53:09] 42457    add action avance
+[02:53:09] 42457    add action gauche
+[02:53:09] 42457    add action avance
+[02:53:09] 42457    add action prend 
+[02:53:09] 42457    Heading towards closest linemate
+[02:53:09] 42457    add action voir
+[02:53:09] 42457 >> inventaire
+[02:53:09] 42457    1
+[02:53:09] 42457 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:09] 42457 >> avance
+[02:53:10] 42457    1
+[02:53:10] 42457 << ok
+[02:53:10] 42457 >> gauche
+[02:53:10] 42457    1
+[02:53:10] 42457 << ok
+[02:53:10] 42457 >> avance
+[02:53:10] 42457    1
+[02:53:10] 42457 << ok
+[02:53:10] 42457 >> voir
+[02:53:10] 42457    1
+[02:53:10] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame, nourriture linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame}
+[02:53:10] 42457 >> prend linemate
+[02:53:10] 42457    1
+[02:53:10] 42457 << ok
+[02:53:10] 42457    add action inventaire
+[02:53:10] 42457    Fin de boucle
+[02:53:10] 42457    IA - Normal Mode
+[02:53:10] 42457    First level, compos OK, drop compos, incantation.
+[02:53:10] 42457    add action incantation
+[02:53:10] 42457 >> inventaire
+[02:53:10] 42457    1
+[02:53:10] 42457 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:10] 42457 >> incantation
+[02:53:10] 42457    1
+[02:53:10] 42457 << elevation en cours
+[02:53:10] 42457    1
+[02:53:10] 42457 << niveau actuel : 2
+[02:53:11] 42457    add action inventaire
+[02:53:11] 42457    Fin de boucle
+[02:53:11] 42457    IA - Normal Mode
+[02:53:11] 42457    mov first -1 mov second 1
+[02:53:11] 42457    add action gauche
+[02:53:11] 42457    add action avance
+[02:53:11] 42457    add action droite
+[02:53:11] 42457    add action avance
+[02:53:11] 42457    add action prend 
+[02:53:11] 42457    Heading towards closest deraumere
+[02:53:11] 42457    add action voir
+[02:53:11] 42457 >> inventaire
+[02:53:11] 42457    1
+[02:53:11] 42457 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:11] 42457 >> gauche
+[02:53:11] 42457    1
+[02:53:11] 42457 << ok
+[02:53:11] 42457 >> avance
+[02:53:11] 42457    1
+[02:53:11] 42457 << ok
+[02:53:11] 42457 >> droite
+[02:53:11] 42457    1
+[02:53:11] 42457 << message 4,10512759638487373799 42438 0 2
+[02:53:11] 42457    kek
+[02:53:11] 42457    maxikek
+[02:53:11] 42457    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:53:11] 42457    Broadcast recieved ! Recieving again...
+[02:53:11] 42457    1
+[02:53:11] 42457 << ok
+[02:53:11] 42457 >> avance
+[02:53:12] 42457    1
+[02:53:12] 42457 << ok
+[02:53:12] 42457 >> voir
+[02:53:12] 42457    1
+[02:53:12] 42457 << {nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur}
+[02:53:12] 42457 >> prend deraumere
+[02:53:12] 42457    1
+[02:53:12] 42457 << ok
+[02:53:12] 42457    add action inventaire
+[02:53:12] 42457    Fin de boucle
+[02:53:12] 42457    IA - Towards Mate Mode
+[02:53:12] 42457    add action prend 
+[02:53:12] 42457    add action prend 
+[02:53:12] 42457    add action prend 
+[02:53:12] 42457    add action prend 
+[02:53:12] 42457    add action prend 
+[02:53:12] 42457    Totem direction 4
+[02:53:12] 42457    Moving toward waiting player
+[02:53:12] 42457    add action gauche
+[02:53:12] 42457    add action avance
+[02:53:12] 42457    add action gauche
+[02:53:12] 42457    add action avance
+[02:53:12] 42457 >> inventaire
+[02:53:12] 42457    1
+[02:53:12] 42457 << message 3,10512759638487373799 42438 0 2
+[02:53:12] 42457    kek
+[02:53:12] 42457    maxikek
+[02:53:12] 42457    Broadcast recieved ! Recieving again...
+[02:53:12] 42457    1
+[02:53:13] 42457 << {nourriture 10, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:13] 42457 >> prend nourriture
+[02:53:13] 42457    1
+[02:53:13] 42457 << ok
+[02:53:13] 42457 >> prend nourriture
+[02:53:13] 42457    1
+[02:53:13] 42457 << ok
+[02:53:13] 42457 >> prend nourriture
+[02:53:13] 42457    1
+[02:53:13] 42457 << ok
+[02:53:13] 42457 >> prend nourriture
+[02:53:13] 42457    1
+[02:53:13] 42457 << message 3,10512759638487373799 42438 0 2
+[02:53:13] 42457    kek
+[02:53:13] 42457    maxikek
+[02:53:13] 42457    Broadcast recieved ! Recieving again...
+[02:53:13] 42457    1
+[02:53:13] 42457 << ok
+[02:53:13] 42457 >> prend nourriture
+[02:53:13] 42457    1
+[02:53:13] 42457 << ok
+[02:53:13] 42457 >> gauche
+[02:53:14] 42457    1
+[02:53:14] 42457 << ok
+[02:53:14] 42457 >> avance
+[02:53:14] 42457    1
+[02:53:14] 42457 << ok
+[02:53:14] 42457 >> gauche
+[02:53:14] 42457    1
+[02:53:14] 42457 << ok
+[02:53:14] 42457 >> avance
+[02:53:14] 42457    1
+[02:53:14] 42457 << ok
+[02:53:14] 42457    add action inventaire
+[02:53:14] 42457    Fin de boucle
+[02:53:14] 42457    IA - Towards Mate Mode
+[02:53:14] 42457    Totem direction 3
+[02:53:14] 42457    Moving toward waiting player
+[02:53:14] 42457    add action gauche
+[02:53:14] 42457    add action avance
+[02:53:14] 42457 >> inventaire
+[02:53:14] 42457    1
+[02:53:14] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:14] 42457    kek
+[02:53:14] 42457    maxikek
+[02:53:14] 42457    Broadcast recieved ! Recieving again...
+[02:53:14] 42457    1
+[02:53:14] 42457 << {nourriture 15, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:14] 42457 >> gauche
+[02:53:14] 42457    1
+[02:53:14] 42457 << ok
+[02:53:14] 42457 >> avance
+[02:53:15] 42457    1
+[02:53:15] 42457 << ok
+[02:53:15] 42457    add action inventaire
+[02:53:15] 42457    Fin de boucle
+[02:53:15] 42457    IA - Towards Mate Mode
+[02:53:15] 42457    Totem direction 7
+[02:53:15] 42457    Moving toward waiting player
+[02:53:15] 42457    add action droite
+[02:53:15] 42457    add action avance
+[02:53:15] 42457 >> inventaire
+[02:53:15] 42457    1
+[02:53:15] 42457 << {nourriture 15, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:15] 42457 >> droite
+[02:53:15] 42457    1
+[02:53:15] 42457 << ok
+[02:53:15] 42457 >> avance
+[02:53:15] 42457    1
+[02:53:15] 42457 << message 6,10512759638487373799 42438 0 2
+[02:53:15] 42457    kek
+[02:53:15] 42457    maxikek
+[02:53:15] 42457    Broadcast recieved ! Recieving again...
+[02:53:15] 42457    1
+[02:53:15] 42457 << ok
+[02:53:15] 42457    add action inventaire
+[02:53:15] 42457    Fin de boucle
+[02:53:15] 42457    IA - Towards Mate Mode
+[02:53:15] 42457    add action prend 
+[02:53:15] 42457    add action prend 
+[02:53:15] 42457    add action prend 
+[02:53:15] 42457    add action prend 
+[02:53:15] 42457    add action prend 
+[02:53:15] 42457    add action prend 
+[02:53:15] 42457    Totem direction 6
+[02:53:15] 42457    Moving toward waiting player
+[02:53:15] 42457    add action droite
+[02:53:15] 42457    add action avance
+[02:53:15] 42457    add action droite
+[02:53:15] 42457    add action avance
+[02:53:15] 42457 >> inventaire
+[02:53:16] 42457    1
+[02:53:16] 42457 << {nourriture 15, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:16] 42457 >> prend nourriture
+[02:53:16] 42457    1
+[02:53:16] 42457 << ok
+[02:53:16] 42457 >> prend nourriture
+[02:53:16] 42457    1
+[02:53:16] 42457 << message 1,10512759638487373799 42438 0 2
+[02:53:16] 42457    kek
+[02:53:16] 42457    maxikek
+[02:53:16] 42457    Broadcast recieved ! Recieving again...
+[02:53:16] 42457    1
+[02:53:16] 42457 << ko
+[02:53:16] 42457    add action voir
+[02:53:16] 42457 >> voir
+[02:53:16] 42457    1
+[02:53:16] 42457 << {nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur, linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur}
+[02:53:16] 42457    add action inventaire
+[02:53:16] 42457    Fin de boucle
+[02:53:16] 42457    IA - Towards Mate Mode
+[02:53:16] 42457    add action prend 
+[02:53:16] 42457    add action prend 
+[02:53:16] 42457    add action prend 
+[02:53:16] 42457    Totem direction 1
+[02:53:16] 42457    Moving toward waiting player
+[02:53:17] 42457    add action avance
+[02:53:17] 42457 >> inventaire
+[02:53:17] 42457    1
+[02:53:17] 42457 << {nourriture 16, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:17] 42457 >> prend nourriture
+[02:53:17] 42457    1
+[02:53:17] 42457 << message 1,10512759638487373799 42438 0 2
+[02:53:17] 42457    kek
+[02:53:17] 42457    maxikek
+[02:53:17] 42457    Broadcast recieved ! Recieving again...
+[02:53:17] 42457    1
+[02:53:17] 42457 << ko
+[02:53:17] 42457    add action voir
+[02:53:17] 42457 >> voir
+[02:53:17] 42457    1
+[02:53:17] 42457 << {linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur, linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur}
+[02:53:17] 42457    add action inventaire
+[02:53:17] 42457    Fin de boucle
+[02:53:17] 42457    IA - Towards Mate Mode
+[02:53:17] 42457    Totem direction 1
+[02:53:17] 42457    Moving toward waiting player
+[02:53:17] 42457    add action avance
+[02:53:17] 42457 >> inventaire
+[02:53:17] 42457    1
+[02:53:17] 42457 << {nourriture 16, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:17] 42457 >> avance
+[02:53:18] 42457    1
+[02:53:18] 42457 << message 1,10512759638487373799 42438 0 2
+[02:53:18] 42457    kek
+[02:53:18] 42457    maxikek
+[02:53:18] 42457    Broadcast recieved ! Recieving again...
+[02:53:18] 42457    1
+[02:53:18] 42457 << ok
+[02:53:18] 42457    add action inventaire
+[02:53:18] 42457    Fin de boucle
+[02:53:18] 42457    IA - Towards Mate Mode
+[02:53:18] 42457    Totem direction 1
+[02:53:18] 42457    Moving toward waiting player
+[02:53:18] 42457    add action avance
+[02:53:18] 42457 >> inventaire
+[02:53:18] 42457    1
+[02:53:18] 42457 << {nourriture 16, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:18] 42457 >> avance
+[02:53:18] 42457    1
+[02:53:18] 42457 << ok
+[02:53:18] 42457    add action inventaire
+[02:53:18] 42457    Fin de boucle
+[02:53:18] 42457    IA - Towards Mate Mode
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    add action prend 
+[02:53:18] 42457    Totem direction 1
+[02:53:18] 42457    Moving toward waiting player
+[02:53:19] 42457    add action avance
+[02:53:19] 42457 >> inventaire
+[02:53:19] 42457    1
+[02:53:19] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:19] 42457    kek
+[02:53:19] 42457    maxikek
+[02:53:19] 42457    Broadcast recieved ! Recieving again...
+[02:53:19] 42457    1
+[02:53:19] 42457 << {nourriture 16, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:19] 42457 >> prend nourriture
+[02:53:19] 42457    1
+[02:53:19] 42457 << ok
+[02:53:19] 42457 >> prend nourriture
+[02:53:19] 42457    1
+[02:53:19] 42457 << message 7,10512759638487373799 42467 2 42438
+[02:53:19] 42457    kek
+[02:53:19] 42457    maxikek
+[02:53:19] 42457    Broadcast recieved ! Recieving again...
+[02:53:19] 42457    1
+[02:53:19] 42457 << ok
+[02:53:19] 42457 >> prend nourriture
+[02:53:19] 42457    1
+[02:53:19] 42457 << ok
+[02:53:19] 42457 >> prend nourriture
+[02:53:20] 42457    1
+[02:53:20] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:20] 42457    kek
+[02:53:20] 42457    maxikek
+[02:53:20] 42457    Broadcast recieved ! Recieving again...
+[02:53:20] 42457    1
+[02:53:20] 42457 << ok
+[02:53:20] 42457 >> prend nourriture
+[02:53:20] 42457    1
+[02:53:20] 42457 << ok
+[02:53:20] 42457 >> prend nourriture
+[02:53:20] 42457    1
+[02:53:20] 42457 << ko
+[02:53:20] 42457    add action voir
+[02:53:20] 42457 >> voir
+[02:53:20] 42457    1
+[02:53:20] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur}
+[02:53:20] 42457    add action inventaire
+[02:53:20] 42457    Fin de boucle
+[02:53:20] 42457    IA - Towards Mate Mode
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    add action prend 
+[02:53:21] 42457    Totem direction 7
+[02:53:21] 42457    Moving toward waiting player
+[02:53:21] 42457    add action droite
+[02:53:21] 42457    add action avance
+[02:53:21] 42457 >> inventaire
+[02:53:21] 42457    1
+[02:53:21] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:21] 42457    kek
+[02:53:21] 42457    maxikek
+[02:53:21] 42457    Broadcast recieved ! Recieving again...
+[02:53:21] 42457    1
+[02:53:21] 42457 << {nourriture 21, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:21] 42457 >> prend nourriture
+[02:53:21] 42457    1
+[02:53:21] 42457 << ko
+[02:53:21] 42457    add action voir
+[02:53:21] 42457 >> voir
+[02:53:21] 42457    1
+[02:53:21] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:21] 42457    kek
+[02:53:21] 42457    maxikek
+[02:53:21] 42457    Broadcast recieved ! Recieving again...
+[02:53:22] 42457    1
+[02:53:22] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur}
+[02:53:22] 42457    add action inventaire
+[02:53:22] 42457    Fin de boucle
+[02:53:22] 42457    IA - Towards Mate Mode
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    add action prend 
+[02:53:22] 42457    Totem direction 7
+[02:53:22] 42457    Moving toward waiting player
+[02:53:22] 42457    add action droite
+[02:53:22] 42457    add action avance
+[02:53:22] 42457 >> inventaire
+[02:53:22] 42457    1
+[02:53:22] 42457 << {nourriture 21, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:22] 42457 >> prend nourriture
+[02:53:23] 42457    1
+[02:53:23] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:23] 42457    kek
+[02:53:23] 42457    maxikek
+[02:53:23] 42457    Broadcast recieved ! Recieving again...
+[02:53:23] 42457    1
+[02:53:23] 42457 << ok
+[02:53:23] 42457 >> prend nourriture
+[02:53:23] 42457    1
+[02:53:23] 42457 << ko
+[02:53:23] 42457    add action voir
+[02:53:23] 42457 >> voir
+[02:53:23] 42457    1
+[02:53:23] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur}
+[02:53:23] 42457    add action inventaire
+[02:53:23] 42457    Fin de boucle
+[02:53:23] 42457    IA - Towards Mate Mode
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    add action prend 
+[02:53:23] 42457    Totem direction 7
+[02:53:24] 42457    Moving toward waiting player
+[02:53:24] 42457    add action droite
+[02:53:24] 42457    add action avance
+[02:53:24] 42457 >> inventaire
+[02:53:24] 42457    1
+[02:53:24] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:24] 42457    kek
+[02:53:24] 42457    maxikek
+[02:53:24] 42457    Broadcast recieved ! Recieving again...
+[02:53:24] 42457    1
+[02:53:24] 42457 << {nourriture 22, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:24] 42457 >> prend nourriture
+[02:53:24] 42457    1
+[02:53:24] 42457 << ko
+[02:53:24] 42457    add action voir
+[02:53:24] 42457 >> voir
+[02:53:24] 42457    1
+[02:53:24] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur}
+[02:53:25] 42457    add action inventaire
+[02:53:25] 42457    Fin de boucle
+[02:53:25] 42457    IA - Towards Mate Mode
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    add action prend 
+[02:53:25] 42457    Totem direction 7
+[02:53:25] 42457    Moving toward waiting player
+[02:53:25] 42457    add action droite
+[02:53:25] 42457    add action avance
+[02:53:25] 42457 >> inventaire
+[02:53:25] 42457    1
+[02:53:25] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:25] 42457    kek
+[02:53:25] 42457    maxikek
+[02:53:25] 42457    Broadcast recieved ! Recieving again...
+[02:53:25] 42457    1
+[02:53:25] 42457 << {nourriture 22, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:25] 42457 >> prend nourriture
+[02:53:25] 42457    1
+[02:53:25] 42457 << ko
+[02:53:25] 42457    add action voir
+[02:53:25] 42457 >> voir
+[02:53:25] 42457    1
+[02:53:25] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur}
+[02:53:26] 42457    add action inventaire
+[02:53:26] 42457    Fin de boucle
+[02:53:26] 42457    IA - Towards Mate Mode
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    add action prend 
+[02:53:26] 42457    Totem direction 7
+[02:53:26] 42457    Moving toward waiting player
+[02:53:26] 42457    add action droite
+[02:53:26] 42457    add action avance
+[02:53:26] 42457 >> inventaire
+[02:53:26] 42457    1
+[02:53:26] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:26] 42457    kek
+[02:53:26] 42457    maxikek
+[02:53:26] 42457    Broadcast recieved ! Recieving again...
+[02:53:26] 42457    1
+[02:53:26] 42457 << {nourriture 22, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:27] 42457 >> prend nourriture
+[02:53:27] 42457    1
+[02:53:27] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:27] 42457    kek
+[02:53:27] 42457    maxikek
+[02:53:27] 42457    Broadcast recieved ! Recieving again...
+[02:53:27] 42457    1
+[02:53:27] 42457 << ok
+[02:53:27] 42457 >> prend nourriture
+[02:53:27] 42457    1
+[02:53:27] 42457 << ko
+[02:53:27] 42457    add action voir
+[02:53:27] 42457 >> voir
+[02:53:27] 42457    1
+[02:53:27] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur}
+[02:53:27] 42457    add action inventaire
+[02:53:27] 42457    Fin de boucle
+[02:53:27] 42457    IA - Towards Mate Mode
+[02:53:27] 42457    add action prend 
+[02:53:27] 42457    add action prend 
+[02:53:27] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    add action prend 
+[02:53:28] 42457    Totem direction 7
+[02:53:28] 42457    Moving toward waiting player
+[02:53:28] 42457    add action droite
+[02:53:28] 42457    add action avance
+[02:53:28] 42457 >> inventaire
+[02:53:28] 42457    1
+[02:53:28] 42457 << message 7,10512759638487373799 42438 0 2
+[02:53:28] 42457    kek
+[02:53:28] 42457    maxikek
+[02:53:28] 42457    Broadcast recieved ! Recieving again...
+[02:53:28] 42457    1
+[02:53:28] 42457 << message 5,10512759638487373799 42466 2 42438
+[02:53:28] 42457    kek
+[02:53:28] 42457    maxikek
+[02:53:28] 42457    Broadcast recieved ! Recieving again...
+[02:53:28] 42457    1
+[02:53:28] 42457 << message 7,10512759638487373799 42438 3 .
+[02:53:29] 42457    kek
+[02:53:29] 42457    maxikek
+[02:53:29] 42457    Recieved an incantation broadcast.
+[02:53:29] 42457    Broadcast recieved ! Recieving again...
+[02:53:29] 42457    1
+[02:53:29] 42457 << {nourriture 23, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:29] 42457    add action incantation
+[02:53:29] 42457    add action inventaire
+[02:53:29] 42457    Fin de boucle
+[02:53:29] 42457    IA - Towards Mate Mode
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    add action prend 
+[02:53:29] 42457    No one to follow, NORMAL mode on
+[02:53:29] 42457 >> incantation
+[02:53:29] 42457    1
+[02:53:29] 42457 << elevation en cours
+[02:53:29] 42457    1
+[02:53:29] 42457 << niveau actuel : 3
+[02:53:29] 42457 >> inventaire
+[02:53:29] 42457    1
+[02:53:29] 42457 << {nourriture 23, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:29] 42457 >> prend nourriture
+[02:53:29] 42457    1
+[02:53:29] 42457 << ok
+[02:53:29] 42457 >> prend nourriture
+[02:53:30] 42457    1
+[02:53:30] 42457 << ko
+[02:53:30] 42457    add action voir
+[02:53:30] 42457 >> voir
+[02:53:30] 42457    1
+[02:53:30] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur}
+[02:53:30] 42457    add action inventaire
+[02:53:30] 42457    Fin de boucle
+[02:53:30] 42457    IA - Normal Mode
+[02:53:30] 42457    mov first -1 mov second 0
+[02:53:30] 42457    add action droite
+[02:53:30] 42457    add action avance
+[02:53:30] 42457    add action prend 
+[02:53:30] 42457    Heading towards closest linemate
+[02:53:30] 42457    add action voir
+[02:53:30] 42457 >> inventaire
+[02:53:30] 42457    1
+[02:53:30] 42457 << {nourriture 24, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:30] 42457 >> droite
+[02:53:31] 42457    1
+[02:53:31] 42457 << ok
+[02:53:31] 42457 >> avance
+[02:53:31] 42457    1
+[02:53:31] 42457 << ok
+[02:53:31] 42457 >> voir
+[02:53:31] 42457    1
+[02:53:31] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur}
+[02:53:31] 42457 >> prend linemate
+[02:53:31] 42457    1
+[02:53:31] 42457 << message 3,10512759638487373799 42438 3 .
+[02:53:31] 42457    kek
+[02:53:31] 42457    maxikek
+[02:53:31] 42457    Broadcast recieved ! Recieving again...
+[02:53:32] 42457    1
+[02:53:32] 42457 << ok
+[02:53:32] 42457    add action inventaire
+[02:53:32] 42457    Fin de boucle
+[02:53:32] 42457    IA - Normal Mode
+[02:53:32] 42457    mov first -1 mov second 0
+[02:53:32] 42457    add action avance
+[02:53:32] 42457    add action prend 
+[02:53:32] 42457    Heading towards closest phiras
+[02:53:32] 42457    add action voir
+[02:53:32] 42457 >> inventaire
+[02:53:32] 42457    1
+[02:53:32] 42457 << {nourriture 24, linemate 2, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:53:32] 42457 >> avance
+[02:53:32] 42457    1
+[02:53:32] 42457 << message 3,10512759638487373799 42460 0 2
+[02:53:32] 42457    kek
+[02:53:32] 42457    maxikek
+[02:53:32] 42457    Broadcast recieved ! Recieving again...
+[02:53:32] 42457    1
+[02:53:32] 42457 << ok
+[02:53:32] 42457 >> voir
+[02:53:32] 42457    1
+[02:53:32] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur}
+[02:53:33] 42457 >> prend phiras
+[02:53:33] 42457    1
+[02:53:33] 42457 << ok
+[02:53:33] 42457    add action inventaire
+[02:53:33] 42457    Fin de boucle
+[02:53:33] 42457    IA - Normal Mode
+[02:53:33] 42457    mov first -1 mov second 0
+[02:53:33] 42457    add action avance
+[02:53:33] 42457    add action prend 
+[02:53:33] 42457    Heading towards closest phiras
+[02:53:33] 42457    add action voir
+[02:53:33] 42457 >> inventaire
+[02:53:33] 42457    1
+[02:53:33] 42457 << {nourriture 24, linemate 2, deraumere 1, sibur 0, mendiane 0, phiras 1, thystame 0}
+[02:53:33] 42457 >> avance
+[02:53:33] 42457    1
+[02:53:33] 42457 << message 3,10512759638487373799 42438 0 4
+[02:53:33] 42457    kek
+[02:53:33] 42457    maxikek
+[02:53:33] 42457    Broadcast recieved ! Recieving again...
+[02:53:33] 42457    1
+[02:53:33] 42457 << ok
+[02:53:33] 42457 >> voir
+[02:53:34] 42457    1
+[02:53:34] 42457 << {nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur}
+[02:53:34] 42457 >> prend phiras
+[02:53:34] 42457    1
+[02:53:34] 42457 << message 4,10512759638487373799 42438 0 4
+[02:53:34] 42457    kek
+[02:53:34] 42457    maxikek
+[02:53:34] 42457    Broadcast recieved ! Recieving again...
+[02:53:34] 42457    1
+[02:53:34] 42457 << ok
+[02:53:34] 42457    add action inventaire
+[02:53:34] 42457    Fin de boucle
+[02:53:34] 42457    IA - Normal Mode
+[02:53:34] 42457    mov first -1 mov second 0
+[02:53:34] 42457    add action avance
+[02:53:34] 42457    add action prend 
+[02:53:34] 42457    Heading towards closest sibur
+[02:53:34] 42457    add action voir
+[02:53:34] 42457 >> inventaire
+[02:53:35] 42457    1
+[02:53:35] 42457 << {nourriture 24, linemate 2, deraumere 1, sibur 0, mendiane 0, phiras 2, thystame 0}
+[02:53:35] 42457 >> avance
+[02:53:35] 42457    1
+[02:53:35] 42457 << ok
+[02:53:35] 42457 >> voir
+[02:53:35] 42457    1
+[02:53:35] 42457 << {nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur joueur, linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur joueur}
+[02:53:36] 42457 >> prend sibur
+[02:53:36] 42457    1
+[02:53:36] 42457 << message 5,10512759638487373799 42451 0 3
+[02:53:36] 42457    kek
+[02:53:36] 42457    maxikek
+[02:53:36] 42457    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:53:36] 42457    Broadcast recieved ! Recieving again...
+[02:53:36] 42457    1
+[02:53:36] 42457 << message 3,10512759638487373799 42448 0 3
+[02:53:36] 42457    kek
+[02:53:36] 42457    maxikek
+[02:53:36] 42457    Broadcast recieved ! Recieving again...
+[02:53:36] 42457    1
+[02:53:36] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:36] 42457    kek
+[02:53:36] 42457    maxikek
+[02:53:36] 42457    Broadcast recieved ! Recieving again...
+[02:53:36] 42457    1
+[02:53:36] 42457 << ok
+[02:53:36] 42457    add action inventaire
+[02:53:36] 42457    Fin de boucle
+[02:53:36] 42457    IA - Towards Mate Mode
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:36] 42457    add action prend 
+[02:53:37] 42457    add action prend 
+[02:53:37] 42457    Totem direction 5
+[02:53:37] 42457    Moving toward waiting player
+[02:53:37] 42457    add action gauche
+[02:53:37] 42457    add action gauche
+[02:53:37] 42457    add action avance
+[02:53:37] 42457 >> inventaire
+[02:53:37] 42457    1
+[02:53:37] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:37] 42457    kek
+[02:53:37] 42457    maxikek
+[02:53:37] 42457    Broadcast recieved ! Recieving again...
+[02:53:37] 42457    1
+[02:53:37] 42457 << {nourriture 24, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:37] 42457 >> prend nourriture
+[02:53:37] 42457    1
+[02:53:37] 42457 << ok
+[02:53:37] 42457 >> prend nourriture
+[02:53:37] 42457    1
+[02:53:37] 42457 << ok
+[02:53:37] 42457 >> prend nourriture
+[02:53:37] 42457    1
+[02:53:37] 42457 << ok
+[02:53:37] 42457 >> prend nourriture
+[02:53:37] 42457    1
+[02:53:37] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:37] 42457    kek
+[02:53:37] 42457    maxikek
+[02:53:37] 42457    Broadcast recieved ! Recieving again...
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:38] 42457    1
+[02:53:38] 42457 << message 3,10512759638487373799 42460 0 2
+[02:53:38] 42457    kek
+[02:53:38] 42457    maxikek
+[02:53:38] 42457    Broadcast recieved ! Recieving again...
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:38] 42457    1
+[02:53:38] 42457 << ok
+[02:53:38] 42457 >> prend nourriture
+[02:53:39] 42457    1
+[02:53:39] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:39] 42457    kek
+[02:53:39] 42457    maxikek
+[02:53:39] 42457    Broadcast recieved ! Recieving again...
+[02:53:39] 42457    1
+[02:53:39] 42457 << ok
+[02:53:39] 42457 >> gauche
+[02:53:39] 42457    1
+[02:53:39] 42457 << ok
+[02:53:39] 42457 >> gauche
+[02:53:39] 42457    1
+[02:53:39] 42457 << ok
+[02:53:39] 42457 >> avance
+[02:53:39] 42457    1
+[02:53:39] 42457 << ok
+[02:53:39] 42457    add action inventaire
+[02:53:39] 42457    Fin de boucle
+[02:53:39] 42457    IA - Towards Mate Mode
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    add action prend 
+[02:53:39] 42457    Totem direction 5
+[02:53:39] 42457    Moving toward waiting player
+[02:53:39] 42457    add action gauche
+[02:53:39] 42457    add action gauche
+[02:53:39] 42457    add action avance
+[02:53:39] 42457 >> inventaire
+[02:53:39] 42457    1
+[02:53:39] 42457 << {nourriture 35, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:39] 42457 >> prend nourriture
+[02:53:39] 42457    1
+[02:53:39] 42457 << message 0,10512759638487373799 42438 0 4
+[02:53:39] 42457    kek
+[02:53:40] 42457    maxikek
+[02:53:40] 42457    Broadcast recieved ! Recieving again...
+[02:53:40] 42457    1
+[02:53:40] 42457 << ok
+[02:53:40] 42457 >> prend nourriture
+[02:53:40] 42457    1
+[02:53:40] 42457 << ok
+[02:53:40] 42457 >> prend nourriture
+[02:53:40] 42457    1
+[02:53:40] 42457 << ok
+[02:53:40] 42457 >> prend nourriture
+[02:53:40] 42457    1
+[02:53:40] 42457 << ok
+[02:53:40] 42457 >> prend nourriture
+[02:53:40] 42457    1
+[02:53:40] 42457 << ok
+[02:53:40] 42457 >> prend nourriture
+[02:53:40] 42457    1
+[02:53:40] 42457 << ok
+[02:53:40] 42457 >> prend nourriture
+[02:53:40] 42457    1
+[02:53:40] 42457 << message 0,10512759638487373799 42438 0 4
+[02:53:41] 42457    kek
+[02:53:41] 42457    maxikek
+[02:53:41] 42457    Broadcast recieved ! Recieving again...
+[02:53:41] 42457    1
+[02:53:41] 42457 << ok
+[02:53:41] 42457 >> prend nourriture
+[02:53:41] 42457    1
+[02:53:41] 42457 << ok
+[02:53:41] 42457 >> gauche
+[02:53:41] 42457    1
+[02:53:41] 42457 << message 0,10512759638487373799 42461 0 3
+[02:53:41] 42457    kek
+[02:53:41] 42457    maxikek
+[02:53:41] 42457    Broadcast recieved ! Recieving again...
+[02:53:41] 42457    1
+[02:53:41] 42457 << ok
+[02:53:41] 42457 >> gauche
+[02:53:41] 42457    1
+[02:53:41] 42457 << ok
+[02:53:41] 42457 >> avance
+[02:53:41] 42457    1
+[02:53:41] 42457 << ok
+[02:53:41] 42457    add action inventaire
+[02:53:41] 42457    Fin de boucle
+[02:53:41] 42457    IA - Towards Mate Mode
+[02:53:41] 42457    Totem direction 5
+[02:53:41] 42457    Moving toward waiting player
+[02:53:41] 42457    add action gauche
+[02:53:42] 42457    add action gauche
+[02:53:42] 42457    add action avance
+[02:53:42] 42457 >> inventaire
+[02:53:42] 42457    1
+[02:53:42] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:42] 42457 >> gauche
+[02:53:42] 42457    1
+[02:53:42] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:42] 42457    kek
+[02:53:42] 42457    maxikek
+[02:53:42] 42457    Broadcast recieved ! Recieving again...
+[02:53:42] 42457    1
+[02:53:42] 42457 << message 5,10512759638487373799 42451 0 3
+[02:53:42] 42457    kek
+[02:53:42] 42457    maxikek
+[02:53:42] 42457    Broadcast recieved ! Recieving again...
+[02:53:42] 42457    1
+[02:53:42] 42457 << ok
+[02:53:42] 42457 >> gauche
+[02:53:42] 42457    1
+[02:53:42] 42457 << ok
+[02:53:42] 42457 >> avance
+[02:53:42] 42457    1
+[02:53:42] 42457 << ok
+[02:53:42] 42457    add action inventaire
+[02:53:42] 42457    Fin de boucle
+[02:53:43] 42457    IA - Towards Mate Mode
+[02:53:43] 42457    Totem direction 5
+[02:53:43] 42457    Moving toward waiting player
+[02:53:43] 42457    add action gauche
+[02:53:43] 42457    add action gauche
+[02:53:43] 42457    add action avance
+[02:53:43] 42457 >> inventaire
+[02:53:43] 42457    1
+[02:53:43] 42457 << message 7,10512759638487373799 42448 0 3
+[02:53:43] 42457    kek
+[02:53:43] 42457    maxikek
+[02:53:43] 42457    Broadcast recieved ! Recieving again...
+[02:53:43] 42457    1
+[02:53:43] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:43] 42457 >> gauche
+[02:53:43] 42457    1
+[02:53:43] 42457 << message 0,10512759638487373799 42438 0 4
+[02:53:43] 42457    kek
+[02:53:43] 42457    maxikek
+[02:53:43] 42457    Broadcast recieved ! Recieving again...
+[02:53:43] 42457    1
+[02:53:43] 42457 << ok
+[02:53:43] 42457 >> gauche
+[02:53:43] 42457    1
+[02:53:43] 42457 << ok
+[02:53:43] 42457 >> avance
+[02:53:43] 42457    1
+[02:53:43] 42457 << ok
+[02:53:44] 42457    add action inventaire
+[02:53:44] 42457    Fin de boucle
+[02:53:44] 42457    IA - Towards Mate Mode
+[02:53:44] 42457    Totem direction 5
+[02:53:44] 42457    Moving toward waiting player
+[02:53:44] 42457    add action gauche
+[02:53:44] 42457    add action gauche
+[02:53:44] 42457    add action avance
+[02:53:44] 42457 >> inventaire
+[02:53:44] 42457    1
+[02:53:44] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:44] 42457 >> gauche
+[02:53:44] 42457    1
+[02:53:44] 42457 << ok
+[02:53:44] 42457 >> gauche
+[02:53:44] 42457    1
+[02:53:44] 42457 << ok
+[02:53:44] 42457 >> avance
+[02:53:44] 42457    1
+[02:53:44] 42457 << message 1,10512759638487373799 42438 0 4
+[02:53:44] 42457    kek
+[02:53:44] 42457    maxikek
+[02:53:44] 42457    Broadcast recieved ! Recieving again...
+[02:53:44] 42457    1
+[02:53:44] 42457 << ok
+[02:53:44] 42457    add action inventaire
+[02:53:44] 42457    Fin de boucle
+[02:53:44] 42457    IA - Towards Mate Mode
+[02:53:44] 42457    Totem direction 5
+[02:53:44] 42457    Moving toward waiting player
+[02:53:44] 42457    add action gauche
+[02:53:44] 42457    add action gauche
+[02:53:44] 42457    add action avance
+[02:53:44] 42457 >> inventaire
+[02:53:44] 42457    1
+[02:53:44] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:45] 42457 >> gauche
+[02:53:45] 42457    1
+[02:53:45] 42457 << message 7,10512759638487373799 42460 0 2
+[02:53:45] 42457    kek
+[02:53:45] 42457    maxikek
+[02:53:45] 42457    Broadcast recieved ! Recieving again...
+[02:53:45] 42457    1
+[02:53:45] 42457 << ok
+[02:53:45] 42457 >> gauche
+[02:53:45] 42457    1
+[02:53:45] 42457 << ok
+[02:53:45] 42457 >> avance
+[02:53:45] 42457    1
+[02:53:45] 42457 << message 4,10512759638487373799 42438 0 4
+[02:53:45] 42457    kek
+[02:53:45] 42457    maxikek
+[02:53:45] 42457    Broadcast recieved ! Recieving again...
+[02:53:45] 42457    1
+[02:53:45] 42457 << ok
+[02:53:45] 42457    add action inventaire
+[02:53:45] 42457    Fin de boucle
+[02:53:45] 42457    IA - Towards Mate Mode
+[02:53:45] 42457    Totem direction 5
+[02:53:45] 42457    Moving toward waiting player
+[02:53:45] 42457    add action gauche
+[02:53:45] 42457    add action gauche
+[02:53:45] 42457    add action avance
+[02:53:45] 42457 >> inventaire
+[02:53:45] 42457    1
+[02:53:45] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:45] 42457 >> gauche
+[02:53:46] 42457    1
+[02:53:46] 42457 << ok
+[02:53:46] 42457 >> gauche
+[02:53:46] 42457    1
+[02:53:46] 42457 << ok
+[02:53:46] 42457 >> avance
+[02:53:46] 42457    1
+[02:53:46] 42457 << message 1,10512759638487373799 42438 0 4
+[02:53:46] 42457    kek
+[02:53:46] 42457    maxikek
+[02:53:46] 42457    Broadcast recieved ! Recieving again...
+[02:53:46] 42457    1
+[02:53:46] 42457 << ok
+[02:53:46] 42457    add action inventaire
+[02:53:46] 42457    Fin de boucle
+[02:53:46] 42457    IA - Towards Mate Mode
+[02:53:46] 42457    Totem direction 5
+[02:53:46] 42457    Moving toward waiting player
+[02:53:46] 42457    add action gauche
+[02:53:46] 42457    add action gauche
+[02:53:46] 42457    add action avance
+[02:53:46] 42457 >> inventaire
+[02:53:46] 42457    1
+[02:53:46] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:46] 42457 >> gauche
+[02:53:46] 42457    1
+[02:53:46] 42457 << ok
+[02:53:46] 42457 >> gauche
+[02:53:46] 42457    1
+[02:53:46] 42457 << ok
+[02:53:46] 42457 >> avance
+[02:53:47] 42457    1
+[02:53:47] 42457 << ok
+[02:53:47] 42457    add action inventaire
+[02:53:47] 42457    Fin de boucle
+[02:53:47] 42457    IA - Towards Mate Mode
+[02:53:47] 42457    Totem direction 5
+[02:53:47] 42457    Moving toward waiting player
+[02:53:47] 42457    add action gauche
+[02:53:47] 42457    add action gauche
+[02:53:47] 42457    add action avance
+[02:53:47] 42457 >> inventaire
+[02:53:47] 42457    1
+[02:53:47] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:47] 42457 >> gauche
+[02:53:47] 42457    1
+[02:53:47] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:47] 42457    kek
+[02:53:47] 42457    maxikek
+[02:53:47] 42457    Broadcast recieved ! Recieving again...
+[02:53:47] 42457    1
+[02:53:47] 42457 << ok
+[02:53:47] 42457 >> gauche
+[02:53:47] 42457    1
+[02:53:47] 42457 << ok
+[02:53:47] 42457 >> avance
+[02:53:47] 42457    1
+[02:53:47] 42457 << ok
+[02:53:47] 42457    add action inventaire
+[02:53:47] 42457    Fin de boucle
+[02:53:47] 42457    IA - Towards Mate Mode
+[02:53:47] 42457    Totem direction 5
+[02:53:47] 42457    Moving toward waiting player
+[02:53:47] 42457    add action gauche
+[02:53:47] 42457    add action gauche
+[02:53:47] 42457    add action avance
+[02:53:48] 42457 >> inventaire
+[02:53:48] 42457    1
+[02:53:48] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:48] 42457 >> gauche
+[02:53:48] 42457    1
+[02:53:48] 42457 << ok
+[02:53:48] 42457 >> gauche
+[02:53:48] 42457    1
+[02:53:48] 42457 << message 2,10512759638487373799 42461 0 3
+[02:53:48] 42457    kek
+[02:53:48] 42457    maxikek
+[02:53:48] 42457    Broadcast recieved ! Recieving again...
+[02:53:48] 42457    1
+[02:53:48] 42457 << ok
+[02:53:48] 42457 >> avance
+[02:53:48] 42457    1
+[02:53:48] 42457 << message 4,10512759638487373799 42438 0 4
+[02:53:48] 42457    kek
+[02:53:48] 42457    maxikek
+[02:53:48] 42457    Broadcast recieved ! Recieving again...
+[02:53:48] 42457    1
+[02:53:48] 42457 << ok
+[02:53:48] 42457    add action inventaire
+[02:53:48] 42457    Fin de boucle
+[02:53:48] 42457    IA - Towards Mate Mode
+[02:53:48] 42457    Totem direction 5
+[02:53:48] 42457    Moving toward waiting player
+[02:53:48] 42457    add action gauche
+[02:53:48] 42457    add action gauche
+[02:53:48] 42457    add action avance
+[02:53:48] 42457 >> inventaire
+[02:53:48] 42457    1
+[02:53:48] 42457 << message 5,10512759638487373799 42451 0 3
+[02:53:48] 42457    kek
+[02:53:48] 42457    maxikek
+[02:53:48] 42457    Broadcast recieved ! Recieving again...
+[02:53:48] 42457    1
+[02:53:48] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:48] 42457 >> gauche
+[02:53:49] 42457    1
+[02:53:49] 42457 << ok
+[02:53:49] 42457 >> gauche
+[02:53:49] 42457    1
+[02:53:49] 42457 << message 5,10512759638487373799 42448 0 3
+[02:53:49] 42457    kek
+[02:53:49] 42457    maxikek
+[02:53:49] 42457    Broadcast recieved ! Recieving again...
+[02:53:49] 42457    1
+[02:53:49] 42457 << ok
+[02:53:49] 42457 >> avance
+[02:53:49] 42457    1
+[02:53:49] 42457 << message 1,10512759638487373799 42438 0 4
+[02:53:49] 42457    kek
+[02:53:49] 42457    maxikek
+[02:53:49] 42457    Broadcast recieved ! Recieving again...
+[02:53:49] 42457    1
+[02:53:49] 42457 << ok
+[02:53:49] 42457    add action inventaire
+[02:53:49] 42457    Fin de boucle
+[02:53:49] 42457    IA - Towards Mate Mode
+[02:53:49] 42457    Totem direction 5
+[02:53:49] 42457    Moving toward waiting player
+[02:53:49] 42457    add action gauche
+[02:53:49] 42457    add action gauche
+[02:53:49] 42457    add action avance
+[02:53:49] 42457 >> inventaire
+[02:53:50] 42457    1
+[02:53:50] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:50] 42457 >> gauche
+[02:53:50] 42457    1
+[02:53:50] 42457 << ok
+[02:53:50] 42457 >> gauche
+[02:53:50] 42457    1
+[02:53:50] 42457 << ok
+[02:53:50] 42457 >> avance
+[02:53:50] 42457    1
+[02:53:50] 42457 << ok
+[02:53:50] 42457    add action inventaire
+[02:53:50] 42457    Fin de boucle
+[02:53:50] 42457    IA - Towards Mate Mode
+[02:53:50] 42457    Totem direction 5
+[02:53:50] 42457    Moving toward waiting player
+[02:53:50] 42457    add action gauche
+[02:53:50] 42457    add action gauche
+[02:53:50] 42457    add action avance
+[02:53:50] 42457 >> inventaire
+[02:53:50] 42457    1
+[02:53:50] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:50] 42457    kek
+[02:53:50] 42457    maxikek
+[02:53:50] 42457    Broadcast recieved ! Recieving again...
+[02:53:50] 42457    1
+[02:53:50] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:50] 42457 >> gauche
+[02:53:51] 42457    1
+[02:53:51] 42457 << ok
+[02:53:51] 42457 >> gauche
+[02:53:51] 42457    1
+[02:53:51] 42457 << ok
+[02:53:51] 42457 >> avance
+[02:53:51] 42457    1
+[02:53:51] 42457 << ok
+[02:53:51] 42457    add action inventaire
+[02:53:51] 42457    Fin de boucle
+[02:53:51] 42457    IA - Towards Mate Mode
+[02:53:51] 42457    Totem direction 5
+[02:53:51] 42457    Moving toward waiting player
+[02:53:51] 42457    add action gauche
+[02:53:51] 42457    add action gauche
+[02:53:51] 42457    add action avance
+[02:53:51] 42457 >> inventaire
+[02:53:51] 42457    1
+[02:53:51] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:51] 42457 >> gauche
+[02:53:51] 42457    1
+[02:53:51] 42457 << ok
+[02:53:51] 42457 >> gauche
+[02:53:51] 42457    1
+[02:53:51] 42457 << message 1,10512759638487373799 42460 0 2
+[02:53:51] 42457    kek
+[02:53:51] 42457    maxikek
+[02:53:51] 42457    Broadcast recieved ! Recieving again...
+[02:53:51] 42457    1
+[02:53:51] 42457 << message 2,10512759638487373799 42438 0 4
+[02:53:51] 42457    kek
+[02:53:51] 42457    maxikek
+[02:53:51] 42457    Broadcast recieved ! Recieving again...
+[02:53:51] 42457    1
+[02:53:51] 42457 << ok
+[02:53:51] 42457 >> avance
+[02:53:52] 42457    1
+[02:53:52] 42457 << ok
+[02:53:52] 42457    add action inventaire
+[02:53:52] 42457    Fin de boucle
+[02:53:52] 42457    IA - Towards Mate Mode
+[02:53:52] 42457    Totem direction 5
+[02:53:52] 42457    Moving toward waiting player
+[02:53:52] 42457    add action gauche
+[02:53:52] 42457    add action gauche
+[02:53:52] 42457    add action avance
+[02:53:52] 42457 >> inventaire
+[02:53:52] 42457    1
+[02:53:52] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:52] 42457 >> gauche
+[02:53:52] 42457    1
+[02:53:52] 42457 << ok
+[02:53:52] 42457 >> gauche
+[02:53:52] 42457    1
+[02:53:52] 42457 << ok
+[02:53:52] 42457 >> avance
+[02:53:52] 42457    1
+[02:53:52] 42457 << ok
+[02:53:52] 42457    add action inventaire
+[02:53:52] 42457    Fin de boucle
+[02:53:52] 42457    IA - Towards Mate Mode
+[02:53:52] 42457    Totem direction 5
+[02:53:52] 42457    Moving toward waiting player
+[02:53:52] 42457    add action gauche
+[02:53:52] 42457    add action gauche
+[02:53:52] 42457    add action avance
+[02:53:52] 42457 >> inventaire
+[02:53:53] 42457    1
+[02:53:53] 42457 << message 0,10512759638487373799 42438 0 4
+[02:53:53] 42457    kek
+[02:53:53] 42457    maxikek
+[02:53:53] 42457    Broadcast recieved ! Recieving again...
+[02:53:53] 42457    1
+[02:53:53] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:53] 42457 >> gauche
+[02:53:53] 42457    1
+[02:53:53] 42457 << ok
+[02:53:53] 42457 >> gauche
+[02:53:53] 42457    1
+[02:53:53] 42457 << ok
+[02:53:53] 42457 >> avance
+[02:53:53] 42457    1
+[02:53:53] 42457 << ok
+[02:53:53] 42457    add action inventaire
+[02:53:53] 42457    Fin de boucle
+[02:53:53] 42457    IA - Towards Mate Mode
+[02:53:53] 42457    Totem direction 5
+[02:53:53] 42457    Moving toward waiting player
+[02:53:53] 42457    add action gauche
+[02:53:53] 42457    add action gauche
+[02:53:53] 42457    add action avance
+[02:53:53] 42457 >> inventaire
+[02:53:53] 42457    1
+[02:53:53] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:53] 42457 >> gauche
+[02:53:53] 42457    1
+[02:53:53] 42457 << ok
+[02:53:53] 42457 >> gauche
+[02:53:54] 42457    1
+[02:53:54] 42457 << ok
+[02:53:54] 42457 >> avance
+[02:53:54] 42457    1
+[02:53:54] 42457 << message 1,10512759638487373799 42438 0 4
+[02:53:54] 42457    kek
+[02:53:54] 42457    maxikek
+[02:53:54] 42457    Broadcast recieved ! Recieving again...
+[02:53:54] 42457    1
+[02:53:54] 42457 << ok
+[02:53:54] 42457    add action inventaire
+[02:53:54] 42457    Fin de boucle
+[02:53:54] 42457    IA - Towards Mate Mode
+[02:53:54] 42457    Totem direction 5
+[02:53:54] 42457    Moving toward waiting player
+[02:53:54] 42457    add action gauche
+[02:53:54] 42457    add action gauche
+[02:53:54] 42457    add action avance
+[02:53:54] 42457 >> inventaire
+[02:53:54] 42457    1
+[02:53:54] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:54] 42457 >> gauche
+[02:53:54] 42457    1
+[02:53:54] 42457 << ok
+[02:53:54] 42457 >> gauche
+[02:53:54] 42457    1
+[02:53:54] 42457 << ok
+[02:53:54] 42457 >> avance
+[02:53:54] 42457    1
+[02:53:54] 42457 << message 4,10512759638487373799 42461 0 3
+[02:53:54] 42457    kek
+[02:53:54] 42457    maxikek
+[02:53:54] 42457    Broadcast recieved ! Recieving again...
+[02:53:55] 42457    1
+[02:53:55] 42457 << ok
+[02:53:55] 42457    add action inventaire
+[02:53:55] 42457    Fin de boucle
+[02:53:55] 42457    IA - Towards Mate Mode
+[02:53:55] 42457    Totem direction 5
+[02:53:55] 42457    Moving toward waiting player
+[02:53:55] 42457    add action gauche
+[02:53:55] 42457    add action gauche
+[02:53:55] 42457    add action avance
+[02:53:55] 42457 >> inventaire
+[02:53:55] 42457    1
+[02:53:55] 42457 << message 5,10512759638487373799 42451 0 3
+[02:53:55] 42457    kek
+[02:53:55] 42457    maxikek
+[02:53:55] 42457    Broadcast recieved ! Recieving again...
+[02:53:55] 42457    1
+[02:53:55] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:55] 42457 >> gauche
+[02:53:55] 42457    1
+[02:53:55] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:55] 42457    kek
+[02:53:55] 42457    maxikek
+[02:53:55] 42457    Broadcast recieved ! Recieving again...
+[02:53:55] 42457    1
+[02:53:55] 42457 << ok
+[02:53:55] 42457 >> gauche
+[02:53:55] 42457    1
+[02:53:55] 42457 << ok
+[02:53:55] 42457 >> avance
+[02:53:55] 42457    1
+[02:53:55] 42457 << ok
+[02:53:55] 42457    add action inventaire
+[02:53:55] 42457    Fin de boucle
+[02:53:55] 42457    IA - Towards Mate Mode
+[02:53:55] 42457    Totem direction 5
+[02:53:55] 42457    Moving toward waiting player
+[02:53:55] 42457    add action gauche
+[02:53:55] 42457    add action gauche
+[02:53:55] 42457    add action avance
+[02:53:55] 42457 >> inventaire
+[02:53:56] 42457    1
+[02:53:56] 42457 << message 7,10512759638487373799 42448 0 3
+[02:53:56] 42457    kek
+[02:53:56] 42457    maxikek
+[02:53:56] 42457    Broadcast recieved ! Recieving again...
+[02:53:56] 42457    1
+[02:53:56] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:56] 42457 >> gauche
+[02:53:56] 42457    1
+[02:53:56] 42457 << message 0,10512759638487373799 42438 0 4
+[02:53:56] 42457    kek
+[02:53:56] 42457    maxikek
+[02:53:56] 42457    Broadcast recieved ! Recieving again...
+[02:53:56] 42457    1
+[02:53:56] 42457 << ok
+[02:53:56] 42457 >> gauche
+[02:53:56] 42457    1
+[02:53:56] 42457 << ok
+[02:53:56] 42457 >> avance
+[02:53:56] 42457    1
+[02:53:56] 42457 << ok
+[02:53:56] 42457    add action inventaire
+[02:53:56] 42457    Fin de boucle
+[02:53:56] 42457    IA - Towards Mate Mode
+[02:53:56] 42457    Totem direction 5
+[02:53:56] 42457    Moving toward waiting player
+[02:53:56] 42457    add action gauche
+[02:53:56] 42457    add action gauche
+[02:53:56] 42457    add action avance
+[02:53:56] 42457 >> inventaire
+[02:53:56] 42457    1
+[02:53:56] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:57] 42457 >> gauche
+[02:53:57] 42457    1
+[02:53:57] 42457 << ok
+[02:53:57] 42457 >> gauche
+[02:53:57] 42457    1
+[02:53:57] 42457 << ok
+[02:53:57] 42457 >> avance
+[02:53:57] 42457    1
+[02:53:57] 42457 << ok
+[02:53:57] 42457    add action inventaire
+[02:53:57] 42457    Fin de boucle
+[02:53:57] 42457    IA - Towards Mate Mode
+[02:53:57] 42457    Totem direction 5
+[02:53:57] 42457    Moving toward waiting player
+[02:53:57] 42457    add action gauche
+[02:53:57] 42457    add action gauche
+[02:53:57] 42457    add action avance
+[02:53:57] 42457 >> inventaire
+[02:53:57] 42457    1
+[02:53:57] 42457 << message 0,10512759638487373799 42438 0 4
+[02:53:57] 42457    kek
+[02:53:57] 42457    maxikek
+[02:53:57] 42457    Broadcast recieved ! Recieving again...
+[02:53:57] 42457    1
+[02:53:57] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:57] 42457 >> gauche
+[02:53:57] 42457    1
+[02:53:57] 42457 << message 7,10512759638487373799 42460 0 2
+[02:53:57] 42457    kek
+[02:53:57] 42457    maxikek
+[02:53:57] 42457    Broadcast recieved ! Recieving again...
+[02:53:58] 42457    1
+[02:53:58] 42457 << ok
+[02:53:58] 42457 >> gauche
+[02:53:58] 42457    1
+[02:53:58] 42457 << ok
+[02:53:58] 42457 >> avance
+[02:53:58] 42457    1
+[02:53:58] 42457 << ok
+[02:53:58] 42457    add action inventaire
+[02:53:58] 42457    Fin de boucle
+[02:53:58] 42457    IA - Towards Mate Mode
+[02:53:58] 42457    Totem direction 5
+[02:53:58] 42457    Moving toward waiting player
+[02:53:58] 42457    add action gauche
+[02:53:58] 42457    add action gauche
+[02:53:58] 42457    add action avance
+[02:53:58] 42457 >> inventaire
+[02:53:58] 42457    1
+[02:53:58] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:58] 42457 >> gauche
+[02:53:58] 42457    1
+[02:53:58] 42457 << message 5,10512759638487373799 42438 0 4
+[02:53:58] 42457    kek
+[02:53:58] 42457    maxikek
+[02:53:58] 42457    Broadcast recieved ! Recieving again...
+[02:53:58] 42457    1
+[02:53:58] 42457 << ok
+[02:53:58] 42457 >> gauche
+[02:53:58] 42457    1
+[02:53:58] 42457 << ok
+[02:53:58] 42457 >> avance
+[02:53:59] 42457    1
+[02:53:59] 42457 << ok
+[02:53:59] 42457    add action inventaire
+[02:53:59] 42457    Fin de boucle
+[02:53:59] 42457    IA - Towards Mate Mode
+[02:53:59] 42457    Totem direction 5
+[02:53:59] 42457    Moving toward waiting player
+[02:53:59] 42457    add action gauche
+[02:53:59] 42457    add action gauche
+[02:53:59] 42457    add action avance
+[02:53:59] 42457 >> inventaire
+[02:53:59] 42457    1
+[02:53:59] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:53:59] 42457 >> gauche
+[02:53:59] 42457    1
+[02:53:59] 42457 << ok
+[02:53:59] 42457 >> gauche
+[02:53:59] 42457    1
+[02:53:59] 42457 << ok
+[02:53:59] 42457 >> avance
+[02:53:59] 42457    1
+[02:53:59] 42457 << message 4,10512759638487373799 42438 0 4
+[02:53:59] 42457    kek
+[02:53:59] 42457    maxikek
+[02:53:59] 42457    Broadcast recieved ! Recieving again...
+[02:53:59] 42457    1
+[02:53:59] 42457 << ok
+[02:53:59] 42457    add action inventaire
+[02:53:59] 42457    Fin de boucle
+[02:53:59] 42457    IA - Towards Mate Mode
+[02:53:59] 42457    Totem direction 5
+[02:53:59] 42457    Moving toward waiting player
+[02:53:59] 42457    add action gauche
+[02:53:59] 42457    add action gauche
+[02:53:59] 42457    add action avance
+[02:53:59] 42457 >> inventaire
+[02:54:00] 42457    1
+[02:54:00] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:54:00] 42457 >> gauche
+[02:54:00] 42457    1
+[02:54:00] 42457 << ok
+[02:54:00] 42457 >> gauche
+[02:54:00] 42457    1
+[02:54:00] 42457 << ok
+[02:54:00] 42457 >> avance
+[02:54:00] 42457    1
+[02:54:00] 42457 << ok
+[02:54:00] 42457    add action inventaire
+[02:54:00] 42457    Fin de boucle
+[02:54:00] 42457    IA - Towards Mate Mode
+[02:54:00] 42457    Totem direction 5
+[02:54:00] 42457    Moving toward waiting player
+[02:54:00] 42457    add action gauche
+[02:54:00] 42457    add action gauche
+[02:54:00] 42457    add action avance
+[02:54:00] 42457 >> inventaire
+[02:54:00] 42457    1
+[02:54:00] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:54:00] 42457 >> gauche
+[02:54:00] 42457    1
+[02:54:00] 42457 << message 0,10512759638487373799 42438 0 4
+[02:54:00] 42457    kek
+[02:54:00] 42457    maxikek
+[02:54:00] 42457    Broadcast recieved ! Recieving again...
+[02:54:00] 42457    1
+[02:54:00] 42457 << ok
+[02:54:00] 42457 >> gauche
+[02:54:01] 42457    1
+[02:54:01] 42457 << ok
+[02:54:01] 42457 >> avance
+[02:54:01] 42457    1
+[02:54:01] 42457 << message 4,10512759638487373799 42461 0 3
+[02:54:01] 42457    kek
+[02:54:01] 42457    maxikek
+[02:54:01] 42457    Broadcast recieved ! Recieving again...
+[02:54:01] 42457    1
+[02:54:01] 42457 << ok
+[02:54:01] 42457    add action inventaire
+[02:54:01] 42457    Fin de boucle
+[02:54:01] 42457    IA - Towards Mate Mode
+[02:54:01] 42457    Totem direction 5
+[02:54:01] 42457    Moving toward waiting player
+[02:54:01] 42457    add action gauche
+[02:54:01] 42457    add action gauche
+[02:54:01] 42457    add action avance
+[02:54:01] 42457 >> inventaire
+[02:54:01] 42457    1
+[02:54:01] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:54:01] 42457 >> gauche
+[02:54:01] 42457    1
+[02:54:01] 42457 << message 5,10512759638487373799 42451 0 3
+[02:54:01] 42457    kek
+[02:54:01] 42457    maxikek
+[02:54:01] 42457    Broadcast recieved ! Recieving again...
+[02:54:01] 42457    1
+[02:54:01] 42457 << ok
+[02:54:01] 42457 >> gauche
+[02:54:02] 42457    1
+[02:54:02] 42457 << message 7,10512759638487373799 42438 0 4
+[02:54:02] 42457    kek
+[02:54:02] 42457    maxikek
+[02:54:02] 42457    Broadcast recieved ! Recieving again...
+[02:54:02] 42457    1
+[02:54:02] 42457 << message 5,10512759638487373799 42448 0 3
+[02:54:02] 42457    kek
+[02:54:02] 42457    maxikek
+[02:54:02] 42457    Broadcast recieved ! Recieving again...
+[02:54:02] 42457    1
+[02:54:02] 42457 << ok
+[02:54:02] 42457 >> avance
+[02:54:02] 42457    1
+[02:54:02] 42457 << ok
+[02:54:02] 42457    add action inventaire
+[02:54:02] 42457    Fin de boucle
+[02:54:02] 42457    IA - Towards Mate Mode
+[02:54:02] 42457    Totem direction 5
+[02:54:02] 42457    Moving toward waiting player
+[02:54:02] 42457    add action gauche
+[02:54:02] 42457    add action gauche
+[02:54:02] 42457    add action avance
+[02:54:02] 42457 >> inventaire
+[02:54:02] 42457    1
+[02:54:02] 42457 << {nourriture 43, linemate 2, deraumere 1, sibur 1, mendiane 0, phiras 2, thystame 0}
+[02:54:02] 42457 >> gauche
+[02:54:02] 42457    1
+[02:54:02] 42457 << ok
+[02:54:02] 42457 >> gauche
+[02:54:04] 42457    0
+[02:54:04] 42457    Close de merde
+[02:54:04] 42457    Close
+[02:54:04] 42457    add action voir

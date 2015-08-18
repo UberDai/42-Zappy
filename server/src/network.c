@@ -6,7 +6,7 @@
 /*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/18 01:41:07 by adebray          ###   ########.fr       */
+/*   Updated: 2015/08/18 02:08:37 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,8 +137,9 @@ static void	network_send_client_queue(t_client *client, fd_set *write_fds)
 	init_iter(&iter, client->sending_queue, increasing);
 	while (lst_iterator_next(&iter))
 		strcat(str, (char*)iter.data);
-	lst_destroy(client->sending_queue, free);
-	send(client->fd, str, size);
+	lst_destroy(&client->sending_queue, free);
+	client->sending_queue = new_lst();
+	send(client->fd, str, size, 0);
 	free(str);
 	FD_CLR(client->fd, write_fds);
 }

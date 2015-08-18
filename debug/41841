@@ -1,0 +1,48 @@
+[02:51:27] 41841    1
+[02:51:27] 41841 << BIENVENUE
+[02:51:27] 41841 >> team1
+[02:51:28] 41841    1
+[02:51:28] 41841 << 24
+[02:51:28] 41841    1
+[02:51:28] 41841 << 10 10
+[02:51:28] 41841 >> connect_nbr
+[02:51:28] 41841    1
+[02:51:28] 41841 << 10
+[02:51:28] 41841    FORKSTEM
+[02:51:28] 41866    Close
+[02:51:28] 41841 >> connect_nbr
+[02:51:28] 41841    1
+[02:51:28] 41841 << 3
+[02:51:28] 41841    FORKSTEM
+[02:51:28] 41882    Close
+[02:51:28] 41841 >> connect_nbr
+[02:51:28] 41841    1
+[02:51:28] 41841 << 0
+[02:51:28] 41841    IA - Normal Mode
+[02:51:28] 41841    Rotation exploration
+[02:51:28] 41841    add action droite
+[02:51:28] 41841    add action voir
+[02:51:28] 41841 >> droite
+[02:51:28] 41841    1
+[02:51:28] 41841 << ok
+[02:51:28] 41841 >> voir
+[02:51:29] 41841    1
+[02:51:29] 41841 << {nourriture linemate linemate deraumere deraumere deraumere sibur sibur phiras phiras thystame joueur, linemate deraumere sibur mendiane mendiane mendiane phiras thystame thystame joueur, nourriture nourriture linemate linemate deraumere deraumere mendiane mendiane phiras thystame joueur joueur, nourriture deraumere sibur mendiane mendiane phiras thystame}
+[02:51:29] 41841    add action inventaire
+[02:51:29] 41841    Fin de boucle
+[02:51:29] 41841    IA - Normal Mode
+[02:51:29] 41841    mov first 1 mov second 1
+[02:51:29] 41841    add action avance
+[02:51:29] 41841    add action gauche
+[02:51:29] 41841    add action avance
+[02:51:29] 41841    add action prend 
+[02:51:29] 41841    Heading towards closest linemate
+[02:51:29] 41841    add action voir
+[02:51:29] 41841 >> inventaire
+[02:51:29] 41841    1
+[02:51:29] 41841 << {nourriture 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:29] 41841 >> avance
+[02:51:30] 41841    0
+[02:51:30] 41841    Close de merde
+[02:51:30] 41841    Close
+[02:51:30] 41841    add action voir

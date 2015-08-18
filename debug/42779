@@ -1,0 +1,113 @@
+[02:54:14] 42779    1
+[02:54:14] 42779 << BIENVENUE
+[02:54:14] 42779 >> team1
+[02:54:14] 42779    1
+[02:54:14] 42779 << 22
+[02:54:14] 42779    1
+[02:54:14] 42779 << 10 10
+[02:54:14] 42779 >> connect_nbr
+[02:54:14] 42779    1
+[02:54:14] 42779 << 10
+[02:54:14] 42779    FORKSTEM
+[02:54:14] 42811    Close
+[02:54:14] 42779 >> connect_nbr
+[02:54:14] 42779    1
+[02:54:14] 42779 << 0
+[02:54:14] 42779    IA - Normal Mode
+[02:54:14] 42779    Rotation exploration
+[02:54:14] 42779    add action droite
+[02:54:14] 42779    add action voir
+[02:54:14] 42779 >> droite
+[02:54:15] 42779    1
+[02:54:15] 42779 << ok
+[02:54:15] 42779 >> voir
+[02:54:15] 42779    1
+[02:54:15] 42779 << {nourriture linemate linemate deraumere deraumere sibur mendiane phiras thystame, nourriture linemate linemate linemate deraumere deraumere sibur mendiane phiras thystame thystame, nourriture nourriture linemate sibur mendiane mendiane mendiane phiras phiras thystame thystame joueur, nourriture nourriture deraumere deraumere sibur sibur mendiane phiras phiras phiras thystame thystame joueur joueur}
+[02:54:15] 42779    add action inventaire
+[02:54:15] 42779    Fin de boucle
+[02:54:15] 42779    IA - Normal Mode
+[02:54:15] 42779    mov first 1 mov second 1
+[02:54:15] 42779    add action avance
+[02:54:15] 42779    add action gauche
+[02:54:15] 42779    add action avance
+[02:54:15] 42779    add action prend 
+[02:54:15] 42779    Heading towards closest linemate
+[02:54:15] 42779    add action voir
+[02:54:15] 42779 >> inventaire
+[02:54:15] 42779    1
+[02:54:15] 42779 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42779 >> avance
+[02:54:15] 42779    1
+[02:54:15] 42779 << ok
+[02:54:15] 42779 >> gauche
+[02:54:15] 42779    1
+[02:54:15] 42779 << ok
+[02:54:15] 42779 >> avance
+[02:54:15] 42779    1
+[02:54:15] 42779 << ok
+[02:54:15] 42779 >> voir
+[02:54:16] 42779    1
+[02:54:16] 42779 << {nourriture nourriture nourriture linemate sibur sibur mendiane mendiane mendiane phiras phiras thystame joueur, nourriture nourriture linemate deraumere deraumere sibur mendiane mendiane phiras phiras phiras thystame thystame, deraumere sibur sibur mendiane phiras thystame joueur joueur joueur, nourriture nourriture nourriture linemate deraumere deraumere sibur mendiane phiras phiras thystame thystame joueur}
+[02:54:16] 42779 >> prend linemate
+[02:54:16] 42779    1
+[02:54:16] 42779 << ko
+[02:54:16] 42779    add action voir
+[02:54:16] 42779 >> voir
+[02:54:16] 42779    1
+[02:54:16] 42779 << {nourriture nourriture nourriture linemate sibur sibur mendiane mendiane mendiane phiras phiras thystame joueur, nourriture nourriture linemate deraumere deraumere sibur mendiane mendiane phiras phiras phiras thystame thystame, linemate deraumere sibur sibur mendiane phiras thystame joueur joueur joueur, nourriture nourriture nourriture linemate deraumere deraumere sibur mendiane phiras phiras thystame thystame joueur}
+[02:54:16] 42779    add action inventaire
+[02:54:16] 42779    Fin de boucle
+[02:54:16] 42779    IA - Normal Mode
+[02:54:16] 42779    mov first -1 mov second 1
+[02:54:16] 42779    add action gauche
+[02:54:16] 42779    add action avance
+[02:54:16] 42779    add action droite
+[02:54:16] 42779    add action avance
+[02:54:16] 42779    add action prend 
+[02:54:16] 42779    Heading towards closest linemate
+[02:54:16] 42779    add action voir
+[02:54:16] 42779 >> inventaire
+[02:54:16] 42779    1
+[02:54:16] 42779 << {nourriture 8, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42779 >> gauche
+[02:54:17] 42779    1
+[02:54:17] 42779 << ok
+[02:54:17] 42779 >> avance
+[02:54:17] 42779    1
+[02:54:17] 42779 << ok
+[02:54:17] 42779 >> droite
+[02:54:17] 42779    1
+[02:54:17] 42779 << message 5,10512759638487373799 42770 0 2
+[02:54:17] 42779    kek
+[02:54:17] 42779    maxikek
+[02:54:17] 42779    Broadcast recieved ! Recieving again...
+[02:54:17] 42779    1
+[02:54:17] 42779 << ok
+[02:54:17] 42779 >> avance
+[02:54:17] 42779    1
+[02:54:17] 42779 << ok
+[02:54:17] 42779 >> voir
+[02:54:17] 42779    1
+[02:54:17] 42779 << {nourriture deraumere deraumere sibur phiras thystame thystame thystame joueur joueur joueur joueur, nourriture linemate linemate deraumere deraumere sibur mendiane mendiane phiras thystame thystame, nourriture nourriture linemate linemate linemate deraumere sibur mendiane mendiane phiras phiras phiras phiras thystame joueur, nourriture nourriture nourriture linemate linemate deraumere sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame joueur}
+[02:54:17] 42779 >> prend linemate
+[02:54:17] 42779    1
+[02:54:17] 42779 << ok
+[02:54:17] 42779    add action inventaire
+[02:54:17] 42779    Fin de boucle
+[02:54:17] 42779    IA - Normal Mode
+[02:54:17] 42779    First level, compos OK, drop compos, incantation.
+[02:54:17] 42779    add action pose 
+[02:54:17] 42779    add action incantation
+[02:54:18] 42779 >> inventaire
+[02:54:18] 42779    1
+[02:54:18] 42779 << {nourriture 7, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:18] 42779 >> pose linemate
+[02:54:18] 42779    1
+[02:54:18] 42779 << message 3,10512759638487373799 42790 2 42770
+[02:54:18] 42779    kek
+[02:54:18] 42779    maxikek
+[02:54:18] 42779    Broadcast recieved ! Recieving again...
+[02:54:18] 42779    0
+[02:54:18] 42779    Close de merde
+[02:54:18] 42779    Close
+[02:54:18] 42779    add action voir

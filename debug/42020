@@ -1,0 +1,191 @@
+[02:51:56] 42020    1
+[02:51:56] 42020 << BIENVENUE
+[02:51:56] 42020 >> team1
+[02:51:56] 42020    1
+[02:51:56] 42020 << 28
+[02:51:56] 42020    1
+[02:51:56] 42020 << 10 10
+[02:51:56] 42020 >> connect_nbr
+[02:51:56] 42020    1
+[02:51:56] 42020 << 26
+[02:51:56] 42020    FORKSTEM
+[02:51:56] 42028    Close
+[02:51:56] 42020 >> connect_nbr
+[02:51:56] 42020    1
+[02:51:56] 42020 << 23
+[02:51:56] 42020    FORKSTEM
+[02:51:56] 42044    Close
+[02:51:56] 42020 >> connect_nbr
+[02:51:56] 42020    1
+[02:51:56] 42020 << 7
+[02:51:56] 42020    FORKSTEM
+[02:51:56] 42060    Close
+[02:51:56] 42020 >> connect_nbr
+[02:51:56] 42020    1
+[02:51:56] 42020 << 0
+[02:51:56] 42020    IA - Normal Mode
+[02:51:56] 42020    Rotation exploration
+[02:51:57] 42020    add action droite
+[02:51:57] 42020    add action voir
+[02:51:57] 42020 >> droite
+[02:51:57] 42020    1
+[02:51:57] 42020 << ok
+[02:51:57] 42020 >> voir
+[02:51:57] 42020    1
+[02:51:57] 42020 << {nourriture nourriture linemate linemate deraumere sibur mendiane mendiane mendiane phiras phiras thystame joueur, linemate deraumere sibur sibur mendiane mendiane phiras thystame, nourriture deraumere deraumere sibur sibur mendiane phiras thystame thystame, nourriture linemate deraumere deraumere sibur mendiane thystame thystame}
+[02:51:57] 42020    add action inventaire
+[02:51:57] 42020    Fin de boucle
+[02:51:57] 42020    IA - Normal Mode
+[02:51:57] 42020    mov first 1 mov second 1
+[02:51:57] 42020    add action avance
+[02:51:57] 42020    add action gauche
+[02:51:57] 42020    add action avance
+[02:51:57] 42020    add action prend 
+[02:51:57] 42020    Heading towards closest linemate
+[02:51:57] 42020    add action voir
+[02:51:57] 42020 >> inventaire
+[02:51:57] 42020    1
+[02:51:57] 42020 << {nourriture 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:57] 42020 >> avance
+[02:51:57] 42020    1
+[02:51:57] 42020 << ok
+[02:51:57] 42020 >> gauche
+[02:51:57] 42020    1
+[02:51:57] 42020 << ok
+[02:51:57] 42020 >> avance
+[02:51:58] 42020    1
+[02:51:58] 42020 << ok
+[02:51:58] 42020 >> voir
+[02:51:58] 42020    1
+[02:51:58] 42020 << {nourriture nourriture linemate deraumere deraumere deraumere sibur sibur mendiane phiras thystame joueur, nourriture nourriture nourriture linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame joueur, nourriture linemate linemate deraumere deraumere deraumere sibur sibur mendiane mendiane mendiane phiras phiras thystame, nourriture linemate deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame thystame joueur}
+[02:51:58] 42020 >> prend linemate
+[02:51:58] 42020    1
+[02:51:58] 42020 << ok
+[02:51:58] 42020    add action inventaire
+[02:51:58] 42020    Fin de boucle
+[02:51:58] 42020    IA - Normal Mode
+[02:51:58] 42020    First level, compos OK, drop compos, incantation.
+[02:51:58] 42020    add action pose 
+[02:51:58] 42020    add action incantation
+[02:51:58] 42020 >> inventaire
+[02:51:58] 42020    1
+[02:51:58] 42020 << {nourriture 8, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:58] 42020 >> pose linemate
+[02:51:58] 42020    1
+[02:51:58] 42020 << ok
+[02:51:58] 42020 >> incantation
+[02:51:58] 42020    1
+[02:51:58] 42020 << elevation en cours
+[02:51:58] 42020    1
+[02:51:58] 42020 << niveau actuel : 2
+[02:51:58] 42020    add action inventaire
+[02:51:58] 42020    Fin de boucle
+[02:51:59] 42020    IA - Normal Mode
+[02:51:59] 42020    mov first -1 mov second 1
+[02:51:59] 42020    add action gauche
+[02:51:59] 42020    add action avance
+[02:51:59] 42020    add action droite
+[02:51:59] 42020    add action avance
+[02:51:59] 42020    add action prend 
+[02:51:59] 42020    Heading towards closest deraumere
+[02:51:59] 42020    add action voir
+[02:51:59] 42020 >> inventaire
+[02:51:59] 42020    1
+[02:51:59] 42020 << {nourriture 8, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42020 >> gauche
+[02:51:59] 42020    1
+[02:51:59] 42020 << ok
+[02:51:59] 42020 >> avance
+[02:51:59] 42020    1
+[02:51:59] 42020 << ok
+[02:51:59] 42020 >> droite
+[02:51:59] 42020    1
+[02:51:59] 42020 << ok
+[02:51:59] 42020 >> avance
+[02:51:59] 42020    1
+[02:51:59] 42020 << ok
+[02:51:59] 42020 >> voir
+[02:51:59] 42020    1
+[02:51:59] 42020 << {nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras phiras phiras thystame thystame joueur, nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane phiras thystame thystame thystame joueur, nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame, nourriture nourriture nourriture nourriture linemate linemate deraumere sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame joueur, nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras thystame thystame joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur, nourriture nourriture nourriture linemate linemate deraumere sibur sibur sibur mendiane phiras thystame thystame thystame joueur, nourriture nourriture linemate linemate linemate deraumere sibur mendiane phiras phiras phiras thystame thystame thystame joueur joueur}
+[02:52:00] 42020 >> prend deraumere
+[02:52:00] 42020    1
+[02:52:00] 42020 << message 7,10512759638487373799 42017 0 2
+[02:52:00] 42020    kek
+[02:52:00] 42020    maxikek
+[02:52:00] 42020    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:52:00] 42020    Broadcast recieved ! Recieving again...
+[02:52:00] 42020    1
+[02:52:00] 42020 << ko
+[02:52:00] 42020    add action voir
+[02:52:00] 42020 >> voir
+[02:52:00] 42020    1
+[02:52:00] 42020 << {nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras phiras phiras thystame thystame joueur, nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane phiras thystame thystame thystame joueur, nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame, nourriture nourriture nourriture nourriture linemate linemate sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame joueur joueur, nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras thystame thystame joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur, nourriture nourriture nourriture linemate linemate deraumere sibur sibur sibur mendiane phiras thystame thystame thystame joueur, nourriture nourriture linemate linemate linemate deraumere sibur mendiane phiras phiras phiras thystame thystame thystame joueur joueur}
+[02:52:00] 42020    add action inventaire
+[02:52:00] 42020    Fin de boucle
+[02:52:00] 42020    IA - Towards Mate Mode
+[02:52:00] 42020    add action prend 
+[02:52:00] 42020    add action prend 
+[02:52:00] 42020    add action prend 
+[02:52:00] 42020    add action prend 
+[02:52:00] 42020    Totem direction 7
+[02:52:00] 42020    Moving toward waiting player
+[02:52:00] 42020    add action droite
+[02:52:00] 42020    add action avance
+[02:52:00] 42020 >> inventaire
+[02:52:01] 42020    1
+[02:52:01] 42020 << {nourriture 8, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42020 >> prend nourriture
+[02:52:01] 42020    1
+[02:52:01] 42020 << message 7,10512759638487373799 42017 0 2
+[02:52:01] 42020    kek
+[02:52:01] 42020    maxikek
+[02:52:01] 42020    Broadcast recieved ! Recieving again...
+[02:52:01] 42020    1
+[02:52:01] 42020 << ok
+[02:52:01] 42020 >> prend nourriture
+[02:52:01] 42020    1
+[02:52:01] 42020 << ok
+[02:52:01] 42020 >> prend nourriture
+[02:52:01] 42020    1
+[02:52:01] 42020 << ok
+[02:52:01] 42020 >> prend nourriture
+[02:52:01] 42020    1
+[02:52:01] 42020 << ko
+[02:52:01] 42020    add action voir
+[02:52:01] 42020 >> voir
+[02:52:01] 42020    1
+[02:52:01] 42020 << message 7,10512759638487373799 42017 0 2
+[02:52:01] 42020    kek
+[02:52:01] 42020    maxikek
+[02:52:01] 42020    Broadcast recieved ! Recieving again...
+[02:52:02] 42020    1
+[02:52:02] 42020 << {nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane mendiane phiras thystame thystame thystame joueur, nourriture nourriture nourriture linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame thystame, linemate linemate sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras phiras thystame thystame joueur joueur joueur, linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame joueur, nourriture nourriture nourriture nourriture linemate linemate deraumere sibur sibur sibur sibur mendiane phiras thystame thystame thystame thystame joueur, nourriture nourriture linemate linemate linemate linemate deraumere deraumere sibur sibur mendiane phiras phiras phiras phiras thystame thystame thystame joueur joueur}
+[02:52:02] 42020    add action inventaire
+[02:52:02] 42020    Fin de boucle
+[02:52:02] 42020    IA - Towards Mate Mode
+[02:52:02] 42020    add action prend 
+[02:52:02] 42020    add action prend 
+[02:52:02] 42020    add action prend 
+[02:52:02] 42020    add action prend 
+[02:52:02] 42020    Totem direction 7
+[02:52:02] 42020    Moving toward waiting player
+[02:52:02] 42020    add action droite
+[02:52:02] 42020    add action avance
+[02:52:02] 42020 >> inventaire
+[02:52:02] 42020    1
+[02:52:02] 42020 << {nourriture 11, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42020 >> prend nourriture
+[02:52:02] 42020    1
+[02:52:02] 42020 << message 6,10512759638487373799 42051 2 42017
+[02:52:02] 42020    kek
+[02:52:02] 42020    maxikek
+[02:52:02] 42020    Broadcast recieved ! Recieving again...
+[02:52:02] 42020    1
+[02:52:02] 42020 << message 7,10512759638487373799 42017 0 2
+[02:52:02] 42020    kek
+[02:52:02] 42020    maxikek
+[02:52:02] 42020    Broadcast recieved ! Recieving again...
+[02:52:03] 42020    0
+[02:52:03] 42020    Close de merde
+[02:52:03] 42020    Close
+[02:52:03] 42020    add action voir

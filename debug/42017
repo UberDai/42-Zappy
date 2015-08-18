@@ -1,0 +1,1110 @@
+[02:51:56] 42017    1
+[02:51:56] 42017 << BIENVENUE
+[02:51:56] 42017 >> team1
+[02:51:56] 42017    1
+[02:51:56] 42017 << 30
+[02:51:56] 42017    1
+[02:51:56] 42017 << 10 10
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42017    1
+[02:51:56] 42017 << 29
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42018    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 28
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42020    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 28
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42021    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 27
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42022    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 26
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42023    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 26
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42017    1
+[02:51:56] 42017 << 26
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42025    Close
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42017    1
+[02:51:56] 42017 << 25
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42026    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 24
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42027    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 23
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42029    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 23
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42030    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 22
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42017    1
+[02:51:56] 42032    Close
+[02:51:56] 42017 << 21
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42033    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 20
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42034    Close
+[02:51:56] 42036    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 19
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42040    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 14
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42017    1
+[02:51:56] 42017 << 14
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42042    Close
+[02:51:56] 42043    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 11
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42045    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 10
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42047    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 9
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42051    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 5
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42053    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 3
+[02:51:56] 42017    FORKSTEM
+[02:51:56] 42017 >> connect_nbr
+[02:51:56] 42055    Close
+[02:51:56] 42017    1
+[02:51:56] 42017 << 0
+[02:51:56] 42017    IA - Normal Mode
+[02:51:56] 42017    Rotation exploration
+[02:51:56] 42017    add action droite
+[02:51:56] 42017    add action voir
+[02:51:56] 42017 >> droite
+[02:51:56] 42017    1
+[02:51:56] 42017 << ok
+[02:51:56] 42017 >> voir
+[02:51:56] 42017    1
+[02:51:56] 42017 << {nourriture linemate deraumere sibur sibur mendiane mendiane phiras phiras thystame, nourriture nourriture nourriture linemate linemate deraumere sibur sibur sibur mendiane mendiane phiras phiras thystame thystame, nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane mendiane thystame, nourriture linemate linemate linemate deraumere deraumere sibur mendiane mendiane phiras thystame thystame}
+[02:51:56] 42017    add action inventaire
+[02:51:56] 42017    Fin de boucle
+[02:51:56] 42017    IA - Normal Mode
+[02:51:56] 42017    mov first 1 mov second 1
+[02:51:56] 42017    add action avance
+[02:51:56] 42017    add action gauche
+[02:51:56] 42017    add action avance
+[02:51:56] 42017    add action prend 
+[02:51:56] 42017    Heading towards closest linemate
+[02:51:56] 42017    add action voir
+[02:51:56] 42017 >> inventaire
+[02:51:56] 42017    1
+[02:51:56] 42017 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:56] 42017 >> avance
+[02:51:56] 42017    1
+[02:51:56] 42017 << ok
+[02:51:56] 42017 >> gauche
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017 >> avance
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017 >> voir
+[02:51:57] 42017    1
+[02:51:57] 42017 << {nourriture linemate deraumere deraumere sibur sibur phiras joueur, nourriture linemate deraumere deraumere sibur sibur mendiane mendiane phiras thystame thystame thystame, nourriture deraumere sibur mendiane phiras phiras thystame, nourriture nourriture deraumere deraumere deraumere sibur mendiane mendiane phiras phiras thystame thystame}
+[02:51:57] 42017 >> prend linemate
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017    add action inventaire
+[02:51:57] 42017    Fin de boucle
+[02:51:57] 42017    IA - Normal Mode
+[02:51:57] 42017    First level, compos OK, drop compos, incantation.
+[02:51:57] 42017    add action pose 
+[02:51:57] 42017    add action incantation
+[02:51:57] 42017 >> inventaire
+[02:51:57] 42017    1
+[02:51:57] 42017 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:57] 42017 >> pose linemate
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017 >> incantation
+[02:51:57] 42017    1
+[02:51:57] 42017 << elevation en cours
+[02:51:57] 42017    1
+[02:51:57] 42017 << niveau actuel : 2
+[02:51:57] 42017    add action inventaire
+[02:51:57] 42017    Fin de boucle
+[02:51:57] 42017    IA - Normal Mode
+[02:51:57] 42017    mov first -1 mov second 1
+[02:51:57] 42017    add action gauche
+[02:51:57] 42017    add action avance
+[02:51:57] 42017    add action droite
+[02:51:57] 42017    add action avance
+[02:51:57] 42017    add action prend 
+[02:51:57] 42017    Heading towards closest deraumere
+[02:51:57] 42017    add action voir
+[02:51:57] 42017 >> inventaire
+[02:51:57] 42017    1
+[02:51:57] 42017 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:57] 42017 >> gauche
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017 >> avance
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017 >> droite
+[02:51:57] 42017    1
+[02:51:57] 42017 << ok
+[02:51:57] 42017 >> avance
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017 >> voir
+[02:51:58] 42017    1
+[02:51:58] 42017 << {nourriture linemate linemate linemate deraumere sibur sibur mendiane mendiane mendiane phiras thystame, nourriture linemate deraumere deraumere deraumere sibur sibur mendiane phiras thystame joueur, nourriture nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame, nourriture linemate linemate deraumere sibur mendiane mendiane mendiane phiras phiras, nourriture nourriture linemate linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras thystame thystame thystame thystame, nourriture linemate deraumere sibur sibur mendiane mendiane phiras phiras thystame joueur joueur, nourriture nourriture nourriture deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras phiras thystame thystame thystame joueur joueur joueur, nourriture nourriture linemate linemate deraumere deraumere sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame joueur joueur, nourriture nourriture linemate deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras thystame thystame thystame joueur}
+[02:51:58] 42017 >> prend deraumere
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017    add action inventaire
+[02:51:58] 42017    Fin de boucle
+[02:51:58] 42017    IA - Normal Mode
+[02:51:58] 42017    mov first -1 mov second 1
+[02:51:58] 42017    add action gauche
+[02:51:58] 42017    add action avance
+[02:51:58] 42017    add action droite
+[02:51:58] 42017    add action avance
+[02:51:58] 42017    add action prend 
+[02:51:58] 42017    Heading towards closest linemate
+[02:51:58] 42017    add action voir
+[02:51:58] 42017 >> inventaire
+[02:51:58] 42017    1
+[02:51:58] 42017 << {nourriture 10, linemate 0, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:58] 42017 >> gauche
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017 >> avance
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017 >> droite
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017 >> avance
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017 >> voir
+[02:51:58] 42017    1
+[02:51:58] 42017 << {nourriture nourriture deraumere sibur sibur sibur mendiane phiras phiras thystame thystame thystame joueur joueur, nourriture linemate linemate linemate deraumere sibur sibur mendiane mendiane mendiane phiras thystame, nourriture nourriture nourriture nourriture linemate linemate linemate deraumere sibur sibur sibur mendiane mendiane phiras phiras thystame, nourriture nourriture deraumere deraumere deraumere mendiane mendiane mendiane phiras phiras thystame thystame thystame joueur joueur, nourriture linemate deraumere deraumere deraumere sibur sibur mendiane phiras thystame joueur, nourriture nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame, nourriture linemate linemate deraumere sibur mendiane mendiane mendiane phiras phiras, nourriture linemate linemate deraumere deraumere sibur sibur mendiane phiras thystame thystame, nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere sibur sibur mendiane phiras joueur}
+[02:51:58] 42017 >> prend linemate
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017    add action inventaire
+[02:51:58] 42017    Fin de boucle
+[02:51:58] 42017    IA - Normal Mode
+[02:51:58] 42017    mov first -1 mov second 1
+[02:51:58] 42017    add action gauche
+[02:51:58] 42017    add action avance
+[02:51:58] 42017    add action droite
+[02:51:58] 42017    add action avance
+[02:51:58] 42017    add action prend 
+[02:51:58] 42017    Heading towards closest sibur
+[02:51:58] 42017    add action voir
+[02:51:58] 42017 >> inventaire
+[02:51:58] 42017    1
+[02:51:58] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:51:58] 42017 >> gauche
+[02:51:58] 42017    1
+[02:51:58] 42017 << ok
+[02:51:58] 42017 >> avance
+[02:51:59] 42017    1
+[02:51:59] 42017 << ok
+[02:51:59] 42017 >> droite
+[02:51:59] 42017    1
+[02:51:59] 42017 << ok
+[02:51:59] 42017 >> avance
+[02:51:59] 42017    1
+[02:51:59] 42017 << ok
+[02:51:59] 42017 >> voir
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture linemate linemate linemate deraumere sibur mendiane mendiane phiras phiras phiras phiras thystame joueur, nourriture nourriture linemate deraumere sibur sibur sibur mendiane phiras phiras thystame thystame thystame joueur joueur, linemate linemate deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame thystame joueur, nourriture nourriture linemate deraumere deraumere deraumere deraumere sibur mendiane mendiane phiras phiras phiras thystame, nourriture linemate linemate linemate deraumere sibur sibur mendiane mendiane mendiane phiras thystame, nourriture nourriture nourriture nourriture linemate linemate linemate deraumere sibur sibur sibur mendiane mendiane phiras phiras thystame, nourriture nourriture linemate deraumere deraumere deraumere mendiane mendiane mendiane phiras phiras thystame thystame thystame joueur joueur, nourriture nourriture linemate deraumere deraumere deraumere sibur sibur sibur mendiane mendiane phiras phiras thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture linemate linemate linemate linemate deraumere sibur mendiane mendiane phiras phiras phiras thystame joueur joueur joueur}
+[02:51:59] 42017 >> prend sibur
+[02:51:59] 42017    1
+[02:51:59] 42017 << ok
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Normal Mode
+[02:51:59] 42017    Compos ok, level 2+, passage en mode reunion
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Reunion Mode
+[02:51:59] 42017    No one is waiting, change to mode WAIT_MATES
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:51:59] 42017    1
+[02:51:59] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:51:59] 42017    add action inventaire
+[02:51:59] 42017    Fin de boucle
+[02:51:59] 42017    IA - Wait Mates Mode
+[02:51:59] 42017    Nothing special.
+[02:51:59] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017    IA - Send Broadcast
+[02:52:00] 42017    add action broadcast 
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017 >> broadcast 10512759638487373799 42017 0 2
+[02:52:00] 42017    1
+[02:52:00] 42017 << ok
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017    IA - Send Broadcast
+[02:52:00] 42017    add action broadcast 
+[02:52:00] 42017 >> inventaire
+[02:52:00] 42017    1
+[02:52:00] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:00] 42017 >> broadcast 10512759638487373799 42017 0 2
+[02:52:00] 42017    1
+[02:52:00] 42017 << ok
+[02:52:00] 42017    add action inventaire
+[02:52:00] 42017    Fin de boucle
+[02:52:00] 42017    IA - Wait Mates Mode
+[02:52:00] 42017    Nothing special.
+[02:52:00] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017    IA - Send Broadcast
+[02:52:01] 42017    add action broadcast 
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017 >> broadcast 10512759638487373799 42017 0 2
+[02:52:01] 42017    1
+[02:52:01] 42017 << ok
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:01] 42017    1
+[02:52:01] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:01] 42017    add action inventaire
+[02:52:01] 42017    Fin de boucle
+[02:52:01] 42017    IA - Wait Mates Mode
+[02:52:01] 42017    Nothing special.
+[02:52:01] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << message 7,10512759638487373799 42051 2 42017
+[02:52:02] 42017    kek
+[02:52:02] 42017    maxikek
+[02:52:02] 42017    Broadcast recieved ! Recieving again...
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017    IA - Send Broadcast
+[02:52:02] 42017    add action broadcast 
+[02:52:02] 42017 >> inventaire
+[02:52:02] 42017    1
+[02:52:02] 42017 << {nourriture 10, linemate 1, deraumere 1, sibur 1, mendiane 0, phiras 0, thystame 0}
+[02:52:02] 42017 >> broadcast 10512759638487373799 42017 0 2
+[02:52:02] 42017    1
+[02:52:02] 42017 << ok
+[02:52:02] 42017    add action inventaire
+[02:52:02] 42017    Fin de boucle
+[02:52:02] 42017    IA - Wait Mates Mode
+[02:52:02] 42017    Nothing special.
+[02:52:02] 42017 >> inventaire
+[02:52:03] 42017    0
+[02:52:03] 42017    Close de merde
+[02:52:03] 42017    Close
+[02:52:03] 42017    add action voir

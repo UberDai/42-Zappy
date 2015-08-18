@@ -1,0 +1,110 @@
+[02:54:14] 42783    1
+[02:54:14] 42783 << BIENVENUE
+[02:54:14] 42783 >> team1
+[02:54:14] 42783    1
+[02:54:14] 42783 << 18
+[02:54:14] 42783    1
+[02:54:14] 42783 << 10 10
+[02:54:14] 42783 >> connect_nbr
+[02:54:14] 42783    1
+[02:54:14] 42783 << 0
+[02:54:14] 42783    IA - Normal Mode
+[02:54:14] 42783    Rotation exploration
+[02:54:14] 42783    add action droite
+[02:54:14] 42783    add action voir
+[02:54:14] 42783 >> droite
+[02:54:14] 42783    1
+[02:54:14] 42783 << ok
+[02:54:14] 42783 >> voir
+[02:54:15] 42783    1
+[02:54:15] 42783 << {linemate linemate sibur sibur mendiane, nourriture linemate deraumere deraumere sibur mendiane phiras phiras thystame, linemate sibur mendiane thystame thystame, nourriture linemate linemate deraumere sibur mendiane phiras thystame thystame}
+[02:54:15] 42783    add action inventaire
+[02:54:15] 42783    Fin de boucle
+[02:54:15] 42783    IA - Normal Mode
+[02:54:15] 42783    mov first 1 mov second 1
+[02:54:15] 42783    add action avance
+[02:54:15] 42783    add action gauche
+[02:54:15] 42783    add action avance
+[02:54:15] 42783    add action prend 
+[02:54:15] 42783    Heading towards closest linemate
+[02:54:15] 42783    add action voir
+[02:54:15] 42783 >> inventaire
+[02:54:15] 42783    1
+[02:54:15] 42783 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:15] 42783 >> avance
+[02:54:15] 42783    1
+[02:54:15] 42783 << ok
+[02:54:15] 42783 >> gauche
+[02:54:15] 42783    1
+[02:54:15] 42783 << ok
+[02:54:15] 42783 >> avance
+[02:54:15] 42783    1
+[02:54:15] 42783 << ok
+[02:54:15] 42783 >> voir
+[02:54:15] 42783    1
+[02:54:15] 42783 << {nourriture linemate deraumere deraumere sibur mendiane thystame thystame, nourriture nourriture deraumere deraumere sibur mendiane mendiane mendiane phiras phiras thystame thystame, nourriture nourriture linemate linemate deraumere sibur mendiane mendiane phiras thystame, nourriture deraumere sibur sibur sibur mendiane mendiane mendiane phiras thystame thystame}
+[02:54:16] 42783 >> prend linemate
+[02:54:16] 42783    1
+[02:54:16] 42783 << ok
+[02:54:16] 42783    add action inventaire
+[02:54:16] 42783    Fin de boucle
+[02:54:16] 42783    IA - Normal Mode
+[02:54:16] 42783    First level, compos OK, drop compos, incantation.
+[02:54:16] 42783    add action pose 
+[02:54:16] 42783    add action incantation
+[02:54:16] 42783 >> inventaire
+[02:54:16] 42783    1
+[02:54:16] 42783 << {nourriture 10, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:16] 42783 >> pose linemate
+[02:54:16] 42783    1
+[02:54:16] 42783 << ok
+[02:54:16] 42783 >> incantation
+[02:54:16] 42783    1
+[02:54:16] 42783 << elevation en cours
+[02:54:16] 42783    1
+[02:54:16] 42783 << niveau actuel : 2
+[02:54:16] 42783    add action inventaire
+[02:54:16] 42783    Fin de boucle
+[02:54:16] 42783    IA - Normal Mode
+[02:54:16] 42783    mov first -1 mov second 1
+[02:54:16] 42783    add action gauche
+[02:54:16] 42783    add action avance
+[02:54:16] 42783    add action droite
+[02:54:17] 42783    add action avance
+[02:54:17] 42783    add action prend 
+[02:54:17] 42783    Heading towards closest deraumere
+[02:54:17] 42783    add action voir
+[02:54:17] 42783 >> inventaire
+[02:54:17] 42783    1
+[02:54:17] 42783 << {nourriture 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[02:54:17] 42783 >> gauche
+[02:54:17] 42783    1
+[02:54:17] 42783 << message 1,10512759638487373799 42770 0 2
+[02:54:17] 42783    kek
+[02:54:17] 42783    maxikek
+[02:54:17] 42783    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[02:54:17] 42783    Broadcast recieved ! Recieving again...
+[02:54:17] 42783    1
+[02:54:17] 42783 << ok
+[02:54:17] 42783 >> avance
+[02:54:17] 42783    1
+[02:54:17] 42783 << ok
+[02:54:17] 42783 >> droite
+[02:54:17] 42783    1
+[02:54:17] 42783 << ok
+[02:54:17] 42783 >> avance
+[02:54:17] 42783    1
+[02:54:17] 42783 << ok
+[02:54:17] 42783 >> voir
+[02:54:17] 42783    1
+[02:54:17] 42783 << {nourriture nourriture linemate deraumere deraumere sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras thystame thystame thystame, nourriture deraumere deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame thystame thystame, nourriture nourriture linemate linemate deraumere sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame, nourriture nourriture linemate linemate linemate deraumere deraumere sibur sibur mendiane mendiane phiras phiras thystame thystame joueur joueur, nourriture nourriture linemate deraumere deraumere deraumere deraumere sibur sibur mendiane mendiane mendiane phiras phiras, nourriture nourriture nourriture linemate sibur sibur sibur mendiane mendiane mendiane phiras thystame thystame thystame joueur, nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur mendiane phiras phiras phiras thystame joueur, nourriture nourriture linemate linemate deraumere deraumere deraumere sibur mendiane mendiane phiras phiras thystame thystame joueur joueur joueur, nourriture nourriture nourriture linemate linemate deraumere sibur mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame joueur joueur joueur}
+[02:54:18] 42783 >> prend deraumere
+[02:54:18] 42783    1
+[02:54:18] 42783 << message 3,10512759638487373799 42790 2 42770
+[02:54:18] 42783    kek
+[02:54:18] 42783    maxikek
+[02:54:18] 42783    Broadcast recieved ! Recieving again...
+[02:54:18] 42783    0
+[02:54:18] 42783    Close de merde
+[02:54:18] 42783    Close
+[02:54:18] 42783    add action voir
