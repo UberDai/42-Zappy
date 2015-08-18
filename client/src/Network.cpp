@@ -359,6 +359,7 @@ std::string		Network::recieve(void)
 				free(buf);
 				return recieve();
 			}
+			//Magic code for level up
 			else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
 			{
 				_client->printDebug("Ok, styley ! Recieving again...");
