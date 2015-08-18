@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 00:30:56 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 00:40:59 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ short	command_inventory(t_client *client, t_uint argc, char **argv)
 		return (COMMAND_FAIL);
 	str = client_inventory(client);
 	network_send(client, str, 0);
+	free(str);
 	(void)argv;
 	return (COMMAND_NONE);
 }

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 00:04:59 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 00:53:40 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,23 +123,20 @@ static void	network_send_client_queue(t_client *client, fd_set *write_fds)
 	if (client->sending_queue->size == 0)
 		return ;
 
-	size = 1;
+	size = 0;
 	init_iter(&iter, client->sending_queue, increasing);
 	while (lst_iterator_next(&iter))
 		size += strlen((char*)iter.data);
 
-	if (size == 0)
-		return ;
-
 	str = calloc(size, sizeof(char));
-
 	init_iter(&iter, client->sending_queue, increasing);
 	while (lst_iterator_next(&iter))
 		strcat(str, (char*)iter.data);
-	lst_destroy(&client->sending_queue, free);
-	client->sending_queue = new_lst();
 	send(client->fd, str, size, 0);
 	free(str);
+
+	lst_destroy(&client->sending_queue, free);
+	client->sending_queue = new_lst();
 	FD_CLR(client->fd, write_fds);
 }
 
@@ -203,7 +200,7 @@ void		network_receive(void)
 	}
 }
 
-static void	network_send_to_clients(t_client *emitter, t_lst *list, char *str)
+static void	network_send_to_clients(t_client *emitter, t_lst *list, const char *str)
 {
 	t_lstiter	iter;
 	t_client	*client;
@@ -235,23 +232,21 @@ void		network_send(t_client *client, const char *str, int options)
 {
 	char		*output;
 
-	output = ft_strnew(strlen(str) + 1);
-	strcat(output, str);
-	strcat(output, "\n");
 	if (options != 0)
 	{
 		if (options & (NET_SEND_CLIENT | NET_SEND_ALL))
-			network_send_to_clients(client, g_zappy.clients, output);
+			network_send_to_clients(client, g_zappy.clients, str);
 		if (options & (NET_SEND_GFX | NET_SEND_ALL))
-			network_send_to_clients(client, g_zappy.gfx_clients, output);
+			network_send_to_clients(client, g_zappy.gfx_clients, str);
 	}
 	else
 	{
+		output = calloc(strlen(str) + 2, sizeof(char));
+		strcat(output, str);
+		strcat(output, "\n");
 		logger_client_send(client, output);
 		lst_push_back(client->sending_queue, output);
-		// send(client->fd, output, strlen(output), 0);
 	}
-	// free(output);
 }
 
 void	network_disconnect(void)

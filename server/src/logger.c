@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/16 01:37:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 02:42:04 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 00:23:53 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	logger_client_send(const t_client *client, const char *message)
 	free(header);
 	str[strlen(str) - 1] = 0;
 	logger_log(str);
+	free(str);
 }
 
 void	logger_client_receive(const t_client *client, const char *message)
@@ -95,4 +96,5 @@ void	logger_client_receive(const t_client *client, const char *message)
 	asprintf(&str, "%s\t>> %s", header, message);
 	free(header);
 	logger_log(str);
+	free(str);
 }

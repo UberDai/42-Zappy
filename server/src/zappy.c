@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 02:39:32 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 00:55:00 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static short	client_play(t_client *client)
 		ret = queue->command->pre_func(client, queue->ac, queue->av);
 
 		if (ret == COMMAND_FAIL)
-			queue->set = 0;
+			client_queue_shift(client);
 	}
 
 	queue->delay--;
