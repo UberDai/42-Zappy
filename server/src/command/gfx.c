@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 19:06:29 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 00:10:52 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 01:07:30 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ void	gfx_client_death(t_client *client)
 	char	str[20] = { 0 };
 
 	snprintf(str, 20, "x %u", client->id);
+	network_send(NULL, str, NET_SEND_GFX);
+}
+
+void	gfx_victory(const t_team *team)
+{
+	char	str[23] = { 0 };
+
+	snprintf(str, 23, "$ %s", team->name);
 	network_send(NULL, str, NET_SEND_GFX);
 }
 

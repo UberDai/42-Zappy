@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/17 02:42:59 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 00:53:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 02:05:18 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,22 +117,28 @@ static char	network_client_data(t_client *client, fd_set *read_fds)
 static void	network_send_client_queue(t_client *client, fd_set *write_fds)
 {
 	t_lstiter	iter;
-	size_t		size;
+	// size_t		size;
 	char		*str;
+	char		*tmp;
 
 	if (client->sending_queue->size == 0)
 		return ;
 
-	size = 0;
+	str = NULL;
 	init_iter(&iter, client->sending_queue, increasing);
 	while (lst_iterator_next(&iter))
-		size += strlen((char*)iter.data);
-
-	str = calloc(size, sizeof(char));
-	init_iter(&iter, client->sending_queue, increasing);
-	while (lst_iterator_next(&iter))
-		strcat(str, (char*)iter.data);
-	send(client->fd, str, size, 0);
+	{
+		if (str == NULL)
+			str = strdup((char*)iter.data);
+		else
+		{
+			tmp = str;
+			asprintf(&str, "%s%s", str, (char*)iter.data);
+			if (tmp)
+				free(tmp);
+		}
+	}
+	send(client->fd, str, strlen(str), 0);
 	free(str);
 
 	lst_destroy(&client->sending_queue, free);
@@ -241,9 +247,7 @@ void		network_send(t_client *client, const char *str, int options)
 	}
 	else
 	{
-		output = calloc(strlen(str) + 2, sizeof(char));
-		strcat(output, str);
-		strcat(output, "\n");
+		asprintf(&output, "%s\n", str);
 		logger_client_send(client, output);
 		lst_push_back(client->sending_queue, output);
 	}

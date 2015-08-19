@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/18 23:57:43 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/19 01:07:13 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,6 +257,7 @@ void						gfx_client_turn(t_client *client);
 void						gfx_send_map(t_client *client);
 void						gfx_send_clients(t_client *client);
 void						gfx_client_promote(const t_client *client);
+void						gfx_victory(const t_team *team);
 
 t_lst						*get_vision(t_client *client);
 
