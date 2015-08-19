@@ -240,6 +240,7 @@ void				Client::_dropCompo(void)
 {
 	std::map<std::string, size_t> & compo = _totems[_level];
 
+	printDebug("dropcompos");
 	for (auto & kv : compo)
 	{
 		int toDrop = static_cast<int>(kv.second - map[_playerX][_playerY][kv.first]);
@@ -248,6 +249,7 @@ void				Client::_dropCompo(void)
 
 		for (int i = 0; i < toDrop; i++)
 		{
+			printDebug("drop one of " + kv.first);
 			ActionDrop	*a = static_cast<ActionDrop *>(Action::create(Action::DROP));
 			a->setObject(kv.first);
 			actions.push_back(a);
@@ -272,8 +274,10 @@ bool				Client::_composOk(void)
 {
 	std::map<std::string, size_t> &	levelCompo = _totems[_level];
 
+	printDebug("Composok");
 	for (auto & kv : levelCompo)
 	{
+		printDebug("check for " + kv.first);
 		if (_inventory[kv.first] < kv.second)
 			return false;
 	}
