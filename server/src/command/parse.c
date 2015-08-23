@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/18 00:01:27 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/23 12:31:49 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_command	g_commands[] = {
 	{ "continuer", 0, NULL, command_resume },
 	{ "inventaire", 1, NULL, command_inventory },
 	{ "connect_nbr", 0, NULL, command_connect_count },
-	{ "voir", 7, NULL, command_see },
+	{ "voir", 1, NULL, command_see },
 	{ "broadcast", 1, NULL, command_broadcast },
 	{ "incantation", 3, command_pre_promote, command_promote },
 	{ "fork", 42, NULL, command_fork },

@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/04 00:03:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/07/07 19:39:54 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/23 12:43:43 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ t_lst	*get_vision(t_client *client)
 			x = col;
 			y = row;
 
+			rotate_coords(client, &x, &y);
 			x += client->position->x;
 			y += client->position->y;
-			rotate_coords(client, &x, &y);
 			lst_push_back(list, tile_at(x, y));
 			col++;
 		}

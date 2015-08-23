@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:01:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 02:38:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/23 12:30:20 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,36 +43,6 @@ int			check_for_victory(const t_team *team)
 			return (1);
 	}
 	return (0);
-}
-
-static void	lol(t_client *client)
-{
-	char		*str;
-	t_lst		*vision;
-	t_lstiter	iter;
-	char		*content;
-	t_uint		i;
-
-	str = strdup("{");
-	vision = get_vision(client);
-
-	i = 0;
-	init_iter(&iter, vision, increasing);
-	while (lst_iterator_next(&iter))
-	{
-		printf("%i %i\n", ((t_tile*)iter.data)->x, ((t_tile*)iter.data)->y);
-		content = tile_content(iter.data, client);
-		str = append_string(str, content);
-		free(content);
-
-		if (i != vision->size - 1)
-			str = append_string(str, ", ");
-		i++;
-	}
-	str = append_string(str, "}");
-	printf("%s\n", str);
-	free(str);
-	lst_destroy(&vision, NULL);
 }
 
 short		client_can_promote(t_client *client)

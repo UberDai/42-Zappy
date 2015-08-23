@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 16:46:07 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 01:56:54 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/23 12:45:24 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,8 @@ void	zappy_run(void)
 		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 		if (!g_zappy.paused)
 		{
-			if (g_zappy.time.cycle_count % REGEN_RATE == 0)
-				map_regenerate();
+			// if (g_zappy.time.cycle_count % REGEN_RATE == 0)
+			// 	map_regenerate();
 			watch_eggs();
 			clients_play();
 			g_zappy.time.cycle_count++;

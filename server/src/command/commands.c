@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 00:40:59 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/08/23 12:34:39 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,16 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	str = append_string(str, "}");
 	network_send(client, str, 0);
 	free(str);
+
+	printf("Client position: [%i;%i] %i\n", client->position->x, client->position->y, (int)client->orientation);
+
+	init_iter(&iter, vision, increasing);
+	while (lst_iterator_next(&iter))
+	{
+		print_tile(iter.data);
+	}
+
+
 	lst_destroy(&vision, NULL);
 	(void)argv;
 	return (COMMAND_NONE);
