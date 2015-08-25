@@ -106,8 +106,8 @@ void	zappy_run(void)
 		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 		if (!g_zappy.paused)
 		{
-			// if (g_zappy.time.cycle_count % REGEN_RATE == 0)
-			// 	map_regenerate();
+			if (g_zappy.time.cycle_count % REGEN_RATE == 0)
+			 	map_regenerate();
 			watch_eggs();
 			clients_play();
 			g_zappy.time.cycle_count++;

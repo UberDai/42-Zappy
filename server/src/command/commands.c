@@ -181,16 +181,6 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 	str = append_string(str, "}");
 	network_send(client, str, 0);
 	free(str);
-
-	printf("Client position: [%i;%i] %i\n", client->position->x, client->position->y, (int)client->orientation);
-
-	init_iter(&iter, vision, increasing);
-	while (lst_iterator_next(&iter))
-	{
-		print_tile(iter.data);
-	}
-
-
 	lst_destroy(&vision, NULL);
 	(void)argv;
 	return (COMMAND_NONE);
