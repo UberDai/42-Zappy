@@ -5,4 +5,4 @@
 # @Last Modified time: 2015-08-18 22:33:32
 
 
-./server/bin/serveur -t 100 -x 10 -y 10 -c 3 -p 4242 $*
+./server/bin/serveur -t 300 -x 10 -y 10 -c 6 -p 4242 $*

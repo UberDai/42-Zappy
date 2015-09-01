@@ -86,7 +86,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_playerY(0),
 	_playerOrientation(NORTH),
 	_foodThreshold(3),
-	_toto(0),
+	_resetAction(0),
 	_cycleCount(0),
 	_mustMove(false),
 	_following(false),
@@ -168,8 +168,22 @@ void					Client::_normalBroadcastHandler(BroadcastInfos & infos)
 
 void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 {
-	if (infos.getType() == ON_SAME_CASE && std::stol(infos.getExtraArg()) == getpid())
-		++_matesOnCase;
+	switch (infos.getType())
+	{
+		case ON_SAME_CASE:
+			if (std::stol(infos.getExtraArg()) == getpid())
+				++_matesOnCase;
+			break ;
+
+		case WAIT:
+			printDebug("ptdrmdrlol " + infos.getExtraArg() + " " + std::to_string(_level));
+			if (std::stol(infos.getExtraArg()) == _level)
+			{
+				printDebug("HERE");
+				_changeToMode(REUNION);
+			}
+			break;
+	}
 }
 
 void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
@@ -179,9 +193,7 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 		case INCANTATION:
 			printDebug("Recieved an incantation broadcast.");
 			_resetFollowSystem();
-			_toto = 1;
-			// _clearActionList();
-			// _addAction(Action::INCANTATION);
+			_resetAction = 1;
 			break ;
 
 		case STOP_WAITING:
@@ -194,7 +206,14 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 
 void					Client::_reunionBroadcastHandler(BroadcastInfos & infos)
 {
-	(void)infos;
+	switch (infos.getType())
+	{
+		case STOP_WAITING:
+			_resetFollowSystem();
+			break ;
+
+		default: break ;
+	}
 }
 
 void					Client::_foodEmergencyBroadcastHandler(BroadcastInfos & infos)
@@ -217,25 +236,17 @@ void				Client::_executeActionList(void)
 
 	while (i >= 0 && static_cast<size_t>(i) < max)
 	{
-		try {
-			tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
-			if (tmp == -2)
-				break ;
-			i = tmp == -1 ? i + 1 : tmp;
-		}
-		catch (const std::out_of_range & e)
+		if (_resetAction)
 		{
-			printDebug("Crash");
-			return ;
-		}
-		if (_toto)
-		{
-
-			_toto = 0;
+			_resetAction = 0;
 			_clearActionList();
 			_addAction(Action::INCANTATION);
 			return;
 		}
+		tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
+		if (tmp == -2)
+			break ;
+		i = tmp == -1 ? i + 1 : tmp;
 	}
 	_clearActionList();
 
@@ -250,6 +261,7 @@ void				Client::_dropCompo(void)
 {
 	std::map<std::string, size_t> & compo = _totems[_level];
 
+	printDebug("dropcompos");
 	for (auto & kv : compo)
 	{
 		int toDrop = static_cast<int>(kv.second - map[_playerX][_playerY][kv.first]);
@@ -258,6 +270,7 @@ void				Client::_dropCompo(void)
 
 		for (int i = 0; i < toDrop; i++)
 		{
+			printDebug("drop one of " + kv.first);
 			ActionDrop	*a = static_cast<ActionDrop *>(Action::create(Action::DROP));
 			a->setObject(kv.first);
 			actions.push_back(a);
@@ -282,9 +295,11 @@ bool				Client::_composOk(void)
 {
 	std::map<std::string, size_t> &	levelCompo = _totems[_level];
 
+	printDebug("Composok");
 	for (auto & kv : levelCompo)
 	{
-		if (_inventory[kv.first] < kv.second) // Checker aussi si inventaire + case courante = compo
+		printDebug("check for " + kv.first);
+		if (_inventory[kv.first] < kv.second)
 			return false;
 	}
 	return true;
@@ -380,13 +395,9 @@ void				Client::_lookFor(int mode)
 		_path->Pos(i, XY);
 		for (auto &kv : compo)
 		{
-			//check de chaque compos
 			if (map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
 			{
-				// Go a la case
 				_path->pathfinding(_path->getPairCase(0, 0), _path->getPairCase(XY[0], XY[1]));
-
-				// Prend sur la case
 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
 				a->setObject(kv.first);
 
@@ -459,7 +470,6 @@ void				Client::_normalMode(void)
 		{
 			printDebug("First level, compos OK, drop compos, incantation.");
 			_dropCompo();
-			//modifier action if echec add see.
 			return _addAction(Action::INCANTATION);
 		}
 		printDebug("Compos ok, level 2+, passage en mode reunion");
@@ -485,7 +495,7 @@ void				Client::_waitMatesMode(void)
 		_dropCompo();
 		_sendBroadcast(INCANTATION);
 		_addAction(Action::INCANTATION);
-		// _sendBroadcast(STOP_WAITING);
+		_sendBroadcast(STOP_WAITING);
 		return _changeToMode(NORMAL);
 	}
 	printDebug("Nothing special.");
@@ -497,7 +507,6 @@ void				Client::_waitMatesMode(void)
 void				Client::_towardsMateMode(void)
 {
 	printDebug("IA - Towards Mate Mode");
-
 	_takeFoodIfAny();
 
 	if (_totemDirection == -1)
@@ -512,7 +521,6 @@ void				Client::_towardsMateMode(void)
 void				Client::_reunionMode(void)
 {
 	printDebug("IA - Reunion Mode");
-
 	if (_someoneIsWaiting())
 	{
 		printDebug("Someone is waiting, change to mode TOWARDS_MATE");
@@ -521,12 +529,6 @@ void				Client::_reunionMode(void)
 	printDebug("No one is waiting, change to mode WAIT_MATES");
 	_changeToMode(WAIT_MATES);
 }
-
-
-/**
- *	A revoir
- *
-**/
 
 void				Client::_eggMode(void)
 {
@@ -539,9 +541,7 @@ void				Client::_eggMode(void)
 void				Client::_foodEmergencyMode(void)
 {
 	printDebug("IA - Food Emergency Mode");
-
 	_resetFollowSystem();
-
 	if (_inventory.has(Inventory::FOOD, _foodThreshold + 6))
 	{
 		printDebug("Enough food, back to normal mode");
@@ -553,18 +553,17 @@ void				Client::_foodEmergencyMode(void)
 
 void				Client::_checkSlot(void)
 {
-
-	// if (_cycleCount % 1 == 0)
-	// {
-		_addAction(Action::INVENTORY);
-		// while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
-		// {
-		// 	printDebug("FORKSTEM");
-		// 	_forkstem();
-		// }
-	// }
-	// if (_cycleCount % 150 == 0 && _inventory.has(Inventory::FOOD, 10))
-	// 	_changeToMode(EGG);
+	_addAction(Action::INVENTORY);
+	if (_cycleCount % 20 == 0)
+	{
+		while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
+		{
+			printDebug("FORKSTEM");
+			_forkstem();
+		}
+	}
+	//if (_cycleCount % 200 == 0 && _inventory.has(Inventory::FOOD, 15))
+	//	_changeToMode(EGG);
 	_cycleCount++;
 }
 
@@ -573,7 +572,6 @@ void				Client::_ia(void)
 	(this->*_modeFun[_mode])();
 	_executeActionList();
 	_checkSlot();
-	// _addAction(Action::INVENTORY);
 }
 
 bool				Client::loop(void)
@@ -612,11 +610,8 @@ void				Client::printDebug(const std::string &msg, int mode)
 		_ofs << "   ";
 	_ofs << msg << std::endl;
 
-	// _ofs << out.str();
-
-
 	//debug
-
+	// _ofs << out.str();
 	// ::send(_network->_Debug_socket_connect, out.str().c_str(), out.str().size(), 0);
 }
 
@@ -636,9 +631,7 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 		printDebug(infos.getError());
 		return ;
 	}
-	printDebug("kek");
 	_updateWaitingPosition(infos);
-	printDebug("maxikek");
 	(this->*_broadcastHandler[_mode])(infos);
 }
 
@@ -833,334 +826,3 @@ unsigned int		Client::getLevel() const 			{ return _level; }
 Inventory			&Client::getInventory(void) 		{ return _inventory; }
 Map					&Client::getMap(void) 				{ return map; }
 Totems				&Client::getTotems() 				{ return _totems; }
-
-// void				Client::_extractBroadcastInfo(const std::string &b, std::string &msg)
-// {
-// 	size_t			comaPos = b.find_first_of(',');
-
-// 	if (comaPos != 9 || !isdigit(b[8]) || b.size() <= 10)
-// 		return printDebug("Broadcast does not seem to be a broadcast");
-// 	msg = b.substr(10);
-// 	_directionTomove = b[8] - 48;
-// }
-
-// void						Client::_sendBroadcast(enum eBroadcastType type)
-// {
-// 	std::stringstream		msg;
-// 	std::hash<std::string>	hash;
-// 	ActionBroadcast			*a;
-
-// 	msg
-// 		<< hash(_teamName) << " "
-// 		<< getpid() << " "
-// 	;
-
-// 	if (type == SEEK)
-// 		msg	<< _playersToFind;
-// 	else if (type == FOUND)
-// 		msg << " found " << _broadcastTarget;
-// 	else if (type == ALL_GOOD)
-// 		msg << "incant";
-// 	else if (type == FOLLOW)
-// 		msg << " follow " << _broadcastTarget;
-// 	a = static_cast<ActionBroadcast *>(Action::create(Action::BROADCAST));
-// 	a->setMessage(msg.str());
-// 	actions.push_back(a);
-// }
-
-// void				Client::_setBroadcastMsg(std::stringstream &str)
-// {
-// 	std::hash<std::string>	hash;
-
-// 	str
-// 		<< hash(_teamName) << " "
-// 		<< getpid() << " "
-// 		<< _playersToFind
-// 	;
-// }
-
-// size_t				Client::_getPlayersToFind(void)
-// {
-// 	switch (_level)
-// 	{
-// 		case 2: case 3:
-// 			return 2;
-
-// 		case 4: case 5:
-// 			return 4;
-
-// 		case 6: case 7:
-// 			return 6;
-
-// 		default:
-// 			return 4;
-// 	}
-// }
-
-// void				Client::_playMove(void)
-// {
-// 	int			tmp;
-// 	int			i	= 0;
-// 	size_t		max	= actions.size();
-
-// 	while (i >= 0 && static_cast<size_t>(i) < max)
-// 	{
-// 		tmp = actions.at(static_cast<size_t>(i))->execute(*_network);
-// 		if (tmp == -2)
-// 			break ;
-// 		i = tmp == -1 ? i + 1 : tmp;
-// 	}
-
-// 	for (auto &a : actions)
-// 		delete a;
-// 	actions.clear();
-// }
-
-// void				Client::_findPlayerMode(void)
-// {
-// 	std::stringstream	msg;
-
-// 	if (_mustMove)
-// 		return _moveTo();
-// 	_playersToFind = _getPlayersToFind();
-// 	_sendBroadcast(SEEK);
-// }
-
-//int					Client::_search(int level)
-// {
-// 	if (level == 1)
-// 		return 1;
-// 	if (level == 2 || level == 3)
-// 	{
-// 		if (map[_playerX][_playerY].has("joueur", 1))
-// 			return 1;
-// 	}
-// 	if (level == 4 || level == 5)
-// 	{
-// 		if (map[_playerX][_playerY].has("joueur", 3))
-// 			return 1;
-// 	}
-// 	if (level == 6 || level == 7)
-// 	{
-// 		if (map[_playerX][_playerY].has("joueur", 5))
-// 			return 1;
-// 	}
-// 	return 0;
-// }
-
-// void				Client::_composFind(int level)
-// {
-// 	std::map<std::string, size_t>	&compo = _totems[level];
-// 	int XY[2] = {0, 0};
-// 	static int rot = 0;
-
-// 	printDebug("Enter Composfind");
-// 	for (int i = 1; i < static_cast<int>((_level * 4 * 4)); i++)
-// 	{
-// 		_path->Pos(i, XY);
-// 		for (auto &kv : compo)
-// 		{
-// 			if (!map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].isEmpty() && map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].has(kv.first, 1) && !_inventory.has(kv.first, kv.second))
-// 			{
-// 				printDebug("X= " + std::to_string(_path->getCaseX(XY[0])) + " Y= " + std::to_string(_path->getCaseY(XY[1])) );
-// 				printDebug(map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].toString());
-// 				printDebug(kv.first + " found on case");
-// 				_path->pathfinding(_path->getPairCase(0, 0), _path->getPairCase(XY[0], XY[1]));
-// 				ActionTake *a = static_cast<ActionTake *>(Action::create(Action::TAKE));
-// 				a->setObject(kv.first);
-// 				if (map[_path->getCaseX(XY[0])][_path->getCaseY(XY[1])].has("nourriture", 1))
-// 				{
-// 					ActionTake *b = static_cast<ActionTake *>(Action::create(Action::TAKE));
-// 					b->setObject("nourriture");
-// 					actions.push_back(b);
-// 				}
-// 				actions.push_back(Action::create(Action::SEE));
-// 				actions.push_back(a);
-// 				return ;
-// 			}
-// 			printDebug(kv.first + " not found on case");
-// 		}
-// 	}
-// 	printDebug(std::to_string(rot));
-// 	if (rot < 4)
-// 	{
-// 		actions.push_back(Action::create(Action::MOVE_RIGHT));
-// 		actions.push_back(Action::create(Action::SEE));
-// 		rot++;
-// 	}
-// 	else
-// 	{
-// 		for (size_t i = 0; i <= _level; i++)
-// 			actions.push_back(Action::create(Action::MOVE_FORWARD));
-// 		actions.push_back(Action::create(Action::SEE));
-// 		rot = 0;
-// 	}
-// }
-
-// int					Client::_compos(int level)
-// {
-// 	std::map<std::string, size_t>	&compo = _totems[level];
-// 	bool							ok = false;
-
-// 	printDebug(map[_playerX][_playerY].toString());
-// 	if (!map[_playerX][_playerY].isEmpty())
-// 	{
-// 		for (auto &kv : compo)
-// 		{
-// 			printDebug("Check de la case pour " + kv.first);
-// 			if (map[_playerX][_playerY].has(kv.first, kv.second))
-// 			{
-// 				printDebug(std::to_string(kv.second) + " " + kv.first + " trouve sur la case");
-// 				ok = true;
-// 			}
-// 			else
-// 			{
-// 				ok = false;
-// 				break ;
-// 			}
-// 		}
-// 	}
-// 	if (!ok)
-// 	{
-// 		for (auto &kv : compo)
-// 		{
-// 			printDebug("Check inventaire pour " + kv.first);
-// 			if (_inventory.has(kv.first, kv.second))
-// 			{
-// 				ActionDrop	*a = static_cast<ActionDrop *>(Action::create(Action::DROP));
-// 				a->setObject(kv.first);
-// 				actions.push_back(a);
-// 			}
-// 			else
-// 			{
-// 				ok = false;
-// 				break ;
-// 			}
-// 		}
-// 	}
-// 	if (!ok && map[_playerX][_playerY].isEmpty()) // add check if pas bouger // case deja connu
-// 	{
-// 		actions.push_back(Action::create(Action::SEE));
-// 		return 0;
-// 	}
-// 	if (ok)
-// 		return 1;
-// 	return 0;
-// }
-
-// void				Client::_ia(void)
-// {
-// 	bool ok = false;
-
-// 	if ((_mode == FIND_PLAYER || _mode == NORMAL_FIND ) && (ok = true))
-// 		_findPlayerMode();
-// 	else if (_compos(_level) != 0 && _inventory["nourriture"] > 4)
-// 	{
-// 		printDebug("Verification du nombre de joueurs");
-// 		if (_search(_level) != 0) //if receive broadcast all_good
-// 		{
-// 			if (_level == 1)
-// 			{
-// 				ActionIncantation	*incantation 	= static_cast<ActionIncantation *>(Action::create(Action::INCANTATION));
-// 				ActionSee			*voir 			= static_cast<ActionSee *>(Action::create(Action::SEE));
-
-// 				incantation->setFailureIndex(-1);
-// 				actions.push_back(incantation); //maj de la carte -> remove item used
-// 				actions.push_back(voir);
-// 				ok = true;
-// 				printDebug("MODE Normal find ON");
-// 				_mode = NORMAL_FIND;
-// 			}
-// 			else
-// 			{
-// 				printDebug("MODE CHeCK_PLAYER ON");
-// 				///////// BUG ////////////
-// 				///////// BUG ////////////
-// 				_mode = CHECK_PLAYER;
-// 				///////// BUG ////////////
-// 				///////// BUG ////////////
-// 			}
-
-// 		}
-// 		else
-// 		{
-// 			printDebug("MODE FIND_PLAYER ON");
-// 			_mode = NORMAL_FIND;
-// 		}
-// 	}
-// 	if (!ok && (_mode == NORMAL || _mode == NORMAL_FIND))
-// 	{
-// 		_composFind(_level);
-// 		actions.push_back(Action::create(Action::INVENTORY));
-// 	}
-// 	_playMove();
-// }
-
-/* CONTENU RECIEVE BROADCAST */
-// 	if (_mode != FIND_PLAYER && _mode != CHECK_PLAYER && _mode != NORMAL_FIND)
-// 		return printDebug("Client is not seeking for player. Broadcast ignored.");
-// 	else if (_mustMove)
-// 		return printDebug("Client is already moving towards another player. Broadcast ignored.");
-
-// 	std::hash<std::string>	hash;
-// 	std::regex				broadcastFormat("(\\S+) (\\S+) (\\S+)");
-// 	std::regex				broadcastFormat2("(\\S+) (\\S+) (\\S+)");
-// 	std::smatch				sm;
-// 	std::string				msg;
-
-// 	_extractBroadcastInfo(broadcast, msg);
-// 	std::regex_match(msg, sm, broadcastFormat);
-// 	if (_mode == FIND_PLAYER)
-// 	{
-// 		if (sm[3] == "follow" &&  std::stol(sm[4].str()) == getpid())
-// 		{
-// 			printDebug("on me suis");
-// 		}
-// 		// boradcast pid ok pidfollower
-// 		//# + 1
-// 		//endif
-// 		//if (broadcast = =found)
-// 		//FOUND +1
-// 		//endif
-// 		//if (FOUND = #)
-// 		//broadcast incantation
-// 		//incante
-// 		//mode check
-// 		//return
-// 		//endif
-// 	}
-// 	if (_mode == WAIT_PLAYER)
-// 	{
-// 		//si ALl_GOOD
-// 		//incante
-// 		//moe check
-// 		//reset broqdcast target
-// 		//retun
-// 	}
-// if (_mode == FIND_PLAYER || _mode == NORMAL_FIND)
-// {
-// 	if (sm.size() != 4 || std::string(sm[1]) != std::to_string(hash(_teamName)))
-// 		return printDebug("Broadcast recieved is not from our team. Ignoring. size " + std::to_string(sm.size()) + " msg : \"" + msg + "\"");
-// 	if (_mode == NORMAL_FIND)
-// 		_mode = FIND_PLAYER;
-// 	// Si tout est ok, poser au sol et envoyer incantation à tout le monde
-
-// 	if (_broadcastTarget == "")
-// 	{
-// 		printDebug("follow");
-// 		_sendBroadcast(FOLLOW);
-// 		_broadcastTarget = std::string(sm[2]);
-// 	}
-
-// 	if (_directionTomove == 0)
-// 	{
-// 		printDebug("TROUVAY");
-// 		_sendBroadcast(FOUND);
-// 		_mode = WAIT_PLAYER;
-// 		return ;
-// 	}
-// }
-
-// 	_mustMove = true;
-
-/* FIN CONTENU */

@@ -31,6 +31,7 @@ function Player:new(id, team, x, y, orientation)
 	self.x = tonumber(x)
 	self.y = tonumber(y)
 	self.team = team
+	self.level = 1
 	self.sprite = test1()
 	self.sprite.orientation = noraml(orientation)
 end

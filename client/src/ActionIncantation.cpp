@@ -1,3 +1,16 @@
+/*      _           _          _           _             _            _          _      _
+       / /\        /\ \       /\ \        _\ \          /\ \         /\ \       /\ \   /\_\
+      / /  \       \ \ \     /  \ \      /\__ \        /  \ \       /  \ \     /  \ \ / / /         _
+     / / /\ \__    /\ \_\   / /\ \ \    / /_ \_\      / /\ \ \     / /\ \ \   / /\ \ \\ \ \__      /\_\
+    / / /\ \___\  / /\/_/  / / /\ \_\  / / /\/_/     / / /\ \_\   / / /\ \_\ / / /\ \ \\ \___\    / / /
+    \ \ \ \/___/ / / /    / / /_/ / / / / /         / /_/_ \/_/  / /_/_ \/_// / /  \ \_\\__  /   / / /
+     \ \ \      / / /    / / /__\/ / / / /         / /____/\    / /____/\  / / /   / / // / /   / / /
+ _    \ \ \    / / /    / / /_____/ / / / ____    / /\____\/   / /\____\/ / / /   / / // / /   / / /
+/_/\__/ / /___/ / /__  / / /\ \ \  / /_/_/ ___/\ / / /______  / / /      / / /___/ / // / /___/ / /
+\ \/___/ //\__\/_/___\/ / /  \ \ \/_______/\__\// / /_______\/ / /      / / /____\/ // / /____\/ /
+ \_____\/ \/_________/\/_/    \_\/\_______\/    \/__________/\/_/       \/_________/ \/_________/
+*/
+
 #include "ActionIncantation.hpp"
 
 ActionIncantation::ActionIncantation(Client *client) :
@@ -59,7 +72,9 @@ int					ActionIncantation::execute(Network &network)
 		}
 
 		/*   TEST    */
-		_client->setLevel(std::stoi(data));
+		_client->printDebug(std::to_string(_client->getLevel()));
+		_client->setLevel(_client->getLevel() + 1);
+		_client->printDebug(std::to_string(_client->getLevel()));
 		return _successIndex;
 	}
 	return _failIndex;

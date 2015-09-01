@@ -52,8 +52,15 @@ function Zappy:makeMStack(tab)
 					v.sprite.orientation = noraml(orientation)
 				end
 			end
-		else
-			if v ~= "" then print("else", v) end
+		elseif v:find("!%s*%d") then
+			local id = v:match("!%s*(%d)")
+			print(inspect(self))
+			for i,v in ipairs(self.players) do
+				if v.id == tonumber(id) then
+					v.level = v.level + 1
+				end
+			end
+			-- if v ~= "" then print("else", v) end
 		end
 	end
 end
@@ -199,6 +206,8 @@ function Zappy:draw()
 	for i,v in ipairs(self.players) do
 		love.graphics.setColor(self.teams[v.team].color)
 		love.graphics.rectangle("fill", y + 5, height - 50, grain - 10, 50)
+		love.graphics.setColor({0, 0, 0, 255})
+		love.graphics.print(v.level, y + 10, height - 30)
 		love.graphics.setColor({255, 255, 255, 255})
 		y = y + grain
 	end

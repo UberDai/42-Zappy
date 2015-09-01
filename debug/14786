@@ -1,0 +1,506 @@
+[03:51:11] 14786 << BIENVENUE
+[03:51:11] 14786 >> team3
+[03:51:11] 14786 << 3
+[03:51:11] 14786 << 10 10
+[03:51:11] 14786 >> connect_nbr
+[03:51:11] 14786 << 0
+[03:51:11] 14786    IA - Normal Mode
+[03:51:11] 14786    Composok
+[03:51:11] 14786    check for linemate
+[03:51:11] 14786    Rotation exploration
+[03:51:11] 14786    add action droite
+[03:51:11] 14786    add action voir
+[03:51:11] 14786 >> droite
+[03:51:11] 14786 << ok
+[03:51:11] 14786 >> voir
+[03:51:11] 14786 << {nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame, nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame}
+[03:51:11] 14786    add action inventaire
+[03:51:11] 14786 >> connect_nbr
+[03:51:11] 14786 << 0
+[03:51:11] 14786    Fin de boucle
+[03:51:11] 14786    IA - Normal Mode
+[03:51:11] 14786    Composok
+[03:51:11] 14786    check for linemate
+[03:51:11] 14786    mov first 1 mov second 1
+[03:51:11] 14786    add action avance
+[03:51:11] 14786    add action gauche
+[03:51:11] 14786    add action avance
+[03:51:11] 14786    add action prend 
+[03:51:12] 14786    Heading towards closest linemate
+[03:51:12] 14786    add action voir
+[03:51:12] 14786 >> inventaire
+[03:51:12] 14786 << {nourriture 9, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:12] 14786 >> avance
+[03:51:12] 14786 << ok
+[03:51:12] 14786 >> gauche
+[03:51:12] 14786 << ok
+[03:51:12] 14786 >> avance
+[03:51:12] 14786 << ok
+[03:51:12] 14786 >> voir
+[03:51:12] 14786 << {nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras thystame thystame thystame thystame joueur joueur, nourriture linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur mendiane mendiane mendiane mendiane mendiane phiras thystame thystame thystame thystame thystame thystame joueur joueur}
+[03:51:12] 14786 >> prend linemate
+[03:51:12] 14786 << ok
+[03:51:12] 14786    add action inventaire
+[03:51:12] 14786    Fin de boucle
+[03:51:12] 14786    IA - Normal Mode
+[03:51:12] 14786    Composok
+[03:51:12] 14786    check for linemate
+[03:51:12] 14786    First level, compos OK, drop compos, incantation.
+[03:51:12] 14786    dropcompos
+[03:51:12] 14786    add action incantation
+[03:51:12] 14786 >> inventaire
+[03:51:12] 14786 << {nourriture 8, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:12] 14786 >> incantation
+[03:51:12] 14786 << elevation en cours
+[03:51:12] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:12] 14786    Broadcast is not from our team.
+[03:51:12] 14786    Broadcast recieved ! Recieving again...
+[03:51:12] 14786 << niveau actuel : 2
+[03:51:12] 14786    1
+[03:51:12] 14786    2
+[03:51:12] 14786    add action inventaire
+[03:51:12] 14786    Fin de boucle
+[03:51:12] 14786    IA - Normal Mode
+[03:51:12] 14786    Composok
+[03:51:13] 14786    check for deraumere
+[03:51:13] 14786    mov first -1 mov second 1
+[03:51:13] 14786    add action gauche
+[03:51:13] 14786    add action avance
+[03:51:13] 14786    add action droite
+[03:51:13] 14786    add action avance
+[03:51:13] 14786    add action prend 
+[03:51:13] 14786    Heading towards closest deraumere
+[03:51:13] 14786    add action voir
+[03:51:13] 14786 >> inventaire
+[03:51:13] 14786 << message 5,1191462683447393597 14762 0 2
+[03:51:13] 14786    Waiting broadcast from same level caught, heading towards him (Mode TOWARDS_MATE).
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,11927028230388240177 14763 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,10512759638487373799 14760 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,1191462683447393597 14762 0 2
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,11927028230388240177 14763 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,10512759638487373799 14760 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << {nourriture 7, linemate 1, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:13] 14786 >> gauche
+[03:51:13] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,1191462683447393597 14762 0 2
+[03:51:13] 14786    Broadcast recieved ! Recieving again...
+[03:51:13] 14786 << message 5,11927028230388240177 14763 0 2
+[03:51:13] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 5,10512759638487373799 14760 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << ok
+[03:51:14] 14786 >> avance
+[03:51:14] 14786 << message 7,1191462683447393597 14762 0 2
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 6,16943211598810544115 14761 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 7,11927028230388240177 14763 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 7,10512759638487373799 14760 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << ok
+[03:51:14] 14786 >> droite
+[03:51:14] 14786 << message 7,11927028230388240177 14763 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 7,1191462683447393597 14762 0 2
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 6,10512759638487373799 14760 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << ok
+[03:51:14] 14786 >> avance
+[03:51:14] 14786 << message 5,1191462683447393597 14762 0 2
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << message 5,11927028230388240177 14763 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:14] 14786    Broadcast recieved ! Recieving again...
+[03:51:14] 14786 << ok
+[03:51:14] 14786 >> voir
+[03:51:14] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:14] 14786    Broadcast is not from our team.
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:15] 14786    Broadcast is not from our team.
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << {nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame joueur}
+[03:51:15] 14786 >> prend deraumere
+[03:51:15] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:15] 14786    Broadcast is not from our team.
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:15] 14786    Broadcast is not from our team.
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:15] 14786    Broadcast is not from our team.
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << ok
+[03:51:15] 14786    add action inventaire
+[03:51:15] 14786    Fin de boucle
+[03:51:15] 14786    IA - Towards Mate Mode
+[03:51:15] 14786    add action prend 
+[03:51:15] 14786    add action prend 
+[03:51:15] 14786    add action prend 
+[03:51:15] 14786    add action prend 
+[03:51:15] 14786    Totem direction 1
+[03:51:15] 14786    Moving toward waiting player
+[03:51:15] 14786    add action avance
+[03:51:15] 14786 >> inventaire
+[03:51:15] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:15] 14786    Broadcast is not from our team.
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:15] 14786    Broadcast recieved ! Recieving again...
+[03:51:15] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << {nourriture 3, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:16] 14786 >> prend nourriture
+[03:51:16] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << ok
+[03:51:16] 14786 >> prend nourriture
+[03:51:16] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:16] 14786    Broadcast is not from our team.
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << ok
+[03:51:16] 14786 >> prend nourriture
+[03:51:16] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:16] 14786    Broadcast recieved ! Recieving again...
+[03:51:16] 14786 << ok
+[03:51:16] 14786 >> prend nourriture
+[03:51:16] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << ok
+[03:51:17] 14786 >> avance
+[03:51:17] 14786 << message 4,16943211598810544115 14761 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << ok
+[03:51:17] 14786    add action inventaire
+[03:51:17] 14786    Fin de boucle
+[03:51:17] 14786    IA - Towards Mate Mode
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    add action prend 
+[03:51:17] 14786    Totem direction 1
+[03:51:17] 14786    Moving toward waiting player
+[03:51:17] 14786    add action avance
+[03:51:17] 14786 >> inventaire
+[03:51:17] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << {nourriture 6, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:17] 14786 >> prend nourriture
+[03:51:17] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << ok
+[03:51:17] 14786 >> prend nourriture
+[03:51:17] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:17] 14786    Broadcast is not from our team.
+[03:51:17] 14786    Broadcast recieved ! Recieving again...
+[03:51:17] 14786 << ok
+[03:51:17] 14786 >> prend nourriture
+[03:51:18] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:18] 14786    Broadcast is not from our team.
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << ok
+[03:51:18] 14786 >> prend nourriture
+[03:51:18] 14786 << ok
+[03:51:18] 14786 >> prend nourriture
+[03:51:18] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:18] 14786    Broadcast is not from our team.
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:18] 14786    Broadcast is not from our team.
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << ok
+[03:51:18] 14786 >> prend nourriture
+[03:51:18] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:18] 14786    Broadcast is not from our team.
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << ok
+[03:51:18] 14786 >> prend nourriture
+[03:51:18] 14786 << ok
+[03:51:18] 14786 >> avance
+[03:51:18] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:18] 14786    Broadcast is not from our team.
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:18] 14786    Broadcast recieved ! Recieving again...
+[03:51:18] 14786 << ok
+[03:51:18] 14786    add action inventaire
+[03:51:18] 14786    Fin de boucle
+[03:51:18] 14786    IA - Towards Mate Mode
+[03:51:18] 14786    add action prend 
+[03:51:18] 14786    add action prend 
+[03:51:18] 14786    add action prend 
+[03:51:18] 14786    add action prend 
+[03:51:18] 14786    add action prend 
+[03:51:18] 14786    add action prend 
+[03:51:18] 14786    Totem direction 1
+[03:51:18] 14786    Moving toward waiting player
+[03:51:18] 14786    add action avance
+[03:51:18] 14786 >> inventaire
+[03:51:19] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << {nourriture 13, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:19] 14786 >> prend nourriture
+[03:51:19] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << ok
+[03:51:19] 14786 >> prend nourriture
+[03:51:19] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << ok
+[03:51:19] 14786 >> prend nourriture
+[03:51:19] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << ok
+[03:51:19] 14786 >> prend nourriture
+[03:51:19] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:19] 14786    Broadcast recieved ! Recieving again...
+[03:51:19] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:19] 14786    Broadcast is not from our team.
+[03:51:20] 14786    Broadcast recieved ! Recieving again...
+[03:51:20] 14786 << ok
+[03:51:20] 14786 >> prend nourriture
+[03:51:20] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:20] 14786    Broadcast is not from our team.
+[03:51:20] 14786    Broadcast recieved ! Recieving again...
+[03:51:20] 14786 << ko
+[03:51:20] 14786    add action voir
+[03:51:20] 14786 >> voir
+[03:51:20] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:20] 14786    Broadcast is not from our team.
+[03:51:20] 14786    Broadcast recieved ! Recieving again...
+[03:51:20] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:20] 14786    Broadcast is not from our team.
+[03:51:20] 14786    Broadcast recieved ! Recieving again...
+[03:51:20] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:20] 14786    Broadcast recieved ! Recieving again...
+[03:51:20] 14786 << {linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur joueur, nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture nourriture linemate linemate linemate linemate linemate linemate linemate linemate linemate deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere deraumere sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur sibur mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane mendiane phiras phiras phiras phiras phiras phiras phiras phiras phiras phiras thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame thystame joueur}
+[03:51:20] 14786    add action inventaire
+[03:51:20] 14786    Fin de boucle
+[03:51:20] 14786    IA - Towards Mate Mode
+[03:51:20] 14786    Totem direction 1
+[03:51:20] 14786    Moving toward waiting player
+[03:51:20] 14786    add action avance
+[03:51:21] 14786 >> inventaire
+[03:51:21] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 7,16943211598810544115 14765 2 14761
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << {nourriture 17, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:21] 14786 >> avance
+[03:51:21] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:21] 14786    Broadcast is not from our team.
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:21] 14786 << message 1,1191462683447393597 14762 0 2
+[03:51:21] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 1,11927028230388240177 14763 0 2
+[03:51:22] 14786    Broadcast is not from our team.
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 5,16943211598810544115 14761 0 2
+[03:51:22] 14786    Broadcast is not from our team.
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:22] 14786    Broadcast is not from our team.
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << ok
+[03:51:22] 14786    add action inventaire
+[03:51:22] 14786    Fin de boucle
+[03:51:22] 14786    IA - Towards Mate Mode
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    add action prend 
+[03:51:22] 14786    Totem direction 1
+[03:51:22] 14786    Moving toward waiting player
+[03:51:22] 14786    add action avance
+[03:51:22] 14786 >> inventaire
+[03:51:22] 14786 << message 2,1191462683447393597 14762 0 2
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 2,11927028230388240177 14763 0 2
+[03:51:22] 14786    Broadcast is not from our team.
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 1,16943211598810544115 14761 0 2
+[03:51:22] 14786    Broadcast is not from our team.
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:22] 14786    Broadcast is not from our team.
+[03:51:22] 14786    Broadcast recieved ! Recieving again...
+[03:51:22] 14786 << message 2,1191462683447393597 14762 0 2
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 2,11927028230388240177 14763 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 1,16943211598810544115 14761 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 2,1191462683447393597 14762 0 2
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 2,11927028230388240177 14763 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << {nourriture 17, linemate 1, deraumere 1, sibur 0, mendiane 0, phiras 0, thystame 0}
+[03:51:23] 14786 >> prend nourriture
+[03:51:23] 14786 << message 1,16943211598810544115 14761 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 2,1191462683447393597 14762 0 2
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 2,11927028230388240177 14763 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 1,16943211598810544115 14761 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 5,16943211598810544115 14781 2 14761
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 1,16943211598810544115 14761 3 .
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 1,16943211598810544115 14777 2 14761
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 1,16943211598810544115 14761 1 .
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:23] 14786    Broadcast recieved ! Recieving again...
+[03:51:23] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:23] 14786    Broadcast is not from our team.
+[03:51:24] 14786    Broadcast recieved ! Recieving again...
+[03:51:24] 14786 << message 2,1191462683447393597 14762 0 2
+[03:51:24] 14786    Broadcast recieved ! Recieving again...
+[03:51:24] 14786 << ok
+[03:51:24] 14786 >> prend nourriture
+[03:51:24] 14786 << message 2,11927028230388240177 14763 0 2
+[03:51:24] 14786    Broadcast is not from our team.
+[03:51:24] 14786    Broadcast recieved ! Recieving again...
+[03:51:24] 14786 << message 3,10512759638487373799 14760 0 2
+[03:51:24] 14786    Broadcast is not from our team.

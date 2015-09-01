@@ -57,9 +57,6 @@ short		client_can_promote(t_client *client)
 
 	tile = client->position;
 
-	if (tile->clients.size < g_promotion_needs[client->level][0])
-		return (0);
-
 	clients_count = 0;
 	init_iter(&iter, &tile->clients, increasing);
 	while (lst_iterator_next(&iter))
