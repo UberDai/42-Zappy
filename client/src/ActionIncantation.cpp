@@ -72,9 +72,9 @@ int					ActionIncantation::execute(Network &network)
 		}
 
 		/*   TEST    */
-		_client->printDebug(std::to_string(_client->getLevel()));
+		// _client->printDebug(std::to_string(_client->getLevel()));
 		_client->setLevel(_client->getLevel() + 1);
-		_client->printDebug(std::to_string(_client->getLevel()));
+		// _client->printDebug(std::to_string(_client->getLevel()));
 		return _successIndex;
 	}
 	return _failIndex;

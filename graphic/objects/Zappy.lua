@@ -52,15 +52,15 @@ function Zappy:makeMStack(tab)
 					v.sprite.orientation = noraml(orientation)
 				end
 			end
-		elseif v:find("!%s*%d") then
-			local id = v:match("!%s*(%d)")
-			print(inspect(self))
+		elseif v:find("!%s*%d*") then
+			local id = v:match("!%s*(%d*)")
 			for i,v in ipairs(self.players) do
 				if v.id == tonumber(id) then
 					v.level = v.level + 1
 				end
 			end
-			-- if v ~= "" then print("else", v) end
+		-- else
+		-- 	print("else", v)
 		end
 	end
 end

@@ -562,8 +562,8 @@ void				Client::_checkSlot(void)
 			_forkstem();
 		}
 	}
-	//if (_cycleCount % 200 == 0 && _inventory.has(Inventory::FOOD, 15))
-	//	_changeToMode(EGG);
+	if (_cycleCount % 200 == 0 && _inventory.has(Inventory::FOOD, 15))
+		_changeToMode(EGG);
 	_cycleCount++;
 }
 
@@ -573,6 +573,8 @@ void				Client::_ia(void)
 	_executeActionList();
 	_checkSlot();
 }
+
+#include <unistd.h>
 
 bool				Client::loop(void)
 {
@@ -589,6 +591,7 @@ bool				Client::loop(void)
 		_ia();
 		printDebug("Fin de boucle");
 	}
+	usleep(1000);
 	return true;
 }
 
