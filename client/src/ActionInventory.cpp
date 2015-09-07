@@ -66,12 +66,10 @@ int				ActionInventory::execute(Network & network)
 	{
 		std::smatch match = *next;
 		std::smatch	sm;
-
 		tmp = match.str();
 		if (tmp[0] == ' ')
 			tmp = match.str().substr(1);
 		tmp.resize(tmp.size() - 1);
-
 		std::regex_match(tmp, sm, std::regex("(\\w+)\\s+(\\d+)"));
 		if (sm[2].str() == "")
 			break;

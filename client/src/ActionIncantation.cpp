@@ -52,17 +52,12 @@ int					ActionIncantation::execute(Network &network)
 	std::string			data;
 
 	data = network.send(INCANTATION);
-
 	if (data == Network::MSG_ELEVATION)
 	{
 		data = network.recieve();
-
 		if (data.find(Network::MSG_CURRENT_LVL) != 0)
 			return _failIndex;
-
 		data = data.substr(Network::MSG_CURRENT_LVL.size());
-
-		/*   TEST    */
 		std::map<std::string, size_t>	&compo = _client->getTotems()[_client->getLevel()];
 		for (auto &kv : compo)
 		{
@@ -70,11 +65,7 @@ int					ActionIncantation::execute(Network &network)
 			if (i != std::string::npos)
 				_client->fov[0].erase(i, kv.first.length());
 		}
-
-		/*   TEST    */
-		// _client->printDebug(std::to_string(_client->getLevel()));
 		_client->setLevel(_client->getLevel() + 1);
-		// _client->printDebug(std::to_string(_client->getLevel()));
 		return _successIndex;
 	}
 	return _failIndex;

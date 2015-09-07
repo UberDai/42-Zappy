@@ -149,7 +149,6 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 			{
 				if (count == i)
 				{
-				//Action::client->printDebug("i = " +std::to_string(i) + " x = " +std::to_string(x) + " y = " + std::to_string(y) + " o = " + std::to_string(y));
 					if (o == NORTH)
 					{
 						ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.first;
@@ -168,9 +167,6 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 						ret.first = ret.first - _totox;
 					if (ret.second >= (int)_totoy)
 						ret.second = ret.second - _totoy;
-					// std::stringstream toto;
-					// toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
-					// Action::client->printDebug(toto.str());
 					return ret;
 				}
 				count++;
@@ -184,7 +180,6 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 			{
 				if (count == i)
 				{
-				//Action::client->printDebug("i = " +std::to_string(i) + " x = " +std::to_string(x) + " y = " + std::to_string(y) + " o = " + std::to_string(y));
 					if (o == SOUTH)
 					{
 						ret.first = x + (mapping.first != 0 ? XY.first * mapping.first : XY.first) * mapping.first;
@@ -204,9 +199,6 @@ std::pair<int, int>				Map::_getRealCoord(size_t x, size_t y, enum eOrientation 
 						ret.first = ret.first - _totox;
 					if (ret.second >= (int)_totoy)
 						ret.second = ret.second - _totoy;
-					// std::stringstream toto;
-					// toto << "[" << ret.first << " - " << ret.second << " ] - " << i;
-					// Action::client->printDebug(toto.str());
 					return ret;
 				}
 				count++;

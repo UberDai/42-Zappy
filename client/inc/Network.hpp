@@ -46,10 +46,7 @@ class	Network
 		unsigned int		getPort();
 		int					getSocketPid(void) const;
 		void				close(void);
-		// //debug
-		// int					_Debug_socket_connect;
-		// struct sockaddr_in	_Debug_sockaddr_connect;
-		// size_t				_Debug_sockaddr_len;
+
 	private:
 
 		Client				*_client;

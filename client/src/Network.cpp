@@ -133,116 +133,6 @@ static int				get_next_line(int const fd, char **line)
 	return (get_next_line(fd, line));
 }
 
-// char	*ft_strjoin(char const *s1, char const *s2)
-// {
-// 	size_t	size;
-// 	char	*new_str;
-// 	size_t	i;
-// 	size_t	i2;
-
-// 	i = 0;
-// 	i2 = 0;
-// 	size = strlen(s1) + strlen(s2);
-// 	new_str = (char *)malloc(sizeof(char) * (size + 1));
-// 	if (new_str == NULL)
-// 		return (NULL);
-// 	while (s1[i])
-// 	{
-// 		new_str[i] = s1[i];
-// 		i++;
-// 	}
-// 	while (s2[i2])
-// 	{
-// 		new_str[i] = s2[i2];
-// 		i++;
-// 		i2++;
-// 	}
-// 	new_str[i] = '\0';
-// 	return (new_str);
-// }
-
-// char	*ft_strnew(size_t size)
-// {
-// 	size_t	i;
-// 	char	*newstr;
-
-// 	i = 0;
-// 	newstr = (char *)malloc(sizeof(char) * size);
-// 	if (newstr == NULL)
-// 		return (NULL);
-// 	while (i <= size)
-// 	{
-// 		newstr[i] = '\0';
-// 		i++;
-// 	}
-// 	return (newstr);
-// }
-
-// char	*ft_strsub(char const *s, unsigned int start, size_t len)
-// {
-// 	char	*new_str;
-// 	size_t	i;
-
-// 	i = start;
-// 	if (s == NULL)
-// 		return (NULL);
-// 	new_str = (char *)malloc(sizeof(char) * (len + 1));
-// 	if (new_str == NULL)
-// 		return (NULL);
-// 	while (i < (start + len))
-// 	{
-// 		new_str[i - start] = s[i];
-// 		i++;
-// 	}
-// 	new_str[i - start] = '\0';
-// 	return (new_str);
-// }
-
-// static	int	new_line(char **lascar, char **line)
-// {
-// 	char			*tmp;
-// 	size_t			i;
-
-// 	i = 0;
-// 	while ((*lascar)[i] != '\n')
-// 		i++;
-// 	*line = ft_strsub(*lascar, 0, i);
-// 	tmp = *lascar;
-// 	*lascar = ft_strsub(*lascar, i + 1, strlen(*lascar) - i);
-// 	free(tmp);
-// 	return (1);
-// }
-
-// int			get_next_line(int const fd, char **line)
-// {
-// 	static	char	*lascar;
-// 	char			*tmp;
-// 	int				read_res = 0;
-// 	char			buff[Network::BUFF_SIZE];
-
-// 	bzero(buff, Network::BUFF_SIZE);
-// 	lascar = (lascar) ? lascar : ft_strnew(1);
-// 	if (line && strchr(lascar, '\n') && (new_line(&lascar, line)))
-// 		return (1);
-// 	if (line && (read_res = recv(fd, buff, Network::BUFF_SIZE - 1, 0)) > 0)
-// 	{
-// 		tmp = lascar;
-// 		lascar = ft_strjoin(lascar, buff);
-// 		free(tmp);
-// 		return (get_next_line(fd, line));
-// 	}
-// 	if (!(read_res == 0) || !line)
-// 		return (-1);
-// 	if (*lascar && (*line = lascar))
-// 	{
-// 		lascar = NULL;
-// 		return (1);
-// 	}
-// 	*line = NULL;
-// 	return (0);
-// }
-
-
 Network::Network(Client *client, unsigned int port, std::string hostName) :
 	_client(client),
 	_hostName(hostName),
@@ -292,19 +182,6 @@ void	Network::_initConnection(void)
 	_sockaddr_connect.sin_addr.s_addr = inet_addr(_hostName.c_str());
 	bzero(&(_sockaddr_connect.sin_zero), 8);
 	_sockaddr_len = sizeof(_sockaddr_connect);
-
-
-//debug
-	// if ((_Debug_socket_connect = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-	// {
-	// 	std::cout << E_SOCKET_CREATION << std::endl;
-	// 	return ;
-	// }
-	// _Debug_sockaddr_connect.sin_family = AF_INET;
- 	// _Debug_sockaddr_connect.sin_port = htons(4244);
-	// _Debug_sockaddr_connect.sin_addr.s_addr = inet_addr("10.11.12.9     ");
-	// bzero(&(_Debug_sockaddr_connect.sin_zero), 8);
-	// _Debug_sockaddr_len = sizeof(_Debug_sockaddr_connect);
 }
 
 void	Network::_connect(void)
@@ -314,9 +191,6 @@ void	Network::_connect(void)
 		std::cout << E_SOCKET_CONNECTION << std::endl;
 	else
 		_connected = true;
-// //Debug
-// 	if (connect(_Debug_socket_connect, (struct sockaddr *)&_Debug_sockaddr_connect, _Debug_sockaddr_len) < 0)
-// 		std::cout << E_SOCKET_CONNECTION << std::endl;
 }
 
 void	Network::close(void)
@@ -358,14 +232,6 @@ std::string		Network::recieve(void)
 				free(buf);
 				return recieve();
 			}
-			//Magic code for level up
-			// else if (!strcmp(buf, MSG_ELEVATION.c_str()) && _client->_mode != Client::WAIT_MATES)
-			// {
-			// 	_client->printDebug("Ok, styley ! Recieving again...");
-			// 	// _client->elevationTest();
-			// 	free(buf);
-			// 	return recieve();
-			// }
 			else if (!strncmp(buf, MSG_EXPUSLE.c_str(), 11))
 			{
 				_client->printDebug("Recu expulse");
