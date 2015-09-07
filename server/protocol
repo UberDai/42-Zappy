@@ -26,3 +26,9 @@ remove egg		9 N x y
 level up		! ID
 
 victory			$ N
+
+broadcast		b ID x y
+
+pause			pause
+
+continuer		continuer

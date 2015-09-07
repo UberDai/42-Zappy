@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gfx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 19:06:29 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 01:07:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/07 22:56:33 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	gfx_client_move_to(t_client *client, t_tile *tile)
 
 void	gfx_client_turn(t_client *client)
 {
-	char	str[20] = { 0 };;
+	char	str[20] = { 0 };
 
 	snprintf(str, 20, "o %u %i", client->id, client->orientation);
 	network_send(NULL, str, NET_SEND_GFX);
@@ -123,6 +123,14 @@ void	gfx_send_clients(t_client *client)
 	init_iter(&iter, g_zappy.clients, increasing);
 	while (lst_iterator_next(&iter))
 		gfx_client_connect(iter.data, client);
+}
+
+void	gfx_broadcast(const t_client *client)
+{
+	char	str[20] = { 0 };
+
+	snprintf(str, 20, "b %u %i %i\n", client->id, client->position->x, client->position->y);
+	network_send(NULL, str, NET_SEND_GFX);
 }
 
 void	gfx_send_map(t_client *client)

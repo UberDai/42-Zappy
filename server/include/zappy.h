@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zappy.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 01:07:13 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/07 22:40:57 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,6 +258,7 @@ void						gfx_send_map(t_client *client);
 void						gfx_send_clients(t_client *client);
 void						gfx_client_promote(const t_client *client);
 void						gfx_victory(const t_team *team);
+void						gfx_broadcast(const t_client *client);
 
 t_lst						*get_vision(t_client *client);
 

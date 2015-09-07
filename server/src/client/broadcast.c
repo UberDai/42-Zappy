@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   broadcast.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/07 21:53:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/12 20:13:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/07 22:56:09 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,4 +132,5 @@ void	client_broadcast(t_client *emitter, char *message)
 		if (receiver != emitter)
 			client_hear(receiver, emitter, message);
 	}
+	gfx_broadcast(emitter);
 }
