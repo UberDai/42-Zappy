@@ -562,7 +562,7 @@ void				Client::_checkSlot(void)
 			_forkstem();
 		}
 	}
-	if (_cycleCount % 200 == 0 && _inventory.has(Inventory::FOOD, 15))
+	if (_cycleCount % 800 == 0 && _inventory.has(Inventory::FOOD, 15))
 		_changeToMode(EGG);
 	_cycleCount++;
 }
@@ -597,25 +597,27 @@ bool				Client::loop(void)
 
 void				Client::printDebug(const std::string &msg, int mode)
 {
-	std::locale::global(std::locale(""));
-	std::time_t t = std::time(NULL);
-	// std::stringstream out;
-
-	char	mbstr[100] = { '\0' };
-
-	std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
-	_ofs << "[" << mbstr << "] " << getpid() << " ";
-	if (mode == 1)
-		_ofs << ">> ";
-	else if (mode == 2)
-		_ofs << "<< ";
-	else
-		_ofs << "   ";
-	_ofs << msg << std::endl;
-
-	//debug
-	// _ofs << out.str();
-	// ::send(_network->_Debug_socket_connect, out.str().c_str(), out.str().size(), 0);
+	(void)msg;
+	(void)mode;
+	// std::locale::global(std::locale(""));
+	// std::time_t t = std::time(NULL);
+	// // std::stringstream out;
+	//
+	// char	mbstr[100] = { '\0' };
+	//
+	// std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
+	// _ofs << "[" << mbstr << "] " << getpid() << " ";
+	// if (mode == 1)
+	// 	_ofs << ">> ";
+	// else if (mode == 2)
+	// 	_ofs << "<< ";
+	// else
+	// 	_ofs << "   ";
+	// _ofs << msg << std::endl;
+	//
+	// //debug
+	// // _ofs << out.str();
+	// // ::send(_network->_Debug_socket_connect, out.str().c_str(), out.str().size(), 0);
 }
 
 void				Client::hasDied(void)

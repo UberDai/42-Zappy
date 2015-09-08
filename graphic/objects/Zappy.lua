@@ -36,6 +36,14 @@ function Zappy:makeMStack(tab)
 			self.itemcount = self.itemcount - 1
 		elseif v:find("%*%s*%d+%s*%w+%s*%d+%s*%d+%s*%d+") then
 			table.insert(self.players, Player(v:match("(%d+)%s*(%w+)%s*(%d+)%s*(%d+)%s*(%d+)")))
+		elseif v:find('x%s*%d+') then
+			local id = v:find('x%s*(%d+)')
+			for i,v in ipairs(self.players) do
+				if v.id == id then
+					table.remove(self.players, i)
+					return
+				end
+			end
 		elseif v:find("%>%s*%d+%s*%d+%s*%d+") then
 			-- > ID x y
 			local id, x, y = v:match("(%d+)%s*(%d+)%s*(%d+)")
@@ -150,6 +158,22 @@ function Zappy:update(dt)
 			self.collision = v
 		end
 	end
+
+	self.som = 0
+	for i=1,#self.players do
+		if self.players[i] then
+			self.som = self.som + self.players[i].level
+		end
+	end
+
+	for i=1,#self.players do
+		if self.players[i] and self.players[i + 1] and self.players[i].team > self.players[i + 1].team then
+			local tmp = self.players[i].team
+			self.players[i].team = self.players[i + 1].team
+			self.players[i + 1].team = tmp
+			i = 1
+		end
+	end
 end
 
 test = love.graphics.newShader[[
@@ -199,17 +223,17 @@ function Zappy:draw()
 		j = j + 12
 	end
 
-	local grain = math.floor(width / #self.players)
+	local grain = math.floor(width / self.som)
 	if grain == 0 or #self.players == 0 then return end
-
+	-- print("----------------------")
+	-- print(self.som, grain)
 	local y = 0
 	for i,v in ipairs(self.players) do
 		love.graphics.setColor(self.teams[v.team].color)
-		love.graphics.rectangle("fill", y + 5, height - 50, grain - 10, 50)
-		love.graphics.setColor({0, 0, 0, 255})
-		love.graphics.print(v.level, y + 10, height - 30)
+		love.graphics.rectangle("fill", y, height - 50, grain * v.level, 50)
+		-- print(grain * v.level)
 		love.graphics.setColor({255, 255, 255, 255})
-		y = y + grain
+		y = y + grain * v.level
 	end
 
 end
