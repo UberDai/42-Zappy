@@ -16,6 +16,7 @@
 void	zappy_pause(t_client *client)
 {
 	g_zappy.paused = 1;
+	printf("Paused.");
 	network_send(client, "pause", NET_SEND_ALL);
 }
 
@@ -23,6 +24,7 @@ void	zappy_resume(t_client *client)
 {
 	g_zappy.paused = 0;
 	network_send(client, "resume", NET_SEND_ALL);
+	printf("Resumed.");
 }
 
 static short	client_hunger(t_client *client)
@@ -52,6 +54,7 @@ static short	client_play(t_client *client)
 	t_queue		*queue;
 	int			ret;
 
+	printf("before client play\n");
 	queue = &(client->queue[0]);
 
 	if (client_hunger(client) == 0)
@@ -76,6 +79,7 @@ static short	client_play(t_client *client)
 			client_queue_shift(client);
 	}
 
+	printf("After client play\n");
 	queue->delay--;
 	client->hunger--;
 	return (0);
@@ -101,22 +105,28 @@ void	zappy_run(void)
 	g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 	while (1)
 	{
-		printf("\n---[ Cycle %02u ]-----------------------------------\n", g_zappy.time.cycle_count);
 		network_receive();
 		g_zappy.time.next_cycle = get_time() + g_zappy.time.clock;
 		if (!g_zappy.paused)
 		{
+			printf("\n---[ Cycle %02u ]-----------------------------------\n", g_zappy.time.cycle_count);
 			if (g_zappy.time.cycle_count % REGEN_RATE == 0)
+			{
+				printf("Before gen\n");
 			 	map_regenerate();
+				printf("After gen\n");
+			}
 			watch_eggs();
+			printf("Before play\n");
 			clients_play();
+			printf("After play\n");
 			g_zappy.time.cycle_count++;
+			printf("Clients ?: %lu  P: %lu  G: %lu\n",
+				g_zappy.anonymous_clients->size,
+				g_zappy.clients->size,
+				g_zappy.gfx_clients->size
+			);
+			printf("--------------------------------------------------\n");
 		}
-		printf("Clients ?: %lu  P: %lu  G: %lu\n",
-			g_zappy.anonymous_clients->size,
-			g_zappy.clients->size,
-			g_zappy.gfx_clients->size
-		);
-		printf("--------------------------------------------------\n");
 	}
 }

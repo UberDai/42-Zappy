@@ -78,13 +78,16 @@ static void	network_client_connect(void)
 
 void	network_client_disconnect(t_client *client)
 {
+	printf("client disc 1\n");
 	logger_client_disconnect(client);
 	close(client->fd);
 	FD_CLR(client->fd, &g_zappy.network.read_fds);
 	FD_CLR(client->fd, &g_zappy.network.write_fds);
+	printf("client disc 2\n");
 	if (client->status == STATUS_PLAYER)
 		gfx_client_disconnect(client);
 	client_delete(client);
+	printf("client disc 3\n");
 }
 
 static char	network_client_data(t_client *client, fd_set *read_fds)
@@ -92,6 +95,7 @@ static char	network_client_data(t_client *client, fd_set *read_fds)
 	char		buffer[NETWORK_BUFFER_SIZE] = { 0 };
 	char		*input;
 	int			ret;
+
 
 	ret = read(client->fd, buffer, NETWORK_BUFFER_SIZE - 1);
 	FD_CLR(client->fd, read_fds);
@@ -105,10 +109,12 @@ static char	network_client_data(t_client *client, fd_set *read_fds)
 	}
 	else
 	{
+		printf("client data 1 \n");
 		input = ft_strsub(buffer, 0, strlen(buffer) - 1);
 		logger_client_receive(client, input);
 		ret = command_parse(client, input);
 		free(input);
+		printf("client data 2 \n");
 		return (ret);
 	}
 	return (0);
@@ -177,6 +183,7 @@ static void	network_select(double remaining_time)
 
 	timeout.tv_sec = 0;
 	timeout.tv_usec = remaining_time * 1000000;
+
 
 	if (select(FD_SETSIZE, &read_fds, &write_fds, NULL, &timeout) < 0)
 		die("Error: select()");

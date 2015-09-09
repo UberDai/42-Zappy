@@ -41,8 +41,8 @@
 # define NET_SEND_GFX		4
 
 # define REGEN_RATE			FOOD_DURATION
-# define REGEN_MAX			20
-# define REGEN_PROBABILITY	1
+# define REGEN_MAX			2
+# define REGEN_PROBABILITY	10
 
 # define EGG_MATURATION		600
 

@@ -39,9 +39,9 @@ int			check_for_victory(const t_team *team)
 			continue ;
 		if (client->level == MAX_LEVEL - 1)
 			i++;
-		if (i >= 6)
-			return (1);
 	}
+	if (i >= 6)
+		return (i);
 	return (0);
 }
 
@@ -81,11 +81,15 @@ short		client_can_promote(t_client *client)
 
 short		client_promote(t_client *client)
 {
+	t_uint	i;
+
 	client->level++;
 	gfx_client_promote(client);
+	i = check_for_victory(client->team);
 
-	if (check_for_victory(client->team))
+	if (i > 0)
 	{
+		printf("victory %s with %u\n", client->team->name, i);
 		zappy_pause(NULL);
 		gfx_victory(client->team);
 	}
