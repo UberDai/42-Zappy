@@ -6,11 +6,12 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/10 19:40:43 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 20:10:16 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:47:52 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
+#define DECREMENT(VAR1, VAR2) VAR1--; VAR2--
 
 static short	client_hunger(t_client *client)
 {
@@ -59,8 +60,7 @@ static short	client_play(t_client *client)
 		if (ret == COMMAND_FAIL)
 			client_queue_shift(client);
 	}
-	queue->delay--;
-	client->hunger--;
+	DECREMENT(queue->delay, client->hunger);
 	return (0);
 }
 

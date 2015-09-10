@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 20:00:15 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 21:16:55 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,24 @@ static void	authenticate_gfx_client(t_client *client)
 	gfx_send_clients(client);
 }
 
+static void	authenticate2(t_client *client, char *input, size_t client_count)
+{
+	char	str[100];
+	t_team	*team;
+
+	team = client->team;
+	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.clients);
+	client_set_team(client, input);
+	client_set_spawn_position(client);
+	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count,
+		g_zappy.width, g_zappy.height);
+	network_send(client, str, 0);
+	gfx_client_connect(client, NULL);
+}
+
 static char	authenticate(t_client *client, char *input)
 {
 	t_team	*team;
-	char	str[100];
 	size_t	client_count;
 
 	if (strcmp(input, "g") == 0)
@@ -81,13 +95,7 @@ static char	authenticate(t_client *client, char *input)
 	}
 	client->team = team;
 	client->status = STATUS_PLAYER;
-	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.clients);
-	client_set_team(client, input);
-	client_set_spawn_position(client);
-	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count,
-		g_zappy.width, g_zappy.height);
-	network_send(client, str, 0);
-	gfx_client_connect(client, NULL);
+	authenticate2(client, input, client_count);
 	return (0);
 }
 

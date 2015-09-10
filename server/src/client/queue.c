@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:44:26 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 20:09:17 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:37:03 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,16 +92,4 @@ void		client_queue_execute(t_client *client)
 	queue->delay--;
 	if (queue->delay == 0)
 		queue->command->func(client, 0, queue->av);
-}
-
-void		client_queue_free(t_client *client)
-{
-	t_uint	i;
-
-	i = 0;
-	while (i < CLIENT_QUEUE_MAX)
-	{
-		client_queue_shift(client);
-		i++;
-	}
 }

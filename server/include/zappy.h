@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 19:47:34 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 21:19:01 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef unsigned int		t_uint;
 typedef unsigned short		t_ushort;
 typedef char				t_bool;
 
-typedef enum 				e_orient
+typedef enum				e_orient
 {
 	ORIENT_NORTH = 1,
 	ORIENT_EAST,
@@ -180,6 +180,7 @@ char						*tile_content(t_tile *tile, t_client *client);
 int							get_direction(double *points);
 void						map_regenerate(void);
 char						*append_string(char *src, const char *str);
+void						*tile_create(t_uint x, t_uint y);
 
 void						options_parse(t_uint ac, char **av);
 void						options_valid(void);
@@ -209,11 +210,14 @@ void						client_delete(t_client *client);
 short						client_promote(t_client *client);
 short						client_can_promote(t_client *client);
 short						client_move_to(t_client *client, t_tile *tile);
-short						client_queue_push(t_client *client, t_command *command, char **av);
-short						client_queue_push_front(t_client *client, t_command *command, char **av);
+short						client_queue_push(t_client *client,
+	t_command *command, char **av);
+short						client_queue_push_front(t_client *client,
+	t_command *command, char **av);
 void						client_queue_shift(t_client *client);
 void						client_queue_free(t_client *client);
-void						client_set_team(t_client *client, const char *team_name);
+void						client_set_team(t_client *client,
+	const char *team_name);
 short						client_add_item(t_client *client, int item);
 short						client_remove_item(t_client *client, int item);
 short						client_pick(t_client *client, int item);
@@ -228,28 +232,47 @@ size_t						team_count_clients(t_team *team);
 
 void						network_bind();
 void						network_receive(void);
-void						network_send(t_client *client, const char *str, int options);
-void						network_send_team(const t_team *team, const char *str);
+void						network_send(t_client *client, const char *str,
+	int options);
+void						network_send_team(const t_team *team,
+	const char *str);
 void						network_client_disconnect(t_client *client);
 void						network_disconnect(void);
+void						network_client_connect(void);
 
 char						command_parse(t_client *client, char *input);
-short						command_right(t_client *client, t_uint argc, char **argv);
-short						command_left(t_client *client, t_uint argc, char **argv);
-short						command_move(t_client *client, t_uint argc, char **argv);
-short						command_fork(t_client *client, t_uint argc, char **argv);
-short						command_pick(t_client *client, t_uint argc, char **argv);
-short						command_drop(t_client *client, t_uint argc, char **argv);
-short						command_pause(t_client *client, t_uint argc, char **argv);
-short						command_resume(t_client *client, t_uint argc, char **argv);
-short						command_inventory(t_client *client, t_uint argc, char **argv);
-short						command_connect_count(t_client *client, t_uint argc, char **argv);
-short						command_fork(t_client *client, t_uint argc, char **argv);
-short						command_promote(t_client *client, t_uint argc, char **argv);
-short						command_pre_promote(t_client *client, t_uint argc, char **argv);
-short						command_expulse(t_client *client, t_uint argc, char **argv);
-short						command_see(t_client *client, t_uint argc, char **argv);
-short						command_broadcast(t_client *client, t_uint argc, char **argv);
+short						command_right(t_client *client, t_uint argc,
+	char **argv);
+short						command_left(t_client *client, t_uint argc,
+	char **argv);
+short						command_move(t_client *client, t_uint argc,
+	char **argv);
+short						command_fork(t_client *client, t_uint argc,
+	char **argv);
+short						command_pick(t_client *client, t_uint argc,
+	char **argv);
+short						command_drop(t_client *client, t_uint argc,
+	char **argv);
+short						command_pause(t_client *client, t_uint argc,
+	char **argv);
+short						command_resume(t_client *client, t_uint argc,
+	char **argv);
+short						command_inventory(t_client *client, t_uint argc,
+	char **argv);
+short						command_connect_count(t_client *client, t_uint argc,
+	char **argv);
+short						command_fork(t_client *client, t_uint argc,
+	char **argv);
+short						command_promote(t_client *client, t_uint argc,
+	char **argv);
+short						command_pre_promote(t_client *client, t_uint argc,
+	char **argv);
+short						command_expulse(t_client *client, t_uint argc,
+	char **argv);
+short						command_see(t_client *client, t_uint argc,
+	char **argv);
+short						command_broadcast(t_client *client, t_uint argc,
+	char **argv);
 
 void						signal_bind(void);
 
@@ -257,11 +280,14 @@ void						zappy_run(void);
 void						zappy_pause(t_client *client);
 void						zappy_resume(t_client *client);
 
-void						gfx_client_connect(t_client *client, t_client *gfx_client);
+void						gfx_client_connect(t_client *client,
+	t_client *gfx_client);
 void						gfx_client_disconnect(t_client *client);
 void						gfx_client_death(t_client *client);
-void						gfx_tile_add(t_client *client, t_tile *tile, int item);
-void						gfx_tile_remove(t_client *client, t_tile *tile, int item);
+void						gfx_tile_add(t_client *client, t_tile *tile,
+	int item);
+void						gfx_tile_remove(t_client *client, t_tile *tile,
+	int item);
 void						gfx_egg_add(const t_egg *egg);
 void						gfx_egg_remove(const t_egg *egg);
 void						gfx_client_pick(t_client *client, int item);
@@ -287,8 +313,10 @@ void						logger_log(const char *message);
 void						logger_close(void);
 void						logger_client_disconnect(const t_client *client);
 void						logger_client_connect(const t_client *client);
-void						logger_client_send(const t_client *client, const char *message);
-void						logger_client_receive(const t_client *client, const char *message);
+void						logger_client_send(const t_client *client,
+	const char *message);
+void						logger_client_receive(const t_client *client,
+	const char *message);
 
 void						client_expulse(const t_client *client);
 

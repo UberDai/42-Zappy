@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/09/10 19:56:12 by amaurer          ###   ########.fr        #
+#    Updated: 2015/09/10 21:14:00 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,17 @@ BIN_NAME	=	$(BIN_DIR)$(NAME)
 SRC_FILES	=	main.c \
 				zappy.c \
 				logger.c \
+				logger2.c \
 				util.c \
 				util2.c \
 				options.c \
 				options2.c \
 				network.c \
+				network_send.c \
+				network_receive.c \
 				signal.c \
 				map.c \
+				tile.c \
 				tile_content.c \
 				client/play.c \
 				client/egg.c \
@@ -38,12 +42,17 @@ SRC_FILES	=	main.c \
 				client/move.c \
 				client/team.c \
 				client/queue.c \
+				client/queue2.c \
 				client/item.c \
 				client/vision.c \
 				client/expulse.c \
 				command/parse.c \
 				command/commands.c \
-				command/gfx.c
+				command/commands2.c \
+				command/commands3.c \
+				command/gfx.c \
+				command/gfx2.c \
+				command/gfx3.c
 
 SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ			=	$(subst $(SRC_DIR), $(OBJ_DIR), $(SRC:.c=.o))
