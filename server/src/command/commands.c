@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:02:58 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/23 12:34:39 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:06:58 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ short	command_pick(t_client *client, t_uint argc, char **argv)
 
 	if (client->status != STATUS_PLAYER || argc != 2)
 		return (COMMAND_FAIL);
-
 	i = 0;
 	item = -1;
 	while (i < ITEM_COUNT)
@@ -96,7 +95,6 @@ short	command_pick(t_client *client, t_uint argc, char **argv)
 		}
 		i++;
 	}
-
 	if (item != -1 && client_pick(client, item))
 		return (COMMAND_SUCCESS);
 	return (COMMAND_FAIL);
@@ -141,7 +139,7 @@ short	command_inventory(t_client *client, t_uint argc, char **argv)
 short	command_connect_count(t_client *client, t_uint argc, char **argv)
 {
 	size_t	client_count;
-	char	str[4] = { 0 };
+	char	str[4];
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
@@ -162,10 +160,8 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
-
 	str = strdup("{");
 	vision = get_vision(client);
-
 	i = 0;
 	init_iter(&iter, vision, increasing);
 	while (lst_iterator_next(&iter))
@@ -173,7 +169,6 @@ short	command_see(t_client *client, t_uint argc, char **argv)
 		content = tile_content(iter.data, client);
 		str = append_string(str, content);
 		free(content);
-
 		if (i != vision->size - 1)
 			str = append_string(str, ", ");
 		i++;
@@ -219,33 +214,28 @@ short	command_pre_promote(t_client *client, t_uint argc, char **argv)
 {
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
-
 	if (client_can_promote(client))
 	{
 		network_send(client, "elevation en cours", 0);
 		return (COMMAND_SUCCESS);
 	}
-
 	network_send(client, NET_FAILURE, 0);
-
 	(void)argv;
 	return (COMMAND_FAIL);
 }
 
 short	command_promote(t_client *client, t_uint argc, char **argv)
 {
-	char	str[18] = { 0 };
+	char	str[18];
 
 	if (client->status != STATUS_PLAYER || argc != 1)
 		return (COMMAND_FAIL);
-
 	if (client_promote(client))
 	{
 		snprintf(str, 18, "niveau actuel : %u", client->level + 1);
 		network_send(client, str, 0);
 		return (COMMAND_NONE);
 	}
-
 	(void)argv;
 	return (COMMAND_FAIL);
 }

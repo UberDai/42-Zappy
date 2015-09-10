@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 00:33:28 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/23 12:31:49 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:00:15 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ t_command	g_commands[] = {
 	{ NULL, 0, NULL, NULL }
 };
 
-static void			move_client_to_list(t_client *client, t_lst *from, t_lst *to)
+static void	move_client_to_list(t_client *client, t_lst *from,
+	t_lst *to)
 {
 	size_t	index;
 
@@ -44,15 +45,12 @@ static void	authenticate_gfx_client(t_client *client)
 	char		str[20];
 
 	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.gfx_clients);
-
 	client->status = STATUS_GFX;
 	client->position = NULL;
-
 	snprintf(str, 20, "%u %u", g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
 	snprintf(str, 20, "%u", g_zappy.time.cycle_duration);
 	network_send(client, str, 0);
-
 	gfx_send_map(client);
 	gfx_send_clients(client);
 }
@@ -63,14 +61,11 @@ static char	authenticate(t_client *client, char *input)
 	char	str[100];
 	size_t	client_count;
 
-	printf("auth 1\n");
-
 	if (strcmp(input, "g") == 0)
 	{
 		authenticate_gfx_client(client);
 		return (1);
 	}
-
 	team = team_get(input);
 	if (team == NULL)
 	{
@@ -84,40 +79,28 @@ static char	authenticate(t_client *client, char *input)
 		network_client_disconnect(client);
 		return (0);
 	}
-	printf("auth 2\n");
-
 	client->team = team;
 	client->status = STATUS_PLAYER;
-
 	move_client_to_list(client, g_zappy.anonymous_clients, g_zappy.clients);
-	printf("auth 3\n");
-
 	client_set_team(client, input);
 	client_set_spawn_position(client);
-	printf("auth 3\n");
-	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count, g_zappy.width, g_zappy.height);
+	snprintf(str, 100, "%lu\n%u %u", team->max_clients - client_count,
+		g_zappy.width, g_zappy.height);
 	network_send(client, str, 0);
-
 	gfx_client_connect(client, NULL);
-	printf("auth 4\n");
-
 	return (0);
 }
 
-char	command_parse(t_client *client, char *input)
+char		command_parse(t_client *client, char *input)
 {
 	char	**splits;
 	t_uint	split_count;
 	t_uint	i;
 
-	printf("parse 1\n");
 	if (client->status == STATUS_UNKNOWN)
-		return authenticate(client, input);
-
+		return (authenticate(client, input));
 	splits = ft_strsplit(input, ' ');
 	split_count = ft_splits_count(splits);
-	printf("parse 2\n");
-
 	i = 0;
 	while (split_count > 0 && g_commands[i].name != NULL)
 	{
@@ -131,8 +114,6 @@ char	command_parse(t_client *client, char *input)
 		}
 		i++;
 	}
-
 	network_send(client, "dunno dat command lol", 0);
-	printf("parse 3\n");
 	return (0);
 }

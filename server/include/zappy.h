@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zappy.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/07 22:40:57 by anonymous        ###   ########.fr       */
+/*   Updated: 2015/09/10 19:47:34 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef enum 				e_orient
 	ORIENT_SOUTH,
 	ORIENT_WEST
 }							t_orient;
+
+typedef struct				s_option_fun
+{
+	char					*name;
+	int						(*function)(t_uint, char **, t_uint);
+}							t_option_fun;
 
 typedef struct s_client		t_client;
 
@@ -177,6 +183,13 @@ char						*append_string(char *src, const char *str);
 
 void						options_parse(t_uint ac, char **av);
 void						options_valid(void);
+int							option_help(t_uint ac, char **av, t_uint i);
+int							option_port(t_uint ac, char **av, t_uint i);
+int							option_width(t_uint ac, char **av, t_uint i);
+int							option_height(t_uint ac, char **av, t_uint i);
+int							option_teams(t_uint ac, char **av, t_uint i);
+int							option_time(t_uint ac, char **av, t_uint i);
+int							option_clients(t_uint ac, char **av, t_uint i);
 
 int							die(const char *message);
 void						usage(void);
@@ -207,6 +220,7 @@ short						client_pick(t_client *client, int item);
 short						client_drop(t_client *client, int item);
 char						*client_inventory(t_client *client);
 void						client_broadcast(t_client *emitter, char *message);
+void						clients_play(void);
 
 t_team						*team_get(const char *name);
 t_team						*team_create(const char *team_name);

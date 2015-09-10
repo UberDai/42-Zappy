@@ -6,7 +6,7 @@
 #    By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 01:49:54 by amaurer           #+#    #+#              #
-#    Updated: 2015/08/17 22:07:29 by amaurer          ###   ########.fr        #
+#    Updated: 2015/09/10 19:56:12 by amaurer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,14 @@ SRC_FILES	=	main.c \
 				zappy.c \
 				logger.c \
 				util.c \
+				util2.c \
 				options.c \
+				options2.c \
 				network.c \
 				signal.c \
 				map.c \
+				tile_content.c \
+				client/play.c \
 				client/egg.c \
 				client/client.c \
 				client/actions.c \

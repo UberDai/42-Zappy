@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/16 22:44:34 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/23 12:44:52 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:11:53 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-t_client	*client_create()
+t_client	*client_create(void)
 {
 	static t_uint	id;
 	t_client		*client;
@@ -31,7 +31,7 @@ t_client	*client_create()
 	return (client);
 }
 
-void	client_set_spawn_position(t_client *client)
+void		client_set_spawn_position(t_client *client)
 {
 	t_egg	*egg;
 
@@ -44,16 +44,19 @@ void	client_set_spawn_position(t_client *client)
 	}
 	else
 	{
-		client_move_to(client, tile_at(rand() % g_zappy.width, rand() % g_zappy.height));
+		client_move_to(client, tile_at(rand() % g_zappy.width,
+			rand() % g_zappy.height));
 	}
 }
 
-void	client_delete(t_client *client)
+void		client_delete(t_client *client)
 {
 	if (client->status == STATUS_GFX)
-		lst_remove(g_zappy.gfx_clients, lst_index_of(g_zappy.gfx_clients, client));
+		lst_remove(g_zappy.gfx_clients,
+			lst_index_of(g_zappy.gfx_clients, client));
 	else if (client->status == STATUS_UNKNOWN)
-		lst_remove(g_zappy.anonymous_clients, lst_index_of(g_zappy.anonymous_clients, client));
+		lst_remove(g_zappy.anonymous_clients,
+			lst_index_of(g_zappy.anonymous_clients, client));
 	else
 		lst_remove(g_zappy.clients, lst_index_of(g_zappy.clients, client));
 	client_queue_free(client);
@@ -61,7 +64,7 @@ void	client_delete(t_client *client)
 	free(client);
 }
 
-void	client_set_team(t_client *client, const char *team_name)
+void		client_set_team(t_client *client, const char *team_name)
 {
 	t_team	*team;
 
