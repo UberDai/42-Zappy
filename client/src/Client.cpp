@@ -581,11 +581,11 @@ bool				Client::loop(void)
 	std::string msg;
 
 	_loadServerInfos(_sendTeamInfo());
-	while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
-	{
-		printDebug("FORKSTEM");
-		_forkstem();
-	}
+	// while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
+	// {
+	// 	printDebug("FORKSTEM");
+	// 	_forkstem();
+	// }
 	while (~0)
 	{
 		_ia();
@@ -597,27 +597,21 @@ bool				Client::loop(void)
 
 void				Client::printDebug(const std::string &msg, int mode)
 {
-	(void)msg;
-	(void)mode;
-	// std::locale::global(std::locale(""));
-	// std::time_t t = std::time(NULL);
-	// // std::stringstream out;
-	//
-	// char	mbstr[100] = { '\0' };
-	//
-	// std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
-	// _ofs << "[" << mbstr << "] " << getpid() << " ";
-	// if (mode == 1)
-	// 	_ofs << ">> ";
-	// else if (mode == 2)
-	// 	_ofs << "<< ";
-	// else
-	// 	_ofs << "   ";
-	// _ofs << msg << std::endl;
-	//
-	// //debug
-	// // _ofs << out.str();
-	// // ::send(_network->_Debug_socket_connect, out.str().c_str(), out.str().size(), 0);
+	// (void)msg;
+	// (void)mode;
+	std::locale::global(std::locale(""));
+	std::time_t t = std::time(NULL);
+	char	mbstr[100] = { '\0' };
+	
+	std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
+	_ofs << "[" << mbstr << "] " << getpid() << " ";
+	if (mode == 1)
+		_ofs << ">> ";
+	else if (mode == 2)
+		_ofs << "<< ";
+	else
+		_ofs << "   ";
+	_ofs << msg << std::endl;
 }
 
 void				Client::hasDied(void)

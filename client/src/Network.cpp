@@ -242,8 +242,8 @@ std::string		Network::recieve(void)
 			free(buf);
 			return ss.str().c_str();
 	}
-	if (ret != 0)
-		free(buf);
+	// if (ret != 0)
+	// 	free(buf);
 	return MSG_FAILURE;
 }
 
