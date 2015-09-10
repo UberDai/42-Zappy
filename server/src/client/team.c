@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/22 02:05:55 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/19 00:13:59 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:08:38 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ t_team	*team_create(const char *team_name)
 
 	team = calloc(1, sizeof(t_team*));
 	team->name = ft_strsub(team_name, 0, 20);
-
 	lst_push_back(g_zappy.teams, team);
-
 	return (team);
 }
 

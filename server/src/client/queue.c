@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/21 01:44:26 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 00:52:11 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:37:03 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	free_command(char **command)
 	free(command);
 }
 
-short	client_queue_push(t_client *client, t_command *command, char **av)
+short		client_queue_push(t_client *client, t_command *command, char **av)
 {
 	t_uint	i;
 
@@ -44,7 +44,8 @@ short	client_queue_push(t_client *client, t_command *command, char **av)
 	return (1);
 }
 
-short	client_queue_push_front(t_client *client, t_command *command, char **av)
+short		client_queue_push_front(t_client *client, t_command *command,
+	char **av)
 {
 	int	i;
 	int	index;
@@ -64,7 +65,7 @@ short	client_queue_push_front(t_client *client, t_command *command, char **av)
 	return (1);
 }
 
-void	client_queue_shift(t_client *client)
+void		client_queue_shift(t_client *client)
 {
 	t_uint	i;
 
@@ -81,7 +82,7 @@ void	client_queue_shift(t_client *client)
 	}
 }
 
-void	client_queue_execute(t_client *client)
+void		client_queue_execute(t_client *client)
 {
 	t_queue	*queue;
 
@@ -91,16 +92,4 @@ void	client_queue_execute(t_client *client)
 	queue->delay--;
 	if (queue->delay == 0)
 		queue->command->func(client, 0, queue->av);
-}
-
-void	client_queue_free(t_client *client)
-{
-	t_uint	i;
-
-	i = 0;
-	while (i < CLIENT_QUEUE_MAX)
-	{
-		client_queue_shift(client);
-		i++;
-	}
 }

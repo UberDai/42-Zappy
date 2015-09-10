@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:43:52 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/16 02:00:33 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 19:57:48 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	init_zappy(void)
 	g_zappy.eggs = new_lst();
 }
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	srand(time(NULL));
 	init_zappy();

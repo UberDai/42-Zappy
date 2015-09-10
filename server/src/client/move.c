@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:02:12 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:12:15 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:10:24 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ short	client_move(t_client *client)
 
 	x = client->position->x;
 	y = client->position->y;
-
 	if (client->orientation == ORIENT_NORTH)
 		y--;
 	else if (client->orientation == ORIENT_SOUTH)
@@ -50,7 +49,6 @@ short	client_rotate(t_client *client, short angle)
 		client->orientation += 1;
 	else
 		return (0);
-
 	if (client->orientation <= 0)
 		client->orientation = 4;
 	else if (client->orientation >= 5)

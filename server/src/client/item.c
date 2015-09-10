@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 16:31:17 by amaurer           #+#    #+#             */
-/*   Updated: 2015/06/14 02:12:17 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:10:32 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ char	*client_inventory(t_client *client)
 		client->items[3],
 		client->items[4],
 		client->items[5],
-		client->items[6]
-	);
+		client->items[6]);
 	return (str);
 }

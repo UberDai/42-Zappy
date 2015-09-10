@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/08/16 22:50:24 by amaurer           #+#    #+#             */
-/*   Updated: 2015/08/17 00:28:30 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/10 20:11:03 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static void	client_get_expulsed(t_client *client, t_tile *position)
 {
 	double	points[4];
-	char	message[14] = { 0 };
+	char	message[14];
 	int		orientation;
 
 	points[0] = client->position->x;
@@ -32,7 +32,7 @@ static void	client_get_expulsed(t_client *client, t_tile *position)
 	client_queue_free(client);
 }
 
-void	client_expulse(const t_client *client)
+void		client_expulse(const t_client *client)
 {
 	t_tile		*tile;
 	t_lstiter	iter;
@@ -47,7 +47,6 @@ void	client_expulse(const t_client *client)
 		tile = tile_at(tile->x + 1, tile->y);
 	else if (client->orientation == ORIENT_WEST)
 		tile = tile_at(tile->x - 1, tile->y);
-
 	init_iter(&iter, &client->position->clients, increasing);
 	while (lst_iterator_next(&iter))
 	{
