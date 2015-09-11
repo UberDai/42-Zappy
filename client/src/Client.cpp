@@ -174,7 +174,6 @@ void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 			if (std::stol(infos.getExtraArg()) == getpid())
 				++_matesOnCase;
 			break ;
-
 		case WAIT:
 			printDebug("ptdrmdrlol " + infos.getExtraArg() + " " + std::to_string(_level));
 			if (std::stol(infos.getExtraArg()) == _level)
@@ -183,6 +182,8 @@ void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 				_changeToMode(REUNION);
 			}
 			break;
+		//case comming
+			//vector toto.find(pid) if ! exist toto.pushback pid
 	}
 }
 
@@ -197,6 +198,7 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 			break ;
 
 		case STOP_WAITING:
+			printDebug("TEST SEGV");
 			_resetFollowSystem();
 			break ;
 
@@ -209,6 +211,7 @@ void					Client::_reunionBroadcastHandler(BroadcastInfos & infos)
 	switch (infos.getType())
 	{
 		case STOP_WAITING:
+			printDebug("TEST SEGV2");
 			_resetFollowSystem();
 			break ;
 
@@ -501,6 +504,8 @@ void				Client::_waitMatesMode(void)
 	printDebug("Nothing special.");
 	if (_cycleCount % 30 == 0)
 		return _sendBroadcast(WAIT);
+	//if (time_wait + 200 <= _cyclecount)
+	//	return _changeToMode(NORMAL);
 	return;
 }
 
@@ -524,9 +529,11 @@ void				Client::_reunionMode(void)
 	if (_someoneIsWaiting())
 	{
 		printDebug("Someone is waiting, change to mode TOWARDS_MATE");
+		//send broadcast team pid pid_cible i'm comming
 		return _changeToMode(TOWARDS_MATE);
 	}
 	printDebug("No one is waiting, change to mode WAIT_MATES");
+	//startwait = _cyclecount;
 	_changeToMode(WAIT_MATES);
 }
 
@@ -602,7 +609,7 @@ void				Client::printDebug(const std::string &msg, int mode)
 	std::locale::global(std::locale(""));
 	std::time_t t = std::time(NULL);
 	char	mbstr[100] = { '\0' };
-	
+
 	std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
 	_ofs << "[" << mbstr << "] " << getpid() << " ";
 	if (mode == 1)
