@@ -183,7 +183,7 @@ void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 			}
 			break;
 		//case comming
-			//vector toto.find(pid) if ! exist toto.pushback pid
+			//vector follower.find(pid) if ! exist follower.pushback pid
 	}
 }
 
@@ -499,12 +499,14 @@ void				Client::_waitMatesMode(void)
 		_sendBroadcast(INCANTATION);
 		_addAction(Action::INCANTATION);
 		_sendBroadcast(STOP_WAITING);
+		//clear follower
+		//startwait = 0;
 		return _changeToMode(NORMAL);
 	}
 	printDebug("Nothing special.");
 	if (_cycleCount % 30 == 0)
 		return _sendBroadcast(WAIT);
-	//if (time_wait + 200 <= _cyclecount)
+	//if (startwait + 200 <= _cyclecount && follower.empty())
 	//	return _changeToMode(NORMAL);
 	return;
 }
