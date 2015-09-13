@@ -67,8 +67,25 @@ function Zappy:makeMStack(tab)
 					v.level = v.level + 1
 				end
 			end
-		else
-			print("else", v)
+		elseif v:find("%^%s*%d*%s*%d*") then -- pickup
+			-- ISSUE HERE WITH ID
+			local id, r = v:find("%^%s*(%d+)%s*(%d+)")
+			-- print(id, r)
+			for i,v in ipairs(self.players) do
+				-- print(v.id, id)
+				if v.id == tonumber(id) then
+					-- print('test2')
+					self.map:removeStone(v.x, v.y, r)
+					self.itemcount = self.itemcount - 1
+					return
+				end
+			end
+		elseif v:find("0%s*%S+%s*%d+%s*%d+") then -- add egg
+			print('egg addition')
+			local team, x, y = v:find("0%s*(%S+)%s*(%d+)%s*(%d+)")
+			self.map:addEgg(team, x, y)
+		-- else
+		-- 	print("else", v)
 		end
 	end
 end
@@ -185,6 +202,8 @@ test = love.graphics.newShader[[
 ]]
 
 function Zappy:draw()
+	-- love.graphics.print(inspect(self.players))
+
 	self.map:draw()
 	self.mouse:draw()
 	for i,v in ipairs(self.players) do
@@ -193,6 +212,7 @@ function Zappy:draw()
 		love.graphics.setShader(test)
 		v:draw(x, y)
 		love.graphics.setShader()
+		love.graphics.print(v.x..':'..v.y, x, y)
 		love.graphics.setColor({255, 255, 255, 255})
 	end
 

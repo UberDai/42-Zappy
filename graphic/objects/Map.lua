@@ -68,23 +68,27 @@ function Map:draw()
 		for i,_v in pairs(v.content) do
 			if _v.count > 0 then
 				_v.stone:draw(x, y)
+			elseif i == 'egg' then
+				gold_egg:draw(x, y)
 			end
 		end
 	end
 end
 
 function Map:addStone(stone)
-	if self.hash[stone.x][stone.y].content[stone.id] == nil then self.hash[stone.x][stone.y].content[stone.id] = {stone = stone, count = 0} end
+	if self.hash[stone.x][stone.y].content[stone.id] == nil then
+		self.hash[stone.x][stone.y].content[stone.id] = {stone = stone, count = 0}
+	end
 	self.hash[stone.x][stone.y].content[stone.id].count = self.hash[stone.x][stone.y].content[stone.id].count + 1
 end
 
 function Map:removeStone(x, y, id)
+	print("removestone", x, y, id)
 	if self.hash[x][y].content[id] == nil or self.hash[x][y].content[id].count <= 0 then
 		return
 	end
 	self.hash[x][y].content[id].count = self.hash[x][y].content[id].count - 1
 end
-
 
 function Map:newCell(image, size)
 	local vertices = {
@@ -110,4 +114,9 @@ function Map:newCell(image, size)
 		},
 	}
 	return love.graphics.newMesh(vertices, image, "fan")
+end
+
+function Map:addEgg(team, x, y)
+	print(team, x, y)
+	self.hash[x][y].content['egg'] = true
 end

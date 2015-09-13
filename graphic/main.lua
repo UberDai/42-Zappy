@@ -40,6 +40,7 @@ require 'objects.Zappy'
 require 'assets.test1'
 require 'assets.Pop'
 require 'assets.sprite1'
+require 'assets.gold_egg'
 
 Event = require 'Event'
 ui = require 'ui'
