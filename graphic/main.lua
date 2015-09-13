@@ -39,6 +39,7 @@ require 'objects.Zappy'
 
 require 'assets.test1'
 require 'assets.Pop'
+require 'assets.emotion'
 require 'assets.sprite1'
 require 'assets.gold_egg'
 

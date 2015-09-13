@@ -37,7 +37,8 @@ end
 
 function Pop:update(dt)
 	if self.count >= self.maxcount then
-		self.parent.effect = nil return
+		self.parent.effect = nil
+		return
 	end
 
 	self.delay = self.delay - dt

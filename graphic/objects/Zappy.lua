@@ -62,12 +62,9 @@ function Zappy:makeMStack(tab)
 			end
 		elseif v:find("!%s*%d*%s*%d*") then -- level up
 			local id, level = v:match("!%s*(%d*)%s*(%d*)")
-			print(v, 'levelup', id, level)
-			for i,v in ipairs(self.players) do
 				if v.id == tonumber(id) then
 					v.level = level
 				end
-			end
 		elseif v:find("%^%s*%d*%s*%d*") then -- pickup
 			local id, r = v:match("%^%s*(%d+)%s*(%d+)")
 			for i,v in ipairs(self.players) do
@@ -83,9 +80,16 @@ function Zappy:makeMStack(tab)
 		elseif v:find("9%s*%S+%s*%d+%s*%d+") then -- remove egg
 			local team, x, y = v:match("9%s*(%S+)%s*(%d+)%s*(%d+)")
 			self.map:removeEgg(team, tonumber(x), tonumber(y))
-
-		else
-			print("else", v)
+		elseif v:find("b%s*%d+%s*%d+%s*%d+") then
+			local id, x, y = v:match("b%s*(%d+)%s*(%d+)%s*(%d+)")
+			for i,v in ipairs(self.players) do
+				if v.id == tonumber(id) then
+					v.sprite.effect = emotion(v.sprite)
+					return
+				end
+			end
+		-- else
+		-- 	print("else", v)
 		end
 	end
 end
@@ -212,7 +216,7 @@ function Zappy:draw()
 		love.graphics.setShader(test)
 		v:draw(x, y)
 		love.graphics.setShader()
-		love.graphics.print(v.x..':'..v.y, x, y)
+		-- love.graphics.print(v.x..':'..v.y, x, y)
 		love.graphics.setColor({255, 255, 255, 255})
 	end
 
