@@ -69,8 +69,8 @@ function Zappy:makeMStack(tab)
 			end
 		elseif v:find("%^%s*%d*%s*%d*") then -- pickup
 			-- ISSUE HERE WITH ID
-			local id, r = v:find("%^%s*(%d+)%s*(%d+)")
-			-- print(id, r)
+			local id, r = v:match("%^%s*(%d+)%s*(%d+)")
+			-- print(id, r, v)
 			for i,v in ipairs(self.players) do
 				-- print(v.id, id)
 				if v.id == tonumber(id) then
@@ -82,7 +82,7 @@ function Zappy:makeMStack(tab)
 			end
 		elseif v:find("0%s*%S+%s*%d+%s*%d+") then -- add egg
 			print('egg addition')
-			local team, x, y = v:find("0%s*(%S+)%s*(%d+)%s*(%d+)")
+			local team, x, y = v:match("0%s*(%S+)%s*(%d+)%s*(%d+)")
 			self.map:addEgg(team, x, y)
 		-- else
 		-- 	print("else", v)

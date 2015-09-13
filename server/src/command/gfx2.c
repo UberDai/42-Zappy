@@ -6,7 +6,7 @@
 /*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/10 21:03:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 21:04:20 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/13 22:19:36 by amaurer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	gfx_client_disconnect(t_client *client)
 
 void	gfx_client_promote(const t_client *client)
 {
-	char	str[6];
+	char	str[20];
 
-	snprintf(str, 6, "! %u", client->id);
+	snprintf(str, 20, "! %u %i", client->id, client->id + 1);
 	network_send(NULL, str, NET_SEND_GFX);
 }
 

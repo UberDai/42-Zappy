@@ -23,7 +23,7 @@ add egg			0 N x y
 
 remove egg		9 N x y
 
-level up		! ID
+level up		! ID level
 
 victory			$ N
 
