@@ -7,9 +7,9 @@ remove item		- x y R
 
 move			> ID x y
 
-turn			o ID
+turn			o ID O
 
-connect			* ID N x y O
+connect			* ID N x y O level
 
 disconnect		_ ID
 

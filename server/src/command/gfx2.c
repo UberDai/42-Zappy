@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gfx2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/10 21:03:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/13 23:50:46 by adebray          ###   ########.fr       */
+/*   Updated: 2015/09/14 07:23:41 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ void	gfx_client_connect(t_client *client, t_client *gfx_client)
 {
 	char	str[200];
 
-	snprintf(str, 200, "* %u %s %u %u %u", client->id, client->team->name,
-		client->position->x, client->position->y, client->orientation);
+	snprintf(str, 200, "* %u %s %u %u %u %u", client->id, client->team->name,
+		client->position->x, client->position->y, client->orientation,
+		client->level + 1);
 	if (gfx_client != NULL)
 		network_send(gfx_client, str, 0);
 	else
