@@ -115,6 +115,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_broadcastHandler[TOWARDS_MATE] = &Client::_towardsMateBroadcastHandler;
 	_broadcastHandler[REUNION] = &Client::_reunionBroadcastHandler;
 	_broadcastHandler[FOOD_EMERGENCY] = &Client::_foodEmergencyBroadcastHandler;
+	_broadcastHandler[EGG] = &Client::_eggBroadcastHandler;
 }
 
 Client::Client(Client const &src) :
@@ -198,7 +199,6 @@ void					Client::_towardsMateBroadcastHandler(BroadcastInfos & infos)
 			break ;
 
 		case STOP_WAITING:
-			printDebug("TEST SEGV");
 			_resetFollowSystem();
 			break ;
 
@@ -211,7 +211,6 @@ void					Client::_reunionBroadcastHandler(BroadcastInfos & infos)
 	switch (infos.getType())
 	{
 		case STOP_WAITING:
-			printDebug("TEST SEGV2");
 			_resetFollowSystem();
 			break ;
 
@@ -220,6 +219,11 @@ void					Client::_reunionBroadcastHandler(BroadcastInfos & infos)
 }
 
 void					Client::_foodEmergencyBroadcastHandler(BroadcastInfos & infos)
+{
+	(void)infos;
+}
+
+void					Client::_eggBroadcastHandler(BroadcastInfos & infos)
 {
 	(void)infos;
 }
@@ -590,11 +594,6 @@ bool				Client::loop(void)
 	std::string msg;
 
 	_loadServerInfos(_sendTeamInfo());
-	// while (strtol(_network->send("connect_nbr").c_str(), NULL, 10))
-	// {
-	// 	printDebug("FORKSTEM");
-	// 	_forkstem();
-	// }
 	while (~0)
 	{
 		_ia();
@@ -606,8 +605,6 @@ bool				Client::loop(void)
 
 void				Client::printDebug(const std::string &msg, int mode)
 {
-	// (void)msg;
-	// (void)mode;
 	std::locale::global(std::locale(""));
 	std::time_t t = std::time(NULL);
 	char	mbstr[100] = { '\0' };
@@ -639,7 +636,10 @@ void				Client::recieveBroadcast(const std::string &broadcast)
 		printDebug(infos.getError());
 		return ;
 	}
+	printDebug("_updateWaitingPosition");
 	_updateWaitingPosition(infos);
+	printDebug("_broadcastHandler");
+	printDebug(std::to_string(_mode));
 	(this->*_broadcastHandler[_mode])(infos);
 }
 

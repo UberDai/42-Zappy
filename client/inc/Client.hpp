@@ -133,6 +133,7 @@ private:
 	void					_towardsMateBroadcastHandler(BroadcastInfos &);
 	void					_reunionBroadcastHandler(BroadcastInfos &);
 	void					_foodEmergencyBroadcastHandler(BroadcastInfos &);
+	void					_eggBroadcastHandler(BroadcastInfos &);
 
 	// IA
 	void					_ia(void);
