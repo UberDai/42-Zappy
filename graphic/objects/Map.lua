@@ -65,10 +65,11 @@ function Map:draw()
 	for i,v in ipairs(self.cells) do
 		local x, y = zappy:normalize(v.x, v.y)
 		love.graphics.draw(v.mesh, x * zappy.scale, y * zappy.scale, 0, zappy.scale, zappy.scale)
+
 		for i,_v in pairs(v.content) do
-			if _v.count > 0 then
+			if _v.count ~= nil and _v.count > 0 then
 				_v.stone:draw(x, y)
-			elseif i == 'egg' then
+			elseif _v.quantity ~= nil and _v.quantity > 0 then
 				gold_egg:draw(x, y)
 			end
 		end
@@ -83,7 +84,6 @@ function Map:addStone(stone)
 end
 
 function Map:removeStone(x, y, id)
-	print("removestone", x, y, id)
 	if self.hash[x][y].content[id] == nil or self.hash[x][y].content[id].count <= 0 then
 		return
 	end
@@ -117,6 +117,15 @@ function Map:newCell(image, size)
 end
 
 function Map:addEgg(team, x, y)
-	print(team, x, y)
-	self.hash[x][y].content['egg'] = true
+	if self.hash[x][y].content['egg'] == nil then
+		self.hash[x][y].content['egg'] = {quantity = 0}
+	end
+	self.hash[x][y].content['egg'].quantity = self.hash[x][y].content['egg'].quantity + 1
+end
+
+function Map:removeEgg(team, x, y)
+	self.hash[x][y].content['egg'].quantity = self.hash[x][y].content['egg'].quantity - 1
+	if self.hash[x][y].content['egg'].quantity < 0 then
+		self.hash[x][y].content['egg'].quantity = 0
+	end
 end

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gfx2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adebray <adebray@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/09/10 21:03:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/13 22:19:36 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/13 23:50:46 by adebray          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	gfx_client_promote(const t_client *client)
 {
 	char	str[20];
 
-	snprintf(str, 20, "! %u %i", client->id, client->id + 1);
+	snprintf(str, 20, "! %u %i", client->id, client->level + 1);
 	network_send(NULL, str, NET_SEND_GFX);
 }
 

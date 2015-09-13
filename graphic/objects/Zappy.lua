@@ -60,32 +60,32 @@ function Zappy:makeMStack(tab)
 					v.sprite.orientation = noraml(orientation)
 				end
 			end
-		elseif v:find("!%s*%d*") then -- level up
-			local id = v:match("!%s*(%d*)")
+		elseif v:find("!%s*%d*%s*%d*") then -- level up
+			local id, level = v:match("!%s*(%d*)%s*(%d*)")
+			print(v, 'levelup', id, level)
 			for i,v in ipairs(self.players) do
 				if v.id == tonumber(id) then
-					v.level = v.level + 1
+					v.level = level
 				end
 			end
 		elseif v:find("%^%s*%d*%s*%d*") then -- pickup
-			-- ISSUE HERE WITH ID
 			local id, r = v:match("%^%s*(%d+)%s*(%d+)")
-			-- print(id, r, v)
 			for i,v in ipairs(self.players) do
-				-- print(v.id, id)
 				if v.id == tonumber(id) then
-					-- print('test2')
 					self.map:removeStone(v.x, v.y, r)
 					self.itemcount = self.itemcount - 1
 					return
 				end
 			end
 		elseif v:find("0%s*%S+%s*%d+%s*%d+") then -- add egg
-			print('egg addition')
 			local team, x, y = v:match("0%s*(%S+)%s*(%d+)%s*(%d+)")
-			self.map:addEgg(team, x, y)
-		-- else
-		-- 	print("else", v)
+			self.map:addEgg(team, tonumber(x), tonumber(y))
+		elseif v:find("9%s*%S+%s*%d+%s*%d+") then -- remove egg
+			local team, x, y = v:match("9%s*(%S+)%s*(%d+)%s*(%d+)")
+			self.map:removeEgg(team, tonumber(x), tonumber(y))
+
+		else
+			print("else", v)
 		end
 	end
 end
