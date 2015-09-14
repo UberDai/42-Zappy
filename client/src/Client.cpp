@@ -616,19 +616,21 @@ bool				Client::loop(void)
 
 void				Client::printDebug(const std::string &msg, int mode)
 {
-	std::locale::global(std::locale(""));
-	std::time_t t = std::time(NULL);
-	char	mbstr[100] = { '\0' };
-
-	std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
-	_ofs << "[" << mbstr << "] " << getpid() << " ";
-	if (mode == 1)
-		_ofs << ">> ";
-	else if (mode == 2)
-		_ofs << "<< ";
-	else
-		_ofs << "   ";
-	_ofs << msg << std::endl;
+	(void)msg;
+	(void)mode;
+	// std::locale::global(std::locale(""));
+	// std::time_t t = std::time(NULL);
+	// char	mbstr[100] = { '\0' };
+	//
+	// std::strftime(mbstr, sizeof(mbstr) - 1, "%T", std::localtime(&t));
+	// _ofs << "[" << mbstr << "] " << getpid() << " ";
+	// if (mode == 1)
+	// 	_ofs << ">> ";
+	// else if (mode == 2)
+	// 	_ofs << "<< ";
+	// else
+	// 	_ofs << "   ";
+	// _ofs << msg << std::endl;
 }
 
 void				Client::hasDied(void)
