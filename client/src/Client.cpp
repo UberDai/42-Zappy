@@ -268,6 +268,8 @@ void				Client::_executeActionList(void)
 
 void				Client::_dropCompo(void)
 {
+	if (_level == 8)
+		return ;
 	std::map<std::string, size_t> & compo = _totems[_level];
 
 	printDebug("dropcompos");
@@ -302,6 +304,8 @@ void				Client::_changeToMode(enum eMode m)
 
 bool				Client::_composOk(void)
 {
+	if (_level == 8)
+		return false;
 	std::map<std::string, size_t> &	levelCompo = _totems[_level];
 
 	printDebug("Composok");
@@ -472,7 +476,8 @@ void				Client::_normalMode(void)
 
 	if (!_hasEnoughFood() && _takeFoodIfAny())
 		return ;
-
+	if (_level == 8)
+		return ;
 	if (_composOk())
 	{
 		if (_level == 1)
@@ -513,7 +518,10 @@ void				Client::_waitMatesMode(void)
 	if (_cycleCount % 30 == 0)
 		return _sendBroadcast(WAIT);
 	if (_startWait + 200 <= _cycleCount && follower.size() == 0)
+	{
+		_sendBroadcast(STOP_WAITING);
 		return _changeToMode(NORMAL);
+	}
 	return;
 }
 

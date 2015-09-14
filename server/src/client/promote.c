@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   promote.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fothon <fothon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 22:01:38 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 20:09:40 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/14 23:49:16 by fothon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zappy.h"
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 t_uint		g_promotion_needs[MAX_LEVEL][ITEM_COUNT] = {
 	{ 1, 1, 0, 0, 0, 0, 0 },
@@ -40,6 +41,7 @@ int			check_for_victory(const t_team *team)
 		if (client->level == MAX_LEVEL - 1)
 			i++;
 	}
+	printf("v check %i\n", i);
 	if (i >= 6)
 		return (i);
 	return (0);
@@ -79,11 +81,14 @@ short		client_promote(t_client *client)
 	t_uint	i;
 
 	client->level++;
+	printf("%s\n", "Level up");
 	gfx_client_promote(client);
 	i = check_for_victory(client->team);
+	printf("nb player 8 = %u\n", i);
 	if (i > 0)
 	{
 		printf("victory %s with %u\n", client->team->name, i);
+		sleep(3);
 		zappy_pause(NULL);
 		gfx_victory(client->team);
 	}

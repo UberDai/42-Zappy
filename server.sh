@@ -5,4 +5,4 @@
 # @Last Modified time: 2015-08-18 22:33:32
 
 
-./server/bin/serveur -t 100 -x 8 -y 8 -c 6 -p 4242 $* && echo $?
+./server/bin/serveur -t 100 -x 8 -y 8 -c 10 -p 4242 $* && echo $?

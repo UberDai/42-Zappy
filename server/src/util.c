@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fothon <fothon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/15 01:03:37 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 19:44:14 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/14 21:41:07 by fothon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ double	get_time(void)
 int		die(const char *message)
 {
 	ft_putendl(message);
-	exit(0);
+	exit(EXIT_FAILURE);
 	return (0);
 }
 

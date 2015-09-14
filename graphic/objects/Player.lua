@@ -20,7 +20,7 @@ function Player:new(id, team, x, y, orientation, level)
 	if not zappy.teams[team] then
 		zappy.teams[team] = {
 			nbr = 1,
-			color = {math.random(0, 255), math.random(0, 255), math.random(0, 255), 255}
+			color = {love.math.random(0, 255), love.math.random(0, 255), love.math.random(0, 255), 255}
 		}
 	else
 		zappy.teams[team].nbr = zappy.teams[team].nbr + 1

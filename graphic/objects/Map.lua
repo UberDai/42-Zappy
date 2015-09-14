@@ -124,6 +124,9 @@ function Map:addEgg(team, x, y)
 end
 
 function Map:removeEgg(team, x, y)
+	if self.hash[x][y].content['egg'] == nil then
+		self.hash[x][y].content['egg'] = {quantity = 0}
+	end
 	self.hash[x][y].content['egg'].quantity = self.hash[x][y].content['egg'].quantity - 1
 	if self.hash[x][y].content['egg'].quantity < 0 then
 		self.hash[x][y].content['egg'].quantity = 0

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zappy.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaurer <amaurer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fothon <fothon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/14 22:50:39 by amaurer           #+#    #+#             */
-/*   Updated: 2015/09/10 21:19:01 by amaurer          ###   ########.fr       */
+/*   Updated: 2015/09/14 21:36:16 by fothon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 # define REGEN_RATE			FOOD_DURATION
 # define REGEN_MAX			2
-# define REGEN_PROBABILITY	10
+# define REGEN_PROBABILITY	8
 
 # define EGG_MATURATION		600
 

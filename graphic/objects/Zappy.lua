@@ -61,12 +61,11 @@ function Zappy:makeMStack(tab)
 				end
 			end
 		elseif v:find("!%s*%d*%s*%d*") then -- level up
-			print("msg", v)
 			local id, level = v:match("!%s*(%d+)%s*(%d+)")
-				print(id, level)
-				if v.id == tonumber(id) then
-					print('MATCH', id, level)
-					v.level = level
+				for i,v in ipairs(self.players) do
+					if v.id == tonumber(id) then
+						v.level = level
+					end
 				end
 		elseif v:find("%^%s*%d*%s*%d*") then -- pickup
 			local id, r = v:match("%^%s*(%d+)%s*(%d+)")
@@ -91,8 +90,12 @@ function Zappy:makeMStack(tab)
 					return
 				end
 			end
-		else
-			print("else", v)
+		elseif v:find("%$%s*%w+") then
+			local team = v:match("%$%s*(%w+)")
+			self.tcp:send('pause\n')
+			self.victory = team
+		-- else
+		-- 	print("else", v)
 		end
 	end
 end
@@ -210,9 +213,14 @@ test = love.graphics.newShader[[
 
 function Zappy:draw()
 	-- love.graphics.print(inspect(self.players))
+	if self.victory then
+		love.graphics.print("Team "..self.victory.." won !", 200, 200)
+		return
+	end
 
 	self.map:draw()
 	self.mouse:draw()
+
 	for i,v in ipairs(self.players) do
 		local x, y = zappy:normalize(v.x - 1, v.y - 1)
 		love.graphics.setColor(self.teams[v.team].color)

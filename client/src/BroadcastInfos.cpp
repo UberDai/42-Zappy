@@ -52,30 +52,17 @@ void				BroadcastInfos::_extractBroadcastInfo(void)
 
 	std::regex_match(_message, sm, broadcastFormat);
 
-	_c->printDebug("Entrer _extractBroadcastInfo");
 	if (!(sm.size() > 3 && sm.size() < 6) || std::string(sm[1]) != std::to_string(hash(_teamName)))
 	{
-		_c->printDebug("_extractBroadcastInfo status -2 ERROR");
 		_status = -2;
 		return ;
 	}
-	_c->printDebug("_extractBroadcastInfo pid");
 	_pid = std::string(sm[2]);
-	_c->printDebug("_extractBroadcastInfo type");
 	_type = std::string(sm[3]);
-	_c->printDebug("_extractBroadcastInfo _extraArg");
-	// _extraArg = sm.size() == 5 ? std::string(sm[4]) : "";
 	if (sm.size() == 5)
-	{
-		_c->printDebug("_extractBroadcastInfo _extraArg if");
 		_extraArg = std::string(sm[4]);
-	}
 	else
-	{
-		_c->printDebug("_extractBroadcastInfo _extraArg else");
 		_extraArg = "";
-	}
-	_c->printDebug("Leave _extractBroadcastInfo");
 }
 
 std::string		BroadcastInfos::getError(void) const
