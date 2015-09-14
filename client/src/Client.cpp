@@ -88,6 +88,7 @@ Client::Client(unsigned int port, std::string teamName, std::string hostName) :
 	_foodThreshold(3),
 	_resetAction(0),
 	_cycleCount(0),
+	_startWait(0),
 	_mustMove(false),
 	_following(false),
 	_landed(false),
@@ -183,8 +184,9 @@ void					Client::_waitMatesBroadcastHandler(BroadcastInfos & infos)
 				_changeToMode(REUNION);
 			}
 			break;
-		//case comming
-			//vector follower.find(pid) if ! exist follower.pushback pid
+		case COMMING:
+			if (!(std::find(follower.begin(), follower.end(), std::stol(infos.getExtraArg())) != follower.end()))
+				follower.push_back(std::stol(infos.getExtraArg()));
 	}
 }
 
@@ -452,7 +454,7 @@ void				Client::_sendBroadcast(enum eBroadcastType t)
 		<< getpid() << " " << std::to_string(static_cast<int>(t))
 	;
 
-	if (t == ON_SAME_CASE)
+	if (t == ON_SAME_CASE || t == COMMING)
 		msg << " " << _broadcastTarget;
 	else if (t == WAIT)
 		msg << " " << _level;
@@ -503,15 +505,15 @@ void				Client::_waitMatesMode(void)
 		_sendBroadcast(INCANTATION);
 		_addAction(Action::INCANTATION);
 		_sendBroadcast(STOP_WAITING);
-		//clear follower
-		//startwait = 0;
+		follower.clear();
+		_startWait = 0;
 		return _changeToMode(NORMAL);
 	}
 	printDebug("Nothing special.");
 	if (_cycleCount % 30 == 0)
 		return _sendBroadcast(WAIT);
-	//if (startwait + 200 <= _cyclecount && follower.empty())
-	//	return _changeToMode(NORMAL);
+	if (_startWait + 200 <= _cycleCount && follower.size() == 0)
+		return _changeToMode(NORMAL);
 	return;
 }
 
@@ -536,10 +538,11 @@ void				Client::_reunionMode(void)
 	{
 		printDebug("Someone is waiting, change to mode TOWARDS_MATE");
 		//send broadcast team pid pid_cible i'm comming
+		_sendBroadcast(COMMING);
 		return _changeToMode(TOWARDS_MATE);
 	}
 	printDebug("No one is waiting, change to mode WAIT_MATES");
-	//startwait = _cyclecount;
+	_startWait = _cycleCount;
 	_changeToMode(WAIT_MATES);
 }
 

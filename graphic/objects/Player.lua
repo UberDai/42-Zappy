@@ -16,7 +16,7 @@
 Object = require 'libs.classic'
 
 Player = Object:extend()
-function Player:new(id, team, x, y, orientation)
+function Player:new(id, team, x, y, orientation, level)
 	if not zappy.teams[team] then
 		zappy.teams[team] = {
 			nbr = 1,
@@ -31,7 +31,7 @@ function Player:new(id, team, x, y, orientation)
 	self.x = tonumber(x)
 	self.y = tonumber(y)
 	self.team = team
-	self.level = 1
+	self.level = level
 	self.sprite = test1()
 	self.sprite.orientation = noraml(orientation)
 end

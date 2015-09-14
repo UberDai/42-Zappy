@@ -50,7 +50,8 @@ public:
 		WAIT,
 		STOP_WAITING,
 		ON_SAME_CASE,
-		INCANTATION
+		INCANTATION,
+		COMMING
 	};
 
 	typedef void (Client::* ClientFunction)();
@@ -85,6 +86,7 @@ public:
 	std::map<size_t, std::string>	fov;
 	Map								map;
 	std::vector<Action *>			actions;
+	std::vector<size_t>				follower;
 	void					elevationTest(void);
 	void					expluseTest(const char *);
 
@@ -107,6 +109,7 @@ private:
 	size_t					_foodThreshold;
 	int						_resetAction;
 	size_t					_cycleCount;
+	size_t					_startWait;
 
 	// Broadcasting
 	bool					_mustMove;

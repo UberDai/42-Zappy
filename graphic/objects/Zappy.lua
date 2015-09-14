@@ -34,8 +34,8 @@ function Zappy:makeMStack(tab)
 		elseif v:find("%-%s*%d+%s*%d+%s*%d+") then -- remove item
 			self.map:removeStone(v:match("(%d+)%s*(%d+)%s*(%d+)"))
 			self.itemcount = self.itemcount - 1
-		elseif v:find("%*%s*%d+%s*%w+%s*%d+%s*%d+%s*%d+") then -- connect
-			table.insert(self.players, Player(v:match("(%d+)%s*(%w+)%s*(%d+)%s*(%d+)%s*(%d+)")))
+		elseif v:find("%*%s*%d+%s*%w+%s*%d+%s*%d+%s*%d+%s*%d+") then -- connect
+			table.insert(self.players, Player(v:match("(%d+)%s*(%w+)%s*(%d+)%s*(%d+)%s*(%d+)%s*(%d+)")))
 		elseif v:find('x%s*%d+') then -- death
 			local id = v:find('x%s*(%d+)')
 			for i,v in ipairs(self.players) do
@@ -61,8 +61,11 @@ function Zappy:makeMStack(tab)
 				end
 			end
 		elseif v:find("!%s*%d*%s*%d*") then -- level up
-			local id, level = v:match("!%s*(%d*)%s*(%d*)")
+			print("msg", v)
+			local id, level = v:match("!%s*(%d+)%s*(%d+)")
+				print(id, level)
 				if v.id == tonumber(id) then
+					print('MATCH', id, level)
 					v.level = level
 				end
 		elseif v:find("%^%s*%d*%s*%d*") then -- pickup
@@ -88,8 +91,8 @@ function Zappy:makeMStack(tab)
 					return
 				end
 			end
-		-- else
-		-- 	print("else", v)
+		else
+			print("else", v)
 		end
 	end
 end
