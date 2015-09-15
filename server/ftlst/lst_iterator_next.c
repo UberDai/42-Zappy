@@ -28,7 +28,7 @@ static void	has_ended_or_skip(t_lstiter *it)
 int			lst_iterator_next(t_lstiter *it)
 {
 	if (!it->current && (it->flag = 1))
-	return (0);
+		return (0);
 	it->current = it->dir == increasing ? it->current->next : it->current->prev;
 	it->data = it->current->data;
 	if (it->current == it->end)

@@ -51,7 +51,6 @@ int			main(int ac, char **av)
 {
 	srand(time(NULL));
 	init_zappy();
-	// logger_init("server_network.log");
 	options_parse(ac, av);
 	g_zappy.time.clock = 1.0 / (float)g_zappy.time.cycle_duration;
 	map_init();
